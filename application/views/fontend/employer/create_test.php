@@ -181,7 +181,7 @@ span.select2.select2-container.select2-container--default {
               <div class="form-group timer">
                 <label for="male">Timer On each Question</label><br>
                   <label class="radio-inline" style="margin-left: 20px;" >
-                    <input type="radio" name="timer" style=" margin-right: 11px;" value="Y" > Yes
+                    <input type="radio" name="timer" style=" margin-right: 11px;" value="Y" checked> Yes
                   </label>
                   <label class="radio-inline" style=" margin-right: 50px;">
                     <input type="radio" name="timer" value="N" style="margin-left: -30px;">No
@@ -199,7 +199,7 @@ span.select2.select2-container.select2-container--default {
               <div class="form-group previous_option">
                 <label for="male">Allowed to Go back</label><br>
                   <label class="radio-inline" style="margin-left: 20px;" >
-                    <input type="radio" name="previous_option"  style=" margin-right: 11px;" value="Y" > Yes
+                    <input type="radio" name="previous_option"  style=" margin-right: 11px;" value="Y" checked> Yes
                   </label>
                   <label class="radio-inline" style=" margin-right: 50px;">
                     <input type="radio" name="previous_option" value="N" style="margin-left: -30px;">No
@@ -213,7 +213,7 @@ span.select2.select2-container.select2-container--default {
               <div class="form-group review_option">
                 <label for="male">Allowed to Review</label><br>
                   <label class="radio-inline" style="margin-left: 20px;" >
-                    <input type="radio" name="review_option" style=" margin-right: 11px;" value="Y" > Yes
+                    <input type="radio" name="review_option" style=" margin-right: 11px;" value="Y" checked> Yes
                   </label>
                   <label class="radio-inline" style=" margin-right: 50px;">
                     <input type="radio" name="review_option" value="N" style="margin-left: -30px;">No
@@ -226,7 +226,7 @@ span.select2.select2-container.select2-container--default {
               <div class="form-group negative">
                 <label for="male">Negative Marking</label><br>
                   <label class="radio-inline" style="margin-left: 20px;" >
-                    <input type="radio" name="negative" style=" margin-right: 11px;" value="Y" > Yes
+                    <input type="radio" name="negative" style=" margin-right: 11px;" value="Y" checked> Yes
                   </label>
                   <label class="radio-inline" style=" margin-right: 50px;">
                     <input type="radio" name="negative" value="N" style="margin-left: -30px;">No
@@ -244,7 +244,7 @@ span.select2.select2-container.select2-container--default {
               <div class="form-group each_question_ans">
                 <label for="male">Display Correct Answer for each Question</label><br>
                   <label class="radio-inline" style="margin-left: 20px;" >
-                    <input type="radio" name="each_question_ans" style=" margin-right: 11px;" value="Y" > Yes
+                    <input type="radio" name="each_question_ans" style=" margin-right: 11px;" value="Y" checked> Yes
                   </label>
                   <label class="radio-inline" style=" margin-right: 50px;">
                     <input type="radio" name="each_question_ans" value="N" style="margin-left: -30px;">No
@@ -258,7 +258,7 @@ span.select2.select2-container.select2-container--default {
               <div class="form-group display_result">
                 <label for="male">Display Test Result to Candidate</label><br>
                   <label class="radio-inline" style="margin-left: 20px;" >
-                    <input type="radio" name="display_result" style=" margin-right: 11px;" value="Y" > Yes
+                    <input type="radio" name="display_result" style=" margin-right: 11px;" value="Y" checked> Yes
                   </label>
                   <label class="radio-inline" style=" margin-right: 50px;">
                     <input type="radio" name="display_result" value="N" style="margin-left: -30px;">No
