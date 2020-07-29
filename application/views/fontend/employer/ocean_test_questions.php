@@ -921,7 +921,7 @@ input[type="radio"] {
                   <div id="skip">
                         
                   </div>
-                  <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['review_option'] == 'Y' && $oceanchamp_tests['previous_option'] == 'Y') { ?>
+                  <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['review_option'] == 'Y') { ?>
                       
                  <!--  } ?> -->
                   <div class="row" style="margin-top: 260px">
@@ -1199,8 +1199,15 @@ function next(n)
 function getval(value)
 {
       qid = value - 1;
+     <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['previous_option'] == 'N') 
+     {
+      
+      }else{ ?>
+             showSlide(qid);
+
+      <?php } ?> 
     
-    showSlide(qid);
+    
      
 }
 
