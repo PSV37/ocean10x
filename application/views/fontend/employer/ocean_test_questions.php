@@ -954,7 +954,8 @@ input[type="radio"] {
               <input type="radio" onclick="get_checked(${questionNumber});" style="display:block;" name="question${questionNumber}" value="${letter}">
               ${letter} :
               ${currentQuestion.answers[letter]}
-            </label>`
+            </label>
+             <input type = "hidden" id="timer${questionNumber}" value="${currentQuestion.time_for_question}">`
           );
         }
 
