@@ -267,18 +267,6 @@ span.select2.select2-container.select2-container--default {
               </div>
             </div>
 
-            <div class="col-md-4">
-              <div class="form-group negative">
-                <label for="male">Negative Marking</label><br>
-                  <label class="radio-inline" style="margin-left: 20px;" >
-                    <input type="radio" name="negative" style=" margin-right: 11px;" value="Y" checked> Yes
-                  </label>
-                  <label class="radio-inline" style=" margin-right: 50px;">
-                    <input type="radio" name="negative" value="N" style="margin-left: -30px;">No
-                  </label>
-                
-              </div>
-            </div>
 
              
          </div>
