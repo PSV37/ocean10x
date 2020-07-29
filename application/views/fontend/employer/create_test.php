@@ -179,7 +179,7 @@ span.select2.select2-container.select2-container--default {
 
             <div class="col-md-4">
               <div class="form-group timer">
-                <label for="male">Timer On each Question</label>
+                <label for="male">Timer On each Question</label><br>
                   <label class="radio-inline" style="margin-left: 20px;" >
                     <input type="radio" name="timer" style=" margin-right: 11px;" value="Y" checked> Yes
                   </label>
@@ -197,7 +197,7 @@ span.select2.select2-container.select2-container--default {
             
              <div class="col-md-4">
               <div class="form-group previous_option">
-                <label for="male">Allowed to Go back</label>
+                <label for="male">Allowed to Go back</label><br>
                   <label class="radio-inline" style="margin-left: 20px;" >
                     <input type="radio" name="previous_option" style=" margin-right: 11px;" value="Y" checked> Yes
                   </label>
@@ -211,7 +211,7 @@ span.select2.select2-container.select2-container--default {
           
             <div class="col-md-4">
               <div class="form-group review_option">
-                <label for="male">Allowed to Review</label>
+                <label for="male">Allowed to Review</label><br>
                   <label class="radio-inline" style="margin-left: 20px;" >
                     <input type="radio" name="review_option" style=" margin-right: 11px;" value="Y" checked> Yes
                   </label>
@@ -224,7 +224,7 @@ span.select2.select2-container.select2-container--default {
 
             <div class="col-md-4">
               <div class="form-group negative">
-                <label for="male">Negative Marking</label>
+                <label for="male">Negative Marking</label><br>
                   <label class="radio-inline" style="margin-left: 20px;" >
                     <input type="radio" name="negative" style=" margin-right: 11px;" value="Y" checked> Yes
                   </label>
@@ -242,7 +242,7 @@ span.select2.select2-container.select2-container--default {
             
              <div class="col-md-4">
               <div class="form-group each_question_ans">
-                <label for="male">Display Correct Answer for each Question</label>
+                <label for="male">Display Correct Answer for each Question</label><br>
                   <label class="radio-inline" style="margin-left: 20px;" >
                     <input type="radio" name="each_question_ans" style=" margin-right: 11px;" value="Y" checked> Yes
                   </label>
@@ -256,7 +256,7 @@ span.select2.select2-container.select2-container--default {
           
             <div class="col-md-4">
               <div class="form-group display_result">
-                <label for="male">Display Test Result to Candidate</label>
+                <label for="male">Display Test Result to Candidate</label><br>
                   <label class="radio-inline" style="margin-left: 20px;" >
                     <input type="radio" name="display_result" style=" margin-right: 11px;" value="Y" checked> Yes
                   </label>
@@ -269,7 +269,7 @@ span.select2.select2-container.select2-container--default {
 
             <div class="col-md-4">
               <div class="form-group negative">
-                <label for="male">Negative Marking</label>
+                <label for="male">Negative Marking</label><br>
                   <label class="radio-inline" style="margin-left: 20px;" >
                     <input type="radio" name="negative" style=" margin-right: 11px;" value="Y" checked> Yes
                   </label>
@@ -659,6 +659,9 @@ $("#js").validate (
 
               else if (element.attr("name") == "ques_type" ) 
                  error.insertAfter(".ques_type");
+
+               else if (element.attr("name") == "timer" ) 
+                 error.insertAfter(".timer");
 
               
             
