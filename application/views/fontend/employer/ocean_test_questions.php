@@ -1091,9 +1091,8 @@ input[type="radio"] {
       submitButton.style.display = 'none';
     }
     
-    var TIME = $('#timer'+n).val();
-    set_timer(n);
-  console.log('set_timer'+TIME);
+    
+  console.log('set_timer'+n);
 
   }
 
