@@ -919,11 +919,13 @@ input[type="radio"] {
                   <div id="skip">
                         
                   </div>
-                  
+                  <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['review_option'] == 'Y') { ?>
+                      
+                 <!--  } ?> -->
                   <div class="row" style="margin-top: 260px">
                         <?php $i=1; foreach ($all_questions as $row) { ?>
                               <div class="col-md-2 exp-box" id="status<?php echo $i; ?>" onclick="getval(<?php echo $i; ?>);"><span name="levels" id="levels"   value="Beginner"><?php echo $i; ?></span></div>
-                      <? $i++; } ?>
+                      <? $i++; } } ?>
                         
                   </div>
                </div>

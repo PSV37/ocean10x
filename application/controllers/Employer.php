@@ -6057,6 +6057,7 @@ function update_external()
         
             $data['all_questions'] = $all_questions;
             $data['test_duration'] = $oceanchamp_tests['test_duration'];
+            $data['oceanchamp_tests'] = $oceanchamp_tests;
             
             $data['test_id'] = $test_id;
             $this->load->view('fontend/employer/ocean_test_questions', $data);
