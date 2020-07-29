@@ -1476,12 +1476,12 @@ label {
                               <div class="form-group">
                                  <label class="control-label col-sm-3" for="pwd">Work Permit for Other Countries</label>
                                  <div class="col-sm-9">
-                                    <input type="text" name="other_country_work_permit" class="form-control" id="tokenfield" placeholder="Enter Country" value="<?php
+                                    <input type="text" name="other_country_work_permit" class="form-control" id="tokenfield" placeholder="You can choose upto 3 Countries" value="<?php
                                        if (!empty($js_personal_info->work_permit_countries)) {
                                          echo $js_personal_info->work_permit_countries;
                                          }
                                        ?>">
-                                    <p>You can choose upto 3 Countries</p>
+                                    <!--p>You can choose upto 3 Countries</p-->
                                  </div>
                               </div>
                               <div class="form-group">
@@ -3395,7 +3395,6 @@ $.validator.addMethod("dateFormat",
 <script src="<?php echo base_url() ?>asset/tokenjs/bootstrap-tokenfield.js"></script>
 <script src="<?php echo base_url() ?>asset/tokenjs/typeahead.bundle.min.js"></script>
 <script src="<?php echo base_url() ?>asset/js/search.js"></script>
-
 <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
 
 
