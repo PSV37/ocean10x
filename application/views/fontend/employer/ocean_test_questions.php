@@ -932,6 +932,8 @@ input[type="radio"] {
 // (function(){
   // Functions
   function buildQuiz(){
+  console.log('buildQuiz');
+
     // variable to store the HTML output
     const output = [];
     const timer = [];
@@ -1187,7 +1189,7 @@ input[type="radio"] {
     
     // set_timer(currentSlide);
   console.log('set_timer'+currentSlide);
-    
+
   }
 
   function showNextSlide() {
