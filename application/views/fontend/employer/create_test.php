@@ -586,7 +586,7 @@ span.select2.select2-container.select2-container--default {
              $('#subject_data').val($('#subject').val());
              $('#type').val($('#ques_type').val());
 
-             $('#timer_data').val($('#timer').val());
+             $('#timer_data').val($('input[name=timer]').val());
              $('#previous_option_option').val($('input[name=previous_option]').val());
              $('#review_option_option').val($('input[name=review_option]').val());
              $('#negative_option').val($('input[name=negative]').val());
