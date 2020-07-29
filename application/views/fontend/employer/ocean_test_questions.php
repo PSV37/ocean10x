@@ -1092,7 +1092,7 @@ input[type="radio"] {
     }
     
     var TIME = $('#timer'+n).val();
-    set_timer(TIME);
+    set_timer(n);
   console.log('set_timer'+TIME);
 
   }
