@@ -2001,7 +2001,7 @@ class Employer extends MY_Employer_Controller
         $type = $this->input->post('type');
         // echo  $test_id; 
         // echo  $test_name; die;
-        print_r($_POST);
+        print_r($_POST);die();
         $employer_id = $this->session->userdata('company_profile_id');
         if (isset($test_name) && !empty($test_name)) {
             $where_all = "oceanchamp_tests.test_name='$test_name'";
