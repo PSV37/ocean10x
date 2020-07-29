@@ -1157,8 +1157,8 @@ input[type="radio"] {
     slides[currentSlide].classList.remove('active-slide');
     slides[n].classList.add('active-slide');
 
-    slides1[currentSlide].classList.remove('active-slide');
-    slides1[n].classList.add('active-slide');
+    // slides1[currentSlide].classList.remove('active-slide');
+    // slides1[n].classList.add('active-slide');
 
     slides2[currentSlide].classList.remove('active-slide');
     slides2[n].classList.add('active-slide');
