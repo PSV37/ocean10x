@@ -177,6 +177,15 @@ span.select2.select2-container.select2-container--default {
               </div>
             </div>
 
+            <div class="col-md-4">
+              <div class="form-group timer">
+                <label for="male">Timer On each Question</label>
+                <input type="radio" name="timer" id="male" value="Y">Yes
+                <input type="radio" name="timer" id="male" value="N">No
+                
+              </div>
+            </div>
+
              
          </div>
              
@@ -611,6 +620,12 @@ required: true
 
 },
 
+'timer':{
+
+required: true
+
+},
+
 
 
 
@@ -667,6 +682,11 @@ required: "This field is mandatory!"
 },
 
 'ques_type':{
+
+required: "This field is mandatory!"
+
+},
+'timer':{
 
 required: "This field is mandatory!"
 
