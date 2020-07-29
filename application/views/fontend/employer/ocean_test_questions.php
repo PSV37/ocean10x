@@ -1071,18 +1071,18 @@ input[type="radio"] {
     slides2[currentSlide].classList.remove('active-slide');
     slides2[n].classList.add('active-slide');
     currentSlide = n;
-
+ <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['previous_option'] == 'Y') { ?>
     if(currentSlide === 0){
-<?php if (isset($oceanchamp_tests) && $oceanchamp_tests['previous_option'] == 'Y') { ?>
       previousButton.style.display = 'none';
-      <?php } ?>
+    
     }
     else{
-      <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['previous_option'] == 'Y') { ?>
+     
       previousButton.style.display = 'inline-block';
      $('#previous').css('margin-top',70);
-<?php } ?>
+
     }
+    <?php } ?>
     if(currentSlide === slides.length-1){
       nextButton.style.display = 'none';
       submitButton.style.display = 'inline-block';
