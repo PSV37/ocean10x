@@ -1093,6 +1093,7 @@ input[type="radio"] {
     
     
   console.log('set_timer'+n);
+  set_timer(n);
 
   }
 
@@ -1194,7 +1195,7 @@ function getval(value)
      
 }
 
-function set_timer(TIME)
+function set_timer(n)
 {
        const FULL_DASH_ARRAY = 283;
                   const WARNING_THRESHOLD = 10;
@@ -1219,7 +1220,7 @@ function set_timer(TIME)
                          
 
                        
-                 const TIME_LIMIT = TIME;
+                 const TIME_LIMIT = $('#timer'+n).val();
                  
 
                  // alert(currentQuestion.question);
