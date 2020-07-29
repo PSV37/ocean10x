@@ -249,9 +249,8 @@ input:-internal-autofill-selected{background-color:#fff !important;}
     <div class="user-box">
       <input type="password" name="password" id="myInput" required>
       <label>Password </label>
-      <!--span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span-->
-      <!--span toggle="#password-field" class="fa fa-lg fa-eye-slash field-icon toggle-password"></span-->
       <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+      <!--span toggle="#password-field" class="fa fa-lg fa-eye-slash field-icon toggle-password"></span-->
       <i id="eyeIcon" class="fa fa-eye-slash toggle-password"></i>
 
     </div>    
@@ -286,15 +285,3 @@ input:-internal-autofill-selected{background-color:#fff !important;}
 </script>
 
 
-<script type="text/javascript">
-  $(".toggle-password").click(function() {
-
-  $(this).toggleClass("fa-eye fa-eye-slash");
-  var input = $($(this).attr("toggle"));
-  if (input.attr("type") == "password") {
-    input.attr("type", "text");
-  } else {
-    input.attr("type", "password");
-  }
-});
-</script>
