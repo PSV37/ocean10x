@@ -1073,7 +1073,9 @@ input[type="radio"] {
     currentSlide = n;
 
     if(currentSlide === 0){
+       <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['previous_option'] == 'Y') { ?>
       previousButton.style.display = 'none';
+      <?php } ?>
     }
     else{
       <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['previous_option'] == 'Y') { ?>
