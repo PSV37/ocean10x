@@ -1157,6 +1157,7 @@ input[type="radio"] {
   // Pagination
     <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['previous_option'] == 'Y') { ?>
   const previousButton = document.getElementById("previous");
+   previousButton.addEventListener("click", showPreviousSlide);
 <?php } ?>
   const nextButton = document.getElementById("next");
   const slides = document.querySelectorAll(".slide");
@@ -1170,7 +1171,7 @@ input[type="radio"] {
 
   // Event listeners
   submitButton.addEventListener('click', showResults);
-  previousButton.addEventListener("click", showPreviousSlide);
+ 
   nextButton.addEventListener("click", showNextSlide);
 
  // console.log(myQuestions);
