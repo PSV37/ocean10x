@@ -180,8 +180,15 @@ span.select2.select2-container.select2-container--default {
             <div class="col-md-4">
               <div class="form-group timer">
                 <label for="male">Timer On each Question</label>
-                <input type="radio" name="timer" id="male" value="Y">Yes
-                <input type="radio" name="timer" id="male" value="N">No
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                  <label class="form-check-label" for="inlineRadio1">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                  <label class="form-check-label" for="inlineRadio2">No</label>
+                </div>
+                
                 
               </div>
             </div>
