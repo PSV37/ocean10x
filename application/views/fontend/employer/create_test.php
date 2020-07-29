@@ -362,6 +362,20 @@ span.select2.select2-container.select2-container--default {
                <input type="hidden" class="form-control" readonly style="border: none;" id="subject_data" name="subject_data">
 
                 <input type="hidden" class="form-control" readonly style="border: none;" id="type" name="type">
+
+                <input type="text" class="form-control" readonly style="border: none;" id="timer_data" name="timer">
+
+               <input type="hidden" class="form-control" readonly style="border: none;" id="previous_option_data" name="previous_option">
+
+               <input type="hidden" class="form-control" readonly style="border: none;" id="review_option_data" name="review_option">
+
+                <input type="text" class="form-control" readonly style="border: none;" id="negative_data" name="negative">
+
+               <input type="hidden" class="form-control" readonly style="border: none;" id="each_question_ans_data" name="each_question_ans">
+
+               <input type="hidden" class="form-control" readonly style="border: none;" id="display_result_data" name="display_result">
+
+                <input type="hidden" class="form-control" readonly style="border: none;" id="type" name="type">
                </div>
             </div>
          </div>
@@ -571,6 +585,13 @@ span.select2.select2-container.select2-container--default {
              $('#level_data').val($('#level').val());
              $('#subject_data').val($('#subject').val());
              $('#type').val($('#ques_type').val());
+
+             $('#timer_data').val($('#timer').val());
+             $('#previous_option_option').val($('#previous_option').val());
+             $('#review_option_option').val($('#review_option').val());
+             $('#negative_option').val($('#negative').val());
+             $('#each_question_ans_option').val($('#each_question_ans').val());
+             $('#display_result_option').val($('#display_result').val());
               
                       if($('#js').valid()) 
                       {
