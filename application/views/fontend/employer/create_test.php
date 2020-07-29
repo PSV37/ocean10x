@@ -363,17 +363,17 @@ span.select2.select2-container.select2-container--default {
 
                 <input type="hidden" class="form-control"  style="border: none;" id="type" name="type">
 
-                <input type="hidden" class="form-control"  style="border: none;" id="timer_data" name="timer">
+                <input type="hidden" class="form-control"  style="border: none;" id="timer_data" name="timer" value="">
 
-               <input type="hidden" class="form-control"  style="border: none;" id="previous_option_data" name="previous_option">
+               <input type="hidden" class="form-control"  style="border: none;" id="previous_option_data" name="previous_option" value="">
 
-               <input type="hidden" class="form-control"  style="border: none;" id="review_option_data" name="review_option">
+               <input type="hidden" class="form-control"  style="border: none;" id="review_option_data" name="review_option" value="">
 
-                <input type="hidden" class="form-control"  style="border: none;" id="negative_data" name="negative">
+                <input type="hidden" class="form-control"  style="border: none;" id="negative_data" name="negative" value="">
 
-               <input type="hidden" class="form-control"  style="border: none;" id="each_question_ans_data" name="each_question_ans">
+               <input type="hidden" class="form-control"  style="border: none;" id="each_question_ans_data" name="each_question_ans" value="">
 
-               <input type="hidden" class="form-control"  style="border: none;" id="display_result_data" name="display_result">
+               <input type="hidden" class="form-control"  style="border: none;" id="display_result_data" name="display_result" value="">
 
                 <input type="hidden" class="form-control"  style="border: none;" id="type" name="type">
                </div>
