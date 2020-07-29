@@ -1099,7 +1099,7 @@ input[type="radio"] {
         timer.push(
       ` <input type = "hidden" id="timer${questionNumber}" value="${currentQuestion.time_for_question}">`
                     );
-         startTimer();
+         // set_timer();
 
               skip.push(`<div class="slide2"><button class="skip skp" id="${questionNumber}" onclick="next(${questionNumber});">skip question</button></div>`
                   );
@@ -1184,6 +1184,8 @@ input[type="radio"] {
      
       submitButton.style.display = 'none';
     }
+    
+    set_timer(currentSlide);
   }
 
   function showNextSlide() {
@@ -1281,6 +1283,42 @@ function getval(value)
     
     showSlide(qid);
      
+}
+
+function set_timer(n)
+{
+       const FULL_DASH_ARRAY = 283;
+                  const WARNING_THRESHOLD = 10;
+                  const ALERT_THRESHOLD = 5;
+                  
+                  const COLOR_CODES = {
+                    info: {
+                      color: "green"
+                    },
+                    warning: {
+                      color: "orange",
+                      threshold: WARNING_THRESHOLD
+                    },
+                    alert: {
+                      color: "red",
+                      threshold: ALERT_THRESHOLD
+                    }
+                  };
+                   
+                  const TIME_LIMIT = document.getElementById('#timer'+n).value;
+                          // variable to store the list of possible answers
+                         
+
+                       
+                 // const TIME_LIMIT = currentQuestion.;
+                 
+
+                 // alert(currentQuestion.question);
+                  let timePassed = 0;
+                  let timeLeft = TIME_LIMIT;
+                  let timerInterval = null;
+                  let remainingPathColor = COLOR_CODES.info.color;
+                  
 }
               </script>
               <script>
