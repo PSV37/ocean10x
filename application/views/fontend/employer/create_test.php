@@ -363,13 +363,13 @@ span.select2.select2-container.select2-container--default {
 
                 <input type="hidden" class="form-control" readonly style="border: none;" id="type" name="type">
 
-                <input type="text" class="form-control" readonly style="border: none;" id="timer_data" name="timer">
+                <input type="hidden" class="form-control" readonly style="border: none;" id="timer_data" name="timer">
 
                <input type="hidden" class="form-control" readonly style="border: none;" id="previous_option_data" name="previous_option">
 
                <input type="hidden" class="form-control" readonly style="border: none;" id="review_option_data" name="review_option">
 
-                <input type="text" class="form-control" readonly style="border: none;" id="negative_data" name="negative">
+                <input type="hidden" class="form-control" readonly style="border: none;" id="negative_data" name="negative">
 
                <input type="hidden" class="form-control" readonly style="border: none;" id="each_question_ans_data" name="each_question_ans">
 
