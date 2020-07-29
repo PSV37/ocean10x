@@ -1437,7 +1437,7 @@ label {
                               </div>
                               <div class="form-group">
                                  <label class="control-label col-sm-3" for="email">My Tagline:</label>
-                                 <div class="col-sm-9"><input id="resDate_1" class="datepicker form-control"  name="tagline" placeholder="Enter Your Tagline" value="<?php 
+                                 <div class="col-sm-9"><input id="resDate_1" class=" form-control"  name="tagline" placeholder="Enter Your Tagline" value="<?php 
                                     if (!empty($js_personal_info->resume_title)) {
                                       echo $js_personal_info->resume_title;
                                       }
