@@ -905,7 +905,7 @@ input[type="radio"] {
                               <div class="quiz-container">
                                 <div id="quiz"></div>
                               </div>
-                              <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['review_option'] == 'Y') { ?>
+                              <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['previous_option'] == 'Y') { ?>
                               <button type="button" id="previous">Previous Question</button>
                         <? } ?>
                               <button type="button" id="next">Next Question</button>
@@ -1076,8 +1076,10 @@ input[type="radio"] {
       previousButton.style.display = 'none';
     }
     else{
+      <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['previous_option'] == 'Y') { ?>
       previousButton.style.display = 'inline-block';
      $('#previous').css('margin-top',70);
+<?php } ?>
     }
     if(currentSlide === slides.length-1){
       nextButton.style.display = 'none';
@@ -1151,7 +1153,9 @@ input[type="radio"] {
   buildQuiz();
 
   // Pagination
+    <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['previous_option'] == 'Y') { ?>
   const previousButton = document.getElementById("previous");
+<?php } ?>
   const nextButton = document.getElementById("next");
   const slides = document.querySelectorAll(".slide");
   const slides1 = document.querySelectorAll(".slide1");
