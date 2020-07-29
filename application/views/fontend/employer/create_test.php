@@ -184,7 +184,7 @@ span.select2.select2-container.select2-container--default {
                     <input type="radio" name="timer" style=" margin-right: 11px;" value="Y" checked> Yes
                   </label>
                   <label class="radio-inline" style=" margin-right: 50px;">
-                    <input type="radio" name="timer" value="N">No
+                    <input type="radio" name="timer" value="N" style="margin-left: -30px;">No
                   </label>
                 
               </div>
@@ -202,7 +202,7 @@ span.select2.select2-container.select2-container--default {
                     <input type="radio" name="previous_option" style=" margin-right: 11px;" value="Y" checked> Yes
                   </label>
                   <label class="radio-inline" style=" margin-right: 50px;">
-                    <input type="radio" name="previous_option" value="N">No
+                    <input type="radio" name="previous_option" value="N" style="margin-left: -30px;">No
                   </label>
                 
               </div>
@@ -216,7 +216,7 @@ span.select2.select2-container.select2-container--default {
                     <input type="radio" name="review_option" style=" margin-right: 11px;" value="Y" checked> Yes
                   </label>
                   <label class="radio-inline" style=" margin-right: 50px;">
-                    <input type="radio" name="review_option" value="N">No
+                    <input type="radio" name="review_option" value="N" style="margin-left: -30px;">No
                   </label>
                 
               </div>
@@ -229,7 +229,7 @@ span.select2.select2-container.select2-container--default {
                     <input type="radio" name="negative" style=" margin-right: 11px;" value="Y" checked> Yes
                   </label>
                   <label class="radio-inline" style=" margin-right: 50px;">
-                    <input type="radio" name="negative" value="N">No
+                    <input type="radio" name="negative" value="N" style="margin-left: -30px;">No
                   </label>
                 
               </div>
@@ -247,7 +247,7 @@ span.select2.select2-container.select2-container--default {
                     <input type="radio" name="each_question_ans" style=" margin-right: 11px;" value="Y" checked> Yes
                   </label>
                   <label class="radio-inline" style=" margin-right: 50px;">
-                    <input type="radio" name="each_question_ans" value="N">No
+                    <input type="radio" name="each_question_ans" value="N" style="margin-left: -30px;">No
                   </label>
                 
               </div>
@@ -261,7 +261,7 @@ span.select2.select2-container.select2-container--default {
                     <input type="radio" name="display_result" style=" margin-right: 11px;" value="Y" checked> Yes
                   </label>
                   <label class="radio-inline" style=" margin-right: 50px;">
-                    <input type="radio" name="display_result" value="N">No
+                    <input type="radio" name="display_result" value="N" style="margin-left: -30px;">No
                   </label>
                 
               </div>
@@ -274,7 +274,7 @@ span.select2.select2-container.select2-container--default {
                     <input type="radio" name="negative" style=" margin-right: 11px;" value="Y" checked> Yes
                   </label>
                   <label class="radio-inline" style=" margin-right: 50px;">
-                    <input type="radio" name="negative" value="N">No
+                    <input type="radio" name="negative" value="N" style="margin-left: -30px;">No
                   </label>
                 
               </div>
