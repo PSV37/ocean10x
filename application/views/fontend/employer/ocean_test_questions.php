@@ -999,12 +999,10 @@ input[type="radio"] {
           `<div class="slide"  id="${questionNumber}">
             <div class="question" id="${questionNumber}"> ${currentQuestion.question} </div>
             <div class="answers"> ${answers.join("")} </div>
-          
+          <input type = "hidden" id="timer${questionNumber}" value="${currentQuestion.time_for_question}">
           </div>`
         );
-        timer.push(
-      ` <input type = "hidden" id="timer${questionNumber}" value="${currentQuestion.time_for_question}">`
-                    );
+     
          // set_timer();
 
               skip.push(`<div class="slide2"><button class="skip skp" id="${questionNumber}" onclick="next(${questionNumber});">skip question</button></div>`
@@ -1016,7 +1014,7 @@ input[type="radio"] {
 
     // finally combine our output list into one string of HTML and put it on the page
     quizContainer.innerHTML = output.join('');
-     document.getElementById("app").innerHTML = timer;
+     // document.getElementById("app").innerHTML = timer;
      document.getElementById("skip").innerHTML = skip;
 
      
