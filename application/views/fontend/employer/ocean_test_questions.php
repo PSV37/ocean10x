@@ -1091,7 +1091,7 @@ input[type="radio"] {
       submitButton.style.display = 'none';
     }
     
-    var TIME = document.getElementById('#timer'+currentSlide).value;
+    var TIME = $('#timer'+currentSlide).val();
     set_timer(TIME);
   console.log('set_timer'+TIME);
 
