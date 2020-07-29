@@ -1417,7 +1417,7 @@ label {
                               <div class="form-group">
                                  <label class="control-label col-sm-3" for="email">City:<span class="required">*</span></label>
                                  <div class="col-sm-9">
-                                    <select name="city_id" class="form-control" onchange="getStates(this.value)">
+                                    <select name="city_id" id="city_id" class="form-control" onchange="getStates(this.value)">
                                        <option value="">Select City</option>
                                        <?php foreach($city as $valu){?>
                                        <option value="<?php echo $valu['id']; ?>"<?php if($js_personal_info->city_id==$valu['id']){ echo "selected"; }?>><?php echo $valu['city_name']; ?></option>
