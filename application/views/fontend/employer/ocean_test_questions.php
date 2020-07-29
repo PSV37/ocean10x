@@ -1091,9 +1091,9 @@ input[type="radio"] {
       submitButton.style.display = 'none';
     }
     
-    var TIME_LIMIT = document.getElementById('#timer'+currentSlide).value;
-    set_timer(TIME_LIMIT);
-  console.log('set_timer'+TIME_LIMIT);
+    var TIME = document.getElementById('#timer'+currentSlide).value;
+    set_timer(TIME);
+  console.log('set_timer'+TIME);
 
   }
 
@@ -1195,7 +1195,7 @@ function getval(value)
      
 }
 
-function set_timer(TIME_LIMIT)
+function set_timer(TIME)
 {
        const FULL_DASH_ARRAY = 283;
                   const WARNING_THRESHOLD = 10;
@@ -1220,7 +1220,7 @@ function set_timer(TIME_LIMIT)
                          
 
                        
-                 const TIME_LIMIT = TIME_LIMIT;
+                 const TIME_LIMIT = TIME;
                  
 
                  // alert(currentQuestion.question);
