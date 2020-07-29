@@ -77,7 +77,7 @@
                 <div class="formrow">
                   <div class="row">
                     <div class="col-md-6 col-sm-12">
-                      <label>First name</label><span class="required">*</span>
+                      <label>Name</label><span class="required">*</span>
                       <input type="text" name="full_name" value="<?php echo set_value('full_name'); ?>" class="form-control name-valid" placeholder="Full Name" autocomplete="off" required>
                     </div>
 
