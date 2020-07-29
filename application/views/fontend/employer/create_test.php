@@ -199,7 +199,7 @@ span.select2.select2-container.select2-container--default {
               <div class="form-group previous_option">
                 <label for="male">Allowed to Go back</label><br>
                   <label class="radio-inline" style="margin-left: 20px;" >
-                    <input type="radio" name="previous_option" style=" margin-right: 11px;" value="Y" checked> Yes
+                    <input type="radio" name="previous_option"  style=" margin-right: 11px;" value="Y" checked> Yes
                   </label>
                   <label class="radio-inline" style=" margin-right: 50px;">
                     <input type="radio" name="previous_option" value="N" style="margin-left: -30px;">No
@@ -361,21 +361,21 @@ span.select2.select2-container.select2-container--default {
 
                <input type="hidden" class="form-control" readonly style="border: none;" id="subject_data" name="subject_data">
 
-                <input type="hidden" class="form-control" readonly style="border: none;" id="type" name="type">
+                <input type="hidden" class="form-control"  style="border: none;" id="type" name="type">
 
-                <input type="hidden" class="form-control" readonly style="border: none;" id="timer_data" name="timer">
+                <input type="hidden" class="form-control"  style="border: none;" id="timer_data" name="timer">
 
-               <input type="hidden" class="form-control" readonly style="border: none;" id="previous_option_data" name="previous_option">
+               <input type="hidden" class="form-control"  style="border: none;" id="previous_option_data" name="previous_option">
 
-               <input type="hidden" class="form-control" readonly style="border: none;" id="review_option_data" name="review_option">
+               <input type="hidden" class="form-control"  style="border: none;" id="review_option_data" name="review_option">
 
-                <input type="hidden" class="form-control" readonly style="border: none;" id="negative_data" name="negative">
+                <input type="hidden" class="form-control"  style="border: none;" id="negative_data" name="negative">
 
-               <input type="hidden" class="form-control" readonly style="border: none;" id="each_question_ans_data" name="each_question_ans">
+               <input type="hidden" class="form-control"  style="border: none;" id="each_question_ans_data" name="each_question_ans">
 
-               <input type="hidden" class="form-control" readonly style="border: none;" id="display_result_data" name="display_result">
+               <input type="hidden" class="form-control"  style="border: none;" id="display_result_data" name="display_result">
 
-                <input type="hidden" class="form-control" readonly style="border: none;" id="type" name="type">
+                <input type="hidden" class="form-control"  style="border: none;" id="type" name="type">
                </div>
             </div>
          </div>
@@ -587,11 +587,11 @@ span.select2.select2-container.select2-container--default {
              $('#type').val($('#ques_type').val());
 
              $('#timer_data').val($('#timer').val());
-             $('#previous_option_option').val($('#previous_option').val());
-             $('#review_option_option').val($('#review_option').val());
-             $('#negative_option').val($('#negative').val());
-             $('#each_question_ans_option').val($('#each_question_ans').val());
-             $('#display_result_option').val($('#display_result').val());
+             $('#previous_option_option').val($('input[name=previous_option]').val());
+             $('#review_option_option').val($('input[name=review_option]').val());
+             $('#negative_option').val($('input[name=negative]').val());
+             $('#each_question_ans_option').val($('input[name=each_question_ans]').val());
+             $('#display_result_option').val($('input[name=display_result]').val());
               
                       if($('#js').valid()) 
                       {
