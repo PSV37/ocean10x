@@ -905,7 +905,9 @@ input[type="radio"] {
                               <div class="quiz-container">
                                 <div id="quiz"></div>
                               </div>
+                              <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['review_option'] == 'Y') { ?>
                               <button type="button" id="previous">Previous Question</button>
+                        <? } ?>
                               <button type="button" id="next">Next Question</button>
                               <button id="submit">Submit Quiz</button>
                               <div id="results"></div>
