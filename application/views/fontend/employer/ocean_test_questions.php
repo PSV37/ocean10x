@@ -1247,7 +1247,7 @@ for(var key in categories){
       {
            var color = 'gray';
       }
-    $('.test_d').html('<input type="text" name="'+color+'" value ="'+categories[key]+'" ');
+    $('.test_d').append('<input type="text" name="'+color+'" value ="'+categories[key]+'" ');
       alert(key + ' (' + categories[key] + ')<br>');
      
 }
