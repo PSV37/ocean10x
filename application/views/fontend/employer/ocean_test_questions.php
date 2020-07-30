@@ -1238,7 +1238,7 @@ for(var key in categories){
       alert(key + ' (' + categories[key] + ')<br>')
       if (key == rgb(255, 255, 255)) 
       {
-           var color == white
+           var color = white
       }
     $('#test_d').html('<input type="text" name="'+color+'" value ="'+categories[key]+'" ');
 }
