@@ -2338,11 +2338,7 @@ label {
 </div>
 
 <script>
-  $("#profile-info").submit(function(){
-    alert('ff');
-    $("#update_photo").submit();
-
-  })
+  
     $(function() {
 
   // $('#date').datepicker({
