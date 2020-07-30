@@ -738,7 +738,7 @@ label {
                      <!-- </div></div></div> -->
                      <?php  $job_seeker_photo = $this->Job_seeker_photo_model->photo_by_seeker($jobseeker_id); ?>
                     <!--  <form class="avatar-form" id ="update_photo" action="<?php echo base_url('Job_seeker/save_photo');?>/<?php if(!empty($job_seeker_photo->js_photo_id)){echo $job_seeker_photo->js_photo_id;} ?>" enctype="multipart/form-data" method="post"> -->
-                       <form id="profile-info" enctype="multipart/form-data"> class="form-horizontal" action="<?php echo base_url('job_seeker/save_profile_details');?>" method="post" style="padding: 30px;"  >
+                       <form id="profile-info" enctype="multipart/form-data" class="form-horizontal" action="<?php echo base_url('job_seeker/save_profile_details');?>" method="post" style="padding: 30px;"  >
                      <div class="text-center" style="position:absolute;top:50px;left:-50px;">
                         <img src="<?php echo base_url() ?>upload/<?php if(!empty($job_seeker_photo->photo_path)) { echo $job_seeker_photo->photo_path;} else { echo "image-notfound.png";} ?>" class="avatar img-circle img-thumbnail" alt="avatar">
                         <h6>Upload a different photo...</h6>
