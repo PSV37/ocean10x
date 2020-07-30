@@ -1098,7 +1098,7 @@ input[type="radio"] {
     }
     
     
-  console.log('set_timer'+n);
+  console.log(slides.length);
 
   set_timer(n);
 
@@ -1275,7 +1275,7 @@ function set_timer(n)
                   
 }
 
-  function onTimesUp() {
+                  function onTimesUp() {
                     clearInterval(timerInterval);
                     $("#next").click();
                     // startTimer();
