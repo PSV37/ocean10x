@@ -1072,29 +1072,29 @@ input[type="radio"] {
       $(resultsContainer).append('<input type="hidden" name="correct" value ="'+numCorrect+'" >');
   }
 
-  function show_result(n)
-  {
-      const answerContainers = quizContainer.querySelectorAll('.answers');
+  // function show_result(n)
+  // {
+  //     const answerContainers = quizContainer.querySelectorAll('.answers');
 
-    // keep track of user's answers
-    let numCorrect = 0;
-      const answerContainer = answerContainers[n];
-      const selector = `input[name=question${n}]:checked`;
-      const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+  //   // keep track of user's answers
+  //   let numCorrect = 0;
+  //     const answerContainer = answerContainers[n];
+  //     const selector = `input[name=question${n}]:checked`;
+  //     const userAnswer = (answerContainer.querySelector(selector) || {}).value;
 
-      if(userAnswer === n.correctAnswer){
-        // add to the number of correct answers
-        numCorrect++;
+  //     if(userAnswer === n.correctAnswer){
+  //       // add to the number of correct answers
+  //       numCorrect++;
 
-        // color the answers green
-        answerContainers[n].style.color = 'lightgreen';
-      }
-      // if answer is wrong or blank
-      else{
-        // color the answers red
-        answerContainers[n].style.color = 'red';
-      }
-  }
+  //       // color the answers green
+  //       answerContainers[n].style.color = 'lightgreen';
+  //     }
+  //     // if answer is wrong or blank
+  //     else{
+  //       // color the answers red
+  //       answerContainers[n].style.color = 'red';
+  //     }
+  // }
 
   function showSlide(n) {
       // alert(n);
@@ -1144,7 +1144,7 @@ input[type="radio"] {
 
   function showNextSlide() {
       clearInterval(timerInterval);
-      show_result(currentSlide);
+      showResults();
       // $('#timer'+currentSlide).val('00');
     showSlide(currentSlide + 1);
   }
