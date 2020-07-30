@@ -204,7 +204,7 @@
     padding: 20px;
     float: left;
     margin-right: 25px;
-    margin-top: -152px;
+    margin-top: -170px;
       }
       .quizBox
       {
@@ -771,12 +771,15 @@
       }
       .test_d{margin-top:75px;border: solid 1px #d8d7d7;
       border-radius:13px;padding:20PX 0PX;}
-      .skip{margin-top: 156px;
+      .skip
+      {
+      margin-top: 190px;
       margin-left: 41px;
       width: 200px;
       background-color: #18c5bd;
       color: #fff;
-      border-radius: 3px;}
+      border-radius: 3px;
+}
       .rexp{padding-left:100px;margin-bottom:70px;}
       @import url(https://fonts.googleapis.com/css?family=Work+Sans:300,600);
 
@@ -884,8 +887,8 @@ input[type="radio"] {
                         <div class="smalltext">Hours</div>
                      </div> -->
                      
-                     <div style="    margin-right: -560px;
-    position: relative;">
+                     <div style="margin-right: -560px;
+    position: relative;    margin-top: 20px;">
                         <span class="seconds"></span>
                         <div class="smalltext">Seconds</div>
                      </div>
@@ -932,7 +935,7 @@ input[type="radio"] {
                   <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['review_option'] == 'Y') { ?>
                       
                  <!--  } ?> -->
-                  <div class="row preview" style="margin-top: 260px">
+                  <div class="row preview" style=" margin-top: 150px;">
                         <?php $i=1; foreach ($all_questions as $row) { ?>
                               <div class="col-md-2 exp-box" id="status<?php echo $i; ?>" onclick="getval(<?php echo $i; ?>);"><span name="levels[]" id="levels"   value=""><?php echo $i; ?></span></div>
                       <? $i++; } } ?>

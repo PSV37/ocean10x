@@ -6051,7 +6051,19 @@ function update_external()
                   $question_data  = $this->Master_model->get_master_row('questionbank', $select = 'questionbank.question,JSON_OBJECT("a",questionbank.option1,"b",questionbank.option2,"c",questionbank.option3,"d",questionbank.option4 ) as answers,time_for_question,questionbank_answer.answer_id as correctAnswer', $where, $join = $Join_data);
                     $resultArray['question'] = $question_data['question'];
                     $resultArray['time_for_question'] = $question_data['time_for_question'];
-                    $resultArray['correctAnswer'] = $question_data['correctAnswer'];
+                    if ($question_data['correctAnswer']==1) {
+                        $resultArray['correctAnswer'] = 'a'
+                    }
+                    elseif ($question_data['correctAnswer']==2) {
+                        $resultArray['correctAnswer'] = 'b'
+                    }
+                    elseif ($question_data['correctAnswer']==3) {
+                        $resultArray['correctAnswer'] = 'c'
+                    }
+                    elseif ($question_data['correctAnswer']==4) {
+                        $resultArray['correctAnswer'] = 'd'
+                    }
+                    // $resultArray['correctAnswer'] = $question_data['correctAnswer'];
 
                     $resultArray['answers'] = json_decode($question_data['answers']);
            
