@@ -942,7 +942,7 @@ public function save_profile_details()
         $config['upload_path']   = 'upload/';
         $config['allowed_types'] = 'gif|jpg|png';
         $config['encrypt_name']  = true;
-        $config['max_size']      = 12000;
+        // $config['max_size']      = 12000;
        /* $config['max_width']     = 310;
         $config['max_height']    = 310;*/
 
