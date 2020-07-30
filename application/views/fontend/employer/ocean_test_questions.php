@@ -1150,7 +1150,9 @@ input[type="radio"] {
 
   function showNextSlide() {
       clearInterval(timerInterval);
+       <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['correct_ans_each_ques'] == 'Y') { ?>
       show_result(currentSlide);
+<?php } ?>
       // $('#timer'+currentSlide).val('00');
     showSlide(currentSlide + 1);
   }
