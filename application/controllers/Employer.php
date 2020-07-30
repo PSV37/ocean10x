@@ -6122,9 +6122,9 @@ function update_external()
 
             $where_all = "questionbank_answer.question_id='$row' ";
 
-            $oceanchamp_tests = $this->Master_model->get_master_row('questionbank_answer', $select = FALSE, $where = $where_all, $join = FALSE);
+            $oceanchamp_tests1 = $this->Master_model->get_master_row('questionbank_answer', $select = FALSE, $where = $where_all, $join = FALSE);
 
-             if ($option == $oceanchamp_tests['answer_id']) {
+             if ($option == $oceanchamp_tests1['answer_id']) {
                      $mark    = 1;
                     $status = 'Yes';
                 } 
