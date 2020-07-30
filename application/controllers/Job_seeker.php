@@ -948,7 +948,7 @@ public function save_profile_details()
         $this->load->library('upload', $config);
 
         if (!$this->upload->do_upload('avatar_file')) {
-            echo "error"; die;
+            print_r($this->upload->display_errors()); die;
             $error = array('error' => $this->upload->display_errors());
             $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">'.$this->upload->display_errors().'</div>');
             redirect('job_seeker/seeker_info');
