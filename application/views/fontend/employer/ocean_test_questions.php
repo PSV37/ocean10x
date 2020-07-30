@@ -1080,24 +1080,25 @@ input[type="radio"] {
   function show_result(n)
   {
       const answerContainers = quizContainer.querySelectorAll('.answers');
-
+      var currentQuestion = myQuestions[n];
+      var questionNumber =n;
     // keep track of user's answers
     let numCorrect = 0;
-      const answerContainer = answerContainers[n];
-      const selector = `input[name=question${n}]:checked`;
+      const answerContainer = answerContainers[questionNumber];
+      const selector = `input[name=question${questionNumber}]:checked`;
       const userAnswer = (answerContainer.querySelector(selector) || {}).value;
 
-      if(userAnswer === n.correctAnswer){
+      if(userAnswer === currentQuestion.correctAnswer){
         // add to the number of correct answers
         numCorrect++;
 
         // color the answers green
-        answerContainers[n].style.color = 'lightgreen';
+        answerContainers[questionNumber].style.color = 'lightgreen';
       }
       // if answer is wrong or blank
       else{
         // color the answers red
-        answerContainers[n].style.color = 'red';
+        answerContainers[questionNumber].style.color = 'red';
       }
   }
 
@@ -1149,7 +1150,7 @@ input[type="radio"] {
 
   function showNextSlide() {
       clearInterval(timerInterval);
-      showResults();
+      show_result(currentSlide);
       // $('#timer'+currentSlide).val('00');
     showSlide(currentSlide + 1);
   }
