@@ -911,6 +911,9 @@ input[type="radio"] {
                               <button type="button" id="next">Next Question</button>
                               <button id="submit">Submit Quiz</button>
                               <div id="results"></div>
+                               <div id="total_performance">
+                        
+                  </div>
                      </form>
                         </div>
                      </div>
@@ -930,9 +933,7 @@ input[type="radio"] {
                       <? $i++; } } ?>
                         
                   </div>
-                  <div id="total_performance">
-                        
-                  </div>
+                 
                </div>
               <script>
                     
@@ -1061,6 +1062,7 @@ input[type="radio"] {
 
     // show number of correct answers out of total
     resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+      $(resultsContainer).append('<input type="hidden" name="correct" value ="'+numCorrect+'" >');
   }
 
   function showSlide(n) {

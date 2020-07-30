@@ -31,23 +31,23 @@
             <div class="a" style="margin-left:190px;">
                <div class="q1">
                   <li class="left_q">Total Questions&nbsp;</li>
-                  <li class="right_q">:&emsp;40</li>
+                  <li class="right_q">:&emsp;<?php echo $total_questions; ?></li>
                </div>
                <div class="q1">
                   <li class="left_q">Questions Attempt&nbsp;</li>
-                  <li class="right_q">:&emsp;35</li>
+                  <li class="right_q">:&emsp;<?php echo $attended_questions; ?></li>
                </div>
                <div class="q1">
                   <li class="left_q">Questioned Skipped&nbsp;</li>
-                  <li class="right_q">:&emsp;5</li>
+                  <li class="right_q">:&emsp;<?php echo $skipped_questions; ?></li>
                </div>
                <div class="q1">
                   <li class="left_q">Correct Answer&nbsp;</li>
-                  <li class="right_q">:&emsp;30</li>
+                  <li class="right_q">:&emsp;<?php echo $correct_ans; ?></li>
                </div>
                <div class="q1">
                   <li class="left_q">Wrong Answer&nbsp;</li>
-                  <li class="right_q">:&emsp;20</li>
+                  <li class="right_q">:&emsp;<?php echo $wrong_ans; ?></li>
                </div>
                <div class="q1" style="margin-top:20px;">
                   <li class="left_q" style="color:#000;font-size:16px;">Overall Result&nbsp;</li>

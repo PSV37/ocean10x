@@ -6131,8 +6131,13 @@ function update_external()
         );
         $last_id    = $this->Master_model->master_insert($exam_array, 'emp_test_result');
         }
-      
-            $this->load->view('fontend/employer/result_page');
+            
+            $data['total_questions'] = sizeof($questions);
+            $data['attended_questions'] = $this->input->post('green');
+            $data['skipped_questions'] = $this->input->post('gray') +  $this->input->post('white') ;
+            $data['correct_ans'] = $this->input->post('correct');
+            $data['wrong_ans'] = sizeof($questions)-$this->input->post('correct');
+            $this->load->view('fontend/employer/result_page',$data);
           
         }
     }
