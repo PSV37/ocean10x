@@ -6042,8 +6042,13 @@ function update_external()
                 foreach ($questions as $row) {
              //     
                   $where = "questionbank.ques_id='$row'";
+
+                   $Join_data      = array(
+                    'questionbank_answer' => 'questionbank_answer.question_id = questionbank.ques_id|Left OUTER '
+                
+            );
             
-                  $question_data  = $this->Master_model->get_master_row('questionbank', $select = 'questionbank.question,JSON_OBJECT("a",questionbank.option1,"b",questionbank.option2,"c",questionbank.option3,"d",questionbank.option4 ) as answers,time_for_question', $where, $join = false);
+                  $question_data  = $this->Master_model->get_master_row('questionbank', $select = 'questionbank.question,JSON_OBJECT("a",questionbank.option1,"b",questionbank.option2,"c",questionbank.option3,"d",questionbank.option4 ) as answers,time_for_question,questionbank_answer.answer_id as correctAnswer', $where, $join = $Join_data);
                     $resultArray['question'] = $question_data['question'];
                     $resultArray['time_for_question'] = $question_data['time_for_question'];
 

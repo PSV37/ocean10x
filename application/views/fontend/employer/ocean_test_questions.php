@@ -1268,7 +1268,7 @@ function set_timer(n)
                   </div>
                   `;
                   
-                  // startTimer(timePassed,TIME_LIMIT,COLOR_CODES,n);
+                  startTimer(timePassed,TIME_LIMIT,COLOR_CODES,n);
                   
 }
 
@@ -1279,15 +1279,16 @@ function set_timer(n)
 
                   }
                   
-                  function startTimer() {
+                  function startTimer(timePassed,TIME_LIMIT,COLOR_CODES,n)
+                  {
                     timerInterval = setInterval(() => {
                       timePassed = timePassed += 1;
                       timeLeft = TIME_LIMIT - timePassed;
                       document.getElementById("base-timer-label").innerHTML = formatTime(
                         timeLeft
                       );
-                      setCircleDasharray();
-                      setRemainingPathColor(timeLeft);
+                      setCircleDasharray(timePassed,TIME_LIMIT);
+                      setRemainingPathColor(timeLeft,COLOR_CODES);
                   
                       if (timeLeft === 0) {
                         onTimesUp();
@@ -1306,7 +1307,7 @@ function set_timer(n)
                     return `${minutes}:${seconds}`;
                   }
                   
-                  function setRemainingPathColor(timeLeft) {
+                  function setRemainingPathColor(timeLeft,COLOR_CODES) {
                     const { alert, warning, info } = COLOR_CODES;
                     if (timeLeft <= alert.threshold) {
                       document
@@ -1325,19 +1326,20 @@ function set_timer(n)
                     }
                   }
                   
-                  function calculateTimeFraction() {
+                  function calculateTimeFraction(timePassed,TIME_LIMIT) {
                     const rawTimeFraction = timeLeft / TIME_LIMIT;
                     return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
                   }
                   
-                  function setCircleDasharray() {
+                  function setCircleDasharray(timePassed,TIME_LIMIT) {
                     const circleDasharray = `${(
-                      calculateTimeFraction() * FULL_DASH_ARRAY
+                      calculateTimeFraction(timePassed,TIME_LIMIT) * 283
                     ).toFixed(0)} 283`;
                     document
                       .getElementById("base-timer-path-remaining")
                       .setAttribute("stroke-dasharray", circleDasharray);
                   }
+
               </script>
               <script>
                   function getTimeRemaining(endtime) {
