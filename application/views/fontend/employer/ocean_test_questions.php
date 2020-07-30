@@ -1140,7 +1140,7 @@ input[type="radio"] {
 
   function showNextSlide() {
       clearInterval(timerInterval);
-      show_result(n);
+      show_result(currentSlide);
       // $('#timer'+currentSlide).val('00');
     showSlide(currentSlide + 1);
   }
