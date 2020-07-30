@@ -961,7 +961,7 @@ public function save_profile_details()
                 'job_seeker_id' => $jobseeker_id,
                 'photo_path'    => $file_name,
             );
-            echo "success"; die;
+            // echo "success"; die;
 
             
             if (!$job_seeker_photo_row) {
