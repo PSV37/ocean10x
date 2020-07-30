@@ -1159,9 +1159,7 @@ input[type="radio"] {
 
   function showNextSlide() {
       clearInterval(timerInterval);
-       <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['correct_ans_each_ques'] == 'Y') { ?>
-      show_result(currentSlide);
-<?php } ?>
+      
       // $('#timer'+currentSlide).val('00');
     showSlide(currentSlide + 1);
   }
@@ -1251,6 +1249,9 @@ function get_checked(n)
 {
       // alert(n);
       var j = n + 1;
+       <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['correct_ans_each_ques'] == 'Y') { ?>
+      show_result(currentSlide);
+<?php } ?>
       $('#status'+j).css('background-color', '#94f36d');
 
 
