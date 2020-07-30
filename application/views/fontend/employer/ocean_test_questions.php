@@ -1223,7 +1223,10 @@ input[type="radio"] {
   console.log('currentSlide'+currentSlide);
 
   // Event listeners
-  submitButton.addEventListener('click', showResults);
+  <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['correct_ans_each_ques'] == 'Y') { ?>
+       submitButton.addEventListener('click', showResults);
+<?php } ?>
+ 
  
   nextButton.addEventListener("click", showNextSlide);
 

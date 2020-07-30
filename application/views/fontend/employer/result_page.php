@@ -70,7 +70,20 @@
                            </g>
                         </g>
                      </svg>
-                   <?php echo $percent; ?>
+                   <?php if ($percent>=75) {
+                     echo "Excellent";
+                   }elseif ($percent >= 60)
+                   {
+                     echo "Good";
+                   }
+                   elseif ($percent >= 40) {
+                      echo "Satisfactory";
+                   }
+                   else
+                   {
+                     echo "Poor";
+                   }
+                    ?>
                   </li>
                </div>
             </div>
