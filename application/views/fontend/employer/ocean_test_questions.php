@@ -57,16 +57,18 @@
       }
       /*dd*/
       #clockdiv {
-      font-family: sans-serif;
-      color: #fff;
-      display: inline-block;
-      font-weight: 100;
-      /* text-align: center; */
-      font-size: 30px;
-      position: fixed;
-      right: 62px;
-      top:153px;
-      }
+     position: relative;
+    font-family: sans-serif;
+    color: #fff;
+    display: inline-block;
+    font-weight: 100;
+    text-align: center;
+    font-size: 30px;
+    /* position: fixed; */
+    /* right: 62px; */
+    /* top: 153px; */
+    /* margin-right: -740px; */
+}
       #clockdiv > div{
       padding: 10px;
       border-radius: 3px;
@@ -195,13 +197,14 @@
       margin-bottom: 0px;
       }
       .multipleChoiceQues{
-      width: 65%;
-      padding: 10px;
-      background-color: #afe1de;
-      border-radius: 13px;
-      padding: 20px;
-      float:left;
-      margin-right: 25px;
+     width: 65%;
+    padding: 10px;
+    background-color: #afe1de;
+    border-radius: 13px;
+    padding: 20px;
+    float: left;
+    margin-right: 25px;
+    margin-top: -152px;
       }
       .quizBox
       {
@@ -849,13 +852,13 @@ input[type="radio"] {
 }
 
 .slide2{
-  position: absolute;
-     left: 265px;
+     position: absolute;
+    left: 265px;
     top: 15px;
-  width: 100%;
-  z-index: 1;
-  opacity: 0;
-  transition: opacity 0.5s;
+    width: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.5s;
 }
 .active-slide{
   opacity: 1;
@@ -881,7 +884,8 @@ input[type="radio"] {
                         <div class="smalltext">Hours</div>
                      </div> -->
                      
-                     <div style="margin-right: 90px;">
+                     <div style="    margin-right: -560px;
+    position: relative;">
                         <span class="seconds"></span>
                         <div class="smalltext">Seconds</div>
                      </div>
