@@ -6052,16 +6052,16 @@ function update_external()
                     $resultArray['question'] = $question_data['question'];
                     $resultArray['time_for_question'] = $question_data['time_for_question'];
                     if ($question_data['correctAnswer']==1) {
-                        $resultArray['correctAnswer'] = 'a'
+                        $resultArray['correctAnswer'] = 'a';
                     }
                     elseif ($question_data['correctAnswer']==2) {
-                        $resultArray['correctAnswer'] = 'b'
+                        $resultArray['correctAnswer'] = 'b';
                     }
                     elseif ($question_data['correctAnswer']==3) {
-                        $resultArray['correctAnswer'] = 'c'
+                        $resultArray['correctAnswer'] = 'c';
                     }
                     elseif ($question_data['correctAnswer']==4) {
-                        $resultArray['correctAnswer'] = 'd'
+                        $resultArray['correctAnswer'] = 'd';
                     }
                     // $resultArray['correctAnswer'] = $question_data['correctAnswer'];
 
