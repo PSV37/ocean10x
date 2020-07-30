@@ -3203,7 +3203,7 @@ namespace_regex: true
 },
 
 'designation_id':{
-email_regex: true
+//email_regex: true
 },
 
 
@@ -3249,15 +3249,12 @@ namespace_regex: "Please type only alphabets"
 
 'designation_id':{
   required: "Must Fill !",
-  matches: "Didn't match!",      
-  minlength: "Please Enter 10 digit phone numbers!",        
-  maxlength: "Maximum length 10 digits!"
+  matches: "Didn't match!"
 },
 
 'dept_id':{
-required: "Must Fill !",
-minlength: "Please type atleast 10 digits",
-maxlength: "Please type atleast 10 digits"
+//required: "Must Fill !",
+
 },
 
 'start_date':{
@@ -3305,12 +3302,12 @@ namespace_regex: true
 },
 
 'designation_id':{
-email_regex: true
+//email_regex: true
 },
 
 
 'dept_id':{
-phonenumber_regex: true
+//phonenumber_regex: true
 }, 
 
 'start_date':{
