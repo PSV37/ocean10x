@@ -1099,16 +1099,18 @@ input[type="radio"] {
     
     
   console.log('set_timer'+n);
-  
+
   set_timer(n);
 
   }
 
   function showNextSlide() {
+      $('#timer'+currentSlide).val('00');
     showSlide(currentSlide + 1);
   }
 
   function showPreviousSlide() {
+      // $('#timer'+currentSlide).val();
     showSlide(currentSlide - 1);
   }
 
