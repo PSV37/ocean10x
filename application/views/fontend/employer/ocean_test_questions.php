@@ -1074,6 +1074,10 @@ input[type="radio"] {
 
   function show_result(n)
   {
+      const answerContainers = quizContainer.querySelectorAll('.answers');
+
+    // keep track of user's answers
+    let numCorrect = 0;
       const answerContainer = answerContainers[n];
       const selector = `input[name=question${n}]:checked`;
       const userAnswer = (answerContainer.querySelector(selector) || {}).value;
