@@ -51,7 +51,179 @@ label {
 
 </style>
 
-
+<style>
+  
+  body {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+}
+.access_multi_select > .selected-items {
+    position: relative;
+    padding: 2px 80px 2px 2px;
+}
+.access_multi_select > .selected-items > .placeholder {
+    display: inline-block;
+    padding: 6.5px;
+}
+.access_multi_select > .selected-items > button {
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    background-color: transparent;
+    top: 7px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.access_multi_select > .selected-items > button:hover {
+    transform: scale(1.2);
+}
+.access_multi_select > .selected-items > button:nth-child(2) {
+    background: url("../images/select-all.jpg") no-repeat center center;
+    background-size: contain;
+    right: 7px;
+}
+.access_multi_select > .selected-items > button:nth-child(3) {
+    background: url("../images/deselect-all.jpg") no-repeat center center;
+    background-size: contain;
+    right: 40px;
+}
+.access_multi_select > .selected-items > .item {
+    display: inline-block;
+    background-color: #00BCD4;
+    padding: 2px 5px 5px 17px;
+    border-radius: 2px;
+    color: #fff;
+    margin: 2px;
+}
+.access_multi_select > .selected-items > .item > button {
+    background-color: transparent;
+    color: #fff;
+    border: 0;
+    font-weight: 900;
+    cursor: pointer;
+    vertical-align: bottom;
+}
+.access_multi_select > .selected-items > .item > button:hover {
+    color: #ccc;
+}
+.access_multi_select > .selected-items.expand {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.access_multi_select > .dropdown {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    max-height: 0;
+    -webkit-transition: .75s;
+    -moz-transition: .75s;
+    -ms-transition: .75s;
+    -o-transition: .75s;
+    transition: .75s;
+    overflow-y: hidden;
+    padding: 0;
+    border-top-width: 0;
+    border-color: transparent;
+}
+.access_multi_select > .dropdown.expand {
+    max-height: 250px;
+    border-color: #ced4da;
+}
+.access_multi_select > .dropdown > .filter {
+    position: relative;
+}
+.access_multi_select > .dropdown > .filter > input {
+    width: 97%;
+    border-radius: 2px;
+    margin: 5px auto 0;
+    border: none;
+    box-shadow: 1px 2px 3px 1px rgba(181, 180, 180, 0.5);
+}
+.access_multi_select > .dropdown > .filter > button {
+    position: absolute;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    font-weight: 900;
+    color: #ccc;
+    top: 5px;
+    right: 15px;
+}
+.access_multi_select > .dropdown > .filter > button:hover {
+    color: #aaa;
+}
+.access_multi_select > .dropdown > .items {
+    margin-top: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+.access_multi_select > .dropdown > .items::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
+    border-radius: 10px;
+}
+.access_multi_select > .dropdown > .items::-webkit-scrollbar {
+    width: 6px;
+    background-color: #F5F5F5;
+}
+.access_multi_select > .dropdown > .items::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #aaa;
+}
+.access_multi_select > .dropdown > .items > .item {
+    cursor: pointer;
+    border-bottom: 1px solid #f5f5f5;
+    padding: 5px 10px;
+}
+.access_multi_select > .dropdown > .items > .item > .custom-checkbox > label {
+    padding: 5px 10px;
+    display: block;
+    cursor: pointer;
+}
+.access_multi_select > .dropdown > .items > .item > .custom-checkbox > label::before,
+.access_multi_select > .dropdown > .items > .item > .custom-checkbox > label::after {
+    margin: 5px 10px;
+}
+.access_multi_select > .dropdown > .items > .item:hover {
+    background-color: #607D8B;
+    color: #fff;
+}
+.access_multi_select.rtl {
+    direction: rtl;
+    text-align: right;
+}
+.access_multi_select.rtl > .selected-items {
+    padding: 2px 2px 2px 80px;
+}
+.access_multi_select > .selected-items > button:nth-child(2) {
+    left: auto;
+    right: 7px;
+}
+.access_multi_select > .selected-items > button:nth-child(3) {
+    left: auto;
+    right: 40px;
+}
+.access_multi_select.rtl > .selected-items > button:nth-child(2) {
+    right: auto;
+    left: 7px;
+}
+.access_multi_select.rtl > .selected-items > button:nth-child(3) {
+    right: auto;
+    left: 40px;
+}
+.access_multi_select.rtl > .dropdown > .filter > button {
+    right: auto;
+    left: 15px;
+}
+.access_multi_select.rtl > .dropdown > .items > .item > .custom-checkbox {
+    padding: 0 1.5rem 0 0;
+}
+.access_multi_select.rtl > .dropdown > .items > .item > .custom-checkbox > label::before,
+.access_multi_select.rtl > .dropdown > .items > .item > .custom-checkbox > label::after {
+    left: auto;
+    right: 0;
+}
+</style>
 
 <!---header end--->
 <div class="container-fluid">
@@ -1485,6 +1657,11 @@ label {
                                          }
                                        ?>">
 
+                                        <input type="text" class="form-control"
+                   name="country"
+                   data-access_multi_select="true"
+                   placeholder="Select a Country">
+                   
                                      <input type="text" name="city_id" class="allowalphanumeric form-control" id="tokenfield" style="display: inline-block;"  placeholder="Enter Location" onkeydown="check_key();"
                         value="<?php if(!empty($job_info->city_id) ){echo $job_info->city_id; } ?><?php echo set_value('city_id'); ?>"><?php echo form_error('city_id'); ?>
 
@@ -3966,3 +4143,272 @@ $(document).ready(function () {
 
 
 
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="dist/js/multi_select.js"></script>
+<script>
+      $(document).ready(function () {
+        // Country
+        var items = [
+            {value: 1, text: 'United Arab Emirates'},
+            {value: 2, text: 'Saudi Arabia'},
+            {value: 3, text: 'Israel'},
+            {value: 4, text: 'India'},
+            {value: 5, text: 'Japan'},
+            {value: 6, text: 'France'},
+            {value: 7, text: 'Germany'},
+            {value: 8, text: 'United Kingdom'},
+            {value: 9, text: 'China'},
+            {value: 10, text: 'Russia'},
+            {value: 11, text: 'United States'},
+            {value: 12, text: 'Switzerland'},
+            {value: 13, text: 'Canada'},
+            {value: 14, text: 'Sweden'},
+            {value: 15, text: 'Australia'}
+            
+        ];
+ 
+        // Set a default values in list
+        var select = $('[data-access_multi_select="true"]').check_multi_select({
+            multi_select: true,
+            items: items,
+            defaults: [3, 4, 5],
+            rtl: false
+        });
+ 
+        // Display the selected Values
+        $('#display_selected').click(function () {
+            alert(select.check_multi_select('fetch_country'))
+        });
+    });
+</script>
+
+<script>
+  function genRnd(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+ 
+// Removes an Item From Selected Items and Deselects
+function removeItem(id) {
+    var multi_select = $('#access_multi_select-' + id.split('-')[0]);
+    var selected_item = multi_select.find('[data-val="' + id + '"]');
+    var item = multi_select.find('[id="' + id + '"]');
+ 
+    item.prop('checked', false);
+    selected_item.remove();
+ 
+    if (multi_select.find('.selected-items > .item').length < 1) {
+        multi_select.find('.selected-items > .placeholder').show();
+    }
+}
+ 
+function selectAll(id, multi_select) {
+    var select = $('#access_multi_select-' + id);
+    select.find('.dropdown').find('input').prop('checked', true);
+ 
+    if (multi_select) {
+        select.find('.placeholder').hide();
+        select.find('.selected-items > .item').remove();
+        select.find('.dropdown > .items').find('input').each(function() {
+            var item = $(this);
+            item.prop('checked', true);
+ 
+            select.find('.selected-items').append(
+                '<span class="item" data-val="' + item.attr('id') + '">' + item.parent().find('label').html() +
+                '   <button type="button" onclick="removeItem($(this).parent().attr(\'data-val\'));">&times;</button>' +
+                '</span>'
+            );
+        });
+    } else {
+        alert('Multi-Select option is off! \nPlease turn it on to select all.');
+    }
+}
+ 
+function deselectAll(id) {
+    var select = $('#access_multi_select-' + id);
+    select.find('.dropdown').find('input').prop('checked', false);
+ 
+    select.find('.selected-items > .placeholder').show();
+    select.find('.selected-items > .item').remove();
+}
+ 
+(function($) {
+    var settings, input, select, selectId, dropDown, selectedItems;
+ 
+    var methods = {
+        init: function(options) {
+            settings = $.extend({
+                multi_select: true,
+                items: [],
+                defaults: [],
+                filter_text: 'Filter',
+                rtl: false,
+                case_sensitive: false
+            }, options);
+ 
+            input = $(this);
+            selectId = genRnd(1000, 10000);
+ 
+            input.css({
+                'display': 'none',
+                'position': 'absolute'
+            });
+ 
+            select = $(
+                '<div class="access_multi_select ' + (settings.rtl ? 'rtl' : '') + '" id="access_multi_select-' + selectId + '">' +
+                '   <div class="selected-items form-control">' +
+                '      <span class="placeholder">' + input.attr('placeholder') + '</span>' +
+                '      <button type="button" onclick="selectAll(' + selectId + ', ' + settings.multi_select + ')"></button>' +
+                '      <button type="button" onclick="deselectAll(' + selectId + ')"></button>' +
+                '   </div>' +
+                '   <div class="dropdown form-control">' +
+                '       <div class="filter">' +
+                '           <input type="text" class="form-control" placeholder="' + settings.filter_text + '">' +
+                '           <button type="button" onclick="$(this).parent().find(\'input\').val(\'\').focus()">&times;</button>' +
+                '       </div>' +
+                '       <div class="items"></div>' +
+                '   </div>' +
+                '</div>').insertAfter(input);
+ 
+            dropDown = select.find('.dropdown');
+            selectedItems = select.find('.selected-items');
+ 
+            if (settings.defaults.length > 0) {
+                selectedItems.find('.placeholder').hide();
+            }
+ 
+            if (!settings.multi_select && settings.defaults.length > 1) {
+                alert('Multi-Select is off! \nPlease turn it on to select more than one item.');
+ 
+                return;
+            }
+ 
+            settings.items.forEach(function(item) {
+                select.find('.items').append(
+                    '<div class="item">' +
+                    '   <div class="custom-control custom-checkbox">' +
+                    '       <input type="checkbox" class="custom-control-input" id="' + selectId + '-chbx-' + item['value'] + '" ' + (settings.defaults.includes(item['value']) ? 'checked' : '') + '>' +
+                    '       <label class="custom-control-label ' + selectId + '-chbx-' + item['value'] + '" for="' + selectId + '-chbx-' + item['value'] + '">' + item['text'] + '</label>' +
+                    '   </div>' +
+                    '</div>'
+                );
+ 
+                if (settings.defaults.includes(item['value'])) {
+                    // Selected Items
+                    selectedItems.append(
+                        '<span class="item" data-val="' + selectId + '-chbx-' + item['value'] + '">' + item['text'] +
+                        '   <button type="button" onclick="removeItem($(this).parent().attr(\'data-val\'));">&times;</button>' +
+                        '</span>'
+                    );
+                }
+            });
+ 
+            // Propagation Onclick Disable
+            dropDown.click(function(e) {
+                e.stopPropagation();
+            });
+ 
+            // Clicks anywhere Other than The Multi-select
+            $(document).mouseup(function(e) {
+                if (!select.is(e.target) && select.has(e.target).length === 0) {
+                    selectedItems.removeClass('expand');
+                    dropDown.removeClass('expand');
+                }
+            });
+ 
+            // Dropdown On Click
+            dropDown.find('.item').click(function(e) {
+                e.stopPropagation();
+                e.preventDefault();
+ 
+                var item = $(this);
+                var inputElem = item.find('input');
+ 
+                if (selectedItems.find('.item').length < 1) {
+                    selectedItems.find('.placeholder').hide();
+                }
+ 
+                if (inputElem.prop('checked')) {
+                    selectedItems.find('[data-val="' + inputElem.attr('id') + '"]').remove();
+ 
+                    inputElem.prop('checked', false);
+ 
+                    if (selectedItems.find('.item').length < 1) {
+                        selectedItems.find('.placeholder').show();
+                    }
+                } else {
+ 
+                    if (!settings.multi_select) {
+                        dropDown.find('.item input').prop('checked', false);
+                        select.find('.selected-items > .item').remove();
+                    }
+ 
+                    inputElem.prop('checked', true);
+ 
+                    select.find('.selected-items').append(
+                        '<span class="item" data-val="' + inputElem.attr('id') + '">' + item.find('label').html() +
+                        '   <button type="button" onclick="removeItem($(this).parent().attr(\'data-val\'));">&times;</button>' +
+                        '</span>'
+                    );
+                }
+            });
+ 
+            // Expand Dropdown
+            select.on('click', function() {
+                dropDown.addClass('expand');
+                selectedItems.addClass('expand');
+            });
+ 
+            // Filter Input Changes
+            select.find('input[type="text"]').on('keyup focus', function() {
+                var filter = $(this);
+                var text = filter.val();
+ 
+                if (settings.case_sensitive) {
+                    dropDown.find('.item').each(function() {
+                        var item = $(this);
+                        if (item.html().includes(text)) {
+                            item.show();
+                        } else {
+                            item.hide();
+                        }
+                    });
+                } else {
+                    dropDown.find('.item').each(function() {
+                        var item = $(this);
+                        if (item.html().toLowerCase().includes(text.toLowerCase())) {
+                            item.show();
+                        } else {
+                            item.hide();
+                        }
+                    });
+                }
+            });
+ 
+            return select;
+        },
+        fetch_country: function() {
+            var items = [];
+            select.find('.dropdown').find('input').each(function() {
+                var item = $(this);
+ 
+                if (item.prop('checked')) {
+                    items.push(item.attr('id').split('-')[2]);
+                }
+            });
+ 
+            return items;
+        }
+    };
+ 
+    $.fn.check_multi_select = function(methodOrOptions) {
+        if (methods[methodOrOptions]) {
+            return methods[methodOrOptions].apply(this, Array.prototype.slice.call(arguments, 1));
+        } else if (typeof methodOrOptions === 'object' || !methodOrOptions) {
+            return methods.init.apply(this, arguments);
+        } else {
+            $.error('Method ' + methodOrOptions + ' does not exist on jQuery.check_multi_select');
+        }
+    };
+})(jQuery);
+</script>
