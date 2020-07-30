@@ -1057,9 +1057,10 @@ input[type="radio"] {
       if(userAnswer === currentQuestion.correctAnswer){
         // add to the number of correct answers
         numCorrect++;
-
+       <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['correct_ans_each_ques'] == 'Y') { ?>
         // color the answers green
         answerContainers[questionNumber].style.color = '#06bb06';
+         <?php } ?>
       }
       else if(userAnswer === {})
       {
@@ -1067,13 +1068,16 @@ input[type="radio"] {
       }
       // if answer is wrong or blank
       else{
+       <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['correct_ans_each_ques'] == 'Y') { ?>
         // color the answers red
         answerContainers[questionNumber].style.color = 'red';
+         <?php } ?>
       }
     });
-
+     <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['correct_ans_each_ques'] == 'Y') { ?>
     // show number of correct answers out of total
     resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+     <?php } ?>
       $(resultsContainer).append('<input type="hidden" name="correct" value ="'+numCorrect+'" >');
   }
 
@@ -1093,12 +1097,17 @@ input[type="radio"] {
         numCorrect++;
 
         // color the answers green
+       
         answerContainers[questionNumber].style.color = '#06bb06';
+     
       }
       // if answer is wrong or blank
       else{
+      
         // color the answers red
         answerContainers[questionNumber].style.color = 'red';
+       
+
       }
   }
 
@@ -1223,9 +1232,9 @@ input[type="radio"] {
   console.log('currentSlide'+currentSlide);
 
   // Event listeners
-  <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['correct_ans_each_ques'] == 'Y') { ?>
+ 
        submitButton.addEventListener('click', showResults);
-<?php } ?>
+
  
  
   nextButton.addEventListener("click", showNextSlide);
