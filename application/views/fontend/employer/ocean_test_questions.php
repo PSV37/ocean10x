@@ -1099,6 +1099,8 @@ input[type="radio"] {
     
     
  var total_slides=slides.length;
+ console.log(n);
+ console.log(total_slides);
 
   set_timer(n,total_slides);
 
@@ -1112,7 +1114,7 @@ input[type="radio"] {
 
   function showPreviousSlide() {
       clearInterval(timerInterval);
-      
+
       // $('#timer'+currentSlide).val();
     showSlide(currentSlide - 1);
   }
@@ -1280,6 +1282,7 @@ function set_timer(n,total_slides)
 
                   function onTimesUp(n,total_slides) {
                     clearInterval(timerInterval);
+
                     if (n==total_slides) 
                     {
                     $("#submit").click();
