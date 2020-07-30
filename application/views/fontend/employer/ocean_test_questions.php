@@ -1051,7 +1051,7 @@ input[type="radio"] {
       // find selected answer
       const answerContainer = answerContainers[questionNumber];
       const selector = `input[name=question${questionNumber}]:checked`;
-      const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+      const userAnswer = (answerContainer.querySelector(selector)).value;
 
       // if answer is correct
       if(userAnswer === currentQuestion.correctAnswer){
