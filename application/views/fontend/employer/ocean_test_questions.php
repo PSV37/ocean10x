@@ -1059,7 +1059,7 @@ input[type="radio"] {
         numCorrect++;
 
         // color the answers green
-        answerContainers[questionNumber].style.color = 'lightgreen';
+        answerContainers[questionNumber].style.color = '#06bb06';
       }
       else if(userAnswer === {})
       {
@@ -1093,7 +1093,7 @@ input[type="radio"] {
         numCorrect++;
 
         // color the answers green
-        answerContainers[questionNumber].style.color = 'lightgreen';
+        answerContainers[questionNumber].style.color = '#06bb06';
       }
       // if answer is wrong or blank
       else{
