@@ -6129,8 +6129,17 @@ function update_external()
                     $status = 'Yes';
                 } 
                 else {
-                    $status = 'No';
-                     $mark    = 0;
+                    if (isset($oceanchamp_tests) && $oceanchamp_tests['negative_marks'] == 'Y') {
+                        $status = 'No';
+                        $mark    = '-1';
+                    }
+                    else
+                    {
+                        $status = 'No';
+                        $mark    = 0;
+                    }
+                    
+
                 }
 
             $exam_array = array(
@@ -6151,6 +6160,15 @@ function update_external()
             $data['skipped_questions'] = $this->input->post('gray') +  $this->input->post('white') ;
             $data['correct_ans'] = $this->input->post('correct');
             $data['wrong_ans'] = sizeof($questions)-$this->input->post('correct');
+            if (isset($oceanchamp_tests) && $oceanchamp_tests['final_result'] == 'Y') 
+            { 
+             $data['result'] =  $data['correct_ans']-$data['wrong_ans'];
+            }
+            else
+            {
+                $data['result'] =  $data['correct_ans'];
+
+            }
             $this->load->view('fontend/employer/result_page',$data);
         } 
         else
