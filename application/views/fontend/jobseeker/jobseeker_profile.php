@@ -734,15 +734,16 @@ label {
                
                <div id="home" class="tab-pane fade in active">
                   <div class="header-p-img" style="position:relative;">
-                     <form id="profile-info" class="form-horizontal" action="<?php echo base_url('job_seeker/save_profile_details');?>" method="post" style="padding: 30px;">
                      <img src="https://www.sassm.in/education/images/blog-header.jpg" style="width:100%; height:140px;position:relative;margin-bottom:140px;">
                      <!-- </div></div></div> -->
                      <?php  $job_seeker_photo = $this->Job_seeker_photo_model->photo_by_seeker($jobseeker_id); ?>
+                     <form class="avatar-form" id ="update_photo" action="<?php echo base_url('Job_seeker/save_photo');?>/<?php if(!empty($job_seeker_photo->js_photo_id)){echo $job_seeker_photo->js_photo_id;} ?>" enctype="multipart/form-data" method="post">
                      <div class="text-center" style="position:absolute;top:50px;left:-50px;">
                         <img src="<?php echo base_url() ?>upload/<?php if(!empty($job_seeker_photo->photo_path)) { echo $job_seeker_photo->photo_path;} else { echo "image-notfound.png";} ?>" class="avatar img-circle img-thumbnail" alt="avatar">
                         <h6>Upload a different photo...</h6>
                         <input type="file" class="text-center center-block file-upload">
                      </div>
+                   </form>
                      <div class="row">
                         <span class="edit"><a href="#" data-toggle="modal" data-target="#myModal50">Edit</a></span> 
                      </div>
@@ -827,7 +828,7 @@ label {
                            </ul>
                         </div>
                      </div>
-                    
+                     <form id="profile-info" class="form-horizontal" action="<?php echo base_url('job_seeker/save_profile_details');?>" method="post" style="padding: 30px;">
                         <div class="col-md-12">
                            <div class="uplode-resume">
                               <label for="avatarInput">Upload Resume</label>
@@ -2336,6 +2337,10 @@ label {
 </div>
 
 <script>
+  $("#profile-info").submit(function(){
+    $("#update_photo").submit();
+
+  })
     $(function() {
 
   // $('#date').datepicker({
