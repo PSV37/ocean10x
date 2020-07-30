@@ -1087,12 +1087,12 @@ input[type="radio"] {
         numCorrect++;
 
         // color the answers green
-        answerContainers[questionNumber].style.color = 'lightgreen';
+        answerContainers[n].style.color = 'lightgreen';
       }
       // if answer is wrong or blank
       else{
         // color the answers red
-        answerContainers[questionNumber].style.color = 'red';
+        answerContainers[n].style.color = 'red';
       }
   }
 
