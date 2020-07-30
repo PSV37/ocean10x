@@ -1250,7 +1250,7 @@ for(var key in categories){
       {
            var color = 'gray';
       }
-    $('#total_performance').html('<input type="text" name="'+color+'" value ="'+categories[key]+'" ');
+    $('#total_performance').innerHTML('<input type="text" name="'+color+'" value ="'+categories[key]+'" ');
       alert(key + ' (' + categories[key] + ')<br>');
      
 }
