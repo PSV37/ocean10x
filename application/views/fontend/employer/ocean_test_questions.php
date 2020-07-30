@@ -1235,7 +1235,7 @@ function getval(value)
 
       // $('#result').append('<hr>');
 for(var key in categories){
-       if (key == rgb(255, 255, 255)) 
+       if (key == 'rgb(255, 255, 255)') 
       {
            var color = white
       }
