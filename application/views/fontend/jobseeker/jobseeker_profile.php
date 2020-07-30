@@ -742,7 +742,7 @@ label {
                      <div class="text-center" style="position:absolute;top:50px;left:-50px;">
                         <img src="<?php echo base_url() ?>upload/<?php if(!empty($job_seeker_photo->photo_path)) { echo $job_seeker_photo->photo_path;} else { echo "image-notfound.png";} ?>" class="avatar img-circle img-thumbnail" alt="avatar">
                         <h6>Upload a different photo...</h6>
-                        <input type="file" class="text-center center-block file-upload" name="avatar_file">
+                        <input type="file" class="text-center center-block file-upload" name="js_photo">
                      </div>
                    <!-- </form> -->
                      <div class="row">

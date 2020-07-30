@@ -947,8 +947,8 @@ public function save_profile_details()
         $config['max_height']    = 310;*/
 
         $this->load->library('upload', $config);
-
-        if (!$this->upload->do_upload('avatar_file')) {
+         $field_name = "js_photo";
+        if (!$this->upload->do_upload($field_name)) {
             print_r($this->upload->display_errors()); die;
             $error = array('error' => $this->upload->display_errors());
             $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">'.$this->upload->display_errors().'</div>');
