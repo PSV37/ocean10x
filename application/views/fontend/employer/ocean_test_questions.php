@@ -1099,7 +1099,7 @@ input[type="radio"] {
     
     
   console.log('set_timer'+n);
-  showResults()
+  
   set_timer(n);
 
   }
