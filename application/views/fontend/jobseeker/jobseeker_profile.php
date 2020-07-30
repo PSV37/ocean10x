@@ -2366,18 +2366,18 @@ for(var i =1; i < max_experience; i++){
 }  
 
 
-
-  function disableUpperDP(count) {
+//
+  //function disableUpperDP(count) {
   
-  // alert($("#upChkDisable_"+count).is(":checked"));
-  alert(count);
-  $("#resDate_"+count).attr("disabled", $("#upChkDisable_"+count).is(":checked"));
-   if($("#upChkDisable_"+count).is(":checked")){
-     $('#resDate_'+count).val("Continue");
-   } else {
-     $('#resDate_'+count).val("");
-   }
-}
+//  // alert($("#upChkDisable_"+count).is(":checked"));
+  //alert(count);
+  //$("#resDate_"+count).attr("disabled", $("#upChkDisable_"+count).is(":checked"));
+  // if($("#upChkDisable_"+count).is(":checked")){
+    // $('#resDate_'+count).val("Continue");
+//   } else {
+  //   $('#resDate_'+count).val("");
+  // }
+//}
 
 
 </script>
