@@ -1239,7 +1239,15 @@ for(var key in categories){
       {
            var color = 'white';
       }
-    $('#test_d').html('<input type="text" name="'+color+'" value ="'+categories[key]+'" ');
+      else if (key == 'rgb(148, 243, 109)') 
+      {
+           var color = 'green';
+      }
+      else if (key == 'rgb(128, 128, 128)') 
+      {
+           var color = 'gray';
+      }
+    $('.test_d').html('<input type="text" name="'+color+'" value ="'+categories[key]+'" ');
       alert(key + ' (' + categories[key] + ')<br>');
      
 }
