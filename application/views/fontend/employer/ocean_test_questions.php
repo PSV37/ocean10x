@@ -1061,6 +1061,10 @@ input[type="radio"] {
         // color the answers green
         answerContainers[questionNumber].style.color = 'lightgreen';
       }
+      else if(userAnswer === '')
+      {
+
+      }
       // if answer is wrong or blank
       else{
         // color the answers red
