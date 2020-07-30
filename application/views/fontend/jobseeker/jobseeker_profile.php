@@ -734,6 +734,7 @@ label {
                
                <div id="home" class="tab-pane fade in active">
                   <div class="header-p-img" style="position:relative;">
+                     <form id="profile-info" class="form-horizontal" action="<?php echo base_url('job_seeker/save_profile_details');?>" method="post" style="padding: 30px;">
                      <img src="https://www.sassm.in/education/images/blog-header.jpg" style="width:100%; height:140px;position:relative;margin-bottom:140px;">
                      <!-- </div></div></div> -->
                      <?php  $job_seeker_photo = $this->Job_seeker_photo_model->photo_by_seeker($jobseeker_id); ?>
@@ -826,7 +827,7 @@ label {
                            </ul>
                         </div>
                      </div>
-                     <form id="profile-info" class="form-horizontal" action="<?php echo base_url('job_seeker/save_profile_details');?>" method="post" style="padding: 30px;">
+                    
                         <div class="col-md-12">
                            <div class="uplode-resume">
                               <label for="avatarInput">Upload Resume</label>

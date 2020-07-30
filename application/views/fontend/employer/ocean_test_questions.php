@@ -1251,7 +1251,7 @@ function get_checked(n)
       var j = n + 1;
        <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['correct_ans_each_ques'] == 'Y') { ?>
       show_result(currentSlide);
-      $('input[name = "question"'+n+']').attr('disabled', true);
+      $('input[name = "question'+n+'"]').attr('disabled', true);
 <?php } ?>
       $('#status'+j).css('background-color', '#94f36d');
 
