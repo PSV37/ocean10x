@@ -49,6 +49,7 @@
                   <li class="left_q">Wrong Answer&nbsp;</li>
                   <li class="right_q">:&emsp;<?php echo $wrong_ans; ?></li>
                </div>
+               <?php $percent = ($correct_ans/$total_questions)*100; ?>
                <div class="q1" style="margin-top:20px;">
                   <li class="left_q" style="color:#000;font-size:16px;">Overall Result&nbsp;</li>
                   <li class="right_q" style="color:#000;">
@@ -69,7 +70,7 @@
                            </g>
                         </g>
                      </svg>
-                     Good
+                   <?php echo $percent; ?>
                   </li>
                </div>
             </div>
