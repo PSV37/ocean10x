@@ -948,6 +948,7 @@ public function save_profile_details()
         $this->load->library('upload', $config);
 
         if (!$this->upload->do_upload('avatar_file')) {
+            echo "error"; die;
             $error = array('error' => $this->upload->display_errors());
             $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">'.$this->upload->display_errors().'</div>');
             redirect('job_seeker/seeker_info');
@@ -959,6 +960,8 @@ public function save_profile_details()
                 'job_seeker_id' => $jobseeker_id,
                 'photo_path'    => $file_name,
             );
+            echo "success"; die;
+
             
             if (!$job_seeker_photo_row) {
                     $this->Job_seeker_photo_model->insert($job_seeker_photo);
