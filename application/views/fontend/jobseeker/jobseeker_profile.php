@@ -1482,12 +1482,18 @@ label {
                                          }
                                        ?>">
 
+                                     <input type="text" name="city_id" class="allowalphanumeric form-control" id="tokenfield" style="display: inline-block;"  placeholder="Enter Location" onkeydown="check_key();"
+                        value="<?php if(!empty($job_info->city_id) ){echo $job_info->city_id; } ?><?php echo set_value('city_id'); ?>"><?php echo form_error('city_id'); ?>
+
+
                                        <select name="country_id" id="country_id" class="form-control department select2" onchange="getStates(this.value)">
                                                 <option value="">Select Country</option>
                                                 <?php foreach($country as $key){?>
                                                 <option value="<?php echo $key['country_id']; ?>"<?php if($training_list->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
                                                 <?php } ?>
                                              </select>
+
+
 
                                     <!--p>You can choose upto 3 Countries</p-->
                                  </div>
