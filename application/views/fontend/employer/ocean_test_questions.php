@@ -1098,14 +1098,15 @@ input[type="radio"] {
     }
     
     
-  console.log(slides.length);
+ var total_slides=slides.length;
 
-  set_timer(n);
+  set_timer(n,total_slides);
 
   }
 
   function showNextSlide() {
-      $('#timer'+currentSlide).val('00');
+      clearInterval(timerInterval);
+      // $('#timer'+currentSlide).val('00');
     showSlide(currentSlide + 1);
   }
 
@@ -1214,7 +1215,7 @@ function getval(value)
      
 }
 
-function set_timer(n)
+function set_timer(n,total_slides)
 {
        const FULL_DASH_ARRAY = 283;
                   const WARNING_THRESHOLD = 10;
@@ -1271,18 +1272,28 @@ function set_timer(n)
                   </div>
                   `;
                   
-                  startTimer(timePassed,TIME_LIMIT,COLOR_CODES,n);
+                  startTimer(timePassed,TIME_LIMIT,COLOR_CODES,n,total_slides);
                   
 }
 
-                  function onTimesUp() {
+                  function onTimesUp(n,total_slides) {
                     clearInterval(timerInterval);
+                    if (n==total_slides) 
+                    {
+                    $("#submit").click();
+
+                    }
+                    else
+                    {
                     $("#next").click();
+
+
+                    }
                     // startTimer();
 
                   }
                   
-                  function startTimer(timePassed,TIME_LIMIT,COLOR_CODES,n)
+                  function startTimer(timePassed,TIME_LIMIT,COLOR_CODES,n,total_slides)
                   {
                     timerInterval = setInterval(() => {
                       timePassed = timePassed += 1;
@@ -1294,7 +1305,7 @@ function set_timer(n)
                       setRemainingPathColor(timeLeft,COLOR_CODES);
                   
                       if (timeLeft === 0) {
-                        onTimesUp();
+                        onTimesUp(n,total_slides);
                       }
                     }, 1000);
                   }
