@@ -890,6 +890,9 @@ input[type="radio"] {
                         <div class="smalltext">Minutes</div>
                      </div> -->
                   </div>
+                    <div id="skip">
+                        
+                  </div>
                   <div class="quizArea">
                      <div class="multipleChoiceQues">
                         <div id="app"></div>
@@ -921,9 +924,7 @@ input[type="radio"] {
 
 
                   </div>
-                  <div id="skip">
-                        
-                  </div>
+                
                   <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['review_option'] == 'Y') { ?>
                       
                  <!--  } ?> -->
