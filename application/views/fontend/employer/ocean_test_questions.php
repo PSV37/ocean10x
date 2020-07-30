@@ -924,9 +924,9 @@ input[type="radio"] {
                   <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['review_option'] == 'Y') { ?>
                       
                  <!--  } ?> -->
-                  <div class="row" style="margin-top: 260px">
+                  <div class="row preview" style="margin-top: 260px">
                         <?php $i=1; foreach ($all_questions as $row) { ?>
-                              <div class="col-md-2 exp-box" id="status<?php echo $i; ?>" onclick="getval(<?php echo $i; ?>);"><span name="levels" id="levels"   value="Beginner"><?php echo $i; ?></span></div>
+                              <div class="col-md-2 exp-box" id="status<?php echo $i; ?>" onclick="getval(<?php echo $i; ?>);"><span name="levels[]" id="levels"   value=""><?php echo $i; ?></span></div>
                       <? $i++; } } ?>
                         
                   </div>
@@ -1195,6 +1195,8 @@ function get_checked(n)
       var j = n + 1;
       $('#status'+j).css('background-color', '#94f36d');
 
+
+
 }
 function next(n)
 {
@@ -1219,12 +1221,28 @@ function getval(value)
      
 }
   $("#nextques").submit(function(){
-      var arrayFromPHP = <?php echo json_encode($oceanchamp_tests) ?>;
-
-      $.each(arrayFromPHP, function (i, elem) {
-            var bodyColor = $('status'+i).attr("style");
-         alert(bodyColor);
+     var categories = {},
+    category;
+      $('.preview div').each(function(i, el){
+          category = $(el).css( "background-color" );
+          if (categories.hasOwnProperty(category)) {
+              categories[category] += 1;
+          }
+          else {
+              categories[category] = 1;
+          }
       });
+
+      // $('#result').append('<hr>');
+for(var key in categories){
+      alert(key + ' (' + categories[key] + ')<br>')
+    // $('#result').append(key + ' (' + categories[key] + ')<br>');
+}
+
+      // $.each(arrayFromPHP, function (i, elem) {
+      //       var bodyColor = $('status'+i).attr("style");
+      //    alert(bodyColor);
+      // });
      // var bodyColor = $(this).attr("style");
 })
 
