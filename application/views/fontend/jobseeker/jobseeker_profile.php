@@ -1478,16 +1478,19 @@ label {
                               <div class="form-group">
                                  <label class="control-label col-sm-3" for="pwd">Work Permit for Other Countries</label>
                                  <div class="col-sm-9">
+
+                                  <input type="text" class="form-control"
+                   name="country"
+                   data-access_multi_select="true"
+                   placeholder="Select a Country">
+                   <!--
                                     <input type="text" name="other_country_work_permit" class="form-control" id="tokenfield" placeholder="You can choose upto 3 Countries" value="<?php
                                        if (!empty($js_personal_info->work_permit_countries)) {
                                          echo $js_personal_info->work_permit_countries;
                                          }
                                        ?>">
 
-                                        <input type="text" class="form-control"
-                   name="country"
-                   data-access_multi_select="true"
-                   placeholder="Select a Country">
+                                        
 
                                      <input type="text" name="city_id" class="allowalphanumeric form-control" id="tokenfield" style="display: inline-block;"  placeholder="Enter Location" onkeydown="check_key();"
                         value="<?php if(!empty($job_info->city_id) ){echo $job_info->city_id; } ?><?php echo set_value('city_id'); ?>"><?php echo form_error('city_id'); ?>
@@ -1500,7 +1503,7 @@ label {
                                                 <?php } ?>
                                              </select>
 
-
+                                -->
 
                                     <!--p>You can choose upto 3 Countries</p-->
                                  </div>
