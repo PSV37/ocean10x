@@ -1253,7 +1253,7 @@ for(var key in categories){
            var color = 'gray';
       }
 
-      $("#total_performance").append('<input type="text" name="'+color+'" value ="'+categories[key]+'" >');
+      $("#total_performance").append('<input type="hidden" name="'+color+'" value ="'+categories[key]+'" >');
     // $('#total_performance').innerHTML='';
       alert(key + ' (' + categories[key] + ')<br>');
      
