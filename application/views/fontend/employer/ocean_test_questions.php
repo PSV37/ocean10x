@@ -1218,6 +1218,15 @@ function getval(value)
     
      
 }
+  $("#nextques").submit(function(){
+      var arrayFromPHP = <?php echo json_encode($oceanchamp_tests) ?>;
+
+      $.each(arrayFromPHP, function (i, elem) {
+            var bodyColor = $('status'+i).attr("style");
+         alert(bodyColor);
+      });
+     // var bodyColor = $(this).attr("style");
+})
 
 function set_timer(n,total_slides)
 {
