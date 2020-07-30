@@ -1111,6 +1111,8 @@ input[type="radio"] {
   }
 
   function showPreviousSlide() {
+      clearInterval(timerInterval);
+      
       // $('#timer'+currentSlide).val();
     showSlide(currentSlide - 1);
   }
