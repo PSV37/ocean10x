@@ -2373,7 +2373,7 @@ for(var i =1; i < max_experience; i++){
   alert(count);
   $("#resDate_"+count).attr("disabled", $("#upChkDisable_"+count).is(":checked"));
    if($("#upChkDisable_"+count).is(":checked")){
-    $('#resDate_'+count).val("Continue");
+    $('#resDate_'+count).val("");
    } else {
      $('#resDate_'+count).val("");
    }
