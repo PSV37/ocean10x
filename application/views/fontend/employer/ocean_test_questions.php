@@ -1283,7 +1283,7 @@ function set_timer(n,total_slides)
                   function onTimesUp(n,total_slides) {
                     clearInterval(timerInterval);
 
-                    if (n==total_slides) 
+                    if (n==total_slides-1) 
                     {
                     $("#submit").click();
 
