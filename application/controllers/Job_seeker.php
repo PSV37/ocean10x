@@ -935,7 +935,7 @@ public function save_profile_details()
    // echo $photo=$this->input->post('photo');die;
      if ($_POST) {
          // if($_FILES['txt_resume']['name']!='')
-        print_r($_POST);die;
+        print_r($_POST);
         $id     = $this->session->userdata('job_seeker_id');
 
         $job_seeker_photo_row = $this->Job_seeker_photo_model->photo_by_seeker($id);
