@@ -1935,7 +1935,7 @@ label {
                                    
                         
                         ?>
-                     < <div class="modal fade" id="myModal5" role="dialog">
+                    <!-- <div class="modal fade" id="myModal5" role="dialog">
                         <div class="modal-dialog modal-md"> -->
                      <div class="modal-content">
                         <div class="modal-header">
@@ -1943,7 +1943,7 @@ label {
                            <h4 class="modal-title">Work Experience</h4>
                         </div>
                         <div class="modal-body">
-                           <form id="UpdateExperience-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_experience');?>" method="post" style="padding: 30px;">
+                           <form id="work_experience1" class="form-horizontal" action="<?php echo base_url('job_seeker/update_experience');?>" method="post" style="padding: 30px;">
                               <input type="hidden" name="js_experience_id" value="<?php echo $v_experience->js_experience_id; ?>">
                               <div class="form-group">
                                  <label class="control-label col-sm-3" for="email">Company Name:</label>
@@ -3291,6 +3291,107 @@ maxlength: "Choose a company name of at least 14 letters!"
 
 });
 
+$( document ).ready( function () {
+
+$("#work_experience1").validate (  
+
+{
+
+rules:{
+
+'company_profile_id':{
+minlength: 3,
+namespace_regex: true
+},
+
+'designation_id':{
+email_regex: true
+},
+
+
+'dept_id':{
+phonenumber_regex: true
+}, 
+
+'start_date':{
+//twodigit_regex: true
+//email: true
+},
+
+
+'end_date':{
+maxlength:3
+//email: true
+},
+
+'js_career_salary':{                
+  //minlength:10,        
+  //maxlength:10,
+},
+
+'responsibilities':{                
+  //minlength:10,        
+  //maxlength:10,
+},
+
+'achievement':{                
+  //minlength:10,        
+  //maxlength:10,
+},
+
+},
+
+messages:{
+
+'company_profile_id':{
+required: "Must Fill !",
+minlength: "Please type atleast 3 characters!",
+namespace_regex: "Please type only alphabets"
+},
+
+'designation_id':{
+  required: "Must Fill !",
+  matches: "Didn't match!",      
+  minlength: "Please Enter 10 digit phone numbers!",        
+  maxlength: "Maximum length 10 digits!"
+},
+
+'dept_id':{
+required: "Must Fill !",
+minlength: "Please type atleast 10 digits",
+maxlength: "Please type atleast 10 digits"
+},
+
+'start_date':{
+maxlength: "Choose a company name of at least 14 letters!"
+},
+
+'end_date':{
+//company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
+//remote: "The username is already in use by another user!"
+},
+
+'js_career_salary':{
+required: "Must Fill !",
+minlength: "Please type atleast 10 digits",
+maxlength: "Please type atleast 10 digits"
+},
+
+'responsibilities':{
+maxlength: "Choose a company name of at least 14 letters!"
+},
+
+'achievement':{
+//company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
+//remote: "The username is already in use by another user!"
+},
+
+
+}
+
+});
+
+});
 
 $( document ).ready( function () {
 
