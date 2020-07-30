@@ -1046,7 +1046,8 @@ input[type="radio"] {
 
     // for each question...
     myQuestions.forEach( (currentQuestion, questionNumber) => {
-
+      console.log(currentQuestion);
+      console.log(questionNumber);
       // find selected answer
       const answerContainer = answerContainers[questionNumber];
       const selector = `input[name=question${questionNumber}]:checked`;
