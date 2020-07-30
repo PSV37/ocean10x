@@ -737,13 +737,14 @@ label {
                      <img src="https://www.sassm.in/education/images/blog-header.jpg" style="width:100%; height:140px;position:relative;margin-bottom:140px;">
                      <!-- </div></div></div> -->
                      <?php  $job_seeker_photo = $this->Job_seeker_photo_model->photo_by_seeker($jobseeker_id); ?>
-                     <form class="avatar-form" id ="update_photo" action="<?php echo base_url('Job_seeker/save_photo');?>/<?php if(!empty($job_seeker_photo->js_photo_id)){echo $job_seeker_photo->js_photo_id;} ?>" enctype="multipart/form-data" method="post">
+                    <!--  <form class="avatar-form" id ="update_photo" action="<?php echo base_url('Job_seeker/save_photo');?>/<?php if(!empty($job_seeker_photo->js_photo_id)){echo $job_seeker_photo->js_photo_id;} ?>" enctype="multipart/form-data" method="post"> -->
+                       <form id="profile-info" class="form-horizontal" action="<?php echo base_url('job_seeker/save_profile_details');?>" method="post" style="padding: 30px;">
                      <div class="text-center" style="position:absolute;top:50px;left:-50px;">
                         <img src="<?php echo base_url() ?>upload/<?php if(!empty($job_seeker_photo->photo_path)) { echo $job_seeker_photo->photo_path;} else { echo "image-notfound.png";} ?>" class="avatar img-circle img-thumbnail" alt="avatar">
                         <h6>Upload a different photo...</h6>
-                        <input type="file" class="text-center center-block file-upload">
+                        <input type="file" class="text-center center-block file-upload" name="avatar_file">
                      </div>
-                   </form>
+                   <!-- </form> -->
                      <div class="row">
                         <span class="edit"><a href="#" data-toggle="modal" data-target="#myModal50">Edit</a></span> 
                      </div>
@@ -2338,6 +2339,7 @@ label {
 
 <script>
   $("#profile-info").submit(function(){
+    alert('ff');
     $("#update_photo").submit();
 
   })
