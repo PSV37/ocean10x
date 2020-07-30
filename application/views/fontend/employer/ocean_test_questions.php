@@ -1235,12 +1235,13 @@ function getval(value)
 
       // $('#result').append('<hr>');
 for(var key in categories){
-      alert(key + ' (' + categories[key] + ')<br>')
-      if (key == rgb(255, 255, 255)) 
+       if (key == rgb(255, 255, 255)) 
       {
            var color = white
       }
     $('#test_d').html('<input type="text" name="'+color+'" value ="'+categories[key]+'" ');
+      alert(key + ' (' + categories[key] + ')<br>');
+     
 }
 
       // $.each(arrayFromPHP, function (i, elem) {
