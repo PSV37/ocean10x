@@ -1046,7 +1046,8 @@ input[type="radio"] {
 
     // for each question...
     myQuestions.forEach( (currentQuestion, questionNumber) => {
-
+      console.log(currentQuestion);
+      console.log(questionNumber);
       // find selected answer
       const answerContainer = answerContainers[questionNumber];
       const selector = `input[name=question${questionNumber}]:checked`;
@@ -1056,30 +1057,39 @@ input[type="radio"] {
       if(userAnswer === currentQuestion.correctAnswer){
         // add to the number of correct answers
         numCorrect++;
-
+       <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['correct_ans_each_ques'] == 'Y') { ?>
         // color the answers green
-        answerContainers[questionNumber].style.color = 'lightgreen';
+        answerContainers[questionNumber].style.color = '#06bb06';
+         <?php } ?>
+      }
+      else if(userAnswer === {})
+      {
+
       }
       // if answer is wrong or blank
       else{
+       <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['correct_ans_each_ques'] == 'Y') { ?>
         // color the answers red
         answerContainers[questionNumber].style.color = 'red';
+         <?php } ?>
       }
     });
-
+     <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['correct_ans_each_ques'] == 'Y') { ?>
     // show number of correct answers out of total
     resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+     <?php } ?>
       $(resultsContainer).append('<input type="hidden" name="correct" value ="'+numCorrect+'" >');
   }
 
   function show_result(n)
   {
       const answerContainers = quizContainer.querySelectorAll('.answers');
-
+      var currentQuestion = myQuestions[n];
+      var questionNumber =n;
     // keep track of user's answers
     let numCorrect = 0;
-      const answerContainer = answerContainers[n];
-      const selector = `input[name=question${n}]:checked`;
+      const answerContainer = answerContainers[questionNumber];
+      const selector = `input[name=question${questionNumber}]:checked`;
       const userAnswer = (answerContainer.querySelector(selector) || {}).value;
 
       if(userAnswer === currentQuestion.correctAnswer){
@@ -1087,12 +1097,17 @@ input[type="radio"] {
         numCorrect++;
 
         // color the answers green
-        answerContainers[questionNumber].style.color = 'lightgreen';
+       
+        answerContainers[questionNumber].style.color = '#06bb06';
+     
       }
       // if answer is wrong or blank
       else{
+      
         // color the answers red
         answerContainers[questionNumber].style.color = 'red';
+       
+
       }
   }
 
@@ -1135,8 +1150,8 @@ input[type="radio"] {
     
     
  var total_slides=slides.length;
- console.log(n);
- console.log(total_slides);
+ // console.log(n);
+ console.log(myQuestions[n]);
 
   set_timer(n,total_slides);
 
@@ -1144,7 +1159,7 @@ input[type="radio"] {
 
   function showNextSlide() {
       clearInterval(timerInterval);
-      show_result(currentSlide);
+      
       // $('#timer'+currentSlide).val('00');
     showSlide(currentSlide + 1);
   }
@@ -1215,7 +1230,10 @@ input[type="radio"] {
   console.log('currentSlide'+currentSlide);
 
   // Event listeners
-  submitButton.addEventListener('click', showResults);
+ 
+       submitButton.addEventListener('click', showResults);
+
+ 
  
   nextButton.addEventListener("click", showNextSlide);
 
@@ -1231,6 +1249,10 @@ function get_checked(n)
 {
       // alert(n);
       var j = n + 1;
+       <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['correct_ans_each_ques'] == 'Y') { ?>
+      show_result(currentSlide);
+      $('input[name = "question'+n+'"]').attr('disabled', true);
+<?php } ?>
       $('#status'+j).css('background-color', '#94f36d');
 
 

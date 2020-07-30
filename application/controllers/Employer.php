@@ -6122,15 +6122,24 @@ function update_external()
 
             $where_all = "questionbank_answer.question_id='$row' ";
 
-            $oceanchamp_tests = $this->Master_model->get_master_row('questionbank_answer', $select = FALSE, $where = $where_all, $join = FALSE);
+            $oceanchamp_tests1 = $this->Master_model->get_master_row('questionbank_answer', $select = FALSE, $where = $where_all, $join = FALSE);
 
-             if ($option == $oceanchamp_tests['answer_id']) {
+             if ($option == $oceanchamp_tests1['answer_id']) {
                      $mark    = 1;
                     $status = 'Yes';
                 } 
                 else {
-                    $status = 'No';
-                     $mark    = 0;
+                    if (isset($oceanchamp_tests) && $oceanchamp_tests['negative_marks'] == 'Y') {
+                        $status = 'No';
+                        $mark    = '-1';
+                    }
+                    else
+                    {
+                        $status = 'No';
+                        $mark    = 0;
+                    }
+                    
+
                 }
 
             $exam_array = array(
@@ -6144,12 +6153,30 @@ function update_external()
         $last_id    = $this->Master_model->master_insert($exam_array, 'emp_test_result');
         }
             
+          if (isset($oceanchamp_tests) && $oceanchamp_tests['final_result'] == 'Y') 
+          { 
             $data['total_questions'] = sizeof($questions);
             $data['attended_questions'] = $this->input->post('green');
             $data['skipped_questions'] = $this->input->post('gray') +  $this->input->post('white') ;
             $data['correct_ans'] = $this->input->post('correct');
             $data['wrong_ans'] = sizeof($questions)-$this->input->post('correct');
+            if (isset($oceanchamp_tests) && $oceanchamp_tests['final_result'] == 'Y') 
+            { 
+             $data['result'] =  $data['correct_ans']-$data['wrong_ans'];
+            }
+            else
+            {
+                $data['result'] =  $data['correct_ans'];
+
+            }
             $this->load->view('fontend/employer/result_page',$data);
+        } 
+        else
+        {
+            $this->load->view('fontend/exam/exam_success',$data);
+
+        }
+           
           
         }
     }

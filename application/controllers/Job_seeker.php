@@ -934,6 +934,45 @@ public function save_profile_details()
     $jobseeker_id     = $this->session->userdata('job_seeker_id');
    // echo $photo=$this->input->post('photo');die;
      if ($_POST) {
+         // if($_FILES['txt_resume']['name']!='')
+        print_r($_POST);
+        $id     = $this->session->userdata('job_seeker_id');
+
+        $job_seeker_photo_row = $this->Job_seeker_photo_model->photo_by_seeker($id);
+        $config['upload_path']   = 'upload/';
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['encrypt_name']  = true;
+        // $config['max_size']      = 12000;
+       /* $config['max_width']     = 310;
+        $config['max_height']    = 310;*/
+
+        $this->load->library('upload', $config);
+         $field_name = "js_photo";
+        if (!$this->upload->do_upload($field_name)) {
+            print_r($this->upload->display_errors()); die;
+            $error = array('error' => $this->upload->display_errors());
+            $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">'.$this->upload->display_errors().'</div>');
+            redirect('job_seeker/seeker_info');
+        } else {
+            $img              = $this->upload->data();
+            $file_name        = $img['file_name'];
+            $jobseeker_id     = $this->session->userdata('job_seeker_id');
+            $job_seeker_photo = array(
+                'job_seeker_id' => $jobseeker_id,
+                'photo_path'    => $file_name,
+            );
+            // echo "success"; die;
+
+            
+            if (!$job_seeker_photo_row) {
+                    $this->Job_seeker_photo_model->insert($job_seeker_photo);
+            } else {
+                $this->Job_seeker_photo_model->update_photo_new($job_seeker_photo, $id);
+            }
+            //echo $this->db->last_query(); die;
+            // $this->save_cropped_photo($data->x,$data->y,$data->width,$data->height,$file_name);
+           // redirect('job_seeker/seeker_info');
+        }
          $NewFileName;
             if($_FILES['txt_resume']['name']!='')
             {
