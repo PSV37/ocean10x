@@ -1082,7 +1082,7 @@ input[type="radio"] {
       const selector = `input[name=question${n}]:checked`;
       const userAnswer = (answerContainer.querySelector(selector) || {}).value;
 
-      if(userAnswer === currentQuestion.correctAnswer){
+      if(userAnswer === n.correctAnswer){
         // add to the number of correct answers
         numCorrect++;
 
