@@ -6079,7 +6079,7 @@ function update_external()
         if (!empty($_POST)) {
             # code...
       
-        // print_r($_POST);
+        print_r($_POST);die;
       
         
         $test_id              = $this->input->post('test_id');
