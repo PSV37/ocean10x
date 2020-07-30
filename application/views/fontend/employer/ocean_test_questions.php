@@ -1141,7 +1141,7 @@ input[type="radio"] {
     
  var total_slides=slides.length;
  // console.log(n);
- console.log(myQuestions(n));
+ console.log(myQuestions[n]);
 
   set_timer(n,total_slides);
 
