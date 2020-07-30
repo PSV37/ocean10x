@@ -930,6 +930,9 @@ input[type="radio"] {
                       <? $i++; } } ?>
                         
                   </div>
+                  <div id="total_performance">
+                        
+                  </div>
                </div>
               <script>
                     
@@ -1247,7 +1250,7 @@ for(var key in categories){
       {
            var color = 'gray';
       }
-    $('.test_d').append('<input type="text" name="'+color+'" value ="'+categories[key]+'" ');
+    $('#total_performance').html('<input type="text" name="'+color+'" value ="'+categories[key]+'" ');
       alert(key + ' (' + categories[key] + ')<br>');
      
 }
