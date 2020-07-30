@@ -1836,8 +1836,8 @@ label {
                                        </div>
                                        <div class="form-group">
                                           <label class="control-label col-sm-3" for="email">Start Date:</label>
-                                          <div class="col-sm-9"><input class="datepicker form-control" id="start_date_picker" required name="start_date" value="">
-                                             <label><input type="checkbox" id="upChkDisable_2" >  Current Job</label>
+                                          <div class="col-sm-9"><input class="datepicker form-control" id="start_date_picker"  name="start_date" value="">
+                                             <label><input type="checkbox" id="upChkDisable_2" onclick="disableUpperDP('2')" >  Current Job</label>
                                           </div>
                                        </div>
                                        <div class="form-group">
