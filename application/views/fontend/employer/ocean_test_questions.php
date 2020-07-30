@@ -887,8 +887,7 @@ input[type="radio"] {
                         <div class="smalltext">Hours</div>
                      </div> -->
                      
-                     <div style="margin-right: -560px;
-    position: relative;    margin-top: 20px;">
+                     <div style="margin-right: -560px;position: relative;margin-top: 20px;">
                         <span class="seconds"></span>
                         <div class="smalltext">Seconds</div>
                      </div>
@@ -1073,6 +1072,26 @@ input[type="radio"] {
       $(resultsContainer).append('<input type="hidden" name="correct" value ="'+numCorrect+'" >');
   }
 
+  function show_result(n)
+  {
+      const answerContainer = answerContainers[n];
+      const selector = `input[name=question${n}]:checked`;
+      const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+      if(userAnswer === currentQuestion.correctAnswer){
+        // add to the number of correct answers
+        numCorrect++;
+
+        // color the answers green
+        answerContainers[questionNumber].style.color = 'lightgreen';
+      }
+      // if answer is wrong or blank
+      else{
+        // color the answers red
+        answerContainers[questionNumber].style.color = 'red';
+      }
+  }
+
   function showSlide(n) {
       // alert(n);
     slides[currentSlide].classList.remove('active-slide');
@@ -1121,6 +1140,7 @@ input[type="radio"] {
 
   function showNextSlide() {
       clearInterval(timerInterval);
+      show_result(n);
       // $('#timer'+currentSlide).val('00');
     showSlide(currentSlide + 1);
   }
@@ -1202,6 +1222,7 @@ input[type="radio"] {
 
 // })();
 
+
 function get_checked(n)
 {
       // alert(n);
@@ -1263,7 +1284,7 @@ for(var key in categories){
 
       $("#total_performance").append('<input type="hidden" name="'+color+'" value ="'+categories[key]+'" >');
     // $('#total_performance').innerHTML='';
-      alert(key + ' (' + categories[key] + ')<br>');
+      // alert(key + ' (' + categories[key] + ')<br>');
      
 }
 
