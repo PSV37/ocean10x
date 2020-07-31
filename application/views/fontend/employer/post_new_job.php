@@ -461,6 +461,7 @@
                           <option value="<?php echo $row['test_id']; ?>"><?php echo $row['test_name']; ?></option>
                      <?php   }
                      } ?>
+                  </select>
                      <?php echo form_error('test_for_job'); ?>             
                   </div>
                </div>
