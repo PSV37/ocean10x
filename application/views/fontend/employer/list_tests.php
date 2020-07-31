@@ -1003,7 +1003,7 @@ span.select2-selection.select2-selection--single {
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Forward This Test</h5>
          </div>
-         <form action="<?php echo base_url() ?>employer/forward_posted_job" class="sendEmail" method="post" autocomplete="off">
+         <form action="<?php echo base_url() ?>employer/forword_test" class="sendEmail" method="post" autocomplete="off">
             <div class="modal-body" style="padding:15px 40px;">
              
                <input type="hidden" name="consultant" value="JobSeeker">  
@@ -1015,23 +1015,7 @@ span.select2-selection.select2-selection--single {
 
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
                   <label class="mdl-textfield__label" for="sample3">Message:</label>
-                  <textarea class="form-control" name="message" rows="5" id="comment" value="Dear Candidate,
-
-Greetings from (HRC/Corporate HR) Team !!
-
-We have a job post on “Ocean” whose requirements can be met with a candidate of your skill sets. We would appreciate, if you could apply on this job post, by clicking on the URL provided below
-
-####job post url################
-
-
-Your application will then be reviewed by the recruitment team, who will contact you regarding next steps should you clear the initial screening required for this position. Please be aware this may take a few days.
-
-
-Should you wish to update your coordinates/CV on Ocean, you can login into Ocean and visit the Profile section, to carry out the necessary changes.
-
-
-Best Regards,
-HRC/Corporate HR Team" required></textarea>
+                  <textarea class="form-control" name="message" rows="5" id="comment" value="" required></textarea>
                </div>
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
                   <label class="mdl-textfield__label" for="sample3">Number of cvs: 1</label><br>
