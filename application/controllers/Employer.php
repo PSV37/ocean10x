@@ -2256,7 +2256,7 @@ class Employer extends MY_Employer_Controller
 
     public function update_test()
     {
-       $test_id = $this->db->post('test_id'); 
+       $test_id = $this->input->post('test_id'); 
        if (isset($test_id) && !empty($test_id)) {
                 $test_data['timer_on_each_que'] = $this->input->post('timer');
                 $test_data['previous_option'] = $this->input->post('previous_option');
