@@ -3957,7 +3957,7 @@ $(document).ready(function () {
 
 
 
-
+<script src="<?php echo base_url(); ?>asset/src/jquery.tokeninput.js"></script>
 <script> 
    $(document).ready(function() { 
    
