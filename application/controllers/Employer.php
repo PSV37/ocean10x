@@ -1701,6 +1701,23 @@ class Employer extends MY_Employer_Controller
 
                          $frwd = $this->Master_model->master_insert($frwd_array, 'forwarded_jobs_cv');
 
+                         $test_array = array(
+                        'job_seeker_id' => $seeker_id,
+                        'company_id' => $employer_id,
+                        'test_id' => $test_id,
+                        'status' => 'Farwarded Test with job',
+                        'updated_on' => date('Y-m-d'),
+                        
+                    );
+                    $whereres  = "job_seeker_id='$seeker_id' and company_id = '$employer_id' and test_id = '$test_id'";
+                    $test_data = $this->Master_model->get_master_row('
+                        forwarded_tests', $select = FALSE, $whereres);
+
+                    if (empty($test_data)) {
+                         $frwd = $this->Master_model->master_insert($test_array, 'forwarded_tests');
+
+                    }
+
 
                     }
                    
