@@ -729,6 +729,8 @@ exit;*/
 
         $oceanchamp_tests = $this->Master_model->get_master_row('forwarded_tests', $select = FALSE, $where = $where_all, $join = FALSE);
         
+
+        print_r($this->db->last_query());die;
         $this->load->view('fontend/jobseeker/oceanhunt', compact('forward_applicationlist','applicationlist' ,'oceanchamp_tests'));
     }
 
