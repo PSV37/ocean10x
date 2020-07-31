@@ -723,9 +723,13 @@ exit;*/
 
         $forward_applicationlist = $this->job_apply_model->seeker_all_application_send($jobseeker_id);
 
+         $seeker_id  = $this->input->post('job_seeker_id');
+        // $employer_id = $this->session->userdata('company_profile_id');
+        $where_all = "oceanchamp_tests.status != 'Test Completed' AND job_seeker_id = '$job_seeker_id'";
 
+        $oceanchamp_tests = $this->Master_model->get_master_row('forwarded_tests', $select = FALSE, $where = $where_all, $join = FALSE);
         
-        $this->load->view('fontend/jobseeker/oceanhunt', compact('forward_applicationlist','applicationlist'));
+        $this->load->view('fontend/jobseeker/oceanhunt', compact('forward_applicationlist','applicationlist' ,'oceanchamp_tests'));
     }
 
     public function update_reference()
@@ -1718,6 +1722,15 @@ public function user_profile()
 
     }
 
+    public function test()
+    {
+         $seeker_id  = $this->input->post('job_seeker_id');
+        // $employer_id = $this->session->userdata('company_profile_id');
+        $where_all = "oceanchamp_tests.status != 'Test Completed' AND job_seeker_id = '$job_seeker_id'";
+
+        $oceanchamp_tests = $this->Master_model->get_master_row('forwarded_tests', $select = FALSE, $where = $where_all, $join = FALSE);
+    }
+
    public function ocean_test_start($test_id = null)
     {
         // $company_profile_id = $this->session->userdata('company_profile_id');
@@ -1849,6 +1862,16 @@ public function user_profile()
             'date_time' => $cenvertedTime
         );
         $last_id    = $this->Master_model->master_insert($exam_array, 'seeker_test_result');
+
+         $test_array = array(
+                        
+                        'status' => 'Test Completed',
+                        'updated_on' => date('Y-m-d'),
+                        
+                    );
+             $where['test_id'] = $test_id;
+             $where['job_seeker_id'] = $seeker_id;
+            $this->Master_model->master_update($test_array, 'oceanchamp_tests', $where);
         }
             
           // if (isset($oceanchamp_tests) && $oceanchamp_tests['final_result'] == 'Y') 

@@ -19,6 +19,7 @@
     <li><a data-toggle="tab" href="#activity2">Applications</a></li>
     <li><a data-toggle="tab" href="#activity3">Interview</a></li>
     <li><a data-toggle="tab" href="#activity4">Calender</a></li>
+    <li><a data-toggle="tab" href="#activity5">Forwarded Tests</a></li>
     
   </ul>
 
@@ -137,7 +138,53 @@
   </div>
 </div>
 <?php  endforeach;  ?>
+<div id="activity5" class="tab-pane fade in active">
+       
+           <?  if (!empty($oceanchamp_tests)): foreach ($oceanchamp_tests as $forward_applicaiton) :
+                // for ($i=0; $i <sizeof($forward_applicationlist) ; $i++) { 
+                $singlejob    = $this->job_posting_model->get_job_details_employer($forward_applicaiton->job_post_id);
 
+
+                            $sr_no++; ?>
+                        <div class="invi-div">
+                            <img src="<?php echo base_url()?>upload/<?php echo $this->company_profile_model->company_logoby_id($forward_applicaiton->company_id); ?>" class="invitation-img"/>
+                            <div class="info-invitation">
+                                <p class="head-invi"><?php echo $this->job_posting_model->job_title_by_name($forward_applicaiton->test_name); ?></p>
+
+                                <span class="salary-info">Topics: <?php echo $this->job_posting_model->job_salary_by_id($forward_applicaiton->topics); ?><span>
+
+                                <p>Company name:<?php echo $this->company_profile_model->company_name($forward_applicaiton->company_id); ?></p>
+                                 <div class="detail-b"><a href="<?php echo base_url(); ?>job/show/<?php echo $forward_applicaiton->job_slugs; ?>">Details</a></div>
+                                    <div class="last-row-invitation">
+                                   
+                                    </div>
+                            
+                                <a href="<?php echo base_url(); ?>job_seeker/ocean_test_start/<?php if(!empty($test_id))echo base64_encode($test_id); ?>"><button class="apply-invi" >Give Test</button></a>
+                            </div>
+                            <div class="clear"></div>   
+                              </div>
+                        <?php
+                  // $sr_no++;
+                   // }
+
+              endforeach;
+            ?>
+            <?php else : ?> 
+            
+                <div>
+                    <strong>There is no data to display</strong>
+                  
+                </div>
+             
+              
+            <?php endif; ?>
+           
+                        
+     
+        <div class="btn-more">
+                <button class="more-btn">show more</button>
+                </div>
+   </div>
 
     <div id="activity2" class="tab-pane fade">
      
