@@ -580,6 +580,12 @@
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/additional-methods.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.js"></script>
+
+
 <script> 
    function set_test()
    {
@@ -618,6 +624,7 @@
      $(function() { 
      
      //$("#my_date_picker").datepicker({ dateFormat: 'yy-mm-dd' });
+
      $("#my_date_picker").datepicker({ startDate: new Date() });
      }); 
    
