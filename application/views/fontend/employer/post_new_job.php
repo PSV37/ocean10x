@@ -444,9 +444,9 @@
                <div class="col-md-3 col-sm-12" tabindex="10">
                   <div class="formrow">
                      <label class="control-label ">Ocean Test Required <span class="required">*</span></label>
-                     <select name="job_test_requirment" id="job_test_requirment" class="form-control select2" data-style="btn-default" data-live-search="true" >
+                     <select name="job_test_requirment" onchange="set_test();" id="job_test_requirment" class="form-control select2" data-style="btn-default" data-live-search="true" >
                         <option></option>
-                        <option onchange="set_test();" value="Yes"<?php $test_value= set_value('job_test_requirment'); if($job_info->is_test_required=="Yes" || $test_value == "Yes"){ echo "selected"; }?>>Yes </option>
+                        <option  value="Yes"<?php $test_value= set_value('job_test_requirment'); if($job_info->is_test_required=="Yes" || $test_value == "Yes"){ echo "selected"; }?>>Yes </option>
                         <option value="No"<?php if($job_info->is_test_required=="No" || $test_value == 'No'){ echo "selected"; }?>>No </option>
                      </select>
                      <?php echo form_error('job_test_requirment'); ?>             
