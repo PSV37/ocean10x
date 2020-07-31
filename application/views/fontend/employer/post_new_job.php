@@ -618,9 +618,11 @@
      });
    
      $(function() { 
-      var currentDate = new Date();
      
-     $("#my_date_picker").datepicker("setDate", currentDate);
+     $("#my_date_picker").datepicker({ 
+      altField: "#myPage\\:myForm\\:fromDate",
+                      altFormat: "yy-mm-dd",
+                      minDate:0
 
      }); 
    
