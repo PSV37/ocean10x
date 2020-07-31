@@ -1007,7 +1007,7 @@ input#email {
             <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Forward This Test</h5>
          </div>
          <form action="<?php echo base_url() ?>employer/forword_test" class="sendEmail" method="post" autocomplete="off">
-            <input type="hidden" name="test_id" id="test_id" value="<?php $tests['test_id']; ?>">
+            <input type="hidden" name="test_id" id="test_id" value="<?php echo $tests['test_id']; ?>">
             <div class="modal-body" style="padding:15px 40px;">
              
                <input type="hidden" name="consultant" value="JobSeeker">  
