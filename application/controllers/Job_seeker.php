@@ -1718,6 +1718,167 @@ public function user_profile()
 
     }
 
+   public function ocean_test_start($test_id = null)
+    {
+        // $company_profile_id = $this->session->userdata('company_profile_id');
+        $test_id           = base64_decode($test_id);
+        
+        if (!empty($test_id)) {
+            
+            // $employer_id = $this->session->userdata('company_profile_id');
+            $where_all = "oceanchamp_tests.status='1' AND  test_id = '$test_id'";
+
+            $oceanchamp_tests = $this->Master_model->get_master_row('oceanchamp_tests', $select = FALSE, $where = $where_all, $join = FALSE);
+
+            $all_questions = array();
+           // foreach ($oceanchamp_tests as $question) {
+                # code...
+
+             
+                 
+                $questions = explode(',',$oceanchamp_tests['questions']);
+                
+             //    $i=0;
+                foreach ($questions as $row) {
+             //     
+                  $where = "questionbank.ques_id='$row'";
+
+                   $Join_data      = array(
+                    'questionbank_answer' => 'questionbank_answer.question_id = questionbank.ques_id|Left OUTER '
+                
+            );
+            
+                  $question_data  = $this->Master_model->get_master_row('questionbank', $select = 'questionbank.question,JSON_OBJECT("a",questionbank.option1,"b",questionbank.option2,"c",questionbank.option3,"d",questionbank.option4 ) as answers,time_for_question,questionbank_answer.answer_id as correctAnswer', $where, $join = $Join_data);
+                    $resultArray['question'] = $question_data['question'];
+                    $resultArray['time_for_question'] = $question_data['time_for_question'];
+                    if ($question_data['correctAnswer']==1) {
+                        $resultArray['correctAnswer'] = 'a';
+                    }
+                    elseif ($question_data['correctAnswer']==2) {
+                        $resultArray['correctAnswer'] = 'b';
+                    }
+                    elseif ($question_data['correctAnswer']==3) {
+                        $resultArray['correctAnswer'] = 'c';
+                    }
+                    elseif ($question_data['correctAnswer']==4) {
+                        $resultArray['correctAnswer'] = 'd';
+                    }
+                    // $resultArray['correctAnswer'] = $question_data['correctAnswer'];
+
+                    $resultArray['answers'] = json_decode($question_data['answers']);
+           
+
+                   // $answer_data  = $this->Master_model->get_master_row('questionbank', $select = 'questionbank.option 1 as a', $where, $join = false);
+                
+                  array_push($all_questions, $resultArray);
+              }
+        
+            $data['all_questions'] = $all_questions;
+            $data['test_duration'] = $oceanchamp_tests['test_duration'];
+            $data['oceanchamp_tests'] = $oceanchamp_tests;
+            
+            $data['test_id'] = $test_id;
+            $this->load->view('fontend/exam/ocean_test_questions', $data);
+            // $this->load->view('fontend/exam/oceantest_test',$data);
+            
+        } 
+    }
+
+    public function insert_test_data()
+    {
+        if (!empty($_POST)) {
+            # code...
+      
+        // print_r($_POST);die;
+      
+        
+        $test_id              = $this->input->post('test_id');
+        // $employer_id = $this->session->userdata('company_profile_id');
+        $where_all = "oceanchamp_tests.status='1' AND test_id = '$test_id'";
+
+        $oceanchamp_tests = $this->Master_model->get_master_row('oceanchamp_tests', $select = FALSE, $where = $where_all, $join = FALSE);
+        $questions = explode(',',$oceanchamp_tests['questions']);
+        $i=0;
+         $created_on    = date('Y-m-d H:i:s');
+        $cenvertedTime = date('Y-m-d H:i:s', strtotime('+5 hour +30 minutes', strtotime($created_on)));
+        foreach ($questions as $row) {
+            if ($_POST['question'.$i] == 'a') {
+                $option = '1';
+            }
+            elseif ($_POST['question'.$i] == 'b') {
+                $option = '2';
+            }
+            elseif ($_POST['question'.$i] == 'c') {
+                $option = '3';
+            }
+            elseif ($_POST['question'.$i] == 'd') {
+                $option = '4';
+            }
+
+            $question_id      = $row;
+            $option           = $option;
+
+            $where_all = "questionbank_answer.question_id='$row' ";
+
+            $oceanchamp_tests1 = $this->Master_model->get_master_row('questionbank_answer', $select = FALSE, $where = $where_all, $join = FALSE);
+
+             if ($option == $oceanchamp_tests1['answer_id']) {
+                     $mark    = 1;
+                    $status = 'Yes';
+                } 
+                else {
+                    if (isset($oceanchamp_tests) && $oceanchamp_tests['negative_marks'] == 'Y') {
+                        $status = 'No';
+                        $mark    = '-1';
+                    }
+                    else
+                    {
+                        $status = 'No';
+                        $mark    = 0;
+                    }
+                    
+
+                }
+
+            $exam_array = array(
+            'test_id' => $test_id,
+            // 'employee_id' => $employer_id,
+            'question_id' => $row,
+            'marks' => $mark,
+            'correct_status' => $status,
+            'date_time' => $cenvertedTime
+        );
+        $last_id    = $this->Master_model->master_insert($exam_array, 'seeker_test_result');
+        }
+            
+          // if (isset($oceanchamp_tests) && $oceanchamp_tests['final_result'] == 'Y') 
+          // { 
+            $data['total_questions'] = sizeof($questions);
+            $data['attended_questions'] = $this->input->post('green');
+            $data['skipped_questions'] = $this->input->post('gray') +  $this->input->post('white') ;
+            $data['correct_ans'] = $this->input->post('correct');
+            $data['wrong_ans'] = sizeof($questions)-$this->input->post('correct');
+            if (isset($oceanchamp_tests) && $oceanchamp_tests['final_result'] == 'Y') 
+            { 
+             $data['result'] =  $data['correct_ans']-$data['wrong_ans'];
+            }
+            else
+            {
+                $data['result'] =  $data['correct_ans'];
+
+            }
+            // $this->load->view('fontend/employer/result_page',$data);
+        // } 
+        // else
+        // {
+            $this->load->view('fontend/exam/exam_success',$data);
+
+        // }
+           
+          
+        }
+    }
+
 } //end function
 
 
