@@ -607,6 +607,7 @@
    function set_test()
    {
       var oceantest = $('#job_test_requirment').val();
+      alert(oceantest);
       if (oceantest == 'Yes') 
       {
          $('.test_div').show();
