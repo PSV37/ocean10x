@@ -619,7 +619,7 @@
    
      $(function() { 
      
-     $("#my_date_picker").datepicker({{ minDate: 0}});
+     $("#my_date_picker").datepicker({ dateFormat: 'yy-mm-dd' });
 
      
      }); 
