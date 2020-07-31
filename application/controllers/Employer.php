@@ -1872,7 +1872,7 @@ class Employer extends MY_Employer_Controller
                     //      $frwd = $this->Master_model->master_insert($frwd_array, 'forwarded_jobs_cv');
 
 
-                    }
+                    
                    
                     
                     if ($frwd) {
