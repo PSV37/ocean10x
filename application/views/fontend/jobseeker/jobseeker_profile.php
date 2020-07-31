@@ -1484,8 +1484,8 @@ label {
                                          echo $js_personal_info->work_permit_countries;
                                          }
                                        ?>">
-
-                                <input type="text" name="other_country_work_permit" class="allowalphanumeric form-control" id="tokenfield" style="display: inline-block;"  placeholder="Enter Location" onkeydown="check_key();"
+                                       
+                                <input type="text" name="city_id" class="allowalphanumeric form-control" id="tokenfield" style="display: inline-block;"  placeholder="Enter Location" onkeydown="check_key();"
                         value="<?php if(!empty($job_info->city_id) ){echo $job_info->city_id; } ?><?php echo set_value('city_id'); ?>"><?php echo form_error('city_id'); ?>
                    
 
@@ -3957,24 +3957,4 @@ $(document).ready(function () {
 
 
 
-<script src="<?php echo base_url(); ?>asset/src/jquery.tokeninput.js"></script>
-<script> 
-   $(document).ready(function() { 
-   
-     $('#other_terxtbx').hide();
-     $('#skl_btn').hide();
-     $('#other_skills').hide();
-      $('#training_title1').hide();
-      var id=document.getElementById('job_role').value;
-      // alert(id);
-      getSkillsdetails(id);
-   
-   $("#tokenfield").keypress(function(event){
-         var inputValue = event.charCode;
-         alert(inputValue);
-         if(!(inputValue >= 65 && inputValue <= 120) && (inputValue != 32 && inputValue != 0)){
-             event.preventDefault();
-         }
-     });
 
-   </script>
