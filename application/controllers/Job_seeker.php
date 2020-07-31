@@ -725,7 +725,7 @@ exit;*/
 
          $seeker_id  = $this->input->post('job_seeker_id');
         // $employer_id = $this->session->userdata('company_profile_id');
-        $where_all = "forwarded_tests.status != 'Test Completed' AND job_seeker_id = '$job_seeker_id'";
+        $where_all = "forwarded_tests.status != 'Test Completed' AND job_seeker_id = '$seeker_id'";
 
         $oceanchamp_tests = $this->Master_model->get_master_row('forwarded_tests', $select = FALSE, $where = $where_all, $join = FALSE);
         
