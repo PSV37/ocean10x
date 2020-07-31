@@ -631,7 +631,7 @@ class Employer extends MY_Employer_Controller
                     "job_deadline" => date('Y-m-d', strtotime(str_replace('/', '-', $this->input->post('job_deadline')))),
                     
                     //                   'preferred_age'      => $this->input->post('preferred_age_from'),
-                    // 'preferred_age_to'   => $this->input->post('preferred_age_to'),
+                    'test_for_job'   => $this->input->post('test_for_job'),
                     // 'working_hours'      => $this->input->post('working_hours'),
                     'is_test_required' => $this->input->post('job_test_requirment')
                     
@@ -722,6 +722,11 @@ class Employer extends MY_Employer_Controller
             $where_cn              = "status=1";
             $select                = "job_role_title, skill_set ,id";
             $data['job_role_data'] = $this->Master_model->getMaster('job_role', $where_cn, $join = FALSE, $order = false, $field = false, $select, $limit = false, $start = false, $search = false);
+
+            $employer_id = $this->session->userdata('company_profile_id');
+            $where_all = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id'";
+
+            $data['oceanchamp_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where_all);
             
             
             $this->load->view('fontend/employer/post_new_job', $data);

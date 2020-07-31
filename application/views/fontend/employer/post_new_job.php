@@ -416,28 +416,6 @@
                      </select>
                   </div>
                </div>
-               <div class="col-md-3 col-sm-12" tabindex="10">
-                  <div class="formrow">
-                     <label class="control-label ">Ocean Test Required <span class="required">*</span></label>
-                     <select name="job_test_requirment" id="job_test_requirment" class="form-control select2" data-style="btn-default" data-live-search="true" >
-                        <option value="Yes"<?php $test_value= set_value('job_test_requirment'); if($job_info->is_test_required=="Yes" || $test_value == "Yes"){ echo "selected"; }?>>Yes </option>
-                        <option value="No"<?php if($job_info->is_test_required=="No" || $test_value == 'No'){ echo "selected"; }?>>No </option>
-                     </select>
-                     <?php echo form_error('job_test_requirment'); ?>             
-                  </div>
-               </div>
-               <div class="col-md-3 col-sm-12" tabindex="11">
-                  <div class="formrow salrange" >
-                     <label class="control-label " style="margin-left:-162px;">Salary Range (INR)<span class="required"> *</span> </label>
-                     <div class="col-md-3 formrow" style="width:100px;margin-left:-14px;margin-top:37px;">
-                        <?php $sal=explode('-', $job_info->salary_range);  ?>
-                        <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="salrange_from"  value="<?php echo $sal[0]; ?><?php echo set_value('salrange_from'); ?>">
-                     </div>
-                     <div class="col-md-3 formrow" style="width:100px;margin-left:-19px;margin-top: 37px;">
-                        <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="salrange_to"  value="<?php echo $sal[1]; ?><?php echo set_value('salrange_to'); ?>" />
-                     </div>
-                  </div>
-               </div>
                <div class="col-md-3 col-sm-12" tabindex="12">
                   <div class="formrow">
                      <label class="control-label">Deadline<span class="required"> * </span> </label>
@@ -450,6 +428,44 @@
                      <input type="text" id="my_date_picker" name="job_deadline" style="display: inline-block;" class="form-control datepicker" id="job_deadline_day"  value="<?php $jb_deadline=set_value('job_deadline'); if(!empty($jb_deadline)){ echo $jb_deadline;} else{ echo $next_due_date; } ?>" autocomplete="off">     <?php echo form_error('job_deadline'); ?>
                   </div>
                </div>
+               
+               <div class="col-md-3 col-sm-12" tabindex="11">
+                  <div class="formrow salrange" >
+                     <label class="control-label " style="margin-left:-162px;">Salary Range (INR)<span class="required"> *</span> </label>
+                     <div class="col-md-3 formrow" style="width:100px;margin-left:-14px;margin-top:37px;">
+                        <?php $sal=explode('-', $job_info->salary_range);  ?>
+                        <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="salrange_from"  value="<?php echo $sal[0]; ?><?php echo set_value('salrange_from'); ?>">
+                     </div>
+                     <div class="col-md-3 formrow" style="width:100px;margin-left:-19px;margin-top: 37px;">
+                        <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="salrange_to"  value="<?php echo $sal[1]; ?><?php echo set_value('salrange_to'); ?>" />
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-3 col-sm-12" tabindex="10">
+                  <div class="formrow">
+                     <label class="control-label ">Ocean Test Required <span class="required">*</span></label>
+                     <select name="job_test_requirment" onchange="set_test();" id="job_test_requirment" class="form-control select2" data-style="btn-default" data-live-search="true" >
+                        <option></option>
+                        <option  value="Yes"<?php $test_value= set_value('job_test_requirment'); if($job_info->is_test_required=="Yes" || $test_value == "Yes"){ echo "selected"; }?>>Yes </option>
+                        <option value="No"<?php if($job_info->is_test_required=="No" || $test_value == 'No'){ echo "selected"; }?>>No </option>
+                     </select>
+                     <?php echo form_error('job_test_requirment'); ?>             
+                  </div>
+               </div>
+               <div class="col-md-3 col-sm-12" tabindex="11" >
+                  <div class="formrow test_div">
+                     <label class="control-label ">Test<span class="required">*</span></label>
+                     <select name="test_for_job" id="test_for_job" class="form-control select2" data-style="btn-default" data-live-search="true" >
+                       <?php  if (isset($oceanchamp_tests) && !empty($oceanchamp_tests)) {
+                        foreach ($oceanchamp_tests as $row) { ?>
+                          <option value="<?php echo $row['test_id']; ?>"><?php echo $row['test_name']; ?></option>
+                     <?php   }
+                     } ?>
+                  </select>
+                     <?php echo form_error('test_for_job'); ?>             
+                  </div>
+               </div>
+               
                <div class="col-sm-12 p-m-2" tabindex="13">
                   <div class="formrow">
                      <!-- donain is nothing but industry -->
@@ -565,12 +581,28 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/additional-methods.js"></script>
 <script> 
+   function set_test()
+   {
+      var oceantest = $('#job_test_requirment').val();
+      alert(oceantest);
+      if (oceantest == 'Yes') 
+      {
+         $('.test_div').show();
+      }
+      else
+      {
+         $('.test_div').hide();
+
+      }
+   }
    $(document).ready(function() { 
    
      $('#other_terxtbx').hide();
      $('#skl_btn').hide();
      $('#other_skills').hide();
       $('#training_title1').hide();
+
+       $('.test_div').hide();
       var id=document.getElementById('job_role').value;
       // alert(id);
       getSkillsdetails(id);
