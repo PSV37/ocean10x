@@ -864,6 +864,10 @@ span.select2-selection.select2-selection--single {
 input#email {
     width: 100%;
 }
+.sendEmail label {
+    color: black;
+    font-size: 13px;
+}
 </style>
 <div class="container-fluid main-d">
    <div class="container">
@@ -1094,7 +1098,7 @@ input#email {
                 
               </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
               <div class="form-group negative">
                 <label for="male">Negative Marking</label><br>
                   <label class="radio-inline">
@@ -1106,7 +1110,7 @@ input#email {
                 
               </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
               <div class="form-group each_question_ans">
                 <label for="male">Display Correct Answer for each Question</label><br>
                   <label class="radio-inline">
@@ -1137,7 +1141,7 @@ input#email {
 
                <input type="hidden" name="forward_job_email" id="forward_job_email" value="<?php echo $cv_row['js_email']; ?>">
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer"  style="    margin-top: 340px;">
                <button type="submit" class="btn btn-save">update</button>
             </div>
          </form>
