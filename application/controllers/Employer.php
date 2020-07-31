@@ -1827,51 +1827,55 @@ class Employer extends MY_Employer_Controller
 
                      }
                     
-                    $apply_array = array(
+                    $test_array = array(
                         'job_seeker_id' => $seeker_id,
                         'company_id' => $employer_id,
-                        'job_post_id' => $job_post_id,
-                        'forword_job_status' => 1,
+                        'test_id' => $test_id,
+                        'status' => 'Farwarded Test individually',
                         'updated_on' => date('Y-m-d'),
-                        'mandatory_parameters' => implode(',', $mandatory)
+                        
                     );
-                    $whereres  = "job_seeker_id='$seeker_id' and company_id = '$employer_id' and job_post_id = '$job_post_id'";
-                    $job_apply_data = $this->Master_model->get_master_row('
-                        job_apply', $select = FALSE, $whereres);
-                    if (empty($job_apply_data)) {
-                         $apply       = $this->Master_model->master_insert($apply_array, 'job_apply');
+                    $whereres  = "job_seeker_id='$seeker_id' and company_id = '$employer_id' and test_id = '$test_id'";
+                    $test_data = $this->Master_model->get_master_row('
+                        forwarded_tests', $select = FALSE, $whereres);
 
-                        $external_array = array(
-                        'cv_id' => $cv_id,
-                        'company_id' => $employer_id,
-                        'job_post_id' => $job_post_id,
-                        'apply_id' => $apply,
-                        'status' => 1,
-                        'company_id' => $employer_id,
-                        'name' => $can_data[0]['full_name'],
-                        'email' => $can_data[0]['email'],
-                        'mobile' => $can_data[0]['mobile_no'],
-                      'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),
+                    if (empty($test_data)) {
+                         $frwd = $this->Master_model->master_insert($test_array, 'forwarded_tests');
+
+                    }
+                    
+
+                    //     $external_array = array(
+                    //     'cv_id' => $cv_id,
+                    //     'company_id' => $employer_id,
+                    //     'job_post_id' => $job_post_id,
+                    //     'apply_id' => $apply,
+                    //     'status' => 1,
+                    //     'company_id' => $employer_id,
+                    //     'name' => $can_data[0]['full_name'],
+                    //     'email' => $can_data[0]['email'],
+                    //     'mobile' => $can_data[0]['mobile_no'],
+                    //   'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),
                        
-                    );
-                    $frwd = $this->Master_model->master_insert($external_array, 'external_tracker');
+                    // );
+                    // $frwd = $this->Master_model->master_insert($external_array, 'external_tracker');
 
-                        $frwd_array = array(
-                        'cv_id' => $cv_id,
-                        'company_id' => $employer_id,
-                        'job_post_id' => $job_post_id,
-                        'apply_id' => $apply,
-                        'status' => 1,
-                        'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),
-                    );
+                    //     $frwd_array = array(
+                    //     'cv_id' => $cv_id,
+                    //     'company_id' => $employer_id,
+                    //     'job_post_id' => $job_post_id,
+                    //     'apply_id' => $apply,
+                    //     'status' => 1,
+                    //     'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),
+                    // );
 
-                         $frwd = $this->Master_model->master_insert($frwd_array, 'forwarded_jobs_cv');
+                    //      $frwd = $this->Master_model->master_insert($frwd_array, 'forwarded_jobs_cv');
 
 
                     }
                    
                     
-                    if ($apply) {
+                    if ($frwd) {
                         $email_name = explode('@', $email[$i]);
                         $company_name = $this->session->userdata('company_name');
                         
