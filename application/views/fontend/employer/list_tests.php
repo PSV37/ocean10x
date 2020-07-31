@@ -1048,7 +1048,7 @@ input#email {
             <input type="hidden" name="test_id" id="test_id" value="<?php echo $tests['test_id']; ?>">
             <div class="modal-body" style="padding:15px 40px;">
              
-            <div class="col-md-4">
+            <div class="col-md-6">
               <div class="form-group ques_type">
                 <label for="exampleInputEmail1">Question Type<span class="required">*</span></label>
                 <select name="ques_type" id="ques_type" class="form-control select2" type="text" onchange="get_questuions();">
@@ -1058,14 +1058,15 @@ input#email {
                 </select> <?php echo form_error('ques_type'); ?>   
               </div>
             </div>
+            <div class="col-md-6"></div>
 
             <div class="col-md-4">
               <div class="form-group timer">
                 <label for="male">Timer On each Question</label><br>
-                  <label class="radio-inline" style="margin-left: 20px;" >
+                  <label class="radio-inline" >
                     <input type="radio" name="timer" style=" margin-right: 11px;" value="Y" checked> Yes
                   </label>
-                  <label class="radio-inline" style=" margin-right: 50px;">
+                  <label class="radio-inline">
                     <input type="radio" name="timer" value="N" style="margin-left: -30px;">No
                   </label>
                 
@@ -1075,11 +1076,59 @@ input#email {
              <div class="col-md-4">
               <div class="form-group previous_option">
                 <label for="male">Allowed to Go back</label><br>
-                  <label class="radio-inline" style="margin-left: 20px;" >
+                  <label class="radio-inline">
                     <input type="radio" name="previous_option"  style=" margin-right: 11px;" value="Y" checked> Yes
                   </label>
-                  <label class="radio-inline" style=" margin-right: 50px;">
+                  <label class="radio-inline">
                     <input type="radio" name="previous_option" value="N" style="margin-left: -30px;">No
+                  </label>
+                
+              </div>
+            </div>
+             <div class="col-md-4">
+              <div class="form-group review_option">
+                <label for="male">Allowed to Review</label><br>
+                  <label class="radio-inline">
+                    <input type="radio" name="review_option" style=" margin-right: 11px;" value="Y" checked> Yes
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="review_option" value="N" style="margin-left: -30px;">No
+                  </label>
+                
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group negative">
+                <label for="male">Negative Marking</label><br>
+                  <label class="radio-inline">
+                    <input type="radio" name="negative" style=" margin-right: 11px;" value="Y" checked> Yes
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="negative" value="N" style="margin-left: -30px;">No
+                  </label>
+                
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group each_question_ans">
+                <label for="male">Display Correct Answer for each Question</label><br>
+                  <label class="radio-inline">
+                    <input type="radio" name="each_question_ans" style=" margin-right: 11px;" value="Y" checked> Yes
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="each_question_ans" value="N" style="margin-left: -30px;">No
+                  </label>
+                
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group display_result">
+                <label for="male">Display Test Result to Candidate</label><br>
+                  <label class="radio-inline">
+                    <input type="radio" name="display_result" style=" margin-right: 11px;" value="Y" checked> Yes
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="display_result" value="N" style="margin-left: -30px;">No
                   </label>
                 
               </div>
