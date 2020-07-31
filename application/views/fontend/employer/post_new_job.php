@@ -452,7 +452,7 @@
                      <?php echo form_error('job_test_requirment'); ?>             
                   </div>
                </div>
-               <div class="col-md-3 col-sm-12 test_div" tabindex="10" >
+               <div class="col-md-3 col-sm-12 test_div" tabindex="11" >
                   <div class="formrow">
                      <label class="control-label ">Test<span class="required">*</span></label>
                      <select name="test_for_job" id="test_for_job" class="form-control select2" data-style="btn-default" data-live-search="true" >
