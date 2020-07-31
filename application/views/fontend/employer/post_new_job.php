@@ -580,6 +580,20 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/additional-methods.js"></script>
 <script> 
+   function set_test()
+   {
+      var oceantest = $('#job_test_requirment').val();
+      alert(oceantest);
+      if (oceantest == 'Yes') 
+      {
+         $('.test_div').show();
+      }
+      else
+      {
+         $('.test_div').hide();
+
+      }
+   }
    $(document).ready(function() { 
    
      $('#other_terxtbx').hide();
@@ -604,20 +618,7 @@
      
      $("#my_date_picker").datepicker({ dateFormat: 'yy-mm-dd' });
      }); 
-   function set_test()
-   {
-      var oceantest = $('#job_test_requirment').val();
-      alert(oceantest);
-      if (oceantest == 'Yes') 
-      {
-         $('.test_div').show();
-      }
-      else
-      {
-         $('.test_div').hide();
-
-      }
-   }
+   
    
      $("#test").validate ({
        groups: {
