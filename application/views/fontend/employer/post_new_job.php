@@ -618,8 +618,9 @@
      });
    
      $(function() { 
+      var currentDate = new Date();
      
-     $("#my_date_picker").datepicker({ dateFormat: 'yy-mm-dd' });
+     $("#my_date_picker").datepicker("setDate", currentDate);
 
      }); 
    
