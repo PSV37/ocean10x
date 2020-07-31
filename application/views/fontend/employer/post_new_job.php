@@ -621,7 +621,6 @@
      
      $("#my_date_picker").datepicker({ dateFormat: 'yy-mm-dd' });
 
-     
      }); 
    
    
