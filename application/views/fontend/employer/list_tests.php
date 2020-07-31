@@ -928,6 +928,8 @@ span.select2-selection.select2-selection--single {
                           
                            <li class="left-title">Timer on Each Question</li>
                            <li class="right-title">&nbsp;: <?php echo $tests['timer_on_each_que']; ?></li>
+                           <li class="left-title">Display Correct Answer</li>
+                           <li class="right-title">&nbsp;:<?php echo $tests['correct_ans_each_ques']; ?></li>
                             
 
                            <div class="clear"></div>
@@ -957,8 +959,7 @@ span.select2-selection.select2-selection--single {
                            <li class="right-title">&nbsp;:<?php echo $tests['review_option']; ?></li>
                             <li class="left-title">Negative Marking</li>
                            <li class="right-title">&nbsp;:<?php echo $tests['negative_marks']; ?></li>
-                            <li class="left-title">Display Correct Answer</li>
-                           <li class="right-title">&nbsp;:<?php echo $tests['correct_ans_each_ques']; ?></li>
+                            
 
                         
 
@@ -969,7 +970,7 @@ span.select2-selection.select2-selection--single {
                         <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1" style="top:47px;">
-                           <li ><a class="dropdown-item" href="#" id="div_frwrd" data-toggle="modal" data-target="#rotateModal" >Forward Job Post</a></li>
+                           <li ><a class="dropdown-item" href="#" id="div_frwrd" data-toggle="modal" data-target="#rotateModal<?php echo $tests['test_id'] ?>" >Forward This Test</a></li>
                       
                            <li id="div_download"> <a class="dropdown-item"  href="" download >Download this cv</a></li>
                            
@@ -994,22 +995,21 @@ span.select2-selection.select2-selection--single {
       </div>
    </div>
 </div>
-<?php if (!empty($cv_bank_data)): foreach ($cv_bank_data as $cv_row) : ?>
-<div class="modal" id="rotateModal<?php echo $cv_row['cv_id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-   <input type="hidden" name="cv_id" id="cv_id" value="<?php $cv_row['cv_id']; ?>">
+ <?php $key = 1; if (!empty($oceanchamp_tests)): foreach ($oceanchamp_tests as $tests) : ?><div class="modal" id="rotateModal<?php echo $tests['test_id'] ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+   <input type="hidden" name="test_id" id="test_id" value="<?php $cv_row['test_id']; ?>">
    <div class="modal-dialog" role="document">
       <div class="modal-content">
          <div class="modal-header" style="border-bottom:none;">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Forward This Job Post</h5>
+            <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Forward This Test</h5>
          </div>
          <form action="<?php echo base_url() ?>employer/forward_posted_job" class="sendEmail" method="post" autocomplete="off">
             <div class="modal-body" style="padding:15px 40px;">
              
                <input type="hidden" name="consultant" value="JobSeeker">  
-               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <label class="mdl-textfield__label" for="sample3">job Post:</label>
-                  <input type="text"  name="job_title"  id="job_title" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <label class="mdl-textfield__label" for="sample3">E-mail:</label>
+                  <input type="email"  name="candiate_email"  id="email" placeholder="Enter comma seperated Emails"  id="subject" data-required="true" multiple style="display: inline-block;" required>
                </div>
                <input type="hidden" name="job_post_id" value="" id="auto-value">
 
