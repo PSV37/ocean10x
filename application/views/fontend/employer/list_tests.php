@@ -1098,7 +1098,7 @@ input#email {
                 
               </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
               <div class="form-group negative">
                 <label for="male">Negative Marking</label><br>
                   <label class="radio-inline">
@@ -1122,7 +1122,7 @@ input#email {
                 
               </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
               <div class="form-group display_result">
                 <label for="male">Display Test Result to Candidate</label><br>
                   <label class="radio-inline">
