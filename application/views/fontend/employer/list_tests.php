@@ -1021,10 +1021,7 @@ input#email {
                   <label class="mdl-textfield__label" for="sample3">Message:</label>
                   <textarea class="form-control" name="message" rows="5" id="comment" value="" required></textarea>
                </div>
-               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
-                  <label class="mdl-textfield__label" for="sample3">Number of cvs: 1</label><br>
-                  
-               </div>
+            
 
                <input type="hidden" name="forward_job_email" id="forward_job_email" value="<?php echo $cv_row['js_email']; ?>">
             </div>
@@ -1136,19 +1133,12 @@ input#email {
           
                <input type="hidden" name="job_post_id" value="" id="auto-value">
 
-               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
-                  <label class="mdl-textfield__label" for="sample3">Message:</label>
-                  <textarea class="form-control" name="message" rows="5" id="comment" value="" required></textarea>
-               </div>
-               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
-                  <label class="mdl-textfield__label" for="sample3">Number of cvs: 1</label><br>
-                  
-               </div>
+               
 
                <input type="hidden" name="forward_job_email" id="forward_job_email" value="<?php echo $cv_row['js_email']; ?>">
             </div>
             <div class="modal-footer">
-               <button type="submit" class="btn btn-save">Send</button>
+               <button type="submit" class="btn btn-save">update</button>
             </div>
          </form>
       </div>
