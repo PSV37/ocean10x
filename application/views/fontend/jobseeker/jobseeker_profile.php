@@ -4,20 +4,6 @@
    ?>
 
 
-<style type="text/css">
-   
-   .required
-   {
-   color: red;
-   }
-   
-   label.error {
-    color: red;
-    font-weight: 100;
-    
-}
-
-</style>
 
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/calender.css">
 
@@ -59,10 +45,11 @@ input.select2-search__field {
     display: inline-block;
     border-radius: 0px;
 }
-
+label {
+    font-weight: 100;
+}
 
 </style>
-
 
 
 <!---header end--->
@@ -749,11 +736,14 @@ input.select2-search__field {
                      <img src="https://www.sassm.in/education/images/blog-header.jpg" style="width:100%; height:140px;position:relative;margin-bottom:140px;">
                      <!-- </div></div></div> -->
                      <?php  $job_seeker_photo = $this->Job_seeker_photo_model->photo_by_seeker($jobseeker_id); ?>
+                    <!--  <form class="avatar-form" id ="update_photo" action="<?php echo base_url('Job_seeker/save_photo');?>/<?php if(!empty($job_seeker_photo->js_photo_id)){echo $job_seeker_photo->js_photo_id;} ?>" enctype="multipart/form-data" method="post"> -->
+                       <form id="profile-info" enctype="multipart/form-data" class="form-horizontal" action="<?php echo base_url('job_seeker/save_profile_details');?>" method="post" style="padding: 30px;"  >
                      <div class="text-center" style="position:absolute;top:50px;left:-50px;">
                         <img src="<?php echo base_url() ?>upload/<?php if(!empty($job_seeker_photo->photo_path)) { echo $job_seeker_photo->photo_path;} else { echo "image-notfound.png";} ?>" class="avatar img-circle img-thumbnail" alt="avatar">
                         <h6>Upload a different photo...</h6>
-                        <input type="file" class="text-center center-block file-upload">
+                        <input type="file" class="text-center center-block file-upload" name="js_photo">
                      </div>
+                   <!-- </form> -->
                      <div class="row">
                         <span class="edit"><a href="#" data-toggle="modal" data-target="#myModal50">Edit</a></span> 
                      </div>
@@ -1429,7 +1419,7 @@ input.select2-search__field {
                               <div class="form-group">
                                  <label class="control-label col-sm-3" for="email">City:<span class="required">*</span></label>
                                  <div class="col-sm-9">
-                                    <select name="city_id" class="form-control" onchange="getStates(this.value)">
+                                    <select name="city_id" id="city_id" class="form-control" onchange="getStates(this.value)">
                                        <option value="">Select City</option>
                                        <?php foreach($city as $valu){?>
                                        <option value="<?php echo $valu['id']; ?>"<?php if($js_personal_info->city_id==$valu['id']){ echo "selected"; }?>><?php echo $valu['city_name']; ?></option>
@@ -1449,7 +1439,7 @@ input.select2-search__field {
                               </div>
                               <div class="form-group">
                                  <label class="control-label col-sm-3" for="email">My Tagline:</label>
-                                 <div class="col-sm-9"><input id="resDate_1" class="datepicker form-control"  name="tagline" placeholder="Enter Your Tagline" value="<?php 
+                                 <div class="col-sm-9"><input id="resDate_1" class=" form-control"  name="tagline" placeholder="Enter Your Tagline" value="<?php 
                                     if (!empty($js_personal_info->resume_title)) {
                                       echo $js_personal_info->resume_title;
                                       }
@@ -1488,12 +1478,18 @@ input.select2-search__field {
                               <div class="form-group">
                                  <label class="control-label col-sm-3" for="pwd">Work Permit for Other Countries</label>
                                  <div class="col-sm-9">
-                                    <input type="text" name="other_country_work_permit" class="form-control" id="tokenfield" placeholder="Enter Country" value="<?php
+
+                                  <input type="text" name="other_country_work_permit" class="form-control" id="tokenfield" placeholder="You can choose upto 3 Countries" value="<?php
                                        if (!empty($js_personal_info->work_permit_countries)) {
                                          echo $js_personal_info->work_permit_countries;
                                          }
                                        ?>">
-                                    <p>You can choose upto 3 Countries</p>
+
+                                <input type="text" name="city_id" class="allowalphanumeric form-control" id="tokenfield" style="display: inline-block;"  placeholder="Enter Location" onkeydown="check_key();"
+                        value="<?php if(!empty($job_info->city_id) ){echo $job_info->city_id; } ?><?php echo set_value('city_id'); ?>"><?php echo form_error('city_id'); ?>
+                   
+
+                                    <!--p>You can choose upto 3 Countries</p-->
                                  </div>
                               </div>
                               <div class="form-group">
@@ -1817,7 +1813,7 @@ input.select2-search__field {
                                  </div>
                                  <div class="modal-body">
                                     <form id="work_experience" class="form-horizontal" action="<?php echo base_url('job_seeker/update_experience');?>" method="post" style="padding: 30px;">
-                                       <!-- <input type="hidden" name="js_experience_id" value="286"> -->
+                                       <input type="hidden" name="js_experience_id" value="286"> 
                                        <div class="form-group">
                                           <label class="control-label col-sm-3" for="email">Company Name:</label>
                                           <div class="col-sm-9">
@@ -1848,13 +1844,13 @@ input.select2-search__field {
                                        </div>
                                        <div class="form-group">
                                           <label class="control-label col-sm-3" for="email">Start Date:</label>
-                                          <div class="col-sm-9"><input class="datepicker form-control" id="start_date_picker" required name="start_date" value="">
-                                             <label><input type="checkbox" id="upChkDisable_1" onclick="disableUpperDP('1')" >  Current Job</label>
+                                          <div class="col-sm-9"><input class="datepicker form-control" id="start_date_picker"  name="start_date" value="">
+                                             <label><input type="checkbox" id="upChkDisable_2" onclick="disableUpperDP('2')" >  Current Job</label>
                                           </div>
                                        </div>
                                        <div class="form-group">
                                           <label class="control-label col-sm-3" for="email">End Date:</label>
-                                          <div class="col-sm-9"> <input id="resDate_1" class="datepicker form-control"  name="end_date" value="" disabled="disabled">
+                                          <div class="col-sm-9"> <input id="resDate_2" class="datepicker form-control"  name="end_date" value="" disabled="disabled">
                                           </div>
                                        </div>
                                        <div class="form-group">
@@ -1947,15 +1943,15 @@ input.select2-search__field {
                                    
                         
                         ?>
-                     <!--  <div class="modal fade" id="myModal5" role="dialog">
-                        <div class="modal-dialog modal-md"> -->
+                    <!--<div class="modal fade" id="myModal5" role="dialog">
+                        <div class="modal-dialog modal-md">-->
                      <div class="modal-content">
                         <div class="modal-header">
                            <button type="button" class="close" data-dismiss="modal">&times;</button>
                            <h4 class="modal-title">Work Experience</h4>
                         </div>
                         <div class="modal-body">
-                           <form id="UpdateExperience-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_experience');?>" method="post" style="padding: 30px;">
+                           <form id="work_experience1" class="form-horizontal" action="<?php echo base_url('job_seeker/update_experience');?>" method="post" style="padding: 30px;">
                               <input type="hidden" name="js_experience_id" value="<?php echo $v_experience->js_experience_id; ?>">
                               <div class="form-group">
                                  <label class="control-label col-sm-3" for="email">Company Name:</label>
@@ -1986,18 +1982,13 @@ input.select2-search__field {
                               </div>
                               <div class="form-group">
                                  <label class="control-label col-sm-3" for="email">Start Date:</label>
-<<<<<<< HEAD
-                                 <div class="col-sm-9"><input class="datepicker1 form-control" id="start_date_picker1" required name="start_date" value="<?php if (!empty($experinece->start_date)) { echo date('d-m-Y',strtotime($experinece->start_date)); } ?>">
-                                    <label><input type="checkbox" id="upChkDisable_1" onclick="disableUpperDP('1')" checked="checked">  Current Job</label>
-=======
-                                 <div class="col-sm-9"><input class="datepicker form-control" id="start_date_picker1" required name="start_date" value="<?php if (!empty($experinece->start_date)) { echo date('d-m-Y',strtotime($experinece->start_date)); } ?>">
-                                    <label><input type="checkbox" id="upChkDisable_1" onclick="disableUpperDP('2')" checked="checked">  Current Job</label>
->>>>>>> 1a7d8c4f49eb2d620daf26206c2b615f26383545
+                                 <div class="col-sm-9"><input class="datepicker form-control" id="start_date_picker1"  name="start_date" value="<?php if (!empty($experinece->start_date)) { echo date('d-m-Y',strtotime($experinece->start_date)); } ?>">
+                                    <label><input type="checkbox" id="upChkDisable_3" onclick="disableUpperDP('3')">  Current Job</label>
                                  </div>
                               </div>
                               <div class="form-group">
                                  <label class="control-label col-sm-3" for="email">End Date:</label>
-                                 <div class="col-sm-9"><input id="resDate_2" class="datepicker form-control" required name="end_date" value="<?php if (!empty($experinece->end_date)) { echo date('d/m/Y',strtotime($experinece->end_date)); }else{ echo "";} ?>" disabled="disabled">
+                                 <div class="col-sm-9"><input id="resDate_3" class="datepicker form-control"  name="end_date" value="<?php if (!empty($experinece->end_date)) { echo date('d/m/Y',strtotime($experinece->end_date)); }else{ echo "";} ?>" disabled="disabled">
                                  </div>
                               </div>
                               <div class="form-group">
@@ -2339,11 +2330,38 @@ input.select2-search__field {
         </div>
       </div>
       
-      
+        
 <?php $this->load->view("fontend/layout/jobseeker_footer.php"); ?>
 </div>
 
- <script>
+<script>
+  
+    $(function() {
+
+  // $('#date').datepicker({
+  //   dateFormat: 'dd-mm-yy',
+  //   altField: '#thealtdate',
+  //   altFormat: 'dd-mm-yyyy',
+  //   defaultDate: null
+  // });
+/*var max_experience = $("#max_experience").val();
+
+for(var i =1; i < max_experience; i++){
+  if($('#resDate_'+i).val()==''  || $('#resDate_+'+i).val()==null){
+    
+    $('#upChkDisable_'+i).attr("checked","true");
+    $('#resDate_'+i).val('Continue');
+     $('#resDate_'+i).attr('disabled',"disabled");
+  }
+  else{
+     alert('error');
+  }
+}*/
+
+});
+  function disableAddDP() {
+  $("#end_date").attr("disabled", $("#chkDisable").is(":checked")).val("Continue");
+}   
 
   function disableDP(i) {
 //alert($('#resDate_'+i).val());
@@ -2354,18 +2372,168 @@ input.select2-search__field {
      $('#resDate_'+i).attr('disabled',"disabled");
   }
   
-} 
-    function disableUpperDP(count) {
+}  
+
+
+
+  function disableUpperDP(count) {
   
+ // alert($("#upChkDisable_"+count).is(":checked"));
+  alert(count);
   $("#resDate_"+count).attr("disabled", $("#upChkDisable_"+count).is(":checked"));
    if($("#upChkDisable_"+count).is(":checked")){
-     $('#resDate_'+count).val("Continue");
+    $('#resDate_'+count).val("Continue");
    } else {
      $('#resDate_'+count).val("");
    }
 }
 
-   </script> 
+
+</script>
+<script>
+    function getStates(id){
+    if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Job_seeker/getstate',
+                data:{id:id},
+                success:function(res){
+                    $('#state_id').html(res);
+                }
+        
+            }); 
+          }
+   
+     }
+    
+    function getCitys(id){
+    if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Job_seeker/getcity',
+                data:{id:id},
+                success:function(res){
+                    $('#city_id').html(res);
+                }
+        
+            }); 
+          }
+   
+     }
+     
+   //  function getStatess(id){
+    // if(id){
+  //           $.ajax({
+  //               type:'POST',
+  //               url:'<?php echo base_url();?>Job_seeker/getstate',
+  //               data:{id:id},
+  //               success:function(res){
+  //                   $('#state1_id').html(res);
+  //               }
+        
+  //           }); 
+  //         }
+   
+   //   }
+     
+   //  function getCityss(id){
+    // if(id){
+  //           $.ajax({
+  //               type:'POST',
+  //               url:'<?php echo base_url();?>Job_seeker/getcity',
+  //               data:{id:id},
+  //               success:function(res){
+  //                   $('#city1_id').html(res);
+  //               }
+        
+  //           }); 
+  //         }
+   
+   //   }
+     
+$(document).ready(function(){
+
+    function getStates_load(){
+        var id = $('#country_id').val();
+
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Job_seeker/getstate',
+                data:{id:id},
+                success:function(res){
+                    $('#state_id').html(res);
+                    $('#state_id').val(<?php echo $js_personal_info->state_id; ?>);
+                     getCitys_load(<?php echo $js_personal_info->state_id; ?>);
+                }
+                
+            }); 
+          }
+   
+       }
+    
+    function getCitys_load(id){
+      //var id = $('#state_id').val();
+      // alert(id);
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Job_seeker/getcity',
+                data:{id:id},
+                success:function(res){
+                    $('#city_id').html(res);
+                    $('#city_id').val(<?php echo $js_personal_info->city_id; ?>);
+                }
+                
+            }); 
+          }
+   
+       }
+
+    // function getStates_load_permant(){
+    //     var id = $('#country1_id').val();
+
+    //     if(id){
+    //         $.ajax({
+    //             type:'POST',
+    //             url:'<?php echo base_url();?>Job_seeker/getstate',
+    //             data:{id:id},
+    //             success:function(res){
+    //                 $('#state1_id').html(res);
+    //                 $('#state1_id').val(<?php echo $js_personal_info->state_id; ?>);
+    //                  getCitys_load_permant(<?php echo $js_personal_info->state_id; ?>);
+    //             }
+                
+    //         }); 
+    //       }
+   
+    //    }
+    
+    // function getCitys_load_permant(id){
+    //   //var id = $('#state_id').val();
+    //   // alert(id);
+    //     if(id){
+    //         $.ajax({
+    //             type:'POST',
+    //             url:'<?php echo base_url();?>Job_seeker/getcity',
+    //             data:{id:id},
+    //             success:function(res){
+    //                 $('#city1_id').html(res);
+    //                 $('#city1_id').val(<?php echo $js_personal_info->city_id; ?>);
+    //             }
+                
+    //         }); 
+    //       }
+   
+    //    }
+
+  getCitys_load();
+  getStates_load();
+  // getCitys_load_permant();
+  // getStates_load_permant();
+});
+
+</script>        
 <script src="<?php echo base_url(); ?>asset/src/jquery.tokeninput.js"></script>
 <script src="<?php echo base_url() ?>asset/js/jquery-ui.js"></script>
 <script src="<?php echo base_url() ?>asset/tokenjs/bootstrap-tokenfield.js"></script>
@@ -3044,12 +3212,111 @@ namespace_regex: true
 },
 
 'designation_id':{
-email_regex: true
+//email_regex: true
 },
 
 
 'dept_id':{
 phonenumber_regex: true
+}, 
+
+'start_date':{
+//twodigit_regex: true
+//email: true
+},
+
+
+'end_date':{
+maxlength:3
+//email: true
+},
+
+'js_career_salary':{                
+  //minlength:10,        
+  //maxlength:10,
+},
+
+'responsibilities':{                
+  //minlength:10,        
+  //maxlength:10,
+},
+
+'achievement':{                
+  //minlength:10,        
+  //maxlength:10,
+},
+
+},
+
+messages:{
+
+'company_profile_id':{
+required: "Must Fill !",
+minlength: "Please type atleast 3 characters!",
+namespace_regex: "Please type only alphabets"
+},
+
+'designation_id':{
+  required: "Must Fill !",
+  matches: "Didn't match!"
+},
+
+'dept_id':{
+//required: "Must Fill !",
+
+},
+
+'start_date':{
+maxlength: "Choose a company name of at least 14 letters!"
+},
+
+'end_date':{
+//company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
+//remote: "The username is already in use by another user!"
+},
+
+'js_career_salary':{
+required: "Must Fill !",
+minlength: "Please type atleast 10 digits",
+maxlength: "Please type atleast 10 digits"
+},
+
+'responsibilities':{
+maxlength: "Choose a company name of at least 14 letters!"
+},
+
+'achievement':{
+//company_phone_regex: "You have used invalid characters. Are permitted only letters numbers!",
+//remote: "The username is already in use by another user!"
+},
+
+
+}
+
+});
+
+});
+
+$( document ).ready( function () {
+
+$("#work_experience1").validate (  
+
+{
+
+rules:{
+
+'company_profile_id':{
+minlength: 3,
+namespace_regex: true
+},
+
+'designation_id':{
+//email_regex: true
+},
+
+
+'dept_id':{
+//phonenumber_regex: true
 }, 
 
 'start_date':{
@@ -3131,7 +3398,6 @@ maxlength: "Choose a company name of at least 14 letters!"
 });
 
 });
-
 
 $( document ).ready( function () {
 
@@ -3380,7 +3646,6 @@ $.validator.addMethod("dateFormat",
 <script src="<?php echo base_url() ?>asset/tokenjs/bootstrap-tokenfield.js"></script>
 <script src="<?php echo base_url() ?>asset/tokenjs/typeahead.bundle.min.js"></script>
 <script src="<?php echo base_url() ?>asset/js/search.js"></script>
-
 <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
 
 
@@ -3469,10 +3734,10 @@ $(".allowalphabates").keypress(function (e) {
 </script>
 
 <script>
-$(function() { 
+// $(function() { 
      
-     $("#my_date_picker").datepicker({ yearRange: '1900:'+ curr_year, changeMonth:true, changeYear:true, maxDate: '-1d'});
-    });    
+    //  $("#my_date_picker").datepicker({ yearRange: '1900:'+ curr_year, changeMonth:true, changeYear:true, maxDate: '-1d'});
+    // });    
 
       
 </script>
@@ -3502,48 +3767,13 @@ $(document).ready(function () {
 </script>
     
 <script> 
-  //$(function(){
- //$("#start_date_picker").datepicker({ dateFormat: 'yy-mm-dd' });
-   //  }); 
-$(document).ready(function () {
-        var today = new Date();
-        $('.datepicker1').datepicker({
-            format: 'mm-dd-yyyy',
-            autoclose:true,
-            endDate: "today",
-            maxDate: today
-        }).on('changeDate', function (ev) {
-                $(this).datepicker1('hide');
-            });
-
-
-        $('.datepicker1').keyup(function () {
-            if (this.value.match(/[^0-9]/g)) {
-                this.value = this.value.replace(/[^0-9^-]/g, '');
-            }
-        });
-    });
-</script>
-
-<script>  
   $(function(){
  $("#start_date_picker1").datepicker({ dateFormat: 'yy-mm-dd' });
      }); 
 
 </script>
 <!---script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script-->
-<script type="text/javascript">
-    $(function () {
-        $("#upChkDisable_1").click(function () {
-            if ($(this).is(":checked")) {
-                $("#resDate_1").removeAttr("disabled");
-                $("#resDate_1").focus();
-            } else {
-                $("#resDate_1").attr("disabled", "disabled");
-            }
-        });
-    });
-</script>
+
 
 
 
@@ -3551,7 +3781,7 @@ $(document).ready(function () {
 
         
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+<!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/-->
 
 
 
@@ -3569,7 +3799,7 @@ $(document).ready(function () {
 });
   
 
-  <!-- bootstrap datepicker plugin -->
+  // <!-- bootstrap datepicker plugin -->
   
      $(document).ready(function(){
          var date_input=$('input[name="dob"]'); //our date input has the name "date"
@@ -3587,7 +3817,7 @@ $(document).ready(function () {
          date_input.datepicker(options);
      });
        
-<!-- Form validation code - depends on jquery.validate plugin -->
+// <!-- Form validation code - depends on jquery.validate plugin -->
 
     //$.validator.setDefaults( {
       //submitHandler: function () {
@@ -3724,6 +3954,3 @@ $(document).ready(function () {
 
     
     </script>
-
-
-
