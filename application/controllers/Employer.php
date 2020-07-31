@@ -2254,6 +2254,28 @@ class Employer extends MY_Employer_Controller
 
     }
 
+    public function edit_test($test_id = null)
+    {
+        if(!empty($test_id)) {
+
+            $where_all = "oceanchamp_tests.status ='1' AND oceanchamp_tests.company_id='$employer_id' and oceanchamp_tests.test_id = '$test_id'";
+
+             $join_emp  = array(
+            'skill_master' => 'skill_master.id=questionbank.technical_id |left outer',
+            'topic' => 'topic.topic_id=questionbank.topic_id |left outer',
+            'subtopic' => 'subtopic.subtopic_id=questionbank.subtopic_id |left outer',
+            'lineitem' => 'lineitem.lineitem_id=questionbank.lineitem_id |left outer',
+            'lineitemlevel' => 'lineitemlevel.lineitemlevel_id=questionbank.lineitemlevel_id |left outer',
+            'questionbank_answer' => 'questionbank_answer.question_id = questionbank.ques_id|LEFT OUTER'
+        );
+        
+            $data = $this->Master_model->getMaster('oceanchamp_tests', $where = $where_all, $join = $join_emp, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+          
+          // print_r($this->db->last_query());die;
+             $this->load->view('fontend/fontend/employer/create_test',$data);
+        }
+    }
+
     public function show_saved_tests()
     {
         $employer_id = $this->session->userdata('company_profile_id');

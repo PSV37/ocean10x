@@ -975,9 +975,9 @@ input#email {
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1" style="top:47px;">
                            <li ><a class="dropdown-item" href="#" id="div_frwrd" data-toggle="modal" data-target="#rotateModal<?php echo $tests['test_id'] ?>" >Forward This Test</a></li>
                       
-                           <li id="div_download"> <a class="dropdown-item"  href="" download >Download this cv</a></li>
+                           <li> <a class="dropdown-item"  href="#" data-toggle="modal" data-target="#edit_test<?php echo $tests['test_id'] ?>" >Edit Test</a></li>
                            
-                             <li><a class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-target="#move_cv" href="#">Move this CV</a></li>
+                            <!--  <li><a class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-target="#move_cv" href="#">Move this CV</a></li> -->
                         </div>
                      </div>
                   </div>
@@ -1015,6 +1015,76 @@ input#email {
                   <label class="mdl-textfield__label" for="sample3">E-mail:</label>
                   <input type="email"  name="candiate_email"  id="email" placeholder="Enter comma seperated Emails"  id="subject" data-required="true" multiple style="display: inline-block;" required>
                </div>
+               <input type="hidden" name="job_post_id" value="" id="auto-value">
+
+               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
+                  <label class="mdl-textfield__label" for="sample3">Message:</label>
+                  <textarea class="form-control" name="message" rows="5" id="comment" value="" required></textarea>
+               </div>
+               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
+                  <label class="mdl-textfield__label" for="sample3">Number of cvs: 1</label><br>
+                  
+               </div>
+
+               <input type="hidden" name="forward_job_email" id="forward_job_email" value="<?php echo $cv_row['js_email']; ?>">
+            </div>
+            <div class="modal-footer">
+               <button type="submit" class="btn btn-save">Send</button>
+            </div>
+         </form>
+      </div>
+   </div>
+</div>
+
+<div class="modal" id="edit_test<?php echo $tests['test_id'] ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+   
+   <div class="modal-dialog" role="document">
+      <div class="modal-content">
+         <div class="modal-header" style="border-bottom:none;">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Forward This Test</h5>
+         </div>
+         <form action="<?php echo base_url() ?>employer/update_test" class="sendEmail" method="post" autocomplete="off">
+            <input type="hidden" name="test_id" id="test_id" value="<?php echo $tests['test_id']; ?>">
+            <div class="modal-body" style="padding:15px 40px;">
+             
+            <div class="col-md-4">
+              <div class="form-group ques_type">
+                <label for="exampleInputEmail1">Question Type<span class="required">*</span></label>
+                <select name="ques_type" id="ques_type" class="form-control select2" type="text" onchange="get_questuions();">
+                  <option value="MCQ"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='MCQ')echo "selected";?>>MCQ</option>
+                    <option value="Subjective"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Subjective')echo "selected";?>>Subjective</option>
+                    <option value="Practical"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Practical')echo "selected";?>>Practical</option>
+                </select> <?php echo form_error('ques_type'); ?>   
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="form-group timer">
+                <label for="male">Timer On each Question</label><br>
+                  <label class="radio-inline" style="margin-left: 20px;" >
+                    <input type="radio" name="timer" style=" margin-right: 11px;" value="Y" checked> Yes
+                  </label>
+                  <label class="radio-inline" style=" margin-right: 50px;">
+                    <input type="radio" name="timer" value="N" style="margin-left: -30px;">No
+                  </label>
+                
+              </div>
+            </div>
+
+             <div class="col-md-4">
+              <div class="form-group previous_option">
+                <label for="male">Allowed to Go back</label><br>
+                  <label class="radio-inline" style="margin-left: 20px;" >
+                    <input type="radio" name="previous_option"  style=" margin-right: 11px;" value="Y" checked> Yes
+                  </label>
+                  <label class="radio-inline" style=" margin-right: 50px;">
+                    <input type="radio" name="previous_option" value="N" style="margin-left: -30px;">No
+                  </label>
+                
+              </div>
+            </div>
+          
                <input type="hidden" name="job_post_id" value="" id="auto-value">
 
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
@@ -1122,129 +1192,9 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
 
 </script>
 <script>
-   $(document).on(' change','input[name="check_all"]',function() {
-            $('.chkbx').prop("checked" , this.checked);
-    });
-    $(document).on(' change','input[name="bulk_download"]',function() {
-            $('.chkbx').prop("checked" , this.checked);
-            $("input[name='bulk_forward']:checkbox").prop('checked',false);
-             if (this.checked) 
-            {
-                $("#gedf-drop1").hide();
-             
-            }
-            else
-            {
-                $("#gedf-drop1").show();
+  
 
-            }
-
-    });
-   $(document).on(' change','input[name="bulk_forward"]',function() {
-            $('.chkbx').prop("checked" , this.checked);
-            $("input[name='bulk_download']:checkbox").prop('checked',false);
-
-            // alert(this.checked);
-            if (this.checked) 
-            {
-                $("#gedf-drop1").hide();
-              
-            }
-            else
-            {
-                $("#gedf-drop1").show();
-
-            }
-
-    });
-
-   function frwd_post()
-   {
-      var checkedVals = $('.chkbx:checkbox:checked').map(function() {
-                   return this.value;
-               }).get();
-               var emails= (checkedVals.join(","));
-               // alert(emails.length);
-                 if (emails.length > 0) 
-               {
-               var elements = emails.split(',').length;
-             
-                  $('#no_of_cvs').html(elements);
-                  $('#forward_job_emails').val(checkedVals.join(","));
-                  setTimeout(function(){
-                  $('#rotateModal').modal('show'); }, 500);
-               }else
-               {
-                  alert('Please select atleast one cv to forward the job!')
-               }
-               
-   }
-
-   function download_cvs()
-   {
-      var checkedValsofname = $('.chkbx:checkbox:checked').map(function() {
-                   return this.getAttribute("data-valueone");
-               }).get();
-        var cvs_name= (checkedValsofname.join(","));
-            
-            var myNameArray =  cvs_name.split(',');
-                // var totalFiles = myArray.length;
-
-    
-
-                // alert(totalFiles);
-             //Throw an error if no boxes are checked
-                if (myNameArray.length == 0) {
-                   alert("Please choose a file to download");
-                } else {
-                  var newArray = myNameArray.filter(value => Object.keys(value).length !== 0);
-              //          
-                $.ajax({
-                 url:"<?php echo base_url();?>Employer/create_zip",
-                 data: {myArray:newArray},
-                 type: 'post',
-                 success: function(response){
-                   // window.location = response;
-                   // alert(response);
-                   const url =  response;
-                                  const a = document.createElement('a');
-                                  a.style.display = 'none';
-                                  a.href = url;
-                                  // the filename you want
-                                  a.download = 'Resumes.zip';
-
-                                  document.body.appendChild(a);
-                                  a.click();
-                                  window.URL.revokeObjectURL(url);
-                 }
-               });
-
-   }
-}
-
-function move_cvs()
-{
-   var checkedValsofname = $('.chkbx:checkbox:checked').map(function() {
-                   return this.getAttribute("data-valuetwo");
-               }).get();
-        var cvs_name= (checkedValsofname.join(","));
-            
-            
-
-               // alert(emails.length);
-                 if (cvs_name.length > 0) 
-               {
-               var elements = cvs_name.split(',').length;
-             
-                  $('#no_of_cvs_move').html(elements);
-                  $('#cv_id').val(cvs_name);
-                  setTimeout(function(){
-                  $('#bulkmove_cv').modal('show'); }, 500);
-               }else
-               {
-                  alert('Please select atleast one cv move!')
-               }
-}
+   
 $("#job_titles").autocomplete({
              
              source: "<?php echo base_url();?>Employer/search_job_keywords",
