@@ -2081,6 +2081,7 @@ class Employer extends MY_Employer_Controller
             $data['oceanchamp_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where_all);
             $this->load->view('fontend/employer/saved_tests',$data);
     }
+
 function get_test_details()
 {
     $employer_id = $this->session->userdata('company_profile_id');
@@ -2114,6 +2115,22 @@ function get_test_details()
         }
     }
 
+    public function all_tests()
+    {
+        $this->session->unset_userdata('activemenu');
+        $data['activemenu'] = 'test_papers';
+        $this->session->set_userdata($data);
+        
+       $employer_id = $this->session->userdata('company_profile_id');
+        $where_all = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id'";
+
+        $data['oceanchamp_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where_all);
+        // echo  $this->db->last_query(); die;
+        
+        $this->load->view('fontend/employer/list_tests', $data);
+        
+        // $this->load->view('fontend/employer/all_questions.php', $data);
+    }
 
     public function save_questionbank($id = null)
     {
