@@ -306,6 +306,16 @@ $employer_id = $this->session->userdata('company_profile_id');
                                     <span class="text item">Question Bank</span>
                                   </a>
                                 </li>
+                                <li <?php if ($activemenu == 'test_papers') { ?>
+                                 class="active"
+                                <?php } ?> >
+                                  <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url(); ?>employer/all-tests">
+                                    <span class="icon-container">
+                                      <i class="fas fa-map-signs"></i>
+                                    </span>
+                                    <span class="text item">Tests</span>
+                                  </a>
+                                </li>
                                     
                                 <li <?php if ($activemenu == 'oceanchamp') { ?>
 
