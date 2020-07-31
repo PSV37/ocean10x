@@ -313,7 +313,7 @@ $employer_id = $this->session->userdata('company_profile_id');
                                     <span class="icon-container">
                                       <i class="fas fa-map-signs"></i>
                                     </span>
-                                    <span class="text item">Question Bank</span>
+                                    <span class="text item">Tests</span>
                                   </a>
                                 </li>
                                     

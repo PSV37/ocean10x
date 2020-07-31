@@ -955,9 +955,8 @@ span.select2-selection.select2-selection--single {
                            <li ><a class="dropdown-item" href="#" id="div_frwrd" data-toggle="modal" data-target="#rotateModal" >Forward Job Post</a></li>
                       
                            <li id="div_download"> <a class="dropdown-item"  href="" download >Download this cv</a></li>
-                           <?php } ?>
-
-                           <li><a class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-target="#move_cv" href="#">Move this CV</a></li>
+                           
+                             <li><a class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-target="#move_cv" href="#">Move this CV</a></li>
                         </div>
                      </div>
                   </div>
