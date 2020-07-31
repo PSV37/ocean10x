@@ -142,7 +142,7 @@
    float: left;
    font-size: 12px;
    font-weight: 100;
-   width:97px;
+   width:auto;
    height:15px;
    }
    li.right-title {
@@ -198,6 +198,12 @@
    margin-top:0px;
    margin-bottom:15px;
    }
+   .following-info3 {
+    margin-left: 309px;
+    line-height: 30px;
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
    .active-span{
    position: absolute;
    top: 12px;
@@ -919,16 +925,10 @@ span.select2-selection.select2-selection--single {
                            <li class="right-title">&nbsp;:<?php echo $tests['type']; ?></li>
                            <li class="left-title">Total Questions</li>
                            <li class="right-title">&nbsp;:<?php echo $tests['total_questions']; ?></li>
-                           <li class="left-title">Topics</li>
-                           <li class="right-title">&nbsp;: <?php echo $tests['topics']; ?></li>
+                          
                            <li class="left-title">Timer on Each Question</li>
                            <li class="right-title">&nbsp;: <?php echo $tests['timer_on_each_que']; ?></li>
-                            <li class="left-title">Allowed to Review</li>
-                           <li class="right-title">&nbsp;:<?php echo $tests['review_option']; ?></li>
-                            <li class="left-title">Negative Marking</li>
-                           <li class="right-title">&nbsp;:<?php echo $tests['negative_marks']; ?></li>
-                            <li class="left-title">Display Correct Answer for each Question</li>
-                           <li class="right-title">&nbsp;:<?php echo $tests['correct_ans_each_ques']; ?></li>
+                            
 
                            <div class="clear"></div>
                         </div>
@@ -940,8 +940,25 @@ span.select2-selection.select2-selection--single {
                            
                            <li class="left-title">Allowed to Go back</li>
                            <li class="right-title">&nbsp;:<?php echo $tests['previous_option']; ?></li>
-                           <li class="left-title">Display Test Result to Candidate</li>
+
+                           <li class="left-title">Display Result </li>
                            <li class="right-title">&nbsp;:<?php echo $tests['final_result']; ?></li>
+
+                        
+
+
+                           <div class="clear"></div>
+                        </div>
+
+                        <div class="following-info3">
+                          <li class="left-title">Topics</li>
+                           <li class="right-title">&nbsp;: <?php echo $tests['topics']; ?></li>
+                          <li class="left-title">Allowed to Review</li>
+                           <li class="right-title">&nbsp;:<?php echo $tests['review_option']; ?></li>
+                            <li class="left-title">Negative Marking</li>
+                           <li class="right-title">&nbsp;:<?php echo $tests['negative_marks']; ?></li>
+                            <li class="left-title">Display Correct Answer</li>
+                           <li class="right-title">&nbsp;:<?php echo $tests['correct_ans_each_ques']; ?></li>
 
                         
 
