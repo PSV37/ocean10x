@@ -881,7 +881,7 @@ input[type="radio"] {
       <div class="container-fluid main-d">
          <div class="container">
             <div class="col-md-12">
-               <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
+               <?php $this->load->view('fontend/layout/seeker_left_menu.php'); ?>
                <div class="col-md-9 test_d">
                   <div id="clockdiv">
                     <!--  <div>
