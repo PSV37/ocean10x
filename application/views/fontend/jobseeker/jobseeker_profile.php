@@ -835,13 +835,6 @@ label {
                               <input type="file" class="form-control" id="txt_resume" name="txt_resume" >
                               <input type="hidden" class="form-control" id="" name="oldresume" value="<?php if(!empty($job_seeker_resume['resume'])){echo $job_seeker_resume['resume'];} ?>">
                            </div>
-                             
-        </div><!-- end col -->
-      </div><!-- end row -->  
-    </div><!-- end container -->
-  </div><!-- end section -->
-</div>
-  
                            <div class="Profile-summery">
                               <h4>Profile summery</h4>
                               <textarea name="profile_summary" id="profile_summary" class="form-control" placeholder="Profile Summary" rows="5"></textarea>
