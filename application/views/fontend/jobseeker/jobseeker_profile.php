@@ -829,7 +829,8 @@ label {
                         </div>
                      </div>
                     <!--  <form id="profile-info" class="form-horizontal" action="<?php echo base_url('job_seeker/save_profile_details');?>" method="post" enctype="multipart/form-data" style="padding: 30px;"> -->
-                        <div class="col-md-12">
+                      <div class="row">
+                        <div class="col-md-6">
                            <div class="uplode-resume">
                               <label for="avatarInput">Upload Resume</label>
                               <input type="file" class="form-control" id="txt_resume" name="txt_resume" >
@@ -837,13 +838,15 @@ label {
 
                               
                            </div>
+                         </div>
 
-                           <div class="col-md-12">
+                           <div class="col-md-6">
                                 <label for="avatarInput">Current Resume</label><br><br>
                                 <span><a href="<?php echo  base_url(); ?>upload/Resumes/<?php if(!empty($job_seeker_resume['resume'])){echo $job_seeker_resume['resume'];} ?>" title='Download Your Attached Resume' download><?php if(!empty($job_seeker_resume['resume'])){echo $job_seeker_resume['resume'];} ?></a></span>
 
                                 
                               </div>
+                            </div>
 
                            <div class="Profile-summery">
                               <h4>Profile summery</h4>
