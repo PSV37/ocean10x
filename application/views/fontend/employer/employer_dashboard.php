@@ -418,7 +418,10 @@ img {
              
              
             </div>
-             <div class="chat-popup" id="myForm">
+             <div class="chat-popup" id="myForm1" style="display: none;
+    max-width: 300px;
+    float: right;
+    margin-left: 290px;">
             <div class="chatbody">
                   <div class="panel panel-primary">
                 <div class="panel-heading top-bar">
@@ -485,10 +488,7 @@ img {
        	
         </div>
         <button class="open-button" onclick="openForm()">Messaging</button>
-        <div class="chat-popup" id="myForm1" style="display: none;
-    max-width: 300px;
-    float: right;
-    margin-left: 290px;">
+        <div class="chat-popup" id="myForm" >
               <!-- <form action="/action_page.php" class="form-container">
                 <h1>Chat</h1>
 
