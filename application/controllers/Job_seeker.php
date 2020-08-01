@@ -1807,7 +1807,7 @@ public function user_profile()
         // print_r($_POST);die;
       
         
-        $test_id              = $this->input->post('test_id');
+        $test_id  = $this->input->post('test_id');
         // $employer_id = $this->session->userdata('company_profile_id');
         $where_all = "oceanchamp_tests.status='1' AND test_id = '$test_id'";
 
@@ -1873,7 +1873,7 @@ public function user_profile()
                     );
              $where['test_id'] = $test_id;
              $where['job_seeker_id'] = $seeker_id;
-            $this->Master_model->master_update($test_array, 'oceanchamp_tests', $where);
+            $this->Master_model->master_update($test_array, 'forwarded_tests', $where);
         }
             
           // if (isset($oceanchamp_tests) && $oceanchamp_tests['final_result'] == 'Y') 
