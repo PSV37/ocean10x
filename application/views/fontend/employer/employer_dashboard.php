@@ -428,7 +428,7 @@ img {
                     <div class="col-md-8 col-xs-8">
                         <h3 class="panel-title"><span class="glyphicon glyphicon-comment"></span> Chat - Miguel</h3>
                     </div>
-                    <span style="float: right;" onclick="closeForm()"><i  class="fa fa-close"></i></span>
+                    <span style="float: right;" onclick="closeForm('myForm1')"><i  class="fa fa-close"></i></span>
                 </div>
                 <div class="panel-body msg_container_base">
                     <div class="row msg_container base_sent">
@@ -505,7 +505,7 @@ img {
                     <div class="col-md-8 col-xs-8">
                         <h3 class="panel-title"><span class="glyphicon glyphicon-comment"></span> Messaging</h3>
                     </div>
-                    <span style="float: right;" onclick="closeForm()"><i  class="fa fa-close"></i></span>
+                    <span style="float: right;" onclick="closeForm('myForm')"><i  class="fa fa-close"></i></span>
                 </div>
                 <div class="panel-body msg_container_base">
                     
@@ -555,8 +555,8 @@ function openForm() {
   document.getElementById("myForm").style.display = "block";
 }
 
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
+function closeForm(id) {
+  document.getElementById(id).style.display = "none";
 }
 
 function show_box(){
