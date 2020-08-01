@@ -418,6 +418,7 @@ img {
              
              
             </div>
+             <div class="chat-popup" id="myForm">
             <div class="chatbody">
                   <div class="panel panel-primary">
                 <div class="panel-heading top-bar">
@@ -463,6 +464,7 @@ img {
             </div>
 
                  </div>
+             </div>
            </div>
            
             <div class="col-md-3 pro-bar">
