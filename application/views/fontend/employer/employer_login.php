@@ -252,7 +252,7 @@ input:-internal-autofill-selected{background-color:#fff !important;}
       <!--span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span-->
       <!--span toggle="#password-field" class="fa fa-lg fa-eye-slash field-icon toggle-password"></span-->
       <!--span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span-->
-      <i id="eyeIcon" class="fa fa-eye-slash toggle-password"></i>
+      <i id="eyeIcon" class="fa fa-eye-slash toggle-password" onclick="myFunction()"></i>
 
     </div>    
     <div class="row">
@@ -286,7 +286,19 @@ input:-internal-autofill-selected{background-color:#fff !important;}
 </script-->
 
 <script src="js/app.js"></script>
-<script type="text/javascript">
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myInput");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
+
+<!--script type="text/javascript">
   $(".toggle-password").click(function() {
 
   $(this).toggleClass("fa-eye fa-eye-slash");
@@ -297,4 +309,4 @@ input:-internal-autofill-selected{background-color:#fff !important;}
     input.attr("type", "password");
   }
 });
-</script>
+</script-->
