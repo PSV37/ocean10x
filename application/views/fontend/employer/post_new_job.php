@@ -622,8 +622,7 @@
      $("#my_date_picker").datepicker({ 
       altField: "#myPage\\:myForm\\:fromDate",
                       altFormat: "yy-mm-dd",
-                      minDate:0});
-
+                      minDate:0 });
      }); 
    
    
