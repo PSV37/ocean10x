@@ -83,9 +83,7 @@ class Job_seeker extends MY_Seeker_Controller
 
         $data['job_seeker_resume'] = $this->Master_model->get_master_row('js_attached_resumes', $select =FALSE ,$where="job_seeker_id='$jobseeker_id'",$join = false); 
 
-    
-        
-        
+
         $jobseeker_id = $this->session->userdata('job_seeker_id');
 
 			$data['city'] = $this->Master_model->getMaster('city',$where=false);
