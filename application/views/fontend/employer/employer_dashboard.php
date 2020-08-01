@@ -437,7 +437,7 @@ img {
        			 <div class="paragraph_p_level">
        	
         </div>
-        <button class="open-button" onclick="openForm()">Chat</button>
+        <button class="open-button" onclick="openForm()">Messaging</button>
         <div class="chat-popup" id="myForm">
               <!-- <form action="/action_page.php" class="form-container">
                 <h1>Chat</h1>
@@ -452,21 +452,21 @@ img {
                   <div class="panel panel-primary">
                 <div class="panel-heading top-bar">
                     <div class="col-md-8 col-xs-8">
-                        <h3 class="panel-title"><span class="glyphicon glyphicon-comment"></span> Chat - Miguel</h3>
+                        <h3 class="panel-title"><span class="glyphicon glyphicon-comment"></span>Messaging</h3>
                     </div>
                     <span style="float: right;" onclick="closeForm()"><i  class="fa fa-close"></i></span>
                 </div>
                 <div class="panel-body msg_container_base">
-                    <div class="row msg_container base_sent">
-                        <div class="col-md-10 col-xs-10">
-                            <div class="messages msg_sent">
-                                <p>that mongodb thing looks good, huh?
-                                tiny master db, and huge document store</p>
-                                <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
-                            </div>
-                        </div>
+                    
+                    <div class="row msg_container base_receive">
                         <div class="col-md-2 col-xs-2 avatar">
                             <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
+                        </div>
+                        <div class="col-md-10 col-xs-10">
+                            <div class="messages msg_receive">
+                                <p>x</p>
+                                <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+                            </div>
                         </div>
                     </div>
                     <div class="row msg_container base_receive">
@@ -475,8 +475,7 @@ img {
                         </div>
                         <div class="col-md-10 col-xs-10">
                             <div class="messages msg_receive">
-                                <p>that mongodb thing looks good, huh?
-                                tiny master db, and huge document store</p>
+                                <p>y</p>
                                 <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
                             </div>
                         </div>
