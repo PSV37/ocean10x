@@ -520,10 +520,11 @@ button#btn-chat {
                 </div>
 
 
-                <div class="panel-body msg_container_base">
-                   <input type="search" name="search_connection">
+                <div class="panel-body msg_container_base" >
+                   <input type="search" name="search_connection" style="display: none;
+  border-radius: 0;margin-top: 43px;max-width: 99%;margin-left: 2px;">
                     
-                    <div class="row msg_container base_receive">
+                    <div class="row msg_container base_receive" style="margin-top: 50px;">
                         <div class="col-md-2 col-xs-2 avatar">
                             <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
                         </div>
