@@ -3633,7 +3633,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $employer_id = $this->session->userdata('company_profile_id');
         if (isset($_GET['term'])) {
             
-            $result = $this->job_posting_model->search_connection($_GET['term'],);
+            $result = $this->job_posting_model->search_connection($_GET['term']);
             
             if (count($result) > 0) {
                 $i=0;
