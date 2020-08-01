@@ -843,6 +843,8 @@ label {
                            <div class="col-md-12">
                                 <label for="avatarInput">Current Resume</label><br><br>
                                 <span><a href="<?php echo  base_url(); ?>upload/Resumes/<?php if(!empty($job_seeker_resume['resume'])){echo $job_seeker_resume['resume'];} ?>" title='Download Your Attached Resume' download><?php if(!empty($job_seeker_resume['resume'])){echo $job_seeker_resume['resume'];} ?></a></span>
+
+                                
                               </div>
 
                            <div class="Profile-summery">

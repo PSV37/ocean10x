@@ -81,6 +81,11 @@ class Job_seeker extends MY_Seeker_Controller
         $data['activetab'] = 'update_personalinfo';
          $this->session->set_userdata($data);
 
+        $job_seeker_resume = $this->Master_model->get_master_row('js_attached_resumes', $select =FALSE ,$where="job_seeker_id='$jobseeker_id'",$join = false); 
+
+        <?php>
+        print_r($job_seeker_resume);
+        
         $jobseeker_id = $this->session->userdata('job_seeker_id');
 
 			$data['city'] = $this->Master_model->getMaster('city',$where=false);
@@ -1726,7 +1731,7 @@ public function user_profile()
 
     public function test()
     {
-         $seeker_id  = $this->session->userdata('job_seeker_id');
+         $seeker_id  = $this->input->post('job_seeker_id');
         // $employer_id = $this->session->userdata('company_profile_id');
         $where_all = "oceanchamp_tests.status != 'Test Completed' AND job_seeker_id = '$job_seeker_id'";
 
@@ -1807,8 +1812,7 @@ public function user_profile()
         // print_r($_POST);die;
       
         
-        $test_id  = $this->input->post('test_id');
-        echo $test_id;
+        $test_id              = $this->input->post('test_id');
         // $employer_id = $this->session->userdata('company_profile_id');
         $where_all = "oceanchamp_tests.status='1' AND test_id = '$test_id'";
 
@@ -1865,7 +1869,6 @@ public function user_profile()
             'date_time' => $cenvertedTime
         );
         $last_id    = $this->Master_model->master_insert($exam_array, 'seeker_test_result');
-         $seeker_id  = $this->session->userdata('job_seeker_id');
 
          $test_array = array(
                         
@@ -1873,10 +1876,9 @@ public function user_profile()
                         'updated_on' => date('Y-m-d'),
                         
                     );
-         // $where_update['job_seeker_id']=$jobseeker_id;
-             $where_update['test_id'] = $test_id;
-             $where_update['job_seeker_id'] = $seeker_id;
-            $this->Master_model->master_update($test_array, 'forwarded_tests', $where_update);
+             $where['test_id'] = $test_id;
+             $where['job_seeker_id'] = $seeker_id;
+            $this->Master_model->master_update($test_array, 'oceanchamp_tests', $where);
         }
             
           // if (isset($oceanchamp_tests) && $oceanchamp_tests['final_result'] == 'Y') 
