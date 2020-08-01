@@ -107,6 +107,7 @@ class Job_seeker extends MY_Seeker_Controller
 
             $data['edcuaiton_list']  = $this->Job_seeker_education_model->education_list_by_id($jobseeker_id);
         $this->load->view('fontend/jobseeker/jobseeker_profile',$data);
+        $job_seeker_resume = $this->Master_model->get_master_row('js_attached_resumes', $select =FALSE ,$where="job_seeker_id='$jobseeker_id'",$join = false);
     }
 	
 
