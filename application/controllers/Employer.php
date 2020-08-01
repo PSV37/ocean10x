@@ -831,6 +831,10 @@ class Employer extends MY_Employer_Controller
         if ($this->job_apply_model->check_apply_job($job_seeker_id, $company_id, $job_post_id) == true) {
             $cv = $this->job_seeker_model->resume_view_by_id($job_seeker_id);
             $this->load->view('fontend/employer/view_cv', compact('cv'));
+
+            <?php>
+                                print_r($cv);
+                                ?>
         } else {
             $this->load->view('fontend/employer/cv_notfound');
         }
