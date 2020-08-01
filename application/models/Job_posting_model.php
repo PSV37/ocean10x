@@ -847,6 +847,16 @@ public function get_all_company_by_banksbook()
         return $this->db->get('job_posting')->result();
     }
 
+    function search_connection($title){
+        $this->db->select("full_name,job_seeker_id");
+
+        $this->db->like('full_name', $title , 'both');
+        $this->db->order_by('full_name', 'ASC');
+         // $this->db->where('company_profile_id', $employer_id);
+
+        return $this->db->get('js_info')->result();
+    }
+
      public function cv_folder($id)
     {
        

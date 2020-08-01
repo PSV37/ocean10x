@@ -523,6 +523,7 @@ button#btn-chat {
                 <div class="panel-body msg_container_base" >
                    <input type="search" name="search_connection" placeholder="search new connection" id="search_connection" style="display: none;
   border-radius: 0;margin-top: 43px;max-width: 99%;margin-left: 2px; color: black;">
+                    <input type="hidden" name="job_seeker_id" value="" id="auto-value">
                     
                     <div class="row msg_container base_receive" style="margin-top: 50px;">
                         <div class="col-md-2 col-xs-2 avatar">
@@ -581,4 +582,25 @@ function show_box(){
 function opensearch(){
     document.getElementById("search_connection").style.display = "block";
 }
+$("#search_connection").autocomplete({
+             
+              source: "<?php echo base_url();?>Employer/search_people",
+             minLength: 2,
+              // append: "#rotateModal",
+              focus: function(event, ui) {
+               // prevent autocomplete from updating the textbox
+               event.preventDefault();
+               // manually update the textbox
+               // alert(source);
+               $(this).val(ui.item.label);
+            },
+            select: function(event, ui) {
+               // prevent autocomplete from updating the textbox
+               event.preventDefault();
+               // manually update the textbox and hidden field
+               $(this).val(ui.item.label);
+               $("#auto-value").val(ui.item.value);
+            }
+            
+           });
 </script>
