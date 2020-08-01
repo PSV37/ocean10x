@@ -945,7 +945,7 @@ public function save_profile_details()
    // echo $photo=$this->input->post('photo');die;
      if ($_POST) {
          // if($_FILES['txt_resume']['name']!='')
-        print_r($_POST);
+        // print_r($_POST);
         $id     = $this->session->userdata('job_seeker_id');
 
         $job_seeker_photo_row = $this->Job_seeker_photo_model->photo_by_seeker($id);
@@ -959,7 +959,7 @@ public function save_profile_details()
         $this->load->library('upload', $config);
          $field_name = "js_photo";
         if (!$this->upload->do_upload($field_name)) {
-            print_r($this->upload->display_errors()); die;
+            // print_r($this->upload->display_errors()); die;
             $error = array('error' => $this->upload->display_errors());
             $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">'.$this->upload->display_errors().'</div>');
             redirect('job_seeker/seeker_info');
