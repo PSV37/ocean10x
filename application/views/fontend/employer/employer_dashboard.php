@@ -26,7 +26,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
   display: none;
   position: fixed;
   bottom: 0;
-  right: 15px;
+  /*right: 15px;*/
   border: 3px solid #f1f1f1;
   z-index: 9;
 }
@@ -110,11 +110,11 @@ body {font-family: Arial, Helvetica, sans-serif;}
   color: #ccc;
 }
 
-body{
+/*body{
     height:400px;
     position: fixed;
     bottom: 0;
-}
+}*/
 .col-md-2, .col-md-10{
     padding:0;
 }
@@ -452,7 +452,7 @@ img {
                   <div class="panel panel-primary">
                 <div class="panel-heading top-bar">
                     <div class="col-md-8 col-xs-8">
-                        <h3 class="panel-title"><span class="glyphicon glyphicon-comment"></span> Chat - Miguel</h3>
+                        <h3 class="panel-title"><span class="glyphicon glyphicon-comment"></span> Chat - Miguel</h3><span onclick="closeForm()"><i  class="fa fa-close"></i></span>
                     </div>
                 </div>
                 <div class="panel-body msg_container_base">
