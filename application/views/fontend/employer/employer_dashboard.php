@@ -515,12 +515,13 @@ button#btn-chat {
                     <div class="col-md-8 col-xs-8">
                         <h3 class="panel-title"><span class="glyphicon glyphicon-comment"></span> Messaging</h3>
                     </div>
-                    <span style="float: right;" onclick="closeForm('myForm')"><i  class="fa fa-plus"></i></span>
+                    <span style="margin-left: 40px;" onclick="closeForm('myForm')"><i  class="fa fa-plus"></i></span>
                     <span style="float: right;" onclick="closeForm('myForm')"><i  class="fa fa-close"></i></span>
                 </div>
-                <input type="search" name="search_connection">
+
 
                 <div class="panel-body msg_container_base">
+                   <input type="search" name="search_connection">
                     
                     <div class="row msg_container base_receive">
                         <div class="col-md-2 col-xs-2 avatar">
