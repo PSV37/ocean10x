@@ -452,8 +452,9 @@ img {
                   <div class="panel panel-primary">
                 <div class="panel-heading top-bar">
                     <div class="col-md-8 col-xs-8">
-                        <h3 class="panel-title"><span class="glyphicon glyphicon-comment"></span> Chat - Miguel</h3><span onclick="closeForm()"><i  class="fa fa-close"></i></span>
+                        <h3 class="panel-title"><span class="glyphicon glyphicon-comment"></span> Chat - Miguel</h3>
                     </div>
+                    <span style="float: right;" onclick="closeForm()"><i  class="fa fa-close"></i></span>
                 </div>
                 <div class="panel-body msg_container_base">
                     <div class="row msg_container base_sent">
