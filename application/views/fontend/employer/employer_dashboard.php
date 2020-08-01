@@ -418,37 +418,7 @@ img {
              
              
             </div>
-           </div>
-           
-            <div class="col-md-3 pro-bar">
-          
-            <h3 class="heading-dash_profile">PROFILE LEVEL</h3>
-                <div class="progress yellow">
-                <span class="progress-left">
-                    <span class="progress-bar"></span>
-                </span>
-                <span class="progress-right">
-                    <span class="progress-bar"></span>
-                </span>
-                <div class="progress-value">75%</div>
-            </div>
-      
-        	
-       			 <div class="paragraph_p_level">
-       	
-        </div>
-        <button class="open-button" onclick="openForm()">Messaging</button>
-        <div class="chat-popup" id="myForm">
-              <!-- <form action="/action_page.php" class="form-container">
-                <h1>Chat</h1>
-
-                <label for="msg"><b>Message</b></label>
-                <textarea placeholder="Type message.." name="msg" required></textarea>
-
-                <button type="submit" class="btn">Send</button>
-                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-              </form> -->
-              iv class="chatbody">
+            <div class="chatbody">
                   <div class="panel panel-primary">
                 <div class="panel-heading top-bar">
                     <div class="col-md-8 col-xs-8">
@@ -493,6 +463,37 @@ img {
             </div>
 
                  </div>
+           </div>
+           
+            <div class="col-md-3 pro-bar">
+          
+            <h3 class="heading-dash_profile">PROFILE LEVEL</h3>
+                <div class="progress yellow">
+                <span class="progress-left">
+                    <span class="progress-bar"></span>
+                </span>
+                <span class="progress-right">
+                    <span class="progress-bar"></span>
+                </span>
+                <div class="progress-value">75%</div>
+            </div>
+      
+        	
+       			 <div class="paragraph_p_level">
+       	
+        </div>
+        <button class="open-button" onclick="openForm()">Messaging</button>
+        <div class="chat-popup" id="myForm">
+              <!-- <form action="/action_page.php" class="form-container">
+                <h1>Chat</h1>
+
+                <label for="msg"><b>Message</b></label>
+                <textarea placeholder="Type message.." name="msg" required></textarea>
+
+                <button type="submit" class="btn">Send</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+              </form> -->
+
                <div class="chatbody">
                   <div class="panel panel-primary">
                 <div class="panel-heading top-bar">
