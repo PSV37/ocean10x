@@ -29,8 +29,19 @@ class Employer extends MY_Employer_Controller
         $data['activemenu'] = 'dashboard';
         $this->session->set_userdata($data);
         $company_info = $this->company_profile_model->get($employer_id);
+         $wheremsg = "created_by='$employer_id'";
+            // $saved_job_data = $this->Master_model->getMaster("message_chat", $where_edu, $join_save, $order = false, $field = false, $select_edu,$limit=false,$start=false, $search=false);
+            $saved_job_data = $this->Master_model-> getList($condition= FALSE, $field_by= FALSE, $order_by= 'chat_id desc', $offset= FALSE, $perpage= FALSE, 'message_chat', $search= FALSE, $join = FALSE, $wheremsg, $select = FALSE, $distinct = FALSE, $group_by = 'chat_js_id');
+
+
+
+
+            // $seeker_data = $this->Master_model->getMaster('js_info',$where="js_status=1");
+            $connection_requests = $this->Master_model->getMaster('message_connections',$where=false);
+           
+            // echo $this->load->view('fontend/jobseeker/instant_message', compact('connection_requests','seeker_data','saved_job_data'),true);
         // $this->load->view('fontend/employer/dashboard_main', compact('company_info'));
-        $this->load->view('fontend/employer/employer_dashboard', compact('company_info'));
+        $this->load->view('fontend/employer/employer_dashboard', compact('company_info','saved_job_data'));
         
     }
     

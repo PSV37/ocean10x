@@ -240,6 +240,14 @@ img {
     left:0px;
     bottom:0;
 }
+.panel-heading.top-bar {
+    background-color: #18c5bd;
+}
+button#btn-chat {
+    height: 30px;
+    background-color: #18c5bd;
+    border: none;
+}
 </style>
 <div class="container-fluid main-d">
 	<div class="container">
