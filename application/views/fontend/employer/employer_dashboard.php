@@ -485,7 +485,10 @@ img {
        	
         </div>
         <button class="open-button" onclick="openForm()">Messaging</button>
-        <div class="chat-popup" id="myForm">
+        <div class="chat-popup" id="myForm1" style="display: none;
+    max-width: 300px;
+    float: right;
+    margin-left: 290px;">
               <!-- <form action="/action_page.php" class="form-container">
                 <h1>Chat</h1>
 
@@ -510,7 +513,7 @@ img {
                         <div class="col-md-2 col-xs-2 avatar">
                             <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
                         </div>
-                        <div class="col-md-10 col-xs-10">
+                        <div class="col-md-10 col-xs-10" onclick="show_box();">
                             <div class="messages msg_receive">
                                 <p>x</p>
                                 <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
@@ -554,5 +557,9 @@ function openForm() {
 
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
+}
+
+function show_box(){
+    document.getElementById("myForm1").style.display = "block";
 }
 </script>
