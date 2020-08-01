@@ -842,7 +842,12 @@ label {
 
                            <div class="col-md-6">
                                 <label for="avatarInput">Current Resume</label><br><br>
+                                <?php if(!empty($job_seeker_resume['resume'])) { ?>
+                                  
                                 <span><a href="<?php echo  base_url(); ?>upload/Resumes/<?php if(!empty($job_seeker_resume['resume'])){echo $job_seeker_resume['resume'];} ?>" title='Download Your Attached Resume' download><?php if(!empty($job_seeker_resume['resume'])){echo $job_seeker_resume['resume'];} ?></a></span>
+                              <?php } else{ ?>
+                                <span>No Resume </span>
+                             <?php  } ?>
 
                                 
                               </div>
