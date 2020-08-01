@@ -998,11 +998,11 @@ public function save_profile_details()
             
                  $this->load->library('upload', $config);      
                  $field_name = "txt_resume";
-                 if (! $this->upload->do_upload($field_name))
+                 if (!$this->upload->do_upload($field_name))
                     {
                         $error = array('error' => $this->upload->display_errors());
-            print_r($this->upload->display_errors()); die;
-                        
+            
+print_r($this->upload->display_errors()); die;
                         $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">'.$this->upload->display_errors().'</div>');
                         redirect('job_seeker/seeker_info');
                     }
@@ -1013,7 +1013,7 @@ public function save_profile_details()
                       $NewFileName = $this->input->post('oldresume'); 
                     }
                 $res = $this->input->post('resume_id');
-               
+               print_r($res); die;
                 if($res)
                 {
                     $data['job_seeker_id']  = $jobseeker_id;
