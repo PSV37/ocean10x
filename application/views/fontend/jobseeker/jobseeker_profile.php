@@ -836,7 +836,7 @@ label {
                               <input type="hidden" class="form-control" id="" name="oldresume" value="<?php if(!empty($job_seeker_resume['resume'])){echo $job_seeker_resume['resume'];} ?>">
                            </div>
 
-
+                           
 <div class="section lb">
   <div class="container">                                
                          
@@ -905,8 +905,6 @@ label {
     </div><!-- end container -->
   </div><!-- end section -->
 </div>
-  
-
   
                            <div class="Profile-summery">
                               <h4>Profile summery</h4>
