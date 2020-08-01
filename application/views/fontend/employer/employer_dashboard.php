@@ -488,7 +488,9 @@ img {
        	
         </div>
         <button class="open-button" onclick="openForm()">Messaging</button>
-        <div class="chat-popup" id="myForm" >
+        <div class="chat-popup" id="myForm" style="    display: none;
+    max-width: 300px;
+    margin-left: 55px;">
               <!-- <form action="/action_page.php" class="form-container">
                 <h1>Chat</h1>
 
