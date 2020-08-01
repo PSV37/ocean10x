@@ -828,7 +828,7 @@ label {
                            </ul>
                         </div>
                      </div>
-                     <form id="profile-info" class="form-horizontal" action="<?php echo base_url('job_seeker/save_profile_details');?>" method="post" enctype="multipart/form-data" style="padding: 30px;">
+                    <!--  <form id="profile-info" class="form-horizontal" action="<?php echo base_url('job_seeker/save_profile_details');?>" method="post" enctype="multipart/form-data" style="padding: 30px;"> -->
                         <div class="col-md-12">
                            <div class="uplode-resume">
                               <label for="avatarInput">Upload Resume</label>
