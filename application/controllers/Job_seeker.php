@@ -1001,6 +1001,8 @@ public function save_profile_details()
                  if (! $this->upload->do_upload($field_name))
                     {
                         $error = array('error' => $this->upload->display_errors());
+            print_r($this->upload->display_errors()); die;
+                        
                         $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">'.$this->upload->display_errors().'</div>');
                         redirect('job_seeker/seeker_info');
                     }
