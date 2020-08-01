@@ -828,7 +828,8 @@ label {
                            </ul>
                         </div>
                      </div>
-                    <!--  <form id="profile-info" class="form-horizontal" action="<?php echo base_url('job_seeker/save_profile_details');?>" method="post" enctype="multipart/form-data" style="padding: 30px;"> -->
+                  
+
                       <div class="row">
                         <div class="col-md-6">
                            <div class="uplode-resume">
@@ -858,7 +859,7 @@ label {
                               <textarea name="profile_summary" id="profile_summary" class="form-control" placeholder="Profile Summary" rows="5"></textarea>
                               <p>Add or link to external documents, photos, sites, videos, and presentations.</p>
                            </div>
-                        </div>
+                        
                         <div class="col-md-12 resume-link">
                            <div class="col-md-6">
                               <label for="avatarInput">Upload Media</label>
