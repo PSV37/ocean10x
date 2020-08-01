@@ -251,7 +251,7 @@ input:-internal-autofill-selected{background-color:#fff !important;}
       <label>Password </label>
       <!--span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span-->
       <!--span toggle="#password-field" class="fa fa-lg fa-eye-slash field-icon toggle-password"></span-->
-      <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+      <!--span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span-->
       <i id="eyeIcon" class="fa fa-eye-slash toggle-password"></i>
 
     </div>    
