@@ -586,7 +586,7 @@
    function set_test()
    {
       var oceantest = $('#job_test_requirment').val();
-      alert(oceantest);
+      // alert(oceantest);
       if (oceantest == 'Yes') 
       {
          $('.test_div').show();
@@ -604,7 +604,19 @@
      $('#other_skills').hide();
       $('#training_title1').hide();
 
-       $('.test_div').hide();
+
+       // $('.test_div').hide();
+        var oceantest = $('#job_test_requirment').val();
+      // alert(oceantest);
+      if (oceantest == 'Yes') 
+      {
+         $('.test_div').show();
+      }
+      else
+      {
+         $('.test_div').hide();
+
+      }
       var id=document.getElementById('job_role').value;
       // alert(id);
       getSkillsdetails(id);

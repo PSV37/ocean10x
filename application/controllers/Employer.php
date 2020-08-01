@@ -790,6 +790,10 @@ class Employer extends MY_Employer_Controller
                 $select                           = "job_role_title, skill_set ,id";
                 $data['job_role_data']            = $this->Master_model->getMaster('job_role', $where_cn, $join = FALSE, $order = false, $field = false, $select, $limit = false, $start = false, $search = false);
                 $data['education_specialization'] = $this->Master_model->getMaster('education_specialization', $where = false);
+                 $employer_id = $this->session->userdata('company_profile_id');
+            $where_all = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id'";
+
+            $data['oceanchamp_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where_all);
                 $this->load->view('fontend/employer/post_new_job', $data);
             } else {
                 echo "error";
