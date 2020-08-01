@@ -945,7 +945,7 @@ public function save_profile_details()
    // echo $photo=$this->input->post('photo');die;
      if ($_POST) {
          // if($_FILES['txt_resume']['name']!='')
-        print_r($_FILES);die;
+        // print_r($_FILES);die;
         
          $NewFileName;
             if($_FILES['txt_resume']['name']!='')
