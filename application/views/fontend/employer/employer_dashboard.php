@@ -522,7 +522,8 @@ button#btn-chat {
 
                 <div class="panel-body msg_container_base" >
                    <input type="search" name="search_connection" placeholder="search new connection" id="search_connection" style="display: none;
-  border-radius: 0;margin-top: 43px;max-width: 99%;margin-left: 2px; color: black;"><button class="btn btn-primary btn-sm" id="btn-chat"><i class="fa fa-plus fa-1x" aria-hidden="true"></i></button>
+  border-radius: 0;margin-top: 43px;max-width: 99%;margin-left: 2px; color: black;">
+  <button class="btn btn-primary btn-sm"><i class="fa fa-plus fa-1x" onclick="add_connection();" aria-hidden="true"></i></button>
                     <input type="hidden" name="job_seeker_id" value="" id="auto-value">
                     
                     <div class="row msg_container base_receive" style="margin-top: 50px;">
@@ -603,4 +604,9 @@ $("#search_connection").autocomplete({
             }
             
            });
+function add_connection()
+{
+  var id = $('#auto-value').val();
+  alert(id);
+}
 </script>
