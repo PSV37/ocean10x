@@ -81,10 +81,10 @@ class Job_seeker extends MY_Seeker_Controller
         $data['activetab'] = 'update_personalinfo';
          $this->session->set_userdata($data);
 
-        $job_seeker_resume = $this->Master_model->get_master_row('js_attached_resumes', $select =FALSE ,$where="job_seeker_id='$jobseeker_id'",$join = false); 
+        $data['job_seeker_resume'] = $this->Master_model->get_master_row('js_attached_resumes', $select =FALSE ,$where="job_seeker_id='$jobseeker_id'",$join = false); 
 
-        <?php>
-        print_r($job_seeker_resume);
+    
+        
         
         $jobseeker_id = $this->session->userdata('job_seeker_id');
 
