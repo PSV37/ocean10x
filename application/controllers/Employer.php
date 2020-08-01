@@ -1529,8 +1529,9 @@ class Employer extends MY_Employer_Controller
                 'education_specialization' => 'education_specialization.id = job_posting.edu_specialization|LEFT OUTER'
                 
             );
-            $select_job  = "job_role.job_role_title,education_specialization.education_specialization,education_level.education_level_name,job_level.job_level_name,job_nature.job_nature_name,job_category.job_category_name,state.state_name,country.country_name,city.city_name,company_profile.company_name,company_profile.company_logo,job_types.job_types_name,job_posting.job_title,job_posting.job_position,job_posting.job_desc,job_posting.education,job_posting.salary_range,job_posting.job_deadline,job_posting.preferred_age,job_posting.preferred_age_to,job_posting.working_hours,job_posting.no_jobs,job_posting.benefits,job_posting.experience,job_posting.skills_required";
+            $select_job  = "job_role.job_role_title,education_specialization.education_specialization,education_level.education_level_name,job_level.job_level_name,job_nature.job_nature_name,job_category.job_category_name,state.state_name,country.country_name,city.city_name,company_profile.company_name,company_profile.company_logo,job_types.job_types_name,job_posting.job_title,job_posting.job_position,job_posting.job_desc,job_posting.education,job_posting.salary_range,job_posting.job_deadline,job_posting.preferred_age,job_posting.preferred_age_to,job_posting.working_hours,job_posting.no_jobs,job_posting.benefits,job_posting.experience,job_posting.skills_required,job_posting.test_for_job";
             $req_details = $this->Master_model->getMaster('job_posting', $where_req, $join_req, $order = false, $field = false, $select_job, $limit = false, $start = false, $search = false);
+
             
             // print_r($this->db->last_query());die;
             
@@ -1539,6 +1540,7 @@ class Employer extends MY_Employer_Controller
                 }
                 
             }
+            $test_id = $require['test_for_job'];
             $skill_id = $require['skills_required'];
             
             $where_req_skill   = "skill_master.id IN (" . $skill_id . ")";
@@ -1704,24 +1706,26 @@ class Employer extends MY_Employer_Controller
                     );
 
                          $frwd = $this->Master_model->master_insert($frwd_array, 'forwarded_jobs_cv');
+                        if (isset($test_id)) {
+                             $test_array = array(
+                                'job_seeker_id' => $seeker_id,
+                                'company_id' => $employer_id,
+                                'test_id' => $test_id,
+                                'status' => 'Farwarded Test with job',
+                                'updated_on' => date('Y-m-d'),
+                                
+                            );
+                            $whereres  = "job_seeker_id='$seeker_id' and company_id = '$employer_id' and test_id = '$test_id'";
+                            $test_data = $this->Master_model->get_master_row('
+                                forwarded_tests', $select = FALSE, $whereres);
 
-                         $test_array = array(
-                        'job_seeker_id' => $seeker_id,
-                        'company_id' => $employer_id,
-                        'test_id' => $test_id,
-                        'status' => 'Farwarded Test with job',
-                        'updated_on' => date('Y-m-d'),
+                            if (empty($test_data)) {
+                                 $frwd = $this->Master_model->master_insert($test_array, 'forwarded_tests');
+
+                            }
+
+                        }
                         
-                    );
-                    $whereres  = "job_seeker_id='$seeker_id' and company_id = '$employer_id' and test_id = '$test_id'";
-                    $test_data = $this->Master_model->get_master_row('
-                        forwarded_tests', $select = FALSE, $whereres);
-
-                    if (empty($test_data)) {
-                         $frwd = $this->Master_model->master_insert($test_array, 'forwarded_tests');
-
-                    }
-
 
                     }
                    
