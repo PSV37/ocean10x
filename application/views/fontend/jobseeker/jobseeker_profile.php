@@ -57,6 +57,7 @@ label {
    <div class="container">
       <div class="col-md-12">
          <?php $this->load->view('fontend/layout/seeker_left_menu.php'); ?>
+         <?php $this->load->view('fontend/layout/seeker_resumemenu.php'); ?>
          <?php  $job_seeker=$this->session->userdata('job_seeker_id'); 
                $activetab = $this->session->userdata('activetab');
          ?>
@@ -835,10 +836,12 @@ label {
                               <input type="file" class="form-control" id="txt_resume" name="txt_resume" >
                               <input type="hidden" class="form-control" id="" name="oldresume" value="<?php if(!empty($job_seeker_resume['resume'])){echo $job_seeker_resume['resume'];} ?>">
                            </div>
+
                            <div class="col-md-12">
                                 <label for="avatarInput">Current Resume</label><br><br>
                                 <span><a href="<?php echo  base_url(); ?>upload/Resumes/<?php if(!empty($job_seeker_resume['resume'])){echo $job_seeker_resume['resume'];} ?>" title='Download Your Attached Resume' download><?php if(!empty($job_seeker_resume['resume'])){echo $job_seeker_resume['resume'];} ?></a></span>
                               </div>
+
                            <div class="Profile-summery">
                               <h4>Profile summery</h4>
                               <textarea name="profile_summary" id="profile_summary" class="form-control" placeholder="Profile Summary" rows="5"></textarea>
