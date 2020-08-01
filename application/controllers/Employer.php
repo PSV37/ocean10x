@@ -832,9 +832,9 @@ class Employer extends MY_Employer_Controller
             $cv = $this->job_seeker_model->resume_view_by_id($job_seeker_id);
             $this->load->view('fontend/employer/view_cv', compact('cv'));
 
-            <?php>
+          
                                 print_r($cv);
-                                ?>
+                           
         } else {
             $this->load->view('fontend/employer/cv_notfound');
         }
