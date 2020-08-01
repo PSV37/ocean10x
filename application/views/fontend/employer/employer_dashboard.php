@@ -515,14 +515,14 @@ button#btn-chat {
                     <div class="col-md-8 col-xs-8">
                         <h3 class="panel-title"><span class="glyphicon glyphicon-comment"></span> Messaging</h3>
                     </div>
-                    <span style="margin-left: 40px;" onclick="closeForm('myForm')"><i  class="fa fa-plus"></i></span>
+                    <span style="margin-left: 40px;" onclick="opensearch()"><i  class="fa fa-plus"></i></span>
                     <span style="float: right;" onclick="closeForm('myForm')"><i  class="fa fa-close"></i></span>
                 </div>
 
 
                 <div class="panel-body msg_container_base" >
-                   <input type="search" name="search_connection" style="display: none;
-  border-radius: 0;margin-top: 43px;max-width: 99%;margin-left: 2px;">
+                   <input type="search" name="search_connection" placeholder="search new connection" id="search_connection" style="display: none;
+  border-radius: 0;margin-top: 43px;max-width: 99%;margin-left: 2px; color: black;">
                     
                     <div class="row msg_container base_receive" style="margin-top: 50px;">
                         <div class="col-md-2 col-xs-2 avatar">
@@ -576,5 +576,9 @@ function closeForm(id) {
 
 function show_box(){
     document.getElementById("myForm1").style.display = "block";
+}
+
+function opensearch(){
+    document.getElementById("search_connection").style.display = "block";
 }
 </script>
