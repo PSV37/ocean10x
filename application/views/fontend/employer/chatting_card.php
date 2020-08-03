@@ -19,7 +19,7 @@
                                 <p><?php echo $row['msg']; ?></p>
                                 <time datetime="2009-11-13T20:00"><?php if ($date == date('Y-m-d')) { echo $row['created_date']->diff(new DateTime('Y-m-d H:i:s'));
                                    }else{
-                                   echo $row['created_date'];
+                                   echo $date;
                                    } ?></time>
                             </div>
                         </div>
