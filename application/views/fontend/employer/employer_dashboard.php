@@ -609,7 +609,7 @@ function show_box(id){
               success: function(data)
               {
                 $('#myForm1').html(data);
-                $('#myForm1').style.display = "block";
+                 document.getElementById("myForm1").style.display = "block";
               }
         });
    
