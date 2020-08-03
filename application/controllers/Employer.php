@@ -6501,8 +6501,13 @@ function update_external()
 
         $where   = "(msg_from='$employer_id' or msg_to = '$employer_id') and (msg_from='$js_id' or msg_to = '$js_id' ) ";
 
-        $where .= "group by msg_from";
-        $data['chatbox'] = $this->Master_model->getMaster('messaging', $where =  $where, $join = false, $order = 'desc', $field = 'message_id', $select = false,$limit=false,$start=false, $search=false);
+        // $where .= "group by msg_from";
+        $Join_data      = array(
+            'messaging' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER '
+                
+         );
+        $data['chatbox'] = $this->job_posting_model->get_all_msges($js_id,$employer_id);
+        // $this->Master_model->getMaster('messaging', $where =  $where, $join = false, $order = 'desc', $field = 'message_id', $select = false,$limit=false,$start=false, $search=false);
 
         // print_r($this->db->last_query());die;
         $this->load->view('fontend/employer/chatting_card.php',$data);
@@ -6531,7 +6536,7 @@ function update_external()
 
          $where   = "(msg_from='$employer_id' or msg_to = '$employer_id') and (msg_from='$js_id' or msg_to = '$js_id' ) ";
 
-        $where .= "group by msg_from";
+        // $where .= "group by msg_from";
         $data['chatbox'] = $this->Master_model->getMaster('messaging', $where =  $where, $join = false, $order = 'desc', $field = 'message_id', $select = false,$limit=false,$start=false, $search=false);
 
         // print_r($this->db->last_query());die;

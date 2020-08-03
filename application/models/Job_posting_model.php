@@ -105,6 +105,17 @@ order by RAND() limit 3");
   	
         return $query->row();
     }
+
+      public function get_all_msges($js_id,$employer_id)
+    {
+        $query = $this->db->query("select m1.*, m2.*
+from messaging m1,messaging m2
+
+where (msg_from='$employer_id' or msg_to = '$employer_id') and (msg_from='$js_id' or msg_to = '$js_id' )
+order by created_date asc limit 10");
+    
+        return $query->result();
+    }
     
 //Old Function
 // public function get_job_details_employer($jobid)
