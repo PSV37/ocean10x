@@ -6523,12 +6523,12 @@ function update_external()
 
         if ($check['type'] == 'js') {
             $Join_data      = array(
-            'messaging' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER ');
+            'js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER ');
         }
         else
         {
             $Join_data      = array(
-            'messaging' => 'company_profile.company_profile_id = emp_js_connection.js_id|Left OUTER ');
+            'company_profile' => 'company_profile.company_profile_id = emp_js_connection.js_id|Left OUTER ');
         }
 
         $whereres   = " emp_js_connection_id = '$js_id'";
