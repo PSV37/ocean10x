@@ -6,7 +6,7 @@
                     </div>
                     <span style="float: right;" onclick="closeForm('myForm1')"><i  class="fa fa-close"></i></span>
                 </div>
-                <?php foreach ($chatbox as $row) { $date = date('Y-md', $row['created_date']); ?>
+                <?php foreach ($chatbox as $row) { $date = date('Y-m-d', $row['created_date']); ?>
                   
               
                 <div class="panel-body msg_container_base">
