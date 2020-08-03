@@ -610,7 +610,7 @@ function add_connection()
   var id = $('#auto-value').val();
   alert(id);
    $.ajax({
-              url: "<?php echo base_url();?>employer/get_shared_tracker_card",
+              url: "<?php echo base_url();?>employer/add_new_connection",
               type: "POST",
               data: {id:id},
               // contentType:false,
