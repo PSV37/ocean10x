@@ -38,7 +38,7 @@ class Employer extends MY_Employer_Controller
         //  ); 
         //  $whereres   = "emp_id='$employer_id'";
         // $chatbox = $this->Master_model->getMaster('emp_js_connection', $where =  $whereres, $join = $Join_data, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
-        
+
         $whereres   = "emp_id='$employer_id'";
         $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
 
@@ -4269,18 +4269,18 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
        if (isset($fid) && !empty($fid)) {
 
-        $this->session->unset_userdata('activesubmenu');
-        $data['activesubmenu'] = $fid;
-        $this->session->set_userdata($data);
+            $this->session->unset_userdata('activesubmenu');
+            $data['activesubmenu'] = $fid;
+            $this->session->set_userdata($data);
 
-            $where_c['cv_folder_id'] = $fid;
-            $where_c['status'] = 1;
-             $join_cond  = array(
-            'corporate_cv_bank' => 'corporate_cv_bank.cv_id = cv_folder_relation.cv_id|Left outer'
-        );
-                $data['cv_bank_data']  = $this->Master_model->getMaster('cv_folder_relation', $where_c, $join_cond, $order = 'desc', $field = 'relation_id', $select = false, $limit = false, $start = false, $search = false);
+                $where_c['cv_folder_id'] = $fid;
+                $where_c['status'] = 1;
+                 $join_cond  = array(
+                'corporate_cv_bank' => 'corporate_cv_bank.cv_id = cv_folder_relation.cv_id|Left outer'
+            );
+            $data['cv_bank_data']  = $this->Master_model->getMaster('cv_folder_relation', $where_c, $join_cond, $order = 'desc', $field = 'relation_id', $select = false, $limit = false, $start = false, $search = false);
                 // print_r($this->db->last_query());die;
-                    $this->load->view('fontend/employer/cv_bank', $data);
+            $this->load->view('fontend/employer/cv_bank', $data);
        }
 
         elseif (isset($_POST['sort'])) {
@@ -4295,7 +4295,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         else
         {
             $where_c['company_id'] = $company_id;
-             $data['cv_bank_data']  = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join = false, $order = 'desc', $field = 'cv_id', $select = false, $limit = false, $start = false, $search = false);
+            $data['cv_bank_data']  = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join = false, $order = 'desc', $field = 'cv_id', $select = false, $limit = false, $start = false, $search = false);
                    $this->load->view('fontend/employer/cv_bank', $data);
         }
         

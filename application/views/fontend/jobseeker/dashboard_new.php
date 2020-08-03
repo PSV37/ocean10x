@@ -262,7 +262,64 @@
                 <div class="progress-value"><?php echo round($profile_total);?>%</div>
             </div>
       
-        	
+        	    <div class="paragraph_p_level">
+        
+        </div>
+        <button class="open-button" onclick="openForm()">Messaging</button>
+        <div class="chat-popup" id="myForm" style="    display: none;
+    max-width: 300px;
+    margin-left: 55px;">
+              <!-- <form action="/action_page.php" class="form-container">
+                <h1>Chat</h1>
+
+                <label for="msg"><b>Message</b></label>
+                <textarea placeholder="Type message.." name="msg" required></textarea>
+
+                <button type="submit" class="btn">Send</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+              </form> -->
+
+               <div class="chatbody">
+                  <div class="panel panel-primary">
+                <div class="panel-heading top-bar">
+                    <div class="col-md-8 col-xs-8">
+                        <h3 class="panel-title"><span class="glyphicon glyphicon-comment"></span> Messaging</h3>
+                    </div>
+                    <span style="margin-left: 40px;" onclick="opensearch()"><i  class="fa fa-plus"></i></span>
+                    <span style="float: right;" onclick="closeForm('myForm')"><i  class="fa fa-close"></i></span>
+                </div>
+
+
+                <div class="panel-body msg_container_base" >
+                   <input type="search" name="search_connection" placeholder="search new connection" id="search_connection" style="display: none;
+  border-radius: 0;margin-top: 43px;max-width: 88%;margin-left: 2px; color: black;">
+  <button class="btn btn-primary btn-sm" id="connection_btn" style="display: none;float: right;margin-right: -9px;margin-top: 1px;height: 36px;background-color: #18c5bd;border: none;"><i class="fa fa-plus fa-1x" onclick="add_connection();" aria-hidden="true"></i></button>
+                    <input type="hidden" name="job_seeker_id" value="" id="auto-value">
+                    <?php foreach ($chatbox as $row) {?>
+
+                    <div class="row msg_container base_receive" style="margin-top: 50px;">
+                        <div class="col-md-2 col-xs-2 avatar">
+                            <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
+                        </div>
+                        <div class="col-md-10 col-xs-10" onclick="show_box(<?php echo $row['emp_js_connection_id']; ?>);">
+                            <div class="messages msg_receive">
+                                <p><?php if (isset($row['full_name'])) {
+                           echo $row['full_name'];
+                        }else{
+                            echo $row['company_name'];
+                        }  ?></p>
+                                <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+                            </div>
+                        </div>
+                    </div>
+                    <?php } ?>
+                   
+                </div>
+               
+            </div>
+
+                 </div>
+            </div>
        			 
             </div>
            
