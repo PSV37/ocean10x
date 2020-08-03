@@ -581,6 +581,19 @@ function closeForm(id) {
 function send_msg(id)
 {
   alert(id);
+  var message = $('#btn-input').val();
+  $.ajax({
+              url: "<?php echo base_url();?>employer/send_message",
+              type: "POST",
+              data: {id:id,message:message},
+              // contentType:false,
+              // processData:false,
+               // dataType: "json",
+              success: function(data)
+              {
+                $('#myForm1').html(data);
+              }
+        });
 }
 
 function show_box(id){
