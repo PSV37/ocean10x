@@ -6466,8 +6466,9 @@ function update_external()
            $connection_data['created_by'] = $employer_id;
            $connection_data['created_date'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
 
-           $js_id = $this->Master_model->master_insert($connection_data, 'emp_js_connection');
+           $insert_id = $this->Master_model->master_insert($connection_data, 'emp_js_connection');
         }
+        // print_r($js_id);
 
          $Join_data      = array(
             'js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER '
