@@ -6499,10 +6499,12 @@ function update_external()
         $data['check'] = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
 
 
-        $whereres   = "(msg_from='$employer_id' or msg_to = '$employer_id') and (msg_from='$js_id' or msg_to = '$js_id' and group_by(msg_from) ) ";
+        $whereres   = "(msg_from='$employer_id' or msg_to = '$employer_id') and (msg_from='$js_id' or msg_to = '$js_id' ) ";
+
+        $whereres .= "group_by msg_from"
         $data['chatbox'] = $this->Master_model->getMaster('messaging', $where =  $whereres, $join = false, $order = 'desc', $field = 'message_id', $select = false,$limit=false,$start=false, $search=false);
 
-        print_r($this->db->last_query());die;
+        // print_r($this->db->last_query());die;
         $this->load->view('fontend/employer/chatting_card.php',$data);
 
     }

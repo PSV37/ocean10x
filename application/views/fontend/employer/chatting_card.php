@@ -6,6 +6,9 @@
                     </div>
                     <span style="float: right;" onclick="closeForm('myForm1')"><i  class="fa fa-close"></i></span>
                 </div>
+                <?php foreach ($chatbox as $row) { ?>
+                  
+              
                 <div class="panel-body msg_container_base">
                     <div class="row msg_container base_sent">
                         <div class="col-md-10 col-xs-10">
@@ -32,11 +35,12 @@
                         </div>
                     </div>
                 </div>
+                <?php  } ?>
                 <div class="panel-footer">
                     <div class="input-group">
                         <input id="btn-input" type="text" class="form-control input-sm chat_input" placeholder="Write your message here..." />
                         <span class="input-group-btn">
-                        <button class="btn btn-primary btn-sm" id="btn-chat"><i class="fa fa-send fa-1x" aria-hidden="true"></i></button>
+                        <button class="btn btn-primary btn-sm" id="btn-chat" onclick="send_msg(<?php echo $check['job_seeker_id']; ?>);"><i class="fa fa-send fa-1x" aria-hidden="true"></i></button>
                         </span>
                     </div>
                 </div>
