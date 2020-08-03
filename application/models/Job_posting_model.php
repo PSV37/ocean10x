@@ -859,13 +859,14 @@ public function get_all_company_by_banksbook()
     }
 
     function search_connection($title){
-        $this->db->select("full_name,job_seeker_id");
+        $this->db->select("js_info.full_name as name,js_info.job_seeker_id as id,company_profile.company_name as name,company_profile.company_profile_id");
 
         $this->db->like('full_name', $title , 'both');
         $this->db->order_by('full_name', 'ASC');
+        $this->db ->join('cv_folder cvp ','cvp.parent_id = cv.id','left');
          // $this->db->where('company_profile_id', $employer_id);
 
-        return $this->db->get('js_info')->result();
+        return $this->db->get('js_info','company_profile')->result();
     }
 
      public function cv_folder($id)
