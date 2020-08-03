@@ -579,10 +579,10 @@ function closeForm(id) {
 }
 
 function show_box(id){
-  var id = $('#auto-value').val();
+  // var id = $('#auto-value').val();
   alert(id);
    $.ajax({
-              url: "<?php echo base_url();?>employer/add_new_connection",
+              url: "<?php echo base_url();?>employer/get_messages",
               type: "POST",
               data: {id:id},
               // contentType:false,
