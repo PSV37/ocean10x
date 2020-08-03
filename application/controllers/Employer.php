@@ -6501,7 +6501,7 @@ function update_external()
 
         $whereres   = "(msg_from='$employer_id' or msg_to = '$employer_id') and (msg_from='$js_id' or msg_to = '$js_id' ) ";
 
-        $whereres .= "group_by msg_from";
+        $whereres .= "group by msg_from";
         $data['chatbox'] = $this->Master_model->getMaster('messaging', $where =  $whereres, $join = false, $order = 'desc', $field = 'message_id', $select = false,$limit=false,$start=false, $search=false);
 
         // print_r($this->db->last_query());die;
