@@ -6461,7 +6461,27 @@ function update_external()
     function add_new_connection()
     {
         $js_id = $this->input->post('id');
+        $name = $this->input->post('name');
         $employer_id = $this->session->userdata('company_profile_id');
+
+        $whereres   = "emp_id='$employer_id' and js_id = '$js_id'";
+        $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres);
+
+        $where_js   = "job_seeker_id='$js_id' and name = '$name'";
+        $check_js = $this->Master_model->get_master_row('js_info', $select = FALSE, $where_js);
+        if (empty($check_js)) {
+            $where_emp   = "company_profile_id='$js_id' and company_name = '$name'";
+        $check_emp = $this->Master_model->get_master_row('js_info', $select = FALSE, $where_emp);
+            if (!empty($check_emp)) {
+                $type = 'emp';
+            }
+          
+        }
+        else
+        {
+            $type = 'js';
+        }
+
 
         $whereres   = "emp_id='$employer_id' and js_id = '$js_id'";
         $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres);
@@ -6470,6 +6490,7 @@ function update_external()
            $connection_data['emp_id'] = $employer_id;
            $connection_data['js_id'] = $js_id;
            $connection_data['status'] = 1;
+           $connection_data['type'] = $type;
            $connection_data['created_by'] = $employer_id;
            $connection_data['created_date'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
 
@@ -6492,22 +6513,30 @@ function update_external()
     {
         $js_id = $this->input->post('id');
         $employer_id = $this->session->userdata('company_profile_id');
-         $Join_data      = array(
-            'js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER '
+         // $Join_data      = array(
+         //    'js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER '
                 
-         );
+         // );
 
-          $whereres   = "emp_id='$employer_id' and js_id = '$js_id'";
+        $whereres   = " emp_js_connection_id = '$js_id'";
+        $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
+
+        if ($check['type'] == 'js') {
+            $Join_data      = array(
+            'messaging' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER ');
+        }
+        else
+        {
+            $Join_data      = array(
+            'messaging' => 'company_profile.company_profile_id = emp_js_connection.js_id|Left OUTER ');
+        }
+
+        $whereres   = " emp_js_connection_id = '$js_id'";
         $data['check'] = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
-
-
-        $where   = "(msg_from='$employer_id' or msg_to = '$employer_id') and (msg_from='$js_id' or msg_to = '$js_id' ) ";
+        $where   = "connection_id = '$js_id' ";
 
         // $where .= "group by msg_from";
-        $Join_data      = array(
-            'messaging' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER '
-                
-         );
+        
         $data['chatbox'] = $this->Master_model->getMaster('messaging', $where =  $where, $join = false, $order = 'asc', $field = 'message_id', $select = false,$limit=false,$start=false, $search=false);
 
         // print_r($this->db->last_query());die;
@@ -6535,7 +6564,10 @@ function update_external()
 
         $insert_id = $this->Master_model->master_insert($meg_data, 'messaging');
 
-         $where   = "(msg_from='$employer_id' or msg_to = '$employer_id') and (msg_from='$js_id' or msg_to = '$js_id' ) ";
+         // $where   = "(msg_from='$employer_id' or msg_to = '$employer_id') and (msg_from='$js_id' or msg_to = '$js_id' ) ";
+
+        $where   = "connection_id = '$js_id' ";
+
 
         // $where .= "group by msg_from";
         $data['chatbox'] = $this->Master_model->getMaster('messaging', $where =  $where, $join = false, $order = 'asc', $field = 'message_id', $select = false,$limit=false,$start=false, $search=false);

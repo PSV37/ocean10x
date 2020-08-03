@@ -492,7 +492,7 @@ div#myForm1 {
                         <div class="col-md-2 col-xs-2 avatar">
                             <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
                         </div>
-                        <div class="col-md-10 col-xs-10" onclick="show_box(<?php echo $row['js_id']; ?>);">
+                        <div class="col-md-10 col-xs-10" onclick="show_box(<?php echo $row['emp_js_connection_id']; ?>);">
                             <div class="messages msg_receive">
                                 <p><?php echo $row['full_name']; ?></p>
                                 <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
@@ -605,11 +605,12 @@ $("#search_connection").autocomplete({
 function add_connection()
 {
   var id = $('#auto-value').val();
+  var name = $('#search_connection').val();
   alert(id);
    $.ajax({
               url: "<?php echo base_url();?>employer/add_new_connection",
               type: "POST",
-              data: {id:id},
+              data: {id:id,name:name},
               // contentType:false,
               // processData:false,
                // dataType: "json",

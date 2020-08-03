@@ -23,7 +23,7 @@
                         <div class="col-md-2 col-xs-2 avatar">
                             <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
                         </div>
-                        <div class="col-md-10 col-xs-10" onclick="show_box();">
+                        <div class="col-md-10 col-xs-10" onclick="show_box(<?php echo $row['emp_js_connection_id']; ?>);">
                             <div class="messages msg_receive">
                                 <p><?php echo $row['full_name']; ?></p>
                                 <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
