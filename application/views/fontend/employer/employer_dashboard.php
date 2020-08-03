@@ -494,10 +494,10 @@ div#myForm1 {
                         </div>
                         <div class="col-md-10 col-xs-10" onclick="show_box(<?php echo $row['emp_js_connection_id']; ?>);">
                             <div class="messages msg_receive">
-                                <p><?php if (isset($check['full_name'])) {
-                           echo $check['full_name'];
+                                <p><?php if (isset($row['full_name'])) {
+                           echo $row['full_name'];
                         }else{
-                            echo $check['company_name'];
+                            echo $row['company_name'];
                         }  ?></p>
                                 <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
                             </div>
