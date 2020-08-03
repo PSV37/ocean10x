@@ -3640,7 +3640,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             
             $result1 = $this->job_posting_model->search_connection($_GET['term']);
             $result2 = $this->job_posting_model->search_company_connection($_GET['term']);
-           $result = array_merge($a1,$a2);
+           $result = array_merge($result1,$result2);
             
             if (count($result) > 0) {
                 $i=0;
