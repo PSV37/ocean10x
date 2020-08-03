@@ -53,8 +53,7 @@ class Employer extends MY_Employer_Controller
         }
 
         $whereres   = "emp_id='$employer_id'";
-        $chatbox = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
-        $where   = "connection_id = '$js_id' ";
+        $chatbox = $this->Master_model->getMaster('emp_js_connection', $where =  $whereres, $join = $Join_data, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
             // echo $this->load->view('fontend/jobseeker/instant_message', compact('connection_requests','seeker_data','saved_job_data'),true);
         // $this->load->view('fontend/employer/dashboard_main', compact('company_info'));
         $this->load->view('fontend/employer/employer_dashboard', compact('company_info','chatbox'));
