@@ -618,7 +618,7 @@ function add_connection()
                // dataType: "json",
               success: function(data)
               {
-                $('myForm').html(data);
+                $('#myForm').html(data);
               }
         });
 }
