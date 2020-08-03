@@ -531,7 +531,7 @@ button#btn-chat {
                         <div class="col-md-2 col-xs-2 avatar">
                             <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
                         </div>
-                        <div class="col-md-10 col-xs-10" onclick="show_box();">
+                        <div class="col-md-10 col-xs-10" onclick="show_box(<?php echo $row['js_id']; ?>);">
                             <div class="messages msg_receive">
                                 <p><?php echo $row['full_name']; ?></p>
                                 <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
@@ -578,7 +578,21 @@ function closeForm(id) {
   document.getElementById(id).style.display = "none";
 }
 
-function show_box(){
+function show_box(id){
+  var id = $('#auto-value').val();
+  alert(id);
+   $.ajax({
+              url: "<?php echo base_url();?>employer/add_new_connection",
+              type: "POST",
+              data: {id:id},
+              // contentType:false,
+              // processData:false,
+               // dataType: "json",
+              success: function(data)
+              {
+                $('#myForm1').html(data);
+              }
+        });
     document.getElementById("myForm1").style.display = "block";
 }
 
