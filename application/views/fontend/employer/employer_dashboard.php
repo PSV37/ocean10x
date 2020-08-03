@@ -522,8 +522,8 @@ button#btn-chat {
 
                 <div class="panel-body msg_container_base" >
                    <input type="search" name="search_connection" placeholder="search new connection" id="search_connection" style="display: none;
-  border-radius: 0;margin-top: 43px;max-width: 99%;margin-left: 2px; color: black;">
-  <button class="btn btn-primary btn-sm"><i class="fa fa-plus fa-1x" onclick="add_connection();" aria-hidden="true"></i></button>
+  border-radius: 0;margin-top: 43px;max-width: 88%;margin-left: 2px; color: black;">
+  <button class="btn btn-primary btn-sm" style="float: right;margin-right: -9px;margin-top: 1px;height: 36px;background-color: #18c5bd;border: none;"><i class="fa fa-plus fa-1x" onclick="add_connection();" aria-hidden="true"></i></button>
                     <input type="hidden" name="job_seeker_id" value="" id="auto-value">
                     
                     <div class="row msg_container base_receive" style="margin-top: 50px;">
@@ -608,5 +608,17 @@ function add_connection()
 {
   var id = $('#auto-value').val();
   alert(id);
+   $.ajax({
+              url: "<?php echo base_url();?>employer/get_shared_tracker_card",
+              type: "POST",
+              data: {id:id},
+              // contentType:false,
+              // processData:false,
+               // dataType: "json",
+              success: function(data)
+              {
+                $('myForm').html(data);
+              }
+        });
 }
 </script>

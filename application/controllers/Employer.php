@@ -6451,5 +6451,34 @@ function update_external()
         }
     }
 
+    function add_new_connection()
+    {
+        $js_id = $this->input->post('id');
+        $employer_id = $this->session->userdata('company_profile_id');
+
+        $whereres   = "emp_id='$employer_id' and js_id = '$js_id'";
+        $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres);
+
+        if (empty($check)) {
+           $connection_data['emp_id'] = $employer_id;
+           $connection_data['js_id'] = $js_id;
+           $connection_data['status'] = 1;
+           $connection_data['created_by'] = $employer_id;
+           $connection_data['created_date'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),
+
+           $js_id = $this->Master_model->master_insert($connection_data, 'emp_js_connection')
+        }
+
+         $Join_data      = array(
+            'js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER '
+                
+         );
+        $whereres   = "emp_id='$employer_id' and js_id = '$js_id'";
+        $data['chatbox'] = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres, $Join_data);
+
+        $this->load->view('fontend/employer/chatting_card.php',$data);
+
+    }
+
 
 } // end class
