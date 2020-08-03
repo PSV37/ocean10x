@@ -2,7 +2,11 @@
                   <div class="panel panel-primary">
                 <div class="panel-heading top-bar">
                     <div class="col-md-8 col-xs-8">
-                        <h3 class="panel-title"><span class="glyphicon glyphicon-comment"></span><?php echo $check['full_name'] ?></h3>
+                        <h3 class="panel-title"><span class="glyphicon glyphicon-comment"></span><?php if (isset($check['full_name'])) {
+                           echo $check['full_name'];
+                        }else{
+                            echo $check['company_name'];
+                        }  ?></h3>
                     </div>
                     <input type="hidden" name="type" value="<?php echo $check['type'] ?>">
                     <span style="float: right;" onclick="closeForm('myForm1')"><i  class="fa fa-close"></i></span>
