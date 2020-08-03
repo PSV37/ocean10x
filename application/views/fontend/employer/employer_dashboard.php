@@ -523,7 +523,7 @@ button#btn-chat {
                 <div class="panel-body msg_container_base" >
                    <input type="search" name="search_connection" placeholder="search new connection" id="search_connection" style="display: none;
   border-radius: 0;margin-top: 43px;max-width: 88%;margin-left: 2px; color: black;">
-  <button class="btn btn-primary btn-sm" style="float: right;margin-right: -9px;margin-top: 1px;height: 36px;background-color: #18c5bd;border: none;"><i class="fa fa-plus fa-1x" onclick="add_connection();" aria-hidden="true"></i></button>
+  <button class="btn btn-primary btn-sm" id="connection_btn" style="display: none;float: right;margin-right: -9px;margin-top: 1px;height: 36px;background-color: #18c5bd;border: none;"><i class="fa fa-plus fa-1x" onclick="add_connection();" aria-hidden="true"></i></button>
                     <input type="hidden" name="job_seeker_id" value="" id="auto-value">
                     
                     <div class="row msg_container base_receive" style="margin-top: 50px;">
@@ -582,6 +582,7 @@ function show_box(){
 
 function opensearch(){
     document.getElementById("search_connection").style.display = "block";
+    document.getElementById("connection_btn").style.display = "block";
 }
 $("#search_connection").autocomplete({
              
