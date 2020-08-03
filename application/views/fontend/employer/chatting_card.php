@@ -17,25 +17,24 @@
                         <div class="col-md-10 col-xs-10">
                             <div class="messages msg_sent">
                                 <p><?php echo $row['msg']; ?></p>
-                                <time datetime="2009-11-13T20:00"><?php if ($date == date('Y-m-d')) { echo $row['created_date']->diff(new DateTime('Y-m-d H:i:s'));
-                                   }else{
-                                   echo $date;
+                                <time datetime="2009-11-13T20:00">
+                                  <?php echo $row['created_date']; ?>
                                    } ?></time>
                             </div>
                         </div>
-                        <div class="col-md-2 col-xs-2 avatar">
+                       <!--  <div class="col-md-2 col-xs-2 avatar">
                             <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
-                        </div>
+                        </div> -->
                     </div>
                 <?php }else{ ?>
                     <div class="row msg_container base_receive">
-                        <div class="col-md-2 col-xs-2 avatar">
+                        <!-- <div class="col-md-2 col-xs-2 avatar">
                             <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
-                        </div>
+                        </div> -->
                         <div class="col-md-10 col-xs-10">
                             <div class="messages msg_receive">
                                 <p><?php echo $row['msg']; ?></p>
-                                <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+                                <time datetime="2009-11-13T20:00">  <?php echo $row['created_date']; ?></time>
                             </div>
                         </div>
                     </div>
