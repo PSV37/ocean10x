@@ -6475,7 +6475,7 @@ function update_external()
                 
          );
         $whereres   = "emp_id='$employer_id' and js_id = '$js_id'";
-        $data['chatbox'] = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres, $Join_data);
+        $data['chatbox'] = $this->Master_model->getMaster('emp_js_connection', $where =  $whereres, $join = $Join_data, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
 
         $this->load->view('fontend/employer/chatting_card.php',$data);
 
