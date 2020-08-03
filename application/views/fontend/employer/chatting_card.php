@@ -6,7 +6,7 @@
                     </div>
                     <span style="float: right;" onclick="closeForm('myForm1')"><i  class="fa fa-close"></i></span>
                 </div>
-                <?php foreach ($chatbox as $row) { ?>
+                <?php foreach ($chatbox as $row) { print_r($row); ?>
                   
               
                 <div class="panel-body msg_container_base">
