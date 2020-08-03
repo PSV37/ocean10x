@@ -6469,9 +6469,11 @@ function update_external()
 
         $where_js   = "job_seeker_id='$js_id' and full_name = '$name'";
         $check_js = $this->Master_model->get_master_row('js_info', $select = FALSE, $where_js);
-        if (empty($check_js)) {
+
+        if (empty($check_js)) 
+        {
             $where_emp   = "company_profile_id='$js_id' and company_name = '$name'";
-        $check_emp = $this->Master_model->get_master_row('js_info', $select = FALSE, $where_emp);
+            $check_emp = $this->Master_model->get_master_row('company_profile', $select = FALSE, $where_emp);
             if (!empty($check_emp)) {
                 $type = 'emp';
             }
