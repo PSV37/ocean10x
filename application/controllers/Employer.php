@@ -6513,7 +6513,7 @@ function update_external()
     {
         $employer_id = $this->session->userdata('company_profile_id');
 
-        $js_id = $this->input->post('js_id');
+        $js_id = $this->input->post('id');
         $message = $this->input->post('message');
 
         $whereres   = "emp_id='$employer_id' and js_id = '$js_id'";
