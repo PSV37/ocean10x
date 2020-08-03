@@ -25,6 +25,7 @@ class Employer extends MY_Employer_Controller
     public function index()
     {
         //$this->profile_setting();
+         $employer_id = $this->session->userdata('company_profile_id');
         $this->session->unset_userdata('activemenu');
         $data['activemenu'] = 'dashboard';
         $this->session->set_userdata($data);
