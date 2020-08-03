@@ -248,6 +248,14 @@ button#btn-chat {
     background-color: #18c5bd;
     border: none;
 }
+div#myForm1 {
+    display: block;
+    max-width: 350px;
+    float: right;
+    margin-left: 290px;
+    max-height: 300;
+    overflow-y: auto;
+}
 </style>
 <div class="container-fluid main-d">
 	<div class="container">
@@ -426,10 +434,7 @@ button#btn-chat {
              
              
             </div>
-             <div class="chat-popup" id="myForm1" style="display: none;
-    max-width: 300px;
-    float: right;
-    margin-left: 290px;">
+             <div class="chat-popup" id="myForm1">
             
              </div>
            </div>
@@ -565,7 +570,7 @@ function show_box(id){
               success: function(data)
               {
                  document.getElementById("myForm1").style.display = "block";
-                
+
                 $('#myForm1').html(data);
               }
         });

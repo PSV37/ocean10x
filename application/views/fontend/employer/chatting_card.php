@@ -6,15 +6,17 @@
                     </div>
                     <span style="float: right;" onclick="closeForm('myForm1')"><i  class="fa fa-close"></i></span>
                 </div>
-                <?php foreach ($chatbox as $row) { print_r($row); ?>
+                <?php foreach ($chatbox as $row) {  ?>
                   
               
                 <div class="panel-body msg_container_base">
+                    <?php if ($row['msg_from'] == $this->session->userdata('company_profile_id')) { ?>
+             
+               
                     <div class="row msg_container base_sent">
                         <div class="col-md-10 col-xs-10">
                             <div class="messages msg_sent">
-                                <p>that mongodb thing looks good, huh?
-                                tiny master db, and huge document store</p>
+                                <p><?php echo $row['msg'] ?></p>
                                 <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
                             </div>
                         </div>
@@ -22,18 +24,19 @@
                             <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
                         </div>
                     </div>
+                <?php }else{ ?>
                     <div class="row msg_container base_receive">
                         <div class="col-md-2 col-xs-2 avatar">
                             <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
                         </div>
                         <div class="col-md-10 col-xs-10">
                             <div class="messages msg_receive">
-                                <p>that mongodb thing looks good, huh?
-                                tiny master db, and huge document store</p>
+                                <p><?php echo $row['msg'] ?></p>
                                 <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
                             </div>
                         </div>
                     </div>
+                <?php } ?>
                 </div>
                 <?php  } ?>
                 <div class="panel-footer">
