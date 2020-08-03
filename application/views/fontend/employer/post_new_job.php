@@ -458,7 +458,7 @@
                      <select name="test_for_job" id="test_for_job" class="form-control select2" data-style="btn-default" data-live-search="true" >
                        <?php  if (isset($oceanchamp_tests) && !empty($oceanchamp_tests)) {
                         foreach ($oceanchamp_tests as $row) { ?>
-                          <option value="<?php echo $row['test_id']; ?>"><?php echo $row['test_name']; ?></option>
+                          <option value="<?php echo $row->test_id; ?>"><?php echo $row->test_name; ?></option>
                      <?php   }
                      } ?>
                   </select>
