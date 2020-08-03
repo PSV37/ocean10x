@@ -19,7 +19,7 @@
                                 <p><?php echo $row['msg']; ?></p>
                                 <time datetime="2009-11-13T20:00">
                                   <?php echo $row['created_date']; ?>
-                                   } ?></time>
+                                   </time>
                             </div>
                         </div>
                        <!--  <div class="col-md-2 col-xs-2 avatar">
