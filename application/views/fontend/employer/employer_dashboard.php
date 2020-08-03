@@ -494,7 +494,11 @@ div#myForm1 {
                         </div>
                         <div class="col-md-10 col-xs-10" onclick="show_box(<?php echo $row['emp_js_connection_id']; ?>);">
                             <div class="messages msg_receive">
-                                <p><?php echo $row['full_name']; ?></p>
+                                <p><?php if (isset($check['full_name'])) {
+                           echo $check['full_name'];
+                        }else{
+                            echo $check['company_name'];
+                        }  ?></p>
                                 <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
                             </div>
                         </div>
