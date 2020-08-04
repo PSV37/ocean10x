@@ -339,6 +339,9 @@ div#myForm1 {
     max-height: 300;
     overflow-y: auto;
 }
+.ui-autocomplete {
+z-index: 100;
+}
   </style> 
 <div class="container-fluid">
     <div class="container">

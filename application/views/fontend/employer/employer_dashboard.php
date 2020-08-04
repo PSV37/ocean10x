@@ -6,7 +6,9 @@
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box;}
-
+.ui-autocomplete {
+z-index: 100;
+}
 /* Button used to open the chat form - fixed at the bottom of the page */
 .open-button {
   background-color: #555;
