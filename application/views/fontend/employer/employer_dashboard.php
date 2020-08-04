@@ -613,6 +613,14 @@ $("#btn-input").keypress(function(event) {
         alert("You pressed enter");
      }
 });
+var wage = document.getElementById("btn-input");
+wage.addEventListener("keydown", function (e) {
+    if (e.keyCode === 13) {  //checks whether the pressed key is "Enter"
+        // validate(e);
+        alert("You pressed enter");
+      
+    }
+});
 $("#search_connection").autocomplete({
              
               source: "<?php echo base_url();?>Employer/search_people",
