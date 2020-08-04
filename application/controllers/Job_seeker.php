@@ -66,19 +66,7 @@ class Job_seeker extends MY_Seeker_Controller
 
         $data['saved_jobs']=sizeof($saved_job_data);
 
-         $whereres   = "js_id='$jobseeker_id'";
-        $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
-
-
-        if ($check['type'] == 'js') {
-            $Join_data      = array(
-            'js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER ');
-        }
-        else
-        {
-            $Join_data      = array(
-            'company_profile' => 'company_profile.company_profile_id = emp_js_connection.js_id|Left OUTER ');
-        }
+       
 
         $whereres   = "js_id='$jobseeker_id'";
         $data['chatbox'] = $this->Master_model->getMaster('emp_js_connection', $where =  $whereres, $join = $Join_data, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);

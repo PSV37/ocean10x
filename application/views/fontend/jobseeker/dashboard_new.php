@@ -558,11 +558,21 @@ z-index: 100;
                         </div>
                         <div class="col-md-10 col-xs-10" onclick="show_box(<?php echo $row['emp_js_connection_id']; ?>);">
                             <div class="messages msg_receive">
-                                <p><?php if (isset($row['full_name'])) {
-                           echo $row['full_name'];
-                        }else{
-                            echo $row['company_name'];
-                        }  ?></p>
+                             <?php $employer_id = $this->session->userdata('company_profile_id');
+                               // print_r($)
+                                if ($row['type'] == 'js') {
+                                $Join_data      = array('js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER ');}
+                                else
+                                  {
+                                    $Join_data      = array('company_profile' => 'company_profile.company_profile_id = emp_js_connection.js_id|Left OUTER '); } 
+                                      $id=$row['emp_js_connection_id'];
+                                     $whereres   = "emp_js_connection_id='$id'";
+                                    $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);?> <p><?php if (!empty($check['full_name'])) {
+                                     echo $check['full_name'];
+                                    }else{
+                                     echo $check['company_name'];
+
+                                    } ?></p>
                                 <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
                             </div>
                         </div>
