@@ -339,9 +339,9 @@ div#myForm1 {
     max-height: 300;
     overflow-y: auto;
 }
-.ui-autocomplete {
+/*.ui-autocomplete {
 z-index: 1000;
-}
+}*/
   </style> 
 <div class="container-fluid">
     <div class="container">
@@ -552,7 +552,7 @@ z-index: 1000;
                     <input type="hidden" name="job_seeker_id" value="" id="auto-value">
                     <?php foreach ($chatbox as $row) {?>
 
-                    <div class="row msg_container base_receive" style="margin-top: 50px;">
+                    <div class="row msg_container base_receive">
                         <div class="col-md-2 col-xs-2 avatar">
                             <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
                         </div>
