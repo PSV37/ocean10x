@@ -533,7 +533,7 @@ z-index: 1000;
         <button class="open-button" onclick="openForm()" style="margin-bottom: 100px;" >Messaging</button>
         <div class="chat-popup" id="myForm" style="    display: none;
     max-width: 300px;
-    margin-left: 55px;" style="margin-bottom: 100px;">
+    margin-left: 55px; margin-bottom: 100px;">
               <!-- <form action="/action_page.php" class="form-container">
                 <h1>Chat</h1>
 
