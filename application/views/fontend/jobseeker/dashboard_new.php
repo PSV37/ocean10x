@@ -561,11 +561,12 @@ z-index: 1000;
                              <?php $employer_id = $this->session->userdata('company_profile_id');
                                // print_r($)
                                 if ($row['type'] == 'js') {
-                                  $Join_data      = array('company_profile' => 'company_profile.company_profile_id = emp_js_connection.emp_id|Left OUTER ');
+                                  $Join_data      = array('js_info' => 'js_info.job_seeker_id = emp_js_connection.emp_id|Left OUTER ');
+                                 
                                 }
                                 else
                                   {
-                                    $Join_data      = array('js_info' => 'js_info.job_seeker_id = emp_js_connection.emp_id|Left OUTER '); 
+                                      $Join_data      = array('company_profile' => 'company_profile.company_profile_id = emp_js_connection.emp_id|Left OUTER ');
                                   } 
                                       $id=$row['emp_js_connection_id'];
                                      $whereres   = "emp_js_connection_id='$id'";
