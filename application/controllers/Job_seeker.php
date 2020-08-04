@@ -1954,7 +1954,7 @@ public function user_profile()
 
         if (empty($check_js)) 
         {
-            $where_emp   = "company_profile_id='$js_id' and company_name = '$name'";
+            $where_emp   = "company_profile_id='$employer_id' and company_name = '$name'";
             $check_emp = $this->Master_model->get_master_row('company_profile', $select = FALSE, $where_emp);
             if (!empty($check_emp)) {
                 $type = 'emp';
@@ -1981,21 +1981,21 @@ public function user_profile()
            $insert_id = $this->Master_model->master_insert($connection_data, 'emp_js_connection');
         }
         // print_r($js_id);
-         if ($check['type'] == 'js') {
-            $Join_data      = array(
-            'js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER ');
-        }
-        else
-        {
-            $Join_data      = array(
-            'company_profile' => 'company_profile.company_profile_id = emp_js_connection.js_id|Left OUTER ');
-        }
+        //  if ($check['type'] == 'js') {
+        //     $Join_data      = array(
+        //     'js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER ');
+        // }
+        // else
+        // {
+        //     $Join_data      = array(
+        //     'company_profile' => 'company_profile.company_profile_id = emp_js_connection.js_id|Left OUTER ');
+        // }
          // $Join_data      = array(
          //    'js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER '
                 
          // );
-        $whereres   = "emp_id='$employer_id' and js_id = '$js_id'";
-        $data['chatbox'] = $this->Master_model->getMaster('messaging', $where =  $whereres, $join = $Join_data, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+        $whereres   = "emp_id='$js_id' and js_id = '$employer_id'";
+        $data['chatbox'] = $this->Master_model->getMaster('messaging', $where =  $whereres, $join = 'false', $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
 
         $this->load->view('fontend/jobseeker/chatting_list.php',$data);
 
