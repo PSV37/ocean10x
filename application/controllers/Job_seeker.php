@@ -2047,7 +2047,7 @@ public function user_profile()
 
          // $where   = "(msg_from='$employer_id' or msg_to = '$employer_id') and (msg_from='$js_id' or msg_to = '$js_id' ) ";
 
-        $where   = "connection_id = '$js_id' ";
+        $where   = "connection_id = '$employer_id' ";
 
 
         // $where .= "group by msg_from";
