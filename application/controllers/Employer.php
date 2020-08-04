@@ -3662,7 +3662,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             if (count($result) > 0) {
                 $i=0;
                 foreach ($result as $row)
-                // {
+                {
                     $arr_result[$i]['label'] = $row->name;
                     $arr_result[$i]['value'] = $row->id;
                     $i++;
@@ -3670,7 +3670,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             }
         }
     }
-// }
+}
 
     function search_skill()
     {
