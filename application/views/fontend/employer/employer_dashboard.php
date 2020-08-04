@@ -495,7 +495,8 @@ div#myForm1 {
                         <div class="col-md-10 col-xs-10" onclick="show_box(<?php echo $row['emp_js_connection_id']; ?>);">
                             <div class="messages msg_receive">
                                <?php $employer_id = $this->session->userdata('company_profile_id');
-                                if ($check['type'] == 'js') {
+                               // print_r($)
+                                if ($row['type'] == 'js') {
                                 $Join_data      = array('js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER ');}
                                 else
                                   {
