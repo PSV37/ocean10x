@@ -339,6 +339,15 @@ div#myForm1 {
     max-height: 300;
     overflow-y: auto;
 }
+div#myForm {
+    display: block;
+    max-width: 300px;
+    margin-left: 55px;
+    min-width: 280px;
+    min-height: 100;
+    background-color: white;
+    bottom: 11px;
+}
 /*.ui-autocomplete {
 z-index: 1000;
 }*/
