@@ -6579,11 +6579,11 @@ function update_external()
         $js_id = $this->input->post('id');
         $message = $this->input->post('message');
 
-        $whereres   = "emp_id='$employer_id' and js_id = '$js_id'";
+        $whereres   = "emp_id='$employer_id' and emp_js_connection_id = '$js_id'";
         $data['check'] = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres);
 
         $meg_data['msg_from'] = $employer_id;
-        $meg_data['msg_to'] = $js_id;
+        $meg_data['msg_to'] = $data['check']['js_id'];
         $meg_data['connection_id'] = $data['check']['emp_js_connection_id'];
         $meg_data['msg'] = $message;
         $meg_data['status'] = 1;
