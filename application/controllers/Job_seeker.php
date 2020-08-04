@@ -2069,7 +2069,8 @@ public function user_profile()
              'company_profile' => 'company_profile.company_profile_id = emp_js_connection.emp_id|Left OUTER ');   
         }
 
-        $whereres   = " emp_js_connection_id = '$connection_id'";
+        $whereres   = "emp_js_connection_id='$employer_id' and js_id = '$js_id'";
+        // $whereres   = " emp_js_connection_id = '$connection_id'";
         $data['check'] = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
 
         $meg_data['msg_from'] = $js_id;
