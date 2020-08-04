@@ -1288,7 +1288,7 @@ span.select2-selection.select2-selection--single {
                      <ul class="pieID legend">
                         <li>
                            <em>Total cv</em>
-                           <span>50200</span>
+                           <span><?php echo sizeof($cv_bank_data); ?></span>
                         </li>
                         <li>
                            <em>Active cv</em>
