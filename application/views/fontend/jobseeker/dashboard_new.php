@@ -560,7 +560,7 @@ z-index: 1000;
                             <div class="messages msg_receive">
                              <?php $employer_id = $this->session->userdata('company_profile_id');
                                // print_r($)
-                                if ($row['type'] == 'js' && $row['created_by']) {
+                                if ($row['type'] == 'js' && $row['created_by'] == $this->session->userdata('job_seeker_id')) {
                                   $Join_data      = array('js_info' => 'js_info.job_seeker_id = emp_js_connection.emp_id|Left OUTER ');
                                  
                                 }
