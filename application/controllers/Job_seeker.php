@@ -2002,7 +2002,7 @@ public function user_profile()
             'emp_js_connection' => 'emp_js_connection.emp_js_connection_id = messaging.connection_id|Left OUTER ');
 
         $whereres   = "emp_id='$employer_id' and js_id = '$js_id'";
-        $data['chatbox'] = $this->Master_model->getMaster('messaging', $where =  $whereres, $join = $Join_data, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+        $data['chatbox'] = $this->Master_model->getMaster('emp_js_connection', $where =  $whereres, $join = false, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
 
         $this->load->view('fontend/jobseeker/chatting_list.php',$data);
 
