@@ -1952,23 +1952,25 @@ public function user_profile()
         $where_js   = "job_seeker_id='$employer_id' and full_name = '$name'";
         $check_js = $this->Master_model->get_master_row('js_info', $select = FALSE, $where_js);
 
-print(empty($check_js));
+// print(empty($check_js));
 
-        if (empty($check_js)) 
+        if($check_js) 
         {
-            $where_emp   = "company_profile_id='$employer_id' and company_name = '$name'";
+            
+           $type = 'js';
+        }
+        else
+        {
+          $where_emp   = "company_profile_id='$employer_id' and company_name = '$name'";
             $check_emp = $this->Master_model->get_master_row('company_profile', $select = FALSE, $where_emp);
             if (!empty($check_emp)) {
                 $type = 'emp';
             }
-          
-        }
-        else
-        {
-            echo "string";die;
 
-            $type = 'js';
+           
         }
+
+        
 
 
         $whereres   = "emp_id='$employer_id' and js_id = '$js_id'";
