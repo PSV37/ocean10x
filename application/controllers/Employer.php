@@ -41,7 +41,7 @@ class Employer extends MY_Employer_Controller
 
         $whereres   = "emp_id='$employer_id'";
         $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
-        print_r($check['type']);die;
+        // print_r($check['type']);die;
         
 
         if ($check['type'] == 'js') {
