@@ -736,6 +736,14 @@ function opensearch(){
     document.getElementById("search_connection").style.display = "block";
     document.getElementById("connection_btn").style.display = "block";
 }
+$(document).on("keypress keyup blur", "#btn-input", function (e){
+    if (event.which == 13) {
+        // validate();
+        // alert("You pressed enter");
+        $('#btn-chat').click();
+     }
+});
+
 $("#search_connection").autocomplete({
              
               source: "<?php echo base_url();?>job_seeker/search_people_connection",
