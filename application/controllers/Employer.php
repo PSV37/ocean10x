@@ -3645,8 +3645,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     $arr_result[$i]['label'] = $row->job_title;
                     $arr_result[$i]['value'] = $row->job_post_id;
                     $i++;
-                echo json_encode($arr_result);
+               
             }
+             echo json_encode($arr_result);
         }
     }
 }
@@ -3666,8 +3667,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     $arr_result[$i]['label'] = $row->name;
                     $arr_result[$i]['value'] = $row->id;
                     $i++;
+                }
                 echo json_encode($arr_result);
-            }
+            
         }
     }
 }
