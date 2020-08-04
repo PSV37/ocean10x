@@ -727,7 +727,7 @@ function opensearch(){
 }
 $("#search_connection").autocomplete({
              
-              source: "<?php echo base_url();?>Employer/search_people",
+              source: "<?php echo base_url();?>job_seeker/search_people",
              minLength: 2,
               // append: "#rotateModal",
               focus: function(event, ui) {

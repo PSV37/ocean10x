@@ -1917,6 +1917,29 @@ public function user_profile()
         }
     }
 
+     function search_people()
+    {
+        // $employer_id = $this->session->userdata('company_profile_id');
+        if (isset($_GET['term'])) {
+            
+            $result1 = $this->job_posting_model->search_connection($_GET['term']);
+            $result2 = $this->job_posting_model->search_company_connection($_GET['term']);
+           $result = array_merge($result1,$result2);
+            
+            if (count($result) > 0) {
+                $i=0;
+                foreach ($result as $row)
+                {
+                    $arr_result[$i]['label'] = $row->name;
+                    $arr_result[$i]['value'] = $row->id;
+                    $i++;
+                }
+                echo json_encode($arr_result);
+            
+        }
+    }
+}
+
     function add_new_connection()
     {
         $employer_id = $this->input->post('id');
