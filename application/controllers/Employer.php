@@ -3653,7 +3653,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 }
      function search_people()
     {
-        $employer_id = $this->session->userdata('company_profile_id');
+        // $employer_id = $this->session->userdata('company_profile_id');
         if (isset($_GET['term'])) {
             
             $result1 = $this->job_posting_model->search_connection($_GET['term']);
