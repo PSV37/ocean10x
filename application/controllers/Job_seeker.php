@@ -1952,7 +1952,7 @@ public function user_profile()
         $where_js   = "job_seeker_id='$employer_id' and full_name = '$name'";
         $check_js = $this->Master_model->get_master_row('js_info', $select = FALSE, $where_js);
 
-print( $check_js);
+print(empty($check_js));
 
         if (empty($check_js)) 
         {
