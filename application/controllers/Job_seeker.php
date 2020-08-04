@@ -1994,7 +1994,7 @@ public function user_profile()
          //    'js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER '
                 
          // );
-        $whereres   = "emp_id='$js_id' and js_id = '$employer_id'";
+        $whereres   = "emp_id='$employer_id' and js_id = '$js_id'";
         $data['chatbox'] = $this->Master_model->getMaster('messaging', $where =  $whereres, $join = 'false', $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
 
         $this->load->view('fontend/jobseeker/chatting_list.php',$data);
