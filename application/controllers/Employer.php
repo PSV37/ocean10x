@@ -42,20 +42,20 @@ class Employer extends MY_Employer_Controller
         $whereres   = "emp_id='$employer_id'";
         $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
         // print_r($check['type']);die;
-        
 
-        if ($check['type'] == 'js') {
-            $Join_data      = array(
-            'js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER ');
-        }
-        else
-        {
-            $Join_data      = array(
-            'company_profile' => 'company_profile.company_profile_id = emp_js_connection.js_id|Left OUTER ');
-        }
+
+        // if ($check['type'] == 'js') {
+        //     $Join_data      = array(
+        //     'js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER ');
+        // }
+        // else
+        // {
+        //     $Join_data      = array(
+        //     'company_profile' => 'company_profile.company_profile_id = emp_js_connection.js_id|Left OUTER ');
+        // }
 
         $whereres   = "emp_id='$employer_id'";
-        $chatbox = $this->Master_model->getMaster('emp_js_connection', $where =  $whereres, $join = $Join_data, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+        $chatbox = $this->Master_model->getMaster('emp_js_connection', $where =  $whereres, $join = 'false', $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
         
         $this->load->view('fontend/employer/employer_dashboard', compact('company_info','chatbox'));
         
