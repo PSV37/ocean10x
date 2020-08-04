@@ -674,7 +674,7 @@ function send_msg(id)
   alert(id);
   var message = $('#btn-input').val();
   $.ajax({
-              url: "<?php echo base_url();?>employer/send_message",
+              url: "<?php echo base_url();?>job_seeker/send_message",
               type: "POST",
               data: {id:id,message:message},
               // contentType:false,
@@ -691,7 +691,7 @@ function show_box(id){
   // var id = $('#auto-value').val();
   alert(id);
    $.ajax({
-              url: "<?php echo base_url();?>employer/get_messages",
+              url: "<?php echo base_url();?>job_seeker/get_messages",
               type: "POST",
               data: {id:id},
               // contentType:false,
@@ -738,7 +738,7 @@ function add_connection()
   var name = $('#search_connection').val();
   alert(id);
    $.ajax({
-              url: "<?php echo base_url();?>employer/add_new_connection",
+              url: "<?php echo base_url();?>job_seeker/add_new_connection",
               type: "POST",
               data: {id:id,name:name},
               // contentType:false,

@@ -25,7 +25,7 @@
                         </div>
                         <div class="col-md-10 col-xs-10" onclick="show_box(<?php echo $row['emp_js_connection_id']; ?>);">
                             <div class="messages msg_receive">
-                                <?php $employer_id = $this->session->userdata('company_profile_id');
+                                 <?php $employer_id = $this->session->userdata('company_profile_id');
                                // print_r($)
                                 if ($row['type'] == 'js') {
                                 $Join_data      = array('js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER ');}
@@ -45,17 +45,8 @@
                         </div>
                     </div>
                 <?php } ?>
-                    <!-- <div class="row msg_container base_receive">
-                        <div class="col-md-2 col-xs-2 avatar">
-                            <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
-                        </div>
-                        <div class="col-md-10 col-xs-10">
-                            <div class="messages msg_receive">
-                                <p>y</p>
-                                <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
-                            </div>
-                        </div>
-                    </div> -->
+                 
+
                 </div>
                 <div class="panel-footer">
                     <div class="input-group">
