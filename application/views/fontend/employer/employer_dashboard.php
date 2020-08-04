@@ -609,18 +609,12 @@ function opensearch(){
 }
 $(document).on("keypress keyup blur", "#btn-input", function (e){
     if (event.which == 13) {
-        validate();
+        // validate();
         alert("You pressed enter");
+        $('#btn-chat').click();
      }
 });
-var wage = document.getElementById("btn-input");
-wage.addEventListener("keydown", function (e) {
-    if (e.keyCode === 13) {  //checks whether the pressed key is "Enter"
-        // validate(e);
-        alert("You pressed enter");
 
-    }
-});
 $("#search_connection").autocomplete({
              
               source: "<?php echo base_url();?>Employer/search_people",
