@@ -685,7 +685,7 @@ function closeForm(id) {
 
 function send_msg(id)
 {
-  alert(id);
+  // alert(id);
   var message = $('#btn-input').val();
   $.ajax({
               url: "<?php echo base_url();?>job_seeker/send_message",
@@ -703,7 +703,7 @@ function send_msg(id)
 
 function show_box(id){
   // var id = $('#auto-value').val();
-  alert(id);
+  // alert(id);
    $.ajax({
               url: "<?php echo base_url();?>job_seeker/get_messages",
               type: "POST",
@@ -750,7 +750,7 @@ function add_connection()
 {
   var id = $('#auto-value').val();
   var name = $('#search_connection').val();
-  alert(id);
+  // alert(id);
    $.ajax({
               url: "<?php echo base_url();?>job_seeker/add_new_connection",
               type: "POST",
