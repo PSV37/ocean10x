@@ -498,7 +498,7 @@ div#myForm1 {
                             <div class="messages msg_receive">
                                <?php $employer_id = $this->session->userdata('company_profile_id');
                                // print_r($)
-                                if ($row['type'] == 'js') {
+                                if ($row['type'] == 'js' && $row['created_by'] == $this->session->userdata('company_profile_id')) {
                                 $Join_data      = array('js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER ');}
                                 else
                                   {
