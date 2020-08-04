@@ -453,7 +453,7 @@ div#myForm1 {
                             <img src="<?php echo base_url()?>upload/<?php echo $this->company_profile_model->company_logoby_id($applicaiton->company_profile_id); ?>" class="invitation-img"/>
                             <div class="info-invitation">
                                 <p class="head-invi"><?php echo $this->job_posting_model->job_title_by_name($applicaiton->job_post_id); ?></p>
-                                <span class="salary-info">Slaray: <?php echo $this->job_posting_model->job_salary_by_id($applicaiton->job_post_id); ?><span>
+                                <span class="salary-info">Slaray: <?php echo $this->job_posting_model->job_salary_by_id($applicaiton->job_post_id); ?></span>
                                 <p>text test</p>
                                  <div class="detail-b"><a href="<?php  echo base_url();?>job/show/<?php echo $this->job_posting_model->get_slug_nameby_id($applicaiton->job_post_id) ?>">Details</a></div>
                                     <div class="last-row-invitation">
@@ -492,10 +492,13 @@ div#myForm1 {
              
               
             <?php endif; ?>
-             </div>
+             </div> 
              
              
             </div>
+             <div class="chat-popup" id="myForm1">
+            
+             </div>
            </div>
            
            
