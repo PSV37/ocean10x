@@ -576,7 +576,7 @@ z-index: 1000;
                                      echo $check['company_name'];
 
                                     } ?></p>
-                                <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+                                <time datetime="2009-11-13T20:00"><?php echo$row['type'] ?> == 'js'</time>
                             </div>
                         </div>
                     </div>
