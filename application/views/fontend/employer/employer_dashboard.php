@@ -607,7 +607,7 @@ function opensearch(){
     document.getElementById("search_connection").style.display = "block";
     document.getElementById("connection_btn").style.display = "block";
 }
-$("#btn-input").keypress(function(event) {
+$(document).on("keypress keyup blur", "#btn-input", function (e){
     if (event.which == 13) {
         validate();
         alert("You pressed enter");
@@ -618,7 +618,7 @@ wage.addEventListener("keydown", function (e) {
     if (e.keyCode === 13) {  //checks whether the pressed key is "Enter"
         // validate(e);
         alert("You pressed enter");
-      
+
     }
 });
 $("#search_connection").autocomplete({
