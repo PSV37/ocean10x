@@ -1949,7 +1949,7 @@ public function user_profile()
         $whereres   = "emp_id='$employer_id' and js_id = '$js_id'";
         $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres);
 
-        $where_js   = "job_seeker_id='$js_id' and full_name = '$name'";
+        $where_js   = "job_seeker_id='$employer_id' and full_name = '$name'";
         $check_js = $this->Master_model->get_master_row('js_info', $select = FALSE, $where_js);
 
         if (empty($check_js)) 
