@@ -508,7 +508,7 @@ z-index: 1000;
              
              
             </div>
-             <div class="chat-popup" id="myForm1">
+             <div class="chat-popup" id="myForm1" style="margin-bottom: 100px;">
             
              </div>
            </div>
@@ -530,10 +530,10 @@ z-index: 1000;
         	    <div class="paragraph_p_level">
         
         </div>
-        <button class="open-button" onclick="openForm()">Messaging</button>
+        <button class="open-button" onclick="openForm()" style="margin-bottom: 100px;" >Messaging</button>
         <div class="chat-popup" id="myForm" style="    display: none;
     max-width: 300px;
-    margin-left: 55px;">
+    margin-left: 55px;" style="margin-bottom: 100px;">
               <!-- <form action="/action_page.php" class="form-container">
                 <h1>Chat</h1>
 

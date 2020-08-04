@@ -445,7 +445,7 @@ div#myForm {
              
              
             </div>
-             <div class="chat-popup" id="myForm1" style="margin-bottom: 100px;">
+             <div class="chat-popup" id="myForm1">
             
              </div>
            </div>
@@ -467,9 +467,9 @@ div#myForm {
        			 <div class="paragraph_p_level">
        	
         </div>
-        <button class="open-button" onclick="openForm()" style="margin-bottom: 100px;">Messaging</button>
+        <button class="open-button" onclick="openForm()">Messaging</button>
         <div class="chat-popup" id="myForm" style="    display: none;
-    max-width: 300px;  margin-left: 55px; margin-bottom: 100px;">
+    max-width: 300px;  margin-left: 55px;">
               <!-- <form action="/action_page.php" class="form-container">
                 <h1>Chat</h1>
 
