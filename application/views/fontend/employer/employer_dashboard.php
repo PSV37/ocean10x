@@ -486,7 +486,7 @@ div#myForm1 {
   border-radius: 0;margin-top: 43px;max-width: 88%;margin-left: 2px; color: black;">
   <button class="btn btn-primary btn-sm" id="connection_btn" style="display: none;float: right;margin-right: -9px;margin-top: 1px;height: 36px;background-color: #18c5bd;border: none;"><i class="fa fa-plus fa-1x" onclick="add_connection();" aria-hidden="true"></i></button>
                     <input type="hidden" name="job_seeker_id" value="" id="auto-value">
-                    <?php foreach ($chatbox as $row) {?>
+                    <?php foreach ($chatbox as $row) { print_r($row); ?>
 
                     <div class="row msg_container base_receive" style="margin-top: 50px;">
                         <div class="col-md-2 col-xs-2 avatar">
@@ -496,9 +496,9 @@ div#myForm1 {
                             <div class="messages msg_receive">
                                 <p><?php if (isset($row['full_name'])) {
                            echo $row['full_name'];
-                        }else{
+                            }else{
                             echo $row['company_name'];
-                        }  ?></p>
+                            }  ?></p>
                                 <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
                             </div>
                         </div>
