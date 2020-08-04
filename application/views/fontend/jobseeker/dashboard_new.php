@@ -569,7 +569,7 @@ z-index: 1000;
                                  $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
                                }
                                       
-                                  } 
+                                  
                                       $id=$row['emp_js_connection_id'];
                                      $whereres   = "emp_js_connection_id='$id'";
                                    ?> <p><?php if (!empty($check['full_name'])) {
