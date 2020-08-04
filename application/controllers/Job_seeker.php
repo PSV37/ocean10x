@@ -1917,7 +1917,7 @@ public function user_profile()
         }
     }
 
-     function search_people()
+     function search_people_connection()
     {
         // $employer_id = $this->session->userdata('company_profile_id');
         if (isset($_GET['term'])) {
