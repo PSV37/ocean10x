@@ -490,7 +490,7 @@ div#myForm1 {
                     <input type="hidden" name="job_seeker_id" value="" id="auto-value">
                     <?php foreach ($chatbox as $row) { ?>
 
-                    <div class="row msg_container base_receive">
+                    <div class="row msg_container base_receive" style="margin-top: 50px;">
                         <div class="col-md-2 col-xs-2 avatar">
                             <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
                         </div>
