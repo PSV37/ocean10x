@@ -1984,24 +1984,9 @@ public function user_profile()
 
            $insert_id = $this->Master_model->master_insert($connection_data, 'emp_js_connection');
         }
-        // print_r($js_id);
-        //  if ($check['type'] == 'js') {
-        //     $Join_data      = array(
-        //     'js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER ');
-        // }
-        // else
-        // {
-        //     $Join_data      = array(
-        //     'company_profile' => 'company_profile.company_profile_id = emp_js_connection.js_id|Left OUTER ');
-        // }
-         // $Join_data      = array(
-         //    'js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER '
-                
-         // );
-         $Join_data      = array(
-            'emp_js_connection' => 'emp_js_connection.emp_js_connection_id = messaging.connection_id|Left OUTER ');
+       
 
-        $whereres   = "emp_id='$employer_id' and js_id = '$js_id'";
+       $whereres   = "js_id='$jobseeker_id'";
         $data['chatbox'] = $this->Master_model->getMaster('emp_js_connection', $where =  $whereres, $join = false, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
 
         $this->load->view('fontend/jobseeker/chatting_list.php',$data);

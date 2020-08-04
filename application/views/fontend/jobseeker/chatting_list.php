@@ -16,7 +16,7 @@
   border-radius: 0;margin-top: 43px;max-width: 88%;margin-left: 2px; color: black;">
   <button class="btn btn-primary btn-sm" style="display: none;float: right;margin-right: -9px;margin-top: 1px;height: 36px;background-color: #18c5bd;border: none;"><i class="fa fa-plus fa-1x" onclick="add_connection();" aria-hidden="true"></i></button>
                     <input type="hidden" name="job_seeker_id" value="" id="auto-value">
-                    <?php foreach ($chatbox as $row) {?>
+                    <?php foreach ($chatbox as $row) { ?>
 
                     
                     <div class="row msg_container base_receive" style="margin-top: 50px;">

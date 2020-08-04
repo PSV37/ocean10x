@@ -6525,9 +6525,8 @@ function update_external()
          // $Join_data      = array(
          //    'js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER '
                 
-         // );
-        $whereres   = "emp_id='$employer_id' and js_id = '$js_id'";
-        $data['chatbox'] = $this->Master_model->getMaster('emp_js_connection', $where =  $whereres, $join = false, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+         $whereres   = "emp_id='$employer_id'";
+        $chatbox = $this->Master_model->getMaster('emp_js_connection', $where =  $whereres, $join = false, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
 
         $this->load->view('fontend/employer/chatting_list.php',$data);
 
@@ -6574,8 +6573,28 @@ function update_external()
         $js_id = $this->input->post('id');
         $message = $this->input->post('message');
 
-        $whereres   = "emp_id='$employer_id' and emp_js_connection_id = '$js_id'";
-        $data['check'] = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres);
+        // $whereres   = "emp_id='$employer_id' and emp_js_connection_id = '$js_id'";
+        // $data['check'] = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres);
+
+        $whereres   = " emp_js_connection_id = '$js_id'";
+        $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
+
+         if ($row['type'] == 'emp' && $row['created_by'] == $this->session->userdata('company_profile_id') ) 
+         {
+            $Join_data      = array('company_profile' => 'company_profile.company_profile_id = emp_js_connection.js_id|Left OUTER ');
+         }
+        else
+         {
+            $Join_data      = array('js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER ');
+         } 
+
+         $whereres   = "emp_id='$employer_id' and emp_js_connection_id = '$js_id'";
+        $data['check'] = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
+        $where   = "connection_id = '$js_id' ";
+
+        // $where .= "group by msg_from";
+        
+        $data['chatbox'] = $this->Master_model->getMaster('messaging', $where =  $where, $join = false, $order = 'asc', $field = 'message_id', $select = false,$limit=false,$start=false, $search=false);
 
         $meg_data['msg_from'] = $employer_id;
         $meg_data['msg_to'] = $data['check']['js_id'];
