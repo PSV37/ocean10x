@@ -506,11 +506,13 @@ div#myForm {
                             <div class="messages msg_receive">
                                <?php $employer_id = $this->session->userdata('company_profile_id');
                                // print_r($)
-                                if ($row['type'] == 'js') {
-                                $Join_data      = array('js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER ');}
+                                if ($row['type'] == 'emp' && $row['created_by'] == $this->session->userdata('company_profile_id') ) {
+                                  $Join_data      = array('company_profile' => 'company_profile.company_profile_id = emp_js_connection.js_id|Left OUTER ');
+                               }
                                 else
                                   {
-                                    $Join_data      = array('company_profile' => 'company_profile.company_profile_id = emp_js_connection.js_id|Left OUTER '); } 
+                                     $Join_data      = array('js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER ');
+                                     } 
                                       $id=$row['emp_js_connection_id'];
                                      $whereres   = "emp_js_connection_id='$id'";
                                     $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);?> <p><?php if (!empty($check['full_name'])) {
@@ -605,6 +607,12 @@ function opensearch(){
     document.getElementById("search_connection").style.display = "block";
     document.getElementById("connection_btn").style.display = "block";
 }
+$("#myText").keypress(function(event) {
+    if (event.which == 13) {
+        validate();
+        alert("You pressed enter");
+     }
+});
 $("#search_connection").autocomplete({
              
               source: "<?php echo base_url();?>Employer/search_people",
