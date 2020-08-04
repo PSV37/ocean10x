@@ -55,7 +55,7 @@ class Employer extends MY_Employer_Controller
         // }
 
         $whereres   = "emp_id='$employer_id'";
-        $chatbox = $this->Master_model->getMaster('emp_js_connection', $where =  $whereres, $join = 'false', $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+        $chatbox = $this->Master_model->getMaster('emp_js_connection', $where =  $whereres, $join = false, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
         
         $this->load->view('fontend/employer/employer_dashboard', compact('company_info','chatbox'));
         
