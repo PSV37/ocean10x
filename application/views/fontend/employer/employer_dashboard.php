@@ -607,7 +607,7 @@ function opensearch(){
     document.getElementById("search_connection").style.display = "block";
     document.getElementById("connection_btn").style.display = "block";
 }
-$("#myText").keypress(function(event) {
+$("#btn-input").keypress(function(event) {
     if (event.which == 13) {
         validate();
         alert("You pressed enter");
