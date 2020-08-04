@@ -6594,7 +6594,7 @@ function update_external()
 
 
         // $where .= "group by msg_from";
-        $data['chatbox'] = $this->Master_model->getMaster('messaging', $where =  $where, $join = false, $order = 'asc', $field = 'message_id', $select = false,$limit=false,$start=false, $search=false);
+        $data['chatbox'] = $this->Master_model->getMaster('emp_js_connection', $where =  $where, $join = false, $order = false , $field =  false, $select = false,$limit=false,$start=false, $search=false);
 
         // print_r($this->db->last_query());die;
         $this->load->view('fontend/employer/chatting_card.php',$data);
