@@ -2020,7 +2020,7 @@ public function user_profile()
         $whereres   = " emp_js_connection_id = '$connection_id'";
         $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
 
-        if ($check['type'] == 'js') {
+        if ($check['type'] == 'js' && $check['created_by'] == $this->session->userdata('job_seeker_id')) {
             $Join_data      = array(
             'company_profile' => 'company_profile.company_profile_id = emp_js_connection.emp_id|Left OUTER ');
            
@@ -2028,7 +2028,7 @@ public function user_profile()
         else
         {
           $Join_data      = array(
-            'js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER ');   
+            'js_info' => 'js_info.job_seeker_id = emp_js_connection.emp_id|Left OUTER ');   
         }
 
         $whereres   = " emp_js_connection_id = '$connection_id'";
