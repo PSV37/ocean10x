@@ -6520,7 +6520,7 @@ function update_external()
         }
         // print_r($js_id);
            $Join_data      = array(
-            'emp_js_connection' => 'emp_js_connection.emp_js_connection_id = messaging.connection_id|Left OUTER ');
+            'messaging' => 'emp_js_connection.emp_js_connection_id = messaging.connection_id|Left OUTER ');
         
          // $Join_data      = array(
          //    'js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER '
