@@ -1954,6 +1954,7 @@ public function user_profile()
 
         if (empty($check_js)) 
         {
+            echo "string";die;
             $where_emp   = "company_profile_id='$employer_id' and company_name = '$name'";
             $check_emp = $this->Master_model->get_master_row('company_profile', $select = FALSE, $where_emp);
             if (!empty($check_emp)) {
