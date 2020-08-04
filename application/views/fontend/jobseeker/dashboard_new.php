@@ -560,23 +560,25 @@ z-index: 1000;
                             <div class="messages msg_receive">
                              <?php $employer_id = $this->session->userdata('company_profile_id');
                                // print_r($)
-                                if ($row['type'] == 'js') {
+                                
                                   $Join_data      = array('js_info' => 'js_info.job_seeker_id = emp_js_connection.emp_id|Left OUTER ');
                                  
-                                }
-                                else
-                                  {
-                                      $Join_data      = array('company_profile' => 'company_profile.company_profile_id = emp_js_connection.emp_id|Left OUTER ');
+                                $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
+                               if (empty($check)) {
+                                 $Join_data      = array('company_profile' => 'company_profile.company_profile_id = emp_js_connection.emp_id|Left OUTER ');
+                                 $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
+                               }
+                                      
                                   } 
                                       $id=$row['emp_js_connection_id'];
                                      $whereres   = "emp_js_connection_id='$id'";
-                                    $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);?> <p><?php if (!empty($check['full_name'])) {
+                                   ?> <p><?php if (!empty($check['full_name'])) {
                                      echo $check['full_name'];
                                     }else{
                                      echo $check['company_name'];
 
                                     } ?></p>
-                                <time datetime="2009-11-13T20:00"><?php echo$row['type'] ?> == 'js'</time>
+                                <time datetime="2009-11-13T20:00"><?php echo $row['type'] ?> == 'js'</time>
                             </div>
                         </div>
                     </div>
