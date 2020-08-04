@@ -2052,8 +2052,25 @@ public function user_profile()
         $employer_id = $this->input->post('id');
         $message = $this->input->post('message');
 
-        $whereres   = "emp_js_connection_id='$employer_id' and js_id = '$js_id'";
-        $data['check'] = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres);
+        // $whereres   = "emp_js_connection_id='$employer_id' and js_id = '$js_id'";
+        // $data['check'] = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres);
+         $whereres   = " emp_js_connection_id = '$connection_id'";
+        $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
+
+        if ($check['type'] == 'js' && $check['created_by'] == $this->session->userdata('job_seeker_id')) {
+            $Join_data      = array(
+           'js_info' => 'js_info.job_seeker_id = emp_js_connection.emp_id|Left OUTER ');
+           
+        }
+        else
+        {
+          $Join_data      = array(
+            
+             'company_profile' => 'company_profile.company_profile_id = emp_js_connection.emp_id|Left OUTER ');   
+        }
+
+        $whereres   = " emp_js_connection_id = '$connection_id'";
+        $data['check'] = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
 
         $meg_data['msg_from'] = $js_id;
         $meg_data['msg_to'] =  $data['check']['emp_id'];
