@@ -588,6 +588,7 @@ function send_msg(id)
 }
 
 function show_box(id){
+  alert(id);
  
   document.getElementById("myForm1").style.display = "block";
  
@@ -606,13 +607,13 @@ function show_box(id){
                  
               }
         });
-        setInterval(function(){ 
-     if ( $('#myForm1').css('display') == 'block')
-    {
-      show_box(id);
-    }
+    //     setInterval(function(){ 
+    //  if ( $('#myForm1').css('display') == 'block')
+    // {
+    //   show_box(id);
+    // }
    
-    }, 3000);
+    // }, 3000);
    
 }
 
