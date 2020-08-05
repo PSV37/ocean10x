@@ -4257,7 +4257,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $data['activemenu'] = 'cv_bank';
         $this->session->set_userdata($data);
         $company_id = $this->session->userdata('company_profile_id');
-
+        $query['active_cv'] = $db->query('SELECT * FROM corporate_cv_bank LEFT JOIN js_info on js_info.email = corporate_cv_bank.js_email LEFT JOIN js_login_logs on js_info.job_seeker_id = js_login_logs.job_seeker_id WHERE login BETWEEN DATE_SUB(NOW(), INTERVAL 30 DAY) AND NOW() and corporate_cv_bank.company_id='149' GROUP by cv_id');
        if (isset($fid) && !empty($fid)) {
 
             $this->session->unset_userdata('activesubmenu');
