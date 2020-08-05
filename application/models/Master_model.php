@@ -465,17 +465,12 @@ class Master_model extends CI_Model
         return $sql ->result();
 	}
 	
-<<<<<<< HEAD
+
     public function getactive_cvs()
     {
     $sql = $this->db->query("SELECT * FROM corporate_cv_bank LEFT JOIN js_info on js_info.email = corporate_cv_bank.js_email LEFT JOIN js_login_logs on js_info.job_seeker_id = js_login_logs.job_seeker_id WHERE login BETWEEN DATE_SUB(NOW(), INTERVAL 30 DAY) AND NOW() and corporate_cv_bank.company_id='$company_id' GROUP by cv_id");
     return $sql->result();
 }
 
-=======
-   
->>>>>>> 5e50b40c57f3f4f328ae12e219286805e7d0d1b7
-
-	
 
 }
