@@ -607,11 +607,13 @@ function show_box(id){
                  
               }
         });
-    //     setInterval(function(){ 
-    //  if ( $('#myForm1').css('display') == 'block')
-    // {
+        // setInterval(function(){ 
+     if ( $('#myForm1').css('display') == 'block')
+    {
+      alert(id);
+ 
     //   show_box(id);
-    // }
+    }
    
     // }, 3000);
    
