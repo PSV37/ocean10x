@@ -557,7 +557,7 @@ div#myForm {
 </div>   
 
 <script>
-$( document ).ready(function() {
+// $( document ).ready(function() {
 setInterval(function(){ 
      if ( $('#myForm1').css('display') == 'block')
       {
@@ -566,7 +566,7 @@ setInterval(function(){
       }
    
     }, 3000);
-});
+// });
   // setInterval("my_function();",10000);
 function openForm() {
   document.getElementById("myForm").style.display = "block";
