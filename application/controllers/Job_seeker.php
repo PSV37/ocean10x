@@ -2041,7 +2041,7 @@ public function user_profile()
 
         // $whereres   = "emp_js_connection_id='$employer_id' and js_id = '$js_id'";
         // $data['check'] = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres);
-         $whereres   = " emp_js_connection_id = '$connection_id'";
+         $whereres   = "emp_js_connection_id = '$employer_id'";
         $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
 
         if ($check['type'] == 'js' && $check['created_by'] == $this->session->userdata('job_seeker_id')) {
