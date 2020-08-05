@@ -74,7 +74,13 @@
 </head>
 
 <!---header---->
- <?php  $job_seeker=$this->session->userdata('job_seeker_id'); ?>
+ <?php  $job_seeker=$this->session->userdata('job_seeker_id'); 
+  $whereres   = "msg_to='$job_seeker' and message_status = '0'";
+ $chatbox = $this->Master_model->getMaster('messaging', $where =  $whereres, $join = $Join_data, $order = false, $field = false, $select = 'count(*)as total',$limit=false,$start=false, $search=false);
+ // print_r($chatbox);
+
+
+ ?>
 <div class="container-fluid gradient_strip" >
 <div class="container">
 <div class="col-md-12">
@@ -113,7 +119,7 @@
 <div class="col-md-1">
 	 <div class="notification" style="font-size:13px;margin-top:10px;">
     	<i class="fas fa-comment-alt"></i><br>
-        Messaging
+        Messaging (<?php echo $chatbox[0]['total']; ?>)
         <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu" style="width: 300px;">
                
                   <?php 
