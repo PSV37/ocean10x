@@ -593,16 +593,10 @@ function show_box(id){
   setInterval(function(){ 
      if ( $('#myForm1').css('display') == 'block')
     {
-      var vid = $('#btn-chat').val();
-  if (vid == '') 
-  {
-    vid = id;
-  }
-      
        $.ajax({
               url: "<?php echo base_url();?>employer/get_messages",
               type: "POST",
-              data: {id:vid},
+              data: {id:id},
               // contentType:false,
               // processData:false,
                // dataType: "json",
