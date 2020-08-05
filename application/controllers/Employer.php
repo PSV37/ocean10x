@@ -4261,6 +4261,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     
      public function corporate_cv_bank($fid = null)
     {
+        $data['active_cv']  = $this->load->model('getactive_cvs');
         $this->session->unset_userdata('activemenu');
         $data['activemenu'] = 'cv_bank';
         $this->session->set_userdata($data);
@@ -4300,9 +4301,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         }          
      // $this->load->view('fontend/employer/corporate_cv_bank',$data);
     }
-    {
-    $data['active_cv']  = $this->load->model('getactive_cvs');
-}
+    
     
  
     public function add_new_cv($id=Null)
