@@ -3649,10 +3649,11 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             if (count($result) > 0) {
                 $i=0;
                 foreach ($result as $row)
-
+                {
                     $arr_result[$i]['label'] = $row->name;
                     $arr_result[$i]['value'] = $row->id;
                     $i++;
+                }
                 echo json_encode($arr_result);
             }
         }
@@ -6578,7 +6579,7 @@ function update_external()
            } 
 
         $whereres   = "emp_js_connection.emp_js_connection_id = '$js_id' ";
-        $data['check'] = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres);
+        $data['check'] = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
 
         $meg_data['msg_from'] = $employer_id;
         $meg_data['msg_to'] = $data['check']['js_id'];
