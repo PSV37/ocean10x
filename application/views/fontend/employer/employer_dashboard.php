@@ -557,6 +557,9 @@ div#myForm {
 </div>   
 
 <script>
+
+
+  setInterval("my_function();",10000);
 function openForm() {
   document.getElementById("myForm").style.display = "block";
 }
@@ -568,6 +571,7 @@ function closeForm(id) {
 function send_msg(id)
 {
   // alert(id);
+
   var message = $('#btn-input').val();
   $.ajax({
               url: "<?php echo base_url();?>employer/send_message",
@@ -586,6 +590,7 @@ function send_msg(id)
 function show_box(id){
   // var id = $('#auto-value').val();
   // alert(id);
+  setInterval(function(){ 
    $.ajax({
               url: "<?php echo base_url();?>employer/get_messages",
               type: "POST",
@@ -600,6 +605,7 @@ function show_box(id){
                 $('#myForm1').html(data);
               }
         });
+    }, 3000);
    
 }
 
