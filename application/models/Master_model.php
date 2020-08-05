@@ -134,11 +134,7 @@ class Master_model extends CI_Model
      * @return	string search keywords
      */
 
-    public function getactive_cvs($tablename, $where = FALSE, $join = FALSE, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false)
-    {
-    $sql = $this->db->query("SELECT * FROM corporate_cv_bank LEFT JOIN js_info on js_info.email = corporate_cv_bank.js_email LEFT JOIN js_login_logs on js_info.job_seeker_id = js_login_logs.job_seeker_id WHERE login BETWEEN DATE_SUB(NOW(), INTERVAL 30 DAY) AND NOW() and corporate_cv_bank.company_id='149' GROUP by cv_id");
-    return $sql->result();
-}
+    
 
 
 
