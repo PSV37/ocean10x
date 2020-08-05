@@ -588,9 +588,7 @@ function send_msg(id)
 }
 
 function show_box(id){
-  var vid = $('#btn-chat').val();
-  // document.getElementById("myForm1").style.display = "block";
-  alert(vid);
+ 
   // setInterval(function(){ 
   //    if ( $('#myForm1').css('display') == 'block')
   //   {
@@ -606,6 +604,9 @@ function show_box(id){
                  
 
                 $('#myForm1').html(data);
+                 var vid = $('#btn-chat').val();
+  // document.getElementById("myForm1").style.display = "block";
+                alert(vid);
               }
         });
     // }
