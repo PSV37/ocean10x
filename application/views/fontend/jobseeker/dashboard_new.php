@@ -717,6 +717,9 @@ function send_msg(id)
 function show_box(id){
   // var id = $('#auto-value').val();
   // alert(id);
+  setInterval(function(){ 
+     if ( $('#myForm1').css('display') == 'block')
+    {
    $.ajax({
               url: "<?php echo base_url();?>job_seeker/get_messages",
               type: "POST",
@@ -731,6 +734,9 @@ function show_box(id){
                 $('#myForm1').html(data);
               }
         });
+   }
+   
+    }, 3000);
    
 }
 
