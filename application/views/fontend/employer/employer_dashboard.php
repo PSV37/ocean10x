@@ -591,7 +591,9 @@ function show_box(id){
   // var id = $('#auto-value').val();
   // alert(id);
   setInterval(function(){ 
-   $.ajax({
+     if ( $('#myForm1').css('display') == 'block')
+    {
+       $.ajax({
               url: "<?php echo base_url();?>employer/get_messages",
               type: "POST",
               data: {id:id},
@@ -605,6 +607,8 @@ function show_box(id){
                 $('#myForm1').html(data);
               }
         });
+    }
+   
     }, 3000);
    
 }
