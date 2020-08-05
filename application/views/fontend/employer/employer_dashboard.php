@@ -615,7 +615,7 @@ function show_box(id){
       show_box(id);
     }
    
-    }, 3000);
+    }, 30000);
    
 }
 
