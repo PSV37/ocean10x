@@ -588,7 +588,7 @@ function send_msg(id)
 }
 
 function show_box(id){
-  alert(id);
+  // alert(id);/
  
   document.getElementById("myForm1").style.display = "block";
  
@@ -610,7 +610,7 @@ function show_box(id){
         setInterval(function(){ 
      if ( $('#myForm1').css('display') == 'block')
     {
-      alert(id);
+      // alert(id);
  
       show_box(id);
     }
