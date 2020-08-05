@@ -6524,7 +6524,7 @@ function update_external()
         $js_id = $this->input->post('id');
         $employer_id = $this->session->userdata('company_profile_id');
         $del   = array(
-            'message_status' => 1
+            'message_status' => '1'
           );
         $where11['connection_id'] = $js_id;
         
