@@ -38,7 +38,7 @@ class Employer extends MY_Employer_Controller
 
          $Join_data      = array('messaging' => 'messaging.connection_id = emp_js_connection.emp_js_connection_id|Left OUTER ');
 
-         $whereres   = "emp_id='$employer_id'";;
+         $whereres   = "emp_id='$employer_id' ";
         $whereres   .= "group by emp_js_connection.emp_js_connection_id";
 
         $chatbox = $this->Master_model->getMaster('emp_js_connection', $where =  $whereres, $join = $Join_data, $order = 'desc', $field = 'max', $select = ' messaging.*, MAX( messaging.message_id) as max,emp_js_connection.*',$limit=false,$start=false, $search=false);

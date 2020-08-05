@@ -75,7 +75,12 @@ a.dropdown-toggle {
      </div>          
 
 	</div>
+<?php $employer_id = $this->session->userdata('company_profile_id');
+  $whereres   = "msg_to='$employer_id' and message_status = '0'";
+ $chatbox = $this->Master_model->getMaster('messaging', $where =  $whereres, $join = $Join_data, $order = false, $field = false, $select = 'count(*)',$limit=false,$start=false, $search=false);
 
+
+ ?>
 <div class="col-md-3">
 
 	 <div class="switch switch-yellow">
@@ -90,7 +95,7 @@ a.dropdown-toggle {
 <div class="col-md-1">
 	 <div class="notification">
     	<i class="fas fa-comment-alt"></i><br>
-        Messaging
+        Messaging(<?php echo $chatbox; ?>)
     </div>    
    
 </div>
@@ -105,7 +110,7 @@ a.dropdown-toggle {
     
     <div class="col-md-2">
     	 <div class="dropdown">
-              <?php $employer_id = $this->session->userdata('company_profile_id'); ?>
+              <?php  ?>
   <img src="<?php echo base_url() ?>upload/<?php echo $this->company_profile_model->company_logoby_id($employer_id);?>" class="img-thumbnail" style="height:45px; width:45px; border-radius:50%;" />&emsp;<a class=" dropdown-toggle" data-toggle="dropdown">
     
     <span class="caret"></span>     
