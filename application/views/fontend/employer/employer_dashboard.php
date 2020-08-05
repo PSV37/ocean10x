@@ -559,7 +559,7 @@ div#myForm {
 <script>
 $( document ).ready(function() {
 setInterval(function(){ 
-     if ( $('#myForm1').css('display') == 'block')
+     if ( $('#myForm1').css('display') == 'none')
     {
       $('#box').click();
     }
