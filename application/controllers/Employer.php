@@ -6523,10 +6523,11 @@ function update_external()
     {
         $js_id = $this->input->post('id');
         $employer_id = $this->session->userdata('company_profile_id');
-         // $Join_data      = array(
-         //    'js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER '
-                
-         // );
+        $del   = array(
+            'message_status' => 1
+          );
+        $where11['msg_to'] = $employer_id;
+        $this->Master_model->master_update($del, 'messaging', $where11);
 
         $whereres   = " emp_js_connection_id = '$js_id'";
         $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
