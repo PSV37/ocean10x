@@ -580,7 +580,7 @@ z-index: 1000;
                                   } 
                                       $id=$row['emp_js_connection_id'];
                                      $whereres   = "emp_js_connection_id='$id'";
-                                    $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);?> <p><?php if (!empty($check['full_name'])) {
+                                    $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data); print_r($this->db->last_query()); ?> <p><?php if (!empty($check['full_name'])) {
                                      echo $check['full_name'];
                                     }else{
                                      echo $check['company_name'];
@@ -590,7 +590,7 @@ z-index: 1000;
                             </div>
                         </div>
                     </div>
-                    <?php } ?>
+                    <?php } ?> 
                    
                 </div>
                
