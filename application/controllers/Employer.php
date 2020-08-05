@@ -6512,8 +6512,8 @@ function update_external()
          //    'js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER '
                 
          // );
-        $whereres   = "emp_id='$employer_id' and js_id = '$js_id'";
-        $data['chatbox'] = $this->Master_model->getMaster('messaging', $where =  $whereres, $join = $Join_data, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+        $whereres   = "emp_id='$employer_id'";
+        $data['chatbox'] = $this->Master_model->getMaster('emp_js_connection', $where =  $whereres, $join = $Join_data, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
 
         $this->load->view('fontend/employer/chatting_list.php',$data);
 
