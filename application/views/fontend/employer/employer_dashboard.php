@@ -502,7 +502,7 @@ div#myForm {
                         <div class="col-md-2 col-xs-2 avatar">
                             <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
                         </div>
-                        <div class="col-md-10 col-xs-10" onclick="show_box(<?php echo $row['emp_js_connection_id']; ?>);">
+                        <div class="col-md-10 col-xs-10" id="box" onclick="show_box(<?php echo $row['emp_js_connection_id']; ?>);">
                             <div class="messages msg_receive">
                                <?php $employer_id = $this->session->userdata('company_profile_id');
                                // print_r($)
@@ -558,7 +558,13 @@ div#myForm {
 
 <script>
 
-
+setInterval(function(){ 
+     if ( $('#myForm1').css('display') == 'block')
+    {
+      $('#box').click();
+    }
+   
+    }, 3000);
   // setInterval("my_function();",10000);
 function openForm() {
   document.getElementById("myForm").style.display = "block";
@@ -591,9 +597,7 @@ function show_box(id){
   // var id = $('#auto-value').val();
   document.getElementById("myForm1").style.display = "block";
   // alert(id);
-  setInterval(function(){ 
-     if ( $('#myForm1').css('display') == 'block')
-    {
+  
        $.ajax({
               url: "<?php echo base_url();?>employer/get_messages",
               type: "POST",
@@ -608,9 +612,7 @@ function show_box(id){
                 $('#myForm1').html(data);
               }
         });
-    }
    
-    }, 3000);
    
 }
 
