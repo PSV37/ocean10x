@@ -2042,10 +2042,11 @@ public function user_profile()
          $del   = array(
             'message_status' => 1
           );
-        $where11['msg_to'] = $js_id;
+        $where11['connection_id'] = $employer_id;
+        // $where11['msg_from'] = $js_id;
         $this->Master_model->master_update($del, 'messaging', $where11);
 
-        
+
          $whereres   = "emp_js_connection_id = '$employer_id'";
         $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
 
