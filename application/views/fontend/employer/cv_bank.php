@@ -1292,7 +1292,7 @@ span.select2-selection.select2-selection--single {
                         </li>
                         <li>
                            <em>Active cv</em>
-                           <span>4500</span>
+                           <span><?php echo sizeof($Active_cv); ?></span>
                         </li>
                         <li>
                            <em>Own cv's</em>
