@@ -568,7 +568,7 @@ z-index: 1000;
                         <div class="col-md-10 col-xs-10" onclick="show_box(<?php echo $row['emp_js_connection_id']; ?>);">
                             <div class="messages msg_receive">
                              <?php $js_id = $this->session->userdata('job_seeker_id');
-                               print_r($row['created_by']);
+                               // print_r($row['created_by']);
                                // print_r($row['$js_id']);
                                 if ($row['type'] == 'js' && $row['created_by'] == $js_id) {
                                   // echo "string";
