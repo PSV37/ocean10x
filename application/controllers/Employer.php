@@ -36,11 +36,11 @@ class Employer extends MY_Employer_Controller
         $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
        
             $Join_data      = array(
-            'emp_js_connection' => 'emp_js_connection.emp_js_connection_id = messaging.connection_id|Left OUTER ');
+            'messaging' => 'emp_js_connection.emp_js_connection_id = messaging.connection_id|Left OUTER ');
        
 
         $whereres   = "emp_id='$employer_id'";
-        $chatbox = $this->Master_model->getMaster('messaging', $where =  $whereres, $join = $Join_data, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+        $chatbox = $this->Master_model->getMaster('emp_js_connection', $where =  $whereres, $join = $Join_data, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
         
         $this->load->view('fontend/employer/employer_dashboard', compact('company_info','chatbox'));
         
