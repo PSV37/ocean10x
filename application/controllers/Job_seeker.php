@@ -66,23 +66,14 @@ class Job_seeker extends MY_Seeker_Controller
 
         $data['saved_jobs']=sizeof($saved_job_data);
 
-         $whereres   = "js_id='$jobseeker_id'";
-        $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
-
-        if ($check['type'] == 'js') {
-            $Join_data      = array(
-            'js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER ');
-        }
-        else
-        {
-            $Join_data      = array(
-            'company_profile' => 'company_profile.company_profile_id = emp_js_connection.js_id|Left OUTER ');
-        }
+        $Join_data      = array('messaging' => 'messaging.connection_id = emp_js_connection.emp_js_connection_id|Left OUTER ');
 
         $whereres   = "js_id='$jobseeker_id'";
-        $data['chatbox'] = $this->Master_model->getMaster('emp_js_connection', $where =  $whereres, $join = $Join_data, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+        $whereres   .= "group by emp_js_connection.emp_js_connection_id";
+
+        $data['chatbox'] = $this->Master_model->getMaster('emp_js_connection', $where =  $whereres, $join = $Join_data, $order = 'desc', $field = 'message_id', $select = 'emp_js_connection.*',$limit=false,$start=false, $search=false);
         
-        // print_r($alljobs);die();
+        // print_r($this->db->last_query());die();
         $this->load->view('fontend/jobseeker/dashboard_new',$data);
     }
 	
@@ -1927,6 +1918,170 @@ public function user_profile()
           
         }
     }
+
+     function search_people_connection()
+    {
+        // $employer_id = $this->session->userdata('company_profile_id');
+        if (isset($_GET['term'])) {
+            
+            $result1 = $this->job_posting_model->search_connection($_GET['term']);
+            $result2 = $this->job_posting_model->search_company_connection($_GET['term']);
+           $result = array_merge($result1,$result2);
+            
+            if (count($result) > 0) {
+                $i=0;
+                foreach ($result as $row)
+                {
+                    $arr_result[$i]['label'] = $row->name;
+                    $arr_result[$i]['value'] = $row->id;
+                    $i++;
+                }
+                echo json_encode($arr_result);
+            
+        }
+    }
+}
+
+    function add_new_connection()
+    {
+        $employer_id = $this->input->post('id');
+        $name = $this->input->post('name');
+        $js_id = $this->session->userdata('job_seeker_id');
+
+        $whereres   = "emp_id='$employer_id' and js_id = '$js_id'";
+        $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres);
+
+        $where_js   = "job_seeker_id='$employer_id' and full_name = '$name'";
+        $check_js = $this->Master_model->get_master_row('js_info', $select = FALSE, $where_js);
+
+// print(empty($check_js));
+
+        if (empty($check_js)) 
+        {
+            $where_emp   = "company_profile_id='$employer_id' and company_name = '$name'";
+            $check_emp = $this->Master_model->get_master_row('company_profile', $select = FALSE, $where_emp);
+            if (!empty($check_emp)) {
+                $type = 'emp';
+            }
+          
+        }
+        else
+        {
+            // echo "string";die;
+
+            $type = 'js';
+        }
+
+
+        $whereres   = "emp_id='$employer_id' and js_id = '$js_id'";
+        $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres);
+
+        if (empty($check)) {
+           $connection_data['emp_id'] = $employer_id;
+           $connection_data['js_id'] = $js_id;
+           $connection_data['status'] = 1;
+           $connection_data['type'] = $type;
+           $connection_data['created_by'] = $js_id;
+           $connection_data['created_date'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
+
+           $insert_id = $this->Master_model->master_insert($connection_data, 'emp_js_connection');
+        }
+       
+
+       $whereres   = "js_id='$js_id'";
+        $data['chatbox'] = $this->Master_model->getMaster('emp_js_connection', $where =  $whereres, $join = false, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+
+        $this->load->view('fontend/jobseeker/chatting_list.php',$data);
+
+    }
+
+    function get_messages()
+    {
+        $connection_id = $this->input->post('id');
+        $js_id = $this->session->userdata('job_seeker_id');
+         // $Join_data      = array(
+         //    'js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER '
+                
+         // );
+
+        $whereres   = " emp_js_connection_id = '$connection_id'";
+        $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
+
+        if ($check['type'] == 'js' && $check['created_by'] == $this->session->userdata('job_seeker_id')) {
+            $Join_data      = array(
+           'js_info' => 'js_info.job_seeker_id = emp_js_connection.emp_id|Left OUTER ');
+           
+        }
+        else
+        {
+          $Join_data      = array(
+            
+             'company_profile' => 'company_profile.company_profile_id = emp_js_connection.emp_id|Left OUTER ');   
+        }
+
+        $whereres   = " emp_js_connection_id = '$connection_id'";
+        $data['check'] = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
+        $where   = "connection_id = '$connection_id' ";
+
+        // $where .= "group by msg_from";
+        
+        $data['chatbox'] = $this->Master_model->getMaster('messaging', $where =  $where, $join = false, $order = 'asc', $field = 'message_id', $select = false,$limit=false,$start=false, $search=false);
+
+        // print_r($this->db->last_query());die;
+        $this->load->view('fontend/jobseeker/chatting_card.php',$data);
+
+    }
+
+    function send_message()
+    {
+        $js_id = $this->session->userdata('job_seeker_id');
+
+        $employer_id = $this->input->post('id');
+        $message = $this->input->post('message');
+
+        // $whereres   = "emp_js_connection_id='$employer_id' and js_id = '$js_id'";
+        // $data['check'] = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres);
+         $whereres   = "emp_js_connection_id = '$employer_id'";
+        $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
+
+        if ($check['type'] == 'js' && $check['created_by'] == $this->session->userdata('job_seeker_id')) {
+            $Join_data      = array(
+           'js_info' => 'js_info.job_seeker_id = emp_js_connection.emp_id|Left OUTER ');
+           
+        }
+        else
+        {
+          $Join_data      = array(
+            
+             'company_profile' => 'company_profile.company_profile_id = emp_js_connection.emp_id|Left OUTER ');   
+        }
+
+        $whereres   = "emp_js_connection_id='$employer_id' and js_id = '$js_id'";
+        // $whereres   = " emp_js_connection_id = '$connection_id'";
+        $data['check'] = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
+
+        $meg_data['msg_from'] = $js_id;
+        $meg_data['msg_to'] =  $data['check']['emp_id'];
+        $meg_data['connection_id'] = $data['check']['emp_js_connection_id'];
+        $meg_data['msg'] = $message;
+        $meg_data['status'] = 1;
+        $meg_data['created_by'] = $js_id;
+        $meg_data['created_date'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
+
+        $insert_id = $this->Master_model->master_insert($meg_data, 'messaging');
+
+         // $where   = "(msg_from='$employer_id' or msg_to = '$employer_id') and (msg_from='$js_id' or msg_to = '$js_id' ) ";
+
+        $where   = "connection_id = '$employer_id' ";
+
+
+        // $where .= "group by msg_from";
+        $data['chatbox'] = $this->Master_model->getMaster('messaging', $where =  $where, $join = false, $order = 'asc', $field = 'message_id', $select = false,$limit=false,$start=false, $search=false);
+
+        // print_r($this->db->last_query());die;
+        $this->load->view('fontend/jobseeker/chatting_card.php',$data);
+    }
+
 
 } //end function
 

@@ -15,7 +15,7 @@
                   
               
                 <div class="panel-body msg_container_base">
-                    <?php if ($row['msg_from'] == $this->session->userdata('company_profile_id')) { ?>
+                    <?php if ($row['msg_from'] == $this->session->userdata('job_seeker_id')) { ?>
              
                
                     <div class="row msg_container base_sent">

@@ -6,7 +6,9 @@
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box;}
-
+/*.ui-autocomplete {
+z-index: 100;
+}*/
 /* Button used to open the chat form - fixed at the bottom of the page */
 .open-button {
   background-color: #555;
@@ -256,6 +258,15 @@ div#myForm1 {
     max-height: 300;
     overflow-y: auto;
 }
+div#myForm {
+    display: block;
+    max-width: 300px;
+    margin-left: 55px;
+    min-width: 280px;
+    min-height: 100;
+    background-color: white;
+    bottom: 11px;
+}
 </style>
 <div class="container-fluid main-d">
 	<div class="container">
@@ -458,8 +469,7 @@ div#myForm1 {
         </div>
         <button class="open-button" onclick="openForm()">Messaging</button>
         <div class="chat-popup" id="myForm" style="    display: none;
-    max-width: 300px;
-    margin-left: 55px;">
+    max-width: 300px;  margin-left: 55px;">
               <!-- <form action="/action_page.php" class="form-container">
                 <h1>Chat</h1>
 
@@ -486,7 +496,7 @@ div#myForm1 {
   border-radius: 0;margin-top: 43px;max-width: 88%;margin-left: 2px; color: black;">
   <button class="btn btn-primary btn-sm" id="connection_btn" style="display: none;float: right;margin-right: -9px;margin-top: 1px;height: 36px;background-color: #18c5bd;border: none;"><i class="fa fa-plus fa-1x" onclick="add_connection();" aria-hidden="true"></i></button>
                     <input type="hidden" name="job_seeker_id" value="" id="auto-value">
-                    <?php foreach ($chatbox as $row) { print_r($row); ?>
+                    <?php foreach ($chatbox as $row) { ?>
 
                     <div class="row msg_container base_receive" style="margin-top: 50px;">
                         <div class="col-md-2 col-xs-2 avatar">
@@ -494,11 +504,23 @@ div#myForm1 {
                         </div>
                         <div class="col-md-10 col-xs-10" onclick="show_box(<?php echo $row['emp_js_connection_id']; ?>);">
                             <div class="messages msg_receive">
-                                <p><?php if (isset($row['full_name'])) {
-                           echo $row['full_name'];
-                            }else{
-                            echo $row['company_name'];
-                            }  ?></p>
+                               <?php $employer_id = $this->session->userdata('company_profile_id');
+                               // print_r($)
+                                if ($row['type'] == 'emp' && $row['created_by'] == $this->session->userdata('company_profile_id') ) {
+                                  $Join_data      = array('company_profile' => 'company_profile.company_profile_id = emp_js_connection.js_id|Left OUTER ');
+                               }
+                                else
+                                  {
+                                     $Join_data      = array('js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER ');
+                                     } 
+                                      $id=$row['emp_js_connection_id'];
+                                     $whereres   = "emp_js_connection_id='$id'";
+                                    $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);?> <p><?php if (!empty($check['full_name'])) {
+                                     echo $check['full_name'];
+                                    }else{
+                                     echo $check['company_name'];
+
+                                    } ?></p>
                                 <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
                             </div>
                         </div>
@@ -545,7 +567,7 @@ function closeForm(id) {
 
 function send_msg(id)
 {
-  alert(id);
+  // alert(id);
   var message = $('#btn-input').val();
   $.ajax({
               url: "<?php echo base_url();?>employer/send_message",
@@ -563,7 +585,7 @@ function send_msg(id)
 
 function show_box(id){
   // var id = $('#auto-value').val();
-  alert(id);
+  // alert(id);
    $.ajax({
               url: "<?php echo base_url();?>employer/get_messages",
               type: "POST",
@@ -585,6 +607,14 @@ function opensearch(){
     document.getElementById("search_connection").style.display = "block";
     document.getElementById("connection_btn").style.display = "block";
 }
+$(document).on("keypress", "#btn-input", function (e){
+    if (event.which == 13) {
+        // validate();
+        // alert("You pressed enter");
+        $('#btn-chat').click();
+     }
+});
+
 $("#search_connection").autocomplete({
              
               source: "<?php echo base_url();?>Employer/search_people",
@@ -610,7 +640,7 @@ function add_connection()
 {
   var id = $('#auto-value').val();
   var name = $('#search_connection').val();
-  alert(id);
+  // alert(id);
    $.ajax({
               url: "<?php echo base_url();?>employer/add_new_connection",
               type: "POST",

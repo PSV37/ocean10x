@@ -339,6 +339,18 @@ div#myForm1 {
     max-height: 300;
     overflow-y: auto;
 }
+div#myForm {
+    display: block;
+    max-width: 300px;
+    margin-left: 55px;
+    min-width: 280px;
+    min-height: 100;
+    background-color: white;
+    bottom: 11px;
+}
+/*.ui-autocomplete {
+z-index: 1000;
+}*/
   </style> 
 <div class="container-fluid">
     <div class="container">
@@ -453,7 +465,7 @@ div#myForm1 {
                             <img src="<?php echo base_url()?>upload/<?php echo $this->company_profile_model->company_logoby_id($applicaiton->company_profile_id); ?>" class="invitation-img"/>
                             <div class="info-invitation">
                                 <p class="head-invi"><?php echo $this->job_posting_model->job_title_by_name($applicaiton->job_post_id); ?></p>
-                                <span class="salary-info">Slaray: <?php echo $this->job_posting_model->job_salary_by_id($applicaiton->job_post_id); ?><span>
+                                <span class="salary-info">Slaray: <?php echo $this->job_posting_model->job_salary_by_id($applicaiton->job_post_id); ?></span>
                                 <p>text test</p>
                                  <div class="detail-b"><a href="<?php  echo base_url();?>job/show/<?php echo $this->job_posting_model->get_slug_nameby_id($applicaiton->job_post_id) ?>">Details</a></div>
                                     <div class="last-row-invitation">
@@ -492,10 +504,13 @@ div#myForm1 {
              
               
             <?php endif; ?>
-             </div>
+             </div> 
              
              
             </div>
+             <div class="chat-popup" id="myForm1" style="margin-bottom: 100px;">
+            
+             </div>
            </div>
            
            
@@ -515,10 +530,10 @@ div#myForm1 {
         	    <div class="paragraph_p_level">
         
         </div>
-        <button class="open-button" onclick="openForm()">Messaging</button>
+        <button class="open-button" onclick="openForm()" style="margin-bottom: 100px;" >Messaging</button>
         <div class="chat-popup" id="myForm" style="    display: none;
     max-width: 300px;
-    margin-left: 55px;">
+    margin-left: 55px; margin-bottom: 100px;">
               <!-- <form action="/action_page.php" class="form-container">
                 <h1>Chat</h1>
 
@@ -552,16 +567,31 @@ div#myForm1 {
                         </div>
                         <div class="col-md-10 col-xs-10" onclick="show_box(<?php echo $row['emp_js_connection_id']; ?>);">
                             <div class="messages msg_receive">
-                                <p><?php if (isset($row['full_name'])) {
-                           echo $row['full_name'];
-                        }else{
-                            echo $row['company_name'];
-                        }  ?></p>
+                             <?php $js_id = $this->session->userdata('job_seeker_id');
+                               // print_r($row['created_by']);
+                               // print_r($row['$js_id']);
+                                if ($row['type'] == 'js' && $row['created_by'] == $js_id) {
+                                  // echo "string";
+                                  $Join_data      = array('js_info' => 'js_info.job_seeker_id = emp_js_connection.emp_id|Left OUTER ');
+                                 
+                                }
+                                else
+                                  {
+                                      $Join_data      = array('company_profile' => 'company_profile.company_profile_id = emp_js_connection.emp_id|Left OUTER ');
+                                  } 
+                                      $id=$row['emp_js_connection_id'];
+                                     $whereres   = "emp_js_connection_id='$id'";
+                                    $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);  ?> <p><?php if (!empty($check['full_name'])) {
+                                     echo $check['full_name'];
+                                    }else{
+                                     echo $check['company_name'];
+
+                                    } ?></p>
                                 <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
                             </div>
                         </div>
                     </div>
-                    <?php } ?>
+                    <?php } ?> 
                    
                 </div>
                
@@ -668,10 +698,10 @@ function closeForm(id) {
 
 function send_msg(id)
 {
-  alert(id);
+  // alert(id);
   var message = $('#btn-input').val();
   $.ajax({
-              url: "<?php echo base_url();?>employer/send_message",
+              url: "<?php echo base_url();?>job_seeker/send_message",
               type: "POST",
               data: {id:id,message:message},
               // contentType:false,
@@ -686,9 +716,9 @@ function send_msg(id)
 
 function show_box(id){
   // var id = $('#auto-value').val();
-  alert(id);
+  // alert(id);
    $.ajax({
-              url: "<?php echo base_url();?>employer/get_messages",
+              url: "<?php echo base_url();?>job_seeker/get_messages",
               type: "POST",
               data: {id:id},
               // contentType:false,
@@ -708,9 +738,17 @@ function opensearch(){
     document.getElementById("search_connection").style.display = "block";
     document.getElementById("connection_btn").style.display = "block";
 }
+$(document).on("keypress", "#btn-input", function (e){
+    if (event.which == 13) {
+        // validate();
+        // alert("You pressed enter");
+        $('#btn-chat').click();
+     }
+});
+
 $("#search_connection").autocomplete({
              
-              source: "<?php echo base_url();?>Employer/search_people",
+              source: "<?php echo base_url();?>job_seeker/search_people_connection",
              minLength: 2,
               // append: "#rotateModal",
               focus: function(event, ui) {
@@ -733,9 +771,9 @@ function add_connection()
 {
   var id = $('#auto-value').val();
   var name = $('#search_connection').val();
-  alert(id);
+  // alert(id);
    $.ajax({
-              url: "<?php echo base_url();?>employer/add_new_connection",
+              url: "<?php echo base_url();?>job_seeker/add_new_connection",
               type: "POST",
               data: {id:id,name:name},
               // contentType:false,
