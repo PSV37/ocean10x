@@ -2040,7 +2040,7 @@ public function user_profile()
         $message = $this->input->post('message');
 
          $del   = array(
-            'message_status' => 1
+            'message_status' => '1'
           );
         $where11['connection_id'] = $employer_id;
         // $where11['msg_from'] = $js_id;
