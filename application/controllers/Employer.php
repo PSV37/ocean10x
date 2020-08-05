@@ -4300,8 +4300,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         }          
      // $this->load->view('fontend/employer/corporate_cv_bank',$data);
     }
+    {
     $data['active_cv']  = $this->Master_model->getactive_cvs('corporate_cv_bank', $where_c, $join = false, $order = 'desc', $field = 'cv_id', $select = false, $limit = false, $start = false, $search = false);
-
+}
     
  
     public function add_new_cv($id=Null)
