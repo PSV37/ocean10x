@@ -251,7 +251,7 @@ button#btn-chat {
     border: none;
 }
 div#myForm1 {
-    display: block;
+    display: none;
     max-width: 350px;
     float: right;
     margin-left: 290px;
@@ -559,10 +559,11 @@ div#myForm {
 <script>
 $( document ).ready(function() {
 setInterval(function(){ 
-     if ( $('#myForm1').css('display') == 'none')
-    {
-      $('#box').click();
-    }
+     if ( $('#myForm1').css('display') == 'block')
+      {
+        // alert('d');
+        $('#box').click();
+      }
    
     }, 3000);
 });
