@@ -4277,6 +4277,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                  $join_cond  = array(
                 'corporate_cv_bank' => 'corporate_cv_bank.cv_id = cv_folder_relation.cv_id|Left outer'
             );
+
             $data['cv_bank_data']  = $this->Master_model->getMaster('cv_folder_relation', $where_c, $join_cond, $order = 'desc', $field = 'relation_id', $select = false, $limit = false, $start = false, $search = false);
                 // print_r($this->db->last_query());die;
             $this->load->view('fontend/employer/cv_bank', $data);
@@ -4299,7 +4300,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         }          
      // $this->load->view('fontend/employer/corporate_cv_bank',$data);
     }
-    
+    $data['active_cv']  = $this->Master_model->getactive_cvs('corporate_cv_bank', $where_c, $join = false, $order = 'desc', $field = 'cv_id', $select = false, $limit = false, $start = false, $search = false);
+
     
  
     public function add_new_cv($id=Null)
