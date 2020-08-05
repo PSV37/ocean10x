@@ -141,11 +141,12 @@ class Master_model extends CI_Model
 }
 
 
+
     public function searchString($search)
     {
         
         $searchstring = "";
-        $count        = 1;
+        $count        = "1";
         foreach ($search as $key => $value) {
             
             if (count($search) != $count) {
