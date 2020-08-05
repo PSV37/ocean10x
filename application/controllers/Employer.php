@@ -40,7 +40,7 @@ class Employer extends MY_Employer_Controller
        
 
         $whereres   = "emp_id='$employer_id'";
-        $whereres   .= "group by emp_js_connection.emp_js_connection_id";
+        // $whereres   .= "group by emp_js_connection.emp_js_connection_id";
         $chatbox = $this->Master_model->getMaster('emp_js_connection', $where =  $whereres, $join = $Join_data, $order = 'desc', $field = 'message_id', $select = false,$limit=false,$start=false, $search=false);
         
         $this->load->view('fontend/employer/employer_dashboard', compact('company_info','chatbox'));

@@ -66,12 +66,12 @@ class Job_seeker extends MY_Seeker_Controller
 
         $data['saved_jobs']=sizeof($saved_job_data);
 
-        $Join_data      = array('messaging' => 'messaging.connection_id = emp_js_connection.emp_js_connection_id|Left OUTER ');
+        $Join_data      = array('emp_js_connection' => 'messaging.connection_id = emp_js_connection.emp_js_connection_id|Left OUTER ');
 
         $whereres   = "js_id='$jobseeker_id'";
         $whereres   .= "group by emp_js_connection.emp_js_connection_id";
 
-        $data['chatbox'] = $this->Master_model->getMaster('emp_js_connection', $where =  $whereres, $join = $Join_data, $order = 'desc', $field = 'message_id', $select = 'emp_js_connection.*',$limit=false,$start=false, $search=false);
+        $data['chatbox'] = $this->Master_model->getMaster('messaging', $where =  $whereres, $join = $Join_data, $order = 'desc', $field = 'message_id', $select = 'emp_js_connection.*',$limit=false,$start=false, $search=false);
         
         // print_r($alljobs);die();
         $this->load->view('fontend/jobseeker/dashboard_new',$data);
