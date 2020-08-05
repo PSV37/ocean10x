@@ -459,17 +459,6 @@ class Master_model extends CI_Model
         return $sql ->result();
 	}
 	
-	public function search_album($term){
-		$my_data = mysql_real_escape_string($term);
-        $sql = $this->db->query("SELECT distinct `album` from `chords` WHERE album LIKE '%$my_data%' ORDER BY `album`  limit 0,10;");
-        return $sql ->result();
-	}
 	
-
-    public function getactive_cvs(){
-    $sql = $this->db->query("SELECT * FROM corporate_cv_bank LEFT JOIN js_info on js_info.email = corporate_cv_bank.js_email LEFT JOIN js_login_logs on js_info.job_seeker_id = js_login_logs.job_seeker_id WHERE login BETWEEN DATE_SUB(NOW(), INTERVAL 30 DAY) AND NOW() and corporate_cv_bank.company_id='149' GROUP by cv_id");
-    return $sql->result();
-    }
-
 
 }
