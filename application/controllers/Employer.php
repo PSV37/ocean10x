@@ -6533,15 +6533,17 @@ function update_external()
         $whereres   = " emp_js_connection_id = '$js_id'";
         $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
 
-        if ($check['type'] == 'js') {
-            $Join_data      = array(
-            'js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER ');
-        }
-        else
-        {
-            $Join_data      = array(
-            'company_profile' => 'company_profile.company_profile_id = emp_js_connection.js_id|Left OUTER ');
-        }
+       $whereres   = "emp_js_connection_id = '$js_id'";
+        $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
+
+         if ($row['type'] == 'emp' && $row['created_by'] == $this->session->userdata('company_profile_id') ) 
+         {
+               $Join_data      = array('company_profile' => 'company_profile.company_profile_id = emp_js_connection.js_id|Left OUTER ');
+           }
+         else
+           {
+              $Join_data      = array('js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER ');
+           } 
 
         $whereres   = " emp_js_connection_id = '$js_id'";
         $data['check'] = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
@@ -6563,11 +6565,23 @@ function update_external()
         $js_id = $this->input->post('id');
         $message = $this->input->post('message');
 
-        $whereres   = "emp_id='$employer_id' and js_id = '$js_id'";
+        $whereres   = "emp_js_connection_id = '$js_id'";
+        $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
+
+         if ($row['type'] == 'emp' && $row['created_by'] == $this->session->userdata('company_profile_id') ) 
+         {
+               $Join_data      = array('company_profile' => 'company_profile.company_profile_id = emp_js_connection.js_id|Left OUTER ');
+           }
+         else
+           {
+              $Join_data      = array('js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER ');
+           } 
+
+        $whereres   = "emp_js_connection.emp_js_connection_id = '$js_id' ";
         $data['check'] = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres);
 
         $meg_data['msg_from'] = $employer_id;
-        $meg_data['msg_to'] = $js_id;
+        $meg_data['msg_to'] = $data['check']['js_id'];
         $meg_data['connection_id'] = $data['check']['emp_js_connection_id'];
         $meg_data['msg'] = $message;
         $meg_data['status'] = 1;

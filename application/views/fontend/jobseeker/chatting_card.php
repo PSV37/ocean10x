@@ -8,6 +8,7 @@
                             echo $check['company_name'];
                         }  ?></h3>
                     </div>
+                    <input type="hidden" name="connection_id" id="connection_id" value="<?php echo $check['emp_js_connection_id']; ?>">
                     <input type="hidden" name="type" value="<?php echo $check['type'] ?>">
                     <span style="float: right;" onclick="closeForm('myForm1')"><i  class="fa fa-close"></i></span>
                 </div>
@@ -50,7 +51,7 @@
                     <div class="input-group">
                         <input id="btn-input" type="text" class="form-control input-sm chat_input" placeholder="Write your message here..." />
                         <span class="input-group-btn">
-                        <button class="btn btn-primary btn-sm" id="btn-chat" onclick="send_msg(<?php echo $check['emp_js_connection_id']; ?>);"><i class="fa fa-send fa-1x" aria-hidden="true"></i></button>
+                        <button class="btn btn-primary btn-sm" value="<?php echo $check['emp_js_connection_id']; ?>" id="btn-chat" onclick="send_msg(<?php echo $check['emp_js_connection_id']; ?>);"><i class="fa fa-send fa-1x" aria-hidden="true"></i></button>
                         </span>
                     </div>
                 </div>

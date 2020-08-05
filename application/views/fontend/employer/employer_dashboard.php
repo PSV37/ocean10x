@@ -557,6 +557,9 @@ div#myForm {
 </div>   
 
 <script>
+
+
+  // setInterval("my_function();",10000);
 function openForm() {
   document.getElementById("myForm").style.display = "block";
 }
@@ -568,6 +571,7 @@ function closeForm(id) {
 function send_msg(id)
 {
   // alert(id);
+
   var message = $('#btn-input').val();
   $.ajax({
               url: "<?php echo base_url();?>employer/send_message",
@@ -584,9 +588,11 @@ function send_msg(id)
 }
 
 function show_box(id){
-  // var id = $('#auto-value').val();
-  // alert(id);
-   $.ajax({
+ 
+  // setInterval(function(){ 
+  //    if ( $('#myForm1').css('display') == 'block')
+  //   {
+       $.ajax({
               url: "<?php echo base_url();?>employer/get_messages",
               type: "POST",
               data: {id:id},
@@ -595,11 +601,17 @@ function show_box(id){
                // dataType: "json",
               success: function(data)
               {
-                 document.getElementById("myForm1").style.display = "block";
+                 
 
                 $('#myForm1').html(data);
+                 var vid = $('#btn-chat').val();
+  // document.getElementById("myForm1").style.display = "block";
+                alert(vid);
               }
         });
+    // }
+   
+    // }, 3000);
    
 }
 
