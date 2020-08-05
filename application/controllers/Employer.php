@@ -31,17 +31,29 @@ class Employer extends MY_Employer_Controller
         $this->session->set_userdata($data);
         $company_info = $this->company_profile_model->get($employer_id);
          $wheremsg = "created_by='$employer_id'";
-        
-        $whereres   = "emp_id='$employer_id'";
-        $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
-       
-            $Join_data      = array(
-            'messaging' => 'emp_js_connection.emp_js_connection_id = messaging.connection_id|Left OUTER ');
-       
+           
+        //   $Join_data      = array(
+        //     'js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER '
+                
+        //  ); 
+        //  $whereres   = "emp_id='$employer_id'";
+        // $chatbox = $this->Master_model->getMaster('emp_js_connection', $where =  $whereres, $join = $Join_data, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
 
         $whereres   = "emp_id='$employer_id'";
-        $whereres   .= "group by emp_js_connection.emp_js_connection_id";
-        $chatbox = $this->Master_model->getMaster('emp_js_connection', $where =  $whereres, $join = $Join_data, $order = 'desc', $field = 'message_id', $select = false,$limit=false,$start=false, $search=false);
+        $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
+
+        if ($check['type'] == 'js') {
+            $Join_data      = array(
+            'js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER ');
+        }
+        else
+        {
+            $Join_data      = array(
+            'company_profile' => 'company_profile.company_profile_id = emp_js_connection.js_id|Left OUTER ');
+        }
+
+        $whereres   = "emp_id='$employer_id'";
+        $chatbox = $this->Master_model->getMaster('emp_js_connection', $where =  $whereres, $join = $Join_data, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
         
         $this->load->view('fontend/employer/employer_dashboard', compact('company_info','chatbox'));
         
@@ -3627,19 +3639,18 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             if (count($result) > 0) {
                 $i=0;
                 foreach ($result as $row)
-                {
+
                     $arr_result[$i]['label'] = $row->job_title;
                     $arr_result[$i]['value'] = $row->job_post_id;
                     $i++;
-               
+                echo json_encode($arr_result);
             }
-             echo json_encode($arr_result);
         }
     }
-}
+
      function search_people()
     {
-        // $employer_id = $this->session->userdata('company_profile_id');
+        $employer_id = $this->session->userdata('company_profile_id');
         if (isset($_GET['term'])) {
             
             $result1 = $this->job_posting_model->search_connection($_GET['term']);
@@ -3649,16 +3660,14 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             if (count($result) > 0) {
                 $i=0;
                 foreach ($result as $row)
-                {
+
                     $arr_result[$i]['label'] = $row->name;
                     $arr_result[$i]['value'] = $row->id;
                     $i++;
-                }
                 echo json_encode($arr_result);
-            
+            }
         }
     }
-}
 
     function search_skill()
     {
@@ -4257,7 +4266,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $data['activemenu'] = 'cv_bank';
         $this->session->set_userdata($data);
         $company_id = $this->session->userdata('company_profile_id');
-        $query['active_cv'] = $db->query('SELECT * FROM corporate_cv_bank LEFT JOIN js_info on js_info.email = corporate_cv_bank.js_email LEFT JOIN js_login_logs on js_info.job_seeker_id = js_login_logs.job_seeker_id WHERE login BETWEEN DATE_SUB(NOW(), INTERVAL 30 DAY) AND NOW() and corporate_cv_bank.company_id='149' GROUP by cv_id');
+
        if (isset($fid) && !empty($fid)) {
 
             $this->session->unset_userdata('activesubmenu');
@@ -6500,14 +6509,21 @@ function update_external()
            $insert_id = $this->Master_model->master_insert($connection_data, 'emp_js_connection');
         }
         // print_r($js_id);
-           $Join_data      = array(
-            'messaging' => 'emp_js_connection.emp_js_connection_id = messaging.connection_id');
-        
+         if ($check['type'] == 'js') {
+            $Join_data      = array(
+            'js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER ');
+        }
+        else
+        {
+            $Join_data      = array(
+            'company_profile' => 'company_profile.company_profile_id = emp_js_connection.js_id|Left OUTER ');
+        }
          // $Join_data      = array(
          //    'js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER '
                 
-         $whereres   = "emp_id='$employer_id'";
-        $data['chatbox'] = $this->Master_model->getMaster('emp_js_connection', $where =  $whereres, $join = false, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+         // );
+        $whereres   = "emp_id='$employer_id' and js_id = '$js_id'";
+        $data['chatbox'] = $this->Master_model->getMaster('messaging', $where =  $whereres, $join = $Join_data, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
 
         $this->load->view('fontend/employer/chatting_list.php',$data);
 
@@ -6525,14 +6541,15 @@ function update_external()
         $whereres   = " emp_js_connection_id = '$js_id'";
         $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
 
-         if ($row['type'] == 'emp' && $row['created_by'] == $this->session->userdata('company_profile_id') ) 
-         {
-            $Join_data      = array('company_profile' => 'company_profile.company_profile_id = emp_js_connection.js_id|Left OUTER ');
-         }
+        if ($check['type'] == 'js') {
+            $Join_data      = array(
+            'js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER ');
+        }
         else
-         {
-            $Join_data      = array('js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER ');
-         } 
+        {
+            $Join_data      = array(
+            'company_profile' => 'company_profile.company_profile_id = emp_js_connection.js_id|Left OUTER ');
+        }
 
         $whereres   = " emp_js_connection_id = '$js_id'";
         $data['check'] = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
@@ -6554,31 +6571,11 @@ function update_external()
         $js_id = $this->input->post('id');
         $message = $this->input->post('message');
 
-        // $whereres   = "emp_id='$employer_id' and emp_js_connection_id = '$js_id'";
-        // $data['check'] = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres);
-
-        $whereres   = " emp_js_connection_id = '$js_id'";
-        $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
-
-         if ($row['type'] == 'emp' && $row['created_by'] == $this->session->userdata('company_profile_id') ) 
-         {
-            $Join_data      = array('company_profile' => 'company_profile.company_profile_id = emp_js_connection.js_id|Left OUTER ');
-         }
-        else
-         {
-            $Join_data      = array('js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER ');
-         } 
-
-         $whereres   = "emp_id='$employer_id' and emp_js_connection_id = '$js_id'";
-        $data['check'] = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
-        $where   = "connection_id = '$js_id' ";
-
-        // $where .= "group by msg_from";
-        
-        $data['chatbox'] = $this->Master_model->getMaster('messaging', $where =  $where, $join = false, $order = 'asc', $field = 'message_id', $select = false,$limit=false,$start=false, $search=false);
+        $whereres   = "emp_id='$employer_id' and js_id = '$js_id'";
+        $data['check'] = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres);
 
         $meg_data['msg_from'] = $employer_id;
-        $meg_data['msg_to'] = $data['check']['js_id'];
+        $meg_data['msg_to'] = $js_id;
         $meg_data['connection_id'] = $data['check']['emp_js_connection_id'];
         $meg_data['msg'] = $message;
         $meg_data['status'] = 1;
