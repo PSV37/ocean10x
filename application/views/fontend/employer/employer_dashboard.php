@@ -589,6 +589,7 @@ function send_msg(id)
 
 function show_box(id){
   // var id = $('#auto-value').val();
+  document.getElementById("myForm1").style.display = "block";
   // alert(id);
   setInterval(function(){ 
      if ( $('#myForm1').css('display') == 'block')
@@ -602,7 +603,7 @@ function show_box(id){
                // dataType: "json",
               success: function(data)
               {
-                 document.getElementById("myForm1").style.display = "block";
+                 
 
                 $('#myForm1').html(data);
               }
