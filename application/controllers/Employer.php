@@ -6579,7 +6579,7 @@ function update_external()
            } 
 
         $whereres   = "emp_js_connection.emp_js_connection_id = '$js_id' ";
-        $data['check'] = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres);
+        $data['check'] = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
 
         $meg_data['msg_from'] = $employer_id;
         $meg_data['msg_to'] = $data['check']['js_id'];
