@@ -8,6 +8,7 @@
                             echo $check['company_name'];
                         }  ?></h3>
                     </div>
+                    <input type="hidden" name="connection_id" id="connection_id" value="<?php echo $check['emp_js_connection_id']; ?>">
                     <input type="hidden" name="type" value="<?php echo $check['type'] ?>">
                     <span style="float: right;" onclick="closeForm('myForm1')"><i  class="fa fa-close"></i></span>
                 </div>

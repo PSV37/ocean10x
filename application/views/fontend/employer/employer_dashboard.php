@@ -561,7 +561,7 @@ div#myForm {
 setInterval(function(){ 
      if ( $('#myForm1').css('display') == 'block')
       {
-        // alert('d');
+        alert($('#connection_id').val());
         $('#box').click();
       }
    
