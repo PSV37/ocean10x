@@ -4302,8 +4302,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         // $this->load->view('fontend/employer/corporate_cv_bank',$data);
     }
     
-
-
+    
+ 
     public function add_new_cv($id=Null)
     {
         if (isset($id) && !empty($id)) {
