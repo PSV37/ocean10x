@@ -607,7 +607,7 @@ function show_box(id){
                  
               }
         });
-        // setInterval(function(){ 
+        setInterval(function(){ 
      if ( $('#myForm1').css('display') == 'block')
     {
       alert(id);
@@ -615,7 +615,7 @@ function show_box(id){
       show_box(id);
     }
    
-    // }, 3000);
+    }, 3000);
    
 }
 
