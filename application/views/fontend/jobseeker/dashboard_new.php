@@ -732,7 +732,7 @@ function show_box(id){
                 $('#myForm1').html(data);
               }
         });
-      setInterval(function(){ 
+      // setInterval(function(){ 
      if ( $('#myForm1').css('display') == 'block')
       {
         // alert(id);
@@ -740,7 +740,7 @@ function show_box(id){
         show_box(id);
       }
      
-      }, 30000);
+      // }, 30000);
    
 }
 
