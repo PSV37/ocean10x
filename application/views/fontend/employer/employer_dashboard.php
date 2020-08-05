@@ -589,11 +589,11 @@ function send_msg(id)
 
 function show_box(id){
   // var id = $('#auto-value').val();
-  document.getElementById("myForm1").style.display = "block";
-  // alert(id);
-  setInterval(function(){ 
-     if ( $('#myForm1').css('display') == 'block')
-    {
+  // document.getElementById("myForm1").style.display = "block";
+  // // alert(id);
+  // setInterval(function(){ 
+  //    if ( $('#myForm1').css('display') == 'block')
+  //   {
        $.ajax({
               url: "<?php echo base_url();?>employer/get_messages",
               type: "POST",
@@ -608,9 +608,9 @@ function show_box(id){
                 $('#myForm1').html(data);
               }
         });
-    }
+    // }
    
-    }, 3000);
+    // }, 3000);
    
 }
 
