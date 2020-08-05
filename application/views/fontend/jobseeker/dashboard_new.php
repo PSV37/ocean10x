@@ -568,7 +568,8 @@ z-index: 1000;
                         <div class="col-md-10 col-xs-10" onclick="show_box(<?php echo $row['emp_js_connection_id']; ?>);">
                             <div class="messages msg_receive">
                              <?php $js_id = $this->session->userdata('job_seeker_id');
-                               // print_r($)
+                               print_r($row['created_by']);
+                               print_r($row['$js_id']);
                                 if ($row['type'] == 'js' && $row['created_by'] == $js_id) {
                                   // echo "string";
                                   $Join_data      = array('js_info' => 'js_info.job_seeker_id = emp_js_connection.emp_id|Left OUTER ');
@@ -580,7 +581,7 @@ z-index: 1000;
                                   } 
                                       $id=$row['emp_js_connection_id'];
                                      $whereres   = "emp_js_connection_id='$id'";
-                                    $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data); print_r($this->db->last_query()); ?> <p><?php if (!empty($check['full_name'])) {
+                                    $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);  ?> <p><?php if (!empty($check['full_name'])) {
                                      echo $check['full_name'];
                                     }else{
                                      echo $check['company_name'];
