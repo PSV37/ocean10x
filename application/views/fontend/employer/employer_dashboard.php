@@ -590,9 +590,7 @@ function send_msg(id)
 function show_box(id){
  
   document.getElementById("myForm1").style.display = "block";
-  setInterval(function(){ 
-     if ( $('#myForm1').css('display') == 'block')
-    {
+ 
        $.ajax({
               url: "<?php echo base_url();?>employer/get_messages",
               type: "POST",
@@ -608,6 +606,10 @@ function show_box(id){
                  
               }
         });
+        setInterval(function(){ 
+     if ( $('#myForm1').css('display') == 'block')
+    {
+      show_box(id);
     }
    
     }, 3000);
