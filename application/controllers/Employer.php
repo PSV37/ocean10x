@@ -4250,7 +4250,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     
      public function corporate_cv_bank($fid = null)
     {
-        $data['active_cv']  = $this->Master_model->getactive_cvs();   
+           
         $this->session->unset_userdata('activemenu');
         $data['activemenu'] = 'cv_bank';
         $this->session->set_userdata($data);
@@ -4287,7 +4287,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $where_c['company_id'] = $company_id;
             $data['cv_bank_data']  = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join = false, $order = 'desc', $field = 'cv_id', $select = false, $limit = false, $start = false, $search = false);
             $data['active_cv']  = $this->Master_model->getactive_cvs();   
-            $data['active_cv']  = $this->load->model('getactive_cvs');
+           
 
                    $this->load->view('fontend/employer/cv_bank', $data);
         }          
