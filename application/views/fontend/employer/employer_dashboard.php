@@ -588,9 +588,9 @@ function send_msg(id)
 }
 
 function show_box(id){
-  // var id = $('#auto-value').val();
+  var vid = $('#btn-chat').val();
   // document.getElementById("myForm1").style.display = "block";
-  // // alert(id);
+  alert(vid);
   // setInterval(function(){ 
   //    if ( $('#myForm1').css('display') == 'block')
   //   {
