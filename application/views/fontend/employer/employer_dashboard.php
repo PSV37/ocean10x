@@ -589,13 +589,20 @@ function send_msg(id)
 
 function show_box(id){
  
-  // setInterval(function(){ 
-  //    if ( $('#myForm1').css('display') == 'block')
-  //   {
+  document.getElementById("myForm1").style.display = "block";
+  setInterval(function(){ 
+     if ( $('#myForm1').css('display') == 'block')
+    {
+      var vid = $('#btn-chat').val();
+  if (vid == '') 
+  {
+    vid = id;
+  }
+      
        $.ajax({
               url: "<?php echo base_url();?>employer/get_messages",
               type: "POST",
-              data: {id:id},
+              data: {id:vid},
               // contentType:false,
               // processData:false,
                // dataType: "json",
@@ -604,14 +611,12 @@ function show_box(id){
                  
 
                 $('#myForm1').html(data);
-                 var vid = $('#btn-chat').val();
-  // document.getElementById("myForm1").style.display = "block";
-                alert(vid);
+                 
               }
         });
-    // }
+    }
    
-    // }, 3000);
+    }, 3000);
    
 }
 
