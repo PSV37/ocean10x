@@ -737,7 +737,7 @@ function show_box(id){
       {
         // alert(id);
    
-        show_box(id);
+        // show_box(id);
       }
      
       // }, 30000);
