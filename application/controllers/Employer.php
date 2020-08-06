@@ -4287,9 +4287,10 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         {
             $where_c['company_id'] = $company_id;
             $data['cv_bank_data']  = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join = false, $order = 'desc', $field = 'cv_id', $select = false, $limit = false, $start = false, $search = false);
-
+            
             $this->load->view('fontend/employer/cv_bank', $data);
-            $data['active_cv']  = $this->Pincode_model->getactive_cvs();   
+            $this->load->model(Pincode_model);
+            $data['active_cv']  = $this->load->Pincode_model(getactive_cvs);    
         }          
      // $this->load->view('fontend/employer/corporate_cv_bank',$data);
     }
