@@ -4287,10 +4287,14 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         {
             $where_c['company_id'] = $company_id;
             $data['cv_bank_data']  = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join = false, $order = 'desc', $field = 'cv_id', $select = false, $limit = false, $start = false, $search = false);
-            
+
             $this->load->view('fontend/employer/cv_bank', $data);
+<<<<<<< HEAD
             $this->load->model('Pincode_model');
             $data['active_cv']  = $this->load->Pincode_model('getactive_cvs');    
+=======
+            $data['active_cv']  = $this->Pincode_model->getactive_cvs();   
+>>>>>>> 95d6f10076634faf8f26d7cabf4ddd58ad59941b
         }          
      // $this->load->view('fontend/employer/corporate_cv_bank',$data);
     }
@@ -6539,7 +6543,7 @@ function update_external()
        $whereres   = "emp_js_connection_id = '$js_id'";
         $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
 
-         if ($row['type'] == 'emp' && $row['created_by'] == $this->session->userdata('company_profile_id') ) 
+         if ($row['type'] == 'emp-emp' && $row['created_by'] == $this->session->userdata('company_profile_id') )  
          {
                $Join_data      = array('company_profile' => 'company_profile.company_profile_id = emp_js_connection.js_id|Left OUTER ');
            }
@@ -6571,8 +6575,8 @@ function update_external()
         $whereres   = "emp_js_connection_id = '$js_id'";
         $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
 
-         if ($row['type'] == 'emp' && $row['created_by'] == $this->session->userdata('company_profile_id') ) 
-         {
+        if ($row['type'] == 'emp-emp' && $row['created_by'] == $this->session->userdata('company_profile_id') ) 
+        {
                $Join_data      = array('company_profile' => 'company_profile.company_profile_id = emp_js_connection.js_id|Left OUTER ');
            }
          else

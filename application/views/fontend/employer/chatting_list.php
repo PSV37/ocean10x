@@ -26,8 +26,8 @@
                         <div class="col-md-10 col-xs-10" onclick="show_box(<?php echo $row['emp_js_connection_id']; ?>);">
                             <div class="messages msg_receive">
                                 <?php $employer_id = $this->session->userdata('company_profile_id');
-                               // print_r($)
-                                if ($row['type'] == 'emp' && $row['created_by'] == $this->session->userdata('company_profile_id') ) {
+                             if ($row['type'] == 'emp-emp' && $row['created_by'] == $this->session->userdata('company_profile_id') ) 
+                                 {
                                   $Join_data      = array('company_profile' => 'company_profile.company_profile_id = emp_js_connection.js_id|Left OUTER ');
                                }
                                 else
