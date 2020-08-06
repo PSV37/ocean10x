@@ -756,7 +756,7 @@ function send_msg(id)
 }
 
 function show_box(id){
-  var id = $('#auto-value').val();
+  // var id = $('#auto-value').val();
   // alert(id);
   
    $.ajax({
@@ -771,7 +771,9 @@ function show_box(id){
                  document.getElementById("myForm1").style.display = "block";
 
                 $('#myForm1').html(data);
-             
+                  var cid = $('#connection_id').val();
+               alert(cid);
+
               }
         });
      //  setInterval(function(){ 
