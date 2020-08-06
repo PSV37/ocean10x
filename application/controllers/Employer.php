@@ -4290,6 +4290,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
             $this->load->view('fontend/employer/cv_bank', $data);
 
+            $this->session->set_userdata($data);
+
             $this->load->model('Pincode_model');
 
             $data['active_cv']  = $this->Pincode_model->getactive_cvs();   
