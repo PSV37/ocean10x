@@ -497,9 +497,9 @@ div#myForm {
   <button class="btn btn-primary btn-sm" id="connection_btn" style="display: none;float: right;margin-right: -9px;margin-top: 1px;height: 36px;background-color: #18c5bd;border: none;"><i class="fa fa-plus fa-1x" onclick="add_connection();" aria-hidden="true"></i></button>
                     <input type="hidden" name="job_seeker_id" value="" id="auto-value">
                     <?php foreach ($chatbox as $row) { 
-                      
+                      $js_id = $row['js_id'];
                       $employer_id = $this->session->userdata('company_profile_id');
-                      $whereres   = "msg_to='$employer_id' and message_status = '0' and msg_from ='$row['js_id']'";
+                      $whereres   = "msg_to='$employer_id' and message_status = '0' and msg_from ='$js_id'";
                      $chatbox = $this->Master_model->getMaster('messaging', $where =  $whereres, $join = $Join_data, $order = false, $field = false, $select = 'count(*)as total',$limit=false,$start=false, $search=false); ?>
 
                     <div class="row msg_container base_receive" style="margin-top: 50px;">
