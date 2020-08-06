@@ -140,8 +140,6 @@ class Master_model extends CI_Model
 
 
 
-
-
     public function searchString($search)
     {
         
