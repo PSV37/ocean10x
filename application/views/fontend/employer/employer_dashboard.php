@@ -594,22 +594,6 @@ div#myForm {
 <script>
 
 $(function(){
-   setInterval(function(){ 
-     if ( $('#myForm1').css('display') == 'block')
-      {
-        var cid = $('#connection_id').val();
-          // alert(cid);
-          show_box(cid);
-      }
-      if ( $('#myForm').css('display') == 'block')
-      {
-        // var cid = $('#connection_id').val();
-          // alert(cid);
-          get_list();
-      }
-                   
-      }, 20000);
-
    $("#search_connection").autocomplete({
              
               source: "<?php echo base_url();?>Employer/search_people",
@@ -631,6 +615,23 @@ $(function(){
             }
             
            });
+   setInterval(function(){ 
+     if ( $('#myForm1').css('display') == 'block')
+      {
+        var cid = $('#connection_id').val();
+          // alert(cid);
+          show_box(cid);
+      }
+      if ( $('#myForm').css('display') == 'block')
+      {
+        // var cid = $('#connection_id').val();
+          // alert(cid);
+          get_list();
+      }
+                   
+      }, 20000);
+
+
   });
 
   // setInterval("my_function();",10000);
