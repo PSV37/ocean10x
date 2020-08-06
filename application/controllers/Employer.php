@@ -6527,7 +6527,7 @@ function update_external()
          $whereres   = "emp_id='$employer_id' or js_id = '$employer_id'";
         $whereres   .= "group by emp_js_connection.emp_js_connection_id";
 
-        $chatbox = $this->Master_model->getMaster('emp_js_connection', $where =  $whereres, $join = $Join_data, $order = 'desc', $field = 'max', $select = ' messaging.*, MAX( messaging.message_id) as max,emp_js_connection.*',$limit=false,$start=false, $search=false);
+        $data['chatbox'] = $this->Master_model->getMaster('emp_js_connection', $where =  $whereres, $join = $Join_data, $order = 'desc', $field = 'max', $select = ' messaging.*, MAX( messaging.message_id) as max,emp_js_connection.*',$limit=false,$start=false, $search=false);
 
         $this->load->view('fontend/employer/chatting_list.php',$data);
 
@@ -6543,9 +6543,9 @@ function update_external()
          $whereres   = "emp_id='$employer_id' or js_id = '$employer_id'";
         $whereres   .= "group by emp_js_connection.emp_js_connection_id";
 
-        $chatbox = $this->Master_model->getMaster('emp_js_connection', $where =  $whereres, $join = $Join_data, $order = 'desc', $field = 'max', $select = ' messaging.*, MAX( messaging.message_id) as max,emp_js_connection.*',$limit=false,$start=false, $search=false);
+        $data['chatbox'] = $this->Master_model->getMaster('emp_js_connection', $where =  $whereres, $join = $Join_data, $order = 'desc', $field = 'max', $select = ' messaging.*, MAX( messaging.message_id) as max,emp_js_connection.*',$limit=false,$start=false, $search=false);
         $this->load->view('fontend/employer/chatting_list.php',$data);
-        
+
     }
 
     function get_messages()
