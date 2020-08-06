@@ -1987,8 +1987,13 @@ public function user_profile()
         }
        
 
-       $whereres   = "js_id='$js_id'";
-        $data['chatbox'] = $this->Master_model->getMaster('emp_js_connection', $where =  $whereres, $join = false, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+     
+       $Join_data      = array('messaging' => 'messaging.connection_id = emp_js_connection.emp_js_connection_id|Left OUTER ');
+
+        $whereres   = "js_id='$js_id' or emp_id = '$js_id'";
+        $whereres   .= "group by emp_js_connection.emp_js_connection_id";
+
+        $data['chatbox'] = $this->Master_model->getMaster('emp_js_connection', $where =  $whereres, $join = $Join_data, $order = 'desc', $field = 'max', $select = ' messaging.*, MAX( messaging.message_id) as max,emp_js_connection.*',$limit=false,$start=false, $search=false);
 
         $this->load->view('fontend/jobseeker/chatting_list.php',$data);
 
@@ -1997,11 +2002,15 @@ public function user_profile()
     function get_list_connections()
     {
          // $employer_id = $this->input->post('id');
-        // $name = $this->input->post('name');
-        $js_id = $this->session->userdata('job_seeker_id');
+        $name = $this->input->post('name');
+        $jobseeker_id = $this->session->userdata('job_seeker_id');
 
-       $whereres   = "js_id='$js_id'";
-        $data['chatbox'] = $this->Master_model->getMaster('emp_js_connection', $where =  $whereres, $join = false, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+       $Join_data      = array('messaging' => 'messaging.connection_id = emp_js_connection.emp_js_connection_id|Left OUTER ');
+
+        $whereres   = "js_id='$jobseeker_id' or emp_id = '$jobseeker_id'";
+        $whereres   .= "group by emp_js_connection.emp_js_connection_id";
+
+        $data['chatbox'] = $this->Master_model->getMaster('emp_js_connection', $where =  $whereres, $join = $Join_data, $order = 'desc', $field = 'max', $select = ' messaging.*, MAX( messaging.message_id) as max,emp_js_connection.*',$limit=false,$start=false, $search=false);
 
         $this->load->view('fontend/jobseeker/chatting_list.php',$data);
 
