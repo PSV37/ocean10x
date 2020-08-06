@@ -27,7 +27,7 @@
                             <div class="messages msg_receive">
                                  <?php $employer_id = $this->session->userdata('company_profile_id');
                                // print_r($)
-                                if ($row['type'] == 'js') {
+                                if ($row['type'] == 'js-js') {
                                 $Join_data      = array('js_info' => 'js_info.job_seeker_id = emp_js_connection.emp_id|Left OUTER ');}
                                 else
                                   {
