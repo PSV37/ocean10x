@@ -38,7 +38,7 @@ class Employer extends MY_Employer_Controller
 
          $Join_data      = array('messaging' => 'messaging.connection_id = emp_js_connection.emp_js_connection_id|Left OUTER ');
 
-         $whereres   = "emp_id='$employer_id' ";
+         $whereres   = "emp_id='$employer_id' or js_id = '$employer_id'";
         $whereres   .= "group by emp_js_connection.emp_js_connection_id";
 
         $chatbox = $this->Master_model->getMaster('emp_js_connection', $where =  $whereres, $join = $Join_data, $order = 'desc', $field = 'max', $select = ' messaging.*, MAX( messaging.message_id) as max,emp_js_connection.*',$limit=false,$start=false, $search=false);
@@ -4291,6 +4291,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $this->load->view('fontend/employer/cv_bank', $data);
 
             $this->load->model('Pincode_model');
+
             $data['active_cv']  = $this->Pincode_model->getactive_cvs();   
 
         }          
@@ -6504,15 +6505,18 @@ function update_external()
            $insert_id = $this->Master_model->master_insert($connection_data, 'emp_js_connection');
         }
         // print_r($js_id);
-         if ($check['type'] == 'js') {
-            $Join_data      = array(
-            'js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER ');
-        }
-        else
-        {
-            $Join_data      = array(
-            'company_profile' => 'company_profile.company_profile_id = emp_js_connection.js_id|Left OUTER ');
-        }
+        if ($check['type'] == 'emp-emp' && $check['created_by'] == $this->session->userdata('company_profile_id') )  
+         {
+               $Join_data      = array('company_profile' => 'company_profile.company_profile_id = emp_js_connection.js_id|Left OUTER ');
+           }
+           elseif ($check['type'] == 'emp-emp' && $check['created_by'] != $this->session->userdata('company_profile_id') ) 
+           {
+                $Join_data      = array('company_profile' => 'company_profile.company_profile_id = emp_js_connection.emp_id|Left OUTER ');
+            }
+         else
+           {
+              $Join_data      = array('js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER ');
+           } 
          // $Join_data      = array(
          //    'js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER '
                 
@@ -6541,10 +6545,14 @@ function update_external()
        $whereres   = "emp_js_connection_id = '$js_id'";
         $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
 
-         if ($row['type'] == 'emp-emp' && $row['created_by'] == $this->session->userdata('company_profile_id') )  
+         if ($check['type'] == 'emp-emp' && $check['created_by'] == $this->session->userdata('company_profile_id') )  
          {
                $Join_data      = array('company_profile' => 'company_profile.company_profile_id = emp_js_connection.js_id|Left OUTER ');
            }
+           elseif ($check['type'] == 'emp-emp' && $check['created_by'] != $this->session->userdata('company_profile_id') ) 
+           {
+                $Join_data      = array('company_profile' => 'company_profile.company_profile_id = emp_js_connection.emp_id|Left OUTER ');
+            }
          else
            {
               $Join_data      = array('js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER ');
@@ -6573,10 +6581,13 @@ function update_external()
         $whereres   = "emp_js_connection_id = '$js_id'";
         $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
 
-        if ($row['type'] == 'emp-emp' && $row['created_by'] == $this->session->userdata('company_profile_id') ) 
+        if ($check['type'] == 'emp-emp' && $check['created_by'] == $this->session->userdata('company_profile_id') ) 
         {
-               $Join_data      = array('company_profile' => 'company_profile.company_profile_id = emp_js_connection.js_id|Left OUTER ');
+            $Join_data      = array('company_profile' => 'company_profile.company_profile_id = emp_js_connection.js_id|Left OUTER ');
            }
+           elseif ($check['type'] == 'emp-emp' && $check['created_by'] != $this->session->userdata('company_profile_id') ) {
+             $Join_data      = array('company_profile' => 'company_profile.company_profile_id = emp_js_connection.emp_id|Left OUTER ');
+                               }
          else
            {
               $Join_data      = array('js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER ');
