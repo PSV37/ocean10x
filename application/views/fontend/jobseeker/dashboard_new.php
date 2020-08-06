@@ -773,15 +773,15 @@ function show_box(id){
                 $('#myForm1').html(data);
               }
         });
-      setInterval(function(){ 
-     if ( $('#myForm1').css('display') == 'block')
-      {
-        alert(id);
+     //  setInterval(function(){ 
+     // if ( $('#myForm1').css('display') == 'block')
+     //  {
+     //    alert(id);
    
-        // show_box(id);
-      }
+     //    // show_box(id);
+     //  }
      
-      }, 3000);
+     //  }, 3000);
    
 }
 
