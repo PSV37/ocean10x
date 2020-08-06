@@ -340,7 +340,7 @@ div#myForm1 {
     overflow-y: auto;
 }
 div#myForm {
-    display: block;
+    display: none;
     max-width: 300px;
     margin-left: 55px;
     min-width: 280px;
@@ -730,11 +730,16 @@ z-index: 1000;
           // alert(cid);
           show_box(cid);
       }
+      if ( $('#myForm').css('display') == 'block')
+      {
+        get_list();
+      }
                    
       }, 20000);
   });
 function openForm() {
   document.getElementById("myForm").style.display = "block";
+  get_list();
 }
 
 function closeForm(id) {
