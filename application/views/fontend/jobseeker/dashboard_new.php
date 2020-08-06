@@ -771,11 +771,13 @@ function show_box(id){
                  document.getElementById("myForm1").style.display = "block";
 
                 $('#myForm1').html(data);
-                  var cid = $('#connection_id').val();
-               alert(cid);
+               //    var cid = $('#connection_id').val();
+               // alert(cid);
 
               }
         });
+    var cid = $('#connection_id').val();
+               alert(cid);
      //  setInterval(function(){ 
      // if ( $('#myForm1').css('display') == 'block')
      //  {
