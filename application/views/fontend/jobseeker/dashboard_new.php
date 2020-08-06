@@ -332,7 +332,7 @@ button#btn-chat {
     border: none;
 }
 div#myForm1 {
-    display: block;
+    display: none;
     max-width: 350px;
     float: right;
     margin-left: 290px;
