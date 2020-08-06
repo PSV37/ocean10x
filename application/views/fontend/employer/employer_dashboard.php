@@ -269,16 +269,17 @@ div#myForm {
 }
 .numberCircle {
     border-radius: 50%;
-    width: 5px;
-    height: 5px;
-    padding: 8px;
-
-    background: green;
-    border: 2px solid #666;
+    width: 25px;
+    height: 25px;
+    padding: 2px;
+    background: #98da01;
+    /* border: 2px solid #666; */
     color: white;
     text-align: center;
-
-    font: 5px Arial, sans-serif;
+    font: 20px Arial, sans-serif;
+    float: right;
+    padding-top: -55px;
+    margin-top: -15px;
 }
 </style>
 <div class="container-fluid main-d">

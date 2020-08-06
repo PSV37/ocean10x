@@ -348,6 +348,20 @@ div#myForm {
     background-color: white;
     bottom: 11px;
 }
+.numberCircle {
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    padding: 2px;
+    background: #98da01;
+    /* border: 2px solid #666; */
+    color: white;
+    text-align: center;
+    font: 20px Arial, sans-serif;
+    float: right;
+    padding-top: -55px;
+    margin-top: -15px;
+}
 /*.ui-autocomplete {
 z-index: 1000;
 }*/
@@ -567,6 +581,13 @@ z-index: 1000;
                         </div>
                         <div class="col-md-10 col-xs-10" onclick="show_box(<?php echo $row['emp_js_connection_id']; ?>);">
                             <div class="messages msg_receive">
+
+                               <?php $js_id = $this->session->userdata('job_seeker_id');
+                              $emp_id = $row['emp_id'];
+                                $whereres   = "msg_to='$js_id' and message_status = '0' and msg_from = '$emp_id'";
+                               $msges = $this->Master_model->getMaster('messaging', $where =  $whereres, $join = false, $order = false, $field = false, $select = 'count(*)as total',$limit=false,$start=false, $search=false); ?>
+
+
                              <?php $js_id = $this->session->userdata('job_seeker_id');
                                // print_r($row['created_by']);
                                // print_r($row['$js_id']);
@@ -584,12 +605,21 @@ z-index: 1000;
                                   } 
                                       $id=$row['emp_js_connection_id'];
                                      $whereres   = "emp_js_connection_id='$id'";
-                                    $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);  ?> <p><?php if (!empty($check['full_name'])) {
-                                     echo $check['full_name'];
-                                    }else{
-                                     echo $check['company_name'];
+                                    $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);  ?> 
+                                    <p><?php if (!empty($check['full_name'])) 
+                                        {
+                                          echo $check['full_name']; 
+                                          if ($msges[0]['total'] > 0 ) 
+                                            { ?> <div class="numberCircle"><?php echo $msges[0]['total']; ?></div> <?php } 
+                                        }else
+                                        {
+                                         echo $check['company_name'];
+                                         if ($msges[0]['total'] > 0 ) 
+                                            { ?> <div class="numberCircle"><?php echo $msges[0]['total']; ?></div> <?php }
 
-                                    } ?></p>
+                                        } ?>
+                                          
+                                        </p>
                                 <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
                             </div>
                         </div>
