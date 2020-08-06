@@ -522,7 +522,7 @@ div#myForm {
                               <?php $employer_id = $this->session->userdata('company_profile_id');
                               $js_id = $row['js_id'];
                                 $whereres   = "msg_to='$employer_id' and message_status = '0' and msg_from = '$js_id'";
-                                $msges = $this->Master_model->getMaster('messaging', $where =  $whereres, $join = 'message_id', $order = 'desc', $field = false, $select = 'count(*)as total,msg,created_date',$limit=false,$start=false, $search=false); ?>
+                                $msges = $this->Master_model->getMaster('messaging', $where =  $whereres, $join = false, $order = 'desc', $field = 'message_id', $select = 'count(*)as total,msg,created_date',$limit=false,$start=false, $search=false); ?>
 
 
                                <?php $employer_id = $this->session->userdata('company_profile_id');
