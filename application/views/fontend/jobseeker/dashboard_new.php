@@ -722,13 +722,17 @@ z-index: 1000;
 </script> 
 <script>
 
-  // $(function(){
-  //   $("#myForm1").each(function(){
-  //      if($(this).css("display")=="block"){
-  //         //Your code here
-  //      }
-  //   });
-  // });
+  $(function(){
+   setInterval(function(){ 
+     if ( $('#myForm1').css('display') == 'block')
+      {
+        var cid = $('#connection_id').val();
+          alert(cid);
+          show_box(cid);
+      }
+                   
+      }, 20000);
+  });
 function openForm() {
   document.getElementById("myForm").style.display = "block";
 }
@@ -771,30 +775,13 @@ function show_box(id){
                  document.getElementById("myForm1").style.display = "block";
 
                 $('#myForm1').html(data);
-                 setInterval(function(){ 
-                   if ( $('#myForm1').css('display') == 'block')
-                    {
-                         var cid = $('#connection_id').val();
-                          alert(cid);
-                 
-                          show_box(cid);
-                    }
-                   
-                    }, 10000);
+                 // 
               
 
               }
         });
   
-     //  setInterval(function(){ 
-     // if ( $('#myForm1').css('display') == 'block')
-     //  {
-     //    alert(id);
-   
-     //    // show_box(id);
-     //  }
      
-     //  }, 3000);
    
 }
 

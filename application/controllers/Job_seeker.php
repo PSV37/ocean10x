@@ -1998,7 +1998,12 @@ public function user_profile()
     {
         $connection_id = $this->input->post('id');
         $js_id = $this->session->userdata('job_seeker_id');
-     
+        $del   = array(
+            'message_status' => '1'
+          );
+        $where11['connection_id'] = $connection_id;
+        
+        $this->Master_model->master_update($del, 'messaging', $where11);
 
         $whereres   = " emp_js_connection_id = '$connection_id'";
         $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
