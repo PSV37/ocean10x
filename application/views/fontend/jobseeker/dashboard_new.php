@@ -780,13 +780,12 @@ function show_box(id){
                           show_box(cid);
                     }
                    
-                    }, 3000);
+                    }, 10000);
               
 
               }
         });
-    var cid = $('#connection_id').val();
-               alert(cid);
+  
      //  setInterval(function(){ 
      // if ( $('#myForm1').css('display') == 'block')
      //  {
