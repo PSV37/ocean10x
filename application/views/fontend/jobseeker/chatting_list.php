@@ -46,12 +46,21 @@
                                       }
                                       $id=$row['emp_js_connection_id'];
                                      $whereres   = "emp_js_connection_id='$id'";
-                                    $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);?> <p><?php if (!empty($check['full_name'])) {
-                                     echo $check['full_name'];
-                                    }else{
-                                     echo $check['company_name'];
+                                    $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);?> 
+                                     <p><?php if (!empty($check['full_name'])) 
+                                        {
+                                          echo $check['full_name']; 
+                                          if ($msges[0]['total'] > 0 ) 
+                                            { ?> <div class="numberCircle"><?php echo $msges[0]['total']; ?></div> <?php } 
+                                        }else
+                                        {
+                                         echo $check['company_name'];
+                                         if ($msges[0]['total'] > 0 ) 
+                                            { ?> <div class="numberCircle"><?php echo $msges[0]['total']; ?></div> <?php }
 
-                                    } ?></p>
+                                        } ?>
+                                          
+                                        </p>
                                 <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
                             </div>
                         </div>

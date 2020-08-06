@@ -612,6 +612,7 @@ $(function(){
   // setInterval("my_function();",10000);
 function openForm() {
   document.getElementById("myForm").style.display = "block";
+  get_list()
 }
 
 function closeForm(id) {
