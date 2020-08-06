@@ -721,6 +721,14 @@ z-index: 1000;
         });
 </script> 
 <script>
+
+  // $(function(){
+  //   $("#myForm1").each(function(){
+  //      if($(this).css("display")=="block"){
+  //         //Your code here
+  //      }
+  //   });
+  // });
 function openForm() {
   document.getElementById("myForm").style.display = "block";
 }
@@ -768,7 +776,7 @@ function show_box(id){
       // setInterval(function(){ 
      if ( $('#myForm1').css('display') == 'block')
       {
-        // alert(id);
+        alert(id);
    
         // show_box(id);
       }
@@ -776,6 +784,8 @@ function show_box(id){
       // }, 30000);
    
 }
+
+
 
 function opensearch(){
     document.getElementById("search_connection").style.display = "block";
