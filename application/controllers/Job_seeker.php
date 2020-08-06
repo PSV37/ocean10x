@@ -68,7 +68,7 @@ class Job_seeker extends MY_Seeker_Controller
 
         $Join_data      = array('messaging' => 'messaging.connection_id = emp_js_connection.emp_js_connection_id|Left OUTER ');
 
-        $whereres   = "js_id='$jobseeker_id'";
+        $whereres   = "js_id='$jobseeker_id' or emp_id = '$jobseeker_id'";
         $whereres   .= "group by emp_js_connection.emp_js_connection_id";
 
         $data['chatbox'] = $this->Master_model->getMaster('emp_js_connection', $where =  $whereres, $join = $Join_data, $order = 'desc', $field = 'max', $select = ' messaging.*, MAX( messaging.message_id) as max,emp_js_connection.*',$limit=false,$start=false, $search=false);
