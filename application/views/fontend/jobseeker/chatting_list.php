@@ -25,6 +25,13 @@
                         </div>
                         <div class="col-md-10 col-xs-10" onclick="show_box(<?php echo $row['emp_js_connection_id']; ?>);get_list();">
                             <div class="messages msg_receive">
+
+                              <?php $js_id = $this->session->userdata('job_seeker_id');
+                              $emp_id = $row['emp_id'];
+                                $whereres   = "msg_to='$js_id' and message_status = '0' and msg_from = '$emp_id'";
+                               $msges = $this->Master_model->getMaster('messaging', $where =  $whereres, $join = false, $order = false, $field = false, $select = 'count(*)as total,msg,created_date',$limit=false,$start=false, $search=false); ?>
+
+
                                  <?php $js_id = $this->session->userdata('job_seeker_id');
                                // print_r($)
                                                             
@@ -61,7 +68,8 @@
                                         } ?>
                                           
                                         </p>
-                                <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+                                <p><?php echo $msges[0]['msg'] ?></p>
+                                <time datetime="2009-11-13T20:00"><?php echo $msges[0]['created_date'] ?></time>
                             </div>
                         </div>
                     </div>
