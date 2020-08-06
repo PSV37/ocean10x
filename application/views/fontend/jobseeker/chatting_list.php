@@ -25,7 +25,7 @@
                         </div>
                         <div class="col-md-10 col-xs-10" onclick="show_box(<?php echo $row['emp_js_connection_id']; ?>);">
                             <div class="messages msg_receive">
-                                 <?php $employer_id = $this->session->userdata('company_profile_id');
+                                 <?php $js_id = $this->session->userdata('job_seeker_id');
                                // print_r($)
                                                             
                                       if ($row['type'] == 'js-js' && $row['created_by'] == $js_id) 
