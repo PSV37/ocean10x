@@ -28,7 +28,7 @@
                               <?php $employer_id = $this->session->userdata('company_profile_id');
                               $js_id = $row['js_id'];
                                 $whereres   = "msg_to='$employer_id' and message_status = '0' and msg_from = '$js_id'";
-                               $msges = $this->Master_model->getMaster('messaging', $where =  $whereres, $join = $Join_data, $order = false, $field = false, $select = 'count(*)as total',$limit=false,$start=false, $search=false); ?>
+                               $msges = $this->Master_model->getMaster('messaging', $where =  $whereres, $join = false, $order = false, $field = false, $select = 'count(*)as total',$limit=false,$start=false, $search=false); ?>
 
                                 <?php $employer_id = $this->session->userdata('company_profile_id');
                              if ($row['type'] == 'emp-emp' && $row['created_by'] == $this->session->userdata('company_profile_id') ) 
