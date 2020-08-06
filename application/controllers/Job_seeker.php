@@ -2069,6 +2069,7 @@ public function user_profile()
           $Join_data      = array(
             
              'company_profile' => 'company_profile.company_profile_id = emp_js_connection.emp_id|Left OUTER ');   
+            $mesg_to = 'emp_id';
         }
 
         $whereres   = "emp_js_connection_id='$connection_id'";

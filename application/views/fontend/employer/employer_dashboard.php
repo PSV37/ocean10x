@@ -527,10 +527,9 @@ div#myForm {
                                       $id=$row['emp_js_connection_id'];
                                      $whereres   = "emp_js_connection_id='$id'";
                                     $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);?> <p><?php if (!empty($check['full_name'])) {
-                                    echo $check['full_name']; echo $msges[0]['total'];
+                                    echo $check['full_name']; if ($msges[0]['total'] > 0 ) { echo $msges[0]['total']; } 
                                     }else{
-                                     echo $check['company_name']; echo $msges[0]['total'];
-                                     // echo $chatbox[0]['total'];
+                                     echo $check['company_name'];if ($msges[0]['total'] > 0 ) { echo $msges[0]['total']; } 
 
                                     } ?></p>
                                 <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
