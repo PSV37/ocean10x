@@ -2070,7 +2070,7 @@ public function user_profile()
          $del   = array(
             'message_status' => '1'
           );
-        $where11['connection_id'] = $connection_id;
+        $where11['msg_to'] = $js_id;
         // $where11['msg_from'] = $js_id;
         $this->Master_model->master_update($del, 'messaging', $where11);
 
