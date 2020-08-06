@@ -52,7 +52,7 @@
                         <input type="hidden" name="" value="<?php echo $check['emp_js_connection_id']; ?>" id="connection_id">
                         <input id="btn-input" type="text" class="form-control input-sm chat_input" placeholder="Write your message here..." />
                         <span class="input-group-btn">
-                        <button class="btn btn-primary btn-sm" value="" id="btn-chat" onclick="send_msg(<?php echo $check['emp_js_connection_id']; get_list();?>);"><i class="fa fa-send fa-1x" aria-hidden="true"></i></button>
+                        <button class="btn btn-primary btn-sm" value="" id="btn-chat" onclick="send_msg(<?php echo $check['emp_js_connection_id']; ?>); get_list();"><i class="fa fa-send fa-1x" aria-hidden="true"></i></button>
                         </span>
                     </div>
                 </div>

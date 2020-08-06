@@ -786,7 +786,7 @@ function get_list()
   $.ajax({
               url: "<?php echo base_url();?>job_seeker/get_list_connections",
               type: "POST",
-              data: {id:id,name:name},
+              // data: {id:id,name:name},
               // contentType:false,
               // processData:false,
                // dataType: "json",
