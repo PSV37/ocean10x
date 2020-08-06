@@ -2076,7 +2076,7 @@ public function user_profile()
         $data['check'] = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
 
         $meg_data['msg_from'] = $js_id;
-        $meg_data['msg_to'] =  $data['check'][$msg_to];
+        $meg_data['msg_to'] =  $data['check'][$mesg_to];
         $meg_data['connection_id'] = $data['check']['emp_js_connection_id'];
         $meg_data['msg'] = $message;
         $meg_data['status'] = 1;
