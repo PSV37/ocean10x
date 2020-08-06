@@ -6506,15 +6506,18 @@ function update_external()
            $insert_id = $this->Master_model->master_insert($connection_data, 'emp_js_connection');
         }
         // print_r($js_id);
-         if ($check['type'] == 'js') {
-            $Join_data      = array(
-            'js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER ');
-        }
-        else
-        {
-            $Join_data      = array(
-            'company_profile' => 'company_profile.company_profile_id = emp_js_connection.js_id|Left OUTER ');
-        }
+        if ($check['type'] == 'emp-emp' && $check['created_by'] == $this->session->userdata('company_profile_id') )  
+         {
+               $Join_data      = array('company_profile' => 'company_profile.company_profile_id = emp_js_connection.js_id|Left OUTER ');
+           }
+           elseif ($check['type'] == 'emp-emp' && $check['created_by'] != $this->session->userdata('company_profile_id') ) 
+           {
+                $Join_data      = array('company_profile' => 'company_profile.company_profile_id = emp_js_connection.emp_id|Left OUTER ');
+            }
+         else
+           {
+              $Join_data      = array('js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER ');
+           } 
          // $Join_data      = array(
          //    'js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER '
                 
