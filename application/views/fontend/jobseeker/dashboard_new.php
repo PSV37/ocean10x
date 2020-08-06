@@ -727,7 +727,7 @@ z-index: 1000;
      if ( $('#myForm1').css('display') == 'block')
       {
         var cid = $('#connection_id').val();
-          alert(cid);
+          // alert(cid);
           show_box(cid);
       }
                    
