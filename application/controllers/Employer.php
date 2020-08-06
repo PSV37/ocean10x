@@ -6538,7 +6538,7 @@ function update_external()
        $whereres   = "emp_js_connection_id = '$js_id'";
         $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
 
-         if ($row['type'] == 'emp' && $row['created_by'] == $this->session->userdata('company_profile_id') ) 
+         if ($row['type'] == 'emp-emp' && $row['created_by'] == $this->session->userdata('company_profile_id') )  
          {
                $Join_data      = array('company_profile' => 'company_profile.company_profile_id = emp_js_connection.js_id|Left OUTER ');
            }
@@ -6570,8 +6570,7 @@ function update_external()
         $whereres   = "emp_js_connection_id = '$js_id'";
         $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
 
-         if ($row['type'] == 'emp' && $row['created_by'] == $this->session->userdata('company_profile_id') ) 
-         {
+        if ($row['type'] == 'emp-emp' && $row['created_by'] == $this->session->userdata('company_profile_id') ) {
                $Join_data      = array('company_profile' => 'company_profile.company_profile_id = emp_js_connection.js_id|Left OUTER ');
            }
          else
