@@ -575,7 +575,7 @@ z-index: 1000;
                                   $Join_data      = array('js_info' => 'js_info.job_seeker_id = emp_js_connection.emp_id|Left OUTER ');
                                  
                                 }
-                                elseif $row['type'] == 'js-js' && $row['created_by'] != $js_id)  {
+                                elseif ($row['type'] == 'js-js' && $row['created_by'] != $js_id)  {
                                   $Join_data      = array('js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER ');
                                 }
                                 else
