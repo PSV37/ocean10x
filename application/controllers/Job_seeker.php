@@ -2003,13 +2003,13 @@ public function user_profile()
         $whereres   = " emp_js_connection_id = '$connection_id'";
         $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
 
-        if ($row['type'] == 'js-js' && $row['created_by'] == $js_id) 
+        if ($check['type'] == 'js-js' && $check['created_by'] == $js_id) 
         {
                                   // echo "string";
             $Join_data      = array('js_info' => 'js_info.job_seeker_id = emp_js_connection.emp_id|Left OUTER ');
                                  
         }
-        elseif ($row['type'] == 'js-js' && $row['created_by'] != $js_id) 
+        elseif ($check['type'] == 'js-js' && $check['created_by'] != $js_id) 
         {
             $Join_data      = array('js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER ');
         }
@@ -2051,13 +2051,13 @@ public function user_profile()
          $whereres   = "emp_js_connection_id = '$employer_id'";
         $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
 
-        if ($row['type'] == 'js-js' && $row['created_by'] == $js_id) 
+        if ($check['type'] == 'js-js' && $check['created_by'] == $js_id) 
         {
                                   // echo "string";
             $Join_data      = array('js_info' => 'js_info.job_seeker_id = emp_js_connection.emp_id|Left OUTER ');
                                  
         }
-        elseif ($row['type'] == 'js-js' && $row['created_by'] != $js_id) 
+        elseif ($check['type'] == 'js-js' && $check['created_by'] != $js_id) 
         {
             $Join_data      = array('js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER ');
         }
