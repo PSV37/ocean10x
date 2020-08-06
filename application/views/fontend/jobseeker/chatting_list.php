@@ -29,7 +29,7 @@
                               <?php $js_id = $this->session->userdata('job_seeker_id');
                               $emp_id = $row['emp_id'];
                                 $whereres   = "msg_to='$js_id' and message_status = '0' and msg_from = '$emp_id'";
-                               $msges = $this->Master_model->getMaster('messaging', $where =  $whereres, $join = false, $order = false, $field = false, $select = 'count(*)as total,msg,created_date',$limit=false,$start=false, $search=false); ?>
+                               $msges = $this->Master_model->getMaster('messaging', $where =  $whereres, $join = 'message_id', $order = 'desc', $field = false, $select = 'count(*)as total,msg,created_date',$limit=false,$start=false, $search=false); ?>
 
 
                                  <?php $js_id = $this->session->userdata('job_seeker_id');

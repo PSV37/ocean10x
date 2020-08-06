@@ -585,7 +585,7 @@ z-index: 1000;
                                <?php $js_id = $this->session->userdata('job_seeker_id');
                               $emp_id = $row['emp_id'];
                                 $whereres   = "msg_to='$js_id' and message_status = '0' and msg_from = '$emp_id'";
-                               $msges = $this->Master_model->getMaster('messaging', $where =  $whereres, $join = false, $order = false, $field = false, $select = 'count(*)as total',$limit=false,$start=false, $search=false); ?>
+                               $msges = $this->Master_model->getMaster('messaging', $where =  $whereres, $join = 'message_id', $order = 'desc', $field = false, $select = 'count(*)as total,msg,created_date',$limit=false,$start=false, $search=false); ?>
 
 
                              <?php $js_id = $this->session->userdata('job_seeker_id');
@@ -620,7 +620,8 @@ z-index: 1000;
                                         } ?>
                                           
                                         </p>
-                                <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+                                <p><?php echo $msges[0]['msg'] ?></p>
+                                <time datetime="2009-11-13T20:00"><?php echo $msges[0]['created_date'] ?></time>
                             </div>
                         </div>
                     </div>

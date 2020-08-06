@@ -29,7 +29,7 @@
                               
                               $js_id = $row['js_id'];
                                 $whereres   = "msg_to='$employer_id' and message_status = '0' and msg_from = '$js_id'";
-                               $msges = $this->Master_model->getMaster('messaging', $where =  $whereres, $join = false, $order = false, $field = false, $select = 'count(*)as total',$limit=false,$start=false, $search=false); ?>
+                               $msges = $this->Master_model->getMaster('messaging', $where =  $whereres, $join = 'message_id', $order = 'desc', $field = false, $select = 'count(*)as total,msg,created_date',$limit=false,$start=false, $search=false); ?>
 
                                 <?php $employer_id = $this->session->userdata('company_profile_id');
                              if ($row['type'] == 'emp-emp' && $row['created_by'] == $this->session->userdata('company_profile_id') ) 
@@ -60,7 +60,8 @@
                                         } ?>
                                           
                                         </p>
-                                <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+                                <p><?php echo $msges[0]['msg'] ?></p>
+                                <time datetime="2009-11-13T20:00"><?php echo $msges[0]['created_date'] ?></time>
                             </div>
                         </div>
                     </div>
