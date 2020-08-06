@@ -267,6 +267,19 @@ div#myForm {
     background-color: white;
     bottom: 11px;
 }
+.numberCircle {
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+    padding: 8px;
+
+    background: green;
+    border: 2px solid #666;
+    color: white;
+    text-align: center;
+
+    font: 5px Arial, sans-serif;
+}
 </style>
 <div class="container-fluid main-d">
 	<div class="container">
@@ -526,12 +539,21 @@ div#myForm {
                                      } 
                                       $id=$row['emp_js_connection_id'];
                                      $whereres   = "emp_js_connection_id='$id'";
-                                    $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);?> <p><?php if (!empty($check['full_name'])) {
-                                    echo $check['full_name']; if ($msges[0]['total'] > 0 ) { echo $msges[0]['total']; } 
-                                    }else{
-                                     echo $check['company_name'];if ($msges[0]['total'] > 0 ) { echo $msges[0]['total']; } 
+                                    $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);?> 
+                                        <p><?php if (!empty($check['full_name'])) 
+                                        {
+                                          echo $check['full_name']; 
+                                          if ($msges[0]['total'] > 0 ) 
+                                            { ?> <div class="numberCircle"><?php echo $msges[0]['total']; ?></div> <?php } 
+                                        }else
+                                        {
+                                         echo $check['company_name'];
+                                         if ($msges[0]['total'] > 0 ) 
+                                            { ?> <div class="numberCircle"><?php echo $msges[0]['total']; ?></div> <?php }
 
-                                    } ?></p>
+                                        } ?>
+                                          
+                                        </p>
                                 <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
                             </div>
                         </div>
