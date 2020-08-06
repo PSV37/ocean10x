@@ -609,7 +609,30 @@ $(function(){
       }
                    
       }, 20000);
+
+   $("#search_connection").autocomplete({
+             
+              source: "<?php echo base_url();?>Employer/search_people",
+             minLength: 2,
+              // append: "#rotateModal",
+              focus: function(event, ui) {
+               // prevent autocomplete from updating the textbox
+               event.preventDefault();
+               // manually update the textbox
+               // alert(source);
+               $(this).val(ui.item.label);
+            },
+            select: function(event, ui) {
+               // prevent autocomplete from updating the textbox
+               event.preventDefault();
+               // manually update the textbox and hidden field
+               $(this).val(ui.item.label);
+               $("#auto-value").val(ui.item.value);
+            }
+            
+           });
   });
+
   // setInterval("my_function();",10000);
 function openForm() {
   document.getElementById("myForm").style.display = "block";
@@ -701,27 +724,7 @@ $(document).on("keypress", "#btn-input", function (e){
      }
 });
 
-$("#search_connection").autocomplete({
-             
-              source: "<?php echo base_url();?>Employer/search_people",
-             minLength: 2,
-              // append: "#rotateModal",
-              focus: function(event, ui) {
-               // prevent autocomplete from updating the textbox
-               event.preventDefault();
-               // manually update the textbox
-               // alert(source);
-               $(this).val(ui.item.label);
-            },
-            select: function(event, ui) {
-               // prevent autocomplete from updating the textbox
-               event.preventDefault();
-               // manually update the textbox and hidden field
-               $(this).val(ui.item.label);
-               $("#auto-value").val(ui.item.value);
-            }
-            
-           });
+
 function add_connection()
 {
   var id = $('#auto-value').val();
