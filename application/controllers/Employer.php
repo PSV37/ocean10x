@@ -4292,7 +4292,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
             $this->load->model('Pincode_model');
 
-            $data['active_cv']  = $this->Pincode_model->getactive_cvs($company_id);   
+            $data['active_cv']  = $this->Master_model->getactive_cvs($company_id);   
 
         }          
      // $this->load->view('fontend/employer/corporate_cv_bank',$data);
