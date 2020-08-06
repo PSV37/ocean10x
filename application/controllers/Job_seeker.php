@@ -2037,29 +2037,32 @@ public function user_profile()
     {
         $js_id = $this->session->userdata('job_seeker_id');
 
-        $employer_id = $this->input->post('id');
+        $connection_id = $this->input->post('id');
         $message = $this->input->post('message');
 
          $del   = array(
             'message_status' => '1'
           );
-        $where11['connection_id'] = $employer_id;
+        $where11['connection_id'] = $connection_id;
         // $where11['msg_from'] = $js_id;
         $this->Master_model->master_update($del, 'messaging', $where11);
 
 
-         $whereres   = "emp_js_connection_id = '$employer_id'";
+         $whereres   = "emp_js_connection_id = '$connection_id'";
         $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
 
         if ($check['type'] == 'js-js' && $check['created_by'] == $js_id) 
         {
                                   // echo "string";
             $Join_data      = array('js_info' => 'js_info.job_seeker_id = emp_js_connection.emp_id|Left OUTER ');
+            $mesg_to = 'emp_id';
                                  
         }
         elseif ($check['type'] == 'js-js' && $check['created_by'] != $js_id) 
         {
             $Join_data      = array('js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER ');
+            $mesg_to = 'js_id';
+
         }
         else
         {
@@ -2068,12 +2071,12 @@ public function user_profile()
              'company_profile' => 'company_profile.company_profile_id = emp_js_connection.emp_id|Left OUTER ');   
         }
 
-        $whereres   = "emp_js_connection_id='$employer_id' and js_id = '$js_id'";
+        $whereres   = "emp_js_connection_id='$connection_id'";
         // $whereres   = " emp_js_connection_id = '$connection_id'";
         $data['check'] = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
 
         $meg_data['msg_from'] = $js_id;
-        $meg_data['msg_to'] =  $data['check']['emp_id'];
+        $meg_data['msg_to'] =  $data['check'][$msg_to];
         $meg_data['connection_id'] = $data['check']['emp_js_connection_id'];
         $meg_data['msg'] = $message;
         $meg_data['status'] = 1;
@@ -2082,7 +2085,7 @@ public function user_profile()
 
         $insert_id = $this->Master_model->master_insert($meg_data, 'messaging');
 
-        $where   = "connection_id = '$employer_id' ";
+        $where   = "connection_id = '$connection_id' ";
 
 
         $data['chatbox'] = $this->Master_model->getMaster('messaging', $where =  $where, $join = false, $order = 'asc', $field = 'message_id', $select = false,$limit=false,$start=false, $search=false);
