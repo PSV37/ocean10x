@@ -77,11 +77,7 @@ a.dropdown-toggle {
 	</div>
 <?php $employer_id = $this->session->userdata('company_profile_id');
   $whereres   = "msg_to='$employer_id' and message_status = '0'";
- $chatbox = $this->Master_model->getMaster('messaging', $where =  $whereres, $join = $Join_data, $order = false, $field = false, $select = 'count(*)as total',$limit=false,$start=false, $search=false);
- // print_r($chatbox);
-
-
- ?>
+ $chatbox = $this->Master_model->getMaster('messaging', $where =  $whereres, $join = $Join_data, $order = false, $field = false, $select = 'count(*)as total',$limit=false,$start=false, $search=false); ?>
 <div class="col-md-3">
 
 	 <div class="switch switch-yellow">

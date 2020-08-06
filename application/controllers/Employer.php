@@ -6477,13 +6477,13 @@ function update_external()
             $where_emp   = "company_profile_id='$js_id' and company_name = '$name'";
             $check_emp = $this->Master_model->get_master_row('company_profile', $select = FALSE, $where_emp);
             if (!empty($check_emp)) {
-                $type = 'emp';
+                $type = 'emp-emp';
             }
           
         }
         else
         {
-            $type = 'js';
+            $type = 'emp-js';
         }
 
 
