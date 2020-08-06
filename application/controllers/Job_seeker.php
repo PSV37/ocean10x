@@ -1961,7 +1961,7 @@ public function user_profile()
             $where_emp   = "company_profile_id='$employer_id' and company_name = '$name'";
             $check_emp = $this->Master_model->get_master_row('company_profile', $select = FALSE, $where_emp);
             if (!empty($check_emp)) {
-                $type = 'emp';
+                $type = 'js-emp';
             }
           
         }
@@ -1969,7 +1969,7 @@ public function user_profile()
         {
             // echo "string";die;
 
-            $type = 'js';
+            $type = 'js-js';
         }
 
 
