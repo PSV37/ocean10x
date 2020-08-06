@@ -760,9 +760,7 @@ function send_msg(id)
 }
 
 function show_box(id){
-  // var id = $('#auto-value').val();
-  // alert(id);
-  
+ 
    $.ajax({
               url: "<?php echo base_url();?>job_seeker/get_messages",
               type: "POST",
@@ -780,9 +778,23 @@ function show_box(id){
 
               }
         });
-  
-     
-   
+ 
+}
+
+function get_list()
+{
+  $.ajax({
+              url: "<?php echo base_url();?>job_seeker/get_list_connections",
+              type: "POST",
+              data: {id:id,name:name},
+              // contentType:false,
+              // processData:false,
+               // dataType: "json",
+              success: function(data)
+              {
+                $('#myForm').html(data);
+              }
+        });
 }
 
 
