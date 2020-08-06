@@ -2024,7 +2024,7 @@ public function user_profile()
         
         $data['chatbox'] = $this->Master_model->getMaster('messaging', $where =  $where, $join = false, $order = 'asc', $field = 'message_id', $select = false,$limit=false,$start=false, $search=false);
 
-        print_r($this->db->last_query());die;
+        // print_r($this->db->last_query());die;
         $this->load->view('fontend/jobseeker/chatting_card.php',$data);
 
     }
