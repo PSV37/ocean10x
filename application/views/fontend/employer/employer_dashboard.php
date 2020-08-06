@@ -251,7 +251,7 @@ button#btn-chat {
     border: none;
 }
 div#myForm1 {
-    display: block;
+    display: none;
     max-width: 350px;
     float: right;
     margin-left: 290px;
@@ -259,7 +259,7 @@ div#myForm1 {
     overflow-y: auto;
 }
 div#myForm {
-    display: block;
+    display: none;
     max-width: 300px;
     margin-left: 55px;
     min-width: 280px;
@@ -600,6 +600,12 @@ $(function(){
           // alert(cid);
           show_box(cid);
       }
+      if ( $('#myForm').css('display') == 'block')
+      {
+        // var cid = $('#connection_id').val();
+          // alert(cid);
+          get_list();
+      }
                    
       }, 20000);
   });
@@ -610,6 +616,22 @@ function openForm() {
 
 function closeForm(id) {
   document.getElementById(id).style.display = "none";
+}
+
+function get_list()
+{
+  $.ajax({
+              url: "<?php echo base_url();?>employer/get_list_connections",
+              type: "POST",
+              // data: {id:id,name:name},
+              // contentType:false,
+              // processData:false,
+               // dataType: "json",
+              success: function(data)
+              {
+                $('#myForm').html(data);
+              }
+        });
 }
 
 function send_msg(id)

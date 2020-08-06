@@ -23,7 +23,7 @@
                         <div class="col-md-2 col-xs-2 avatar">
                             <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
                         </div>
-                        <div class="col-md-10 col-xs-10" onclick="show_box(<?php echo $row['emp_js_connection_id']; ?>);">
+                        <div class="col-md-10 col-xs-10" onclick="show_box(<?php echo $row['emp_js_connection_id']; ?>);get_list();">
                             <div class="messages msg_receive">
                                  <?php $js_id = $this->session->userdata('job_seeker_id');
                                // print_r($)

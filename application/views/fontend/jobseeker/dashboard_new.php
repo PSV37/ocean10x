@@ -332,7 +332,7 @@ button#btn-chat {
     border: none;
 }
 div#myForm1 {
-    display: block;
+    display: none;
     max-width: 350px;
     float: right;
     margin-left: 290px;
@@ -340,7 +340,7 @@ div#myForm1 {
     overflow-y: auto;
 }
 div#myForm {
-    display: block;
+    display: none;
     max-width: 300px;
     margin-left: 55px;
     min-width: 280px;
@@ -579,7 +579,7 @@ z-index: 1000;
                         <div class="col-md-2 col-xs-2 avatar">
                             <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
                         </div>
-                        <div class="col-md-10 col-xs-10" onclick="show_box(<?php echo $row['emp_js_connection_id']; ?>);">
+                        <div class="col-md-10 col-xs-10" onclick="show_box(<?php echo $row['emp_js_connection_id']; ?>);get_list();">
                             <div class="messages msg_receive">
 
                                <?php $js_id = $this->session->userdata('job_seeker_id');
@@ -730,11 +730,16 @@ z-index: 1000;
           // alert(cid);
           show_box(cid);
       }
+      if ( $('#myForm').css('display') == 'block')
+      {
+        get_list();
+      }
                    
       }, 20000);
   });
 function openForm() {
   document.getElementById("myForm").style.display = "block";
+  get_list();
 }
 
 function closeForm(id) {
@@ -760,9 +765,7 @@ function send_msg(id)
 }
 
 function show_box(id){
-  // var id = $('#auto-value').val();
-  // alert(id);
-  
+ 
    $.ajax({
               url: "<?php echo base_url();?>job_seeker/get_messages",
               type: "POST",
@@ -780,9 +783,23 @@ function show_box(id){
 
               }
         });
-  
-     
-   
+ 
+}
+
+function get_list()
+{
+  $.ajax({
+              url: "<?php echo base_url();?>job_seeker/get_list_connections",
+              type: "POST",
+              // data: {id:id,name:name},
+              // contentType:false,
+              // processData:false,
+               // dataType: "json",
+              success: function(data)
+              {
+                $('#myForm').html(data);
+              }
+        });
 }
 
 
