@@ -1999,10 +1999,7 @@ public function user_profile()
     {
         $connection_id = $this->input->post('id');
         $js_id = $this->session->userdata('job_seeker_id');
-         // $Join_data      = array(
-         //    'js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER '
-                
-         // );
+     
 
         $whereres   = " emp_js_connection_id = '$connection_id'";
         $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
@@ -2027,7 +2024,7 @@ public function user_profile()
         
         $data['chatbox'] = $this->Master_model->getMaster('messaging', $where =  $where, $join = false, $order = 'asc', $field = 'message_id', $select = false,$limit=false,$start=false, $search=false);
 
-        // print_r($this->db->last_query());die;
+        print_r($this->db->last_query());die;
         $this->load->view('fontend/jobseeker/chatting_card.php',$data);
 
     }
