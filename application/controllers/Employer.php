@@ -6538,10 +6538,14 @@ function update_external()
        $whereres   = "emp_js_connection_id = '$js_id'";
         $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
 
-         if ($row['type'] == 'emp-emp' && $row['created_by'] == $this->session->userdata('company_profile_id') )  
+         if ($check['type'] == 'emp-emp' && $check['created_by'] == $this->session->userdata('company_profile_id') )  
          {
                $Join_data      = array('company_profile' => 'company_profile.company_profile_id = emp_js_connection.js_id|Left OUTER ');
            }
+           elseif ($check['type'] == 'emp-emp' && $check['created_by'] != $this->session->userdata('company_profile_id') ) 
+           {
+                $Join_data      = array('company_profile' => 'company_profile.company_profile_id = emp_js_connection.emp_id|Left OUTER ');
+            }
          else
            {
               $Join_data      = array('js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER ');
@@ -6570,10 +6574,13 @@ function update_external()
         $whereres   = "emp_js_connection_id = '$js_id'";
         $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
 
-        if ($row['type'] == 'emp-emp' && $row['created_by'] == $this->session->userdata('company_profile_id') ) 
+        if ($check['type'] == 'emp-emp' && $check['created_by'] == $this->session->userdata('company_profile_id') ) 
         {
-               $Join_data      = array('company_profile' => 'company_profile.company_profile_id = emp_js_connection.js_id|Left OUTER ');
+            $Join_data      = array('company_profile' => 'company_profile.company_profile_id = emp_js_connection.js_id|Left OUTER ');
            }
+           elseif ($check['type'] == 'emp-emp' && $check['created_by'] != $this->session->userdata('company_profile_id') ) {
+             $Join_data      = array('company_profile' => 'company_profile.company_profile_id = emp_js_connection.emp_id|Left OUTER ');
+                               }
          else
            {
               $Join_data      = array('js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER ');
