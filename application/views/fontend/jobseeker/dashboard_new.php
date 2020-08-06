@@ -779,6 +779,7 @@ function show_box(id){
 
                 $('#myForm1').html(data);
                  // 
+                    get_list();
               
 
               }
