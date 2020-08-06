@@ -25,6 +25,11 @@
                         </div>
                         <div class="col-md-10 col-xs-10" onclick="show_box(<?php echo $row['emp_js_connection_id']; ?>);">
                             <div class="messages msg_receive">
+                              <?php $employer_id = $this->session->userdata('company_profile_id');
+                              $js_id = $row['js_id'];
+                                $whereres   = "msg_to='$employer_id' and message_status = '0' and msg_from = '$js_id'";
+                               $msges = $this->Master_model->getMaster('messaging', $where =  $whereres, $join = $Join_data, $order = false, $field = false, $select = 'count(*)as total',$limit=false,$start=false, $search=false); ?>
+
                                 <?php $employer_id = $this->session->userdata('company_profile_id');
                              if ($row['type'] == 'emp-emp' && $row['created_by'] == $this->session->userdata('company_profile_id') ) 
                                  {
@@ -40,9 +45,9 @@
                                       $id=$row['emp_js_connection_id'];
                                      $whereres   = "emp_js_connection_id='$id'";
                                     $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);?> <p><?php if (!empty($check['full_name'])) {
-                                     echo $check['full_name'];
+                                     echo $check['full_name']; echo $msges[0]['total'];
                                     }else{
-                                     echo $check['company_name'];
+                                     echo $check['company_name']; echo $msges[0]['total'];
 
                                     } ?></p>
                                 <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
