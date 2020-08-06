@@ -592,7 +592,17 @@ div#myForm {
 
 <script>
 
-
+$(function(){
+   setInterval(function(){ 
+     if ( $('#myForm1').css('display') == 'block')
+      {
+        var cid = $('#connection_id').val();
+          // alert(cid);
+          show_box(cid);
+      }
+                   
+      }, 20000);
+  });
   // setInterval("my_function();",10000);
 function openForm() {
   document.getElementById("myForm").style.display = "block";
