@@ -1954,7 +1954,6 @@ public function user_profile()
         $where_js   = "job_seeker_id='$employer_id' and full_name = '$name'";
         $check_js = $this->Master_model->get_master_row('js_info', $select = FALSE, $where_js);
 
-// print(empty($check_js));
 
         if (empty($check_js)) 
         {
@@ -2004,10 +2003,15 @@ public function user_profile()
         $whereres   = " emp_js_connection_id = '$connection_id'";
         $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
 
-        if ($check['type'] == 'js-js') {
-            $Join_data      = array(
-           'js_info' => 'js_info.job_seeker_id = emp_js_connection.emp_id|Left OUTER ');
-           
+        if ($row['type'] == 'js-js' && $row['created_by'] == $js_id) 
+        {
+                                  // echo "string";
+            $Join_data      = array('js_info' => 'js_info.job_seeker_id = emp_js_connection.emp_id|Left OUTER ');
+                                 
+        }
+        elseif ($row['type'] == 'js-js' && $row['created_by'] != $js_id) 
+        {
+            $Join_data      = array('js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER ');
         }
         else
         {
@@ -2047,10 +2051,15 @@ public function user_profile()
          $whereres   = "emp_js_connection_id = '$employer_id'";
         $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
 
-        if ($check['type'] == 'js-js' && $check['created_by'] == $this->session->userdata('job_seeker_id')) {
-            $Join_data      = array(
-           'js_info' => 'js_info.job_seeker_id = emp_js_connection.emp_id|Left OUTER ');
-           
+        if ($row['type'] == 'js-js' && $row['created_by'] == $js_id) 
+        {
+                                  // echo "string";
+            $Join_data      = array('js_info' => 'js_info.job_seeker_id = emp_js_connection.emp_id|Left OUTER ');
+                                 
+        }
+        elseif ($row['type'] == 'js-js' && $row['created_by'] != $js_id) 
+        {
+            $Join_data      = array('js_info' => 'js_info.job_seeker_id = emp_js_connection.js_id|Left OUTER ');
         }
         else
         {
@@ -2073,12 +2082,9 @@ public function user_profile()
 
         $insert_id = $this->Master_model->master_insert($meg_data, 'messaging');
 
-         // $where   = "(msg_from='$employer_id' or msg_to = '$employer_id') and (msg_from='$js_id' or msg_to = '$js_id' ) ";
-
         $where   = "connection_id = '$employer_id' ";
 
 
-        // $where .= "group by msg_from";
         $data['chatbox'] = $this->Master_model->getMaster('messaging', $where =  $where, $join = false, $order = 'asc', $field = 'message_id', $select = false,$limit=false,$start=false, $search=false);
 
         // print_r($this->db->last_query());die;
