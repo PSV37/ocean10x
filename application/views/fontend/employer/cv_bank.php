@@ -1331,7 +1331,11 @@ span.select2-selection.select2-selection--single {
             <div class="filter1">
                <p style="font-size:18px;margin-top:15px;">Education</p>
                <select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" tabindex="-98">
-                  <optgroup label="Driver Groups">
+                  <option value=""> </option>
+                        <?php  $edu_value =  set_value('top_education'); foreach($education_level as $education){?>
+                        <option value="<?php echo $education['education_level_id']; ?>"<?php if($edu_value==$education['education_level_id']){ echo "selected"; }elseif($job_info->job_edu==$education['education_level_id']){ echo "selected"; }?>><?php echo $education['education_level_name']; ?></option>
+                        <?php } ?>
+                  <!-- <optgroup label="Driver Groups">
                      <option>BEC</option>
                      <option>VMA</option>
                   </optgroup>
@@ -1340,7 +1344,7 @@ span.select2-selection.select2-selection--single {
                      <option>Fanny</option>
                      <option>Rudy</option>
                      <option>Ahmed</option>
-                  </optgroup>
+                  </optgroup> -->
                </select>
             </div>
             <div class="filter1">
