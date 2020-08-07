@@ -443,7 +443,7 @@
                       
                         <input id="btn-input" type="text" class="form-control input-sm chat_input" placeholder="Write your message here..." />
                         <span class="input-group-btn">
-                        <button class="btn btn-primary btn-sm" value="<?php echo $check['emp_js_connection_id']; ?>" id="btn-chat" onclick="send_msg(<?php echo $check['emp_js_connection_id']; ?>);"><i class="fa fa-send fa-1x" aria-hidden="true"></i></button>
+                        <button class="btn btn-primary btn-sm" value="<?php echo $check['emp_js_connection_id']; ?>" id="btn-chat" onclick="send_msg();"><i class="fa fa-send fa-1x" aria-hidden="true"></i></button>
                         </span>
                      </div>
       
@@ -636,9 +636,9 @@
            });
    }
    
-   function send_msg(id)
+   function send_msg()
    {
-     // alert(id);
+     var id = $('#connection_id').val();
    
      var message = $('#btn-input').val();
      $.ajax({
