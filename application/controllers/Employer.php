@@ -12,6 +12,8 @@ class Employer extends MY_Employer_Controller
         
         parent::__construct();
               $this->load->model('employer_login_model');
+        $this->load->model('Pincode_model');
+
         
         // $this->load->model('dashboard_model');
         //$this->load->model('global_model');
@@ -4256,7 +4258,6 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $data['activemenu'] = 'cv_bank';
         $this->session->set_userdata($data);
         $company_id = $this->session->userdata('company_profile_id');
-        $this->load->model('Pincode_model');
         $data['active_cv']  = $this->Pincode_model->getactive_cvs($company_id);
 
        if (isset($fid) && !empty($fid)) {
@@ -4298,7 +4299,22 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
      // $this->load->view('fontend/employer/corporate_cv_bank',$data);
     }
     
-    
+    function get_active_cvs()
+    {
+        $exp = $this->input->post('exp');
+          $company_id = $this->session->userdata('company_profile_id');
+        $where_active="login BETWEEN DATE_SUB(NOW(), INTERVAL 30 DAY) And corporate_cv_bank.company_id = '$company_id' and corporate_cv_bank.js_experience='$exp'"
+        $join_cond  = array(
+                'js_info' => 'js_info.email = corporate_cv_bank.js_email|Left outer'
+                'js_login_logs' => 'js_login_logs.job_seeker_id = js_info.job_seeker_id|Left outer'
+            );
+
+         $active_cv  = $this->Master_model->getMaster('corporate_cv_bank', $where = $where_active, $join = $join_cond, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+
+        echo json_encode($active_cv);
+
+
+    }
  
     public function add_new_cv($id=Null)
     {

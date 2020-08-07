@@ -1705,8 +1705,17 @@ $("#job_title").autocomplete({
    function get_data()
    {
       var value = $('#exp').val();
-      $('#active_cv').html(value);
-      alert(value);
+       $.ajax({
+               url: "<?php echo base_url();?>employer/get_active_cvs",
+               type: "POST",
+               data:{exp:value},
+                 success: function(data)
+                 {
+                   $('#active_cv').html(data.length);
+                 }
+           });
+      // $('#active_cv').html(value);
+      // alert(value);
 
    }
 </script>
