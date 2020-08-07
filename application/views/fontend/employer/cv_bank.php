@@ -1705,7 +1705,7 @@ $("#job_title").autocomplete({
    function get_data()
    {
       var value = $('#exp').val();
-      $('#active_cv').val(value);
+      $('#active_cv').html(value);
       alert(value);
 
    }
