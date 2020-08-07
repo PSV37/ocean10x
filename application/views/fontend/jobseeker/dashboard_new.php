@@ -727,6 +727,7 @@
    {
    var id = $('#connection_id').val();
    var message = $('#btn-input').val();
+   if (message.length>0) {
    $.ajax({
                url: "<?php echo base_url();?>job_seeker/send_message",
                type: "POST",
@@ -740,6 +741,7 @@
                    $('#btn-input').val('');
                }
          });
+      }
    }
    
    function show_box(id){

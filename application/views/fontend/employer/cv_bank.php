@@ -1350,7 +1350,7 @@ span.select2-selection.select2-selection--single {
             <div class="filter1">
                <p style="font-size:18px;margin-top:15px;">Notice Period</p>
                <div class="range-wrap">
-                  <input type="range" class="range" id="notice_period" onchange="get_data();" min="0" max="20">
+                  <input type="range" class="range" id="notice_period" onchange="get_data();" min="0" max="7">
                   <output class="bubble notice_period"></output>
                </div>
             </div>
