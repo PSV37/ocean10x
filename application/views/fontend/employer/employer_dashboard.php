@@ -680,7 +680,7 @@
                  success: function(data)
                  {
                    $('.connections').html(data);
-                 $('#search_connection').val('');
+                  $('#search_connection').val('');
 
                  }
            });

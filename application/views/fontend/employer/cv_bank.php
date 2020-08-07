@@ -1324,7 +1324,7 @@ span.select2-selection.select2-selection--single {
             <div class="filter1">
                <p style="font-size:18px;margin-top:15px;">Experience</p>
                <div class="range-wrap">
-                  <input type="range" class="range" min="0" max="20">
+                  <input type="range" class="range" id="exp" onchange="get_data();" min="0" max="20">
                   <output class="bubble"></output>
                </div>
             </div>
@@ -1700,6 +1700,13 @@ $("#job_title").autocomplete({
     
             
            });
+</script>
+<script>
+   function get_data()
+   {
+      var value = $('#exp').val();
+      alert(value);
+   }
 </script>
 <script>
    function sliceSize(dataNum, dataTotal) {
