@@ -4259,6 +4259,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $this->session->set_userdata($data);
         $company_id = $this->session->userdata('company_profile_id');
         $data['active_cv']  = $this->Pincode_model->getactive_cvs($company_id);
+        $data['education_level'] = $this->Master_model->getMaster('education_level', $where = false);
 
        if (isset($fid) && !empty($fid)) {
 
