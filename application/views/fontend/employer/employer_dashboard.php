@@ -651,6 +651,7 @@
                  success: function(data)
                  {
                    $('.msg').html(data);
+                  $('#btn-input').val('');
                  }
            });
    }
