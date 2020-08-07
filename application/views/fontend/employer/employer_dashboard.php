@@ -467,15 +467,7 @@
             <button class="open-button" onclick="openForm()">Messaging</button>
             <div class="chat-popup" id="myForm" style="    display: none;
                max-width: 300px;  margin-left: 55px;">
-               <!-- <form action="/action_page.php" class="form-container">
-                  <h1>Chat</h1>
-                  
-                  <label for="msg"><b>Message</b></label>
-                  <textarea placeholder="Type message.." name="msg" required></textarea>
-                  
-                  <button type="submit" class="btn">Send</button>
-                  <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-                  </form> -->
+              
                <div class="chatbody">
                   <div class="panel panel-primary">
                      <div class="panel-heading top-bar">
@@ -502,7 +494,11 @@
                                     <?php $employer_id = $this->session->userdata('company_profile_id');
                                        $js_id = $row['js_id'];
                                          $whereres   = "msg_to='$employer_id' and message_status = '0' and msg_from = '$js_id'";
-                                         $msges = $this->Master_model->getMaster('messaging', $where =  $whereres, $join = false, $order = 'desc', $field = 'message_id', $select = 'count(*)as total,msg,created_date',$limit=false,$start=false, $search=false); ?>
+                                         $msges = $this->Master_model->getMaster('messaging', $where =  $whereres, $join = false, $order = 'desc', $field = 'message_id', $select = 'count(*)as total,msg,created_date',$limit=false,$start=false, $search=false); 
+
+                                         print_r($this->db->last_query());die;
+
+                                         ?>
                                     <?php $employer_id = $this->session->userdata('company_profile_id');
                                        // print_r($)
                                         if ($row['type'] == 'emp-emp' && $row['created_by'] == $this->session->userdata('company_profile_id') ) {
@@ -541,26 +537,9 @@
                            </div>
                            <?php } ?>
                         </div>
-                        <!--  <div class="row msg_container base_receive">
-                           <div class="col-md-2 col-xs-2 avatar">
-                               <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
-                           </div>
-                           <div class="col-md-10 col-xs-10">
-                               <div class="messages msg_receive">
-                                   <p>y</p>
-                                   <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
-                               </div>
-                           </div>
-                           </div> -->
+                       
                      </div>
-                     <!--  <div class="panel-footer">
-                        <div class="input-group">
-                            <input id="btn-input" type="text" class="form-control input-sm chat_input" placeholder="Write your message here..." />
-                            <span class="input-group-btn">
-                            <button class="btn btn-primary btn-sm" id="btn-chat" onclick="send_msg();"><i class="fa fa-send fa-1x" aria-hidden="true"></i></button>
-                            </span>
-                        </div>
-                        </div> -->
+                    
                   </div>
                </div>
             </div>
@@ -600,8 +579,7 @@
          }
          if ( $('#myForm').css('display') == 'block')
          {
-           // var cid = $('#connection_id').val();
-             // alert(cid);
+           
              get_list();
          }
                       
@@ -625,10 +603,7 @@
      $.ajax({
                  url: "<?php echo base_url();?>employer/get_list_connections",
                  type: "POST",
-                 // data: {id:id,name:name},
-                 // contentType:false,
-                 // processData:false,
-                  // dataType: "json",
+               
                  success: function(data)
                  {
                    $('.connections').html(data);
@@ -645,9 +620,7 @@
                  url: "<?php echo base_url();?>employer/send_message",
                  type: "POST",
                  data: {id:id,message:message},
-                 // contentType:false,
-                 // processData:false,
-                  // dataType: "json",
+               
                  success: function(data)
                  {
                    $('.msg').html(data);
@@ -665,9 +638,7 @@
                  url: "<?php echo base_url();?>employer/get_messages",
                  type: "POST",
                  data: {id:id},
-                 // contentType:false,
-                 // processData:false,
-                  // dataType: "json",
+             
                  success: function(data)
                  {
                     
@@ -678,15 +649,8 @@
                     
                  }
            });
-           // setInterval(function(){ 
-        if ( $('#myForm1').css('display') == 'block')
-       {
-         // alert(id);
-    
-         // show_box(id);
-       }
-      
-       // }, 30000);
+           
+        
       
    }
    
@@ -712,14 +676,12 @@
                  url: "<?php echo base_url();?>employer/add_new_connection",
                  type: "POST",
                  data: {id:id,name:name},
-                 // contentType:false,
-                 // processData:false,
-                  // dataType: "json",
+                
                  success: function(data)
                  {
                    $('.connections').html(data);
                  $('#search_connection').val('');
-                   
+
                  }
            });
    }
