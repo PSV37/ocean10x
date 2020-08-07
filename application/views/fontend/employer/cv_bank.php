@@ -1292,7 +1292,7 @@ span.select2-selection.select2-selection--single {
                         </li>
                         <li>
                            <em>Active cv</em>
-                           <span><?php echo sizeof($active_cv); ?></span>
+                           <span id="active_cv"><?php echo sizeof($active_cv); ?></span>
                         </li>
                         <li>
                            <em>Own cv's</em>
@@ -1705,7 +1705,9 @@ $("#job_title").autocomplete({
    function get_data()
    {
       var value = $('#exp').val();
+      $('#active_cv').val(value);
       alert(value);
+
    }
 </script>
 <script>
