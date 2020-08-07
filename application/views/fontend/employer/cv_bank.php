@@ -1711,7 +1711,8 @@ $("#job_title").autocomplete({
                data:{exp:value},
                  success: function(data)
                  {
-                   $('#active_cv').html(data.length);
+                     var getarray = jQuery.parseJSON(data);
+                   $('#active_cv').html(getarray.length);
                  }
            });
       // $('#active_cv').html(value);
