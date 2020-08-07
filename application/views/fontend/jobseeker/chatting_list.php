@@ -36,14 +36,14 @@
               echo $check['full_name']; 
               if (sizeof($msges) > 0 ) 
                 { ?> 
-         <div class="numberCircle"><?php ?></div>
+         <div class="numberCircle"><?php echo sizeof($msges); ?></div>
          <?php } 
             }else
             {
              echo $check['company_name'];
              if (sizeof($msges) > 0 ) 
                 { ?> 
-         <div class="numberCircle"><?php  sizeof($msges); ?></div>
+         <div class="numberCircle"><?php echo sizeof($msges); ?></div>
          <?php }
             } ?>
          </p>
