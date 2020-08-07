@@ -8,7 +8,7 @@
          <?php $js_id = $this->session->userdata('job_seeker_id');
             $emp_id = $row['emp_id'];
               $whereres   = "msg_to='$js_id' and message_status = '0' and msg_from = '$emp_id'";
-             $msges = $this->Master_model->getMaster('messaging', $where =  $whereres, $join = false, $order = 'desc', $field = 'message_id', $select = 'count(*)as total,msg,created_date',$limit=false,$start=false, $search=false); ?>
+             $msges = $this->Master_model->getMaster('messaging', $where =  $whereres, $join = false, $order = 'desc', $field = 'message_id', $select = '*',$limit='1',$start=false, $search=false); ?>
          <?php $js_id = $this->session->userdata('job_seeker_id');
             // print_r($)
                                          
@@ -36,14 +36,14 @@
               echo $check['full_name']; 
               if ($msges[0]['total'] > 0 ) 
                 { ?> 
-         <div class="numberCircle"><?php echo $msges[0]['total']; ?></div>
+         <div class="numberCircle"><?php echo sizeof($msges); ?></div>
          <?php } 
             }else
             {
              echo $check['company_name'];
              if ($msges[0]['total'] > 0 ) 
                 { ?> 
-         <div class="numberCircle"><?php echo $msges[0]['total']; ?></div>
+         <div class="numberCircle"><?php echo sizeof($msges); ?></div>
          <?php }
             } ?>
          </p>
