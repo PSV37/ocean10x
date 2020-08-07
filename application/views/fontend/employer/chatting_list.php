@@ -29,14 +29,14 @@
               echo $check['full_name']; 
               if ($msges[0]['total'] > 0 ) 
                 { ?> 
-         <div class="numberCircle"><?php  sizeof($msges); ?></div>
+         <div class="numberCircle"><?php  print_r(sizeof($msges)) ;  ?></div>
          <?php } 
             }else
             {
              echo $check['company_name'];
              if ($msges[0]['total'] > 0 ) 
                 { ?> 
-         <div class="numberCircle"><?php  sizeof($msges); ?></div>
+         <div class="numberCircle"><?php  print_r(sizeof($msges)) ;  ?></div>
          <?php }
             } ?>
          </p>

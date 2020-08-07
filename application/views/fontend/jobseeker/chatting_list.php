@@ -36,7 +36,7 @@
               echo $check['full_name']; 
               if ($msges[0]['total'] > 0 ) 
                 { ?> 
-         <div class="numberCircle"><?php  sizeof($msges); ?></div>
+         <div class="numberCircle"><?php ?></div>
          <?php } 
             }else
             {
