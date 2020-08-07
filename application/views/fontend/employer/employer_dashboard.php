@@ -434,10 +434,11 @@
             <div class="chat-popup" id="myForm1">
               <div class="chatbody">
                  <div class="panel panel-primary">
-                  <div class="panel-footer">
-                    <div class="msg">
+                   <div class="msg">
                       
                     </div>
+                  <div class="panel-footer">
+                   
                      <div class="input-group">
                       
                         <input id="btn-input" type="text" class="form-control input-sm chat_input" placeholder="Write your message here..." />

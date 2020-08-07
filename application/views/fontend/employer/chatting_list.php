@@ -1,5 +1,5 @@
 <?php foreach ($chatbox as $row) {?>
-<div class="row msg_container base_receive" style="margin-top: 50px;">
+<div class="row msg_container base_receive">
    <div class="col-md-2 col-xs-2 avatar">
       <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
    </div>
