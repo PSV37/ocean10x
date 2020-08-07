@@ -4305,8 +4305,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
           $company_id = $this->session->userdata('company_profile_id');
         $where_active="login BETWEEN DATE_SUB(NOW(), INTERVAL 30 DAY) And corporate_cv_bank.company_id = '$company_id' and corporate_cv_bank.js_experience='$exp'";
         $join_cond  = array(
-                'js_info' => 'js_info.email = corporate_cv_bank.js_email|Left outer',
-                'js_login_logs' => 'js_login_logs.job_seeker_id = js_info.job_seeker_id|Left outer'
+                'js_info' => 'js_info.email = corporate_cv_bank.js_email|Left',
+                'js_login_logs' => 'js_login_logs.job_seeker_id = js_info.job_seeker_id|Left'
             );
 
          $active_cv  = $this->Master_model->getMaster('corporate_cv_bank', $where = $where_active, $join = $join_cond, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
