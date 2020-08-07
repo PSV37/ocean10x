@@ -6554,6 +6554,7 @@ function update_external()
             'message_status' => '1'
           );
         $where11['msg_to'] = $employer_id;
+        $where11['connection_id'] = $js_id;
         
         $this->Master_model->master_update($del, 'messaging', $where11);
 
