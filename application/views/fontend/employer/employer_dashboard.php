@@ -616,6 +616,8 @@
      var id = $('#connection_id').val();
    
      var message = $('#btn-input').val();
+   if (message.replace(/\s/g, '').length > 0) {
+
      $.ajax({
                  url: "<?php echo base_url();?>employer/send_message",
                  type: "POST",
@@ -627,6 +629,7 @@
                   $('#btn-input').val('');
                  }
            });
+  }
    }
    
    function show_box(id){
