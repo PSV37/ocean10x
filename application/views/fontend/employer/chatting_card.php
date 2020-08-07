@@ -1,5 +1,5 @@
-<div class="chatbody">
-                  <div class="panel panel-primary">
+
+                 
                 <div class="panel-heading top-bar">
                     <div class="col-md-8 col-xs-8">
                         <h3 class="panel-title"><span class="glyphicon glyphicon-comment"></span><?php if (isset($check['full_name'])) {
@@ -46,15 +46,5 @@
                 <?php } ?>
                 </div>
                 <?php  } ?>
-                <div class="panel-footer">
-                    <div class="input-group">
-                          <input type="hidden" name="" value="<?php echo $check['emp_js_connection_id']; ?>" id="connection_id">
-                        <input id="btn-input" type="text" class="form-control input-sm chat_input" placeholder="Write your message here..." />
-                        <span class="input-group-btn">
-                        <button class="btn btn-primary btn-sm" value="<?php echo $check['emp_js_connection_id']; ?>" id="btn-chat" onclick="send_msg(<?php echo $check['emp_js_connection_id']; ?>);"><i class="fa fa-send fa-1x" aria-hidden="true"></i></button>
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-                 </div>
+               
+          
