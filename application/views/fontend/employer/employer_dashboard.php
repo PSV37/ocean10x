@@ -434,21 +434,20 @@
             <div class="chat-popup" id="myForm1">
               <div class="chatbody">
                  <div class="panel panel-primary">
-                  <div class="msges">
-                    
-                  </div>
-                   <div class="panel-footer">
-                    <div class="input-group">
-                          <input type="hidden" name="" value="<?php echo $check['emp_js_connection_id']; ?>" id="connection_id">
+                  <div class="panel-footer">
+                    <div class="msg">
+                      
+                    </div>
+                     <div class="input-group">
+                      
                         <input id="btn-input" type="text" class="form-control input-sm chat_input" placeholder="Write your message here..." />
                         <span class="input-group-btn">
                         <button class="btn btn-primary btn-sm" value="<?php echo $check['emp_js_connection_id']; ?>" id="btn-chat" onclick="send_msg(<?php echo $check['emp_js_connection_id']; ?>);"><i class="fa fa-send fa-1x" aria-hidden="true"></i></button>
                         </span>
-                    </div>
-                </div>
-            
+                     </div>
+      
                  </div>
-              </div>
+             </div>
             </div>
          </div>
          <div class="col-md-3 pro-bar">
@@ -650,7 +649,7 @@
                   // dataType: "json",
                  success: function(data)
                  {
-                   $('.msges').html(data);
+                   $('.msg').html(data);
                  }
            });
    }
@@ -671,7 +670,7 @@
                  {
                     
    
-                   $('.msges').html(data);
+                   $('.msg').html(data);
                      get_list();
    
                     
