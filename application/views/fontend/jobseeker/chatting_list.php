@@ -34,14 +34,14 @@
          <p><?php if (!empty($check['full_name'])) 
             {
               echo $check['full_name']; 
-              if ($msges[0]['total'] > 0 ) 
+              if (sizeof($msges) > 0 ) 
                 { ?> 
          <div class="numberCircle"><?php ?></div>
          <?php } 
             }else
             {
              echo $check['company_name'];
-             if ($msges[0]['total'] > 0 ) 
+             if (sizeof($msges) > 0 ) 
                 { ?> 
          <div class="numberCircle"><?php  sizeof($msges); ?></div>
          <?php }
