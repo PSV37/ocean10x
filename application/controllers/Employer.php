@@ -576,7 +576,8 @@ class Employer extends MY_Employer_Controller {
                     $company_name = $this->session->userdata('company_name');
                     $data = array('company' => $company_name, 'action_taken_for' => $company_name, 'field_changed' => 'Changed Password', 'Action' => 'Changed Password', 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
                     $result = $this->Master_model->master_insert($data, 'employer_audit_record');
-                    $where_id = "company_profile_id = '$employer_id'"$company_email = $this->Master_model->get_master_row('company_profile', $select = 'company_email', $where = $where_id, $join = FALSE) $subject = "Password changed Succcessfully";
+                    $where_id = "company_profile_id = '$employer_id'";
+                    $company_email = $this->Master_model->get_master_row('company_profile', $select = 'company_email', $where = $where_id, $join = FALSE) $subject = "Password changed Succcessfully";
                     $message = '<div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
 <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
 <br><br>Hi Dear,<br>Your password changed successfully<br><br><br>
