@@ -273,6 +273,8 @@ input:-internal-autofill-selected{background-color:#fff !important;}
   <div class="newuser"><i class="fa fa-user" aria-hidden="true"></i> Not on Ocean ? <a href="<?php echo base_url(); ?>employer_register">Register Now</a></div>
   </div>
 </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 <script>
   $(".toggle-password").click(function() {
 
