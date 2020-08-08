@@ -499,7 +499,7 @@
                      </div>
                      <div class="col-md-6 col-sm-12">
                         <div class="formrow">
-                           <label class="control-label">Company Phone:</label>
+                           <label class="control-label">Company Phone:</label><span class="required">*</span>
                            <input type="tel"  name="company_phone"  class="allownumericwithdecimal form-control" maxlength="10" id="company_phone" value="<?php 
                               if(!empty($company_info->company_phone)){ echo $company_info->company_phone; } ?>" onkeypress="phoneno()">   
                         </div>
@@ -508,7 +508,7 @@
                   <div class="row f-4">
                      <div class="col-md-6 col-sm-12">
                         <div class="formrow">
-                           <label class="control-label">Company Services:</label>
+                           <label class="control-label">Company Services:</label><span class="required">*</span>
                            <select name="company_category"  class="form-control select2" data-style="btn-default" data-live-search="true" tabindex="-1" aria-hidden="true">
                               <option value="">Select Services</option>
                               <?php if(!empty($company_info->company_category)) {
@@ -530,13 +530,13 @@
                   <div class="row f-5">
                      <div class="col-md-6 col-sm-12">
                         <div class="formrow">
-                           <label class="control-label">Contact Person Level:</label>
+                           <label class="control-label">Contact Person Level:</label><span class="required">*</span>
                            <input type="text" name="cont_person_level" id="cont_person_level" class="form-control" placeholder="E.g. Administrator" value="<?php  if(!empty($company_info->contact_name)){ echo $company_info->contact_name; } ?>">                                          
                         </div>
                      </div>
                      <div class="col-md-6 col-sm-12">
                         <div class="formrow">
-                           <label class="control-label">Contact Person Email:</label>
+                           <label class="control-label">Contact Person Email:</label><span class="required">*</span>
                            <input type="text" name="cont_person_email" id="cont_person_email" class="form-control" value="<?php if(!empty($company_info->cont_person_email)){ echo $company_info->cont_person_email; } ?>">                  
                         </div>
                      </div>
@@ -560,8 +560,8 @@
                   <div class="row f-8">
                      <div class="col-md-12 col-sm-12">
                         <div class="formrow">
-                           <label class="control-label">Company Address-2: <span class="required">*</span></label>
-                           <textarea name="company_address" class="form-control ckeditor" placeholder="Company Address"><?php if(!empty($company_info->company_address)){ echo $company_info->company_address2;
+                           <label class="control-label">Company Address-2: </label>
+                           <textarea name="company_address1" class="form-control ckeditor" placeholder="Company Address"><?php if(!empty($company_info->company_address)){ echo $company_info->company_address2;
                               } ?></textarea>        
                         </div>
                      </div>
