@@ -184,23 +184,27 @@ label {
     color:#99abaad9;}
 .btn-save-profile {
     background-color: #14b1aa;
-   padding: 3px 3PX;
+    padding: 3px 3PX;
     text-align: center;
     width: 20%;
-   
-    
     line-height: 30px;
-    
     BORDER-RADIUS: 41PX;
     margin-top: 30px;
     margin-bottom: 20px;
- 
     color: #fff;
     cursor: pointer;
+    border: none;
 }
 .btn-save-profile:hover {
     background-color:#0d807a;
     transition:1s;
+}
+span.select2-results {
+    margin-top: 27px;
+}
+input.select2-search__field {
+    display: block;
+    border-radius: 0px;
 }
 
 </style>
@@ -262,7 +266,7 @@ label {
                     <div class="col-md-6 col-sm-12">
                       <div class="formrow">
                         <label class="control-label">Country Code:</label>
-                        <select id="country" name="country_code" class="form-control"  aria-hidden="true">
+                        <select id="country" name="country_code" class="form-control select2"  aria-hidden="true">
                             <option>IN - India (+91)</option>
                             <option value="AD - Andorra (+376)">AD - Andorra (+376)</option>
                             <option value="AE - United Arab Emirates (+971)">AE - United Arab Emirates (+971)</option>
@@ -509,7 +513,7 @@ label {
               <div class="col-md-6 col-sm-12">
                 <div class="formrow">
                  <label class="control-label">Company Services:</label>
-                  <select name="company_category"  class="form-control " required="" data-style="btn-default" data-live-search="true" tabindex="-1" aria-hidden="true">
+                  <select name="company_category"  class="form-control select2" required="" data-style="btn-default" data-live-search="true" tabindex="-1" aria-hidden="true">
                     <option value="">Select Services</option> 
                       <?php if(!empty($company_info->company_category)) {
                       echo $this->job_category_model->selected($company_info->company_category);
@@ -570,7 +574,7 @@ label {
             <div class="row f-9">
                 <div class="col-md-4 col-sm-4">
                   <div class="formrow">
-                    <label class="control-label">Company Country: <span class="required">*</span></label>
+                    <label class="control-label select2">Company Country: <span class="required">*</span></label>
                     <select name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)" tabindex="-1" aria-hidden="true"><?php foreach($country as $key){?>
                       <option value="<?php echo $key['country_id']; ?>"<?php if($company_info->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
                       <?php } ?>
@@ -579,14 +583,14 @@ label {
                 </div>
             <div class="col-md-4 col-sm-4">
                 <div class="formrow">
-                    <label class="control-label">Company State: <span class="required">*</span></label>
+                    <label class="control-label select2">Company State: <span class="required">*</span></label>
                     <select name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)"><option value="">Select State</option>
                     </select>
                 </div>
              </div>
             <div class="col-md-4 col-sm-4">
                 <div class="formrow">
-                    <label class="control-label">Company City: <span class="required">*</span></label>
+                    <label class="control-label select2">Company City: <span class="required">*</span></label>
                     <select name="city_id" id="city_id" class="form-control">
                         <option value="">Select City</option>
                     </select>
@@ -1021,24 +1025,11 @@ $(document).ready(function(){
 </script>  
 
  <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
+
 <script>
-$("#country_id").select2( {
-    placeholder: "Select Country",
-    allowClear: true
-    } );
+   $('.select2').select2();
 </script>
-<script>
-$("#company_category").select2( {
-    placeholder: "Select Industry",
-    allowClear: true
-    } );
-</script>
-<script>
-$("#country").select2( {
-    placeholder: "Select Country Code",
-    allowClear: true
-    } );
-</script>
+
 
 
 <script>
