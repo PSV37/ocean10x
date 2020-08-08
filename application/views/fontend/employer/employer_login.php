@@ -1,5 +1,21 @@
 <script src="https://kit.fontawesome.com/a076d05399.js"></script><head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/font-awesome.css">
+
+<link href="<?php echo base_url(); ?>asset/css/plugins/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="<?php echo base_url() ?>fontend/images/favicon.ico" type="image/x-icon">
+
+<link href="<?php echo base_url(); ?>asset/css/jquery-ui.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/main.css">
+<!--Token-Input CSS-->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>asset/styles/token-input.css" type="text/css" />
+    <link rel="stylesheet" href="<?php echo base_url(); ?>asset/styles/token-input-facebook.css" type="text/css" />
+   
+<script src="<?php echo base_url() ?>fontend/js/jquery.js "></script>
+
+
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
 </head>
 
@@ -225,7 +241,7 @@ input:-internal-autofill-selected{background-color:#fff !important;}
 .field-icon {
   float: right;
   margin-right: 8px;
-  margin-top: -27px;
+  margin-top: -60px;
   position: relative;
   z-index: 2;
   cursor:pointer;    
