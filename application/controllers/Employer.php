@@ -71,7 +71,7 @@ class Employer extends MY_Employer_Controller
         $this->form_validation->set_rules('cont_person_email','Contact Person Email', 'required|valid_email');
         $this->form_validation->set_rules('cont_person_mobile','Contact Person Mobile', 'required|min_length[10]|integer');
         $this->form_validation->set_rules('company_address1','Company Address 1', 'required');
-        $this->form_validation->set_rules('company_address2','Company Address 2', 'required');
+        // $this->form_validation->set_rules('company_address2','Company Address 2', 'required');
             
             
             
