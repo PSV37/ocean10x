@@ -237,13 +237,15 @@
                      <div class="col-md-6 col-sm-12">
                         <div class="formrow">
                            <label class="control-label">Company Name:</label>
-                           <input type="text" name="company_name" class="form-control" placeholder="Company Name" value="<?php if(!empty($company_info->company_name)){ echo $company_info->company_name; } ?>" class="form-control" placeholder="Company Name">
+                           <input type="text" name="company_name" class="form-control" placeholder="Company Name" value="<?php if(!empty($company_info->company_name)){ echo $company_info->company_name; } ?><?php echo set_value('company_name'); ?>" class="form-control" placeholder="Company Name">
+                            <?php echo form_error('company_name'); ?>        
                         </div>
                      </div>
                      <div class="col-md-6 col-sm-12">
                         <div class="formrow">
                            <label class="control-label">Company Email: </label>
-                           <input type="text" readonly="" name="company_email" class="form-control" placeholder="Company Email" value="<?php  if(!empty($company_info->company_email)){ echo $company_info->company_email; } ?>">
+                           <input type="text" readonly="" name="company_email" class="form-control" placeholder="Company Email" value="<?php  if(!empty($company_info->company_email)){ echo $company_info->company_email; } ?><?php echo set_value('company_email'); ?>">
+                            <?php echo form_error('company_email'); ?>        
                         </div>
                      </div>
                   </div>
@@ -251,13 +253,15 @@
                      <div class="col-md-6 col-sm-12">
                         <div class="formrow">
                            <label class="control-label">Alternate Email ID <span class="required">*</span></label>
-                           <input type="text" name="alternate_email_id"  class="form-control" placeholder="Alternate Email ID" value="<?php if(!empty($company_info->alternate_email_id)){ echo $company_info->alternate_email_id; } ?>">
+                           <input type="text" name="alternate_email_id"  class="form-control" placeholder="Alternate Email ID" value="<?php if(!empty($company_info->alternate_email_id)){ echo $company_info->alternate_email_id; } ?><?php echo set_value('alternate_email_id'); ?>">
+                            <?php echo form_error('alternate_email_id'); ?>        
                         </div>
                      </div>
                      <div class="col-md-6 col-sm-12">
                         <div class="formrow">
                            <label class="control-label">Company URL:</label>
-                           <input type="text" name="company_url"  class="form-control" placeholder="Company Website" value="<?php  if(!empty($company_info->company_url)){ echo $company_info->company_url; } ?>">
+                           <input type="text" name="company_url"  class="form-control" placeholder="Company Website" value="<?php  if(!empty($company_info->company_url)){ echo $company_info->company_url; } ?><?php echo set_value('company_url'); ?>">
+                            <?php echo form_error('company_url'); ?>        
                         </div>
                      </div>
                   </div>
@@ -498,13 +502,15 @@
                               <option value="ZM - Zambia (+260)">ZM - Zambia (+260)</option>
                               <option value="ZW - Zimbabwe (+263)">ZW - Zimbabwe (+263)</option>
                            </select>
+                            <?php echo form_error('country_code'); ?>        
                         </div>
                      </div>
                      <div class="col-md-6 col-sm-12">
                         <div class="formrow">
                            <label class="control-label">Company Phone:</label><span class="required">*</span>
                            <input type="tel"  name="company_phone"  class="allownumericwithdecimal form-control" maxlength="10" id="company_phone" value="<?php 
-                              if(!empty($company_info->company_phone)){ echo $company_info->company_phone; } ?>" onkeypress="phoneno()">   
+                              if(!empty($company_info->company_phone)){ echo $company_info->company_phone; } ?><?php echo set_value('company_phone'); ?>" onkeypress="phoneno()">   
+                               <?php echo form_error('company_phone'); ?>        
                         </div>
                      </div>
                   </div>
@@ -514,19 +520,24 @@
                            <label class="control-label">Company Services:</label><span class="required">*</span>
                            <select name="company_category"  class="form-control select2" data-style="btn-default" data-live-search="true" tabindex="-1" aria-hidden="true">
                               <option value="">Select Services</option>
-                              <?php if(!empty($company_info->company_category)) {
+                              <?php $value = echo set_value('company_category');   if (!empty($value)) {
+                                echo $this->job_category_model->selected($value);
+                                 }
+                              else if(!empty($company_info->company_category)) {
                                  echo $this->job_category_model->selected($company_info->company_category);
                                  } else {
                                     echo $this->job_category_model->selected();
                                  }
                                   ?><?php echo form_error('company_category'); ?>
                            </select>
+                            <?php echo form_error('company_category'); ?>        
                         </div>
                      </div>
                      <div class="col-md-6 col-sm-12">
                         <div class="formrow">
                            <label class="control-label">Company Contact Person:<span class="required">*</span></label>  
-                           <input type="text" name="contact_name" class="form-control" id="contact_name" placeholder="Contact Name">
+                           <input type="text" name="contact_name" class="form-control" id="contact_name" placeholder="Contact Name" value="<?php echo set_value('contact_name'); ?>">
+                            <?php echo form_error('contact_name'); ?>        
                         </div>
                      </div>
                   </div>
@@ -534,13 +545,14 @@
                      <div class="col-md-6 col-sm-12">
                         <div class="formrow">
                            <label class="control-label">Contact Person Level:</label><span class="required">*</span>
-                           <input type="text" name="cont_person_level" id="cont_person_level" class="form-control" placeholder="E.g. Administrator" value="<?php  if(!empty($company_info->contact_name)){ echo $company_info->contact_name; } ?>">                                          
+                           <input type="text" name="cont_person_level" id="cont_person_level" class="form-control" placeholder="E.g. Administrator" value="<?php  if(!empty($company_info->contact_name)){ echo $company_info->contact_name; } ?><?php echo set_value('cont_person_level'); ?>">   
+                            <?php echo form_error('cont_person_level'); ?>                                               
                         </div>
                      </div>
                      <div class="col-md-6 col-sm-12">
                         <div class="formrow">
                            <label class="control-label">Contact Person Email:</label><span class="required">*</span>
-                           <input type="text" name="cont_person_email" id="cont_person_email" class="form-control" value="<?php if(!empty($company_info->cont_person_email)){ echo $company_info->cont_person_email; } ?>">                  
+                           <input type="text" name="cont_person_email" id="cont_person_email" class="form-control" value="<?php if(!empty($company_info->cont_person_email)){ echo $company_info->cont_person_email; } ?><?php echo set_value('cont_person_email'); ?>">        <?php echo form_error('cont_person_email'); ?>                   
                         </div>
                      </div>
                   </div>
@@ -548,7 +560,8 @@
                      <div class="col-md-6 col-sm-12">
                         <div class="formrow">
                            <label class="control-label">Contact Person Mobile: <span class="required">*</span></label>
-                           <input type="text" name="cont_person_mobile" id="cont_person_mobile" class="form-control" value="<?php  if(!empty($company_info->cont_person_mobile)){ echo $company_info->cont_person_mobile; } ?>" onkeypress="phonenoo()" maxlength="10">                    
+                           <input type="text" name="cont_person_mobile" id="cont_person_mobile" class="form-control" value="<?php  if(!empty($company_info->cont_person_mobile)){ echo $company_info->cont_person_mobile; } ?><?php echo set_value('cont_person_mobile'); ?>" onkeypress="phonenoo()" maxlength="10"> 
+                            <?php echo form_error('cont_person_mobile'); ?>                           
                         </div>
                      </div>
                   </div>
@@ -556,7 +569,8 @@
                      <div class="col-md-12 col-sm-12">
                         <div class="formrow">
                            <label class="control-label">Company Address-1: <span class="required">*</span></label>
-                           <textarea name="company_address" class="form-control ckeditor" placeholder="Company Address"><?php if(!empty($company_info->company_address)){ echo $company_info->company_address; } ?></textarea>
+                           <textarea name="company_address1" class="form-control ckeditor" placeholder="Company Address"><?php if(!empty($company_info->company_address)){ echo $company_info->company_address; } ?></textarea><?php echo set_value('company_address1'); ?>
+                            <?php echo form_error('company_address1'); ?>        
                         </div>
                      </div>
                   </div>
@@ -564,8 +578,9 @@
                      <div class="col-md-12 col-sm-12">
                         <div class="formrow">
                            <label class="control-label">Company Address-2: </label>
-                           <textarea name="company_address1" class="form-control ckeditor" placeholder="Company Address"><?php if(!empty($company_info->company_address)){ echo $company_info->company_address2;
-                              } ?></textarea>        
+                           <textarea name="company_address2" class="form-control ckeditor" placeholder="Company Address"><?php if(!empty($company_info->company_address)){ echo $company_info->company_address2;
+                              } ?></textarea>  <?php echo set_value('company_address2'); ?>
+                               <?php echo form_error('company_address2'); ?>              
                         </div>
                      </div>
                   </div>
@@ -574,10 +589,15 @@
                         <div class="formrow">
                            <label class="control-label ">Company Country: <span class="required">*</span></label>
                            <select name="country_id" id="country_id" class="form-control select2" onchange="getStates(this.value)" tabindex="-1" aria-hidden="true">
-                              <?php foreach($country as $key){?>
-                              <option value="<?php echo $key['country_id']; ?>"<?php if($company_info->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
+                              <?php 
+                              $val =  echo set_value('country_id'); 
+                               foreach($country as $key){?>
+                              <option value="<?php echo $key['country_id']; ?>"<?php if ($val == $key['country_id'] ) {
+                                 echo "selected";
+                              } elseif($company_info->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
                               <?php } ?>
                            </select>
+                            <?php echo form_error('country_id'); ?>        
                         </div>
                      </div>
                      <div class="col-md-4 col-sm-4">
@@ -586,6 +606,7 @@
                            <select name="state_id" id="state_id" class="form-control select2" onchange="getCitys(this.value)">
                               <option value="">Select State</option>
                            </select>
+                            <?php echo form_error('state_id'); ?>        
                         </div>
                      </div>
                      <div class="col-md-4 col-sm-4">
@@ -594,6 +615,7 @@
                            <select name="city_id" id="city_id" class="form-control select2">
                               <option value="">Select City</option>
                            </select>
+                            <?php echo form_error('city_id'); ?>        
                         </div>
                      </div>
                   </div>
@@ -602,7 +624,8 @@
                         <div class="formrow">
                            <label class="control-label">Pincode: <span class="required">*</span></label>
                            <input type="text" name="company_pincode" id="company_pincode" class="form-control ui-autocomplete-input" value="<?php 
-                              if(!empty($company_info->company_pincode)){ echo $company_info->company_pincode; } ?>">                
+                              if(!empty($company_info->company_pincode)){ echo $company_info->company_pincode; } ?><?php echo set_value('company_pincode'); ?>">  
+                               <?php echo form_error('company_pincode'); ?>                      
                         </div>
                      </div>
                   </div>
@@ -611,6 +634,7 @@
                         <div class="formrow">
                            <label class="control-label">Company Logo<small> company logo measures 300 x 300 pixels </small></label>
                            <input type="file" name="company_logo" value="4ce62c1e36ede93d46de44f1de63c4f0.jpg" class="form-control">
+                            <?php echo form_error('company_logo'); ?>        
                         </div>
                      </div>
                   </div>

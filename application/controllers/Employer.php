@@ -131,7 +131,7 @@ class Employer extends MY_Employer_Controller
                     'hot_jobs' => $this->input->post('hot_jobs'),
                     'company_career_link' => $this->input->post('company_career_link'),
                     //'company_service'  => $this->input->post('company_service'),
-                    'company_address' => $this->input->post('company_address'),
+                    'company_address' => $this->input->post('company_address1'),
                     'company_address2' => $this->input->post('company_address2'),
                     'country_id' => $this->input->post('country_id'),
                     'state_id' => $this->input->post('state_id'),
