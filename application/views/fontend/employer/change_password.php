@@ -1,6 +1,7 @@
 <?php $this->load->view('fontend/layout/employer_new_header.php');?> 
 <!---header-->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/post_new_job.css">
+<!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/questionbank.css"> -->
 <style type="text/css">
    .required
    {
@@ -34,7 +35,7 @@ form#submit {
   margin-top: 65px;
 }
 </style>
-<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/questionbank.css">
+
 <div class="container">
    <div class="col-md-12">
       <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
