@@ -181,7 +181,7 @@ $(document).ready(function() {
    
    'newpassword': {  
     minLength: 8,
-    RegExp : newpassword_regex,
+   newpassword_regex: true
    
  },
    
