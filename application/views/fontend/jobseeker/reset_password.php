@@ -20,7 +20,7 @@
    .field-icon {
    float: right;
    margin-right: 8px;
-   margin-top: -60px;
+   margin-top: -30px;
    position: relative;
    z-index: 2;
    cursor:pointer;    
