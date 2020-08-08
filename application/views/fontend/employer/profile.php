@@ -598,7 +598,7 @@
                            <label class="control-label ">Company Country: <span class="required">*</span></label>
                            <select name="country_id" id="country_id" class="form-control select2" onchange="getStates(this.value)" tabindex="-1" aria-hidden="true">
                               <?php 
-                                 $val =  echo set_value('country_id'); 
+                                 $val =   set_value('country_id'); 
                                   foreach($country as $key){?>
                               <option value="<?php echo $key['country_id']; ?>"<?php if ($val == $key['country_id'] ) {
                                  echo "selected";
