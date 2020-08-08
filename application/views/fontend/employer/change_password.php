@@ -68,7 +68,7 @@
                <div class="col-md-4">
                   <div class="form-group ques_type">
                      <label for="exampleInputEmail1">New Password<span class="required">*</span></label>
-                     <input type="password" name="newpassword" onkeyup="validatePassword(this.value);" class="form-control" required placeholder="Type your new password">
+                     <input type="password" name="newpassword" id="myInput" onkeyup="validatePassword(this.value);" class="form-control" required placeholder="Type your new password">
                      <span toggle="#password-field" class="fa fa-eye-slash field-icon toggle-password"></span>
                   </div>
                </div>
