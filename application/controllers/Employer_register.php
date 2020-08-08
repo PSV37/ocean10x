@@ -105,6 +105,7 @@ class Employer_register extends CI_Controller
         $to_email=$this->input->post('company_email');
 		$exist_companyname = $this->company_profile_model->companyname_check($this->input->post('company_name'));
         $exist_email    = $this->company_profile_model->email_check($this->input->post('company_email'));
+        $exist_email_js    = $this->job_seeker_model->email_check($this->input->post('company_email'));
         $exist_username = $this->company_profile_model->username_check($this->input->post('company_username'));
 		
 $this->session->set_userdata('reg_in', $company_profile );
@@ -139,7 +140,7 @@ $this->session->set_userdata('reg_in', $company_profile );
             redirect('employer_register');
         } 
 
-        if ($exist_email) {
+        if ($exist_email || $exist_email_js) {
             // all Ready Account Message
             $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your Email Or Account Already Use This!</div>');
             redirect('employer_register');

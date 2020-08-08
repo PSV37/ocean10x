@@ -60,62 +60,66 @@ class Register extends CI_Controller
             );
             $email_to = $this->input->post('email');
             $full_name = $this->input->post('full_name');
-            $exist_email    = $this->job_seeker_model->email_check($this->input->post('email'));
-            // $exist_username = $this->job_seeker_model->username_check($this->input->post('user_name'));
-                 $this->session->set_userdata('reg_jobseeker', $js_info );
+            $exist_email_js    = $this->job_seeker_model->email_check($this->input->post('email'));
+            if (!$exist_email_js) 
+            {
 
-			// if ($exist_username) {
-   //              // all Ready Account Message
-   //              $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your username Or Account Already Use This!</div>');
-   //              redirect('register');
-   //          }
+                    $exist_email_company    = $this->Company_Profile_Model->email_check($this->input->post('email'));
 
-            if ($exist_email) {
-                // all Ready Account Message
-                $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your Email Or Account Already Use This!</div>');
-                redirect('register');
-            } else {
-                $inputCaptcha = $this->input->post('captcha');
-                $sessCaptcha  = $this->session->userdata('captchaCode');
-                if ($inputCaptcha === $sessCaptcha) {
-                    
-                $last_id = $this->job_seeker_model->insert($js_info);
+                if ($exist_email) 
+                {
+                    // all Ready Account Message
+                    $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your Email Or Account Already Use This!</div>');
+                    redirect('register');
+                } else 
+                {
+               
 
-                // Last Id Add Personal Info Table
-                $js_personal = array(
-                    'job_seeker_id' => $last_id,
-                );
-                $this->job_seeker_personal_model->insert($js_personal);
+                    $inputCaptcha = $this->input->post('captcha');
+                    $sessCaptcha  = $this->session->userdata('captchaCode');
+                    if ($inputCaptcha === $sessCaptcha) {
+                        
+                    $last_id = $this->job_seeker_model->insert($js_info);
 
-                // Last ID add Js Photo Table
-                $js_photo = array(
-                    'job_seeker_id' => $last_id,
-                );
-                $this->job_seeker_photo_model->insert($js_photo);
+                    // Last Id Add Personal Info Table
+                    $js_personal = array(
+                        'job_seeker_id' => $last_id,
+                    );
+                    $this->job_seeker_personal_model->insert($js_personal);
 
-                // Last ID add Js Carrer Table
-                $js_career = array(
-                    'job_seeker_id' => $last_id,
-                );
-                $this->Job_career_model->insert($js_career);
+                    // Last ID add Js Photo Table
+                    $js_photo = array(
+                        'job_seeker_id' => $last_id,
+                    );
+                    $this->job_seeker_photo_model->insert($js_photo);
 
-                // Last ID add Js Special Table
-                $js_specialiazation = array(
-                    'job_seeker_id' => $last_id,
-                );
+                    // Last ID add Js Carrer Table
+                    $js_career = array(
+                        'job_seeker_id' => $last_id,
+                    );
+                    $this->Job_career_model->insert($js_career);
 
-                    $this->Job_specialization_model->insert($js_specialiazation);
-                    // successfully sent mail
-                   $this->job_seeker_model->sendEmail($email_to,$full_name);
-                    $this->session->unset_userdata('reg_jobseeker');
-  
+                    // Last ID add Js Special Table
+                    $js_specialiazation = array(
+                        'job_seeker_id' => $last_id,
+                    );
 
-                    $this->load->view('fontend/jobseeker/register_success');
-                } else {
-                    $this->session->set_flashdata('captcha_msg', '<div class="alert alert-warning text-center">Captcha Code Does not Match Please Try Again</div>');
-                    redirect_back();
+                        $this->Job_specialization_model->insert($js_specialiazation);
+                        // successfully sent mail
+                       $this->job_seeker_model->sendEmail($email_to,$full_name);
+                        $this->session->unset_userdata('reg_jobseeker');
+      
+
+                        $this->load->view('fontend/jobseeker/register_success');
+                    } else {
+                        $this->session->set_flashdata('captcha_msg', '<div class="alert alert-warning text-center">Captcha Code Does not Match Please Try Again</div>');
+                        redirect_back();
+                    }
                 }
-            }
+
+             }
+           
+            
         }
 
         } else {
