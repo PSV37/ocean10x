@@ -12,7 +12,8 @@ class Register extends CI_Controller
         $this->load->model('job_seeker_personal_model');
         $this->load->model('job_seeker_photo_model');
         $this->load->model('Job_career_model');
-        $this->load->model('Company_Profile_Model');
+        $this->load->model('company_profile_model');
+        
 
         $this->load->model('Job_specialization_model');
         $this->load->helper("captcha");
