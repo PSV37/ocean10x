@@ -24,33 +24,43 @@
    color: red;
    }
    .add-question {
-    margin-top: 100px;
-    padding: 20px;
-}
-form#submit {
-    margin-left: 30px;
-}
-.emp
-{
-  margin-top: 65px;
-}
+   margin-top: 100px;
+   padding: 20px;
+   }
+   form#submit {
+   margin-left: 30px;
+   }
+   .emp
+   {
+   margin-top: 65px;
+   }
+   .required
+   {
+   color: red;
+   }
+   .field-icon {
+   float: right;
+   margin-right: 8px;
+   margin-top: -27px;
+   position: relative;
+   z-index: 2;
+   cursor:pointer;
+   }
 </style>
-
 <div class="container">
    <div class="col-md-12">
       <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
       <?php echo $this->session->flashdata('change_password'); ?>
-    
-         <div class="col-md-9 add-question">
-            <div class="header-bookbank">
-               Change Password
-            </div>
-              <form id="submit" class="submit-form" action="<?php echo base_url(); ?>employer/change_password" method="post">
+      <div class="col-md-9 add-question">
+         <div class="header-bookbank">
+            Change Password
+         </div>
+         <form id="submit" class="submit-form" action="<?php echo base_url(); ?>employer/change_password" method="post">
             <div class="row">
                <div class="col-md-4">
                   <div class="form-group lineitem_id ">
                      <label for="exampleInputEmail1">Current Password<span class="required">*</span></label>
-                     <input type="password" name="oldpassword" class="form-control" placeholder="Type your current password">
+                     <input type="password" name="oldpassword" required class="form-control" placeholder="Type your current password">
                   </div>
                </div>
             </div>
@@ -58,15 +68,83 @@ form#submit {
                <div class="col-md-4">
                   <div class="form-group ques_type">
                      <label for="exampleInputEmail1">New Password<span class="required">*</span></label>
-                     <input type="password" name="newpassword" class="form-control" placeholder="Type your new password">
+                     <input type="password" name="newpassword" onkeyup="validatePassword(this.value);" class="form-control" required placeholder="Type your new password">
+                     <span toggle="#password-field" class="fa fa-eye-slash field-icon toggle-password"></span>
                   </div>
+               </div>
+               <div class="col-md-4 col-sm-12">
+                  <label></label><br>
+                  <p id="output"></p>
                </div>
             </div>
             <div class="col-md-4"></div>
             <div class="col-md-4" style="text-align:right;">
                <button id="submit" type="Submit" class="save_question">Update Password</button>
             </div>
-        </form>
+         </form>
       </div>
    </div>
 </div>
+<script>
+   function validatePassword(password) {
+       
+       // Do not show anything when the length of password is zero.
+       if (password.length === 0) {
+           document.getElementById("output").innerHTML = "";
+           return;
+       }
+       // Create an array and push all possible values that you want in password
+       var matchedCase = new Array();
+       matchedCase.push("[$@$!%*#?&]"); // Special Charector
+       matchedCase.push("[A-Z]");      // Uppercase Alpabates
+       matchedCase.push("[0-9]");      // Numbers
+       matchedCase.push("[a-z]");     // Lowercase Alphabates
+       matchedCase.push("[9,20]");
+   
+       // Check the conditions
+       var ctr = 0;
+       for (var i = 0; i < matchedCase.length; i++) {
+           if (new RegExp(matchedCase[i]).test(password)) {
+               ctr++;
+           }
+       }
+       // Display it
+       var color = "";
+       var strength = "";
+       switch (ctr) {
+           case 0:
+           case 1:
+           case 2:
+               strength = "Very Weak";
+               color = "red";
+               break;
+           case 3:
+           case 4:
+               strength = "Medium";
+               color = "orange";
+               break;
+           case 5:
+               strength = "Strong";
+               color = "green";
+               break;
+   
+       }
+       document.getElementById("output").innerHTML = strength;
+       document.getElementById("output").style.color = color;
+             }
+         
+</script>
+<script>
+   $(".toggle-password").click(function() {
+   
+   $(this).toggleClass("fa-eye fa-eye-slash");
+   var x = document.getElementById("myInput");
+     if (x.type === "password") {
+       x.type = "text";
+     } else {
+       x.type = "password";
+     }
+   
+   });
+   
+</script>
