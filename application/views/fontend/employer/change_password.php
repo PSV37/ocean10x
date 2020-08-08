@@ -181,26 +181,8 @@ $(document).ready(function() {
    
    'newpassword': {  
     minLength: 8,
-    containSpecialChars: {
-      text: "Your input should contain at least minLength special character",
-      minLength: 1,
-      regex: new RegExp('([^!,%,&,@,#,$,^,*,?,_,~])', 'g')
-    },
-    containLowercase: {
-      text: "Your input should contain at least minLength lower case character",
-      minLength: 1,
-      regex: new RegExp('[^a-z]', 'g')
-    },
-    containUppercase: {
-      text: "Your input should contain at least minLength upper case character",
-      minLength: 1,
-      regex: new RegExp('[^A-Z]', 'g')
-    },
-    containNumbers: {
-      text: "Your input should contain at least minLength number",
-      minLength: 1,
-      regex: new RegExp('[^0-9]', 'g')
-    }
+    RegExp : newpassword_regex,
+   
  },
    
    },
@@ -210,4 +192,11 @@ $(document).ready(function() {
   
    }) ;
    });
+</script>
+<script>
+   $.validator.addMethod("newpassword_regex", function(value, element) {
+   
+   return this.optional(element) || /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(value);
+   
+   }, "Please Enter 6 digits Company Pincode");
 </script>
