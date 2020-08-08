@@ -29,6 +29,7 @@
    }
    form#submit {
    margin-left: 30px;
+   margin-top: 25px;
    }
    .emp
    {
@@ -53,7 +54,7 @@
 <div class="container">
    <div class="col-md-12">
       <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
-      <?php echo $this->session->flashdata('change_password'); ?>
+     <!--  <?php echo $this->session->flashdata('change_password'); ?> -->
       <div class="col-md-9 add-question">
          <div class="header-bookbank">
             Change Password
