@@ -574,8 +574,8 @@ input.select2-search__field {
             <div class="row f-9">
                 <div class="col-md-4 col-sm-4">
                   <div class="formrow">
-                    <label class="control-label select2">Company Country: <span class="required">*</span></label>
-                    <select name="country_id" id="country_id" class="form-control" onchange="getStates(this.value)" tabindex="-1" aria-hidden="true"><?php foreach($country as $key){?>
+                    <label class="control-label ">Company Country: <span class="required">*</span></label>
+                    <select name="country_id" id="country_id" class="form-control select2" onchange="getStates(this.value)" tabindex="-1" aria-hidden="true"><?php foreach($country as $key){?>
                       <option value="<?php echo $key['country_id']; ?>"<?php if($company_info->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
                       <?php } ?>
                   </select>
@@ -583,15 +583,15 @@ input.select2-search__field {
                 </div>
             <div class="col-md-4 col-sm-4">
                 <div class="formrow">
-                    <label class="control-label select2">Company State: <span class="required">*</span></label>
-                    <select name="state_id" id="state_id" class="form-control" onchange="getCitys(this.value)"><option value="">Select State</option>
+                    <label class="control-label ">Company State: <span class="required">*</span></label>
+                    <select name="state_id" id="state_id" class="form-control select2" onchange="getCitys(this.value)"><option value="">Select State</option>
                     </select>
                 </div>
              </div>
             <div class="col-md-4 col-sm-4">
                 <div class="formrow">
-                    <label class="control-label select2">Company City: <span class="required">*</span></label>
-                    <select name="city_id" id="city_id" class="form-control">
+                    <label class="control-label ">Company City: <span class="required">*</span></label>
+                    <select name="city_id" id="city_id" class="form-control select2">
                         <option value="">Select City</option>
                     </select>
                   </div>
