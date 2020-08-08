@@ -2768,13 +2768,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $data['activemenu'] = 'cv_bank';
         $this->session->set_userdata($data);
         $company_id = $this->session->userdata('company_profile_id');
-<<<<<<< HEAD
         $this->load->model(Pincode_model);
 
         $data['active_cv']  = $this->Pincode_model->getactive_cvs($company_id);
-=======
-        $data['active_cv'] = $this->Pincode_model->getactive_cvs($company_id);
->>>>>>> 7f1ccfff2b420b75c8317714a8cbd0d711180841
         $data['education_level'] = $this->Master_model->getMaster('education_level', $where = false);
         if (isset($fid) && !empty($fid)) {
             $this->session->unset_userdata('activesubmenu');
