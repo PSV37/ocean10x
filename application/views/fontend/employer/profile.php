@@ -207,6 +207,11 @@ input.select2-search__field {
     border-radius: 0px;
 }
 
+span.required {
+    color: red;
+    margin-left: 2px;
+}
+
 </style>
 
 
@@ -236,7 +241,7 @@ input.select2-search__field {
                         <div class="col-md-6 col-sm-12">   
                           <div class="formrow">
                             <label class="control-label">Company Name:</label>
-                            <input type="text" required="" name="company_name" class="form-control" placeholder="Company Name" value="<?php if(!empty($company_info->company_name)){ echo $company_info->company_name; } ?>" class="form-control" placeholder="Company Name">
+                            <input type="text" name="company_name" class="form-control" placeholder="Company Name" value="<?php if(!empty($company_info->company_name)){ echo $company_info->company_name; } ?>" class="form-control" placeholder="Company Name">
                           </div>
                         </div>
 
@@ -251,7 +256,7 @@ input.select2-search__field {
                         <div class="col-md-6 col-sm-12">   
                           <div class="formrow">
                             <label class="control-label">Alternate Email ID <span class="required">*</span></label>
-                            <input type="text" required="" name="alternate_email_id"  class="form-control" placeholder="Alternate Email ID" value="<?php if(!empty($company_info->alternate_email_id)){ echo $company_info->alternate_email_id; } ?>">
+                            <input type="text" name="alternate_email_id"  class="form-control" placeholder="Alternate Email ID" value="<?php if(!empty($company_info->alternate_email_id)){ echo $company_info->alternate_email_id; } ?>">
                            </div>
                         </div>
 
@@ -504,7 +509,7 @@ input.select2-search__field {
                 <div class="col-md-6 col-sm-12">
                     <div class="formrow">
                     <label class="control-label">Company Phone:</label>
-                      <input type="tel" required="" name="company_phone"  class="allownumericwithdecimal form-control" maxlength="10" id="company_phone" value="<?php 
+                      <input type="tel"  name="company_phone"  class="allownumericwithdecimal form-control" maxlength="10" id="company_phone" value="<?php 
                        if(!empty($company_info->company_phone)){ echo $company_info->company_phone; } ?>" onkeypress="phoneno()">   
                     </div>
                 </div>
@@ -513,7 +518,7 @@ input.select2-search__field {
               <div class="col-md-6 col-sm-12">
                 <div class="formrow">
                  <label class="control-label">Company Services:</label>
-                  <select name="company_category"  class="form-control select2" required="" data-style="btn-default" data-live-search="true" tabindex="-1" aria-hidden="true">
+                  <select name="company_category"  class="form-control select2" data-style="btn-default" data-live-search="true" tabindex="-1" aria-hidden="true">
                     <option value="">Select Services</option> 
                       <?php if(!empty($company_info->company_category)) {
                       echo $this->job_category_model->selected($company_info->company_category);
@@ -526,7 +531,7 @@ input.select2-search__field {
               <div class="col-md-6 col-sm-12">
                 <div class="formrow">
                    <label class="control-label">Company Contact Person:<span class="required">*</span></label>  
-                  <input type="text" name="contact_name" required="" class="form-control" id="contact_name" placeholder="Contact Name">
+                  <input type="text" name="contact_name" class="form-control" id="contact_name" placeholder="Contact Name">
                 </div>
               </div>
                                    
@@ -535,13 +540,13 @@ input.select2-search__field {
                 <div class="col-md-6 col-sm-12">
                     <div class="formrow">
                       <label class="control-label">Contact Person Level:</label>
-                      <input type="text" required="" name="cont_person_level" id="cont_person_level" class="form-control" placeholder="E.g. Administrator" value="<?php  if(!empty($company_info->contact_name)){ echo $company_info->contact_name; } ?>">                                          
+                      <input type="text" name="cont_person_level" id="cont_person_level" class="form-control" placeholder="E.g. Administrator" value="<?php  if(!empty($company_info->contact_name)){ echo $company_info->contact_name; } ?>">                                          
                     </div>
                 </div>
               <div class="col-md-6 col-sm-12">
                <div class="formrow">
                   <label class="control-label">Contact Person Email:</label>
-                  <input type="text" name="cont_person_email" id="cont_person_email" required="" class="form-control" value="<?php if(!empty($company_info->cont_person_email)){ echo $company_info->cont_person_email; } ?>">                  
+                  <input type="text" name="cont_person_email" id="cont_person_email" class="form-control" value="<?php if(!empty($company_info->cont_person_email)){ echo $company_info->cont_person_email; } ?>">                  
                 </div>
               </div>
             </div>     
@@ -549,7 +554,7 @@ input.select2-search__field {
                 <div class="col-md-6 col-sm-12">
                     <div class="formrow">
                     <label class="control-label">Contact Person Mobile: <span class="required">*</span></label>
-                     <input type="text" name="cont_person_mobile" id="cont_person_mobile" class="form-control" value="<?php  if(!empty($company_info->cont_person_mobile)){ echo $company_info->cont_person_mobile; } ?>" onkeypress="phonenoo()" maxlength="10" required="">                    
+                     <input type="text" name="cont_person_mobile" id="cont_person_mobile" class="form-control" value="<?php  if(!empty($company_info->cont_person_mobile)){ echo $company_info->cont_person_mobile; } ?>" onkeypress="phonenoo()" maxlength="10">                    
                    </div>
               </div>
             </div>
@@ -601,7 +606,7 @@ input.select2-search__field {
                 <div class="col-md-6 col-sm-6">
                     <div class="formrow">
                         <label class="control-label">Pincode: <span class="required">*</span></label>
-                        <input type="text" name="company_pincode" id="company_pincode" required="" class="form-control ui-autocomplete-input" value="<?php 
+                        <input type="text" name="company_pincode" id="company_pincode" class="form-control ui-autocomplete-input" value="<?php 
                             if(!empty($company_info->company_pincode)){ echo $company_info->company_pincode; } ?>">                
                          </div>
                          </div>
