@@ -64,7 +64,7 @@
                         <div class="row">
                            <div class="col-md-6 col-sm-12">
                               <select name="company_type" id="company_type" class="form-control select2" >
-                                 <option value="">Select Type</option>
+                                 <!-- <option value="">Select Type</option> -->
                                  <option value="Company"<?php echo set_select('company_type', 'Company', TRUE); ?>>Company</option>
                                  <option value="HR Consultant"<?php echo set_select('company_type', 'HR Consultant', TRUE); ?>>HR Consultant</option>
                               </select>
@@ -218,7 +218,8 @@
 <!-- end section -->
 <input type="hidden" id="sessionCaptcha1" name="sessionCaptcha1" value="<?php echo $this->session->userdata('captchaCode'); ?>">
  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+<script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
+
 <script>
    $('.select2').select2();
 </script>
@@ -363,19 +364,7 @@
     
     
 </script>  
-<script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
-<script>
-   // $("#country_id").select2( {
-   //   placeholder: "Select Country",
-   //   allowClear: true
-   //   } );
-</script>
-<script>
-   // $("#company_category").select2( {
-   //   placeholder: "Select Industry",
-   //   allowClear: true
-   //   } );
-</script>
+
 <script>
    var BASE_URL = "<?php echo base_url(); ?>";
    
