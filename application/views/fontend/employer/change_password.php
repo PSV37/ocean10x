@@ -28,11 +28,12 @@
    <div class="col-md-12">
       <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
       <?php echo $this->session->flashdata('change_password'); ?>
-      <form id="submit" class="submit-form" action="<?php echo base_url(); ?>employer/change_password" method="post">
+    
          <div class="col-md-9 add-question">
             <div class="header-bookbank">
                Change Password
             </div>
+              <form id="submit" class="submit-form" action="<?php echo base_url(); ?>employer/change_password" method="post">
             <div class="row">
                <div class="col-md-4">
                   <div class="form-group lineitem_id ">
@@ -53,7 +54,7 @@
             <div class="col-md-4" style="text-align:right;">
                <button id="submit" type="Submit" class="save_question">Save question</button>
             </div>
-         </div>
-      </form>
+        </form>
+      </div>
    </div>
 </div>
