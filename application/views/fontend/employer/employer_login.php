@@ -242,6 +242,9 @@ input:-internal-autofill-selected{background-color:#fff !important;}
 <div class="login-box">
   <h3>Employer Login</h3>
   <form class="submit-form customform loginform" action="<?php echo base_url() ?>employer_login/check_login?redirect=<?php echo $this->input->get('redirect'); ?>" method="post">
+      <?php echo $this->session->flashdata('emp_msg');; ?>
+             <?php echo $this->session->flashdata('invalid'); ?>
+           <?php echo $this->session->flashdata('verify_msg'); ?>
     <div class="user-box">
       <input type="text" name="email"  required>
       <label>Username</label>
@@ -249,10 +252,10 @@ input:-internal-autofill-selected{background-color:#fff !important;}
     <div class="user-box">
       <input type="password" name="password" id="myInput" required>
       <label>Password </label>
+      <span toggle="#password-field" class="fa fa-eye-slash field-icon toggle-password"></span>
+      <!-- <span toggle="#password-field" class="fa fa-lg fa-eye-slash field-icon toggle-password"></span> -->
       <!--span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span-->
-      <!--span toggle="#password-field" class="fa fa-lg fa-eye-slash field-icon toggle-password"></span-->
-      <!--span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span-->
-      <i id="eyeIcon" class="fa fa-eye-slash toggle-password" onclick="myFunction()"></i>
+      <!-- <i id="eyeIcon" class="fa fa-eye-slash toggle-password" onclick="myFunction()"></i> -->
 
     </div>    
     <div class="row">
@@ -270,7 +273,7 @@ input:-internal-autofill-selected{background-color:#fff !important;}
   <div class="newuser"><i class="fa fa-user" aria-hidden="true"></i> Not on Ocean ? <a href="<?php echo base_url(); ?>employer_register">Register Now</a></div>
   </div>
 </div>
-<!--script type="text/javascript">
+<script>
   $(".toggle-password").click(function() {
 
   $(this).toggleClass("fa-eye fa-eye-slash");
@@ -283,7 +286,7 @@ input:-internal-autofill-selected{background-color:#fff !important;}
   
 });
 
-</script-->
+</script>
 
 <script src="js/app.js"></script>
 
