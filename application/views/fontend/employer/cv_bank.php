@@ -1331,13 +1331,13 @@ span.select2-selection.select2-selection--single {
             <div class="filter1">
                <p style="font-size:18px;margin-top:15px;">Notice Period</p>
                <div class="range-wrap">
-                  <input type="range" class="range" id="notice_period" onchange="get_active_data();" min="0" max="7">
+                  <input type="range" class="range" id="notice_period" onchange="get_data();" min="0" max="7">
                   <output class="bubble notice_period"></output>
                </div>
             </div>
             <div class="filter1">
                <p style="font-size:18px;margin-top:15px;">Education</p>
-               <select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" tabindex="-98">
+               <select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" id="education_id" tabindex="-98">
                   <option value=""> </option>
                         <?php  $edu_value =  set_value('top_education'); foreach($education_level as $education){?>
                         <option value="<?php echo $education['education_level_id']; ?>"<?php if($edu_value==$education['education_level_id']){ echo "selected"; }elseif($job_info->job_edu==$education['education_level_id']){ echo "selected"; }?>><?php echo $education['education_level_name']; ?></option>
@@ -1357,7 +1357,7 @@ span.select2-selection.select2-selection--single {
             
             <div class="filter1">
                <p style="font-size:18px;margin-top:15px;">Current CTC</p>
-               <select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" tabindex="-98">
+               <select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" id='current_ctc_id' tabindex="-98">
                   <optgroup label="Driver Groups">
                      <option>BEC</option>
                      <option>VMA</option>
@@ -1372,7 +1372,7 @@ span.select2-selection.select2-selection--single {
             </div>
             <div class="filter1">
                <p style="font-size:18px;margin-top:15px;">Stability Filter</p>
-               <select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" tabindex="-98">
+               <select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" id='stability_id' tabindex="-98">
                   <optgroup label="Driver Groups">
                      <option>BEC</option>
                      <option>VMA</option>
@@ -1702,6 +1702,10 @@ $("#job_title").autocomplete({
    function get_data()
    {
       var value = $('#exp').val();
+      var notice_period_value = $('#notice_period').val();
+      var education_value = $('education_id').val();
+      var current_ctc_value = $('current_ctc_id').val();
+      var current_ctc_value = $('stability_id').val();
        $.ajax({
                url: "<?php echo base_url();?>employer/get_active_cvs",
                type: "POST",
@@ -1724,23 +1728,7 @@ $('#notice_period').change(function() {
 });
 
 
-function get_notice_data()
-   {
-      var value = $('#exp').val();
-       $.ajax({
-               url: "<?php echo base_url();?>employer/get_active_cvs",
-               type: "POST",
-               data:{exp:value},
-                 success: function(data)
-                 {
-                     var getarray = jQuery.parseJSON(data);
-                   $('#active_cv').html(getarray.length);
-                 }
-           });
-      // $('#active_cv').html(value);
-      // alert(value);
 
-   }
 </script>
 
 
