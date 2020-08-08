@@ -58,6 +58,7 @@
          <div class="header-bookbank">
             Change Password
          </div>
+         <?php echo $this->session->flashdata('change_password'); ?>
          <form id="submit" class="submit-form" action="<?php echo base_url(); ?>employer/change_password" method="post">
             <div class="row">
                <div class="col-md-4">
