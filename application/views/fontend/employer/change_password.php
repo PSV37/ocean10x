@@ -195,5 +195,5 @@ $(document).ready(function() {
    
    return this.optional(element) || /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(value);
    
-   }, "Please Enter 6 digits Company Pincode");
+   }, "Please Enter Minimum eight characters,  at least one uppercase letter, one lowercase letter, one number and one special character:");
 </script>
