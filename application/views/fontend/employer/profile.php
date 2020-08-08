@@ -528,7 +528,7 @@
                            <label class="control-label">Company Services:</label><span class="required">*</span>
                            <select name="company_category"  class="form-control select2" data-style="btn-default" data-live-search="true" tabindex="-1" aria-hidden="true">
                               <option value="">Select Services</option>
-                              <?php $value = echo set_value('company_category');   if (!empty($value)) {
+                              <?php $value =  set_value('company_category');   if (!empty($value)) {
                                  echo $this->job_category_model->selected($value);
                                   }
                                  else if(!empty($company_info->company_category)) {
