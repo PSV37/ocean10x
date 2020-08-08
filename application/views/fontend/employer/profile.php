@@ -210,7 +210,7 @@
 </style>
 <div class="container-fluid main-d">
    <div class="container">
-      <form id="submit" action="<?php echo base_url(); ?>employer/profile-setting" method="post" class="submit-form" enctype="multipart/form-data"  >
+      <form id="submit" action="<?php echo base_url(); ?>employer/profile-setting" method="post"  enctype="multipart/form-data"  >
          <input type="hidden" name="company_profile_id" value="<?php echo $company_info->company_profile_id;?>">
          <div class="col-md-12">
             <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
@@ -845,9 +845,9 @@
    }
    
    });
-    $('#submit').submit(function(){
-           $('#myModalloading').modal();
-       })
+    // $('#submit').submit(function(){
+    //        $('#myModalloading').modal();
+    //    })
 
     $("#name").keypress(function(event){
            var inputValue = event.charCode;
