@@ -1624,9 +1624,9 @@
    {
       var value = $('#exp').val();
       var notice_period_value = $('#notice_period').val();
-      var education_value = $('education_id').val();
-      var current_ctc_value = $('current_ctc_id').val();
-      var current_ctc_value = $('stability_id').val();
+      var education_value = $('#education_id').val();
+      var current_ctc_value = $('#current_ctc_id').val();
+      var current_ctc_value = $('#stability_id').val();
        $.ajax({
                url: "<?php echo base_url();?>employer/get_active_cvs",
                type: "POST",
@@ -1646,12 +1646,7 @@
    var values = [0, 15, 30, 45, 60, 75, 90, 90];
    $('#notice_period').change(function() {
     $('.notice_period').text(values[this.value]);
-<<<<<<< HEAD
-});
 
-
-
-=======
    });
    
    
@@ -1672,7 +1667,7 @@
       // alert(value);
    
    }
->>>>>>> 7f1ccfff2b420b75c8317714a8cbd0d711180841
+
 </script>
 <script>
    function sliceSize(dataNum, dataTotal) {
