@@ -98,7 +98,7 @@
 <?php $activemenu = $this->session->userdata('activemenu'); 
    $employer_id = $this->session->userdata('company_profile_id');
    ?>
-<div class="col-md-3">
+<div class="col-md-3 emp">
    <div class="employer_menu">
       <aside id="left-panel" style="margin-top:9px;
          margin-left: 14px;height:auto; 

@@ -22,6 +22,17 @@
    /*font-weight: bold;*/
    color: red;
    }
+   .add-question {
+    margin-top: 100px;
+    padding: 20px;
+}
+form#submit {
+    margin-left: 30px;
+}
+.emp
+{
+  margin-top: 65px;
+}
 </style>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/questionbank.css">
 <div class="container">
