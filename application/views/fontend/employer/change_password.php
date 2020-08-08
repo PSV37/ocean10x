@@ -46,6 +46,9 @@
    z-index: 2;
    cursor:pointer;
    }
+   p#output {
+    margin-top: 30px;
+}
 </style>
 <div class="container">
    <div class="col-md-12">
