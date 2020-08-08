@@ -845,6 +845,16 @@
    }
    
    });
+    $('#submit').submit(function(){
+           $('#myModalloading').modal();
+       })
+
+    $("#name").keypress(function(event){
+           var inputValue = event.charCode;
+           if(!(inputValue >= 65 && inputValue <= 120) && (inputValue != 32 && inputValue != 0)){
+               event.preventDefault();
+           }
+       });
    
    });
    
@@ -897,28 +907,28 @@
    }    
 </script>
 <script type="text/javascript">
-   $(document).ready(function(){
-       $('#submit').submit(function(){
-           $('#myModalloading').modal();
-       })
-   })
+   // $(document).ready(function(){
+       // $('#submit').submit(function(){
+       //     $('#myModalloading').modal();
+       // })
+   // })
    
 </script>
 <!-- <script src="<?php echo base_url(); ?>asset/js/intlTelInput.js"></script> -->
 <script src="<?php echo base_url(); ?>asset/js/utils.js"></script>
 <script>
-   $(document).ready(function(){
-       $("#name").keypress(function(event){
-           var inputValue = event.charCode;
-           if(!(inputValue >= 65 && inputValue <= 120) && (inputValue != 32 && inputValue != 0)){
-               event.preventDefault();
-           }
-       });
+   // $(document).ready(function(){
+       // $("#name").keypress(function(event){
+       //     var inputValue = event.charCode;
+       //     if(!(inputValue >= 65 && inputValue <= 120) && (inputValue != 32 && inputValue != 0)){
+       //         event.preventDefault();
+       //     }
+       // });
        //  var input = document.querySelector("#phone");
        // window.intlTelInput(input, {
        //   utilsScript: "",
        // });
-   });
+   // });
    
 </script>
 <script>
@@ -1133,14 +1143,14 @@
        
 </script>
 <script type="text/javascript">
-   $(document).ready(function(){
-        var j = document.getElementById("BranchTable").rows.length;  
-       $('#addMoreBranches').click(function(){ 
-        $('#BranchTable tbody').append("<tr id='Branchtr"+j+"'><td class='hidden'>"+j+"</td><td><input type='text' class='form-control' name='BranchName"+j+"' id='BranchName"+j+"' required></td><td><select name='BranchCountry"+j+"' id='BranchCountry"+j+"'  class='form-control' onchange='getState("+j+");' required><option value=''>Select Country</option><?php foreach($country as $key){?><option value='<?php echo $key['country_id']; ?>'><?php echo $key['country_name']; ?></option><?php } ?></select></td><td ><select type='text' class='form-control'  name='BranchState"+j+"' id='BranchState"+j+"' onchange='getCity("+j+");' required ></select></td><td><select type='text' class='form-control' name='BranchCity"+j+"' id='BranchCity"+j+"' required></select></td><td><input type='text' class='form-control' name='BranchPincode"+j+"' id='BranchPincode"+j+"' required></td><td><a href='#' class='removebtn' id='"+j+"' onclick='removeBranchTr(this);'>X</a></td></tr>"); 
-        j++;
+   // $(document).ready(function(){
+   //      var j = document.getElementById("BranchTable").rows.length;  
+   //     $('#addMoreBranches').click(function(){ 
+   //      $('#BranchTable tbody').append("<tr id='Branchtr"+j+"'><td class='hidden'>"+j+"</td><td><input type='text' class='form-control' name='BranchName"+j+"' id='BranchName"+j+"' required></td><td><select name='BranchCountry"+j+"' id='BranchCountry"+j+"'  class='form-control' onchange='getState("+j+");' required><option value=''>Select Country</option><?php foreach($country as $key){?><option value='<?php echo $key['country_id']; ?>'><?php echo $key['country_name']; ?></option><?php } ?></select></td><td ><select type='text' class='form-control'  name='BranchState"+j+"' id='BranchState"+j+"' onchange='getCity("+j+");' required ></select></td><td><select type='text' class='form-control' name='BranchCity"+j+"' id='BranchCity"+j+"' required></select></td><td><input type='text' class='form-control' name='BranchPincode"+j+"' id='BranchPincode"+j+"' required></td><td><a href='#' class='removebtn' id='"+j+"' onclick='removeBranchTr(this);'>X</a></td></tr>"); 
+   //      j++;
        
-   })
-   });
+   // })
+   // });
    function getState(id)
    {
    var country_id=document.getElementById("BranchCountry"+id).value;
