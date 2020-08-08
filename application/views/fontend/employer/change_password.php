@@ -1,7 +1,7 @@
 <?php $this->load->view('fontend/layout/employer_new_header.php');?> 
 <!---header-->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/post_new_job.css">
-<!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/questionbank.css"> -->
+<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/questionbank.css">
 <style type="text/css">
    .required
    {
@@ -64,7 +64,7 @@ form#submit {
             </div>
             <div class="col-md-4"></div>
             <div class="col-md-4" style="text-align:right;">
-               <button id="submit" type="Submit" class="save_question">Save question</button>
+               <button id="submit" type="Submit" class="save_question">Update Password</button>
             </div>
         </form>
       </div>
