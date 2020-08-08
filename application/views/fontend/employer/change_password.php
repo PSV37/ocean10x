@@ -177,7 +177,7 @@ $(document).ready(function() {
        rules: {
            
     'newpassword': {  
-    minLength: 8,
+    minlength: 8,
    newpassword_regex: true
    
  },
