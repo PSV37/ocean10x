@@ -207,6 +207,9 @@
    color: red;
    margin-left: 2px;
    }
+   .error{
+      color: red;
+   }
 </style>
 <div class="container-fluid main-d">
    <div class="container">
@@ -806,7 +809,7 @@
    
    'alternate_email_id':{
    
-   required: "The Email is required!",
+   required: "The username field is mandatory!",
    
    email: "Please enter a valid email address!",
    
@@ -816,7 +819,7 @@
    
    'cont_person_email' :{
    
-   required: "The Email is required!",
+   required: "The username field is mandatory!",
    
    email: "Please enter a valid email address!",
    
@@ -826,7 +829,7 @@
    
    'company_url':{
    
-   required: "The Web Address is required!"
+   required: "The username field is mandatory!"
    
    },
    
