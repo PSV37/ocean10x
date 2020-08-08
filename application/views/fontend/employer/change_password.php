@@ -168,3 +168,46 @@
    });
    
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/additional-methods.js"></script>
+<script>
+$(document).ready(function() { 
+   $("#submit").validate ({
+       
+       rules: {
+           
+     
+                   
+   
+   'newpassword': {  
+    minLength: 8,
+    containSpecialChars: {
+      text: "Your input should contain at least minLength special character",
+      minLength: 1,
+      regex: new RegExp('([^!,%,&,@,#,$,^,*,?,_,~])', 'g')
+    },
+    containLowercase: {
+      text: "Your input should contain at least minLength lower case character",
+      minLength: 1,
+      regex: new RegExp('[^a-z]', 'g')
+    },
+    containUppercase: {
+      text: "Your input should contain at least minLength upper case character",
+      minLength: 1,
+      regex: new RegExp('[^A-Z]', 'g')
+    },
+    containNumbers: {
+      text: "Your input should contain at least minLength number",
+      minLength: 1,
+      regex: new RegExp('[^0-9]', 'g')
+    }
+ },
+   
+   },
+
+  
+   
+  
+   }) ;
+   });
+</script>
