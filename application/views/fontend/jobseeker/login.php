@@ -192,6 +192,14 @@
       .newuser {
       margin-top: 12px;
       }
+      .field-icon {
+  float: right;
+  margin-right: 8px;
+  margin-top: -60px;
+  position: relative;
+  z-index: 2;
+  cursor:pointer;    
+}   
    </style>
    <body>
       <div class="login-box">
