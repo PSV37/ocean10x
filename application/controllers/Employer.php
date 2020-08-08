@@ -7,7 +7,8 @@ class Employer extends MY_Employer_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('employer_login_model');
-        $this->load->model('Pincode_model');
+        $this->load->model('employer_login_model');
+        $this->load->model('job_seeker_model');
         // $this->load->model('dashboard_model');
         //$this->load->model('global_model');
         $config = array('field' => 'job_slugs', 'table' => 'job_posting');
