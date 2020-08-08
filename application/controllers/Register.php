@@ -67,7 +67,7 @@ class Register extends CI_Controller
             if (!$exist_email_js) 
             {
 
-                    $exist_email_company    = $this->Company_Profile_Model->email_check($this->input->post('email'));
+                    $exist_email_company    = $this->company_profile_model->email_check($this->input->post('email'));
 
                 if ($exist_email) 
                 {
