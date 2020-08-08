@@ -16,24 +16,23 @@
    display: inline-block;
    position: relative;
    }
-  .dd-button {
-    display: inline-block;
-    border: 1px solid #dedede;
-    border-radius: 4px;
-    padding: 5px 30px 5px 20px;
-    background-color: #18c5bd;
-    cursor: pointer;
-    width: 100%;
-    white-space: nowrap;
-    border-radius: 33px;
-    margin-right: 15px;
-    margin-top: 10px;
-    color: #fff;
-    margin-left: 13px;
-    font-size: 12px;
-    text-align: center;
-}
-   
+   .dd-button {
+   display: inline-block;
+   border: 1px solid #dedede;
+   border-radius: 4px;
+   padding: 5px 30px 5px 20px;
+   background-color: #18c5bd;
+   cursor: pointer;
+   width: 100%;
+   white-space: nowrap;
+   border-radius: 33px;
+   margin-right: 15px;
+   margin-top: 10px;
+   color: #fff;
+   margin-left: 13px;
+   font-size: 12px;
+   text-align: center;
+   }
    .dd-button:hover {
    background-color:#18c5bd;
    }
@@ -682,57 +681,52 @@
    }
    .input-group-btn:last-child>.btn{background-color:#18c5bd;
    color:#fff;}
-
-  button.btn.btn-primary {
-    float: right;
-    background-color: #18c5bd;
-    border: none;
-    border-radius: 35px;
-    margin-top: 13px;
-    font-size: 12px;
-}
-/* Styles for wrapping the search box */
-
-.main {
-    width: 50%;
-    margin: 50px auto;
-}
-
-/* Bootstrap 4 text input with search icon */
-
-.has-search .form-control {
-    padding-left: 2.375rem;
-}
-
-.has-search .form-control-feedback {
-    position: absolute;
-    z-index: 2;
-    display: block;
-    width: 2.375rem;
-    height: 2.375rem;
-    line-height: 2.375rem;
-    text-align: center;
-    pointer-events: none;
-    color: #aaa;
-    margin-right: 146px;
-    margin-top: 15px;
-}
-.dd-button:after {
-    content: '';
-    position: absolute;
-    top: 58%;
-    right: 8px;
-    transform: translateY(-50%);
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid #7a7c7c;
-}
-div#bulk {
-    margin-top: 20px;
-}
-  .fade-rotate .modal-dialog {
+   button.btn.btn-primary {
+   float: right;
+   background-color: #18c5bd;
+   border: none;
+   border-radius: 35px;
+   margin-top: 13px;
+   font-size: 12px;
+   }
+   /* Styles for wrapping the search box */
+   .main {
+   width: 50%;
+   margin: 50px auto;
+   }
+   /* Bootstrap 4 text input with search icon */
+   .has-search .form-control {
+   padding-left: 2.375rem;
+   }
+   .has-search .form-control-feedback {
+   position: absolute;
+   z-index: 2;
+   display: block;
+   width: 2.375rem;
+   height: 2.375rem;
+   line-height: 2.375rem;
+   text-align: center;
+   pointer-events: none;
+   color: #aaa;
+   margin-right: 146px;
+   margin-top: 15px;
+   }
+   .dd-button:after {
+   content: '';
+   position: absolute;
+   top: 58%;
+   right: 8px;
+   transform: translateY(-50%);
+   width: 0;
+   height: 0;
+   border-left: 5px solid transparent;
+   border-right: 5px solid transparent;
+   border-top: 5px solid #7a7c7c;
+   }
+   div#bulk {
+   margin-top: 20px;
+   }
+   .fade-rotate .modal-dialog {
    position: absolute;
    left: 0;
    right: 0;
@@ -819,42 +813,42 @@ div#bulk {
    font-size: calc(20px + (40 - 20)*(100vw - 320px)/(2560 - 320));
    }
    .ui-autocomplete-input {
-  border: none; 
-  font-size: 14px;
-  width: 300px;
-  height: 24px;
-  margin-bottom: 5px;
-  padding-top: 2px;
-  border: 1px solid #DDD !important;
-  padding-top: 0px !important;
-  z-index: 1511;
-  position: relative;
-}
-.ui-autocomplete {
-    z-index: 5000;
-    background: #b3ebe8;;
-    width: 0%;
-}
-button#frwd_btn {
-    margin-top: -2px;
-    margin-left: 10px;
-}
-button.btn.btn-default {
-    margin-left: 5px;
-    margin-top: 20px;
-}
-input.select2-search__field {
-    /* margin-top: 40px; */
-    display: inline-block;
-    border-radius: 0;
-}
-ul#select2-folder_id-y3-results {
-    margin-top: 27px;
-}
-span.select2-selection.select2-selection--single {
-    width: 330px;
-    text-align: center;
-}
+   border: none; 
+   font-size: 14px;
+   width: 300px;
+   height: 24px;
+   margin-bottom: 5px;
+   padding-top: 2px;
+   border: 1px solid #DDD !important;
+   padding-top: 0px !important;
+   z-index: 1511;
+   position: relative;
+   }
+   .ui-autocomplete {
+   z-index: 5000;
+   background: #b3ebe8;;
+   width: 0%;
+   }
+   button#frwd_btn {
+   margin-top: -2px;
+   margin-left: 10px;
+   }
+   button.btn.btn-default {
+   margin-left: 5px;
+   margin-top: 20px;
+   }
+   input.select2-search__field {
+   /* margin-top: 40px; */
+   display: inline-block;
+   border-radius: 0;
+   }
+   ul#select2-folder_id-y3-results {
+   margin-top: 27px;
+   }
+   span.select2-selection.select2-selection--single {
+   width: 330px;
+   text-align: center;
+   }
 </style>
 <div class="container-fluid main-d">
    <div class="container">
@@ -863,103 +857,79 @@ span.select2-selection.select2-selection--single {
          <div class="col-md-6 cv_bank">
             <div class="row">
                <div class="col-md-12">
-                    <button class="folder_popup" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal_add" style="float: right;">Create&emsp;<i class="fas fa-folder-open"></i></button>
+                  <button class="folder_popup" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal_add" style="float: right;">Create&emsp;<i class="fas fa-folder-open"></i></button>
                </div>
             </div>
-              <div class="row">
+            <div class="row">
                <div class="col-md-6">
-                  
                   <form class="navbar-form" role="search">
                      <!-- <div class="form-group has-search"> -->
-                         <!-- <span class="fa fa-search form-control-feedback"></span> -->
-                         <input type="text" id="myInput" class="form-control" placeholder="Search with Email or Name or Number" style="width: 100%">
+                     <!-- <span class="fa fa-search form-control-feedback"></span> -->
+                     <input type="text" id="myInput" class="form-control" placeholder="Search with Email or Name or Number" style="width: 100%">
                      <!-- </div> -->
-                    <!--  <div class="input-group add-on" style="width:100%;margin-left:-15px;">
+                     <!--  <div class="input-group add-on" style="width:100%;margin-left:-15px;">
                         <input class="form-control" placeholder="Search based oh Name, Email id, Phone no." name="srch-term" id="srch-term" type="text">
                         <div class="input-group-btn">
                            <button class="btn " type="submit"><i class="glyphicon glyphicon-search"></i></button>
                         </div>
-                     </div> -->
+                        </div> -->
                   </form>
                   <div class="clear"></div>
                </div>
                <div class="col-md-3">
                   <form method="post" action="<?php echo base_url(); ?>employer/corporate_cv_bank">
-                  <label class="dropdown" style="float:right;">
-                     <div class="dd-button">
-                        Sort by
-                     </div>
-                     <input type="checkbox" class="dd-input" id="test">
-                     <!-- <ul class="dd-menu" id="test"> -->
+                     <label class="dropdown" style="float:right;">
+                        <div class="dd-button">
+                           Sort by
+                        </div>
+                        <input type="checkbox" class="dd-input" id="test">
+                        <!-- <ul class="dd-menu" id="test"> -->
                         <!-- <li>Name</li> -->
                         <!-- /<li>Experience</li> -->
                         <!-- <li value="edu">Education</li> -->
-                     <!-- </ul> -->
-                     <ul id="sizelist" class="dd-menu">
-                       <li data-value="js_name" ><a href="#">Name</a></li>
-                       <li data-value="js_experience"><a href="#">Experience</a></li>
-                       <li data-value="js_top_education"><a href="#">Education</a></li>
-                       
-                     </ul>
-
-                     
-                  </label>
-                  <input id="sizevalue" size="15" name="sort_val" type="hidden" />
-                  <button type="submit" name="sort" class="hidden" id="sort_btn"></button>
+                        <!-- </ul> -->
+                        <ul id="sizelist" class="dd-menu">
+                           <li data-value="js_name" ><a href="#">Name</a></li>
+                           <li data-value="js_experience"><a href="#">Experience</a></li>
+                           <li data-value="js_top_education"><a href="#">Education</a></li>
+                        </ul>
+                     </label>
+                     <input id="sizevalue" size="15" name="sort_val" type="hidden" />
+                     <button type="submit" name="sort" class="hidden" id="sort_btn"></button>
                   </form>
                </div>
                <div class="col-md-3">
                   <a href="<?php echo base_url() ?>employer/add-new-cv"><button class="btn btn-primary"><i class="fas fa-plus"></i> Add New CV</button></a>
                </div>
             </div>
-           
             <div class="row" id="bulk">
-               
                <div class="col-md-4">
                   <label class="dropdown">
-                  
-                     <input type="checkbox" name="bulk_forward" id="checkAll" style="font-weight:500">&nbsp;Forward
-                     <button type="button" id="frwd_btn" class="btn btn-primary" onclick="frwd_post();">Forward Job</button>
-                     
+                  <input type="checkbox" name="bulk_forward" id="checkAll" style="font-weight:500">&nbsp;Forward
+                  <button type="button" id="frwd_btn" class="btn btn-primary" onclick="frwd_post();">Forward Job</button>
                   </label>
                </div>
                <div class="col-md-4">
                   <label class="dropdown">
-                
-                     <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp;  Move
-                     <button type="button" id="frwd_btn" class="btn btn-primary" onclick="move_cvs();">Move CV</button>
-                   
+                  <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp;  Move
+                  <button type="button" id="frwd_btn" class="btn btn-primary" onclick="move_cvs();">Move CV</button>
                   </label>
                </div>
-
                <div class="col-md-4">
                   <label class="dropdown">
-                
-                     <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp; Download
-                     <button type="button" id="frwd_btn" class="btn btn-primary" onclick="download_cvs();">Download CV</button>
-                   
+                  <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp; Download
+                  <button type="button" id="frwd_btn" class="btn btn-primary" onclick="download_cvs();">Download CV</button>
                   </label>
                </div>
-
-            
-              
             </div>
-           <div class="row" id="bulk">
-               
-             
-
+            <div class="row" id="bulk">
                <div class="col-md-6">
                   <label class="dropdown">
-                  
-                     <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp;  Upload
-                     <button type="button" id="frwd_btn" class="btn btn-primary" data-toggle="modal" data-target="#bulkupload">Bulk Upload</button>
-                    
+                  <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp;  Upload
+                  <button type="button" id="frwd_btn" class="btn btn-primary" data-toggle="modal" data-target="#bulkupload">Bulk Upload</button>
                   </label>
                </div>
-            
-              
             </div>
-
             <div class="box" >
                <?php $key = 1; if (!empty($cv_bank_data)): foreach ($cv_bank_data as $cv_row) : 
                   $on_ocean = $cv_row['ocean_candidate'];
@@ -984,9 +954,8 @@ span.select2-selection.select2-selection--single {
                        ?>
                <label>
                   <div class="check">
-                    
                      <input type="checkbox" value="<?php echo $cv_row['js_email']; ?>" data-valuetwo="<?php echo $cv_row['cv_id'];  ?>" data-valueone="<?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ echo $cv_row['js_resume']; } ?>" class="chkbx" />
-                  </div> 
+                  </div>
                   <div class="card content">
                      <div class="front">
                         <?php
@@ -996,7 +965,7 @@ span.select2-selection.select2-selection--single {
                         <img src="<?php echo  base_url(); ?>upload/<?php if(!empty($photo[0]['photo_path'])){echo $photo[0]['photo_path'];} ?>" style="height:25px; width:25px;border-radius:5px;float:left" />
                         <?php }else{ ?>
                         <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" style="height:25px; width:25px;border-radius:5px;float:left" />
-                       <?php } }else{ ?>
+                        <?php } }else{ ?>
                         <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" style="height:25px; width:25px;border-radius:5px;float:left" />
                         <?php } ?>
                         <div class="job-info">
@@ -1032,10 +1001,9 @@ span.select2-selection.select2-selection--single {
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1" style="top:47px;">
                            <li ><a class="dropdown-item" href="#" id="div_frwrd" data-toggle="modal" data-target="#rotateModal<?php echo $cv_row['cv_id']; ?>" >Forward Job Post</a></li>
-                        <?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ ?>
+                           <?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ ?>
                            <li id="div_download"> <a class="dropdown-item"  href="<?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ echo base_url(); echo 'upload/Resumes/'.$cv_row['js_resume']; } ?>" download >Download this cv</a></li>
                            <?php } ?>
-
                            <li><a class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-target="#move_cv<?php echo $cv_row['cv_id']; ?>" href="#">Move this CV</a></li>
                         </div>
                      </div>
@@ -1053,233 +1021,203 @@ span.select2-selection.select2-selection--single {
             </div>
          </div>
          <div class="col-md-3 right_side">
-         <div class="row" style="text-align: justify;margin: 10 auto;width: fit-content;">
-      
-<?php foreach ($cv_bank_data as $cv_row) :  ?>
-<div class="modal fade" id="move_cv<?php echo $cv_row['cv_id']; ?>" role="dialog">
-    <div class="modal-dialog modal-sm">
-      <div class="modal-content">
-          <form method="post" action="<?php echo base_url(); ?>employer/move_cvto_folder">
-        <div class="modal-header">
-          <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
-          <h4 class="modal-title">Move CV to folder</h4>
-        </div>
-        <div class="modal-body">
-        <input type="hidden" name="cv_id" value="<?php echo $cv_row['cv_id']; ?>">
-            
-            <div class="col-md-12" style="margin-top: 20px;">
-               <div class="row">
-                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <label class="mdl-textfield__label" for="sample3">Choose Folder</label>
-                  <!-- <input type="text"  name="job_title"  id="job_title" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required> -->
-                  <?php 
-                  $employer_id = $this->session->userdata('company_profile_id');
-                  $wheres  = "status='1' AND company_id='$employer_id' ";
-                     $folders     = $this->Master_model->getMaster('cv_folder', $where = $wheres); ?>
-                  <select class="form-control select2" name="folder_id">
-                     <option value="0">None</option>
-
-                     <?php foreach ($folders as $row) { ?>
-                      <option value="<?php echo $row['id'] ?>"><?php echo $row['folder_name'] ?></option>
-                     <? } ?>
-                    
-                  </select>
+            <div class="row" style="text-align: justify;margin: 10 auto;width: fit-content;">
+               <?php foreach ($cv_bank_data as $cv_row) :  ?>
+               <div class="modal fade" id="move_cv<?php echo $cv_row['cv_id']; ?>" role="dialog">
+                  <div class="modal-dialog modal-sm">
+                     <div class="modal-content">
+                        <form method="post" action="<?php echo base_url(); ?>employer/move_cvto_folder">
+                           <div class="modal-header">
+                              <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+                              <h4 class="modal-title">Move CV to folder</h4>
+                           </div>
+                           <div class="modal-body">
+                              <input type="hidden" name="cv_id" value="<?php echo $cv_row['cv_id']; ?>">
+                              <div class="col-md-12" style="margin-top: 20px;">
+                                 <div class="row">
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                       <label class="mdl-textfield__label" for="sample3">Choose Folder</label>
+                                       <!-- <input type="text"  name="job_title"  id="job_title" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required> -->
+                                       <?php 
+                                          $employer_id = $this->session->userdata('company_profile_id');
+                                          $wheres  = "status='1' AND company_id='$employer_id' ";
+                                             $folders     = $this->Master_model->getMaster('cv_folder', $where = $wheres); ?>
+                                       <select class="form-control select2" name="folder_id">
+                                          <option value="0">None</option>
+                                          <?php foreach ($folders as $row) { ?>
+                                          <option value="<?php echo $row['id'] ?>"><?php echo $row['folder_name'] ?></option>
+                                          <? } ?>
+                                       </select>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-md-12">
+                                 <div class="row">
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
+                                       <label class="mdl-textfield__label" for="sample3">Number of cvs: 1</label><br>
+                                    </div>
+                                 </div>
+                              </div>
+                              <!--  <p>This is a small modal.</p> -->
+                           </div>
+                           <div class="modal-footer">
+                              <button type="submit" class="btn btn-default">Add</button>
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
                </div>
-               </div>
-            </div>
-            <div class="col-md-12">
-               <div class="row">
-             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
-                  <label class="mdl-textfield__label" for="sample3">Number of cvs: 1</label><br>
-                  
-               </div>
-            </div>
-         </div>
-
-        
-         <!--  <p>This is a small modal.</p> -->
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-default">Add</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-         </form>
-      </div>
-    </div>
-  </div>
-  <?php
+               <?php
                   $key++;
                     endforeach;  
                   ?>
-<div class="modal fade" id="bulkmove_cv" role="dialog">
-    <div class="modal-dialog modal-sm">
-      <div class="modal-content">
-          <form method="post" action="<?php echo base_url(); ?>employer/move_cvto_folder">
-        <div class="modal-header">
-          <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
-          <h4 class="modal-title">Move CV to folder</h4>
-        </div>
-        <div class="modal-body">
-        <input type="hidden" name="cv_id" id="cv_id" value="">
-            
-            <div class="col-md-12" style="margin-top: 20px;">
-               <div class="row">
-                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <label class="mdl-textfield__label" for="sample3">Choose Folder</label>
-                  <!-- <input type="text"  name="job_title"  id="job_title" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required> -->
-                  <?php 
-                  $employer_id = $this->session->userdata('company_profile_id');
-                  $wheres  = "status='1' AND company_id='$employer_id' ";
-                     $folders     = $this->Master_model->getMaster('cv_folder', $where = $wheres); ?>
-                  <select class="form-control select2" name="folder_id">
-                     <option value="0">None</option>
-
-                     <?php foreach ($folders as $row) { ?>
-                      <option value="<?php echo $row['id'] ?>"><?php echo $row['folder_name'] ?></option>
-                     <? } ?>
-                    
-                  </select>
+               <div class="modal fade" id="bulkmove_cv" role="dialog">
+                  <div class="modal-dialog modal-sm">
+                     <div class="modal-content">
+                        <form method="post" action="<?php echo base_url(); ?>employer/move_cvto_folder">
+                           <div class="modal-header">
+                              <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+                              <h4 class="modal-title">Move CV to folder</h4>
+                           </div>
+                           <div class="modal-body">
+                              <input type="hidden" name="cv_id" id="cv_id" value="">
+                              <div class="col-md-12" style="margin-top: 20px;">
+                                 <div class="row">
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                       <label class="mdl-textfield__label" for="sample3">Choose Folder</label>
+                                       <!-- <input type="text"  name="job_title"  id="job_title" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required> -->
+                                       <?php 
+                                          $employer_id = $this->session->userdata('company_profile_id');
+                                          $wheres  = "status='1' AND company_id='$employer_id' ";
+                                             $folders     = $this->Master_model->getMaster('cv_folder', $where = $wheres); ?>
+                                       <select class="form-control select2" name="folder_id">
+                                          <option value="0">None</option>
+                                          <?php foreach ($folders as $row) { ?>
+                                          <option value="<?php echo $row['id'] ?>"><?php echo $row['folder_name'] ?></option>
+                                          <? } ?>
+                                       </select>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-md-12">
+                                 <div class="row">
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
+                                       <label class="mdl-textfield__label" id="no_of_cvs_move" for="sample3">Number of cvs: 1</label><br>
+                                    </div>
+                                 </div>
+                              </div>
+                              <!--  <p>This is a small modal.</p> -->
+                           </div>
+                           <div class="modal-footer">
+                              <button type="submit" class="btn btn-default">Add</button>
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
                </div>
+               <div class="modal fade" id="bulkupload" role="dialog">
+                  <div class="modal-dialog modal-sm">
+                     <div class="modal-content">
+                        <form method="post" action="<?php echo base_url();?>employer/bulk_upload_cvs">
+                           <div class="modal-header">
+                              <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+                              <h4 class="modal-title">Add folder</h4>
+                           </div>
+                           <div class="modal-body">
+                              <div class="col-md-12" style="margin-top: 20px;">
+                                 <div class="row">
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                       <label class="mdl-textfield__label" for="sample3">Folder Name:</label>
+                                       <small>To Import CV's Download CSV Format <a href="<?php echo base_url(); ?>cv_bank_excel/bulk_upload_cv_format.csv" download><strong>Click here To Download</strong></a></small>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-md-12">
+                                 <div class="row">
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                       <input type='file' name='file' required class="form-control">
+                                    </div>
+                                 </div>
+                              </div>
+                              <!--  <p>This is a small modal.</p> -->
+                           </div>
+                           <div class="modal-footer">
+                              <button type="submit" class="btn btn-default">Upload Now</button>
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
                </div>
-            </div>
-            <div class="col-md-12">
-               <div class="row">
-             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
-                  <label class="mdl-textfield__label" id="no_of_cvs_move" for="sample3">Number of cvs: 1</label><br>
-                  
-               </div>
-            </div>
-         </div>
-
-        
-         <!--  <p>This is a small modal.</p> -->
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-default">Add</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-         </form>
-      </div>
-    </div>
-  </div>
-
-      <div class="modal fade" id="bulkupload" role="dialog">
-    <div class="modal-dialog modal-sm">
-      <div class="modal-content">
-          <form method="post" action="<?php echo base_url();?>employer/bulk_upload_cvs">
-        <div class="modal-header">
-          <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
-          <h4 class="modal-title">Add folder</h4>
-        </div>
-        <div class="modal-body">
-        
-            <div class="col-md-12" style="margin-top: 20px;">
-               <div class="row">
-                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <label class="mdl-textfield__label" for="sample3">Folder Name:</label>
-                  <small>To Import CV's Download CSV Format <a href="<?php echo base_url(); ?>cv_bank_excel/bulk_upload_cv_format.csv" download><strong>Click here To Download</strong></a></small>
-               </div>
-               </div>
-            </div>
-            <div class="col-md-12">
-               <div class="row">
-                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <input type='file' name='file' required class="form-control">
-
-                  
-               </div>
-               </div>
-            </div>
-        
-         <!--  <p>This is a small modal.</p> -->
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-default">Upload Now</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-         </form>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="modal fade" id="myModal_add" role="dialog">
-    <div class="modal-dialog modal-sm">
-      <div class="modal-content">
-          <form method="post" action="<?php echo base_url(); ?>employer/add_cv_folder">
-        <div class="modal-header">
-          <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
-          <h4 class="modal-title">Add folder</h4>
-        </div>
-        <div class="modal-body">
-        
-            <div class="col-md-12" style="margin-top: 20px;">
-               <div class="row">
-                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <label class="mdl-textfield__label" for="sample3">Folder Name:</label>
-                  <input type="text"  name="folder_name"  id="folder_name" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required>
-               </div>
-               </div>
-            </div>
-            <div class="col-md-12">
-               <div class="row">
-                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <label class="mdl-textfield__label" for="sample3">parent Folder</label>
-                  <!-- <input type="text"  name="job_title"  id="job_title" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required> -->
-                  <?php 
-
-                  $employer_id = $this->session->userdata('company_profile_id');
-                  $wheres  = "status='1' AND company_id='$employer_id' ";
-                     $folders     = $this->Master_model->getMaster('cv_folder', $where = $wheres); ?>
-
-
-                  <select class="form-control select2" name="parent">
-                     <option value="0">None</option>
-
-                     <?php $new_array=array(); $i=0; foreach ($folders as $row) { 
-                        $id = $folders[$i]['id'];
-                        // echo $id;
-                        $p1 = $this->job_posting_model->cv_folder($id);
-                        // print_r($this->db->last_query()); .
-                        // print_r($p1);
-                        if ($p1->parent_id == 0) {
-                          array_push($new_array, $row);
-                        }
-                        else
-                        {
-                           $p2 =$this->job_posting_model->cv_folder($p1->parent_id);
-                           if ($p2->parent_id == 0) {
-                             array_push($new_array, $row);
-                           }
-
-                        }
-                        
-                       
-                           $i++;  }  ?>
-                     <?php foreach ($new_array as $row1) {
-                     print_r($row1); ?>
-                    <option value="<?php echo $row1['id']; ?>"><?php echo $row1['folder_name']; ?></option>
-                       
-                   <?  } ?>
-                    
-                  </select>
-               </div>
+               <div class="modal fade" id="myModal_add" role="dialog">
+                  <div class="modal-dialog modal-sm">
+                     <div class="modal-content">
+                        <form method="post" action="<?php echo base_url(); ?>employer/add_cv_folder">
+                           <div class="modal-header">
+                              <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+                              <h4 class="modal-title">Add folder</h4>
+                           </div>
+                           <div class="modal-body">
+                              <div class="col-md-12" style="margin-top: 20px;">
+                                 <div class="row">
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                       <label class="mdl-textfield__label" for="sample3">Folder Name:</label>
+                                       <input type="text"  name="folder_name"  id="folder_name" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-md-12">
+                                 <div class="row">
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                       <label class="mdl-textfield__label" for="sample3">parent Folder</label>
+                                       <!-- <input type="text"  name="job_title"  id="job_title" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required> -->
+                                       <?php 
+                                          $employer_id = $this->session->userdata('company_profile_id');
+                                          $wheres  = "status='1' AND company_id='$employer_id' ";
+                                             $folders     = $this->Master_model->getMaster('cv_folder', $where = $wheres); ?>
+                                       <select class="form-control select2" name="parent">
+                                          <option value="0">None</option>
+                                          <?php $new_array=array(); $i=0; foreach ($folders as $row) { 
+                                             $id = $folders[$i]['id'];
+                                             // echo $id;
+                                             $p1 = $this->job_posting_model->cv_folder($id);
+                                             // print_r($this->db->last_query()); .
+                                             // print_r($p1);
+                                             if ($p1->parent_id == 0) {
+                                               array_push($new_array, $row);
+                                             }
+                                             else
+                                             {
+                                                $p2 =$this->job_posting_model->cv_folder($p1->parent_id);
+                                                if ($p2->parent_id == 0) {
+                                                  array_push($new_array, $row);
+                                                }
+                                             
+                                             }
+                                             
+                                             
+                                                $i++;  }  ?>
+                                          <?php foreach ($new_array as $row1) {
+                                             print_r($row1); ?>
+                                          <option value="<?php echo $row1['id']; ?>"><?php echo $row1['folder_name']; ?></option>
+                                          <?  } ?>
+                                       </select>
+                                    </div>
+                                 </div>
+                              </div>
+                              <!--  <p>This is a small modal.</p> -->
+                           </div>
+                           <div class="modal-footer">
+                              <button type="submit" class="btn btn-default">Add</button>
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
                </div>
             </div>
-        
-         <!--  <p>This is a small modal.</p> -->
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-default">Add</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-         </form>
-      </div>
-    </div>
-  </div>
- </div>
-         
-         
             <div class="pai_chart">
                <main>
                   <section>
@@ -1339,22 +1277,21 @@ span.select2-selection.select2-selection--single {
                <p style="font-size:18px;margin-top:15px;">Education</p>
                <select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" id="education_id" tabindex="-98">
                   <option value=""> </option>
-                        <?php  $edu_value =  set_value('top_education'); foreach($education_level as $education){?>
-                        <option value="<?php echo $education['education_level_id']; ?>"<?php if($edu_value==$education['education_level_id']){ echo "selected"; }elseif($job_info->job_edu==$education['education_level_id']){ echo "selected"; }?>><?php echo $education['education_level_name']; ?></option>
-                        <?php } ?>
+                  <?php  $edu_value =  set_value('top_education'); foreach($education_level as $education){?>
+                  <option value="<?php echo $education['education_level_id']; ?>"<?php if($edu_value==$education['education_level_id']){ echo "selected"; }elseif($job_info->job_edu==$education['education_level_id']){ echo "selected"; }?>><?php echo $education['education_level_name']; ?></option>
+                  <?php } ?>
                   <!-- <optgroup label="Driver Groups">
                      <option>BEC</option>
                      <option>VMA</option>
-                  </optgroup>
-                  <optgroup label="Drivers">
+                     </optgroup>
+                     <optgroup label="Drivers">
                      <option>Stan</option>
                      <option>Fanny</option>
                      <option>Rudy</option>
                      <option>Ahmed</option>
-                  </optgroup> -->
+                     </optgroup> -->
                </select>
             </div>
-            
             <div class="filter1">
                <p style="font-size:18px;margin-top:15px;">Current CTC</p>
                <select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" id='current_ctc_id' tabindex="-98">
@@ -1401,39 +1338,26 @@ span.select2-selection.select2-selection--single {
          </div>
          <form action="<?php echo base_url() ?>employer/forward_posted_job" class="sendEmail" method="post" autocomplete="off">
             <div class="modal-body" style="padding:15px 40px;">
-             
                <input type="hidden" name="consultant" value="JobSeeker">  
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                   <label class="mdl-textfield__label" for="sample3">job Post:</label>
                   <input type="text"  name="job_title"  id="job_title" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required>
                </div>
                <input type="hidden" name="job_post_id" value="" id="auto-value">
-
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
                   <label class="mdl-textfield__label" for="sample3">Message:</label>
                   <textarea class="form-control" name="message" rows="5" id="comment" value="Dear Candidate,
-
-Greetings from (HRC/Corporate HR) Team !!
-
-We have a job post on “Ocean” whose requirements can be met with a candidate of your skill sets. We would appreciate, if you could apply on this job post, by clicking on the URL provided below
-
-####job post url################
-
-
-Your application will then be reviewed by the recruitment team, who will contact you regarding next steps should you clear the initial screening required for this position. Please be aware this may take a few days.
-
-
-Should you wish to update your coordinates/CV on Ocean, you can login into Ocean and visit the Profile section, to carry out the necessary changes.
-
-
-Best Regards,
-HRC/Corporate HR Team" required></textarea>
+                     Greetings from (HRC/Corporate HR) Team !!
+                     We have a job post on “Ocean” whose requirements can be met with a candidate of your skill sets. We would appreciate, if you could apply on this job post, by clicking on the URL provided below
+                     ####job post url################
+                     Your application will then be reviewed by the recruitment team, who will contact you regarding next steps should you clear the initial screening required for this position. Please be aware this may take a few days.
+                     Should you wish to update your coordinates/CV on Ocean, you can login into Ocean and visit the Profile section, to carry out the necessary changes.
+                     Best Regards,
+                     HRC/Corporate HR Team" required></textarea>
                </div>
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
                   <label class="mdl-textfield__label" for="sample3">Number of cvs: 1</label><br>
-                  
                </div>
-
                <input type="hidden" name="forward_job_email" id="forward_job_email" value="<?php echo $cv_row['js_email']; ?>">
             </div>
             <div class="modal-footer">
@@ -1445,8 +1369,7 @@ HRC/Corporate HR Team" required></textarea>
 </div>
 <?php
    endforeach;endif;?>
-
-   <div class="modal" id="rotateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal" id="rotateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
    <input type="hidden" name="cv_id" id="cv_id" value="<?php $cv_row['cv_id']; ?>">
    <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -1470,9 +1393,7 @@ HRC/Corporate HR Team" required></textarea>
                </div>
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
                   <label class="mdl-textfield__label" for="sample3">Number of cvs:<span id="no_of_cvs"></span></label><br>
-                  
                </div>
-
                <input type="hidden" name="forward_job_emails" id="forward_job_emails" value="">
             </div>
             <div class="modal-footer">
@@ -1485,49 +1406,49 @@ HRC/Corporate HR Team" required></textarea>
 <script>
    $('.select2').select2();
 </script>
-   <script>
-     $('#myInput').focus(function(){
+<script>
+   $('#myInput').focus(function(){
    $(this).data('placeholder',$(this).attr('placeholder'))
-          .attr('placeholder','');
-}).blur(function(){
+        .attr('placeholder','');
+   }).blur(function(){
    $(this).attr('placeholder',$(this).data('placeholder'));
-});
-
-$("#sizelist").on("click", "a", function(e){
-    e.preventDefault();
-    var $this = $(this).parent();
-    $this.addClass("select").siblings().removeClass("select");
-    $("#sizevalue").val($this.data("value"));
-    $( "#sort_btn" ).click();
-    $( "#test" ).click();
-})
-
-
-   </script>
+   });
+   
+   $("#sizelist").on("click", "a", function(e){
+   e.preventDefault();
+   var $this = $(this).parent();
+   $this.addClass("select").siblings().removeClass("select");
+   $("#sizevalue").val($this.data("value"));
+   $( "#sort_btn" ).click();
+   $( "#test" ).click();
+   })
+   
+   
+</script>
 <script>
    $(document).ready(function(){
-
+   
     $('#myInput').keyup(function(){
     
      // Search text
      var text1 = $(this).val();
     var text = text1.toUpperCase();
-
+   
      $('.content').hide();
-
+   
      // Search and show
      $('.content:contains("'+text+'")').show();
     
     });
- 
-});
-$.expr[":"].contains = $.expr.createPseudo(function(arg) {
-  return function( elem ) {
+   
+   });
+   $.expr[":"].contains = $.expr.createPseudo(function(arg) {
+   return function( elem ) {
    return $(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
-  };
-});
-
-
+   };
+   });
+   
+   
 </script>
 <script>
    $(document).on(' change','input[name="check_all"]',function() {
@@ -1544,14 +1465,14 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
             else
             {
                 $("#gedf-drop1").show();
-
+   
             }
-
+   
     });
    $(document).on(' change','input[name="bulk_forward"]',function() {
             $('.chkbx').prop("checked" , this.checked);
             $("input[name='bulk_download']:checkbox").prop('checked',false);
-
+   
             // alert(this.checked);
             if (this.checked) 
             {
@@ -1561,11 +1482,11 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
             else
             {
                 $("#gedf-drop1").show();
-
+   
             }
-
+   
     });
-
+   
    function frwd_post()
    {
       var checkedVals = $('.chkbx:checkbox:checked').map(function() {
@@ -1587,7 +1508,7 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
                }
                
    }
-
+   
    function download_cvs()
    {
       var checkedValsofname = $('.chkbx:checkbox:checked').map(function() {
@@ -1597,9 +1518,9 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
             
             var myNameArray =  cvs_name.split(',');
                 // var totalFiles = myArray.length;
-
+   
     
-
+   
                 // alert(totalFiles);
              //Throw an error if no boxes are checked
                 if (myNameArray.length == 0) {
@@ -1620,25 +1541,25 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
                                   a.href = url;
                                   // the filename you want
                                   a.download = 'Resumes.zip';
-
+   
                                   document.body.appendChild(a);
                                   a.click();
                                   window.URL.revokeObjectURL(url);
                  }
                });
-
+   
    }
-}
-
-function move_cvs()
-{
+   }
+   
+   function move_cvs()
+   {
    var checkedValsofname = $('.chkbx:checkbox:checked').map(function() {
                    return this.getAttribute("data-valuetwo");
                }).get();
         var cvs_name= (checkedValsofname.join(","));
             
             
-
+   
                // alert(emails.length);
                  if (cvs_name.length > 0) 
                {
@@ -1652,8 +1573,8 @@ function move_cvs()
                {
                   alert('Please select atleast one cv move!')
                }
-}
-$("#job_titles").autocomplete({
+   }
+   $("#job_titles").autocomplete({
              
              source: "<?php echo base_url();?>Employer/search_job_keywords",
              minLength: 2,
@@ -1675,7 +1596,7 @@ $("#job_titles").autocomplete({
     
             
            });
-$("#job_title").autocomplete({
+   $("#job_title").autocomplete({
              
              source: "<?php echo base_url();?>Employer/search_job_keywords",
              minLength: 2,
@@ -1718,20 +1639,41 @@ $("#job_title").autocomplete({
            });
       // $('#active_cv').html(value);
       // alert(value);
-
+   
    }
-
+   
    
    var values = [0, 15, 30, 45, 60, 75, 90, 90];
-$('#notice_period').change(function() {
+   $('#notice_period').change(function() {
     $('.notice_period').text(values[this.value]);
+<<<<<<< HEAD
 });
 
 
 
+=======
+   });
+   
+   
+   function get_notice_data()
+   {
+      var value = $('#exp').val();
+       $.ajax({
+               url: "<?php echo base_url();?>employer/get_active_cvs",
+               type: "POST",
+               data:{exp:value},
+                 success: function(data)
+                 {
+                     var getarray = jQuery.parseJSON(data);
+                   $('#active_cv').html(getarray.length);
+                 }
+           });
+      // $('#active_cv').html(value);
+      // alert(value);
+   
+   }
+>>>>>>> 7f1ccfff2b420b75c8317714a8cbd0d711180841
 </script>
-
-
 <script>
    function sliceSize(dataNum, dataTotal) {
      return (dataNum / dataTotal) * 360;

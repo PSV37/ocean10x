@@ -29,6 +29,7 @@
    }
    form#submit {
    margin-left: 30px;
+   margin-top: 25px;
    }
    .emp
    {
@@ -53,7 +54,7 @@
 <div class="container">
    <div class="col-md-12">
       <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
-      <?php echo $this->session->flashdata('change_password'); ?>
+     <!--  <?php echo $this->session->flashdata('change_password'); ?> -->
       <div class="col-md-9 add-question">
          <div class="header-bookbank">
             Change Password
@@ -64,7 +65,8 @@
                <div class="col-md-4">
                   <div class="form-group lineitem_id ">
                      <label for="exampleInputEmail1">Current Password<span class="required">*</span></label>
-                     <input type="password" name="oldpassword" required class="form-control" placeholder="Type your current password">
+                     <input type="password" name="oldpassword" id="myInput1" required class="form-control" placeholder="Type your current password">
+                     <span toggle="#password-field" class="fa fa-eye-slash field-icon toggle-password1"></span>
                   </div>
                </div>
             </div>
@@ -151,4 +153,47 @@
    
    });
    
+</script>
+<script>
+   $(".toggle-password1").click(function() {
+   
+   $(this).toggleClass("fa-eye fa-eye-slash");
+   var x = document.getElementById("myInput1");
+     if (x.type === "password") {
+       x.type = "text";
+     } else {
+       x.type = "password";
+     }
+   
+   });
+   
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+<!-- <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/additional-methods.js"></script> -->
+<script>
+$(document).ready(function() { 
+   $("#submit").validate ({
+       
+       rules: {
+           
+    'newpassword': {  
+    minlength: 8,
+   newpassword_regex: true
+   
+ },
+   
+   },
+
+  
+   
+  
+   }) ;
+   });
+</script>
+<script>
+   $.validator.addMethod("newpassword_regex", function(value, element) {
+   
+   return this.optional(element) || /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(value);
+   
+   }, "Please Enter Minimum eight characters,  at least one uppercase letter, one lowercase letter, one number and one special character:");
 </script>
