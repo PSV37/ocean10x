@@ -442,7 +442,9 @@ input#city {
                 type:'POST',
                 url:'<?php echo base_url();?>employer_register/getcity_details',
                 data:{city_id:city_id},
-                success:function(res){
+                success:function(res)
+                {
+                  var obj = JSON.parse(res);
 
                     $('#country_id').val(res);
                 }
