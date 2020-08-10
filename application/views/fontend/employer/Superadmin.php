@@ -1,5 +1,5 @@
 <?php 
-    $this->load->view('fontend/layout/employer_header.php');
+    $this->load->view('fontend/layout/employer_new_header.php');
 ?>               
 
 <script type="text/javascript">
@@ -47,7 +47,8 @@
           <div class="section lb">
                 <div class="container">
                    <div class="row">
-                     <?php $this->load->view('fontend/layout/employer_left.php'); ?>
+            <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
+                  
 
                         <div class="content col-md-9">
                         <div class="userccount">
