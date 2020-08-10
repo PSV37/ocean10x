@@ -88,7 +88,7 @@ class Employer_register extends CI_Controller
                     'company_name' => $this->input->post('company_name'),
                     'company_slug' => $this->slug->create_uri($this->input->post('company_name')),
                     'company_email' => $this->input->post('company_email'),
-                    'company_username' => $this->input->post('company_username'),
+                    'company_username' => 'SuperAdmin',
                     //'dept_id'  => $this->input->post('dept_id'),
                     'company_address' => $this->input->post('company_address'),
                     // 'company_address2' => $this->input->post('company_address2'),
@@ -104,7 +104,7 @@ class Employer_register extends CI_Controller
                 $exist_companyname = $this->company_profile_model->companyname_check($this->input->post('company_name'));
                 $exist_email       = $this->company_profile_model->email_check($this->input->post('company_email'));
                 $exist_email_js    = $this->job_seeker_model->email_check($this->input->post('company_email'));
-                $exist_username    = $this->company_profile_model->username_check($this->input->post('company_username'));
+                // $exist_username    = $this->company_profile_model->username_check($this->input->post('company_username'));
                 
                 $this->session->set_userdata('reg_in', $company_profile);
                 $company_logo = isset($_FILES['company_logo']['name']) ? $_FILES['company_logo']['name'] : null;
