@@ -101,9 +101,9 @@ i.fa.fa-info-circle{    /* margin-top: 1px; */
                            <div class="col-md-6 col-sm-12">
                               <input type="email" name="company_email" value="<?php echo set_value('company_email'); ?>" class="form-control" placeholder="Email" autocomplete="off"><?php echo form_error('company_email'); ?>
                            </div>
-                           <div class="col-md-6 col-sm-12">
+                          <!--  <div class="col-md-6 col-sm-12">
                               <input type="text" name="company_username" id="company_username" value="<?php echo set_value('company_username'); ?>" class="form-control" placeholder="Company Admin UserName" autocomplete="off"><?php echo form_error('company_username'); ?>
-                           </div>
+                           </div> -->
                         </div>
                         <!-- end row -->
                      </div>
@@ -133,12 +133,14 @@ i.fa.fa-info-circle{    /* margin-top: 1px; */
                               </select>
                            </div>
                            <div class="col-md-6 col-sm-12">
-                              <select  name="country_id" id="country_id" class="form-control country select2" onChange="getStates(this.value)">
+                            <input type="text" name="city" id="city" >
+                            <input type="hidden"  name="city_id" id="city_id" onchange="get_country();">
+                             <!--  <select  name="country_id" id="country_id" class="form-control country select2" onChange="getStates(this.value)">
                                  <option value="">Select Country</option>
                                  <?php foreach($country as $key){?>
                                  <option value="<?php echo $key['country_id']; ?>" <?php echo  set_select('country_id', $key['country_id']); ?> ><?php echo $key['country_name']; ?></option>
                                  <?php } ?>
-                              </select>
+                              </select> -->
                            </div>
                         </div>
                         <!-- end row -->
@@ -148,7 +150,7 @@ i.fa.fa-info-circle{    /* margin-top: 1px; */
                      <div class="formrow">
                         <div class="row">
                             <div class="col-md-6 col-sm-12">
-                              <select  name="city_id" id="city_id" class="form-control select2">
+                              <select  name="country_id" id="country_id" class="form-control select2">
                                  <option value="">Select City</option>
                               </select>
                            </div>
@@ -405,7 +407,45 @@ i.fa.fa-info-circle{    /* margin-top: 1px; */
      },
      minLength: 1
    });
+
+     $("#city").autocomplete({
+             
+             source: "<?php echo base_url();?>Employer/search_city",
+            minLength: 2,
+                 // append: "#rotateModal",
+                 focus: function(event, ui) {
+                  // prevent autocomplete from updating the textbox
+                  event.preventDefault();
+                  // manually update the textbox
+                  // alert(source);
+                  $(this).val(ui.item.label);
+               },
+               select: function(event, ui) {
+                  // prevent autocomplete from updating the textbox
+                  event.preventDefault();
+                  // manually update the textbox and hidden field
+                  $(this).val(ui.item.label);
+                  ('#city_id').val(ui.item.value);
+               }
+               
+              });
    });
+
+   function get_country()
+   {
+    var city_id = $('#city_id').val();
+    $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Employer/getcity_details',
+                data:{city_id:city_id},
+                success:function(res){
+
+                    $('#country_id').val(res);
+                }
+    
+            }); 
+
+   }
 </script>
 <!-- <script type="text/javascript">
    $(document).ready(function(){
