@@ -7,7 +7,7 @@
     margin-left: 20px;
     margin-top: 20px;
 }
-  }
+  
       .field-icon {
   float: right;
   margin-right: 8px;
