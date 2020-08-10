@@ -2375,7 +2375,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $result = $this->job_posting_model->search_job_keywords($_GET['term'], $employer_id);
             if (count($result) > 0) {
                 $i = 0;
-                foreach ($result as $row) $arr_result[$i]['label'] = $row->job_title;
+                foreach ($result as $row) 
+                $arr_result[$i]['label'] = $row->job_title;
                 $arr_result[$i]['value'] = $row->job_post_id;
                 $i++;
                 echo json_encode($arr_result);
@@ -2395,6 +2396,20 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     $arr_result[$i]['value'] = $row->id;
                     $i++;
                 }
+                echo json_encode($arr_result);
+            }
+        }
+    }
+     function search_city_name() {
+          $employer_id = $this->session->userdata('company_profile_id');
+        if (isset($_GET['term'])) {
+            $result = $this->job_posting_model->search_city_keywords($_GET['term']);
+            if (count($result) > 0) {
+                $i = 0;
+                foreach ($result as $row) 
+                $arr_result[$i]['label'] = $row->city_name;
+                $arr_result[$i]['value'] = $row->city_id;
+                $i++;
                 echo json_encode($arr_result);
             }
         }

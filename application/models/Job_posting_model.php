@@ -834,6 +834,16 @@ public function get_all_company_by_banksbook()
         return $this->db->get('city')->result();
     }
 
+     function search_city_keywords($title){
+        $this->db->select("city_name,city_id");
+
+        $this->db->like('city_name', $title , 'after');
+        $this->db->order_by('city_name', 'ASC');
+         // $this->db->where('company_profile_id', $employer_id);
+
+        return $this->db->get('city')->result();
+    }
+
     function search_job_title($title)
     {
         $this->db->like('name', $title , 'both');
