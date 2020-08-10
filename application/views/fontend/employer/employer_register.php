@@ -440,7 +440,7 @@ input#city {
     // var city_id = $('#city_id').val();
     $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>Employer/getcity_details',
+                url:'<?php echo base_url();?>employer_register/getcity_details',
                 data:{city_id:city_id},
                 success:function(res){
 
