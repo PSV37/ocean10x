@@ -11,11 +11,17 @@
       .field-icon {
   float: right;
   margin-right: 8px;
-  margin-top: -60px;
+  margin-top: -27px;
   position: relative;
   z-index: 2;
   cursor:pointer;    
 }   
+i.fa .fa-info-circle {
+    /* margin-top: 1px; */
+    float: right;
+    margin-top: -27px;
+    margin-right: -18px;
+}
    </style>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -109,7 +115,7 @@
                            <div class="col-md-6 col-sm-12">
                               <input type="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  name="company_password"  class="form-control" placeholder="Password" value="<?php echo set_value('company_password'); ?>" ><?php echo form_error('company_password'); ?>
                                <span toggle="#password-field" class="fa fa-eye-slash field-icon toggle-password"></span>
-                               <span toggle="#password-field"><i class="fas fa-info-circle" title="Password must contain one uppercase,one lowercase,one numeric,one special character and the minimum 8 characters"></i></span>
+                               <span toggle="#password-field"><i class="fa fa-info-circle" title="Password must contain one uppercase,one lowercase,one numeric,one special character and the minimum 8 characters"></i></span>
                            </div>
                            <div class="col-md-6 col-sm-12">
                               <input type="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  name="confirm_password"  class="form-control" placeholder="Confirm password" value="<?php echo set_value('company_password'); ?>" >
