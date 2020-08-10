@@ -137,7 +137,7 @@ input#city {
                            </div>
                            <div class="col-md-6 col-sm-12">
                             <input type="text" name="city" id="city" >
-                            <input type="hidden"  name="city_id" id="city_id" onchange="get_country();">
+                            <input type="hidden" value=""  name="city_id" id="city_id" onchange="get_country();">
                              <!--  <select  name="country_id" id="country_id" class="form-control country select2" onChange="getStates(this.value)">
                                  <option value="">Select Country</option>
                                  <?php foreach($country as $key){?>
@@ -428,18 +428,19 @@ input#city {
                   event.preventDefault();
                   // manually update the textbox and hidden field
                   $(this).val(ui.item.label);
-                  ('#city_id').val(ui.item.value);
+                  $('#city_id').val(ui.item.value);
+                  get_country(ui.item.value);
                }
                
               });
    });
 
-   function get_country()
+   function get_country(city_id)
    {
-    var city_id = $('#city_id').val();
+    // var city_id = $('#city_id').val();
     $.ajax({
                 type:'POST',
-                url:'<?php echo base_url();?>Employer/getcity_details',
+                url:'<?php echo base_url();?>employer_register/getcity_details',
                 data:{city_id:city_id},
                 success:function(res){
 

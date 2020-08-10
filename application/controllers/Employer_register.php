@@ -347,6 +347,19 @@ class Employer_register extends CI_Controller
             }
         }
     }
+
+     function getcity_details()
+    {
+        $city_id = $this->input->post('city_id');
+        $join = array(
+            'country' => 'country.country_id = city.country_id',
+            'state' => 'state.state_id = city.state_id'
+        );
+        $where = "city.id = '$city_id'";
+        $result = $this->Master_model->get_master_row('city', $select = FALSE, $where = $where, $join = $join);
+
+        echo  json_encode($result);
+    }
     
 }
 
