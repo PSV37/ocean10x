@@ -2404,7 +2404,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
           $employer_id = $this->session->userdata('company_profile_id');
         if (isset($_GET['term'])) {
             $result = $this->job_posting_model->search_city_keywords($_GET['term']);
-            print_r($this->db->last_query());
+            print_r($this->db->last_query());die;
             if (count($result) > 0) {
                 $i = 0;
                 foreach ($result as $row)
