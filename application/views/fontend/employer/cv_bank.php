@@ -1638,9 +1638,6 @@
                  }
            });
 
-      
-
-       
       // $('#active_cv').html(value);
       // alert(value);
    
