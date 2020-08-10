@@ -153,6 +153,7 @@ class Employer extends MY_Employer_Controller {
                     $del = array('address' => $this->input->post('company_address'));
                     $where11['org_id'] = $employer_id;
                     $this->Master_model->master_update($del, 'employee', $where11);
+
                     $company_profile_id = $this->session->userdata('company_profile_id');
                     $whereres = "company_profile_id='$company_profile_id'";
                     $employer_data = $this->Master_model->get_master_row('company_profile', $select = FALSE, $whereres);
@@ -3363,7 +3364,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $this->Master_model->master_update($update_data, 'company_profile', $where11);
             $this->session->set_flashdata('emp_msg', '<div class="alert alert-success text-center">Thank You for choosing The Ocean !!</div>');
             $company_info = $this->company_profile_model->get($employer_id);
-            $this->load->view('fontend/employer/dashboard_main', compact('company_info'));
+            $this->load->view('fontend/employer/employer_dashboard', compact('company_info'));
         }
     }
     function check_super_pass() {
