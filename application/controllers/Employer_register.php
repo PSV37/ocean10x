@@ -326,6 +326,25 @@ class Employer_register extends CI_Controller
         }
         return FALSE;
     }
+
+    function search_city_name() {
+          $employer_id = $this->session->userdata('company_profile_id');
+        if (isset($_GET['term'])) {
+            $result = $this->job_posting_model->search_city_keywords($_GET['term']);
+            print_r($this->db->last_query());die;
+            if (count($result) > 0) {
+                $i = 0;
+                foreach ($result as $row)
+                { 
+                    $arr_result[$i]['label'] = $row->city_name;
+                    $arr_result[$i]['value'] = $row->city_id;
+                    $i++;
+                }
+
+                echo json_encode($arr_result);
+            }
+        }
+    }
     
 }
 

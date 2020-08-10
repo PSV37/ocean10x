@@ -411,13 +411,10 @@ input#city {
      minLength: 1
    });
 
-     
-   });
-    $(function(){
-      $("#city").autocomplete({
-                
-                 source: "<?php echo base_url();?>Employer/search_people",
-                minLength: 2,
+     $("#city").autocomplete({
+             
+             source: "<?php echo base_url();?>employer_register/search_city_name",
+            minLength: 2,
                  // append: "#rotateModal",
                  focus: function(event, ui) {
                   // prevent autocomplete from updating the textbox
@@ -431,14 +428,11 @@ input#city {
                   event.preventDefault();
                   // manually update the textbox and hidden field
                   $(this).val(ui.item.label);
-                  $("#auto-city_id").val(ui.item.value);
+                  ('#city_id').val(ui.item.value);
                }
                
               });
-      
-   
-   
-     });
+   });
 
    function get_country()
    {
