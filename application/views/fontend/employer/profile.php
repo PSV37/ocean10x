@@ -250,6 +250,15 @@
                   </div>
                </div>
                <div class="forms">
+                 <?php if (!empty($this->session->flashdata('emp_msg'))) {?>
+         <div id="smsg" class="alert alert-alert-dismissible fade in">
+           <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+           <strong style="font-size: 15px;"><?php echo $this->session->flashdata('emp_msg');?></strong>
+         </div>             
+
+               <?php } ?>
+                                <?php echo $this->session->flashdata('msg'); ?>
+                                <?php echo $this->session->flashdata('success_msg'); ?>
                   <div class="row f-1">
                      <div class="col-md-6 col-sm-12">
                         <div class="formrow">
@@ -553,7 +562,7 @@
                      <div class="col-md-6 col-sm-12">
                         <div class="formrow">
                            <label class="control-label">Company Contact Name:<span class="required">*</span></label>  
-                           <input type="text" name="contact_name" class="form-control" id="contact_name" placeholder="Contact Name" value="<?php echo set_value('contact_name'); ?>">
+                           <input type="text" name="contact_name" class="form-control" id="contact_name" placeholder="Contact Name" value="<?php if(!empty($company_info->contact_person_name)){ echo $company_info->contact_person_name; } ?><?php echo set_value('contact_name'); ?>">
                            <?php echo form_error('contact_name'); ?>        
                         </div>
                      </div>
