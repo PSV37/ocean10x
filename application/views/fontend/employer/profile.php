@@ -240,7 +240,7 @@
                   if (isset($profile_pic) && !empty($profile_pic)) { ?>
                       <img src="<?php echo base_url() ?>upload/<?php echo $profile_pic ?>" style="height:80px;width:80px;border-radius:50%;" class="img-thumbnail-profile" />
                 <?php  }else{ ?> 
-                  <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" border="0" alt="profile-picture" class="img img-thumbnail" style="width: 20%;"> <?php }
+                  <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" border="0" alt="profile-picture" class="img img-thumbnail" style="height:80px;width:80px;border-radius:50%;"> <?php }
 
                    ?>  
                     
