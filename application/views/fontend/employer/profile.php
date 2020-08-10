@@ -604,7 +604,7 @@
                         </div>
                      </div>
                   </div>
-                  v class="row">
+                  <div class="row">
                               <div class="col-md-12 col-sm-12">
                                <div class="box-body">
                         <button type="button" id="addMoreBranches" class="btn btn-success">Add More</button>
