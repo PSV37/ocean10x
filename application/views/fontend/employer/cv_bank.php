@@ -1262,14 +1262,14 @@
             <div class="filter1">
                <p style="font-size:18px;margin-top:15px;">Experience</p>
                <div class="range-wrap">
-                  <input type="range" class="range" id="exp" onchange="get_data();" min="0" max="20">
+                  <input type="range" class="range" id="exp_id" onchange="get_data();" min="0" max="20">
                   <output class="bubble"></output>
                </div>
             </div>
             <div class="filter1">
                <p style="font-size:18px;margin-top:15px;">Notice Period</p>
                <div class="range-wrap">
-                  <input type="range" class="range" id="notice_period" onchange="get_data();" min="0" max="7">
+                  <input type="range" class="range" id="notice_period_id" onchange="get_data();" min="0" max="7">
                   <output class="bubble notice_period"></output>
                </div>
             </div>
@@ -1622,15 +1622,15 @@
 <script>
    function get_data()
    {
-      var value = $('#exp').val();
-      var notice_period_value = $('#notice_period').val();
+      var value = $('#exp_id').val();
+      var notice_period_value = $('#notice_period_id').val();
       var education_value = $('#education_id').val();
       var current_ctc_value = $('#current_ctc_id').val();
       var sta_value = $('#stability_id').val();
        $.ajax({
                url: "<?php echo base_url();?>employer/get_active_cvs",
                type: "POST",
-               data:{exp:value,notice_period_val:notice_period_value,education_id:education_value,current_ctc_id:current_ctc_value   },
+               data:{exp:value,notice_period:notice_period_value,education:education_value,current_ctc:current_ctc_value},
                  success: function(data)
                  {
                      var getarray = jQuery.parseJSON(data);
