@@ -1630,7 +1630,7 @@
        $.ajax({
                url: "<?php echo base_url();?>employer/get_active_cvs",
                type: "POST",
-               data:{exp:value},
+               data:{exp:value,notice_period:notice_period_value,education:education_value,current_ctc:current_ctc_value},
                  success: function(data)
                  {
                      var getarray = jQuery.parseJSON(data);
@@ -1645,12 +1645,13 @@
    
    
    var values = [0, 15, 30, 45, 60, 75, 90, 90];
-   $('#notice_period_id').change(function() {
-    $('.notice_period_id').text(values[this.value]);
+   $('#notice_period').change(function() {
+    $('.notice_period').text(values[this.value]);
    });
 
 
 </script>
+
 <script>
    function sliceSize(dataNum, dataTotal) {
      return (dataNum / dataTotal) * 360;
