@@ -428,7 +428,7 @@ input#city {
                   event.preventDefault();
                   // manually update the textbox and hidden field
                   $(this).val(ui.item.label);
-                  ('#city_id').val(ui.item.value);
+                  $('#city_id').val(ui.item.value);
                }
                
               });
