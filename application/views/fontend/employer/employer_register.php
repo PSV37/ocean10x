@@ -16,8 +16,7 @@
   z-index: 2;
   cursor:pointer;    
 }   
-i.fa .fa-info-circle {
-    /* margin-top: 1px; */
+i.fa.fa-info-circle{    /* margin-top: 1px; */
     float: right;
     margin-top: -27px;
     margin-right: -18px;
