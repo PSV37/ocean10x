@@ -1277,7 +1277,7 @@
                <p style="font-size:18px;margin-top:15px;">Education</p>
                <select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" id="education_id" tabindex="-98">
                   <option value=""> </option>
-                  <?php  $edu_value =  set_value('top_education'); foreach($education_level as $education){?>
+                  <?php  $edu_value =  set_value('js_top_education'); foreach($education_level as $education){?>
                   <option value="<?php echo $education['education_level_id']; ?>"<?php if($edu_value==$education['education_level_id']){ echo "selected"; }elseif($job_info->job_edu==$education['education_level_id']){ echo "selected"; }?>><?php echo $education['education_level_name']; ?></option>
                   <?php } ?>
                   <!-- <optgroup label="Driver Groups">
@@ -1631,6 +1631,16 @@
                url: "<?php echo base_url();?>employer/get_active_cvs",
                type: "POST",
                data:{exp:value},
+                 success: function(data)
+                 {
+                     var getarray = jQuery.parseJSON(data);
+                   $('#active_cv').html(getarray.length);
+                 }
+           });
+       $.ajax({
+               url: "<?php echo base_url();?>employer/get_active_cvs",
+               type: "POST",
+               data:{notice_period:notice_period_value},
                  success: function(data)
                  {
                      var getarray = jQuery.parseJSON(data);
