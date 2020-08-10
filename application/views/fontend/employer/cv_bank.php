@@ -1275,7 +1275,7 @@
             </div>
             <div class="filter1">
                <p style="font-size:18px;margin-top:15px;">Education</p>
-               <select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" id="education_id" tabindex="-98">
+               <select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" id="education_id" onchange="get_data();" tabindex="-98">
                   <option value=""> </option>
                   <?php  $edu_value =  set_value('js_top_education'); foreach($education_level as $education){?>
                   <option value="<?php echo $education['education_level_id']; ?>"<?php if($edu_value==$education['education_level_id']){ echo "selected"; }elseif($job_info->job_edu==$education['education_level_id']){ echo "selected"; }?>><?php echo $education['education_level_name']; ?></option>
@@ -1294,7 +1294,7 @@
             </div>
             <div class="filter1">
                <p style="font-size:18px;margin-top:15px;">Current CTC</p>
-               <select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" id='current_ctc_id' tabindex="-98">
+               <select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" id='current_ctc_id' onchange="get_data();" tabindex="-98">
                   <optgroup label="Driver Groups">
                      <option>BEC</option>
                      <option>VMA</option>
@@ -1626,11 +1626,11 @@
       var notice_period_value = $('#notice_period_val').text();
       var education_value = $('#education_id').val();
       var current_ctc_value = $('#current_ctc_id').val();
-      var current_ctc_value = $('#stability_id').val();
+      var stability_value = $('#stability_id').val();
        $.ajax({
                url: "<?php echo base_url();?>employer/get_active_cvs",
                type: "POST",
-               data:{exp:value, notice_period:notice_period_value},
+               data:{exp:value, notice_period:notice_period_value, education_id:education_value, current_ctc_id:current_ctc_value  },
                  success: function(data)
                  {
                      var getarray = jQuery.parseJSON(data);
