@@ -208,13 +208,13 @@ input#candidate_skills {
                      <?php echo form_error('top_education'); ?>      
                      </div>
                   </div>
-                   <div class="col-md-4">
+                  <!-- <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Skills</label>
                         <div class="tokenfield form-control"><input type="text" name="candidate_skills" id="tokenfield" class="skill form-control" value="" tabindex="-1" style="position: absolute; left: -10000px;"><input type="text" tabindex="-1" style="position: absolute; left: -10000px;"></div>
                         <?php echo form_error('skills'); ?>   
                      </div>
-                  </div> 
+                  </div> -->
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Certifications</label>
