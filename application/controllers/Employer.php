@@ -161,7 +161,7 @@ class Employer extends MY_Employer_Controller {
                         $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">“To start using TheOcean resources, we have created 3 users. Please enter their details !</div>');
                         redirect('employer/addemployee');
                     } else {
-                        $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">Updated Successfully!</div>');
+                        $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">Company Profile details have been successfully updated !</div>');
                         $company_info = $this->company_profile_model->get($employer_id);
                         $country = $this->Master_model->getMaster('country', $where = false);
                         $this->load->view('fontend/employer/profile', compact('company_info', 'country', 'branches'));
@@ -2375,8 +2375,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $result = $this->job_posting_model->search_job_keywords($_GET['term'], $employer_id);
             if (count($result) > 0) {
                 $i = 0;
-                foreach ($result as $row) 
-                $arr_result[$i]['label'] = $row->job_title;
+                foreach ($result as $row) $arr_result[$i]['label'] = $row->job_title;
                 $arr_result[$i]['value'] = $row->job_post_id;
                 $i++;
                 echo json_encode($arr_result);
@@ -2400,6 +2399,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             }
         }
     }
+
      function search_city_name() {
           $employer_id = $this->session->userdata('company_profile_id');
         if (isset($_GET['term'])) {
@@ -2418,6 +2418,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             }
         }
     }
+
     function search_skill() {
         if (isset($_GET['term'])) {
             $result = $this->job_posting_model->search_skills($_GET['term']);
@@ -2426,19 +2427,6 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 echo json_encode($arr_result);
             }
         }
-    }
-
-    function getcity_details()
-    {
-        $city_id = $this->input->post('city_id');
-        $join = array(
-            'country' => 'country.country_id = city.country_id',
-            'state' => 'state.state_id = city.state_id'
-        );
-        $where = "city.city_id = '$city_id'";
-        $result = $this->Master_model->get_master_row('city', $select = FALSE, $where = $where, $join = $join);
-
-        echo  json_encode($result);
     }
     /*import question*/
     public function importquestion() {
@@ -4343,7 +4331,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $education_id = $this->input->post('education_value');
         $current_ctc_id = $this->input->post('current_ctc_value');
         $company_id = $this->session->userdata('company_profile_id');
-        $where_active = "login BETWEEN DATE_SUB(NOW(), INTERVAL 30 DAY) And  NOW() and corporate_cv_bank.company_id = '$company_id' and corporate_cv_bank.js_experience='$exp' and corporate_cv_bank.js_current_notice_period='$notice_period' and corporate_cv_bank.js_top_education='$education_id' and corporate_cv_bank.js_current_ctc='$current_ctc_id'";
+        $where_active = "login BETWEEN DATE_SUB(NOW(), INTERVAL 30 DAY) And  NOW() and corporate_cv_bank.company_id = '$company_id' and corporate_cv_bank.js_experience='$exp' and corporate_cv_bank.js_current_notice_period='$notice_period' and corporate_cv_bank.js_top_education='$education_id'";
         $where_active.= ' GROUP by cv_id';
         $join_cond = array('js_info' => 'js_info.email = corporate_cv_bank.js_email|Left', 'js_login_logs' => 'js_info.job_seeker_id = js_login_logs.job_seeker_id|Left');
         $active_cv = $this->Master_model->getMaster('corporate_cv_bank', $where = $where_active, $join = $join_cond, $order = false, $field = false, $select = false, $limit = false, $start = false, $search = false);
