@@ -52,7 +52,7 @@
                         <div class="content col-md-9">
                         <div class="userccount">
                             <div class="formpanel">
-                           <?php echo $this->session->flashdata('change_password'); ?>
+                           <?php echo $this->session->flashdata('emp_msg'); ?>
                                <form id="submit" class="submit-form" action="<?php echo base_url(); ?>employer/superadmin" method="post">
                                     <div class="row">
                                         <div class="col-md-6 col-sm-12">

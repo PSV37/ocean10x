@@ -89,8 +89,9 @@ class Employer_Login extends CI_Controller
                
         // print_r($this->db->last_query());die;
 
-
-                redirect('employer/profile_setting');
+                $this->session->set_flashdata('emp_msg', '<div class="alert alert-success text-center">“Add Superadmin Details</div>');
+                $this->load->view('fontend/employer/Superadmin', $data);
+                // redirect('employer/profile_setting');
             }else{
              $this->session->set_flashdata('emp_msg', '<div class="alert alert-success alert-dismissable">Welcome to TheOcean ! You are logged in as Administrator for '.$this->session->userdata('company_name').' !</div>');
              $this->session->set_flashdata('employee', '<div class="alert alert-success alert-dismissable">To start using TheOcean resources, we have created 3 users. Please enter their details !</div>');
