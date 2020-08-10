@@ -266,7 +266,20 @@ class Employer extends MY_Employer_Controller {
                     # code...
                     
                 }
-                $job_info = array('company_profile_id' => $employer_id, 'job_title' => $this->input->post('job_title'), 'job_slugs' => $this->slug->create_uri($this->input->post('job_title')), 'job_desc' => $this->input->post('job_desc'), 'job_category' => $this->input->post('job_category'), 'education' => $this->input->post('education'), 'benefits' => implode(',', $this->input->post('benefits')), 'experience' => $experience, 'city_id' => $this->input->post('city_id'), 'job_nature' => $this->input->post('job_nature'), 'job_edu' => $this->input->post('job_edu'), 'no_jobs' => $this->input->post('no_jobs'), 'preffered_certificates' => $this->input->post('preffered_certificates'), 'job_role' => $this->input->post('job_role'), //new added field
+                $job_info = array('company_profile_id' => $employer_id, 
+                    'job_title' => $this->input->post('job_title'), 
+                    'job_slugs' => $this->slug->create_uri($this->input->post('job_title')), 
+                    'job_desc' => $this->input->post('job_desc'), 
+                    'job_category' => $this->input->post('job_category'), 
+                    'education' => $this->input->post('education'), 
+                    'benefits' => implode(',', $this->input->post('benefits')), 
+                    'experience' => $experience, 
+                    'city_id' => $this->input->post('city_id'), 
+                    'job_nature' => $this->input->post('job_nature'), 
+                    'job_edu' => $this->input->post('job_edu'), 
+                    'no_jobs' => $this->input->post('no_jobs'), 
+                    'preffered_certificates' => $this->input->post('preffered_certificates'), 
+                    'job_role' => $this->input->post('job_role'), //new added field
                 'skills_required' => implode(',', $all_skills), //new added field
                 'salary_range' => $salary_range, "job_deadline" => date('Y-m-d', strtotime(str_replace('/', '-', $this->input->post('job_deadline')))), "job_status" => '1', 'is_test_required' => $this->input->post('job_test_requirment'));
                 if (isset($job_desc_file) && !empty($job_desc_file)) {
