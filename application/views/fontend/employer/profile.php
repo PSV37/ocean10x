@@ -210,6 +210,13 @@
    .error{
    color: red;
    }
+   button#addMoreBranches {
+   background-color: #18c5bd;
+   margin-top: 25px;
+   border-radius: 20px;
+   border: none;
+   margin-bottom: 10px;
+   }
 </style>
 <div class="container-fluid main-d">
    <div class="container">
@@ -227,8 +234,16 @@
             <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
             <div class="col-md-9 edit-profile">
                <div class="col-md-12 header-profile">
-                  <div class="col-md-2">   
-                     <img src="<?php echo base_url() ?>upload/<?php echo $this->company_profile_model->company_logoby_id($company_profile_id);?>" style="height:80px;width:80px;border-radius:50%;" class="img-thumbnail-profile" />
+                  <div class="col-md-2"> 
+                  <?php $profile_pic = $this->company_profile_model->company_logoby_id($company_profile_id);
+                  if (isset($profile_pic) && !empty($profile_pic)) { ?>
+                      <img src="<?php echo base_url() ?>upload/<?php echo $profile_pic ?>" style="height:80px;width:80px;border-radius:50%;" class="img-thumbnail-profile" />
+                <?php  }else{ ?> 
+                  <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" border="0" alt="profile-picture" class="img img-thumbnail" style="width: 20%;"> <?php }
+
+                   ?>  
+                    
+                     
                   </div>
                   <div class="col-md-9" style="margin-left:-35px;">
                      <p style="font-size:18px;"><?php echo $this->company_profile_model->company_name($company_profile_id); ?></p>
@@ -549,7 +564,6 @@
                         </div>
                      </div>
                   </div>
-                 
                   <div class="row f-9">
                      <div class="col-md-3 col-sm-4">
                         <div class="formrow">
@@ -584,7 +598,7 @@
                            <?php echo form_error('city_id'); ?>        
                         </div>
                      </div>
-                      <div class="col-md-3 col-sm-6">
+                     <div class="col-md-3 col-sm-6">
                         <div class="formrow">
                            <label class="control-label">Pincode: <span class="required">*</span></label>
                            <input type="text" name="company_pincode" id="company_pincode" class="form-control ui-autocomplete-input" value="<?php 
@@ -593,8 +607,6 @@
                         </div>
                      </div>
                   </div>
-                 
-
                   <div class="row f-7">
                      <div class="col-md-12 col-sm-12">
                         <div class="formrow">
@@ -605,63 +617,52 @@
                      </div>
                   </div>
                   <div class="row">
-                              <div class="col-md-12 col-sm-12">
-                               <div class="box-body">
-                        <button type="button" id="addMoreBranches" class="btn btn-success">Add More</button>
-
-                   <table id="BranchTable" class="table table-bordered table-striped">
-                          <thead>
-                            <tr>
-                              <th style="display: none;">No.</th>
-                              <th>Branch</th>
-                              <th>Country</th>
-                              <th>State</th>
-                              <th>City</th>
-                              <th>Pincode</th>
-                              <th>Action</th>
-                            </tr>
-                          </thead>
-
-                          <tbody >
-                           <!-- <?php print_r(sizeof($branches)); ?> -->
-                           <?php foreach ($branches as $row) { ?>
-                           <tr>
-                              <td><?php echo $row['branch_address']; ?></td>
-                              <td><?php echo $row['country'];?></td>
-                              <td><?php echo $row['state'];?></td>
-                              <td><?php echo $row['city']; ?></td>
-                              <td><?php echo $row['pincode']; ?></td>
-                              <td>
-                                 <?php echo btn_delete('employer/delete_branch/' . $row['comp_branch_id']); ?>
-                              </td>
-                           </tr>
-                           <?php } ?>
-                           
-                          </tbody>
-
-                          <tfoot>
-                           
-                        </tfoot>
-                      </table>
-                       <!-- <button type="button" id="add" onclick="saveBranches();" class="btn btn-success">Add</button> -->
+                     <div class="col-md-12 col-sm-12">
+                        <div class="box-body">
+                           <button type="button" id="addMoreBranches" class="btn btn-success">Add More</button>
+                           <table id="BranchTable" class="table table-bordered table-striped">
+                              <thead>
+                                 <tr>
+                                    <th style="display: none;">No.</th>
+                                    <th>Branch</th>
+                                    <th>Country</th>
+                                    <th>State</th>
+                                    <th>City</th>
+                                    <th>Pincode</th>
+                                    <th>Action</th>
+                                 </tr>
+                              </thead>
+                              <tbody >
+                                 <!-- <?php print_r(sizeof($branches)); ?> -->
+                                 <?php foreach ($branches as $row) { ?>
+                                 <tr>
+                                    <td><?php echo $row['branch_address']; ?></td>
+                                    <td><?php echo $row['country'];?></td>
+                                    <td><?php echo $row['state'];?></td>
+                                    <td><?php echo $row['city']; ?></td>
+                                    <td><?php echo $row['pincode']; ?></td>
+                                    <td>
+                                       <?php echo btn_delete('employer/delete_branch/' . $row['comp_branch_id']); ?>
+                                    </td>
+                                 </tr>
+                                 <?php } ?>
+                              </tbody>
+                              <tfoot>
+                              </tfoot>
+                           </table>
+                           <!-- <button type="button" id="add" onclick="saveBranches();" class="btn btn-success">Add</button> -->
+                        </div>
+                     </div>
                   </div>
-              </div>
-      </div>         
-       <input type="hidden" name="Branchname" id="Branchname">
-                      <input type="hidden" name="BranchCountry" id="BranchCountry">
-                      <input type="hidden" name="Branchstate" id="Branchstate">
-                      <input type="hidden" name="BranchCity" id="BranchCity">
-                      <input type="hidden" name="Branchpincodes" id="Branchpincodes">  
-                           
-                                    <!-- end row -->
-                                    <div class="panel-body"></div>
-                           <!-- end row -->
-                           
-                                      <div class="panel-body"></div>
-                
-
-                  
-                  
+                  <input type="hidden" name="Branchname" id="Branchname">
+                  <input type="hidden" name="BranchCountry" id="BranchCountry">
+                  <input type="hidden" name="Branchstate" id="Branchstate">
+                  <input type="hidden" name="BranchCity" id="BranchCity">
+                  <input type="hidden" name="Branchpincodes" id="Branchpincodes">  
+                  <!-- end row -->
+                  <div class="panel-body"></div>
+                  <!-- end row -->
+                  <div class="panel-body"></div>
                   <div class="row f-11">
                      <div class="col-md-6 col-sm-6">
                         <div class="formrow">
