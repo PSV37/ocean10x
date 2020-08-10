@@ -1623,8 +1623,8 @@
    function get_data()
    {
       var value = $('#exp').val();
-      var notice_period_value = $('notice_period').val();
-      var education_value = $('education_id').val();
+      var notice_period_value = $(notice_period).val();
+      var education_value = $(education_id).val();
       var current_ctc_value = $('#current_ctc_id').val();
       var current_ctc_value = $('#stability_id').val();
        $.ajax({
