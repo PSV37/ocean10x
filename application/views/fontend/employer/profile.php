@@ -604,6 +604,60 @@
                         </div>
                      </div>
                   </div>
+                  v class="row">
+                              <div class="col-md-12 col-sm-12">
+                               <div class="box-body">
+                        <button type="button" id="addMoreBranches" class="btn btn-success">Add More</button>
+
+                   <table id="BranchTable" class="table table-bordered table-striped">
+                          <thead>
+                            <tr>
+                              <th style="display: none;">No.</th>
+                              <th>Branch</th>
+                              <th>Country</th>
+                              <th>State</th>
+                              <th>City</th>
+                              <th>Pincode</th>
+                              <th>Action</th>
+                            </tr>
+                          </thead>
+
+                          <tbody >
+                           <!-- <?php print_r(sizeof($branches)); ?> -->
+                           <?php foreach ($branches as $row) { ?>
+                           <tr>
+                              <td><?php echo $row['branch_address']; ?></td>
+                              <td><?php echo $row['country'];?></td>
+                              <td><?php echo $row['state'];?></td>
+                              <td><?php echo $row['city']; ?></td>
+                              <td><?php echo $row['pincode']; ?></td>
+                              <td>
+                                 <?php echo btn_delete('employer/delete_branch/' . $row['comp_branch_id']); ?>
+                              </td>
+                           </tr>
+                           <?php } ?>
+                           
+                          </tbody>
+
+                          <tfoot>
+                           
+                        </tfoot>
+                      </table>
+                       <!-- <button type="button" id="add" onclick="saveBranches();" class="btn btn-success">Add</button> -->
+                  </div>
+              </div>
+      </div>         
+       <input type="hidden" name="Branchname" id="Branchname">
+                      <input type="hidden" name="BranchCountry" id="BranchCountry">
+                      <input type="hidden" name="Branchstate" id="Branchstate">
+                      <input type="hidden" name="BranchCity" id="BranchCity">
+                      <input type="hidden" name="Branchpincodes" id="Branchpincodes">  
+                           
+                                    <!-- end row -->
+                                    <div class="panel-body"></div>
+                           <!-- end row -->
+                           
+                                      <div class="panel-body"></div>
                 
 
                   
