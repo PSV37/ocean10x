@@ -1,6 +1,22 @@
 <?php 
    $this->load->view('fontend/layout/style.php');
    ?>
+   <style>
+     span.select2-dropdown.select2-dropdown--below {
+    width: 383px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+  }
+      .field-icon {
+  float: right;
+  margin-right: 8px;
+  margin-top: -60px;
+  position: relative;
+  z-index: 2;
+  cursor:pointer;    
+}   
+   </style>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <!-- Page Title start -->
@@ -92,6 +108,8 @@
                         <div class="row">
                            <div class="col-md-6 col-sm-12">
                               <input type="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  name="company_password"  class="form-control" placeholder="Password" value="<?php echo set_value('company_password'); ?>" ><?php echo form_error('company_password'); ?>
+                               <span toggle="#password-field" class="fa fa-eye-slash field-icon toggle-password"></span>
+                               <span toggle="#password-field"><i class="fas fa-info-circle" title="Password must contain one uppercase,one lowercase,one numeric,one special character and the minimum 8 characters"></i></span>
                            </div>
                            <div class="col-md-6 col-sm-12">
                               <input type="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  name="confirm_password"  class="form-control" placeholder="Confirm password" value="<?php echo set_value('company_password'); ?>" >
@@ -109,33 +127,24 @@
                                  <?php } ?>
                               </select>
                            </div>
-                        </div>
-                        <!-- end row -->
-                     </div>
-                     <div class="formrow">
-                        <div class="row">
-                           <div class="col-md-12 col-sm-12">
-                              <textarea name="company_address" class="form-control" placeholder="Address-1" autocomplete="off"  ><?php echo set_value('company_address'); ?></textarea><?php echo form_error('company_address'); ?>
-                           </div>
-                        </div>
-                        <!-- end row -->
-                     </div>
-                     <div class="formrow">
-                        <div class="row">
-                           <div class="col-md-12 col-sm-12">
-                              <textarea name="company_address2" id="company_address2" class="form-control" placeholder="Address-2" autocomplete="off"><?php echo set_value('company_address2'); ?></textarea><?php echo form_error('company_address2'); ?>
-                           </div>
-                        </div>
-                        <!-- end row -->
-                     </div>
-                     <div class="formrow">
-                        <div class="row">
                            <div class="col-md-6 col-sm-12">
                               <select  name="country_id" id="country_id" class="form-control country select2" onChange="getStates(this.value)">
                                  <option value="">Select Country</option>
                                  <?php foreach($country as $key){?>
                                  <option value="<?php echo $key['country_id']; ?>" <?php echo  set_select('country_id', $key['country_id']); ?> ><?php echo $key['country_name']; ?></option>
                                  <?php } ?>
+                              </select>
+                           </div>
+                        </div>
+                        <!-- end row -->
+                     </div>
+                   
+                   
+                     <div class="formrow">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12">
+                              <select  name="city_id" id="city_id" class="form-control select2">
+                                 <option value="">Select City</option>
                               </select>
                            </div>
                            <div class="col-md-6 col-sm-12">
@@ -148,16 +157,13 @@
                      </div>
                      <div class="formrow">
                         <div class="row">
-                           <div class="col-md-6 col-sm-12">
-                              <select  name="city_id" id="city_id" class="form-control select2">
-                                 <option value="">Select City</option>
-                              </select>
-                           </div>
-                           <div class="col-md-6 col-sm-12">
+                           <div class="col-md-12 col-sm-12">
+                              <textarea name="company_address" class="form-control" placeholder="Office Address" autocomplete="off"  ><?php echo set_value('company_address'); ?></textarea><?php echo form_error('company_address'); ?>
                            </div>
                         </div>
                         <!-- end row -->
                      </div>
+
                      <div class="formrow">
                         <div class="row">
                            <div class="col-md-12 col-sm-12">
@@ -438,5 +444,19 @@
      // select default item after sorting (first item)
      // $('select').get(0).selectedIndex = 0;
    });
+</script>
+<script>
+   $(".toggle-password").click(function() {
+   
+   $(this).toggleClass("fa-eye fa-eye-slash");
+   var x = document.getElementById("myInput");
+     if (x.type === "password") {
+       x.type = "text";
+     } else {
+       x.type = "password";
+     }
+   
+   });
+   
 </script>
 <?php $this->load->view("fontend/layout/footer.php"); ?>

@@ -2,7 +2,16 @@
 <?php 
     $this->load->view('fontend/layout/header.php');
 ?>                
-          
+   <style>
+        .field-icon {
+  float: right;
+  margin-right: 8px;
+  margin-top: -60px;
+  position: relative;
+  z-index: 2;
+  cursor:pointer;    
+}   
+   </style>       
 <!-- Page Title start -->
 <!-- <div class="pageTitle">
   <div class="container">
@@ -47,8 +56,8 @@
 
             <div class="formrow">
               <input name="password" type="password" id="myInput" class="form-control" placeholder="Key in Your Password" autocomplete="off">
-              <!-- An element to toggle between password visibility -->
-              <input type="checkbox" onclick="myFunction()">Show Password
+              <span toggle="#password-field" class="fa fa-eye-slash field-icon toggle-password"></span>
+              <!-- <input type="checkbox" onclick="myFunction()">Show Password -->
             </div>
             <div class="formrow">
               <div class="row check">
@@ -81,19 +90,23 @@
     </div>
   </div>
 </div>
-
+<script>
+   $(".toggle-password").click(function() {
+   
+   $(this).toggleClass("fa-eye fa-eye-slash");
+   var x = document.getElementById("myInput");
+     if (x.type === "password") {
+       x.type = "text";
+     } else {
+       x.type = "password";
+     }
+   
+   });
+   
+</script>
 
           
               <!-- end section -->
 
  <?php $this->load->view("fontend/layout/footer.php"); ?>
- <script>
-   function myFunction() {
-    var x = document.getElementById("myInput");
-    if (x.type === "password") {
-      x.type = "text";
-    } else {
-      x.type = "password";
-    }
-  }
- </script>
+ 
