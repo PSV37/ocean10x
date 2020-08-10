@@ -1638,13 +1638,6 @@
                  }
            });
 
-<<<<<<< HEAD
-            
-=======
-      
-
-       
->>>>>>> 4618c9fc0f3cd50aa83a57dc9a6e993514a8334d
       // $('#active_cv').html(value);
       // alert(value);
    
