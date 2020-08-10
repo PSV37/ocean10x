@@ -153,13 +153,15 @@ input#city {
                      <div class="formrow">
                         <div class="row">
                             <div class="col-md-6 col-sm-12">
-                              <input type="text" name="country_id" id="country_id" class="form-control" value="">
+                               <input type="text" name="country" id="country" class="form-control" value="">
+                              <input type="hidden" name="country_id" id="country_id" class="form-control" value="">
                               <!-- <select  name="country_id" id="country_id" class="form-control select2">
                                  <option value="">Select City</option>
                               </select> -->
                            </div>
                            <div class="col-md-6 col-sm-12">
-                             <input type="text" name="state_id" id="state_id" class="form-control" value="">
+                            <input type="text" name="state" id="state" class="form-control" value="">
+                             <input type="hidden" name="state_id" id="state_id" class="form-control" value="">
                               <!-- <select  name="state_id" id="state_id" class="form-control select2" onChange="getCitys(this.value)">
                                  <option value="">Select State</option>
                               </select> -->
@@ -449,7 +451,11 @@ input#city {
                   var obj = JSON.parse(res);
 
                     $('#country_id').val(obj.country_id);
-                    $('#country_id').text(obj.country_name);
+                    $('#country').val(obj.country_name);
+                    $('#state_id').val(obj.state_id);
+                    $('#state').val(obj.state_name);
+                    $('#country').prop('readonly', true);
+                    $('#state').prop('readonly', true);
                 }
     
             }); 
