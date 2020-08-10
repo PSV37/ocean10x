@@ -225,14 +225,7 @@
          <input type="hidden" name="company_profile_id" value="<?php echo $company_info->company_profile_id;?>">
          <div class="col-md-12">
             <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
-             <?php if (!empty($this->session->flashdata('emp_msg'))) {?>
-      <div id="smsg" class="alert alert-alert-dismissible fade in">
-         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-         <strong style="font-size: 15px;"><?php echo $this->session->flashdata('emp_msg');?></strong>
-      </div>
-      <?php } ?>
-      <?php echo $this->session->flashdata('msg'); ?>
-      <?php echo $this->session->flashdata('success_msg'); ?>
+
             <div class="col-md-9 edit-profile">
                <div class="col-md-12 header-profile">
                   <div class="col-md-2"> 
@@ -673,7 +666,7 @@
                         </div>
                      </div>
                   </div>
-                  <button class="btn-save-profile" id="submitbtn" type="submit">save</button>            
+                  <button class="btn-save-profile" id="submitbtn"  type="submit">save</button>            
                </div>
             </div>
          </div>
