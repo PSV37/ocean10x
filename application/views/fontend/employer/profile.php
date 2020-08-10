@@ -220,7 +220,12 @@
 </style>
 <div class="container-fluid main-d">
    <div class="container">
-      <?php if (!empty($this->session->flashdata('emp_msg'))) {?>
+     
+      <form id="submit" action="<?php echo base_url(); ?>employer/profile-setting" method="post"  enctype="multipart/form-data"  >
+         <input type="hidden" name="company_profile_id" value="<?php echo $company_info->company_profile_id;?>">
+         <div class="col-md-12">
+            <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
+             <?php if (!empty($this->session->flashdata('emp_msg'))) {?>
       <div id="smsg" class="alert alert-alert-dismissible fade in">
          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
          <strong style="font-size: 15px;"><?php echo $this->session->flashdata('emp_msg');?></strong>
@@ -228,10 +233,6 @@
       <?php } ?>
       <?php echo $this->session->flashdata('msg'); ?>
       <?php echo $this->session->flashdata('success_msg'); ?>
-      <form id="submit" action="<?php echo base_url(); ?>employer/profile-setting" method="post"  enctype="multipart/form-data"  >
-         <input type="hidden" name="company_profile_id" value="<?php echo $company_info->company_profile_id;?>">
-         <div class="col-md-12">
-            <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
             <div class="col-md-9 edit-profile">
                <div class="col-md-12 header-profile">
                   <div class="col-md-2"> 
@@ -239,7 +240,7 @@
                   if (isset($profile_pic) && !empty($profile_pic)) { ?>
                       <img src="<?php echo base_url() ?>upload/<?php echo $profile_pic ?>" style="height:80px;width:80px;border-radius:50%;" class="img-thumbnail-profile" />
                 <?php  }else{ ?> 
-                  <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" border="0" alt="profile-picture" class="img img-thumbnail" style="width: 20%;"> <?php }
+                  <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" border="0" alt="profile-picture" class="img img-thumbnail" style="height:80px;width:80px;border-radius:50%;"> <?php }
 
                    ?>  
                     
@@ -672,7 +673,7 @@
                         </div>
                      </div>
                   </div>
-                  <button class="btn-save-profile">save</button>            
+                  <button class="btn-save-profile" id="submitbtn" type="submit">save</button>            
                </div>
             </div>
          </div>
@@ -1200,7 +1201,7 @@
    $(document).ready(function(){
         var j = document.getElementById("BranchTable").rows.length;  
        $('#addMoreBranches').click(function(){ 
-        $('#BranchTable tbody').append("<tr id='Branchtr"+j+"'><td class='hidden'>"+j+"</td><td><input type='text' class='form-control' name='BranchName"+j+"' id='BranchName"+j+"' required></td><td><select name='BranchCountry"+j+"' id='BranchCountry"+j+"'  class='form-control' onchange='getState("+j+");' required><option value=''>Select Country</option><?php foreach($country as $key){?><option value='<?php echo $key['country_id']; ?>'><?php echo $key['country_name']; ?></option><?php } ?></select></td><td ><select type='text' class='form-control'  name='BranchState"+j+"' id='BranchState"+j+"' onchange='getCity("+j+");' required ></select></td><td><select type='text' class='form-control' name='BranchCity"+j+"' id='BranchCity"+j+"' required></select></td><td><input type='text' class='form-control' name='BranchPincode"+j+"' id='BranchPincode"+j+"' required></td><td><a href='#' class='removebtn' id='"+j+"' onclick='removeBranchTr(this);'>X</a></td></tr>"); 
+        $('#BranchTable tbody').append("<tr id='Branchtr"+j+"'><td class='hidden'>"+j+"</td><td><input type='text' class='form-control' name='BranchName"+j+"' id='BranchName"+j+"' required></td><td><select name='BranchCountry"+j+"' id='BranchCountry"+j+"'  class='form-control select2 ' onchange='getState("+j+");' required><option value=''>Select Country</option><?php foreach($country as $key){?><option value='<?php echo $key['country_id']; ?>'><?php echo $key['country_name']; ?></option><?php } ?></select></td><td ><select type='text' class='form-control select2'  name='BranchState"+j+"' id='BranchState"+j+"' onchange='getCity("+j+");' required ></select></td><td><select type='text' class='form-control select2' name='BranchCity"+j+"' id='BranchCity"+j+"' required></select></td><td><input type='text' class='form-control' name='BranchPincode"+j+"' id='BranchPincode"+j+"' required></td><td><a href='#' class='removebtn' id='"+j+"' onclick='removeBranchTr(this);'>X</a></td></tr>"); 
         j++;
        
    })
