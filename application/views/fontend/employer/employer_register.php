@@ -21,6 +21,9 @@ i.fa.fa-info-circle{    /* margin-top: 1px; */
     margin-top: -27px;
     margin-right: -18px;
 }
+input#city {
+    width: 100%;
+}
    </style>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -410,7 +413,7 @@ i.fa.fa-info-circle{    /* margin-top: 1px; */
 
      $("#city").autocomplete({
              
-             source: "<?php echo base_url();?>Employer/search_city_name",
+             source: "<?php echo base_url();?>employer_register/search_city_name",
             minLength: 2,
                  // append: "#rotateModal",
                  focus: function(event, ui) {

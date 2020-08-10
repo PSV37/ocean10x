@@ -2399,6 +2399,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             }
         }
     }
+
+     
+
     function search_skill() {
         if (isset($_GET['term'])) {
             $result = $this->job_posting_model->search_skills($_GET['term']);
