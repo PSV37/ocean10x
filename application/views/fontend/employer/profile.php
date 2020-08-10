@@ -217,6 +217,14 @@
    border: none;
    margin-bottom: 10px;
    }
+   .alert.alert-warning.text-center {
+    margin-top: 150px;
+    margin-bottom: -130px;
+}
+.alert.alert-success.text-center {
+    margin-top: 150px;
+    margin-bottom: -130px;
+}
 </style>
 <div class="container-fluid main-d">
    <div class="container">

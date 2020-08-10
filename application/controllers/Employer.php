@@ -161,7 +161,7 @@ class Employer extends MY_Employer_Controller {
                         $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">“To start using TheOcean resources, we have created 3 users. Please enter their details !</div>');
                         redirect('employer/addemployee');
                     } else {
-                        $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">Company Profile details have been successfully updated !</div>');
+                        $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">Updated Successfully!</div>');
                         $company_info = $this->company_profile_model->get($employer_id);
                         $country = $this->Master_model->getMaster('country', $where = false);
                         $this->load->view('fontend/employer/profile', compact('company_info', 'country', 'branches'));
