@@ -260,7 +260,7 @@
                   <div class="row f-2">
                      <div class="col-md-6 col-sm-12">
                         <div class="formrow">
-                           <label class="control-label">Alternate Email ID <span class="required">*</span></label>
+                           <label class="control-label">Alternate Email ID </label>
                            <input type="text" name="alternate_email_id"  class="form-control" placeholder="Alternate Email ID" value="<?php if(!empty($company_info->alternate_email_id)){ echo $company_info->alternate_email_id; } ?><?php echo set_value('alternate_email_id'); ?>">
                            <?php echo form_error('alternate_email_id'); ?>        
                         </div>
@@ -543,57 +543,15 @@
                      </div>
                      <div class="col-md-6 col-sm-12">
                         <div class="formrow">
-                           <label class="control-label">Company Contact Person:<span class="required">*</span></label>  
+                           <label class="control-label">Company Contact Name:<span class="required">*</span></label>  
                            <input type="text" name="contact_name" class="form-control" id="contact_name" placeholder="Contact Name" value="<?php echo set_value('contact_name'); ?>">
                            <?php echo form_error('contact_name'); ?>        
                         </div>
                      </div>
                   </div>
-                  <div class="row f-5">
-                     <div class="col-md-6 col-sm-12">
-                        <div class="formrow">
-                           <label class="control-label">Contact Person Level:</label><span class="required">*</span>
-                           <input type="text" name="cont_person_level" id="cont_person_level" class="form-control" placeholder="E.g. Administrator" value="<?php  if(!empty($company_info->contact_name)){ echo $company_info->contact_name; } ?><?php echo set_value('cont_person_level'); ?>">   
-                           <?php echo form_error('cont_person_level'); ?>                                               
-                        </div>
-                     </div>
-                     <div class="col-md-6 col-sm-12">
-                        <div class="formrow">
-                           <label class="control-label">Contact Person Email:</label><span class="required">*</span>
-                           <input type="text" name="cont_person_email" id="cont_person_email" class="form-control" value="<?php if(!empty($company_info->cont_person_email)){ echo $company_info->cont_person_email; } ?><?php echo set_value('cont_person_email'); ?>">        <?php echo form_error('cont_person_email'); ?>                   
-                        </div>
-                     </div>
-                  </div>
-                  <div class="row f-6">
-                     <div class="col-md-6 col-sm-12">
-                        <div class="formrow">
-                           <label class="control-label">Contact Person Mobile: <span class="required">*</span></label>
-                           <input type="text" name="cont_person_mobile" id="cont_person_mobile" class="form-control" value="<?php  if(!empty($company_info->cont_person_mobile)){ echo $company_info->cont_person_mobile; } ?><?php echo set_value('cont_person_mobile'); ?>" onkeypress="phonenoo()" maxlength="10"> 
-                           <?php echo form_error('cont_person_mobile'); ?>                           
-                        </div>
-                     </div>
-                  </div>
-                  <div class="row f-7">
-                     <div class="col-md-12 col-sm-12">
-                        <div class="formrow">
-                           <label class="control-label">Company Address-1: <span class="required">*</span></label>
-                           <textarea name="company_address1" class="form-control ckeditor" placeholder="Company Address"><?php if(!empty($company_info->company_address)){ echo $company_info->company_address; } ?></textarea><?php echo set_value('company_address1'); ?>
-                           <?php echo form_error('company_address1'); ?>        
-                        </div>
-                     </div>
-                  </div>
-                  <div class="row f-8">
-                     <div class="col-md-12 col-sm-12">
-                        <div class="formrow">
-                           <label class="control-label">Company Address-2: </label>
-                           <textarea name="company_address2" class="form-control ckeditor" placeholder="Company Address"><?php if(!empty($company_info->company_address)){ echo $company_info->company_address2;
-                              } ?></textarea>  <?php echo set_value('company_address2'); ?>
-                           <?php echo form_error('company_address2'); ?>              
-                        </div>
-                     </div>
-                  </div>
+                 
                   <div class="row f-9">
-                     <div class="col-md-4 col-sm-4">
+                     <div class="col-md-3 col-sm-4">
                         <div class="formrow">
                            <label class="control-label ">Company Country: <span class="required">*</span></label>
                            <select name="country_id" id="country_id" class="form-control select2" onchange="getStates(this.value)" tabindex="-1" aria-hidden="true">
@@ -608,7 +566,7 @@
                            <?php echo form_error('country_id'); ?>        
                         </div>
                      </div>
-                     <div class="col-md-4 col-sm-4">
+                     <div class="col-md-3 col-sm-4">
                         <div class="formrow">
                            <label class="control-label ">Company State: <span class="required">*</span></label>
                            <select name="state_id" id="state_id" class="form-control select2" onchange="getCitys(this.value)">
@@ -617,7 +575,7 @@
                            <?php echo form_error('state_id'); ?>        
                         </div>
                      </div>
-                     <div class="col-md-4 col-sm-4">
+                     <div class="col-md-3 col-sm-4">
                         <div class="formrow">
                            <label class="control-label ">Company City: <span class="required">*</span></label>
                            <select name="city_id" id="city_id" class="form-control select2">
@@ -626,9 +584,7 @@
                            <?php echo form_error('city_id'); ?>        
                         </div>
                      </div>
-                  </div>
-                  <div class="row f-10">
-                     <div class="col-md-6 col-sm-6">
+                      <div class="col-md-3 col-sm-6">
                         <div class="formrow">
                            <label class="control-label">Pincode: <span class="required">*</span></label>
                            <input type="text" name="company_pincode" id="company_pincode" class="form-control ui-autocomplete-input" value="<?php 
@@ -637,6 +593,21 @@
                         </div>
                      </div>
                   </div>
+                 
+
+                  <div class="row f-7">
+                     <div class="col-md-12 col-sm-12">
+                        <div class="formrow">
+                           <label class="control-label">Office Address: <span class="required">*</span></label>
+                           <textarea name="company_address1" class="form-control ckeditor" placeholder="Company Address"><?php if(!empty($company_info->company_address)){ echo $company_info->company_address; } ?></textarea><?php echo set_value('company_address1'); ?>
+                           <?php echo form_error('company_address1'); ?>        
+                        </div>
+                     </div>
+                  </div>
+                
+
+                  
+                  
                   <div class="row f-11">
                      <div class="col-md-6 col-sm-6">
                         <div class="formrow">
@@ -742,14 +713,7 @@
    
    }, 
    
-   'alternate_email_id':{
    
-   required: true,
-   
-   email: true
-   
-   
-   },
    
    'cont_person_email':{
    
