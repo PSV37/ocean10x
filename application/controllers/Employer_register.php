@@ -91,7 +91,7 @@ class Employer_register extends CI_Controller
                     'company_username' => $this->input->post('company_username'),
                     //'dept_id'  => $this->input->post('dept_id'),
                     'company_address' => $this->input->post('company_address'),
-                    'company_address2' => $this->input->post('company_address2'),
+                    // 'company_address2' => $this->input->post('company_address2'),
                     'country_id' => $this->input->post('country_id'),
                     'state_id' => $this->input->post('state_id'),
                     'city_id' => $this->input->post('city_id'),

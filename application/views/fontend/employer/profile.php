@@ -11,7 +11,7 @@
    $full_profile=50;
    $Corporate_docs=40;
    
-   $full_profile_each=$full_profile/12;
+   $full_profile_each=$full_profile/10;
    $Corporate_docs_each=$Corporate_docs/4;
    $wheres="status='0' AND company_profile_id='$employer_id'";
     $branches = $this->Master_model->getMaster('company_branches',$where=$wheres);
@@ -46,13 +46,11 @@
         $profile_details_total += $full_profile_each;
    }
    
-   if (isset($company_info->cont_person_email) && !empty($company_info->cont_person_email)) {
-        $profile_details_total += $full_profile_each;
-   }
    
-   if (isset($company_info->cont_person_mobile) && !empty($company_info->cont_person_mobile)) {
-        $profile_details_total += $full_profile_each;
-   }
+
+   
+   
+
    
    if (isset($company_info->company_address) && !empty($company_info->company_address)) {
        $profile_details_total += $full_profile_each;
