@@ -225,14 +225,7 @@
          <input type="hidden" name="company_profile_id" value="<?php echo $company_info->company_profile_id;?>">
          <div class="col-md-12">
             <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
-             <?php if (!empty($this->session->flashdata('emp_msg'))) {?>
-      <div id="smsg" class="alert alert-alert-dismissible fade in">
-         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-         <strong style="font-size: 15px;"><?php echo $this->session->flashdata('emp_msg');?></strong>
-      </div>
-      <?php } ?>
-      <?php echo $this->session->flashdata('msg'); ?>
-      <?php echo $this->session->flashdata('success_msg'); ?>
+
             <div class="col-md-9 edit-profile">
                <div class="col-md-12 header-profile">
                   <div class="col-md-2"> 
@@ -257,6 +250,11 @@
                   </div>
                </div>
                <div class="forms">
+              
+         <?php echo $this->session->flashdata('emp_msg');?>
+       
+                                <?php echo $this->session->flashdata('msg'); ?>
+                                <?php echo $this->session->flashdata('success_msg'); ?>
                   <div class="row f-1">
                      <div class="col-md-6 col-sm-12">
                         <div class="formrow">
@@ -560,7 +558,7 @@
                      <div class="col-md-6 col-sm-12">
                         <div class="formrow">
                            <label class="control-label">Company Contact Name:<span class="required">*</span></label>  
-                           <input type="text" name="contact_name" class="form-control" id="contact_name" placeholder="Contact Name" value="<?php echo set_value('contact_name'); ?>">
+                           <input type="text" name="contact_name" class="form-control" id="contact_name" placeholder="Contact Name" value="<?php if(!empty($company_info->contact_person_name)){ echo $company_info->contact_person_name; } ?><?php echo set_value('contact_name'); ?>">
                            <?php echo form_error('contact_name'); ?>        
                         </div>
                      </div>
@@ -673,7 +671,7 @@
                         </div>
                      </div>
                   </div>
-                  <button class="btn-save-profile" id="submitbtn" type="submit">save</button>            
+                  <button class="btn-save-profile" id="submitbtn"  type="submit">save</button>            
                </div>
             </div>
          </div>
