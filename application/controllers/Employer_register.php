@@ -355,7 +355,7 @@ class Employer_register extends CI_Controller
             'country' => 'country.country_id = city.country_id',
             'state' => 'state.state_id = city.state_id'
         );
-        $where = "city.city_id = '$city_id'";
+        $where = "city.id = '$city_id'";
         $result = $this->Master_model->get_master_row('city', $select = FALSE, $where = $where, $join = $join);
 
         echo  json_encode($result);
