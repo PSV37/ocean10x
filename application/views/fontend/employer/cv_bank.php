@@ -1630,7 +1630,7 @@
        $.ajax({
                url: "<?php echo base_url();?>employer/get_active_cvs",
                type: "POST",
-               data:{exp:value},
+               data:{exp:value,notice_period:notice_period_value},
                  success: function(data)
                  {
                      var getarray = jQuery.parseJSON(data);
@@ -1638,16 +1638,7 @@
                  }
            });
 
-       $.ajax({
-               url: "<?php echo base_url();?>employer/get_active_cvs",
-               type: "POST",
-               data:{notice_period:notice_period_value},
-                 success: function(data)
-                 {
-                     var getarray = jQuery.parseJSON(data);
-                   $('#active_cv').html(getarray.length);
-                 }
-           });
+      
 
        
       // $('#active_cv').html(value);
