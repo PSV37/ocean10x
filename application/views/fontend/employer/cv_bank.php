@@ -1623,7 +1623,7 @@
    function get_data()
    {
       var value = $('#exp').val();
-      var notice_period_value = $('#notice_period').val();
+      var notice_period_value = $('.notice_period').val();
       var education_value = $('#education_id').val();
       var current_ctc_value = $('#current_ctc_id').val();
       var current_ctc_value = $('#stability_id').val();
@@ -1638,7 +1638,13 @@
                  }
            });
 
+<<<<<<< HEAD
             
+=======
+      
+
+       
+>>>>>>> 4618c9fc0f3cd50aa83a57dc9a6e993514a8334d
       // $('#active_cv').html(value);
       // alert(value);
    
@@ -1648,6 +1654,7 @@
    var values = [0, 15, 30, 45, 60, 75, 90, 90];
    $('#notice_period').change(function() {
     $('.notice_period').text(values[this.value]);
+    $('#notice_period').val(values[this.value]);
 
    });
    
