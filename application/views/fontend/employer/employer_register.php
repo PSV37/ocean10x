@@ -115,7 +115,7 @@ input#city {
                      <div class="formrow">
                         <div class="row">
                            <div class="col-md-6 col-sm-12">
-                              <input type="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  name="company_password"  class="form-control" placeholder="Password" value="<?php echo set_value('company_password'); ?>" ><?php echo form_error('company_password'); ?>
+                              <input type="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  name="company_password" id="myInput"  class="form-control" placeholder="Password" value="<?php echo set_value('company_password'); ?>" ><?php echo form_error('company_password'); ?>
                                <span toggle="#password-field" class="fa fa-eye-slash field-icon toggle-password"></span>
                                <span toggle="#password-field"><i class="fa fa-info-circle" title="Password must contain one uppercase,one lowercase,one numeric,one special character and  minimum 8 characters"></i></span>
                            </div>
@@ -130,8 +130,8 @@ input#city {
                            <div class="col-md-6 col-sm-12">
                               <select  name="company_category" id="company_category" class="form-control services select2">
                                  <option value="">Company Services</option>
-                                 <?php foreach($job_category as $dept){?>
-                                 <option value="<?php echo $dept['job_category_id']; ?>"<?php echo set_select('company_category', $dept['job_category_id'], TRUE); ?>><?php echo $dept['job_category_name']; ?></option>
+                                 <?php foreach($job_category as $dept){ ?>
+                                 <option value="<?php echo $dept['job_category_id']; ?>"><?php echo $dept['job_category_name']; ?></option>
                                  <?php } ?>
                               </select>
                            </div>
@@ -153,14 +153,20 @@ input#city {
                      <div class="formrow">
                         <div class="row">
                             <div class="col-md-6 col-sm-12">
-                              <select  name="country_id" id="country_id" class="form-control select2">
+                               <input type="text" name="state" id="state" class="form-control" value="">
+                             <input type="hidden" name="state_id" id="state_id" class="form-control" value="">
+
+                              <!-- <select  name="country_id" id="country_id" class="form-control select2">
                                  <option value="">Select City</option>
-                              </select>
+                              </select> -->
                            </div>
                            <div class="col-md-6 col-sm-12">
-                              <select  name="state_id" id="state_id" class="form-control select2" onChange="getCitys(this.value)">
+                            
+                             <input type="text" name="country" id="country" class="form-control" value="">
+                              <input type="hidden" name="country_id" id="country_id" class="form-control" value="">
+                              <!-- <select  name="state_id" id="state_id" class="form-control select2" onChange="getCitys(this.value)">
                                  <option value="">Select State</option>
-                              </select>
+                              </select> -->
                            </div>
                         </div>
                         <!-- end row -->
@@ -447,7 +453,11 @@ input#city {
                   var obj = JSON.parse(res);
 
                     $('#country_id').val(obj.country_id);
-                    $('#country_id').text(obj.country_name);
+                    $('#country').val(obj.country_name);
+                    $('#state_id').val(obj.state_id);
+                    $('#state').val(obj.state_name);
+                    $('#country').prop('readonly', true);
+                    $('#state').prop('readonly', true);
                 }
     
             }); 
