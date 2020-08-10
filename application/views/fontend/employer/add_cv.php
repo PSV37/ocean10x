@@ -197,6 +197,7 @@ input#candidate_skills {
                      <div class="form-group">
                         <label for="exampleInputEmail1">Top Education</label>
                         <!-- <input type="text" name="top_education" id="top_education" class="form-control">       <?php echo form_error('top_education'); ?> -->
+                         <select name="top_education" id="top_education" class="form-control select2" data-style="btn-default" data-live-search="true" >
                         <option value=""> </option>
                         <?php  $edu_value =  set_value('top_education'); foreach($education_level as $education){?>
                         <option value="<?php echo $education['education_level_id']; ?>"<?php if($edu_value==$education['education_level_id']){ echo "selected"; }elseif($job_info->job_edu==$education['education_level_id']){ echo "selected"; }?>><?php echo $education['education_level_name']; ?></option>
@@ -204,7 +205,7 @@ input#candidate_skills {
                         <option value="other">Other </option>
                         <option value="other">None </option>
                      </select>
-                          <select name="top_education" id="top_education" class="form-control select2" data-style="btn-default" data-live-search="true" >
+                         
                      <?php echo form_error('top_education'); ?>      
                      </div>
                   </div>
