@@ -153,14 +153,16 @@ input#city {
                      <div class="formrow">
                         <div class="row">
                             <div class="col-md-6 col-sm-12">
-                              <select  name="country_id" id="country_id" class="form-control select2">
+                              <input type="text" name="country_id" id="country_id" class="form-control" value="">
+                              <!-- <select  name="country_id" id="country_id" class="form-control select2">
                                  <option value="">Select City</option>
-                              </select>
+                              </select> -->
                            </div>
                            <div class="col-md-6 col-sm-12">
-                              <select  name="state_id" id="state_id" class="form-control select2" onChange="getCitys(this.value)">
+                             <input type="text" name="state_id" id="state_id" class="form-control" value="">
+                              <!-- <select  name="state_id" id="state_id" class="form-control select2" onChange="getCitys(this.value)">
                                  <option value="">Select State</option>
-                              </select>
+                              </select> -->
                            </div>
                         </div>
                         <!-- end row -->
