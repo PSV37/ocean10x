@@ -237,7 +237,7 @@
                   <div class="col-md-2"> 
                   <?php $profile_pic = $this->company_profile_model->company_logoby_id($company_profile_id);
                   if (isset($profile_pic) && !empty($profile_pic)) { ?>
-                      <img src="<?php echo base_url() ?>upload/<?php echo ?>" style="height:80px;width:80px;border-radius:50%;" class="img-thumbnail-profile" />
+                      <img src="<?php echo base_url() ?>upload/<?php echo $profile_pic ?>" style="height:80px;width:80px;border-radius:50%;" class="img-thumbnail-profile" />
                 <?php  }else{ ?> 
                   <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" border="0" alt="profile-picture" class="img img-thumbnail" style="width: 20%;"> <?php }
 
