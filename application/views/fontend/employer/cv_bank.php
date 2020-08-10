@@ -1630,7 +1630,7 @@
        $.ajax({
                url: "<?php echo base_url();?>employer/get_active_cvs",
                type: "POST",
-               data:{exp:value,notice_period:notice_period_value},
+               data:{exp:value, notice_period:notice_period_value},
                  success: function(data)
                  {
                      var getarray = jQuery.parseJSON(data);
