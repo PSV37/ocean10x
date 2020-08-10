@@ -410,7 +410,7 @@ i.fa.fa-info-circle{    /* margin-top: 1px; */
 
      $("#city").autocomplete({
              
-             source: "<?php echo base_url();?>Employer/search_city",
+             source: "<?php echo base_url();?>Employer/search_city_name",
             minLength: 2,
                  // append: "#rotateModal",
                  focus: function(event, ui) {
