@@ -446,7 +446,8 @@ input#city {
                 {
                   var obj = JSON.parse(res);
 
-                    $('#country_id').val(res);
+                    $('#country_id').val(obj.country_id);
+                    $('#country_id').text(obj.country_name);
                 }
     
             }); 
