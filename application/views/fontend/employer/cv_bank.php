@@ -1663,23 +1663,23 @@
    });
    
    
-   function get_notice_data()
-   {
-      var value = $('#exp').val();
-       $.ajax({
-               url: "<?php echo base_url();?>employer/get_active_cvs",
-               type: "POST",
-               data:{exp:value},
-                 success: function(data)
-                 {
-                     var getarray = jQuery.parseJSON(data);
-                   $('#active_cv').html(getarray.length);
-                 }
-           });
-      // $('#active_cv').html(value);
-      // alert(value);
+   //function get_notice_data()
+   //{
+     // var value = $('#exp').val();
+       //$.ajax({
+         //      url: "<?php echo base_url();?>employer/get_active_cvs",
+           //    type: "POST",
+             //  data:{exp:value},
+               //  success: function(data)
+                 //{
+                   //  var getarray = jQuery.parseJSON(data);
+                   //$('#active_cv').html(getarray.length);
+                 //}
+           //});
+      // // $('#active_cv').html(value);
+      // // alert(value);
    
-   }
+   //}
 
 </script>
 <script>
