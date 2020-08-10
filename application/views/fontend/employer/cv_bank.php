@@ -1641,34 +1641,16 @@
       // $('#active_cv').html(value);
       // alert(value);
    
-   
+   }
    
    
    var values = [0, 15, 30, 45, 60, 75, 90, 90];
    $('#notice_period').change(function() {
     $('.notice_period').text(values[this.value]);
-   
+    $('#notice_period').val(values[this.value]);
 
-   };
-   
-   
-   //function get_notice_data()
-   //{
-     // var value = $('#exp').val();
-       //$.ajax({
-         //      url: "<?php echo base_url();?>employer/get_active_cvs",
-           //    type: "POST",
-             //  data:{exp:value},
-               //  success: function(data)
-                 //{
-                   //  var getarray = jQuery.parseJSON(data);
-                   //$('#active_cv').html(getarray.length);
-                 //}
-           //});
-      // // $('#active_cv').html(value);
-      // // alert(value);
-   
-   //}
+   });
+
 
 </script>
 <script>
