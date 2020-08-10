@@ -839,7 +839,7 @@ public function get_all_company_by_banksbook()
 
         $this->db->like('city_name', $title , 'after');
         $this->db->order_by('city_name', 'ASC');
-         // $this->db->where('company_profile_id', $employer_id);
+       
 
         return $this->db->get('city')->result();
     }
