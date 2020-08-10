@@ -339,7 +339,7 @@ class Employer_register extends CI_Controller
                 foreach ($result as $row)
                 { 
                     $arr_result[$i]['label'] = $row->city_name;
-                    $arr_result[$i]['value'] = $row->city_id;
+                    $arr_result[$i]['value'] = $row->id;
                     $i++;
                 }
 
