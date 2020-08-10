@@ -4306,6 +4306,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     }
     function get_active_cvs() {
         $exp = $this->input->post('exp');
+        $notice_period = $this->input->post('notice_period');
         $company_id = $this->session->userdata('company_profile_id');
         $where_active = "login BETWEEN DATE_SUB(NOW(), INTERVAL 30 DAY) And  NOW() and corporate_cv_bank.company_id = '$company_id' and corporate_cv_bank.js_experience='$exp'";
         $where_active.= 'GROUP by cv_id';
