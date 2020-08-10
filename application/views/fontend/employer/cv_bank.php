@@ -1623,14 +1623,14 @@
    function get_data()
    {
       var value = $('#exp').val();
-      var notice_period_value = $('#notice_period').val();
+      var notice_period_value = $('#notice_period_val').text();
       var education_value = $('#education_id').val();
       var current_ctc_value = $('#current_ctc_id').val();
       var stability_value = $('#stability_id').val();
        $.ajax({
                url: "<?php echo base_url();?>employer/get_active_cvs",
                type: "POST",
-               data:{exp:value, notice_period:notice_period_value, education_id:education_value, current_ctc_id:current_ctc_value  },
+               data:{exp:value, notice_period_val:notice_period_value, education_id:education_value, current_ctc:stability_value  },
                  success: function(data)
                  {
                      var getarray = jQuery.parseJSON(data);
