@@ -429,14 +429,15 @@ input#city {
                   // manually update the textbox and hidden field
                   $(this).val(ui.item.label);
                   $('#city_id').val(ui.item.value);
+                  get_country(ui.item.value);
                }
                
               });
    });
 
-   function get_country()
+   function get_country(city_id)
    {
-    var city_id = $('#city_id').val();
+    // var city_id = $('#city_id').val();
     $.ajax({
                 type:'POST',
                 url:'<?php echo base_url();?>Employer/getcity_details',
