@@ -250,13 +250,9 @@
                   </div>
                </div>
                <div class="forms">
-                 <?php if (!empty($this->session->flashdata('emp_msg'))) {?>
-         <div id="smsg" class="alert alert-alert-dismissible fade in">
-           <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-           <strong style="font-size: 15px;"><?php echo $this->session->flashdata('emp_msg');?></strong>
-         </div>             
-
-               <?php } ?>
+              
+         <?php echo $this->session->flashdata('emp_msg');?>
+       
                                 <?php echo $this->session->flashdata('msg'); ?>
                                 <?php echo $this->session->flashdata('success_msg'); ?>
                   <div class="row f-1">
