@@ -223,9 +223,6 @@
     margin-top: 150px;
     margin-bottom: -130px;
 }
-input.capital {
-    text-transform: capitalize;
-}
 </style>
 <div class="container-fluid main-d">
    <div class="container">
@@ -266,7 +263,7 @@ input.capital {
                      <div class="col-md-6 col-sm-12">
                         <div class="formrow">
                            <label class="control-label">Company Name:</label>
-                           <input type="text" name="company_name" class="form-control capital" placeholder="Company Name" value="<?php if(!empty($company_info->company_name)){ echo $company_info->company_name; } ?><?php echo set_value('company_name'); ?>" class="form-control" placeholder="Company Name">
+                           <input type="text" name="company_name" class="form-control" placeholder="Company Name" value="<?php if(!empty($company_info->company_name)){ echo $company_info->company_name; } ?><?php echo set_value('company_name'); ?>" class="form-control" placeholder="Company Name">
                            <?php echo form_error('company_name'); ?>        
                         </div>
                      </div>
@@ -565,7 +562,7 @@ input.capital {
                      <div class="col-md-6 col-sm-12">
                         <div class="formrow">
                            <label class="control-label">Company Contact Name:<span class="required">*</span></label>  
-                           <input type="text" name="contact_name" class="form-control capital" id="contact_name" placeholder="Contact Name" value="<?php if(!empty($company_info->contact_name)){ echo $company_info->contact_name; } ?><?php echo set_value('contact_name'); ?>">
+                           <input type="text" name="contact_name" class="form-control" id="contact_name" placeholder="Contact Name" value="<?php if(!empty($company_info->contact_name)){ echo $company_info->contact_name; } ?><?php echo set_value('contact_name'); ?>">
                            <?php echo form_error('contact_name'); ?>        
                         </div>
                      </div>
@@ -798,7 +795,13 @@ input.capital {
    
    required: true,
    
-   url_regex: true
+   url: true,
+
+   remote:{
+    url: "validatorAJAX.php",
+    type: "post"
+    }
+
    
    },
    
@@ -927,9 +930,9 @@ input.capital {
    }, "Please choose only alphabets");
    
    
-   $.validator.addMethod("url_regex", function(value, element) {
+   $.validator.addMethod("contactname_regex", function(value, element) {
    
-   return this.optional(element) || /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/.test(value);
+   return this.optional(element) || /^[a-zA-Z ]+$/.test(value);
    
    }, "Please choose only alphabets");
    
