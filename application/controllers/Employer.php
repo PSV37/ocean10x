@@ -2969,16 +2969,31 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                             redirect('employer/profile-setting');
                         }
                     }
-                    $cv_data = array('company_id' => $company_id, 'js_name' => $this->input->post('candidate_name'), 'js_email' => $this->input->post('candidate_email'), 'js_mobile' => $this->input->post('candidate_phone'), 'js_job_type' => $this->input->post('job_type'), 'js_current_designation' => $this->input->post('current_job_desig'),
-                    // 'js_current_work_location'   => $this->input->post('current_work_location'),
+                    $cv_data = array('company_id' => $company_id, 
+                        'js_name' => $this->input->post('candidate_name'), 
+                        'js_email' => $this->input->post('candidate_email'), 
+                        'js_mobile' => $this->input->post('candidate_phone'), 
+                        'js_job_type' => $this->input->post('job_type'), 
+                        'js_current_designation' => $this->input->post('current_job_desig'),
+                 
                     'js_working_since' => date('Y-m-d', strtotime($this->input->post('working_current_since'))), 'js_current_ctc' => $this->input->post('current_ctc'), 'js_current_notice_period' => $this->input->post('candidate_notice_period'), 'js_experience' => $this->input->post('candidate_experiance'), 'js_last_salary_hike' => date('Y-m-d', strtotime($this->input->post('last_salary_hike'))), 'js_top_education' => $this->input->post('top_education'),
                     // 'js_edu_special'             => $this->input->post('education_specialization'),
-                    'js_skill_set' => implode(',', $this->input->post('candidate_skills')), 'js_certifications' => $this->input->post('candidate_certification'), 'js_industry' => $this->input->post('candidate_industry'), 'js_role' => $this->input->post('candidate_role'), 'js_expected_salary' => $this->input->post('candidate_expected_sal'), 'js_desired_work_location' => $this->input->post('desired_wrok_location'), 'ocean_candidate' => $ocean_candidate, 'js_resume' => $cand_resume,);
+                    'js_skill_set' => implode(',', $this->input->post('candidate_skills')), 
+                    'js_certifications' => $this->input->post('candidate_certification'), 'js_industry' => $this->input->post('candidate_industry'), 
+                    'js_role' => $this->input->post('candidate_role'), 
+                    'js_expected_salary' => $this->input->post('candidate_expected_sal'),
+                    'js_desired_work_location' => $this->input->post('desired_wrok_location'), 
+                    'ocean_candidate' => $ocean_candidate, 
+                    'js_resume' => $cand_resume,);
                     $cv_data['created_on'] = date('Y-m-d H:i:s');
                     $cv_data['created_by'] = $company_id;
                     $this->Master_model->master_insert($cv_data, 'corporate_cv_bank');
                     $company_name = $this->session->userdata('company_name');
-                    $data = array('company' => $company_name, 'action_taken_for' => $this->input->post('candidate_name'), 'field_changed' => 'Added  CV', 'Action' => 'Added  CV of ' . $this->input->post('candidate_name'), 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
+                    $data = array('company' => $company_name, 
+                        'action_taken_for' => $this->input->post('candidate_name'), 
+                        'field_changed' => 'Added  CV', 
+                        'Action' => 'Added  CV of ' . $this->input->post('candidate_name'), 
+                        'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
                     $result = $this->Master_model->master_insert($data, 'employer_audit_record');
                     if (isset($id) && !empty($id)) {
                         print_r($id);
