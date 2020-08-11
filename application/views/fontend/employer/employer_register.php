@@ -47,9 +47,13 @@ input:valid + .placeholder {
 }
 
 span.required {
-   color: red;
-   margin-left: 2px;
-   }
+    color: red;
+    margin-left: 2px;
+    float: right;
+    margin-bottom: 0;
+    margin-right: 20px;
+    margin-top: -25px;
+}
    </style>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -83,7 +87,8 @@ span.required {
              
        // If Not same return False.     
        else if (password1 != password2) { 
-           alert ("\nPassword did not match: Please try again...") 
+        $('.error').html('Password did not match: Please try again...');
+           // alert ("\nPassword did not match: Please try again...") 
            return false; 
        } 
    
@@ -147,13 +152,14 @@ span.required {
                      <div class="formrow">
                         <div class="row">
                            <div class="col-md-6 col-sm-12">
-                              <input type="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  name="company_password" id="myInput"  class="form-control" placeholder="Password" value="<?php echo set_value('company_password'); ?>" ><?php echo form_error('company_password'); ?>
+                              <input type="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  name="company_password" id="myInput"  class="form-control" placeholder="Password" value="<?php echo set_value('company_password'); ?>" > <span class="required">*</span><?php echo form_error('company_password'); ?>
                                <span toggle="#password-field" class="fa fa-eye-slash field-icon toggle-password"></span>
                                <span toggle="#password-field"><i class="fa fa-info-circle" title="Password must contain one uppercase,one lowercase,one numeric,one special character and  minimum 8 characters"></i></span>
                            </div>
                            <div class="col-md-6 col-sm-12">
-                              <input type="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  name="confirm_password"  class="form-control" placeholder="Confirm password" value="<?php echo set_value('company_password'); ?>" >
+                              <input type="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  name="confirm_password"  class="form-control" placeholder="Confirm password" value="<?php echo set_value('company_password'); ?>" > <span class="required">*</span>
                            </div>
+                           <div class="error"></div>
                         </div>
                         <!-- end row -->
                      </div>
@@ -161,14 +167,14 @@ span.required {
                         <div class="row">
                            <div class="col-md-6 col-sm-12">
                               <select  name="company_category" id="company_category" class="form-control services select2">
-                                 <option value="">select Services</option>
+                                 <option value="">Select Company Type</option>
                                  <?php foreach($job_category as $dept){ ?>
                                  <option value="<?php echo $dept['job_category_id']; ?>"><?php echo $dept['job_category_name']; ?></option>
                                  <?php } ?>
                               </select>
                            </div>
                            <div class="col-md-6 col-sm-12">
-                            <input type="text" name="city" id="city" placeholder="City" >
+                            <input type="text" name="city" id="city" placeholder="City" > <span class="required">*</span>
                             <input type="hidden" value=""  name="city_id" id="city_id" onchange="get_country();">
                              <!--  <select  name="country_id" id="country_id" class="form-control country select2" onChange="getStates(this.value)">
                                  <option value="">Select Country</option>
@@ -206,7 +212,7 @@ span.required {
                      <div class="formrow">
                         <div class="row">
                            <div class="col-md-12 col-sm-12">
-                              <textarea name="company_address" class="form-control" placeholder="Office Address" autocomplete="off"  ><?php echo set_value('company_address'); ?></textarea><?php echo form_error('company_address'); ?>
+                              <textarea name="company_address" class="form-control" placeholder="Office Address" autocomplete="off"  ><?php echo set_value('company_address'); ?></textarea> <span class="required">*</span><?php echo form_error('company_address'); ?>
                            </div>
                         </div>
                         <!-- end row -->
