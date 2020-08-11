@@ -27,36 +27,7 @@ input#city {
 input#company_name {
     text-transform: capitalize;
 }
-.input-wrapper {
-  display: inline-block;
-  position: relative;
-}
 
-.input-wrapper input {
-  background: transparent;
-  border: 1px solid #999;
-}
-
-.input-wrapper input:valid + span::before {
-  display: none;
-}
-
-.input-wrapper .placeholder {
-  position: absolute;
-  top: 1px;
-  left: 2px;
-  z-index: -1;
-}
-
-.input-wrapper .placeholder::before {
-  content: attr(data-placeholder);
-  color: #999;
-}
-
-.input-wrapper .placeholder::after {
-  content: " *";
-  color: tomato;
-}
   
    </style>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -117,7 +88,7 @@ input#company_name {
             <div class="userccount">
                <h5 align="center">Join the Ocean to hunt the best Professional !</h5>
                <hr>
-               <div class="formpanel input-wrapper">
+               <div class="formpanel">
                   <form id="EmpRegistation" action="<?php echo base_url(); ?>employer_register/create" method="post" enctype="multipart/form-data" class="submit-form" onSubmit = "return checkPassword(this)" >
                      <div class="formrow">
                         <div class="row">
@@ -129,7 +100,7 @@ input#company_name {
                               </select> 
                            </div>
                            <div class="col-md-6 col-sm-12">
-                              <input type="text" name="company_name" id="company_name"class="form-control required"  value="<?php echo set_value('company_name'); ?>"  autocomplete="off"> <span class="placeholder" data-placeholder="Company Name"></span>
+                              <input type="text" name="company_name" id="company_name"class="form-control required" placeholder="Company name"  value="<?php echo set_value('company_name'); ?>"  autocomplete="off"> <span class="required">*</span>
                              
                               <?php echo form_error('company_name'); ?>
                            </div>
@@ -139,8 +110,7 @@ input#company_name {
                      <div class="formrow">
                         <div class="row">
                            <div class="col-md-6 col-sm-12">
-                              <input type="email" name="company_email" value="<?php echo set_value('company_email'); ?>" class="form-control required"  autocomplete="off">
-                              <span class="placeholder" data-placeholder="Email"></span>
+                              <input type="email" name="company_email" value="<?php echo set_value('company_email'); ?>" class="form-control required"  autocomplete="off"><span class="required">*</span>
                               
                               <?php echo form_error('company_email'); ?>
                            </div>
