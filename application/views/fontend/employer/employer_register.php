@@ -312,10 +312,7 @@ input#company_name {
                    required: true,
                    email: true
                },
-               company_username: {
-                   required: true,
-                   minlength: 5
-               },
+             
                company_password: {
                    required: true,
                    minlength: 8
@@ -328,12 +325,7 @@ input#company_name {
                    required: true,
                },
    
-               country_id: {
-                   required: true,
-               },
-               state_id: {
-                   required: true,
-               },
+              
                city_id: {
                    required: true,
                },
@@ -346,11 +338,34 @@ input#company_name {
            },
          
          messages: { 
-          
+           company_password: {
                     required: "This field is mandatory!",
-               
+                   minlength: "Your password must be at least 8 characters long"
+           },
+            captcha:{
+                   required:"This field is mandatory!",
                    equalTo: "Captcha doesn't match!",
-          
+               }
+                company_password: {
+                    required: "This field is mandatory!",
+                   minlength: "Your password must be at least 8 characters long"
+           },
+            company_password:{
+                   required:"This field is mandatory!",
+                   equalTo: "Captcha doesn't match!",
+               }
+                company_category:{
+                   required:"This field is mandatory!",
+                   equalTo: "Captcha doesn't match!",
+               }
+                company_address:{
+                   required:"This field is mandatory!",
+                   equalTo: "Captcha doesn't match!",
+               }
+ city_id:{
+                   required:"This field is mandatory!",
+                   equalTo: "Captcha doesn't match!",
+               }
 
 
          },
