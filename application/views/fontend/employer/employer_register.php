@@ -156,9 +156,9 @@ input#company_name {
                               </select>
                            </div>
                            <div class="col-md-6 col-sm-12">
-                            <input type="text" name="city"  id="city" placeholder="City" >
+                            <input type="text" name="city" class="form-control" id="city" placeholder="City" >
                              <span class="required">*</span>
-                            <input type="hidden" value=""  name="city_id" id="city_id" onchange="get_country();">
+                            <input type="hidden" value="" class="form-control"  name="city_id" id="city_id" onchange="get_country();">
                              <!--  <select  name="country_id" id="country_id" class="form-control country select2" onChange="getStates(this.value)">
                                  <option value="">Select Country</option>
                                  <?php foreach($country as $key){?>
