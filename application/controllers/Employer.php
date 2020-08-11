@@ -2876,7 +2876,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 }
                 if ($exists == true) {
                     if (isset($id) && !empty($id)) {
-                        print_r($id);
+                        
                         $email = $this->input->post('candidate_email');
                         $job_post_id = $id;
                         $where_can = "email='$email'";
@@ -2998,13 +2998,23 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                         'Action' => 'Added  CV of ' . $this->input->post('candidate_name'), 
                         'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
                     $result = $this->Master_model->master_insert($data, 'employer_audit_record');
+                    $email = $this->input->post('candidate_email');
+                        $job_post_id = $id;
+                        $where_can = "email='$email'";
+                        $can_data = $this->Master_model->getMaster('js_info', $where_can);
+                        if (!empty($can_data)) {
+                            $seeker_id = $can_data[0]['job_seeker_id'];
+                        } else {
+                            $new_JS_array = array('email' => $email, 'js_token' => md5($email), 'create_at' => date('Y-m-d H:i:s'));
+                            $seeker_id = $this->Master_model->master_insert($new_JS_array, 'js_info');
+                        }
                     if (isset($id) && !empty($id)) {
-                        print_r($id);
+                      
                         $email = $this->input->post('candidate_email');
                         $job_post_id = $id;
                         $where_can = "email='$email'";
                         $can_data = $this->Master_model->getMaster('js_info', $where_can);
-                        if ($can_data) {
+                        if (!empty($can_data)) {
                             $seeker_id = $can_data[0]['job_seeker_id'];
                         } else {
                             $new_JS_array = array('email' => $email, 'js_token' => md5($email), 'create_at' => date('Y-m-d H:i:s'));
