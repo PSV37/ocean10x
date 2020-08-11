@@ -27,43 +27,11 @@ input#city {
 input#company_name {
     text-transform: capitalize;
 }
-.placeholder {
-    position: absolute;
-    pointer-events: none;
-    top: 6px;
-    bottom: 0;
-    height: 25px;
-    font-size: 15px;
-    left: 35px;
-    margin: auto;
-    color: #ccc;
-}
-input:valid + .placeholder {
-  display: none;
-}
 
-.placeholder span {
-  color: red;
-}
-
-span.required {
-   color: red;
-   margin-left: 2px;
-   }
-   .required::-webkit-input-placeholder:after {
-    content: " *";
+  .required:after { 
+    content:" *";
     color: red;
-}
-
-.required:-moz-placeholder:after {
-    content: " *";
-    color: red;  
-}
-
-.required:-ms-input-placeholder:after {  
-    content: " *";
-    color: red;  
-}
+     }
    </style>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
