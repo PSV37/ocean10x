@@ -798,9 +798,9 @@
    url: true,
 
    remote:{
-url: "validatorAJAX.php",
-type: "post"
-}
+    url: "validatorAJAX.php",
+    type: "post"
+    }
 
    
    },

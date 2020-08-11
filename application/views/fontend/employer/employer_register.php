@@ -28,10 +28,17 @@ input#company_name {
     text-transform: capitalize;
 }
 
-  .required:after { 
-    content:" *";
-    color: red;
-     }
+
+      input.required {
+        padding: 2px;
+        height: 30px;
+        width: 200px;
+        background-image: url("http://www.fileformat.info/info/unicode/char/002a/asterisk.png");
+        background-position: 160px -10px;
+        background-repeat: no-repeat;
+        background-size: 30%;
+      }
+
    </style>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
