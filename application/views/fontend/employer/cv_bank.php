@@ -1274,6 +1274,23 @@
                </div>
             </div>
             <div class="filter1">
+               <p style="font-size:18px;margin-top:15px;">Current CTC</p>
+               <input type="range" class="range" id="exp_id" onchange="get_data();" min="1" max="99">
+                  <output class="bubble"></output>
+               <!--<select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" id='current_ctc_id' onchange="get_data();" tabindex="-98">
+                  <optgroup label="Driver Groups">
+                     <option>BEC</option>
+                     <option>VMA</option>
+                  </optgroup>
+                  <optgroup label="Drivers">
+                     <option>Stan</option>
+                     <option>Fanny</option>
+                     <option>Rudy</option>
+                     <option>Ahmed</option>
+                  </optgroup>
+               </select> -->
+            </div>
+            <div class="filter1">
                <p style="font-size:18px;margin-top:15px;">Education</p>
                <select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" id="education_id" onchange="get_data();" tabindex="-98">
                   <option value=""> </option>
@@ -1292,23 +1309,7 @@
                      </optgroup> -->
                </select>
             </div>
-            <div class="filter1">
-               <p style="font-size:18px;margin-top:15px;">Current CTC</p>
-               <input type="range" class="range" id="exp_id" onchange="get_data();" min="1" max="99">
-                  <output class="bubble"></output>
-               <!--<select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" id='current_ctc_id' onchange="get_data();" tabindex="-98">
-                  <optgroup label="Driver Groups">
-                     <option>BEC</option>
-                     <option>VMA</option>
-                  </optgroup>
-                  <optgroup label="Drivers">
-                     <option>Stan</option>
-                     <option>Fanny</option>
-                     <option>Rudy</option>
-                     <option>Ahmed</option>
-                  </optgroup>
-               </select> -->
-            </div>
+            
             <div class="filter1">
                <p style="font-size:18px;margin-top:15px;">Stability Filter</p>
                <select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" id='stability_id' tabindex="-98">
