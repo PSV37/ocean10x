@@ -332,7 +332,7 @@ input#company_name {
             captcha:{
                    required:"This field is mandatory!",
                    equalTo: "Captcha doesn't match!",
-               }
+               },
                 company_password: {
                     required: "This field is mandatory!",
                    minlength: "Your password must be at least 8 characters long"
