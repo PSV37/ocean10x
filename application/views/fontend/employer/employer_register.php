@@ -45,6 +45,11 @@ input:valid + .placeholder {
 .placeholder span {
   color: red;
 }
+
+span.required {
+   color: red;
+   margin-left: 2px;
+   }
    </style>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -112,13 +117,12 @@ input:valid + .placeholder {
                                  <!-- <option value="">Select Type</option> -->
                                  <option value="Company"<?php echo set_select('company_type', 'Company', TRUE); ?>>Company</option>
                                  <option value="HR Consultant"<?php echo set_select('company_type', 'HR Consultant', TRUE); ?>>HR Consultant</option>
-                              </select>
+                              </select> <span class="required">*</span>
                            </div>
                            <div class="col-md-6 col-sm-12">
-                              <input type="text" name="company_name" id="company_name"class="form-control"  value="<?php echo set_value('company_name'); ?>"  autocomplete="off"> 
-                              <div class="placeholder">
-                                Company Name <span>*</span>
-                              </div><?php echo form_error('company_name'); ?>
+                              <input type="text" name="company_name" id="company_name"class="form-control" placeholder="Company name"  value="<?php echo set_value('company_name'); ?>"  autocomplete="off"> 
+                               <span class="required">*</span>
+                              <?php echo form_error('company_name'); ?>
                            </div>
                         </div>
                         <!-- end row -->
@@ -143,9 +147,7 @@ input:valid + .placeholder {
                      <div class="formrow">
                         <div class="row">
                            <div class="col-md-6 col-sm-12">
-                              <input type="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  name="company_password" id="myInput"  class="form-control"  value="<?php echo set_value('company_password'); ?>" ><div class="placeholder">
-                                Password <span>*</span>
-                              </div><?php echo form_error('company_password'); ?>
+                              <input type="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  name="company_password" id="myInput"  class="form-control" placeholder="Password" value="<?php echo set_value('company_password'); ?>" ><?php echo form_error('company_password'); ?>
                                <span toggle="#password-field" class="fa fa-eye-slash field-icon toggle-password"></span>
                                <span toggle="#password-field"><i class="fa fa-info-circle" title="Password must contain one uppercase,one lowercase,one numeric,one special character and  minimum 8 characters"></i></span>
                            </div>
@@ -166,12 +168,14 @@ input:valid + .placeholder {
                               </select>
                            </div>
                            <div class="col-md-6 col-sm-12">
-                            <input type="text" name="city" id="city"  >
-                            <div class="placeholder">
-                                City <span>*</span>
-                              </div>
-                            <input type="hidden" value=""  name="city_id" id="city_id" onchange="get_country();"><?php echo set_value('city_id'); ?>
-                             
+                            <input type="text" name="city" id="city" placeholder="City" >
+                            <input type="hidden" value=""  name="city_id" id="city_id" onchange="get_country();">
+                             <!--  <select  name="country_id" id="country_id" class="form-control country select2" onChange="getStates(this.value)">
+                                 <option value="">Select Country</option>
+                                 <?php foreach($country as $key){?>
+                                 <option value="<?php echo $key['country_id']; ?>" <?php echo  set_select('country_id', $key['country_id']); ?> ><?php echo $key['country_name']; ?></option>
+                                 <?php } ?>
+                              </select> -->
                            </div>
                         </div>
                         <!-- end row -->
@@ -202,11 +206,7 @@ input:valid + .placeholder {
                      <div class="formrow">
                         <div class="row">
                            <div class="col-md-12 col-sm-12">
-                              <textarea name="company_address" class="form-control"  autocomplete="off"  ><?php echo set_value('company_address'); ?></textarea>
-                              <div class="placeholder">
-                                Office Address <span>*</span>
-                              </div>
-                              <?php echo form_error('company_address'); ?>
+                              <textarea name="company_address" class="form-control" placeholder="Office Address" autocomplete="off"  ><?php echo set_value('company_address'); ?></textarea><?php echo form_error('company_address'); ?>
                            </div>
                         </div>
                         <!-- end row -->
