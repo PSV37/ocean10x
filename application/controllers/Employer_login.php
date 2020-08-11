@@ -34,7 +34,7 @@ class Employer_Login extends CI_Controller
         $result           = $this->employer_login_model->check_login_info($company_email, $company_password);
         if (!empty($result)) {
             $status  = $result->company_status;
-            print_r($status);
+            // print_r($status);
             if ($status == 0) {
                 $this->session->set_flashdata('emp_msg',
                 '<div class="alert alert-danger alert-dismissable">
@@ -47,6 +47,7 @@ class Employer_Login extends CI_Controller
             $data['company_profile_id'] = $result->company_profile_id;
             $data['company_name']       = $result->company_name;
             $data['comp_type']          = $result->comp_type;
+            $data['email']          = $result->company_email;
             $this->session->set_userdata($data);
             $company_profile_id=$this->session->userdata('company_profile_id');
              

@@ -47,7 +47,10 @@
           <div class="section lb">
                 <div class="container">
                    <div class="row">
-            <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
+            <?php $this->load->view('fontend/layout/employer_menu.php'); 
+            $email=$this->session->userdata('email');
+
+            ?>
                   
 
                         <div class="content col-md-9">
@@ -58,10 +61,10 @@
                                     <div class="row">
                                         <div class="col-md-6 col-sm-12">
                                            <label class="control-label">User Name</label>
-                                            <input type="username" name="username" class="form-control" readonly value="Super Admin" >
+                                            <input type="username" name="username" class="form-control" readonly value="SuperAdmin" >
                                             <br>
                                             <label class="control-label">Email</label>
-                                            <input type="email" name="email" class="form-control" placeholder="Superadmin Email">
+                                            <input type="email" name="email" class="form-control" value="<?php echo $email; ?>" placeholder="Superadmin Email">
                                             <br>
                                             <label class="control-label">Password</label>
                                             <input type="password" name="password" class="form-control" placeholder=" password">
