@@ -223,6 +223,9 @@
     margin-top: 150px;
     margin-bottom: -130px;
 }
+input {
+    text-transform: capitalize;
+}
 </style>
 <div class="container-fluid main-d">
    <div class="container">
