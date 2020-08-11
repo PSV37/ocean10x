@@ -60,11 +60,15 @@ input#company_name {
    
        // If password not entered 
        if (password1 == '') 
-           alert ("Please enter Password"); 
+        // $('.error').html('Please enter Password...');
+
+           // alert ("Please enter Password"); 
              
        // If confirm password not entered 
        else if (password2 == '') 
-           alert ("Please enter confirm password"); 
+        // $('.error').html('Please enter confirm password...');
+
+           // alert ("Please enter confirm password"); 
              
        // If Not same return False.     
        else if (password1 != password2) { 
@@ -156,9 +160,9 @@ input#company_name {
                               </select>
                            </div>
                            <div class="col-md-6 col-sm-12">
-                            <input type="text" name="city"  id="city" placeholder="City" >
+                            <input type="text" name="city" class="form-control" id="city" placeholder="City" >
                              <span class="required">*</span>
-                            <input type="hidden" value=""  name="city_id" id="city_id" onchange="get_country();">
+                            <input type="hidden" value="" class="form-control"  name="city_id" id="city_id" onchange="get_country();">
                              <!--  <select  name="country_id" id="country_id" class="form-control country select2" onChange="getStates(this.value)">
                                  <option value="">Select Country</option>
                                  <?php foreach($country as $key){?>
@@ -308,10 +312,7 @@ input#company_name {
                    required: true,
                    email: true
                },
-               company_username: {
-                   required: true,
-                   minlength: 5
-               },
+             
                company_password: {
                    required: true,
                    minlength: 8
@@ -324,12 +325,7 @@ input#company_name {
                    required: true,
                },
    
-               country_id: {
-                   required: true,
-               },
-               state_id: {
-                   required: true,
-               },
+              
                city_id: {
                    required: true,
                },
@@ -343,13 +339,35 @@ input#company_name {
          
          messages: { 
            company_password: {
-                    required: "Please provide a password",
+                    required: "This field is mandatory!",
                    minlength: "Your password must be at least 8 characters long"
            },
             captcha:{
-                   required:"Captcha is required!",
+                   required:"This field is mandatory!",
                    equalTo: "Captcha doesn't match!",
                }
+                company_password: {
+                    required: "This field is mandatory!",
+                   minlength: "Your password must be at least 8 characters long"
+           },
+            company_password:{
+                   required:"This field is mandatory!",
+                   equalTo: "Captcha doesn't match!",
+               }
+                company_category:{
+                   required:"This field is mandatory!",
+                   equalTo: "Captcha doesn't match!",
+               }
+                company_address:{
+                   required:"This field is mandatory!",
+                   equalTo: "Captcha doesn't match!",
+               }
+ city_id:{
+                   required:"This field is mandatory!",
+                   equalTo: "Captcha doesn't match!",
+               }
+
+
          },
            errorElement: "em",
            errorPlacement: function ( error, element ) {

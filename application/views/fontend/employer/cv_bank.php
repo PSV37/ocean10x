@@ -1271,7 +1271,7 @@
             <div class="filter1">
                <p style="font-size:18px;margin-top:15px;">Notice Period</p>
                <div class="range-wrap">
-                  <input type="range" class="range" id="notice_period_id" onchange="get_data();" min="0" max="7">
+                  <input type="range" class="range" id="notice_period_id" onchange="get_data();" min="0" max="100" step="5">
                   <output class="bubble notice_period" id="notice_period_value"></output>
                </div>
             </div>
@@ -1628,17 +1628,18 @@
 </script>
 <script>
 
+<<<<<<< HEAD
    var values = [0, 15, 30, 45, 60, 75, 90, 90];
    $('#notice_period_id').change(function() {
     $('.notice_period').text(values[this.value]);
     $('#notice_period_id').val(values[this.value]);
    });
+=======
+>>>>>>> c1e68bf6d49be69430c8e9503ba567a7cc44c426
    
    function get_data()
    {
-
-   
-
+     
       var value = $('#exp_id').val();
       var notice_period_value = $('#notice_period_id').val();
       var education_value = $('#education_id').val();
