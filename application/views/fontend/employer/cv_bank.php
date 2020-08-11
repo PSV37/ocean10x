@@ -1272,14 +1272,14 @@
                <p style="font-size:18px;margin-top:15px;">Notice Period</p>
                <div class="range-wrap">
                   <input type="range" class="range" id="notice_period_id" onchange="get_data();" min="0" max="100" step="5">
-                  <output class="bubble notice_period" id="notice_period_value"></output>
+                  <output class="bubble notice_period" ></output>
                </div>
             </div>
             <div class="filter1">
                <p style="font-size:18px;margin-top:15px;">Current CTC</p>
                <div class="range-wrap">
                <input type="range" class="range" id='current_ctc_id' onchange="get_data();" min="1" max="99">
-                  <output class="bubble"></output>
+                  <output class="bubble "></output>
                </div>
                <!--<select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" id='current_ctc_id' onchange="get_data();" tabindex="-98">
                   <optgroup label="Driver Groups">
@@ -1628,14 +1628,13 @@
 </script>
 <script>
 
-<<<<<<< HEAD
+
    var values = [0, 15, 30, 45, 60, 75, 90, 90];
    $('#notice_period_id').change(function() {
     $('.notice_period').text(values[this.value]);
     $('#notice_period_id').val(values[this.value]);
    });
-=======
->>>>>>> c1e68bf6d49be69430c8e9503ba567a7cc44c426
+
    
    function get_data()
    {
