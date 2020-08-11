@@ -24,6 +24,24 @@ i.fa.fa-info-circle{    /* margin-top: 1px; */
 input#city {
     width: 100%;
 }
+input#company_name {
+    text-transform: capitalize;
+}
+.placeholder {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  bottom: 0;
+  height: 25px;
+  font-size: 25px;
+  left: 10px;
+  margin: auto;
+  color: #ccc;
+}
+
+.placeholder span {
+  color: red;
+}
    </style>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -94,7 +112,10 @@ input#city {
                               </select>
                            </div>
                            <div class="col-md-6 col-sm-12">
-                              <input type="text" name="company_name" id="company_name"class="form-control"  value="<?php echo set_value('company_name'); ?>" placeholder="Company Name" autocomplete="off"><?php echo form_error('company_name'); ?>
+                              <input type="text" name="company_name" id="company_name"class="form-control"  value="<?php echo set_value('company_name'); ?>"  autocomplete="off"> 
+                              <div class="placeholder">
+                                Company Name <span>*</span>
+                              </div><?php echo form_error('company_name'); ?>
                            </div>
                         </div>
                         <!-- end row -->
@@ -129,14 +150,14 @@ input#city {
                         <div class="row">
                            <div class="col-md-6 col-sm-12">
                               <select  name="company_category" id="company_category" class="form-control services select2">
-                                 <option value="">Company Services</option>
+                                 <option value="">select Services</option>
                                  <?php foreach($job_category as $dept){ ?>
                                  <option value="<?php echo $dept['job_category_id']; ?>"><?php echo $dept['job_category_name']; ?></option>
                                  <?php } ?>
                               </select>
                            </div>
                            <div class="col-md-6 col-sm-12">
-                            <input type="text" name="city" id="city" >
+                            <input type="text" name="city" id="city" placeholder="City" >
                             <input type="hidden" value=""  name="city_id" id="city_id" onchange="get_country();">
                              <!--  <select  name="country_id" id="country_id" class="form-control country select2" onChange="getStates(this.value)">
                                  <option value="">Select Country</option>
@@ -183,7 +204,7 @@ input#city {
                      <div class="formrow">
                         <div class="row">
                            <div class="col-md-12 col-sm-12">
-                              <label class="control-label">Company Logo<small> company logo measures 300 x 300 pixels </small></label>
+                              <label class="control-label">Company Logo<small> (300 x 300 pixels) </small></label>
                               <input type="file" name="company_logo"  class="form-control" />
                            </div>
                         </div>
@@ -293,7 +314,7 @@ input#city {
                    minlength: 8
                    
                },
-               company_service: {
+               company_category: {
                    required: true,
                },
                company_address: {
