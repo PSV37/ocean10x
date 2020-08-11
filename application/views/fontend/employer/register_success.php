@@ -9,9 +9,8 @@
                             <div class="userccount">
                             <div class="notfound confirm">
                                 
-                                <h3>Congratulations <?php echo $company_name ?></h3>
-                                <p>You have successfully registered your presence on TheOcean ! 
-Please activate your Corporate Account by accessing the secure link sent to your e-mail account ! </p>
+                                <h3>Congratulations <?php echo $company_name ?> !</h3>
+                                <p>Access the secure link sent to your e-mail to activate your Corporate Account !</p>
                                
                                 <div class="clearfix"></div>
                            </div>

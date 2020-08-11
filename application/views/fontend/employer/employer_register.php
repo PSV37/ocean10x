@@ -24,6 +24,14 @@ i.fa.fa-info-circle{    /* margin-top: 1px; */
 input#city {
     width: 100%;
 }
+input#company_name {
+    text-transform: capitalize;
+}
+
+  .required:after { 
+    content:" *";
+    color: red;
+     }
    </style>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -57,7 +65,8 @@ input#city {
              
        // If Not same return False.     
        else if (password1 != password2) { 
-           alert ("\nPassword did not match: Please try again...") 
+        $('.error').html('Password did not match: Please try again...');
+           // alert ("\nPassword did not match: Please try again...") 
            return false; 
        } 
    
@@ -87,14 +96,16 @@ input#city {
                      <div class="formrow">
                         <div class="row">
                            <div class="col-md-6 col-sm-12">
-                              <select name="company_type" id="company_type" class="form-control select2" >
+                              <select name="company_type" id="company_type" class="form-control select2 required" >
                                  <!-- <option value="">Select Type</option> -->
                                  <option value="Company"<?php echo set_select('company_type', 'Company', TRUE); ?>>Company</option>
                                  <option value="HR Consultant"<?php echo set_select('company_type', 'HR Consultant', TRUE); ?>>HR Consultant</option>
-                              </select>
+                              </select> 
                            </div>
                            <div class="col-md-6 col-sm-12">
-                              <input type="text" name="company_name" id="company_name"class="form-control"  value="<?php echo set_value('company_name'); ?>" placeholder="Company Name" autocomplete="off"><?php echo form_error('company_name'); ?>
+                              <input type="text" name="company_name" id="company_name"class="form-control required" placeholder="Company name"  value="<?php echo set_value('company_name'); ?>"  autocomplete="off"> 
+                             
+                              <?php echo form_error('company_name'); ?>
                            </div>
                         </div>
                         <!-- end row -->
@@ -102,7 +113,9 @@ input#city {
                      <div class="formrow">
                         <div class="row">
                            <div class="col-md-6 col-sm-12">
-                              <input type="email" name="company_email" value="<?php echo set_value('company_email'); ?>" class="form-control" placeholder="Email" autocomplete="off"><?php echo form_error('company_email'); ?>
+                              <input type="email" name="company_email" value="<?php echo set_value('company_email'); ?>" class="form-control required"  autocomplete="off">
+                              
+                              <?php echo form_error('company_email'); ?>
                            </div>
                           <!--  <div class="col-md-6 col-sm-12">
                               <input type="text" name="company_username" id="company_username" value="<?php echo set_value('company_username'); ?>" class="form-control" placeholder="Company Admin UserName" autocomplete="off"><?php echo form_error('company_username'); ?>
@@ -115,13 +128,14 @@ input#city {
                      <div class="formrow">
                         <div class="row">
                            <div class="col-md-6 col-sm-12">
-                              <input type="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  name="company_password" id="myInput"  class="form-control" placeholder="Password" value="<?php echo set_value('company_password'); ?>" ><?php echo form_error('company_password'); ?>
+                              <input type="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  name="company_password" id="myInput"  class="form-control required" placeholder="Password" value="<?php echo set_value('company_password'); ?>" ><?php echo form_error('company_password'); ?>
                                <span toggle="#password-field" class="fa fa-eye-slash field-icon toggle-password"></span>
                                <span toggle="#password-field"><i class="fa fa-info-circle" title="Password must contain one uppercase,one lowercase,one numeric,one special character and  minimum 8 characters"></i></span>
                            </div>
                            <div class="col-md-6 col-sm-12">
-                              <input type="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  name="confirm_password"  class="form-control" placeholder="Confirm password" value="<?php echo set_value('company_password'); ?>" >
+                              <input type="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  name="confirm_password"  class="form-control required" placeholder="Confirm password" value="<?php echo set_value('company_password'); ?>" >
                            </div>
+                           <div class="error"></div>
                         </div>
                         <!-- end row -->
                      </div>
@@ -129,14 +143,14 @@ input#city {
                         <div class="row">
                            <div class="col-md-6 col-sm-12">
                               <select  name="company_category" id="company_category" class="form-control services select2">
-                                 <option value="">Company Services</option>
+                                 <option value="">Select Company Type</option>
                                  <?php foreach($job_category as $dept){ ?>
                                  <option value="<?php echo $dept['job_category_id']; ?>"><?php echo $dept['job_category_name']; ?></option>
                                  <?php } ?>
                               </select>
                            </div>
                            <div class="col-md-6 col-sm-12">
-                            <input type="text" name="city" id="city" >
+                            <input type="text" name="city" class="required" id="city" placeholder="City" >
                             <input type="hidden" value=""  name="city_id" id="city_id" onchange="get_country();">
                              <!--  <select  name="country_id" id="country_id" class="form-control country select2" onChange="getStates(this.value)">
                                  <option value="">Select Country</option>
@@ -174,7 +188,7 @@ input#city {
                      <div class="formrow">
                         <div class="row">
                            <div class="col-md-12 col-sm-12">
-                              <textarea name="company_address" class="form-control" placeholder="Office Address" autocomplete="off"  ><?php echo set_value('company_address'); ?></textarea><?php echo form_error('company_address'); ?>
+                              <textarea name="company_address" class="form-control required" placeholder="Office Address" autocomplete="off"  ><?php echo set_value('company_address'); ?></textarea><?php echo form_error('company_address'); ?>
                            </div>
                         </div>
                         <!-- end row -->
@@ -183,7 +197,7 @@ input#city {
                      <div class="formrow">
                         <div class="row">
                            <div class="col-md-12 col-sm-12">
-                              <label class="control-label">Company Logo<small> company logo measures 300 x 300 pixels </small></label>
+                              <label class="control-label">Company Logo<small> (300 x 300 pixels) </small></label>
                               <input type="file" name="company_logo"  class="form-control" />
                            </div>
                         </div>
@@ -293,7 +307,7 @@ input#city {
                    minlength: 8
                    
                },
-               company_service: {
+               company_category: {
                    required: true,
                },
                company_address: {

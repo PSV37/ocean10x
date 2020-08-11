@@ -56,6 +56,13 @@ class Employer_register extends CI_Controller
         
         if ($_POST) {
             $this->form_validation->set_rules('company_password', 'password', 'required|max_length[15]|min_length[8]|regex_match[/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/]');
+            $this->form_validation->set_rules('company_name', 'Company name', 'required');
+            $this->form_validation->set_rules('company_email', 'Company Email', 'required');
+            $this->form_validation->set_rules('company_category', 'Company Category', 'required');
+            $this->form_validation->set_rules('city_id', 'City', 'required');
+            $this->form_validation->set_rules('state_id', 'State', 'required');
+            $this->form_validation->set_rules('country_id', 'country', 'required');
+            $this->form_validation->set_rules('company_address', 'Address', 'required');
             // array('required' => 'You must provide a %s.','regex_match' =>'You must provide One Uppercase,One Lowercase,Numbers');
             $this->form_validation->set_message('regex_match', 'You must provide One Uppercase,One Lowercase,Numbers and special Character');
             if ($this->form_validation->run() == FALSE) {
@@ -138,18 +145,18 @@ class Employer_register extends CI_Controller
                 }
                 if ($exist_companyname) {
                     // all Ready Account Message
-                    $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Company Name Or Account Already Use This!</div>');
+                    $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Company Name Or Account Already exists! Please Login!</div>');
                     redirect('employer_register');
                 }
                 
                 if ($exist_email || $exist_email_js) {
                     // all Ready Account Message
-                    $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your Email Or Account Already Use This!</div>');
+                    $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">E-mail already exists! Please Login!</div>');
                     redirect('employer_register');
                 }
                 if ($exist_username) {
                     // all Ready Account Message
-                    $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your Username Or Account Already Use This!</div>');
+                    $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your Username Or Account Already already exists! Please Login!</div>');
                     redirect('employer_register');
                 }
                 
