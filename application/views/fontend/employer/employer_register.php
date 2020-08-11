@@ -30,7 +30,9 @@ input#company_name {
 .required {
     color: #DD4B39;
     float: right;
-    margin-top: -19px;
+    margin-top: -29px;
+    margin-right: -16px;
+    font-size: 25px;
 }
   
    </style>
@@ -114,7 +116,7 @@ input#company_name {
                      <div class="formrow">
                         <div class="row">
                            <div class="col-md-6 col-sm-12">
-                              <input type="email" name="company_email" value="<?php echo set_value('company_email'); ?>" class="form-control "  autocomplete="off"><span class="required">*</span>
+                              <input type="email" name="company_email" placeholder="Email" value="<?php echo set_value('company_email'); ?>"  class="form-control "  autocomplete="off"><span class="required">*</span>
                               
                               <?php echo form_error('company_email'); ?>
                            </div>
@@ -129,12 +131,15 @@ input#company_name {
                      <div class="formrow">
                         <div class="row">
                            <div class="col-md-6 col-sm-12">
-                              <input type="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  name="company_password" id="myInput"  class="form-control " placeholder="Password" value="<?php echo set_value('company_password'); ?>" ><?php echo form_error('company_password'); ?>
+                              <input type="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  name="company_password" id="myInput"  class="form-control " placeholder="Password" value="<?php echo set_value('company_password'); ?>" >
+                               <span class="required">*</span>
+                              <?php echo form_error('company_password'); ?>
                                <span toggle="#password-field" class="fa fa-eye-slash field-icon toggle-password"></span>
                                <span toggle="#password-field"><i class="fa fa-info-circle" title="Password must contain one uppercase,one lowercase,one numeric,one special character and  minimum 8 characters"></i></span>
                            </div>
                            <div class="col-md-6 col-sm-12">
                               <input type="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  name="confirm_password"  class="form-control " placeholder="Confirm password" value="<?php echo set_value('company_password'); ?>" >
+                               <span class="required">*</span>
                            </div>
                            <div class="error"></div>
                         </div>
@@ -152,6 +157,7 @@ input#company_name {
                            </div>
                            <div class="col-md-6 col-sm-12">
                             <input type="text" name="city"  id="city" placeholder="City" >
+                             <span class="required">*</span>
                             <input type="hidden" value=""  name="city_id" id="city_id" onchange="get_country();">
                              <!--  <select  name="country_id" id="country_id" class="form-control country select2" onChange="getStates(this.value)">
                                  <option value="">Select Country</option>
@@ -189,7 +195,9 @@ input#company_name {
                      <div class="formrow">
                         <div class="row">
                            <div class="col-md-12 col-sm-12">
-                              <textarea name="company_address" class="form-control " placeholder="Office Address" autocomplete="off"  ><?php echo set_value('company_address'); ?></textarea><?php echo form_error('company_address'); ?>
+                              <textarea name="company_address" class="form-control " placeholder="Office Address" autocomplete="off"  ><?php echo set_value('company_address'); ?></textarea>
+                               <span class="required">*</span>
+                              <?php echo form_error('company_address'); ?>
                            </div>
                         </div>
                         <!-- end row -->
@@ -208,6 +216,7 @@ input#company_name {
                         <div class="row">
                            <div class="col-md-6 col-sm-12">
                               <input type="text" id="inputchapcha" required name="captcha" value="" class="form-control" placeholder="Captcha Code">
+                               <span class="required">*</span>
                            </div>
                            <div class="col-md-4 col-sm-4">
                               <p id="captImg"><?php echo $captcha_images; ?></p>
