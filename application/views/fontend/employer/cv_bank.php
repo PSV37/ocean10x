@@ -1620,8 +1620,17 @@
            });
 </script>
 <script>
+
+   var values = [0, 15, 30, 45, 60, 75, 90, 90];
+   $('#notice_period_id').change(function() {
+    $('.notice_period').text(values[this.value]);
+    $('#notice_period_id').val(values[this.value]);
+   });
    function get_data()
    {
+
+   
+
       var value = $('#exp_id').val();
       var notice_period_value = $('#notice_period_id').val();
       var education_value = $('#education_id').val();
@@ -1643,13 +1652,7 @@
    
    }
    
-   
-   var values = [0, 15, 30, 45, 60, 75, 90, 90];
-   $('#notice_period_id').change(function() {
-    $('.notice_period').text(values[this.value]);
-    $('#notice_period_id').val(values[this.value]);
-   });
-
+  
 
 </script>
 
