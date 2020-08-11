@@ -795,7 +795,13 @@
    
    required: true,
    
-   url: true
+   url: true,
+
+   remote:{
+url: "validatorAJAX.php",
+type: "post"
+}
+
    
    },
    
