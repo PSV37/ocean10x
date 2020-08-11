@@ -114,6 +114,7 @@ class Employer_Login extends CI_Controller
 
                 redirect('employer/index');
          }
+     }
          
        
         } else {
