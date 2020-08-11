@@ -89,14 +89,14 @@ input#company_name {
                   <form id="EmpRegistation" action="<?php echo base_url(); ?>employer_register/create" method="post" enctype="multipart/form-data" class="submit-form" onSubmit = "return checkPassword(this)" >
                      <div class="formrow">
                         <div class="row">
-                           <div class="col-md-6 col-sm-12">
+                           <div class="col-md-6 col-sm-12 company_type">
                               <select name="company_type" id="company_type" class="form-control select2" >
                                  <!-- <option value="">Select Type</option> -->
                                  <option value="Company"<?php echo set_select('company_type', 'Company', TRUE); ?>>Company</option>
                                  <option value="HR Consultant"<?php echo set_select('company_type', 'HR Consultant', TRUE); ?>>HR Consultant</option>
                               </select> 
                            </div>
-                           <div class="col-md-6 col-sm-12">
+                           <div class="col-md-6 col-sm-12 company_name">
                               <input type="text" name="company_name" id="company_name"class="form-control" placeholder="Company name"  value="<?php echo set_value('company_name'); ?>"  autocomplete="off"> <span class="required">*</span>
                              
                               <?php echo form_error('company_name'); ?>
@@ -106,7 +106,7 @@ input#company_name {
                      </div>
                      <div class="formrow">
                         <div class="row">
-                           <div class="col-md-6 col-sm-12">
+                           <div class="col-md-6 col-sm-12 company_email">
                               <input type="email" name="company_email" placeholder="Email" value="<?php echo set_value('company_email'); ?>"  class="form-control "  autocomplete="off"><span class="required">*</span>
                               
                               <?php echo form_error('company_email'); ?>
@@ -121,14 +121,14 @@ input#company_name {
                      <br><br>
                      <div class="formrow">
                         <div class="row">
-                           <div class="col-md-6 col-sm-12">
+                           <div class="col-md-6 col-sm-12 company_password">
                               <input type="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  name="company_password" id="myInput"  class="form-control " placeholder="Password" value="<?php echo set_value('company_password'); ?>" >
                                <span class="required">*</span>
                               <?php echo form_error('company_password'); ?>
                                <span toggle="#password-field" class="fa fa-eye-slash field-icon toggle-password"></span>
                                <span toggle="#password-field"><i class="fa fa-info-circle" title="Password must contain one uppercase,one lowercase,one numeric,one special character and  minimum 8 characters"></i></span>
                            </div>
-                           <div class="col-md-6 col-sm-12">
+                           <div class="col-md-6 col-sm-12 confirm_password">
                               <input type="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  name="confirm_password"  class="form-control " placeholder="Confirm password" value="<?php echo set_value('company_password'); ?>" >
                                <span class="required">*</span>
                            </div>
@@ -138,7 +138,7 @@ input#company_name {
                      </div>
                      <div class="formrow">
                         <div class="row">
-                           <div class="col-md-6 col-sm-12">
+                           <div class="col-md-6 col-sm-12 company_category">
                               <select  name="company_category" id="company_category" class="form-control services select2">
                                  <option value="">Select Company Type</option>
                                  <?php foreach($job_category as $dept){ ?>
@@ -146,7 +146,7 @@ input#company_name {
                                  <?php } ?>
                               </select>
                            </div>
-                           <div class="col-md-6 col-sm-12">
+                           <div class="col-md-6 col-sm-12 City">
                             <input type="text" name="city" class="form-control" id="city" placeholder="City" >
                              <span class="required">*</span>
                             <input type="hidden" value="" class="form-control"  name="city_id" id="city_id" onchange="get_country();">
@@ -185,7 +185,7 @@ input#company_name {
                      </div>
                      <div class="formrow">
                         <div class="row">
-                           <div class="col-md-12 col-sm-12">
+                           <div class="col-md-12 col-sm-12 company_address">
                               <textarea name="company_address" class="form-control " placeholder="Office Address" autocomplete="off"  ><?php echo set_value('company_address'); ?></textarea>
                                <span class="required">*</span>
                               <?php echo form_error('company_address'); ?>
@@ -205,7 +205,7 @@ input#company_name {
                      <div class="formrow">
                         <div class="captchacode">Captcha is cause sensitive</div>
                         <div class="row">
-                           <div class="col-md-6 col-sm-12">
+                           <div class="col-md-6 col-sm-12 captcha">
                               <input type="text" id="inputchapcha" required name="captcha" value="" class="form-control" placeholder="Captcha Code">
                                <span class="required">*</span>
                            </div>
@@ -218,7 +218,7 @@ input#company_name {
                      </div>
                      <div class="formrow">
                         <div class="row">
-                           <div class="col-md-6 col-sm-12">
+                           <div class="col-md-6 col-sm-12 ">
                               <input type="checkbox" value="" checked="" style="width: 25px !important;height: 15px !important;" > <a href="<?php echo base_url().'terms' ?>" target="_blank" required>  I agree to the Terms and Conditions</a>
                            </div>
                         </div>
@@ -286,6 +286,39 @@ input#company_name {
    function validateCaptcha(){
        var sessionCaptcha = '<?php echo $this->session->userdata('captchaCode'); ?>';
           $( "#EmpRegistation" ).validate( {
+            errorPlacement: function(error, element) {
+
+             if (element.attr("name") == "company_type" )
+                 error.insertAfter(".company_type ");
+               else if (element.attr("name") == "company_name"  ) 
+                 error.insertAfter(".company_name");
+
+               else if (element.attr("name") == "company_email"  ) 
+                 error.insertAfter(".company_email");
+
+               else if (element.attr("name") == "company_password" ) 
+                 error.insertAfter(".company_password");
+
+               else if (element.attr("name") == "confirm_password" ) 
+                 error.insertAfter(".confirm_password");
+
+              else if (element.attr("name") == "company_category" ) 
+                 error.insertAfter(".company_category");
+
+              else if (element.attr("name") == "company_address" ) 
+                 error.insertAfter(".company_address");
+
+              else if (element.attr("name") == "city_id" ) 
+                 error.insertAfter(".city_id");
+
+               else if (element.attr("name") == "captcha" ) 
+                 error.insertAfter(".captcha");
+            
+         else
+       error.insertAfter(element);
+    
+   
+       },
            rules: {
    
            company_type: {
@@ -301,6 +334,11 @@ input#company_name {
                },
              
                company_password: {
+                   required: true,
+                   minlength: 8
+                   
+               },
+                confirm_password: {
                    required: true,
                    minlength: 8
                    
@@ -338,6 +376,10 @@ input#company_name {
                    minlength: "Your password must be at least 8 characters long"
            },
             company_password:{
+                   required:"This field is mandatory!",
+                   equalTo: "Captcha doesn't match!",
+               },
+               confirm_password:{
                    required:"This field is mandatory!",
                    equalTo: "Captcha doesn't match!",
                },
