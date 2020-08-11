@@ -1645,7 +1645,7 @@
    
    
    var values = [0, 15, 30, 45, 60, 75, 90, 90];
-   $('#notice_period').change(function() {
+   $('#notice_period_id').change(function() {
     $('.notice_period').text(values[this.value]);
    });
 
