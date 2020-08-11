@@ -223,7 +223,7 @@
     margin-top: 150px;
     margin-bottom: -130px;
 }
-input {
+input.capital {
     text-transform: capitalize;
 }
 </style>
@@ -266,7 +266,7 @@ input {
                      <div class="col-md-6 col-sm-12">
                         <div class="formrow">
                            <label class="control-label">Company Name:</label>
-                           <input type="text" name="company_name" class="form-control" placeholder="Company Name" value="<?php if(!empty($company_info->company_name)){ echo $company_info->company_name; } ?><?php echo set_value('company_name'); ?>" class="form-control" placeholder="Company Name">
+                           <input type="text" name="company_name" class="form-control capital" placeholder="Company Name" value="<?php if(!empty($company_info->company_name)){ echo $company_info->company_name; } ?><?php echo set_value('company_name'); ?>" class="form-control" placeholder="Company Name">
                            <?php echo form_error('company_name'); ?>        
                         </div>
                      </div>
@@ -565,7 +565,7 @@ input {
                      <div class="col-md-6 col-sm-12">
                         <div class="formrow">
                            <label class="control-label">Company Contact Name:<span class="required">*</span></label>  
-                           <input type="text" name="contact_name" class="form-control" id="contact_name" placeholder="Contact Name" value="<?php if(!empty($company_info->contact_name)){ echo $company_info->contact_name; } ?><?php echo set_value('contact_name'); ?>">
+                           <input type="text" name="contact_name" class="form-control capital" id="contact_name" placeholder="Contact Name" value="<?php if(!empty($company_info->contact_name)){ echo $company_info->contact_name; } ?><?php echo set_value('contact_name'); ?>">
                            <?php echo form_error('contact_name'); ?>        
                         </div>
                      </div>
