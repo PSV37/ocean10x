@@ -247,7 +247,7 @@
                   </div>
                   <div class="col-md-9" style="margin-left:-35px;">
                      <p style="font-size:18px;"><?php echo $this->company_profile_model->company_name($company_profile_id); ?></p>
-                     <p class="university">Nagpur University </p>
+                     <!-- <p class="university">Nagpur University </p> -->
                      <div class="progresss">
                         <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:<?php echo round($profile_total); ?>%">
                            <?php echo round($profile_total); ?>
@@ -669,7 +669,7 @@
                   <div class="row f-11">
                      <div class="col-md-6 col-sm-6">
                         <div class="formrow">
-                           <label class="control-label">Company Logo<small> company logo measures 300 x 300 pixels </small></label>
+                           <label class="control-label">Company Logo<small>(300 x 300 pixels) </small></label>
                            <input type="file" name="company_logo" value="4ce62c1e36ede93d46de44f1de63c4f0.jpg" class="form-control">
                            <?php echo form_error('company_logo'); ?>        
                         </div>

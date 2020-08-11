@@ -15,15 +15,14 @@ class Employer extends MY_Employer_Controller {
         $this->load->library('slug', $config);
     }
     public function index() {
-        //$this->profile_setting();
+       
         $employer_id = $this->session->userdata('company_profile_id');
         $this->session->unset_userdata('activemenu');
         $data['activemenu'] = 'dashboard';
         $this->session->set_userdata($data);
         $company_info = $this->company_profile_model->get($employer_id);
         $wheremsg = "created_by='$employer_id'";
-        // $whereres   = "emp_id='$employer_id'";
-        // $check = $this->Master_model->get_master_row('emp_js_connection', $select = FALSE, $whereres,$Join_data);
+       
         $Join_data = array('messaging' => 'messaging.connection_id = emp_js_connection.emp_js_connection_id|Left OUTER ');
         $whereres = "emp_id='$employer_id' or js_id = '$employer_id'";
         $whereres.= "group by emp_js_connection.emp_js_connection_id";
@@ -43,12 +42,12 @@ class Employer extends MY_Employer_Controller {
             $this->form_validation->set_rules('company_category', 'Company Services', 'required');
             
             $this->form_validation->set_rules('company_address1', 'Company Address 1', 'required');
-            // $this->form_validation->set_rules('company_address2','Company Address 2', 'required');
+         
             $this->form_validation->set_message('required', 'This field is mandatory');
             if ($this->form_validation->run() == FALSE) {
                 $wheres = "status='0' AND company_profile_id='$employer_id'";
                 $branches = $this->Master_model->getMaster('company_branches', $where = $wheres);
-                $company_info = $this->company_profile_model->get($employer_id);
+                // $company_info = $this->company_profile_model->get($employer_id);
                 $country = $this->Master_model->getMaster('country', $where = false);
                 $this->load->view('fontend/employer/profile', compact('company_info', 'country', 'branches'));
             } else {
@@ -57,8 +56,7 @@ class Employer extends MY_Employer_Controller {
                 $old_company_profile = $this->Master_model->get_master_row('company_profile', $select = FALSE, $whereres);
                 $old_array_keys = array_keys($old_company_profile);
                 $old_array_values = array_values($old_company_profile);
-                // print_r($old_array_keys);
-                // print_r($old_array_values);die;
+              
                 $size = sizeof($old_array_keys);
                 for ($i = 0;$i < $size;$i++) {
                     $parameter = $old_array_keys[$i];
@@ -3364,7 +3362,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $update_data = array('last_login' => date('Y-m-d H:i:s'));
             $where11['company_profile_id'] = $employer_id;
             $this->Master_model->master_update($update_data, 'company_profile', $where11);
-            $this->session->set_flashdata('emp_msg', '<div class="alert alert-success text-center">Thank You for choosing The Ocean !!</div>');
+            $this->session->set_flashdata('emp_msg', '<div class="alert alert-success text-center">Successfully created Superadmin Password !! Thank You for choosing The Ocean !!</div>');
             $company_info = $this->company_profile_model->get($employer_id);
             $this->load->view('fontend/employer/employer_dashboard', compact('company_info'));
         }
