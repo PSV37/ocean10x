@@ -1271,8 +1271,8 @@
             <div class="filter1">
                <p style="font-size:18px;margin-top:15px;">Notice Period</p>
                <div class="range-wrap">
-                  <input type="range" class="range" id="notice_period_id" onchange="get_data();" min="0" max="7">
-                  <output class="bubble notice_period" id="notice_period_value"></output>
+                  <input type="range"  id="notice_period_id" onchange="get_data();" min="0" max="7">
+                  <output class="notice_period" id="notice_period_value"></output>
                </div>
             </div>
             <div class="filter1">
@@ -1629,7 +1629,7 @@
 <script>
 
    var values = [0, 15, 30, 45, 60, 75, 90, 90];
-   $('#notice_period_id').change(function() {
+   $('#notice_period_id').click(function() {
       alert('chnage');
     $('.notice_period').text(values[this.value]);
     $('#notice_period_id').val(values[this.value]);
