@@ -332,7 +332,7 @@ input#company_name {
             captcha:{
                    required:"This field is mandatory!",
                    equalTo: "Captcha doesn't match!",
-               }
+               },
                 company_password: {
                     required: "This field is mandatory!",
                    minlength: "Your password must be at least 8 characters long"
@@ -340,15 +340,15 @@ input#company_name {
             company_password:{
                    required:"This field is mandatory!",
                    equalTo: "Captcha doesn't match!",
-               }
+               },
                 company_category:{
                    required:"This field is mandatory!",
                    equalTo: "Captcha doesn't match!",
-               }
+               },
                 company_address:{
                    required:"This field is mandatory!",
                    equalTo: "Captcha doesn't match!",
-               }
+               },
  city_id:{
                    required:"This field is mandatory!",
                    equalTo: "Captcha doesn't match!",
