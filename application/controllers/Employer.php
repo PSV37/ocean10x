@@ -3005,7 +3005,11 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                         if (!empty($can_data)) {
                             $seeker_id = $can_data[0]['job_seeker_id'];
                         } else {
-                            $new_JS_array = array('email' => $email, 'js_token' => md5($email), 'create_at' => date('Y-m-d H:i:s'));
+                            $new_JS_array = array(
+                                'full_name' =>$this->input->post('candidate_name'), 
+                                'email' => $email, 
+                                'js_token' => md5($email), 
+                                'create_at' => date('Y-m-d H:i:s'));
                             $seeker_id = $this->Master_model->master_insert($new_JS_array, 'js_info');
                         }
                     if (isset($id) && !empty($id)) {
