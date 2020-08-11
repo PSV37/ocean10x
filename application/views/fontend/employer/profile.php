@@ -798,7 +798,7 @@ input.capital {
    
    required: true,
    
-   url: true
+   url_regex: true
    
    },
    
@@ -927,9 +927,9 @@ input.capital {
    }, "Please choose only alphabets");
    
    
-   $.validator.addMethod("contactname_regex", function(value, element) {
+   $.validator.addMethod("url_regex", function(value, element) {
    
-   return this.optional(element) || /^[a-zA-Z ]+$/.test(value);
+   return this.optional(element) || /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/.test(value);
    
    }, "Please choose only alphabets");
    
