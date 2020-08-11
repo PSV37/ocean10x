@@ -37,7 +37,7 @@ input#company_name {
   border: 1px solid #999;
 }
 
-.input-wrapper input:valid + .placeholder {
+.input-wrapper input:valid + span::before {
   display: none;
 }
 

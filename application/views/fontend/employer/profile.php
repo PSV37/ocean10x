@@ -837,7 +837,7 @@ input.capital {
    
    'contact_name':{
    
-   required: "The name field is mandatory!",
+   required: "This field is mandatory!",
    
    maxlength: "Choose a company name of at least 14 letters!"
    
@@ -853,7 +853,7 @@ input.capital {
    
    'company_phone':{
    
-   required: "The username field is mandatory!",
+   required: "This field is mandatory!",
    
    minlength: "Please Enter 10 digit phone numbers!",
    
@@ -866,7 +866,7 @@ input.capital {
    
    'alternate_email_id':{
    
-   required: "The username field is mandatory!",
+   required: "This field is mandatory!",
    
    email: "Please enter a valid email address!",
    
@@ -876,7 +876,7 @@ input.capital {
    
    'cont_person_email' :{
    
-   required: "The username field is mandatory!",
+   required: "This field is mandatory!",
    
    email: "Please enter a valid email address!",
    
@@ -886,13 +886,13 @@ input.capital {
    
    'company_url':{
    
-   required: "The username field is mandatory!"
+   required: "This field is mandatory!"
    
    },
    
    'username':{
    
-   required: "The username field is mandatory!",
+   required: "This field is mandatory!",
    
    minlength: "Choose a username of at least 4 letters!",
    
