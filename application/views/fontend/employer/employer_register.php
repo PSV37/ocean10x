@@ -60,11 +60,15 @@ input#company_name {
    
        // If password not entered 
        if (password1 == '') 
-           alert ("Please enter Password"); 
+        // $('.error').html('Please enter Password...');
+
+           // alert ("Please enter Password"); 
              
        // If confirm password not entered 
        else if (password2 == '') 
-           alert ("Please enter confirm password"); 
+        // $('.error').html('Please enter confirm password...');
+        
+           // alert ("Please enter confirm password"); 
              
        // If Not same return False.     
        else if (password1 != password2) { 
