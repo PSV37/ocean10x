@@ -2861,7 +2861,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $data['education_level'] = $this->Master_model->getMaster('education_level', $where = false);
                 $data['certificates'] = $this->Master_model->getMaster('certification_master', $where = false);
                 $data['skills'] = $this->Master_model->getMaster('skill_master', $where = false);
-                //$data['cv_info'] = $this->Master_model->getMaster('corporate_cv_bank',$where=false);
+                
                 $this->load->view('fontend/employer/add_cv', $data);
             } else {
                 $email = $this->input->post('candidate_email');
@@ -2881,10 +2881,13 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                         $job_post_id = $id;
                         $where_can = "email='$email'";
                         $can_data = $this->Master_model->getMaster('js_info', $where_can);
-                        if ($can_data) {
+                        if (!empty($can_data)) {
                             $seeker_id = $can_data[0]['job_seeker_id'];
                         } else {
-                            $new_JS_array = array('email' => $email, 'js_token' => md5($email), 'create_at' => date('Y-m-d H:i:s'));
+                            $new_JS_array = array(
+                                'email' => $email, 
+                                'js_token' => md5($email), 
+                                'create_at' => date('Y-m-d H:i:s'));
                             $seeker_id = $this->Master_model->master_insert($new_JS_array, 'js_info');
                         }
                         $where_can = "email='$email'";
