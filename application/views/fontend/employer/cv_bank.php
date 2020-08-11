@@ -1278,7 +1278,7 @@
             <div class="filter1">
                <p style="font-size:18px;margin-top:15px;">Current CTC</p>
                <div class="range-wrap">
-               <input type="range" class="range" id="exp_id" onchange="get_data();" min="1" max="99">
+               <input type="range" class="range" id="current_ctc_id" onchange="get_data();" min="1" max="99">
                   <output class="bubble"></output>
                </div>
                <!--<select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" id='current_ctc_id' onchange="get_data();" tabindex="-98">
@@ -1633,6 +1633,7 @@
     $('.notice_period').text(values[this.value]);
     $('#notice_period_id').val(values[this.value]);
    });
+   
    function get_data()
    {
 
