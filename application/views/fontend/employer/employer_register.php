@@ -28,15 +28,18 @@ input#company_name {
     text-transform: capitalize;
 }
 .placeholder {
-  position: absolute;
-  pointer-events: none;
-  top: 0;
-  bottom: 0;
-  height: 25px;
-  font-size: 25px;
-  left: 10px;
-  margin: auto;
-  color: #ccc;
+    position: absolute;
+    pointer-events: none;
+    top: 6px;
+    bottom: 0;
+    height: 25px;
+    font-size: 15px;
+    left: 35px;
+    margin: auto;
+    color: #ccc;
+}
+input:valid + .placeholder {
+  display: none;
 }
 
 .placeholder span {
@@ -123,7 +126,11 @@ input#company_name {
                      <div class="formrow">
                         <div class="row">
                            <div class="col-md-6 col-sm-12">
-                              <input type="email" name="company_email" value="<?php echo set_value('company_email'); ?>" class="form-control" placeholder="Email" autocomplete="off"><?php echo form_error('company_email'); ?>
+                              <input type="email" name="company_email" value="<?php echo set_value('company_email'); ?>" class="form-control"  autocomplete="off">
+                               <div class="placeholder">
+                                Email <span>*</span>
+                              </div>
+                              <?php echo form_error('company_email'); ?>
                            </div>
                           <!--  <div class="col-md-6 col-sm-12">
                               <input type="text" name="company_username" id="company_username" value="<?php echo set_value('company_username'); ?>" class="form-control" placeholder="Company Admin UserName" autocomplete="off"><?php echo form_error('company_username'); ?>
@@ -136,7 +143,9 @@ input#company_name {
                      <div class="formrow">
                         <div class="row">
                            <div class="col-md-6 col-sm-12">
-                              <input type="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  name="company_password" id="myInput"  class="form-control" placeholder="Password" value="<?php echo set_value('company_password'); ?>" ><?php echo form_error('company_password'); ?>
+                              <input type="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  name="company_password" id="myInput"  class="form-control"  value="<?php echo set_value('company_password'); ?>" ><div class="placeholder">
+                                Password <span>*</span>
+                              </div><?php echo form_error('company_password'); ?>
                                <span toggle="#password-field" class="fa fa-eye-slash field-icon toggle-password"></span>
                                <span toggle="#password-field"><i class="fa fa-info-circle" title="Password must contain one uppercase,one lowercase,one numeric,one special character and  minimum 8 characters"></i></span>
                            </div>
@@ -157,14 +166,12 @@ input#company_name {
                               </select>
                            </div>
                            <div class="col-md-6 col-sm-12">
-                            <input type="text" name="city" id="city" placeholder="City" >
-                            <input type="hidden" value=""  name="city_id" id="city_id" onchange="get_country();">
-                             <!--  <select  name="country_id" id="country_id" class="form-control country select2" onChange="getStates(this.value)">
-                                 <option value="">Select Country</option>
-                                 <?php foreach($country as $key){?>
-                                 <option value="<?php echo $key['country_id']; ?>" <?php echo  set_select('country_id', $key['country_id']); ?> ><?php echo $key['country_name']; ?></option>
-                                 <?php } ?>
-                              </select> -->
+                            <input type="text" name="city" id="city"  >
+                            <div class="placeholder">
+                                City <span>*</span>
+                              </div>
+                            <input type="hidden" value=""  name="city_id" id="city_id" onchange="get_country();"><?php echo set_value('city_id'); ?>
+                             
                            </div>
                         </div>
                         <!-- end row -->
@@ -195,7 +202,11 @@ input#company_name {
                      <div class="formrow">
                         <div class="row">
                            <div class="col-md-12 col-sm-12">
-                              <textarea name="company_address" class="form-control" placeholder="Office Address" autocomplete="off"  ><?php echo set_value('company_address'); ?></textarea><?php echo form_error('company_address'); ?>
+                              <textarea name="company_address" class="form-control"  autocomplete="off"  ><?php echo set_value('company_address'); ?></textarea>
+                              <div class="placeholder">
+                                Office Address <span>*</span>
+                              </div>
+                              <?php echo form_error('company_address'); ?>
                            </div>
                         </div>
                         <!-- end row -->
