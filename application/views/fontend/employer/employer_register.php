@@ -58,20 +58,7 @@ input#company_name {
        password1 = form.company_password.value; 
        password2 = form.confirm_password.value; 
    
-       // If password not entered 
-       if (password1 == '') 
-        // $('.error').html('Please enter Password...');
-
-           // alert ("Please enter Password"); 
-             
-       // If confirm password not entered 
-       else if (password2 == '') 
-        // $('.error').html('Please enter confirm password...');
-
-           // alert ("Please enter confirm password"); 
-             
-       // If Not same return False.     
-       else if (password1 != password2) { 
+        if (password1 != password2) { 
         $('.error').html('Password did not match: Please try again...');
            // alert ("\nPassword did not match: Please try again...") 
            return false; 
