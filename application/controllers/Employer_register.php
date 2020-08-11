@@ -145,18 +145,18 @@ class Employer_register extends CI_Controller
                 }
                 if ($exist_companyname) {
                     // all Ready Account Message
-                    $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Company Name Or Account Already Use This!</div>');
+                    $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Company Name Or Account Already exists! Please Login!</div>');
                     redirect('employer_register');
                 }
                 
                 if ($exist_email || $exist_email_js) {
                     // all Ready Account Message
-                    $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your Email Or Account Already Use This!</div>');
+                    $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">E-mail already exists! Please Login!</div>');
                     redirect('employer_register');
                 }
                 if ($exist_username) {
                     // all Ready Account Message
-                    $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your Username Or Account Already Use This!</div>');
+                    $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your Username Or Account Already already exists! Please Login!</div>');
                     redirect('employer_register');
                 }
                 

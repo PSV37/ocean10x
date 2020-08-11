@@ -33,6 +33,16 @@ class Employer_Login extends CI_Controller
         $company_password = md5($this->input->post('password'));
         $result           = $this->employer_login_model->check_login_info($company_email, $company_password);
         if (!empty($result)) {
+            $status  = $result->company_status;
+            if ($status == '0') {
+                $this->session->set_flashdata('emp_msg',
+                '<div class="alert alert-danger alert-dismissable">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                   Account Not Activated
+                  </div>');
+            redirect('employer_login');
+            }
+            else{
             $data['company_profile_id'] = $result->company_profile_id;
             $data['company_name']       = $result->company_name;
             $data['comp_type']          = $result->comp_type;
