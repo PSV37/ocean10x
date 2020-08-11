@@ -67,7 +67,7 @@ input#company_name {
        // If confirm password not entered 
        else if (password2 == '') 
         // $('.error').html('Please enter confirm password...');
-        
+
            // alert ("Please enter confirm password"); 
              
        // If Not same return False.     
@@ -346,14 +346,13 @@ input#company_name {
            },
          
          messages: { 
-           company_password: {
-                    required: "Please provide a password",
-                   minlength: "Your password must be at least 8 characters long"
-           },
-            captcha:{
-                   required:"Captcha is required!",
+          
+                    required: "This field is mandatory!",
+               
                    equalTo: "Captcha doesn't match!",
-               }
+          
+
+
          },
            errorElement: "em",
            errorPlacement: function ( error, element ) {
