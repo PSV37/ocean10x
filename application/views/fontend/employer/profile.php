@@ -273,7 +273,7 @@ input.capital {
                      <div class="col-md-6 col-sm-12">
                         <div class="formrow">
                            <label class="control-label">Company Email: </label>
-                           <input type="text" readonly="" name="company_email" class="form-control" placeholder="Company Email" value="<?php  $val = set_value('company_name'); if(!empty($val)){ echo $val; } elseif(!empty($company_info->company_email)){ echo $company_info->company_email; } ?><?php echo set_value('company_email'); ?>">
+                           <input type="text" readonly="" name="company_email" class="form-control" placeholder="Company Email" value="<?php  $val = set_value('company_email'); if(!empty($val)){ echo $val; } elseif(!empty($company_info->company_email)){ echo $company_info->company_email; } ?>">
                            <?php echo form_error('company_email'); ?>        
                         </div>
                      </div>
