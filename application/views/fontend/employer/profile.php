@@ -266,7 +266,7 @@ input.capital {
                      <div class="col-md-6 col-sm-12">
                         <div class="formrow">
                            <label class="control-label">Company Name:</label>
-                           <input type="text" name="company_name" class="form-control capital" placeholder="Company Name" value="<?php $val = set_value('company_name'); if($empty($val)){ echo $$val } elseif(!empty($company_info->company_name)){ echo $company_info->company_name; } ?>" class="form-control" placeholder="Company Name">
+                           <input type="text" name="company_name" class="form-control capital" placeholder="Company Name" value="<?php $val = set_value('company_name'); if($empty($val)){ echo $val; } elseif(!empty($company_info->company_name)){ echo $company_info->company_name; } ?>" class="form-control" placeholder="Company Name">
                            <?php echo form_error('company_name'); ?>        
                         </div>
                      </div>
