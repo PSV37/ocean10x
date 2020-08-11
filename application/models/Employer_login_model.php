@@ -17,7 +17,7 @@ class Employer_Login_model extends MY_Model
             $this->db->from('company_profile');
             $this->db->where('company_email',$email);
             $this->db->where('company_password',$password);
-            $this->db->where('company_status','1');
+            // $this->db->where('company_status','1');
             //$this->db->cache_off();
             $query = $this->db->get();
             $result=$query->row();
