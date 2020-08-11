@@ -47,12 +47,22 @@ input:valid + .placeholder {
 }
 
 span.required {
+   color: red;
+   margin-left: 2px;
+   }
+   .required::-webkit-input-placeholder:after {
+    content: " *";
     color: red;
-    margin-left: 2px;
-    float: right;
-    margin-bottom: 0;
-    margin-right: 20px;
-    margin-top: -25px;
+}
+
+.required:-moz-placeholder:after {
+    content: " *";
+    color: red;  
+}
+
+.required:-ms-input-placeholder:after {  
+    content: " *";
+    color: red;  
 }
    </style>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -118,15 +128,15 @@ span.required {
                      <div class="formrow">
                         <div class="row">
                            <div class="col-md-6 col-sm-12">
-                              <select name="company_type" id="company_type" class="form-control select2" >
+                              <select name="company_type" id="company_type" class="form-control select2 required" >
                                  <!-- <option value="">Select Type</option> -->
                                  <option value="Company"<?php echo set_select('company_type', 'Company', TRUE); ?>>Company</option>
                                  <option value="HR Consultant"<?php echo set_select('company_type', 'HR Consultant', TRUE); ?>>HR Consultant</option>
-                              </select> <span class="required">*</span>
+                              </select> 
                            </div>
                            <div class="col-md-6 col-sm-12">
-                              <input type="text" name="company_name" id="company_name"class="form-control" placeholder="Company name"  value="<?php echo set_value('company_name'); ?>"  autocomplete="off"> 
-                               <span class="required">*</span>
+                              <input type="text" name="company_name" id="company_name"class="form-control required" placeholder="Company name"  value="<?php echo set_value('company_name'); ?>"  autocomplete="off"> 
+                             
                               <?php echo form_error('company_name'); ?>
                            </div>
                         </div>
@@ -135,10 +145,8 @@ span.required {
                      <div class="formrow">
                         <div class="row">
                            <div class="col-md-6 col-sm-12">
-                              <input type="email" name="company_email" value="<?php echo set_value('company_email'); ?>" class="form-control"  autocomplete="off">
-                               <div class="placeholder">
-                                Email <span>*</span>
-                              </div>
+                              <input type="email" name="company_email" value="<?php echo set_value('company_email'); ?>" class="form-control required"  autocomplete="off">
+                              
                               <?php echo form_error('company_email'); ?>
                            </div>
                           <!--  <div class="col-md-6 col-sm-12">
@@ -152,12 +160,12 @@ span.required {
                      <div class="formrow">
                         <div class="row">
                            <div class="col-md-6 col-sm-12">
-                              <input type="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  name="company_password" id="myInput"  class="form-control" placeholder="Password" value="<?php echo set_value('company_password'); ?>" > <span class="required">*</span><?php echo form_error('company_password'); ?>
+                              <input type="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  name="company_password" id="myInput"  class="form-control required" placeholder="Password" value="<?php echo set_value('company_password'); ?>" ><?php echo form_error('company_password'); ?>
                                <span toggle="#password-field" class="fa fa-eye-slash field-icon toggle-password"></span>
                                <span toggle="#password-field"><i class="fa fa-info-circle" title="Password must contain one uppercase,one lowercase,one numeric,one special character and  minimum 8 characters"></i></span>
                            </div>
                            <div class="col-md-6 col-sm-12">
-                              <input type="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  name="confirm_password"  class="form-control" placeholder="Confirm password" value="<?php echo set_value('company_password'); ?>" > <span class="required">*</span>
+                              <input type="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  name="confirm_password"  class="form-control required" placeholder="Confirm password" value="<?php echo set_value('company_password'); ?>" >
                            </div>
                            <div class="error"></div>
                         </div>
@@ -174,7 +182,7 @@ span.required {
                               </select>
                            </div>
                            <div class="col-md-6 col-sm-12">
-                            <input type="text" name="city" id="city" placeholder="City" > <span class="required">*</span>
+                            <input type="text" name="city" class="required" id="city" placeholder="City" >
                             <input type="hidden" value=""  name="city_id" id="city_id" onchange="get_country();">
                              <!--  <select  name="country_id" id="country_id" class="form-control country select2" onChange="getStates(this.value)">
                                  <option value="">Select Country</option>
@@ -212,7 +220,7 @@ span.required {
                      <div class="formrow">
                         <div class="row">
                            <div class="col-md-12 col-sm-12">
-                              <textarea name="company_address" class="form-control" placeholder="Office Address" autocomplete="off"  ><?php echo set_value('company_address'); ?></textarea> <span class="required">*</span><?php echo form_error('company_address'); ?>
+                              <textarea name="company_address" class="form-control required" placeholder="Office Address" autocomplete="off"  ><?php echo set_value('company_address'); ?></textarea><?php echo form_error('company_address'); ?>
                            </div>
                         </div>
                         <!-- end row -->
