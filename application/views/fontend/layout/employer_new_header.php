@@ -121,6 +121,7 @@ a.dropdown-toggle {
     </a>
     <ul class="dropdown-menu">
       <li><a href="<?php echo base_url() ?>employer/profile-setting"><i class="fas fa-user"></i>My Profile</a> </li>
+      <li><a href="<?php echo base_url() ?>employer/addemployee"><i class="fas fa-user"></i>Employee Management</a> </li>
       <li><a href="<?php echo base_url(); ?>employer/change-password"><i class="fas fa-lock"></i>Change Password</a></li>
       <li ><a href="#" class="btn-logoff" data-toggle="modal" data-target="#modal_logoff"><i class="fas fa-power-off"></i>Logout</a></li>
     </ul>
