@@ -3217,7 +3217,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             if (!empty($_FILES['file']['name'])) {
                 // Set preference
                 $config['upload_path'] = 'cv_bank_excel/files/';
-                $config['ext'] = strtolower(end(explode('.', $_FILES['file']['name'])));
+                $ext = strtolower(end(explode('.', $_FILES['file']['name'])));
                 $config['type'] = $_FILES['file']['type'];
                 $config['max_size'] = '1000'; // max_size in kb
                 $config['file_name'] = $_FILES['file']['name'];
