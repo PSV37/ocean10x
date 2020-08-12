@@ -246,7 +246,7 @@ class Employer_register extends CI_Controller
 
             $where = "token = '$hash'";
             $data['company_details'] = $this->Master_model->get_master_row('company_profile', $select = 'company_email', $where, $join = FALSE);
-            print_r($data['company_details']);die;
+            // print_r($data['company_details']);die;
             $this->session->set_flashdata('verify_msg', '<div class="alert alert-success text-center">E-mail ID Successfully Verified !<br> Please Login to Browse TheOcean !</div>');
             $this->load->view('fontend/employer/employer_login',$data);
         } else {
