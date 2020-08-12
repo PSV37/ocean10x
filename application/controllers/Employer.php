@@ -3217,12 +3217,14 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             if (!empty($_FILES['file']['name'])) {
                 // Set preference
                 $config['upload_path'] = 'cv_bank_excel/files/';
-                // $config['allowed_types'] = 'csv';
+                $config['ext'] = strtolower(end(explode('.', $_FILES['csv']['name'])));
+                $config['type'] = $_FILES['file']['type'];
                 $config['max_size'] = '1000'; // max_size in kb
                 $config['file_name'] = $_FILES['file']['name'];
                 // Load upload library
                 $this->load->library('upload', $config);
                 // File upload
+                if($ext === 'csv'){
                 if ($this->upload->do_upload('file')) {
                     // Get data about the file
                     $uploadData = $this->upload->data();
@@ -3265,6 +3267,12 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     $error = $this->upload->display_errors();
                     $this->session->set_flashdata('success', '<div class="alert alert-warning text-center">CVs Upload failed!' .$error.'</div>');
                 }
+            }
+            else
+            {
+                 $this->session->set_flashdata('success', '<div class="alert alert-warning text-center">File Format not supported</div>');
+
+            }
             } else {
                 // $data['response'] = 'failed';
                 $this->session->set_flashdata('success', '<div class="alert alert-danger text-center">CVs Upload failed!</div>');
