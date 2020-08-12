@@ -231,7 +231,7 @@
                                  <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url() ?>employer/pending-job">
                                  <span class="icon-container">
                                  <i class="fas fa-map-signs"></i></span>
-                                 <span class="text item">Pending Jobs</span>
+                                 <span class="text item">Draft Jobs</span>
                                  </a>
                               </li>
                               <li <?php if ($activemenu == 'internal_tracker') { ?>
@@ -312,7 +312,7 @@
                                  <span class="text item"> Company / Recruiter</span>
                                  </a>
                               </li>
-                              <li <?php if ($activemenu == 'addemployee') { ?>
+                             <!--  <li <?php if ($activemenu == 'addemployee') { ?>
                                  class="active"
                                  <?php } ?> >
                                  <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url() ?>employer/addemployee">
@@ -321,7 +321,7 @@
                                  </span>
                                  <span class="text item">Employee Management</span>
                                  </a>
-                              </li>
+                              </li> -->
                            </ul>
                         </nav>
                      </div>

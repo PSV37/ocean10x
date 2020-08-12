@@ -1060,7 +1060,7 @@
    <?php endforeach; 
       else : ?> 
    <li>
-      <strong>There is no active Vacancy Post to Show</strong>
+      <strong>There are no Active Job Posts to Display !</strong>
    </li>
    <?php endif; ?>
 </div>
