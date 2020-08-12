@@ -262,7 +262,7 @@ input:-internal-autofill-selected{background-color:#fff !important;}
              <?php echo $this->session->flashdata('invalid'); ?>
            <?php echo $this->session->flashdata('verify_msg'); ?>
            <?php echo $this->session->flashdata('employer_success'); 
-            $this->session->unset_flashdata('verify_msg');
+            // $this->session->unset_flashdata('verify_msg');
 
 
            ?>
