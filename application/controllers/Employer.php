@@ -3213,7 +3213,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         // print_r($_POST);die();
         if (isset($_POST['upload'])) {
             $data = array();
-            print_r($_FILES);die;
+            // print_r($_FILES);die;
             if (!empty($_FILES['file']['name'])) {
                 // Set preference
                 $config['upload_path'] = 'cv_bank_excel/files/';
@@ -3284,7 +3284,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             
         } else {
             // load view
-            $this->load->view('fontend/employer/bulk_cv_upload_view');
+            redirect('employer/corporate_cv_bank');
         }
     }
     function get_fav_consultants() {
