@@ -284,6 +284,7 @@ input#company_name {
   
    
    function validateCaptcha(){
+    alert('validateCaptcha');
        var sessionCaptcha = '<?php echo $this->session->userdata('captchaCode'); ?>';
           $( "#EmpRegistation" ).validate( {
             errorPlacement: function(error, element) {
