@@ -206,7 +206,7 @@ input#company_name {
                         <div class="captchacode">Captcha is cause sensitive</div>
                         <div class="row">
                            <div class="col-md-6 col-sm-12 captcha">
-                              <input type="text" id="inputchapcha" required name="captcha" value="" class="form-control" placeholder="Captcha Code">
+                              <input type="text" id="inputchapcha"  name="captcha" value="" class="form-control" placeholder="Captcha Code">
                                <span class="required">*</span>
                            </div>
                            <div class="col-md-4 col-sm-4">
