@@ -3278,7 +3278,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $this->session->set_flashdata('success', '<div class="alert alert-danger text-center">CVs Upload failed!</div>');
             }
             // $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">CVs Uploaded successfully!</div>');
-            redirect('employer/bulk_upload_cvs');
+             redirect('employer/corporate_cv_bank');
             // load view
             // $this->load->view('fontend/employer/bulk_cv_upload_view',$data);
             
