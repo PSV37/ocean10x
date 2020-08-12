@@ -3210,7 +3210,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         //load model
         $this->load->model('Questionbank_employer_model');
         // Check form submit or not
-        if ($this->input->post('upload') != NULL) {
+        if ($_POST['upload']) {
             $data = array();
             print_r($_FILES);
             if (!empty($_FILES['file']['name'])) {
