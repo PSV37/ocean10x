@@ -263,11 +263,11 @@ input#company_name {
 <script type="text/javascript">
    $( document ).ready( function () {
    
-       $("#submitButton").click(function(){
-       var inputchapcha=$('#inputchapcha').val();
-       var imageData='<?php echo $this->session->userdata('captchaCode'); ?>';
-       validateCaptcha();
-   });
+   //     $("#submitButton").click(function(){
+   //     var inputchapcha=$('#inputchapcha').val();
+   //     var imageData='<?php echo $this->session->userdata('captchaCode'); ?>';
+   //     validateCaptcha();
+   // });
    
    /// CAPTCHA CODE 
    
@@ -281,10 +281,9 @@ input#company_name {
        });
    });
    
-   });
    
-   function validateCaptcha(){
-       var sessionCaptcha = '<?php echo $this->session->userdata('captchaCode'); ?>';
+   
+   
           $( "#EmpRegistation" ).validate( {
             errorPlacement: function(error, element) {
 
@@ -394,8 +393,8 @@ input#company_name {
 
          },
            
-       } );
-   }
+       }); 
+       });
    
    
    
