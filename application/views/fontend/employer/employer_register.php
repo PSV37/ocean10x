@@ -336,7 +336,8 @@ input#company_name {
                company_password: {
                    required: true,
                    minlength: 8,
-                    newpassword_regex: true
+                    newpassword_regex: true,
+                    maxlength: 15
                    
                },
                 confirm_password: {
@@ -372,14 +373,7 @@ input#company_name {
                    required:"This field is mandatory!",
                    equalTo: "Captcha doesn't match!",
                },
-                company_password: {
-                    required: "This field is mandatory!",
-                   minlength: "Your password must be at least 8 characters long"
-           },
-            company_password:{
-                   required:"This field is mandatory!",
-                   equalTo: "Captcha doesn't match!",
-               },
+               
                confirm_password:{
                    required:"This field is mandatory!",
                    equalTo: "Captcha doesn't match!",
@@ -399,23 +393,7 @@ input#company_name {
 
 
          },
-           errorElement: "em",
-           errorPlacement: function ( error, element ) {
-               // Add the `help-block` class to the error element
-               error.addClass( "help-block" );
-   
-               if ( element.prop( "type" ) === "checkbox" ) {
-                   error.insertAfter( element.parent( "label" ) );
-               } else {
-                   error.insertAfter( element );
-               }
-           },
-           highlight: function ( element, errorClass, validClass ) {
-               $( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
-           },
-           unhighlight: function (element, errorClass, validClass) {
-               $( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
-           }
+           
        } );
    }
    
