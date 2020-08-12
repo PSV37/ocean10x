@@ -261,6 +261,7 @@ input:-internal-autofill-selected{background-color:#fff !important;}
       <?php echo $this->session->flashdata('emp_msg');; ?>
              <?php echo $this->session->flashdata('invalid'); ?>
            <?php echo $this->session->flashdata('verify_msg'); ?>
+           <?php echo $this->session->flashdata('employer_success'); ?>
     <div class="user-box">
       <input type="text" name="email"  required>
       <label>Username</label>
