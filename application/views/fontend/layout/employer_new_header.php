@@ -91,7 +91,9 @@ a.dropdown-toggle {
 
 <div class="col-md-1">
 	 <div class="notification">
-    	<i class="fas fa-comment-alt"><sup><?php echo $chatbox[0]['total']; ?></sup></i><br>
+    	<i class="fas fa-comment-alt">&nbsp; <sup><?php if ($chatbox[0]['total'] > 0) {
+     echo $chatbox[0]['total'];
+      }  ?></sup></i><br>
         Messaging
     </div>    
    
