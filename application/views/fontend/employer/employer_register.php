@@ -263,11 +263,11 @@ input#company_name {
 <script type="text/javascript">
    $( document ).ready( function () {
    
-       $("#submitButton").click(function(){
-       var inputchapcha=$('#inputchapcha').val();
-       var imageData='<?php echo $this->session->userdata('captchaCode'); ?>';
-       validateCaptcha();
-   });
+   //     $("#submitButton").click(function(){
+   //     var inputchapcha=$('#inputchapcha').val();
+   //     var imageData='<?php echo $this->session->userdata('captchaCode'); ?>';
+   //     validateCaptcha();
+   // });
    
    /// CAPTCHA CODE 
    
@@ -281,11 +281,9 @@ input#company_name {
        });
    });
    
-  
    
-   function validateCaptcha(){
-    alert('validateCaptcha');
-       var sessionCaptcha = '<?php echo $this->session->userdata('captchaCode'); ?>';
+   
+   
           $( "#EmpRegistation" ).validate( {
             errorPlacement: function(error, element) {
 
@@ -336,8 +334,9 @@ input#company_name {
              
                company_password: {
                    required: true,
-                   minlength: 8
-                    newpassword_regex: true
+                   minlength: 8,
+                    newpassword_regex: true,
+                    maxlength: 15
                    
                },
                 confirm_password: {
@@ -373,14 +372,7 @@ input#company_name {
                    required:"This field is mandatory!",
                    equalTo: "Captcha doesn't match!",
                },
-                company_password: {
-                    required: "This field is mandatory!",
-                   minlength: "Your password must be at least 8 characters long"
-           },
-            company_password:{
-                   required:"This field is mandatory!",
-                   equalTo: "Captcha doesn't match!",
-               },
+               
                confirm_password:{
                    required:"This field is mandatory!",
                    equalTo: "Captcha doesn't match!",
@@ -401,9 +393,9 @@ input#company_name {
 
          },
            
-       } );
-   }
-    });
+       }); 
+       });
+   
    
    
 </script>
