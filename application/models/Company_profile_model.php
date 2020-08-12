@@ -69,8 +69,8 @@ class Company_Profile_Model extends MY_Model
 
         $message = '<div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
 <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
-<br><br>Hi '.$email_name[0].',<br><br>Please verify your e-mail to activate your TheOcean Account.<br><br>Once verified, you can browse TheOcean ! <br><br>You can confirm your e-mail by clicking the button below.<br><br><a style="border-radius:4px;font-size:15px;color:white;text-decoration:none;padding:14px 7px 14px 7px;width:210px;max-width:210px;font-family:&quot;Open Sans&quot;,&quot;Helvetica Neue&quot;,Arial;margin:0;display:block;background-color:#6caa4d;text-align:center" href="' . base_url() . 'employer_register/verify/' . md5($to_email) . '">Active Account</a><br><br>Alternately, copy paste and open the link in your browser.<br><br>
-    <a href="'. base_url() . 'employer_register/verify/' . md5($to_email) .' ">link</a>
+<br><br>Hi '.ucfirst($email_name[0]).',<br><br>Please verify your e-mail to activate your TheOcean Account.<br><br>Once verified, you can browse TheOcean ! <br><br>You can confirm your e-mail by clicking the button below.<br><br><a style="border-radius:4px;font-size:15px;color:white;text-decoration:none;padding:14px 7px 14px 7px;width:210px;max-width:210px;font-family:&quot;Open Sans&quot;,&quot;Helvetica Neue&quot;,Arial;margin:0;display:block;background-color:#6caa4d;text-align:center" href="' . base_url() . 'employer_register/verify/' . md5($to_email) . '">Activate Account</a><br><br>Alternatively, copy paste and open the link in your browser.<br><br>
+    <a href="'. base_url() . 'employer_register/verify/' . md5($to_email) .' ">'. base_url() . 'employer_register/verify/' . md5($to_email) .'</a>
     <br><br>Thanks,<br><br>Team TheOcean<br><br>Copyright © 2020 TheOcean, All rights reserved.
 </td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
 
@@ -187,6 +187,18 @@ public function get_slug_name($company_id)
     {
         $this->db->select('*');
         $this->db->where('company_slug', $company_slug);
+        $query = $this->db->get($this->_table_name);
+         if ($query->num_rows() > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function check_name($company_token)
+    {
+        $this->db->select('*');
+        $this->db->where('token', $company_token);
         $query = $this->db->get($this->_table_name);
          if ($query->num_rows() > 0) {
             return true;

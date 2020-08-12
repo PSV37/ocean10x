@@ -204,7 +204,7 @@ class Employer_register extends CI_Controller
                         
                         
                         // successfully sent mail
-                         $this->session->set_flashdata('employer_success', '<div class="alert alert-success text-center">Congratulations <?php echo $company_name ?> !</h3>
+                         $this->session->set_flashdata('verify_msg', '<div class="alert alert-success text-center">Congratulations <?php echo $company_name ?> !</h3>
                                 <p>Access the secure link sent to your e-mail to activate your Corporate Account !</div>');
                         $this->load->view('fontend/employer/employer_login');
                     } else {
@@ -243,10 +243,14 @@ class Employer_register extends CI_Controller
     public function verify($hash = null)
     {
         if ($this->company_profile_model->verifyEmailID($hash)) {
-            $this->session->set_flashdata('verify_msg', '<div class="alert alert-success text-center">Your Email Address is successfully verified! Please login to access your account!</div>');
-            $this->load->view('fontend/employer/employer_login');
+
+            $where = "token = '$hash'";
+            $data['company_details'] = $this->Master_model->get_master_row('company_profile', $select = 'company_email', $where, $join = FALSE);
+            // print_r($data['company_details']);die;
+            $this->session->set_flashdata('verify_msg', '<div class="alert alert-success text-center">E-mail ID Successfully Verified !<br> Please Login to Browse TheOcean !</div>');
+            $this->load->view('fontend/employer/employer_login',$data);
         } else {
-            $this->session->set_flashdata('verify_msg', '<div class="alert alert-danger text-center">Sorry! There is error verifying your Email Address!</div>');
+            $this->session->set_flashdata('verify_msg', '<div class="alert alert-danger text-center">Error! While verifiying your E-mail</div>');
             redirect('employer_register');
         }
         
