@@ -853,6 +853,15 @@
     background-color: #18c5bd;
     border-radius: 4px;
 }
+.alert.alert-success.text-center {
+    width: 100%;
+    height: 30px;
+    border-radius: 0;
+    text-align: center;
+    padding: 13px;
+    background: transparent;
+    background-color: #68dcd7;
+}
 </style>
 <div class="container-fluid main-d">
    <div class="container">
