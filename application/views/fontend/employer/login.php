@@ -41,6 +41,8 @@
            <?php echo $this->session->flashdata('emp_msg');; ?>
              <?php echo $this->session->flashdata('invalid'); ?>
            <?php echo $this->session->flashdata('verify_msg'); ?>
+           <?php echo $this->session->flashdata('employer_success'); ?>
+           
              
           <div class="formpanel">
             <div class="formrow">

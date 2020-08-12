@@ -200,11 +200,13 @@ class Employer_register extends CI_Controller
                         
                         $this->session->unset_userdata($company_profile);
                         $this->session->unset_userdata('reg_in');
-                        $data['company_name'] = $this->input->post('company_name');
+                        $company_name = $this->input->post('company_name');
                         
                         
                         // successfully sent mail
-                        $this->load->view('fontend/employer/register_success', $data);
+                         $this->session->set_flashdata('employer_success', '<div class="alert alert-success text-center">Congratulations <?php echo $company_name ?> !</h3>
+                                <p>Access the secure link sent to your e-mail to activate your Corporate Account !</div>');
+                        $this->load->view('fontend/employer/employer_login');
                     } else {
                         $this->session->set_flashdata('captchaCode_msg', '<div class="alert alert-warning text-center">captcha code does not match please try again</div>');
                         redirect_back();

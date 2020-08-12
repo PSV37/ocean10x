@@ -206,7 +206,7 @@ input#company_name {
                         <div class="captchacode">Captcha is cause sensitive</div>
                         <div class="row">
                            <div class="col-md-6 col-sm-12 captcha">
-                              <input type="text" id="inputchapcha" required name="captcha" value="" class="form-control" placeholder="Captcha Code">
+                              <input type="text" id="inputchapcha"  name="captcha" value="" class="form-control" placeholder="Captcha Code">
                                <span class="required">*</span>
                            </div>
                            <div class="col-md-4 col-sm-4">
@@ -281,7 +281,7 @@ input#company_name {
        });
    });
    
-   });
+  
    
    function validateCaptcha(){
        var sessionCaptcha = '<?php echo $this->session->userdata('captchaCode'); ?>';
@@ -336,6 +336,7 @@ input#company_name {
                company_password: {
                    required: true,
                    minlength: 8
+                    newpassword_regex: true
                    
                },
                 confirm_password: {
@@ -398,28 +399,19 @@ input#company_name {
 
 
          },
-           errorElement: "em",
-           errorPlacement: function ( error, element ) {
-               // Add the `help-block` class to the error element
-               error.addClass( "help-block" );
-   
-               if ( element.prop( "type" ) === "checkbox" ) {
-                   error.insertAfter( element.parent( "label" ) );
-               } else {
-                   error.insertAfter( element );
-               }
-           },
-           highlight: function ( element, errorClass, validClass ) {
-               $( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
-           },
-           unhighlight: function (element, errorClass, validClass) {
-               $( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
-           }
+           
        } );
    }
+    });
    
    
+</script>
+<script>
+   $.validator.addMethod("newpassword_regex", function(value, element) {
    
+   return this.optional(element) || /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(value);
+   
+   }, "Please Enter Minimum eight characters,  at least one uppercase letter, one lowercase letter, one number and one special character:");
 </script>
 <script>
    function getStates(id){
