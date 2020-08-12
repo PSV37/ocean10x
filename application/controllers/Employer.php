@@ -4352,7 +4352,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $join_cond = array('js_info' => 'js_info.email = corporate_cv_bank.js_email|Left', 'js_login_logs' => 'js_info.job_seeker_id = js_login_logs.job_seeker_id|Left');
         $active_cv = $this->Master_model->getMaster('corporate_cv_bank', $where = $where_active, $join = $join_cond, $order = false, $field = false, $select = false, $limit = false, $start = false, $search = false);
 
-        print $active_cv;
+        echo $active_cv;
      
 
         echo json_encode($active_cv);
