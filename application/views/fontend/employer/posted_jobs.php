@@ -1073,7 +1073,7 @@
                </div>
                <ul class="pieID legend">
                   <li>
-                     <em>Humans</em>
+                     <em>Total Job Posts</em>
                      <span>718</span>
                   </li>
                   <li>
