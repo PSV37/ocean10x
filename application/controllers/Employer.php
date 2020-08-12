@@ -98,8 +98,7 @@ class Employer extends MY_Employer_Controller {
                     'cont_person_mobile' => $this->input->post('cont_person_mobile'), 
                     'comp_gstn_no' => $this->input->post('comp_gst_no'), 
                     'comp_pan_no' => $this->input->post('comp_pan_no'), 
-                    'updated_by' => $this->session->userdata('company_profile_id'), 
-                    'update_at' => date('Y-m-d H:i:s'));
+                    'updated_by' => $this->session->userdata('company_profile_id'), 'update_at' => date('Y-m-d H:i:s'));
                 $company_logo = isset($_FILES['company_logo']['name']) ? $_FILES['company_logo']['name'] : null;
                 if (!empty($employer_id) || !empty($company_logo)) {
                     if (!empty($company_logo)) {
@@ -4352,7 +4351,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $join_cond = array('js_info' => 'js_info.email = corporate_cv_bank.js_email|Left', 'js_login_logs' => 'js_info.job_seeker_id = js_login_logs.job_seeker_id|Left');
         $active_cv = $this->Master_model->getMaster('corporate_cv_bank', $where = $where_active, $join = $join_cond, $order = false, $field = false, $select = false, $limit = false, $start = false, $search = false);
 
-        echo $active_cv;
+        print_r $active_cv;
      
 
         echo json_encode($active_cv);
