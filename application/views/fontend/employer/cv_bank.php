@@ -1126,16 +1126,16 @@
                <div class="modal fade" id="bulkupload" role="dialog">
                   <div class="modal-dialog modal-sm">
                      <div class="modal-content">
-                        <form method="post" action="<?php echo base_url();?>employer/bulk_upload_cvs">
+                        <form method="post" action="<?php echo base_url();?>employer/bulk_upload_cvs" enctype="multipart/form-data">
                            <div class="modal-header">
                               <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
-                              <h4 class="modal-title">Add folder</h4>
+                              <h4 class="modal-title">Bulk Upload CV</h4>
                            </div>
                            <div class="modal-body">
                               <div class="col-md-12" style="margin-top: 20px;">
                                  <div class="row">
                                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                       <label class="mdl-textfield__label" for="sample3">Folder Name:</label>
+                                       <!-- <label class="mdl-textfield__label" for="sample3">Folder Name:</label> -->
                                        <small>To Import CV's Download CSV Format <a href="<?php echo base_url(); ?>cv_bank_excel/bulk_upload_cv_format.csv" download><strong>Click here To Download</strong></a></small>
                                     </div>
                                  </div>
