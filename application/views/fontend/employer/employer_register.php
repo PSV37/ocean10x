@@ -336,6 +336,7 @@ input#company_name {
                company_password: {
                    required: true,
                    minlength: 8
+                    newpassword_regex: true
                    
                },
                 confirm_password: {
@@ -420,6 +421,13 @@ input#company_name {
    
    
    
+</script>
+<script>
+   $.validator.addMethod("newpassword_regex", function(value, element) {
+   
+   return this.optional(element) || /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(value);
+   
+   }, "Please Enter Minimum eight characters,  at least one uppercase letter, one lowercase letter, one number and one special character:");
 </script>
 <script>
    function getStates(id){

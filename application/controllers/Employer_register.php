@@ -206,7 +206,7 @@ class Employer_register extends CI_Controller
                         // successfully sent mail
                          $this->session->set_flashdata('employer_success', '<div class="alert alert-success text-center">Congratulations <?php echo $company_name ?> !</h3>
                                 <p>Access the secure link sent to your e-mail to activate your Corporate Account !</div>');
-                        $this->load->view('fontend/employer/login');
+                        $this->load->view('fontend/employer/employer_login');
                     } else {
                         $this->session->set_flashdata('captchaCode_msg', '<div class="alert alert-warning text-center">captcha code does not match please try again</div>');
                         redirect_back();
