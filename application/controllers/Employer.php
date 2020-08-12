@@ -3212,6 +3212,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         // Check form submit or not
         if ($this->input->post('upload') != NULL) {
             $data = array();
+            print_r($_FILES);
             if (!empty($_FILES['file']['name'])) {
                 // Set preference
                 $config['upload_path'] = 'cv_bank_excel/files/';
