@@ -849,6 +849,10 @@
    width: 330px;
    text-align: center;
    }
+   select#education_id {
+    background-color: #18c5bd;
+    border-radius: 4px;
+}
 </style>
 <div class="container-fluid main-d">
    <div class="container">
@@ -1297,7 +1301,7 @@
             <div class="filter1">
                <p style="font-size:18px;margin-top:15px;">Education</p>
                <select class="form-control filtredu" id="education_id" onchange="get_data();" tabindex="-98">
-                  <option value=""> </option>
+                  <!-- <option value=""> </option> -->
                   <?php  $edu_value =  set_value('js_top_education'); foreach($education_level as $education){?>
                   <option value="<?php echo $education['education_level_id']; ?>"<?php if($edu_value==$education['education_level_id']){ echo "selected"; }elseif($job_info->job_edu==$education['education_level_id']){ echo "selected"; }?>><?php echo $education['education_level_name']; ?></option>
                   <?php } ?>
