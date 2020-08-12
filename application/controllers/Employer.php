@@ -3243,7 +3243,13 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                         if ($skip != 0) {
                             $this->Questionbank_employer_model->InsertCVData($userdata);
                             $company_name = $this->session->userdata('company_name');
-                            $data = array('company' => $company_name, 'action_taken_for' => $this->input->post('company_name'), 'field_changed' => 'Imported CVs', 'Action' => 'Imported Multiple CVs', 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
+                            $data = array(
+                                'company' => $company_name, 
+                                'action_taken_for' => $this->input->post('company_name'), 
+                                'field_changed' => 'Imported CVs', 'Action' => 
+                                'Imported Multiple CVs', 
+                                'datetime' => date('Y-m-d H:i:s'), 
+                                'updated_by' => $company_name);
                             $result = $this->Master_model->master_insert($data, 'employer_audit_record');
                         }
                         $skip++;
