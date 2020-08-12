@@ -261,7 +261,12 @@ input:-internal-autofill-selected{background-color:#fff !important;}
       <?php echo $this->session->flashdata('emp_msg');; ?>
              <?php echo $this->session->flashdata('invalid'); ?>
            <?php echo $this->session->flashdata('verify_msg'); ?>
-           <?php echo $this->session->flashdata('employer_success'); ?>
+           <?php echo $this->session->flashdata('employer_success'); 
+            $this->session->unset_flashdata('verify_msg');
+
+
+           ?>
+
     <div class="user-box">
       <input type="text" name="email" value="<?php if(isset($company_details['company_email'])){ echo $company_details['company_email']; } ?>"  required>
       <label>Username</label>
