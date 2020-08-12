@@ -3262,7 +3262,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     
                 } else {
                     //$data['response'] = 'failed';
-                    $error = $this->upload->display_errors());
+                    $error = $this->upload->display_errors();
                     $this->session->set_flashdata('success', '<div class="alert alert-warning text-center">CVs Upload failed!' .$error.'</div>');
                 }
             } else {
