@@ -1143,14 +1143,14 @@
                               <div class="col-md-12">
                                  <div class="row">
                                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                       <input type='file' name='upload' required class="form-control">
+                                       <input type='file' name='file' required class="form-control">
                                     </div>
                                  </div>
                               </div>
                               <!--  <p>This is a small modal.</p> -->
                            </div>
                            <div class="modal-footer">
-                              <button type="submit" class="btn btn-default">Upload Now</button>
+                              <button type="submit" name='upload' class="btn btn-default">Upload Now</button>
                               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                            </div>
                         </form>
