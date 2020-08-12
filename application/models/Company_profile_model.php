@@ -60,6 +60,7 @@ class Company_Profile_Model extends MY_Model
 	   
           $ci = get_instance();
           $ci->load->library('email');
+            $email_name = explode('@', $to_email);
           
             $config['protocol'] = "mail";
             $config['charset'] = "utf-8";
@@ -68,14 +69,17 @@ class Company_Profile_Model extends MY_Model
 
         $message = '<div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
 <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
-<br><br>Hi Dear,<br>Please click on the below activation link to verify your email address <br><br><a style="border-radius:4px;font-size:15px;color:white;text-decoration:none;padding:14px 7px 14px 7px;width:210px;max-width:210px;font-family:&quot;Open Sans&quot;,&quot;Helvetica Neue&quot;,Arial;margin:0;display:block;background-color:#6caa4d;text-align:center" href="' . base_url() . 'employer_register/verify/' . md5($to_email) . '">Active Account</a><br>Goa a Question? Check out how works and our support team are ready to help.<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
+<br><br>Hi '.$email_name[0].',<br><br>Please verify your e-mail to activate your TheOcean Account.<br><br>Once verified, you can browse TheOcean ! <br><br>You can confirm your e-mail by clicking the button below.<br><br><a style="border-radius:4px;font-size:15px;color:white;text-decoration:none;padding:14px 7px 14px 7px;width:210px;max-width:210px;font-family:&quot;Open Sans&quot;,&quot;Helvetica Neue&quot;,Arial;margin:0;display:block;background-color:#6caa4d;text-align:center" href="' . base_url() . 'employer_register/verify/' . md5($to_email) . '">Active Account</a><br><br>Alternately, copy paste and open the link in your browser.<br><br>
+    <a href="'. base_url() . 'employer_register/verify/' . md5($to_email) .' ">link</a>
+    <br><br>Thanks,<br><br>Team TheOcean<br><br>Copyright © 2020 TheOcean, All rights reserved.
+</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
 
 
             $ci->email->initialize($config);
             $ci->email->from('info@consultnhire.com', 'ConsultnHire');
             $ci->email->to($to_email);
             $ci->email->reply_to('info@consultnhire.com', 'ConsultnHire');
-            $ci->email->subject('verify email account');
+            $ci->email->subject('Account Verification - TheOcean');
             $ci->email->message($message);
             $ci->email->send(FALSE);
 
