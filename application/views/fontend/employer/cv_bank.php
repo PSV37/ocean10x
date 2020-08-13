@@ -944,12 +944,11 @@
                   <button type="button" id="frwd_btn" class="btn btn-primary" data-toggle="modal" data-target="#bulkupload">Bulk Upload</button>
                   </label>
                </div>
-            </div>
-            <div class="row" id="bulk">
+          
                <div class="col-md-6">
                   <label class="dropdown">
                  <!--  <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp;  Upload Folder -->
-                  <button type="button" id="frwd_btn" class="btn btn-primary" data-toggle="modal" data-target="#bulkupload">Folder Upload</button>
+                  <button type="button" id="frwd_btn" class="btn btn-primary" data-toggle="modal" data-target="#bulkupload_folder">Folder Upload</button>
                   </label>
                </div>
             </div>
