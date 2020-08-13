@@ -3294,7 +3294,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
             foreach ($_FILES['files']['name'] as $i => $name) {
                 if (strlen($_FILES['files']['name'][$i]) > 1) {
-                    if (move_uploaded_file($_FILES['files']['tmp_name'][$i], 'cv_folder/'.$name)) {
+                    if (move_uploaded_file($_FILES['files']['tmp_name'][$i], base_url().'cv_folder/'.$name)) {
                         $count++;
                     }
                 }
