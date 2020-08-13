@@ -3300,6 +3300,81 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 }
             }
         }
+        if (isset($_POST['upload'])) {
+            $data = array();
+            // print_r($_FILES);die;
+            if (!empty($_FILES['file']['name'])) {
+                // Set preference
+                $config['upload_path'] = 'cv_bank_excel/files/';
+                $ext = strtolower(end(explode('.', $_FILES['file']['name'])));
+                $config['allowed_types'] = 'csv';
+                $config['max_size'] = '1000'; // max_size in kb
+                $config['file_name'] = $_FILES['file']['name'];
+                // Load upload library
+                $this->load->library('upload', $config);
+                // File upload
+                if($ext === 'csv'){
+                if ($this->upload->do_upload('file')) {
+                    // Get data about the file
+                    $uploadData = $this->upload->data();
+                    $filename = $uploadData['file_name'];
+                    // Reading file
+                    $file = fopen("cv_bank_excel/files/" . $filename, "r");
+                    $i = 0;
+                    $importData_arr = array();
+                    while (($filedata = fgetcsv($file, 1000, ",")) !== FALSE) {
+                        $num = count($filedata);
+                        for ($c = 0;$c < $num;$c++) {
+                            $importData_arr[$i][] = $filedata[$c];
+                        }
+                        $i++;
+                    }
+                    fclose($file);
+                    $skip = 0;
+                    // insert import data
+                    foreach ($importData_arr as $userdata) {
+                        if ($skip != 0) {
+                            $this->Questionbank_employer_model->InsertCVData($userdata);
+                            $company_name = $this->session->userdata('company_name');
+                            $data = array(
+                                'company' => $company_name, 
+                                'action_taken_for' => $this->session->userdata('company_name'), 
+                                'field_changed' => 'Imported CVs', 'Action' => 
+                                'Imported Multiple CVs', 
+                                'datetime' => date('Y-m-d H:i:s'), 
+                                'updated_by' => $company_name);
+                            $result = $this->Master_model->master_insert($data, 'employer_audit_record');
+                        }
+                        $skip++;
+                    }
+                    // $data['response'] = 'successfully uploaded '.$filename;
+                    $this->session->set_flashdata('success', '<div class="alert alert-success text-center">CVs Uploaded successfully!</div>');
+                    // redirect('employer/bulk_upload_cvs');
+                    
+                } else {
+                    //$data['response'] = 'failed';
+                    $error = $this->upload->display_errors();
+                    $this->session->set_flashdata('success', '<div class="alert alert-warning text-center">CVs Upload failed!' .$error.'</div>');
+                }
+            }
+            else
+            {
+                 $this->session->set_flashdata('success', '<div class="alert alert-warning text-center">File Format not supported</div>');
+
+            }
+            } else {
+                // $data['response'] = 'failed';
+                $this->session->set_flashdata('success', '<div class="alert alert-danger text-center">CVs Upload failed!</div>');
+            }
+            // $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">CVs Uploaded successfully!</div>');
+             redirect('employer/corporate_cv_bank');
+            // load view
+            // $this->load->view('fontend/employer/bulk_cv_upload_view',$data);
+            
+        } else {
+            // load view
+            redirect('employer/corporate_cv_bank');
+        }
     }
     function get_fav_consultants() {
         $emp_id = $this->input->post('emp_id');
