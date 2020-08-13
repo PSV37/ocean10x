@@ -3360,7 +3360,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     foreach ($importData_arr as $userdata) {
                         if ($skip != 0) {
                             $cv_id=$this->Questionbank_employer_model->InsertCVData($userdata);
-                            print_r($cv_id);die;
+                            // print_r($cv_id);die;
                             $company_name = $this->session->userdata('company_name');
                             $data = array(
                                 'company' => $company_name, 
