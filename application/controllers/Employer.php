@@ -3376,9 +3376,17 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                   $cv_name = $this->Master_model->get_master_row('corporate_cv_bank', $select = 'js_name', $where, $join = FALSE);
                                   // print_r($cv_name);die();
                                   $js_name = $cv_name->js_name;
-                                 if (strpos($name,$js_name) !== false) {
-                                        echo 'true';die;
-                                    }
+                                  echo $name;
+                                   echo $js_name;
+                               
+                                    if (strpos($name, $js_name) !== false) 
+                                     {
+                                        echo 'The specific word is present.';die();
+                                     }
+                                    else
+                                     {
+                                        echo 'The specific word is not present.';die();
+                                     }
                                   // print_r($this->db->last_query());die;
                                 }
                             }
