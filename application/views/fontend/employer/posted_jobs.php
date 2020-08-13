@@ -1074,7 +1074,8 @@
                <ul class="pieID legend">
                   <li>
                      <em>Total Job Posts</em>
-                     <span>718</span>
+                     <span><?php echo sizeof($req_details); ?></span>
+                     <!--<span>718</span> -->
                   </li>
                   <li>
                      <em>Dogs</em>
