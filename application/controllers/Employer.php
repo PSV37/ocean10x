@@ -3380,7 +3380,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                     if (strpos($name, $js_name) !== false) 
                                      {
                                         $where11['cv_id'] = $cvs;
-                                        $update_doc['js_document'] = 'cv_folder/'.$folder_name.'/'.$name;
+                                        $path = 'cv_folder/'.$folder_name.'/'.$name;
+                                        print_r($path);die;
+                                        $update_doc['js_document'] = 
                                         $this->Master_model->master_update($update_doc, 'corporate_cv_bank', $where11);
                                         // echo 'The specific word is present.';
                                      }
