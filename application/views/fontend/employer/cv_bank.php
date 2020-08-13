@@ -1390,7 +1390,7 @@
             <div class="filter1">
                <p style="font-size:18px;margin-top:15px;">Time Period in Current Job</p>
                   <div class="range-wrap">
-                  <input type="range" class="range" id="stability_id" onchange="get_data();" min="<6M" max="<1Y" step="5">
+                  <input type="range" class="range" id="stability_id" onchange="get_data();" min="<6M" max="<1Y" step="5" value="0">
                   <output class="bubble notice_period" ></output>
 
                <!--<select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" id='stability_id' tabindex="-98">
