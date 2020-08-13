@@ -3290,6 +3290,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
     public function bulk_upload_folder()
     {
+          $this->load->model('Questionbank_employer_model');
         $count = 0;
         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
             foreach ($_FILES['files']['name'] as $i => $name) {
