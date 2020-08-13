@@ -3287,6 +3287,20 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             redirect('employer/corporate_cv_bank');
         }
     }
+
+    public function bulk_upload_folder()
+    {
+        $count = 0;
+        if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+            foreach ($_FILES['files']['name'] as $i => $name) {
+                if (strlen($_FILES['files']['name'][$i]) > 1) {
+                    if (move_uploaded_file($_FILES['files']['tmp_name'][$i], 'cv_folder/'.$name)) {
+                        $count++;
+                    }
+                }
+            }
+        }
+    }
     function get_fav_consultants() {
         $emp_id = $this->input->post('emp_id');
         $where_cond = "consultant_company_mapping.company_id='$emp_id' AND consultant_company_mapping.is_favourite='yes'";
