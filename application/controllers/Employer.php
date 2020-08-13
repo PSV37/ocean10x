@@ -3381,15 +3381,16 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                
                                     if (strpos($name, $js_name) !== false) 
                                      {
-                                        echo 'The specific word is present.';die();
+                                        echo 'The specific word is present.';
                                      }
                                     else
                                      {
-                                        echo 'The specific word is not present.';die();
+                                        echo 'The specific word is not present.';
                                      }
                                   // print_r($this->db->last_query());die;
                                 }
                             }
+                            die();
 
                         }
                      $folder_data['company_id'] = $company_id;
