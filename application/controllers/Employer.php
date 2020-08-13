@@ -3291,10 +3291,11 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     public function bulk_upload_folder()
     {
         $count = 0;
+       define ('SITE_ROOT', realpath(dirname(__FILE__)));
         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
             foreach ($_FILES['files']['name'] as $i => $name) {
                 if (strlen($_FILES['files']['name'][$i]) > 1) {
-                    if (move_uploaded_file($_FILES['files']['tmp_name'][$i], base_url().'cv_folder/'.$name)) {
+                    if (move_uploaded_file($_FILES['files']['tmp_name'][$i], SITE_ROOT.'cv_folder/'.$name)) {
                         $count++;
                     }
                 }
