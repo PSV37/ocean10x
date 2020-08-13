@@ -67,9 +67,12 @@ class Questionbank_employer_model extends MY_Model {
                 );
 				
                 $cv_id=$this->db->insert('corporate_cv_bank', $cv_data_array);
+                  $insert_id = $this->db->insert_id();
+
+   return  $insert_id;
 				
         }
-        return $cv_id;
+       
         
     }
 }
