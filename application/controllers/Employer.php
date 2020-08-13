@@ -3378,8 +3378,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                   $cv_name = $this->Master_model->get_master_row('corporate_cv_bank', $select = 'js_name', $where, $join = FALSE);
                                   // print_r($cv_name);die();
                                 
-                                    $js_name =  $cv_name['js_name'];
-                                    if (strpos($name, $js_name) !== false) 
+                                    $js_name =  explode(' ', $cv_name['js_name']);
+                                    if (strpos($name, $js_name[0]) !== false) 
                                      {
                                         $where11['cv_id'] = $cvs;
                                         $path = 'cv_folder/'.$folder_name.'/'.$name;
