@@ -3292,14 +3292,22 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     {
           $this->load->model('Questionbank_employer_model');
         $count = 0;
+        $company_id = $this->session->userdata('company_profile_id');
+        $now = date('Y-m-d H:i:s');
+        $folder_name = $now.$company_id;
         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+              if (!file_exists('cv_folder/'.$folder_name)) {
+                            mkdir('cv_folder/'.$folder_name, 0777, true);
+               }
             foreach ($_FILES['files']['name'] as $i => $name) {
                 if (strlen($_FILES['files']['name'][$i]) > 1) {
-                    if (move_uploaded_file($_FILES['files']['tmp_name'][$i], 'cv_folder/'.$name)) {
+
+                    if (move_uploaded_file($_FILES['files']['tmp_name'][$i], 'cv_folder/'.$folder_name.$name)) {
                         $count++;
                     }
                 }
             }
+
         }
         if (isset($_POST['upload'])) {
             $data = array();
@@ -3333,9 +3341,10 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     fclose($file);
                     $skip = 0;
                     // insert import data
+                    $cv =array();
                     foreach ($importData_arr as $userdata) {
                         if ($skip != 0) {
-                            $this->Questionbank_employer_model->InsertCVData($userdata);
+                            $cv_id=$this->Questionbank_employer_model->InsertCVData($userdata);
                             $company_name = $this->session->userdata('company_name');
                             $data = array(
                                 'company' => $company_name, 
@@ -3345,9 +3354,15 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                 'datetime' => date('Y-m-d H:i:s'), 
                                 'updated_by' => $company_name);
                             $result = $this->Master_model->master_insert($data, 'employer_audit_record');
+                            array_push($cv, $cv_id);
                         }
                         $skip++;
                     }
+                     $folder_data['company_id'] = $company_id;
+                    $folder_data['folder_name'] = $folder_name;
+                    $folder_data['cv'] = $cv;
+                     $result = $this->Master_model->master_insert($folder_data, 'folder_company_mapping');
+
                     // $data['response'] = 'successfully uploaded '.$filename;
                     $this->session->set_flashdata('success', '<div class="alert alert-success text-center">CVs Uploaded successfully!</div>');
                     // redirect('employer/bulk_upload_cvs');
