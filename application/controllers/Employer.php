@@ -3374,7 +3374,10 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                 foreach ($cv as $cvs) {
                                     $where = "corporate_cv_bank.cv_id = '$cvs'";
                                   $cv_name = $this->Master_model->get_master_row('corporate_cv_bank', $select = 'js_name', $where, $join = FALSE);
-                                  print_r($this->db->last_query());die;
+                                  if (str_contains($name,  $cv_name)) { 
+                                            echo 'true';die;
+                                        }
+                                  // print_r($this->db->last_query());die;
                                 }
                             }
 
