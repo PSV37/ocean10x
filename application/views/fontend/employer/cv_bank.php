@@ -1393,7 +1393,7 @@
                   <input type="range"  id="stability_id" onchange="get_data();" min="0" max="3" value="0">
                   <span id="rngOutput"></span>
 
-                  <output class="bubble notice_period" ></output>
+                  <output class="bubble stability_id" ></output>
 
                <!--<select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" id='stability_id' tabindex="-98">
                   <optgroup label="Driver Groups">
