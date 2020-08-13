@@ -3375,22 +3375,19 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                     $where = "corporate_cv_bank.cv_id = '$cvs'";
                                   $cv_name = $this->Master_model->get_master_row('corporate_cv_bank', $select = 'js_name', $where, $join = FALSE);
                                   // print_r($cv_name);die();
-                                  $js_name = $cv_name['js_name'];
-                                  echo $name;
-                                   echo $js_name;
+                                
                                
                                     if (strpos($name, $js_name) !== false) 
                                      {
-                                        echo 'The specific word is present.';
+                                        $where11['cv_id'] = $cvs;
+                                        $update_doc['js_document'] = 'cv_folder/'.$folder_name.'/'.$name;
+                                        $this->Master_model->master_update($update_doc, 'corporate_cv_bank', $where11);
+                                        // echo 'The specific word is present.';
                                      }
-                                    else
-                                     {
-                                        echo 'The specific word is not present.';
-                                     }
-                                  // print_r($this->db->last_query());die;
+                                   
                                 }
                             }
-                            die();
+                           
 
                         }
                      $folder_data['company_id'] = $company_id;
