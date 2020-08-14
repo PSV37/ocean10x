@@ -1078,7 +1078,7 @@
                      <!--<span>718</span> -->
                   </li>    
                   <li>
-                     <em>Dogs</em>
+                     <em>Candidate Job Post Received</em>
                      <span>531</span>
                   </li>
                   <li>
