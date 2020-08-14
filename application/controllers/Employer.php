@@ -3380,7 +3380,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                 
                                     $js_name =  explode(' ', $cv_name['js_name']);
                                     // if (strpos($name, $js_name[0]) !== false) 
-                                    if(preg_match('('$js_name[0]|$js_name[1]')', $name) === 1)
+                                    if(preg_match('('.$js_name[0].|.$js_name[1].')', $name) === 1)
                                      {
                                         $where11['cv_id'] = $cvs;
                                         $path = 'cv_folder/'.$folder_name.'/'.$name;
