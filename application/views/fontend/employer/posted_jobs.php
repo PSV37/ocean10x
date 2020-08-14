@@ -336,7 +336,8 @@
    clip: rect(0px, 200px, 200px, 100px);
    }
    .legend {
-   margin-left:8px !important;
+   margin-left:20px !important;
+   margin-top: 20px;
    list-style-type: none;
    padding: 0;
    margin: 0;
@@ -1078,7 +1079,7 @@
                      <!--<span>718</span> -->
                   </li>    
                   <li>
-                     <em>Dogs</em>
+                     <em>Candidate Job Post Received</em>
                      <span>531</span>
                   </li>
                   <li>
