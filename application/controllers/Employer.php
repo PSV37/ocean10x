@@ -3377,8 +3377,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                      $folder_name = $folders[$i];
                                     if ($i > 0) {
                                         $j=$i-1;
-                                        if (!file_exists('cv_folder/'$folders[$j].'/'.$folder_name)) {
-                                            mkdir('v_folder/'$folders[$j].'/'.$folder_name, 0777, true);
+                                        if (!file_exists('cv_folder/'.$folders[$j].'/'.$folder_name)) {
+                                            mkdir('v_folder/'.$folders[$j].'/'.$folder_name, 0777, true);
                                         }
                                   
                                     }
@@ -3399,7 +3399,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                 {
                                     $j = $i-1;
                                     $folder_name = $folders[$j];
-                                   
+
                                 }
                                 // for ($j=0; $j < sizeof($folders) ; $j++) { 
                                     
