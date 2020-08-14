@@ -3378,13 +3378,13 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                     if ($i > 0) {
                                         $j=$i-1;
                                         if (!file_exists('cv_folder/'.$folders[$j].'/'.$folder_name)) {
-                                            mkdir('v_folder/'.$folders[$j].'/'.$folder_name, 0777, true);
+                                            mkdir('cv_folder/'.$folders[$j].'/'.$folder_name, 0777, true);
                                         }
                                   
                                     }
                                     else
                                     {
-                                        if (!file_exists('cv_folder/'.$folder_name.'/'.$folder_name)) {
+                                        if (!file_exists('cv_folder/'.$folder_name)) {
                                             mkdir('cv_folder/'.$folder_name, 0777, true);
                                         }
                                     }
