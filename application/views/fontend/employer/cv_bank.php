@@ -1493,7 +1493,7 @@
    document.getElementById("files").addEventListener("change", function(event) {
   let output = document.getElementById("paths");
   let files = event.target.files;
-  var paths;
+  var paths = [];
   for (let i=0; i<files.length; i++) {
     let item = document.createElement("li");
     item.innerHTML = files[i].webkitRelativePath;
