@@ -3373,7 +3373,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                 
                                 $folders = explode('/', $folder_path[$i]);
 
-                                if ($i < sizeof($folders)) {
+                                for ($k=0; $k =<  sizeof($folders) ; $k++) { 
+                                    if ($i < sizeof($folders)) {
                                      $folder_name = $folders[$i];
                                     if ($i > 0) {
                                         $j=$i-1;
@@ -3412,6 +3413,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                         $count++;
                                     }
                                 }
+                                }
+
+                                
                                 foreach ($cv as $cvs) {
                                     $where = "corporate_cv_bank.cv_id = '$cvs'";
                                   $cv_name = $this->Master_model->get_master_row('corporate_cv_bank', $select = 'js_name', $where, $join = FALSE);
