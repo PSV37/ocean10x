@@ -3384,7 +3384,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                     }
                                     else
                                     {
-                                        if (!file_exists('cv_folder/'$folder_name.'/'.$folder_name)) {
+                                        if (!file_exists('cv_folder/'-$folder_name.'/'.$folder_name)) {
                                             mkdir('cv_folder/'.$folder_name, 0777, true);
                                         }
                                     }
