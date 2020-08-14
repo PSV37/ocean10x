@@ -337,6 +337,7 @@
    }
    .legend {
    margin-left:8px !important;
+   margin-top: 20px;
    list-style-type: none;
    padding: 0;
    margin: 0;
