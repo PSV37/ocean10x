@@ -3403,8 +3403,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                     $j = $k-1;
                                     $folder_name = $folders[$j];
                                     if ($j > 0) {
+                                         $total_folders = array();
                                         for ($n=0; $n <= $j ; $n++) { 
-                                            $total_folders .=  $folders[$n];
+                                          array_push($total_folders, $folders[$n])
                                         }
                                         print_r($total_folders);die;
                                     }
