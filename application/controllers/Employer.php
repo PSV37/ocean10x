@@ -3398,13 +3398,13 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                      
                                  
                                 }
-                                else
-                                {
-                                    $j = $k-1;
-                                    $folder_name = $folders[$k];
-                                     $folder_path_final= 'cv_folder/'.$folders[$k].'/'.$folder_name;
+                                // else
+                                // {
+                                //     $j = $k-1;
+                                //     $folder_name = $folders[$j];
+                                //      $folder_path_final= 'cv_folder/'.$folders[$j].'/'.$folder_name;
 
-                                }
+                                // }
                                 // for ($j=0; $j < sizeof($folders) ; $j++) { 
                                     
                                  
