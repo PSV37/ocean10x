@@ -3405,7 +3405,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                     if ($j > 0) {
                                          $total_folders = array();
                                         for ($n=0; $n <= $j ; $n++) { 
-                                          array_push($total_folders, $folders[$n])
+                                          array_push($total_folders, $folders[$n]);
                                         }
                                         print_r($total_folders);die;
                                     }
