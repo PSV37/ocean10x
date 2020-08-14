@@ -3374,7 +3374,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                 $folders = explode('/', $folder_path[$i]);
 
                                 for ($k=0; $k <= sizeof($folders) ; $k++) { 
-                                    if ($k < sizeof($folders)) {
+                                    // if ($k < sizeof($folders)) {
                                      $folder_name = $folders[$k];
                                     if ($k > 0) {
                                         $j=$k-1;
@@ -3402,30 +3402,21 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                 {
                                     $j = $k-1;
                                     $folder_name = $folders[$j];
-                                    if ($j > 0) {
-                                         $total_folders = array();
-                                        for ($n=0; $n <= $k ; $n++) { 
-                                          array_push($total_folders, $folders[$n]);
-                                        }
-                                       
-                                    }
                                      $folder_path_final= 'cv_folder/'.$folders[$j].'/'.$folder_name;
 
                                 }
                                 // for ($j=0; $j < sizeof($folders) ; $j++) { 
-                                    print_r($folder_name);
+                                    
                                  
                                 
                                 
-                                // if (strlen($_FILES['files']['name'][$k]) > 1) {
+                                if (strlen($_FILES['files']['name'][$k]) > 1) {
 
-                                //     if (move_uploaded_file($_FILES['files']['tmp_name'][$i], 'cv_folder/'.$folder_name.'/'.$name)) {
-                                //         $count++;
-                                //     }
-                                // }
+                                    if (move_uploaded_file($_FILES['files']['tmp_name'][$i],  $folder_path_final.'/'.$name)) {
+                                        $count++;
+                                    }
                                 }
-                                 // 
-                                        print_r($total_folders);die;
+                                }
 
                                 
                                 foreach ($cv as $cvs) {
