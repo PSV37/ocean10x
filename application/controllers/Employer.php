@@ -3362,7 +3362,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                         $company_id = $this->session->userdata('company_profile_id');
                         $now = date('Y-m-d H:i:s');
                         $folder_name = $now.$company_id;
-                        $uploadDir='cv_folder/'
+                        $uploadDir='cv_folder/';
                         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                               if (!file_exists('cv_folder/'.$folder_name)) {
                                             mkdir('cv_folder/'.$folder_name, 0777, true);
