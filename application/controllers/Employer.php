@@ -3404,10 +3404,10 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                     $folder_name = $folders[$j];
                                     if ($j > 0) {
                                          $total_folders = array();
-                                        for ($n=0; $n <= $j ; $n++) { 
+                                        for ($n=0; $n <= $k ; $n++) { 
                                           array_push($total_folders, $folders[$n]);
                                         }
-                                        print_r($total_folders);die;
+                                        // print_r($total_folders);die;
                                     }
                                      $folder_path_final= 'cv_folder/'.$folders[$j].'/'.$folder_name;
 
