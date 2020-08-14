@@ -3407,14 +3407,13 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                         for ($n=0; $n <= $k ; $n++) { 
                                           array_push($total_folders, $folders[$n]);
                                         }
-                                        print_r($folder_name);
-                                        print_r($total_folders);die;
+                                       
                                     }
                                      $folder_path_final= 'cv_folder/'.$folders[$j].'/'.$folder_name;
 
                                 }
                                 // for ($j=0; $j < sizeof($folders) ; $j++) { 
-                                    
+                                    print_r($folder_name);
                                  
                                 
                                 
@@ -3425,6 +3424,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                 //     }
                                 // }
                                 }
+                                 // 
+                                        print_r($total_folders);die;
 
                                 
                                 foreach ($cv as $cvs) {
