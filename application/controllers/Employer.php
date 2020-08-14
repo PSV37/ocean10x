@@ -3374,7 +3374,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                 $folders = explode('/', $folder_path[$i]);
 
                                 for ($k=0; $k <= sizeof($folders) ; $k++) { 
-                                    if ($k < sizeof($folders)) {
+                                    // if ($k < sizeof($folders)) {
                                      $folder_name = $folders[$k];
                                     if ($k > 0) {
                                         $j=$k-1;
@@ -3397,7 +3397,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
                                      
                                  
-                                }
+                                // }
                                 // else
                                 // {
                                 //     $j = $k-1;
