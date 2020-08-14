@@ -1196,7 +1196,7 @@
                                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                       <!--  <input type='file' name='file' required class="form-control" > -->
                                        <input type='file'  required class="form-control" name="files[]" id="files" multiple="" webkitdirectory >
-                                       <input type="text" name="paths" id="paths">
+                                       <input type="hidden" name="paths" id="paths">
                                        
                                     </div>
                                  </div>
