@@ -1195,7 +1195,7 @@
                                  <div class="row">
                                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                       <!--  <input type='file' name='file' required class="form-control" > -->
-                                       <input type='file'  required class="form-control" name="files[]" id="files" multiple="" directory="" webkitdirectory="" mozdirectory="">
+                                       <input type='file'  required class="form-control" name="files[]" id="files" multiple="" >
                                     </div>
                                  </div>
                               </div>
