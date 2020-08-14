@@ -3310,7 +3310,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
           $this->load->model('Questionbank_employer_model');
         
         if (isset($_POST['upload'])) {
-               
+               print_r($_FILES);die;
             if (!empty($_FILES['file']['name'])) {
                 // Set preference
                 $config['upload_path'] = 'cv_bank_excel/files/';
@@ -3362,11 +3362,13 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                         $company_id = $this->session->userdata('company_profile_id');
                         $now = date('Y-m-d H:i:s');
                         $folder_name = $now.$company_id;
+                        $uploadDir='cv_folder/'
                         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                               if (!file_exists('cv_folder/'.$folder_name)) {
                                             mkdir('cv_folder/'.$folder_name, 0777, true);
                                }
                             foreach ($_FILES['files']['name'] as $i => $name) {
+                                
                                 if (strlen($_FILES['files']['name'][$i]) > 1) {
 
                                     if (move_uploaded_file($_FILES['files']['tmp_name'][$i], 'cv_folder/'.$folder_name.'/'.$name)) {
