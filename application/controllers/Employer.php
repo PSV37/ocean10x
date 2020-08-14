@@ -3310,7 +3310,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
           $this->load->model('Questionbank_employer_model');
         
         if (isset($_POST['upload'])) {
-               
+               // print_r($_FILES);die;
             if (!empty($_FILES['file']['name'])) {
                 // Set preference
                 $config['upload_path'] = 'cv_bank_excel/files/';
@@ -3360,19 +3360,91 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     }
                      $count = 0;
                         $company_id = $this->session->userdata('company_profile_id');
-                        $now = date('Y-m-d H:i:s');
-                        $folder_name = $now.$company_id;
-                        if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-                              if (!file_exists('cv_folder/'.$folder_name)) {
-                                            mkdir('cv_folder/'.$folder_name, 0777, true);
-                               }
-                            foreach ($_FILES['files']['name'] as $i => $name) {
-                                if (strlen($_FILES['files']['name'][$i]) > 1) {
+                        $paths = $this->input->post('paths');
+                        $folder_path = explode(',', $paths);
+                        // $now = date('Y-m-d H:i:s');
+                        // $folder_name = $now.$company_id;
 
-                                    if (move_uploaded_file($_FILES['files']['tmp_name'][$i], 'cv_folder/'.$folder_name.'/'.$name)) {
-                                        $count++;
-                                    }
+                        $uploadDir='cv_folder/';
+                        if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+                              
+                             
+                            foreach ($_FILES['files']['name'] as $i => $name) {
+                                
+                                $folders = explode('/', $folder_path[$i]);
+
+                                for ($k=0; $k <= sizeof($folders) ; $k++) { 
+
+                                     $folder_name = $folders[$k];
+                                     if ($folder_name == $_FILES['files']['name'][$i] ) {
+                                         if (strlen($_FILES['files']['name'][$i]) > 1) 
+                                         {
+
+                                            if (move_uploaded_file($_FILES['files']['tmp_name'][$i],  $folder_path_final.'/'.$name)) 
+                                            {
+                                                $count++;
+                                            }
+                                        }
+                                         
+                                     }
+                                     else
+                                     {
+                                         if ($k > 0) {
+                                        $j=$k-1;
+                                        if (!file_exists('cv_folder/'.$folders[$j].'/'.$folder_name)) {
+                                            mkdir('cv_folder/'.$folders[$j].'/'.$folder_name, 0777, true);
+                                        }
+                                        $folder_path_final= 'cv_folder/'.$folders[$j].'/'.$folder_name;
+                                  
+                                        }
+                                        else
+                                        {
+                                            if (!file_exists('cv_folder/'.$folder_name)) {
+                                                mkdir('cv_folder/'.$folder_name, 0777, true);
+                                            }
+                                             $folder_path_final= 'cv_folder/'.$folder_name;
+                                        }
+                                     }
+                                    // if ($k < sizeof($folders)) {
+                                    //  $folder_name = $folders[$k];
+                                    // if ($k > 0) {
+                                    //     $j=$k-1;
+                                    //     if (!file_exists('cv_folder/'.$folders[$j].'/'.$folder_name)) {
+                                    //         mkdir('cv_folder/'.$folders[$j].'/'.$folder_name, 0777, true);
+                                    //     }
+                                    //     $folder_path_final= 'cv_folder/'.$folders[$j].'/'.$folder_name;
+                                  
+                                    // }
+                                    // else
+                                    // {
+                                    //     if (!file_exists('cv_folder/'.$folder_name)) {
+                                    //         mkdir('cv_folder/'.$folder_name, 0777, true);
+                                    //     }
+                                    //      $folder_path_final= 'cv_folder/'.$folder_name;
+                                    // }
+
+                                     
+                                   
+
+                                     
+                                 
+                                // }
+                                // else
+                                // {
+                                //     $j = $k-1;
+                                //     $folder_name = $folders[$j];
+                                //      $folder_path_final= 'cv_folder/'.$folders[$j].'/'.$folder_name;
+
+                                // }
+                                // for ($j=0; $j < sizeof($folders) ; $j++) { 
+                                    
+                                 
+                                
+                                
+                               
                                 }
+
+                                
                                 foreach ($cv as $cvs) {
                                     $where = "corporate_cv_bank.cv_id = '$cvs'";
                                   $cv_name = $this->Master_model->get_master_row('corporate_cv_bank', $select = 'js_name', $where, $join = FALSE);
@@ -3391,11 +3463,13 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                    
                                 }
                             }
+                        
                            
 
                         }
                      $folder_data['company_id'] = $company_id;
-                    $folder_data['folder_name'] = $folder_name;
+                     $folders = explode('/', $folder_path[0]);
+                    $folder_data['folder_name'] = $folders[0];
                     $folder_data['cv'] = implode(',', $cv) ;
                      $result = $this->Master_model->master_insert($folder_data, 'folder_company_mapping');
 

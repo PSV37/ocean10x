@@ -1160,7 +1160,7 @@
                                  <div class="row">
                                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                        <input type='file' name='file' required class="form-control" >
-                                      <!--  <input type='file'  required class="form-control" name="files[]" id="files" multiple="" directory="" webkitdirectory="" mozdirectory=""> -->
+                                    
                                     </div>
                                  </div>
                               </div>
@@ -1195,7 +1195,9 @@
                                  <div class="row">
                                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                       <!--  <input type='file' name='file' required class="form-control" > -->
-                                       <input type='file'  required class="form-control" name="files[]" id="files" multiple="" >
+                                       <input type='file'  required class="form-control" name="files[]" id="files" multiple="" webkitdirectory >
+                                       <input type="hidden" name="paths" id="paths">
+                                       
                                     </div>
                                  </div>
                               </div>
@@ -1212,7 +1214,7 @@
                                  <div class="row">
                                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                        <input type='file' name='file' required class="form-control" >
-                                     <!--   <input type='file'  required class="form-control" name="files[]" id="files" multiple="" directory="" webkitdirectory="" mozdirectory=""> -->
+                                     
                                     </div>
                                  </div>
                               </div>
@@ -1390,10 +1392,8 @@
             <div class="filter1">
                <p style="font-size:18px;margin-top:15px;">Time Period in Current Job</p>
                   <div class="range-wrap">
-                  <input type="range"  id="stability_id" onchange="get_data();" min="0" max="3" value="0">
-                  <span id="rngOutput"></span>
-
-                  <output class="bubble stability_id" ></output>
+                  <input type="range" class="range" id="stability_id" onchange="get_data();" min="<6M" max="<1Y" step="5" value="0">
+                  <output class="bubble notice_period" ></output>
 
                <!--<select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" id='stability_id' tabindex="-98">
                   <optgroup label="Driver Groups">
@@ -1489,6 +1489,21 @@
       </div>
    </div>
 </div>
+<script>
+   document.getElementById("files").addEventListener("change", function(event) {
+  let output = document.getElementById("paths");
+  let files = event.target.files;
+  var paths = [];
+  for (let i=0; i<files.length; i++) {
+    let item = document.createElement("li");
+    item.innerHTML = files[i].webkitRelativePath;
+    paths.push(files[i].webkitRelativePath);
+   // $('#paths').append(iles[i].webkitRelativePath);
+  };
+  var energy = paths.join();
+  $('#paths').val(energy);
+}, false);
+</script>
 <script>
    $('.select2').select2();
 </script>
@@ -3837,24 +3852,9 @@
      const min = range.min ? range.min : 0;
      const max = range.max ? range.max : 100;
      const newVal = Number(((val - min) * 100) / (max - min));
-
      bubble.innerHTML = val;
    
      // Sorta magic numbers based on size of the native UI thumb
      bubble.style.left = `calc(${newVal}% + (${8 - newVal * 0.15}px))`;
    }
-</script>
-
-<script> 
-var rng = document.getElementById("stability_id");
-var ro = document.getElementById("rngOutput");
-var myRange = ["<6Months","<1Year","<2Years",">2Years"];
-
-function updateRange(){
-   ro.textContent = myRange[parseInt(rng.value, 10)];
-   console.log("Selected value is: " + myRange[parseInt(rng.value, 10)] + ", Associated value is: " + rng.value);
-};
-
-window.addEventListener("DOMContentLoaded", updateRange);
-rng.addEventListener("input", updateRange);
 </script>
