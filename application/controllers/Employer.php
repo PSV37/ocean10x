@@ -3374,19 +3374,14 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                 $folders = explode('/', $folder_path[$i]);
 
                                 for ($k=0; $k <= sizeof($folders) ; $k++) { 
-                                    if ($k < sizeof($folders)) {
+                                    // if ($k < sizeof($folders)) {
                                      $folder_name = $folders[$k];
                                     if ($k > 0) {
                                         $j=$k-1;
                                         if (!file_exists('cv_folder/'.$folders[$j].'/'.$folder_name)) {
                                             mkdir('cv_folder/'.$folders[$j].'/'.$folder_name, 0777, true);
                                         }
-                                        if (strlen($_FILES['files']['name'][$k]) > 1) {
-
-                                            if (move_uploaded_file($_FILES['files']['tmp_name'][$i], 'cv_folder/'.$folders[$j].'/'.$folder_name.'/'.$name)) {
-                                                $count++;
-                                            }
-                                        }
+                                        $folder_path_final= 'cv_folder/'.$folders[$j].'/'.$folder_name;
                                   
                                     }
                                     else
@@ -3394,12 +3389,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                         if (!file_exists('cv_folder/'.$folder_name)) {
                                             mkdir('cv_folder/'.$folder_name, 0777, true);
                                         }
-                                        if (strlen($_FILES['files']['name'][$k]) > 1) {
-
-                                            if (move_uploaded_file($_FILES['files']['tmp_name'][$i], 'cv_folder/'.$folder_name.'/'.$name)) {
-                                                $count++;
-                                            }
-                                        }
+                                         $folder_path_final= 'cv_folder/'.$folder_name;
                                     }
 
                                      
@@ -3412,12 +3402,13 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                 {
                                     $j = $k-1;
                                     $folder_name = $folders[$j];
-                                    if (strlen($_FILES['files']['name'][$k]) > 1) {
-
-                                            if (move_uploaded_file($_FILES['files']['tmp_name'][$i], 'cv_folder/'.$folder_name.'/'.$name)) {
-                                                $count++;
-                                            }
+                                    if ($j > 0) {
+                                        for ($n=0; $n <= $j ; $n++) { 
+                                            $total_folders .=  $folders[$n];
                                         }
+                                        print_r($total_folders);die;
+                                    }
+                                     $folder_path_final= 'cv_folder/'.$folders[$j].'/'.$folder_name;
 
                                 }
                                 // for ($j=0; $j < sizeof($folders) ; $j++) { 
@@ -3425,7 +3416,12 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                  
                                 
                                 
-                                
+                                if (strlen($_FILES['files']['name'][$k]) > 1) {
+
+                                    if (move_uploaded_file($_FILES['files']['tmp_name'][$i], 'cv_folder/'.$folder_name.'/'.$name)) {
+                                        $count++;
+                                    }
+                                }
                                 }
 
                                 
