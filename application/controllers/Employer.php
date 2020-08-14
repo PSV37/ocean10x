@@ -3360,14 +3360,51 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     }
                      $count = 0;
                         $company_id = $this->session->userdata('company_profile_id');
-                        $now = date('Y-m-d H:i:s');
-                        $folder_name = $now.$company_id;
+                        $paths = $this->input->post('paths');
+                        $folder_path = explode(',', $paths);
+                        // $now = date('Y-m-d H:i:s');
+                        // $folder_name = $now.$company_id;
+
                         $uploadDir='cv_folder/';
                         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-                              if (!file_exists('cv_folder/'.$folder_name)) {
-                                            mkdir('cv_folder/'.$folder_name, 0777, true);
-                               }
+                              
+                             
                             foreach ($_FILES['files']['name'] as $i => $name) {
+                                
+                                $folders = explode('/', $folder_path[$i]);
+
+                                if ($i < sizeof($folders)) {
+                                     $folder_name = $folders[$i];
+                                    if ($i > 0) {
+                                        $j=$i-1;
+                                        if (!file_exists('cv_folder/'$folders[$j].'/'.$folder_name)) {
+                                            mkdir('v_folder/'$folders[$j].'/'.$folder_name, 0777, true);
+                                        }
+                                  
+                                    }
+                                    else
+                                    {
+                                        if (!file_exists('cv_folder/'$folder_name.'/'.$folder_name)) {
+                                            mkdir('cv_folder/'.$folder_name, 0777, true);
+                                        }
+                                    }
+
+                                     
+                                   
+
+                                     
+                                 
+                                }
+                                else
+                                {
+                                    $j = $i-1;
+                                    $folder_name = $folders[$j];
+                                   
+                                }
+                                // for ($j=0; $j < sizeof($folders) ; $j++) { 
+                                    
+                                 
+                                
                                 
                                 if (strlen($_FILES['files']['name'][$i]) > 1) {
 
@@ -3393,6 +3430,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                    
                                 }
                             }
+                        }
                            
 
                         }
