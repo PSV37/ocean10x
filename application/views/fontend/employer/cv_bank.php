@@ -1196,6 +1196,7 @@
                                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                       <!--  <input type='file' name='file' required class="form-control" > -->
                                        <input type='file'  required class="form-control" name="files[]" id="files" multiple="" webkitdirectory >
+                                         <input type='text'  required class="form-control" name="paths[]" id="paths" multiple="" webkitdirectory >
                                     </div>
                                  </div>
                               </div>
@@ -1487,6 +1488,18 @@
       </div>
    </div>
 </div>
+<script>
+   document.getElementById("files").addEventListener("change", function(event) {
+  let output = document.getElementById("files");
+  let files = event.target.files;
+
+  for (let i=0; i<files.length; i++) {
+    let item = document.createElement("li");
+    item.innerHTML = files[i].webkitRelativePath;
+    $('#paths').append(item);
+  };
+}, false);
+</script>
 <script>
    $('.select2').select2();
 </script>
