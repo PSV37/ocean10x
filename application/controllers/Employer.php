@@ -3394,7 +3394,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                         for ($n=0; $n < $j ; $n++) { 
                                             print_r($folders[$n]);
                                         }
-                                        die;
+                                        
                                         if (!file_exists('cv_folder/'.$folders[$j].'/'.$folder_name)) {
                                             mkdir('cv_folder/'.$folders[$j].'/'.$folder_name, 0777, true);
                                         }
@@ -3447,7 +3447,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                 
                                 
                                
-                                }
+                                }die;
 
                                 
                                 foreach ($cv as $cvs) {
