@@ -3373,11 +3373,11 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                 
                                 $folders = explode('/', $folder_path[$i]);
 
-                                for ($k=0; $k =<  sizeof($folders) ; $k++) { 
-                                    if ($i < sizeof($folders)) {
-                                     $folder_name = $folders[$i];
-                                    if ($i > 0) {
-                                        $j=$i-1;
+                                for ($k=0; $k< = sizeof($folders) ; $k++) { 
+                                    if ($k < sizeof($folders)) {
+                                     $folder_name = $folders[$k];
+                                    if ($k > 0) {
+                                        $j=$k-1;
                                         if (!file_exists('cv_folder/'.$folders[$j].'/'.$folder_name)) {
                                             mkdir('cv_folder/'.$folders[$j].'/'.$folder_name, 0777, true);
                                         }
@@ -3398,7 +3398,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                 }
                                 else
                                 {
-                                    $j = $i-1;
+                                    $j = $k-1;
                                     $folder_name = $folders[$j];
 
                                 }
@@ -3407,7 +3407,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                  
                                 
                                 
-                                if (strlen($_FILES['files']['name'][$i]) > 1) {
+                                if (strlen($_FILES['files']['name'][$k]) > 1) {
 
                                     if (move_uploaded_file($_FILES['files']['tmp_name'][$i], 'cv_folder/'.$folder_name.'/'.$name)) {
                                         $count++;
