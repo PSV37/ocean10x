@@ -3435,7 +3435,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
                         }
                      $folder_data['company_id'] = $company_id;
-                    $folder_data['folder_name'] = $folder_name;
+                     $folders = explode('/', $folder_path[0]);
+                    $folder_data['folder_name'] = $folders[0];
                     $folder_data['cv'] = implode(',', $cv) ;
                      $result = $this->Master_model->master_insert($folder_data, 'folder_company_mapping');
 
