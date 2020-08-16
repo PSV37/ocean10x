@@ -1080,7 +1080,7 @@
                   </li>    
                   <li>
                      <em> Total Candidates to whom the Job Post was sent by HR / Corp</em>
-                     <span><?php echo sizeof($Job_Post_was_sent); ?></span>
+                     <!--<span><?php echo sizeof($Job_Post_was_sent); ?></span>-->
                   </li>
                   <li>
                      <em>Cats</em>
