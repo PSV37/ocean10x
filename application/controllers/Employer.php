@@ -3390,13 +3390,16 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                      else
                                      {
                                          if ($k > 0) {
-                                        $j=$k-1;
-                                        if (!file_exists('cv_folder/'.$folders[$j].'/'.$folder_name)) {
-                                            mkdir('cv_folder/'.$folders[$j].'/'.$folder_name, 0777, true);
-                                        }
-                                        $folder_path_final= 'cv_folder/'.$folders[$j].'/'.$folder_name;
-                                  
-                                        }
+                                            $j=$k-1;
+                                            for ($n=0; $n <= $j ; $n++) { 
+                                                # code...
+                                            }
+                                            if (!file_exists('cv_folder/'.$folders[$j].'/'.$folder_name)) {
+                                                mkdir('cv_folder/'.$folders[$j].'/'.$folder_name, 0777, true);
+                                            }
+                                            $folder_path_final= 'cv_folder/'.$folders[$j].'/'.$folder_name;
+                                      
+                                            }
                                         else
                                         {
                                             if (!file_exists('cv_folder/'.$folder_name)) {
