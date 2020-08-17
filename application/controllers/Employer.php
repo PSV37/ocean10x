@@ -663,7 +663,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
 
         $where_test_attempt_mandatory = "job_posting.is_test_required='Yes'";
         $join_test = array('job_posting' => 'job_posting.job_post_id=job_apply.job_post_id',
-            'seeker_test_result' => 'seeker_test_result.test_id=job_posting.test_for_job')
+            'seeker_test_result' => 'seeker_test_result.test_id=job_posting.test_for_job'),
         $data['Total_count_test_given'] = $this->Master_model->getMaster('job_apply', $where = $where_applied, $join = $join_test, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
 
         echo json_encode($data);
