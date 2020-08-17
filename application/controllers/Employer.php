@@ -3481,10 +3481,10 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                             $whereres = "cv_folder_id='$folder_id' and cv_id = '$cvs' ";
                                             $folder_dbdata = $this->Master_model->get_master_row('cv_folder_relation', $select = FALSE, $whereres);
                                                     if (empty($folder_dbdata) && !empty($folder_id)) {
-                                                        $folder_data['cv_folder_id'] = $folder_id;
-                                                        $folder_data['cv_id'] = $cvs;
-                                                        $folder_data['status'] = '1';
-                                                        $result = $this->Master_model->master_insert($folder_data, 'cv_folder_relation');
+                                                        $cv_folder_data['cv_folder_id'] = $folder_id;
+                                                        $cv_folder_data['cv_id'] = $cvs;
+                                                        $cv_folder_data['status'] = '1';
+                                                        $result = $this->Master_model->master_insert($cv_folder_data, 'cv_folder_relation');
                                                       
                                                     }
                                         // echo 'The specific word is present.';
