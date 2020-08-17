@@ -3415,7 +3415,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
 
 
-                                               print_r($parent);
+                                               print_r($this->db->last_query());
                                                print_r($folder_name); die;
 
 
