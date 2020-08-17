@@ -1439,9 +1439,23 @@
        
             if($('#posted_job').is(":checked")){
                 console.log("Checkbox is checked.");
+
+                $.ajax({
+                 url:"<?php echo base_url();?>Employer/job_post_report",
+                 data: {id:id},
+                 type: 'post',
+                 success: function(response){
+                   var getarray = jQuery.parseJSON(response);
+                   console.log(getarray);
+                 }
+               });
             }
+
+
             
         }
+
+
    
 
 
