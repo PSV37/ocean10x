@@ -1446,7 +1446,7 @@
                  type: 'post',
                  success: function(response){
                    var getarray = jQuery.parseJSON(response);
-                   console.log(getarray);
+                   console.log(getarray.Total_count_forwarded);
                    ('#total_forwarded').html(getarray.length);
                  }
                });
