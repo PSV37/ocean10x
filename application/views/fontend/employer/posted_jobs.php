@@ -1101,7 +1101,12 @@
                   <li>
                      <em>Total Candidates interview and failed</em>
                      <span id='total_test_int_fail'></span>
-                  </li>                  
+                  </li>     
+                  <li>
+                     <em>Total Candidates Accepted Offer</em>
+                     <span id='total_offer_accept'></span>
+                  </li>
+
                </ul>
             </section>
          </main>
@@ -1467,6 +1472,7 @@
                    var total_test_interview_passed = getarray.Total_count_inteviewed_passed;
                    var total_test_interview_failed = getarray.Total_count_inteviewed_failed;
 
+                   var total_offer_accepted = getarray.Total_offer_accepted;
 
                    $('#total_forwarded').html(total_count.length);
                    $('#total_applied').html(total_count_applied.length);
@@ -1475,6 +1481,8 @@
                    $('#total_passed').html(total_test_passed.length);
                    $('#total_test_int_pass').html(total_test_interview_passed.length);
                    $('#total_test_int_fail').html(total_test_interview_failed.length);
+
+                   $('#total_offer_accept').html(total_offer_accepted.length);
 
                  }
                });
