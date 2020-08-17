@@ -3313,13 +3313,13 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     $this->load->model('Questionbank_employer_model');
 
     if (isset($_POST['upload'])) {
-               // print_r($_FILES);die;
+               print_r($_FILES);die;
         if (!empty($_FILES['file']['name'])) {
                 // Set preference
             $config['upload_path'] = 'cv_bank_excel/files/';
             $ext = strtolower(end(explode('.', $_FILES['file']['name'])));
             $config['allowed_types'] = 'csv';
-            $config['max_size'] = '250000'; // max_size in kb
+            $config['max_size'] = '10000'; // max_size in kb
             $config['file_name'] = $_FILES['file']['name'];
                 // Load upload library
             $this->load->library('upload', $config);
