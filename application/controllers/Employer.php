@@ -651,16 +651,6 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         //$Job_Post_was_sent = $this->job_apply_model->job_post($company_id, $job_post_id); 
         $this->load->view('fontend/employer/posted_jobs.php', compact('company_active_jobs', 'employer_id'));
     }
-
-    public function job_post_report() {
-        $job_id = $this->input->post('id');
-        $where_forwarded = "job_apply.job_post_id='$job_id' and job_apply.forword_job_status = 1";
-        $data['Total_count_forwarded'] = $this->Master_model->getMaster('job_apply', $where = $where_forwarded, $join = FALSE, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
-        echo json_encode($data);
-        }
-
-
-
     public function pending_job() {
         $employer_id = $this->session->userdata('company_profile_id');
         $company_pending_jobs = $this->job_posting_model->get_company_pending_jobs($employer_id);
@@ -3318,6 +3308,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
     public function bulk_upload_folder()
     {
+        $employer_id = $this->session->userdata('company_profile_id');
+
+
           $this->load->model('Questionbank_employer_model');
         
         if (isset($_POST['upload'])) {
@@ -3407,12 +3400,26 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                                 array_push($folder_struct, $folders[$n]);
                                               
                                             }
+                                          
                                             $names = implode('/', $folder_struct);
 
                                             if (!file_exists('cv_folder/'.$names.'/'.$folder_name)) {
                                                 mkdir('cv_folder/'.$names.'/'.$folder_name, 0777, true);
                                             }
+
                                             $folder_path_final= 'cv_folder/'.$names.'/'.$folder_name;
+
+                                                  $where_folder = "cv_folder.folder_name = '$folders[$j]' and company_id = '$employer_id'";
+                                            $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where =  $where_folder, $join = FALSE);
+
+                                                $folder_path_final= 'cv_folder/'.$folder_name;
+
+                                                $folder_data['folder_name'] = $folder_name;
+                                                $folder_data['company_id'] = $employer_id;
+                                                $folder_data['parent_id'] = $parent->id;
+                                                $folder_data['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
+                                                $folder_data['created_by'] = $employer_id;
+                                                $result = $this->Master_model->master_insert($folder_data, 'cv_folder');
                                       
                                             }
                                         else
@@ -3421,7 +3428,13 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                                 mkdir('cv_folder/'.$folder_name, 0777, true);
                                             }
                                              $folder_path_final= 'cv_folder/'.$folder_name;
-                                        }
+                                                $folder_data['folder_name'] = $folder_name;
+                                                $folder_data['company_id'] = $employer_id;
+                                                $folder_data['parent_id'] = '0';
+                                                $folder_data['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
+                                                $folder_data['created_by'] = $employer_id;
+                                                $result = $this->Master_model->master_insert($folder_data, 'cv_folder');
+                                            }
                                      }
             //                        $folder_data['folder_name'] = $name;
             // $folder_data['company_id'] = $employer_id;
