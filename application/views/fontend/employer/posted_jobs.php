@@ -955,7 +955,7 @@
    <?php if (!empty($company_active_jobs)): foreach ($company_active_jobs as $v_companyjobs) : ?>
    <label>
       <div class="border-top1"></div>
-      <input type="checkbox" />
+      <input type="checkbox" id='posted_job' onclick="get_report_data(<?php echo $v_companyjobs->job_post_id ?>)" />
       <div class="card">
          <div class="front">
             <img src="<?php echo base_url() ?>upload/<?php echo $this->company_profile_model->company_logoby_id($company_profile_id);?>" style="height:50px; width:50px;border-radius:5px;float:left;border:solid 1px #eae9e9b8;margin-right:15px;" />
@@ -1079,8 +1079,8 @@
                      <!--<span>718</span> -->
                   </li>    
                   <li>
-                     <em> Total Candidates to whom the Job Post was sent by HR / Corp</em>
-                     <!--<span><?php echo sizeof($Job_Post_was_sent); ?></span>-->
+                     <em> Total Job Post sent by HR / Corp</em>
+                     <span id='total_forwarded' </span>
                   </li>
                   <li>
                      <em>Cats</em>
@@ -1433,3 +1433,32 @@
      }
    }
 </script>
+<script>
+  function  get_report_data(id)
+  {
+       
+            if($('#posted_job').is(":checked")){
+                console.log("Checkbox is checked.");
+
+                $.ajax({
+                 url:"<?php echo base_url();?>Employer/job_post_report",
+                 data: {id:id},
+                 type: 'post',
+                 success: function(response){
+                   var getarray = jQuery.parseJSON(response);
+                   console.log(getarray);
+                   ('#total_forwarded').html(getarray.length);
+                 }
+               });
+            }
+
+
+            
+        }
+
+
+   
+
+
+</script>
+
