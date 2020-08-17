@@ -3388,7 +3388,19 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                             // {
                                             //     $count++;
                                             // }
-                                            
+                                            // $previous_folder = $folders[$k];
+                                            // $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id'";
+                                            // $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where =  $where_folder, $join = FALSE);
+                                            // $folder_id = $parent['id'];
+                                            //      $whereres = "cv_folder_id='$folder_id' ";
+                                            //         $folder_dbdata = $this->Master_model->get_master_row('cv_folder_relation', $select = FALSE, $whereres);
+                                            //         if (empty($folder_dbdata)) {
+                                            //             $folder_data['cv_folder_id'] = $folder_id;
+                                            //             $folder_data['cv_id'] = $row;
+                                            //             $folder_data['status'] = '1';
+                                            //             $result = $this->Master_model->master_insert($folder_data, 'cv_folder_relation');
+                                            //             $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Succesfully added</div>');
+                                            //         }
                                         }
                                          
                                      }
@@ -3410,6 +3422,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
                                             $folder_path_final= 'cv_folder/'.$names.'/'.$folder_name;
 
+                                            $where_curr_folder = "cv_folder.folder_name = '$folder_name' and company_id = '$employer_id'";
+                                            $curr_foldr = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where =  $where_curr_folder, $join = FALSE);
+                                            
                                             $previous_folder = $folders[$j];
                                             $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id'";
                                             $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where =  $where_folder, $join = FALSE);
@@ -3419,7 +3434,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                                // print_r($parent);
                                                // print_r($folder_name); die;
 
-                                               if ($parent) {
+                                               if ($parent && empty($curr_foldr)) {
                                                   $insert_folder_data['folder_name'] = $folder_name;
                                                     $insert_folder_data['company_id'] = $employer_id;
                                                     $insert_folder_data['parent_id'] = $parent['id'];
