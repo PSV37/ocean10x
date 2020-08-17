@@ -1,4 +1,7 @@
 <?php
+    ini_set('file_uploads ', 'on');
+    ini_set('post_max_size ', '100M');
+    ini_set('upload_max_filesize ', '100M');
 if (!defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
@@ -3319,7 +3322,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $config['upload_path'] = 'cv_bank_excel/files/';
             $ext = strtolower(end(explode('.', $_FILES['file']['name'])));
             $config['allowed_types'] = 'csv';
-            $config['max_size'] = '1000'; // max_size in kb
+            $config['max_size'] = '10000'; // max_size in kb
             $config['file_name'] = $_FILES['file']['name'];
                 // Load upload library
             $this->load->library('upload', $config);
@@ -4613,6 +4616,12 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         'oceanchamp_tests' => 'oceanchamp_tests.test_id = seeker_test_result.test_id | Left');
 
         $data['Total_count_test_passed'] = $this->Master_model->getMaster('job_apply', $where =  $where_test_passed, $join = $join_test_passed, $order = false, $field = false, $select = 'count(*),oceanchamp_tests.total_questions/2 as min_marks',$limit=false,$start=false, $search=false);
+
+        $where_finalized = "job_apply.job_post_id='$job_id' and job_apply.apply_status = 3";
+        $data['Total_count_inteviewed_passed'] = $this->Master_model->getMaster('job_apply', $where = $where_finalized, $join = FALSE, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+
+        $where_finalized = "job_apply.job_post_id='$job_id' and job_apply.apply_status = 2";
+        $data['Total_count_inteviewed_failed'] = $this->Master_model->getMaster('job_apply', $where = $where_finalized, $join = FALSE, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
 
         // echo $this->db->last_query();
 
