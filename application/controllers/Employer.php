@@ -3388,19 +3388,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                             // {
                                             //     $count++;
                                             // }
-                                            // $previous_folder = $folders[$k];
-                                            // $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id'";
-                                            // $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where =  $where_folder, $join = FALSE);
-                                            // $folder_id = $parent['id'];
-                                            //      $whereres = "cv_folder_id='$folder_id' ";
-                                            //         $folder_dbdata = $this->Master_model->get_master_row('cv_folder_relation', $select = FALSE, $whereres);
-                                            //         if (empty($folder_dbdata)) {
-                                            //             $folder_data['cv_folder_id'] = $folder_id;
-                                            //             $folder_data['cv_id'] = $row;
-                                            //             $folder_data['status'] = '1';
-                                            //             $result = $this->Master_model->master_insert($folder_data, 'cv_folder_relation');
-                                            //             $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Succesfully added</div>');
-                                            //         }
+                                            
                                         }
                                          
                                      }
@@ -3424,7 +3412,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
                                             $where_curr_folder = "cv_folder.folder_name = '$folder_name' and company_id = '$employer_id'";
                                             $curr_foldr = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where =  $where_curr_folder, $join = FALSE);
-                                            
+
                                             $previous_folder = $folders[$j];
                                             $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id'";
                                             $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where =  $where_folder, $join = FALSE);
@@ -3470,35 +3458,65 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                                 
                                             }
                                      }
-            //                        $folder_data['folder_name'] = $name;
-            // $folder_data['company_id'] = $employer_id;
-            // $folder_data['parent_id'] = $parent;
-            // $folder_data['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
-            // $folder_data['created_by'] = $employer_id;
-            // $result = $this->Master_model->master_insert($folder_data, 'cv_folder');
+                                           foreach ($cv as $cvs) {
+                                    $where = "corporate_cv_bank.cv_id = '$cvs'";
+                                  $cv_name = $this->Master_model->get_master_row('corporate_cv_bank', $select = 'js_name', $where, $join = FALSE);
+                                 
+
+                                    $js_name =  explode(' ', $cv_name['js_name']);
+                                    if (strpos($name, $js_name[0]) !== false) 
+                                     {
+                                        $where11['cv_id'] = $cvs;
+                                        $path = $folder_path_final.'/'.$name;
+                                        // print_r($path);die;
+                                        $update_doc['js_document'] =  $path;
+                                        $this->Master_model->master_update($update_doc, 'corporate_cv_bank', $where11);
+
+                                        $previous_folder = $folders[$k];
+                                            $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id'";
+                                            $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where =  $where_folder, $join = FALSE);
+
+                                            $previous_folder = $folders[$k];
+                                            $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id'";
+                                            $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where =  $where_folder, $join = FALSE);
+
+                                            $folder_id = $parent['id'];
+                                            $whereres = "cv_folder_id='$folder_id' and cv_id = '$cvs' ";
+                                            $folder_dbdata = $this->Master_model->get_master_row('cv_folder_relation', $select = FALSE, $whereres);
+                                                    if (empty($folder_dbdata)) {
+                                                        $folder_data['cv_folder_id'] = $folder_id;
+                                                        $folder_data['cv_id'] = $cvs;
+                                                        $folder_data['status'] = '1';
+                                                        $result = $this->Master_model->master_insert($folder_data, 'cv_folder_relation');
+                                                      
+                                                    }
+                                        // echo 'The specific word is present.';
+                                     }
+                                   
+                                }
                                 
                                 
                                
                                 } 
 
                                 
-                                foreach ($cv as $cvs) {
-                                    $where = "corporate_cv_bank.cv_id = '$cvs'";
-                                  $cv_name = $this->Master_model->get_master_row('corporate_cv_bank', $select = 'js_name', $where, $join = FALSE);
-                                  // print_r($cv_name);die();
+                                // foreach ($cv as $cvs) {
+                                //     $where = "corporate_cv_bank.cv_id = '$cvs'";
+                                //   $cv_name = $this->Master_model->get_master_row('corporate_cv_bank', $select = 'js_name', $where, $join = FALSE);
+                                //   // print_r($cv_name);die();
                                 
-                                    $js_name =  explode(' ', $cv_name['js_name']);
-                                    if (strpos($name, $js_name[0]) !== false) 
-                                     {
-                                        $where11['cv_id'] = $cvs;
-                                        $path = 'cv_folder/'.$folder_name.'/'.$name;
-                                        // print_r($path);die;
-                                        $update_doc['js_document'] =  $path;
-                                        $this->Master_model->master_update($update_doc, 'corporate_cv_bank', $where11);
-                                        // echo 'The specific word is present.';
-                                     }
+                                //     $js_name =  explode(' ', $cv_name['js_name']);
+                                //     if (strpos($name, $js_name[0]) !== false) 
+                                //      {
+                                //         $where11['cv_id'] = $cvs;
+                                //         $path = 'cv_folder/'.$folder_name.'/'.$name;
+                                //         // print_r($path);die;
+                                //         $update_doc['js_document'] =  $path;
+                                //         $this->Master_model->master_update($update_doc, 'corporate_cv_bank', $where11);
+                                //         // echo 'The specific word is present.';
+                                //      }
                                    
-                                }
+                                // }
                             }
                         
                            
