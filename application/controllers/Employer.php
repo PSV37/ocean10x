@@ -663,7 +663,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
     }
     public function non_selected_job() {
         $employer_id = $this->session->userdata('company_profile_id');
-        $company_non_selected_jobs = $this->job_posting_model->get_company_ non_selected_jobs($employer_id);
+        $company_non_selected_jobs = $this->job_posting_model->get_company_non_selected_jobs($employer_id);
         $this->load->view('fontend/employer/non_selected_job.php', compact('company_non_selected_jobs', 'employer_id'));
     }
     public function all_applicant($job_id = null) {
@@ -3391,13 +3391,20 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                      else
                                      {
                                          if ($k > 0) {
-                                        $j=$k-1;
-                                        if (!file_exists('cv_folder/'.$folders[$j].'/'.$folder_name)) {
-                                            mkdir('cv_folder/'.$folders[$j].'/'.$folder_name, 0777, true);
-                                        }
-                                        $folder_path_final= 'cv_folder/'.$folders[$j].'/'.$folder_name;
-                                  
-                                        }
+                                            $j=$k-1;
+                                            $folder_struct = array();
+                                            for ($n=0; $n <= $j ; $n++) { 
+                                                array_push($folder_struct, $folders[$n]);
+                                              
+                                            }
+                                            $names = implode('/', $folder_struct);
+
+                                            if (!file_exists('cv_folder/'.$names.'/'.$folder_name)) {
+                                                mkdir('cv_folder/'.$names.'/'.$folder_name, 0777, true);
+                                            }
+                                            $folder_path_final= 'cv_folder/'.$names.'/'.$folder_name;
+                                      
+                                            }
                                         else
                                         {
                                             if (!file_exists('cv_folder/'.$folder_name)) {
@@ -3406,44 +3413,11 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                              $folder_path_final= 'cv_folder/'.$folder_name;
                                         }
                                      }
-                                    // if ($k < sizeof($folders)) {
-                                    //  $folder_name = $folders[$k];
-                                    // if ($k > 0) {
-                                    //     $j=$k-1;
-                                    //     if (!file_exists('cv_folder/'.$folders[$j].'/'.$folder_name)) {
-                                    //         mkdir('cv_folder/'.$folders[$j].'/'.$folder_name, 0777, true);
-                                    //     }
-                                    //     $folder_path_final= 'cv_folder/'.$folders[$j].'/'.$folder_name;
-                                  
-                                    // }
-                                    // else
-                                    // {
-                                    //     if (!file_exists('cv_folder/'.$folder_name)) {
-                                    //         mkdir('cv_folder/'.$folder_name, 0777, true);
-                                    //     }
-                                    //      $folder_path_final= 'cv_folder/'.$folder_name;
-                                    // }
-
-                                     
                                    
-
-                                     
-                                 
-                                // }
-                                // else
-                                // {
-                                //     $j = $k-1;
-                                //     $folder_name = $folders[$j];
-                                //      $folder_path_final= 'cv_folder/'.$folders[$j].'/'.$folder_name;
-
-                                // }
-                                // for ($j=0; $j < sizeof($folders) ; $j++) { 
-                                    
-                                 
                                 
                                 
                                
-                                }
+                                } 
 
                                 
                                 foreach ($cv as $cvs) {
