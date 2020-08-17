@@ -3384,10 +3384,10 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                          if (strlen($_FILES['files']['name'][$i]) > 1) 
                                          {
 
-                                            if (move_uploaded_file($_FILES['files']['tmp_name'][$i],  $folder_path_final.'/'.$name)) 
-                                            {
-                                                $count++;
-                                            }
+                                            // if (move_uploaded_file($_FILES['files']['tmp_name'][$i],  $folder_path_final.'/'.$name)) 
+                                            // {
+                                            //     $count++;
+                                            // }
                                         }
                                          
                                      }
@@ -3403,32 +3403,38 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                           
                                             $names = implode('/', $folder_struct);
 
-                                            if (!file_exists('cv_folder/'.$names.'/'.$folder_name)) {
-                                                mkdir('cv_folder/'.$names.'/'.$folder_name, 0777, true);
-                                            }
+                                            // if (!file_exists('cv_folder/'.$names.'/'.$folder_name)) {
+                                            //     mkdir('cv_folder/'.$names.'/'.$folder_name, 0777, true);
+                                            // }
 
                                             $folder_path_final= 'cv_folder/'.$names.'/'.$folder_name;
 
-                                                  $where_folder = "cv_folder.folder_name = '$folders[$j]' and company_id = '$employer_id'";
+                                            $previous_folder = $folders[$j];
+                                            $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id'";
                                             $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where =  $where_folder, $join = FALSE);
 
-                                            print_r($parent);die;
 
-                                                $folder_path_final= 'cv_folder/'.$folder_name;
+
+                                               // print_r($this->db->last_query());
+                                               // print_r($folder_name); die;
+
 
                                                 $folder_data['folder_name'] = $folder_name;
                                                 $folder_data['company_id'] = $employer_id;
                                                 $folder_data['parent_id'] = $parent->id;
                                                 $folder_data['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
                                                 $folder_data['created_by'] = $employer_id;
-                                                $result = $this->Master_model->master_insert($folder_data, 'cv_folder');
+                                                if ($folder_name != $_FILES['files']['name'][$i]) {
+                                                     $result = $this->Master_model->master_insert($folder_data, 'cv_folder');
+                                                }
+                                               
                                       
                                             }
                                         else
                                         {
-                                            if (!file_exists('cv_folder/'.$folder_name)) {
-                                                mkdir('cv_folder/'.$folder_name, 0777, true);
-                                            }
+                                            // if (!file_exists('cv_folder/'.$folder_name)) {
+                                            //     mkdir('cv_folder/'.$folder_name, 0777, true);
+                                            // }
                                              $folder_path_final= 'cv_folder/'.$folder_name;
 
                                                 $folder_data['folder_name'] = $folder_name;
