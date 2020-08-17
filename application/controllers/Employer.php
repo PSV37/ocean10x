@@ -3467,7 +3467,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                     if (strpos($name, $js_name[0]) !== false) 
                                      {
                                         $where11['cv_id'] = $cvs;
-                                        $path = $folder_path_final.'/'.$name;
+                                        $path = $folder_path_final;
                                         // print_r($path);die;
                                         $update_doc['js_document'] =  $path;
                                         $this->Master_model->master_update($update_doc, 'corporate_cv_bank', $where11);
