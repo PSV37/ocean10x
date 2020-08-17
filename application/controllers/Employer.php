@@ -4617,6 +4617,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $where_finalized = "job_apply.job_post_id='$job_id' and job_apply.apply_status = 3";
         $data['Total_count_inteviewed_passed'] = $this->Master_model->getMaster('job_apply', $where = $where_finalized, $join = FALSE, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
 
+        $where_finalized = "job_apply.job_post_id='$job_id' and job_apply.apply_status = 2";
+        $data['Total_count_inteviewed_failed'] = $this->Master_model->getMaster('job_apply', $where = $where_finalized, $join = FALSE, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+
         // echo $this->db->last_query();
 
         echo json_encode($data);
