@@ -3384,10 +3384,10 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                          if (strlen($_FILES['files']['name'][$i]) > 1) 
                                          {
 
-                                            if (move_uploaded_file($_FILES['files']['tmp_name'][$i],  $folder_path_final.'/'.$name)) 
-                                            {
-                                                $count++;
-                                            }
+                                            // if (move_uploaded_file($_FILES['files']['tmp_name'][$i],  $folder_path_final.'/'.$name)) 
+                                            // {
+                                            //     $count++;
+                                            // }
                                         }
                                          
                                      }
@@ -3403,9 +3403,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                           
                                             $names = implode('/', $folder_struct);
 
-                                            if (!file_exists('cv_folder/'.$names.'/'.$folder_name)) {
-                                                mkdir('cv_folder/'.$names.'/'.$folder_name, 0777, true);
-                                            }
+                                            // if (!file_exists('cv_folder/'.$names.'/'.$folder_name)) {
+                                            //     mkdir('cv_folder/'.$names.'/'.$folder_name, 0777, true);
+                                            // }
 
                                             $folder_path_final= 'cv_folder/'.$names.'/'.$folder_name;
 
@@ -3415,7 +3415,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
 
 
-                                               
+                                               print_r($parent);
+                                               print_r($folder_name); die;
+
 
                                                 $folder_data['folder_name'] = $folder_name;
                                                 $folder_data['company_id'] = $employer_id;
@@ -3427,9 +3429,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                             }
                                         else
                                         {
-                                            if (!file_exists('cv_folder/'.$folder_name)) {
-                                                mkdir('cv_folder/'.$folder_name, 0777, true);
-                                            }
+                                            // if (!file_exists('cv_folder/'.$folder_name)) {
+                                            //     mkdir('cv_folder/'.$folder_name, 0777, true);
+                                            // }
                                              $folder_path_final= 'cv_folder/'.$folder_name;
 
                                                 $folder_data['folder_name'] = $folder_name;
