@@ -4612,7 +4612,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         'seeker_test_result' => 'seeker_test_result.test_id=job_posting.test_for_job | Left ',
         'oceanchamp_tests' => 'oceanchamp_tests.test_id = seeker_test_result.test_id | Left');
 
-        $data['Total_count_test_passed'] = $this->Master_model->getMaster('job_apply', $where = $where_applied, $join = $join_test, $order = false, $field = false, $select = 'count(*),oceanchamp_tests.total_questions/2 as min_marks',$limit=false,$start=false, $search=false);
+        $data['Total_count_test_passed'] = $this->Master_model->getMaster('job_apply', $where =  $where_test_passed, $join = $join_test_passed, $order = false, $field = false, $select = 'count(*),oceanchamp_tests.total_questions/2 as min_marks',$limit=false,$start=false, $search=false);
 
         echo $this->db->last_query();
 
