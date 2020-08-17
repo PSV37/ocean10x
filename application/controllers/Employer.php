@@ -1,9 +1,4 @@
 <?php
-    ini_set('file_uploads ', 'on');
-    ini_set('post_max_size ', '100M');
-    ini_set('upload_max_filesize ', '100M');
-    ini_set('memory_limit ', '100M');
-
 if (!defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
@@ -3313,12 +3308,16 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
    public function bulk_upload_folder()
 {
+    ini_set('file_uploads ', 'on');
+                ini_set('post_max_size ', '100M');
+                ini_set('upload_max_filesize ', '100M');
+                ini_set('memory_limit ', '100M');
     $employer_id = $this->session->userdata('company_profile_id');
 
     $this->load->model('Questionbank_employer_model');
 
     if (isset($_POST['upload'])) {
-               // print_r($_FILES);die;
+                
         if (!empty($_FILES['file']['name'])) {
                 // Set preference
             $config['upload_path'] = 'cv_bank_excel/files/';
