@@ -1079,33 +1079,29 @@
                      <!--<span>718</span> -->
                   </li>    
                   <li>
-                     <em> Total Job Post sent by HR / Corp</em>
-                     <span id='total_forwarded' </span>
+                     <em> Total Job Forwarded</em>
+                     <span id='total_forwarded'> </span>
                   </li>
                   <li>
-                     <em>Total Job Post applied</em>
-                     <span id='total_applied' </span>
+                     <em>Total Job Applied</em>
+                     <span id='total_applied'> </span>
                   </li>
                   <li>
-                     <em>Total Candidates attempted test</em>
-                     <span id='total_test' </span>
+                     <em>Total attempted test</em>
+                     <span id='total_test'> </span>
                   </li>
                   <li>
-                     <em>Total Candidates passed test</em>
-                     <span>6</span>
+                     <em>Total Candidates passed </em>
+                     <span id='total_passed'></span>
                   </li>
                   <li>
-                     <em>Total Candidates scheduled interview and passed</em>
-                     <span>47</span>
+                     <em>Total Candidates interview and passed</em>
+                     <span id='total_test_int_pass'></span>
                   </li>
                   <li>
-                     <em>Total Candidates scheduled interview and failed</em>
-                     <span>47</span>
-                  </li>
-                  <li>
-                     <em>Total Candidates passed interview and accepted offer</em>
-                     <span>1145</span>
-                  </li>
+                     <em>Total Candidates interview and failed</em>
+                     <span id='total_test_int_fail'></span>
+                  </li>                  
                </ul>
             </section>
          </main>
@@ -1467,9 +1463,19 @@
                    console.log(getarray.Total_count_test_given);
                    var total_given_test = getarray.Total_count_test_given;
 
+                   var total_test_passed = getarray.Total_count_test_passed;
+                   var total_test_interview_passed = getarray.Total_count_inteviewed_passed;
+                   var total_test_interview_failed = getarray.Total_count_inteviewed_failed;
+
+
                    $('#total_forwarded').html(total_count.length);
                    $('#total_applied').html(total_count_applied.length);
                    $('#total_test').html(total_given_test.length);
+
+                   $('#total_passed').html(total_test_passed.length);
+                   $('#total_test_int_pass').html(total_test_interview_passed.length);
+                   $('#total_test_int_fail').html(total_test_interview_failed.length);
+
                  }
                });
             }
