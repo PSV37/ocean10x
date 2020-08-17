@@ -654,7 +654,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
 
     public function job_post_report() {
         $job_id = $this->input->post('id');
-        $where_forwarded = "job_apply.job_post_id='$job_id' and job_apply.forward_job_status = 1";
+        $where_forwarded = "job_apply.job_post_id='$job_id' and job_apply.forword_job_status = 1";
         $data['Total_count_forwarded'] = $this->Master_model->getMaster('job_apply', $where = $where_forwarded, $join = FALSE, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
         echo json_encode($data);
         }
