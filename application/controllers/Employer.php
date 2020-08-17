@@ -3394,7 +3394,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                             $j=$k-1;
                                             $folder_struct = array();
                                             for ($n=0; $n <= $j ; $n++) { 
-                                                array_push($folder_struct, $folders[$n])
+                                                array_push($folder_struct, $folders[$n]);
                                               
                                             }
                                             print_r(implode('.', $folder_struct));'<br>';
