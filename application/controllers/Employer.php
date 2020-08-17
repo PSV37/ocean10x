@@ -3378,10 +3378,10 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                 if ($folder_name == $_FILES['files']['name'][$i]) {
                                     if (strlen($_FILES['files']['name'][$i]) > 1) {
 
-                                            // if (move_uploaded_file($_FILES['files']['tmp_name'][$i],  $folder_path_final.'/'.$name)) 
-                                            // {
-                                            //     $count++;
-                                            // }
+                                            if (move_uploaded_file($_FILES['files']['tmp_name'][$i],  $folder_path_final.'/'.$name)) 
+                                            {
+                                                $count++;
+                                            }
 
                                     }
                                 } else {
@@ -3394,9 +3394,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
                                         $names = implode('/', $folder_struct);
 
-                                            // if (!file_exists('cv_folder/'.$names.'/'.$folder_name)) {
-                                            //     mkdir('cv_folder/'.$names.'/'.$folder_name, 0777, true);
-                                            // }
+                                            if (!file_exists('cv_folder/'.$names.'/'.$folder_name)) {
+                                                mkdir('cv_folder/'.$names.'/'.$folder_name, 0777, true);
+                                            }
 
                                         $folder_path_final = 'cv_folder/' . $names . '/' . $folder_name;
 
@@ -3422,9 +3422,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                             $result = $this->Master_model->master_insert($insert_folder_data, 'cv_folder');
                                         }
                                     } else {
-                                            // if (!file_exists('cv_folder/'.$folder_name)) {
-                                            //     mkdir('cv_folder/'.$folder_name, 0777, true);
-                                            // }
+                                            if (!file_exists('cv_folder/'.$folder_name)) {
+                                                mkdir('cv_folder/'.$folder_name, 0777, true);
+                                            }
                                         $folder_path_final = 'cv_folder/' . $folder_name;
 
                                         $where_folder = "cv_folder.folder_name = '$folder_name' and company_id = '$employer_id'";
@@ -4592,6 +4592,33 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
          echo json_encode($active_cv);
     }
+
+    public function job_post_report() {
+        $job_id = $this->input->post('id');
+        $where_forwarded = "job_apply.job_post_id='$job_id' and job_apply.forword_job_status = 1";
+        $data['Total_count_forwarded'] = $this->Master_model->getMaster('job_apply', $where = $where_forwarded, $join = FALSE, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+
+        $where_applied = "job_apply.job_post_id='$job_id'";
+        $data['Total_count_applied'] = $this->Master_model->getMaster('job_apply', $where = $where_applied, $join = FALSE, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+
+        $where_test_attempt_mandatory = "job_posting.is_test_required='Yes'";
+        $join_test = array('job_posting' => 'job_posting.job_post_id=job_apply.job_post_id',
+        'seeker_test_result' => 'seeker_test_result.test_id=job_posting.test_for_job');
+        $data['Total_count_test_given'] = $this->Master_model->getMaster('job_apply', $where = $where_applied, $join = $join_test, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+
+        $where_test_passed = "job_posting.is_test_required='Yes' and seeker_test_result.correct_status = 'Yes' ";
+        $where_test_passed .= "HAVING count (*) > min_marks ";
+        $join_test_passed = array('job_posting' => 'job_posting.job_post_id=job_apply.job_post_id | Left ',
+        'seeker_test_result' => 'seeker_test_result.test_id=job_posting.test_for_job | Left ',
+        'oceanchamp_tests' => 'oceanchamp_tests.test_id = seeker_test_result.test_id | Left');
+
+        $data['Total_count_test_passed'] = $this->Master_model->getMaster('job_apply', $where = $where_applied, $join = $join_test, $order = false, $field = false, $select = 'count(*),oceanchamp_tests.total_questions/2 as min_marks',$limit=false,$start=false, $search=false);
+
+        echo $this->db->last_query();
+
+        // echo json_encode($data);
+
+        }
 
 }
 
