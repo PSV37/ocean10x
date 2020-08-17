@@ -4614,6 +4614,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
         $data['Total_count_test_passed'] = $this->Master_model->getMaster('job_apply', $where =  $where_test_passed, $join = $join_test_passed, $order = false, $field = false, $select = 'count(*),oceanchamp_tests.total_questions/2 as min_marks',$limit=false,$start=false, $search=false);
 
+        $where_finalized = "job_apply.job_post_id='$job_id' and job_apply.apply_status = 3";
+        $data['Total_count_inteviewed_passed'] = $this->Master_model->getMaster('job_apply', $where = $where_finalized, $join = FALSE, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+
         // echo $this->db->last_query();
 
         echo json_encode($data);
