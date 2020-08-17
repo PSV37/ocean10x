@@ -3392,10 +3392,13 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                      {
                                          if ($k > 0) {
                                             $j=$k-1;
+                                            $folder_struct = array();
                                             for ($n=0; $n <= $j ; $n++) { 
-                                               print_r($folders[$n]);
+                                                array_push($folder_struct, $folders[$n])
+                                              
                                             }
-                                           
+                                            print_r(implode('.', $folder_struct));'<br>';
+
                                             // if (!file_exists('cv_folder/'.$folders[$j].'/'.$folder_name)) {
                                             //     mkdir('cv_folder/'.$folders[$j].'/'.$folder_name, 0777, true);
                                             // }
