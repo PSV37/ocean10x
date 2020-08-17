@@ -1,4 +1,7 @@
 <?php
+    ini_set('file_uploads ', 'on');
+    ini_set('post_max_size ', '100M');
+    ini_set('upload_max_filesize ', '100M');
 if (!defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
