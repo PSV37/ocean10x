@@ -1,7 +1,4 @@
 <?php
-    ini_set('file_uploads ', 'on');
-    ini_set('post_max_size ', '100M');
-    ini_set('upload_max_filesize ', '100M');
 if (!defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
@@ -3311,12 +3308,16 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
    public function bulk_upload_folder()
 {
+    ini_set('upload_max_filesize', '10M');
+    ini_set('post_max_size', '10M');
+    ini_set('max_input_time', 0);
+    ini_set('max_execution_time', 0);
     $employer_id = $this->session->userdata('company_profile_id');
 
     $this->load->model('Questionbank_employer_model');
 
     if (isset($_POST['upload'])) {
-               // print_r($_FILES);die;
+                
         if (!empty($_FILES['file']['name'])) {
                 // Set preference
             $config['upload_path'] = 'cv_bank_excel/files/';
@@ -3494,7 +3495,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             }
         } else {
                 // $data['response'] = 'failed';
-            $this->session->set_flashdata('success', '<div class="alert alert-danger text-center">CVs Upload failed!</div>');
+            $error = $_FILES['file']['error'];
+            $this->session->set_flashdata('success', '<div class="alert alert-danger text-center">CVs Upload failed!'.$error.'</div>');
         }
             // $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">CVs Uploaded successfully!</div>');
         redirect('employer/corporate_cv_bank');
