@@ -3381,10 +3381,10 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                          if (strlen($_FILES['files']['name'][$i]) > 1) 
                                          {
 
-                                            if (move_uploaded_file($_FILES['files']['tmp_name'][$i],  $folder_path_final.'/'.$name)) 
-                                            {
-                                                $count++;
-                                            }
+                                            // if (move_uploaded_file($_FILES['files']['tmp_name'][$i],  $folder_path_final.'/'.$name)) 
+                                            // {
+                                            //     $count++;
+                                            // }
                                         }
                                          
                                      }
