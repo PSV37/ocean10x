@@ -3308,10 +3308,10 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
    public function bulk_upload_folder()
 {
-    ini_set('file_uploads ', 'on');
-                ini_set('post_max_size ', '100M');
-                ini_set('upload_max_filesize ', '100M');
-                ini_set('memory_limit ', '100M');
+    ini_set('upload_max_filesize', '10M');
+    ini_set('post_max_size', '10M');
+    ini_set('max_input_time', 0);
+    ini_set('max_execution_time', 0);
     $employer_id = $this->session->userdata('company_profile_id');
 
     $this->load->model('Questionbank_employer_model');
