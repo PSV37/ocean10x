@@ -3458,13 +3458,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                                 
                                             }
                                      }
-
-                                
-                                
-                               
-                                }
-
-                                 foreach ($cv as $cvs) {
+                                           foreach ($cv as $cvs) {
                                     $where = "corporate_cv_bank.cv_id = '$cvs'";
                                   $cv_name = $this->Master_model->get_master_row('corporate_cv_bank', $select = 'js_name', $where, $join = FALSE);
                                  
@@ -3486,7 +3480,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                             $folder_id = $parent['id'];
                                             $whereres = "cv_folder_id='$folder_id' and cv_id = '$cvs' ";
                                             $folder_dbdata = $this->Master_model->get_master_row('cv_folder_relation', $select = FALSE, $whereres);
-                                                    if (empty($folder_dbdata)) {
+                                                    if (empty($folder_dbdata) && !empty($folder_id)) {
                                                         $folder_data['cv_folder_id'] = $folder_id;
                                                         $folder_data['cv_id'] = $cvs;
                                                         $folder_data['status'] = '1';
@@ -3496,6 +3490,10 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                         // echo 'The specific word is present.';
                                      }
                                    
+                                }
+                                
+                                
+                               
                                 } 
 
                                 
