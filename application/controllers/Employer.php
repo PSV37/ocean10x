@@ -3412,6 +3412,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                                   $where_folder = "cv_folder.folder_name = '$folders[$j]' and company_id = '$employer_id'";
                                             $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where =  $where_folder, $join = FALSE);
 
+                                            print_r($parent);die;
+
                                                 $folder_path_final= 'cv_folder/'.$folder_name;
 
                                                 $folder_data['folder_name'] = $folder_name;
@@ -3428,6 +3430,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                                 mkdir('cv_folder/'.$folder_name, 0777, true);
                                             }
                                              $folder_path_final= 'cv_folder/'.$folder_name;
+
                                                 $folder_data['folder_name'] = $folder_name;
                                                 $folder_data['company_id'] = $employer_id;
                                                 $folder_data['parent_id'] = '0';
