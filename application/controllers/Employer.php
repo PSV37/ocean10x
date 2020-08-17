@@ -3313,7 +3313,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     $this->load->model('Questionbank_employer_model');
 
     if (isset($_POST['upload'])) {
-               print_r($_FILES);die;
+               // print_r($_FILES);die;
         if (!empty($_FILES['file']['name'])) {
                 // Set preference
             $config['upload_path'] = 'cv_bank_excel/files/';
