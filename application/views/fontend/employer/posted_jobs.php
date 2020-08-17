@@ -1091,7 +1091,19 @@
                      <span id='total_test' </span>
                   </li>
                   <li>
-                     <em>Aliens</em>
+                     <em>Total Candidates passed test</em>
+                     <span>6</span>
+                  </li>
+                  <li>
+                     <em>Total Candidates scheduled interview and passed</em>
+                     <span>47</span>
+                  </li>
+                  <li>
+                     <em>Total Candidates scheduled interview and failed</em>
+                     <span>47</span>
+                  </li>
+                  <li>
+                     <em>Total Candidates passed interview and accepted offer</em>
                      <span>1145</span>
                   </li>
                </ul>
