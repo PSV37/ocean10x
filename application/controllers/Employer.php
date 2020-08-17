@@ -3401,14 +3401,14 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                             // }
                                             // $folder_path_final= 'cv_folder/'.$folders[$j].'/'.$folder_name;
                                       
-                                            // }
-                                     /*   else
+                                            }
+                                        else
                                         {
                                             // if (!file_exists('cv_folder/'.$folder_name)) {
                                             //     mkdir('cv_folder/'.$folder_name, 0777, true);
                                             // }
                                             //  $folder_path_final= 'cv_folder/'.$folder_name;
-                                        }*/
+                                        }
                                      }
                                     // if ($k < sizeof($folders)) {
                                     //  $folder_name = $folders[$k];
