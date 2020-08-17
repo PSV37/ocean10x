@@ -3397,20 +3397,20 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                                 array_push($folder_struct, $folders[$n]);
                                               
                                             }
-                                            print_r(implode('.', $folder_struct));'<br>';
+                                            $names = implode('/', $folder_struct);
 
-                                            // if (!file_exists('cv_folder/'.$folders[$j].'/'.$folder_name)) {
-                                            //     mkdir('cv_folder/'.$folders[$j].'/'.$folder_name, 0777, true);
-                                            // }
-                                            // $folder_path_final= 'cv_folder/'.$folders[$j].'/'.$folder_name;
+                                            if (!file_exists('cv_folder/'.$names.'/'.$folder_name)) {
+                                                mkdir('cv_folder/'.$names.'/'.$folder_name, 0777, true);
+                                            }
+                                            $folder_path_final= 'cv_folder/'.$names.'/'.$folder_name;
                                       
                                             }
                                         else
                                         {
-                                            // if (!file_exists('cv_folder/'.$folder_name)) {
-                                            //     mkdir('cv_folder/'.$folder_name, 0777, true);
-                                            // }
-                                            //  $folder_path_final= 'cv_folder/'.$folder_name;
+                                            if (!file_exists('cv_folder/'.$folder_name)) {
+                                                mkdir('cv_folder/'.$folder_name, 0777, true);
+                                            }
+                                             $folder_path_final= 'cv_folder/'.$folder_name;
                                         }
                                      }
                                     // if ($k < sizeof($folders)) {
