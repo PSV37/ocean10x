@@ -4607,16 +4607,16 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $data['Total_count_test_given'] = $this->Master_model->getMaster('job_apply', $where = $where_applied, $join = $join_test, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
 
         $where_test_passed = "job_posting.is_test_required='Yes' and seeker_test_result.correct_status = 'Yes' ";
-        $where_test_passed .= "HAVING count (*) > min_marks ";
+        $where_test_passed .= "HAVING count(*) > min_marks ";
         $join_test_passed = array('job_posting' => 'job_posting.job_post_id=job_apply.job_post_id | Left ',
         'seeker_test_result' => 'seeker_test_result.test_id=job_posting.test_for_job | Left ',
         'oceanchamp_tests' => 'oceanchamp_tests.test_id = seeker_test_result.test_id | Left');
 
         $data['Total_count_test_passed'] = $this->Master_model->getMaster('job_apply', $where =  $where_test_passed, $join = $join_test_passed, $order = false, $field = false, $select = 'count(*),oceanchamp_tests.total_questions/2 as min_marks',$limit=false,$start=false, $search=false);
 
-        echo $this->db->last_query();
+        // echo $this->db->last_query();
 
-        // echo json_encode($data);
+        echo json_encode($data);
 
         }
 
