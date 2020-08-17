@@ -1087,7 +1087,7 @@
                      <span id='total_applied' </span>
                   </li>
                   <li>
-                     <em>Slugs</em>
+                     <em>Total Candidates attempted test</em>
                      <span>344</span>
                   </li>
                   <li>
@@ -1448,8 +1448,10 @@
                    var getarray = jQuery.parseJSON(response);
                    console.log(getarray.Total_count_forwarded);
                    var total_count = getarray.Total_count_forwarded;
-                   console.log(getarray.Total_count_forwarded);
-                   var total_count_applied = getarray.Total_count_forwarded;
+
+                   console.log(getarray.Total_count_applied);
+                   var total_count_applied = getarray.Total_count_applied;
+                   
                    $('#total_forwarded').html(total_count.length);
                    $('#total_applied').html(total_count_applied.length);
                  }
