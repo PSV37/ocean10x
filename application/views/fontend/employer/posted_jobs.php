@@ -1088,7 +1088,7 @@
                   </li>
                   <li>
                      <em>Total Candidates attempted test</em>
-                     <span>344</span>
+                     <span id='total_test' </span>
                   </li>
                   <li>
                      <em>Aliens</em>
@@ -1448,10 +1448,16 @@
                    var getarray = jQuery.parseJSON(response);
                    console.log(getarray.Total_count_forwarded);
                    var total_count = getarray.Total_count_forwarded;
+
                    console.log(getarray.Total_count_applied);
                    var total_count_applied = getarray.Total_count_applied;
+
+                   console.log(getarray.Total_count_test_given);
+                   var total_given_test = getarray.Total_count_test_given;
+
                    $('#total_forwarded').html(total_count.length);
                    $('#total_applied').html(total_count_applied.length);
+                   $('#total_test').html(total_given_test.length);
                  }
                });
             }
