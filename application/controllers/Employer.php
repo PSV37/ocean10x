@@ -3409,12 +3409,13 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
                                             $folder_path_final= 'cv_folder/'.$names.'/'.$folder_name;
 
-                                                  $where_folder = "cv_folder.folder_name = '$folders[$j]' and company_id = '$employer_id'";
+                                            $previous_folder = $folders[$j];
+                                            $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id'";
                                             $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where =  $where_folder, $join = FALSE);
 
-                                          
 
-                                                $folder_path_final= 'cv_folder/'.$folder_name;
+
+                                               
 
                                                 $folder_data['folder_name'] = $folder_name;
                                                 $folder_data['company_id'] = $employer_id;
