@@ -3381,10 +3381,10 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                          if (strlen($_FILES['files']['name'][$i]) > 1) 
                                          {
 
-                                            // if (move_uploaded_file($_FILES['files']['tmp_name'][$i],  $folder_path_final.'/'.$name)) 
-                                            // {
-                                            //     $count++;
-                                            // }
+                                            if (move_uploaded_file($_FILES['files']['tmp_name'][$i],  $folder_path_final.'/'.$name)) 
+                                            {
+                                                $count++;
+                                            }
                                         }
                                          
                                      }
@@ -3413,40 +3413,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                              $folder_path_final= 'cv_folder/'.$folder_name;
                                         }
                                      }
-                                    // if ($k < sizeof($folders)) {
-                                    //  $folder_name = $folders[$k];
-                                    // if ($k > 0) {
-                                    //     $j=$k-1;
-                                    //     if (!file_exists('cv_folder/'.$folders[$j].'/'.$folder_name)) {
-                                    //         mkdir('cv_folder/'.$folders[$j].'/'.$folder_name, 0777, true);
-                                    //     }
-                                    //     $folder_path_final= 'cv_folder/'.$folders[$j].'/'.$folder_name;
-                                  
-                                    // }
-                                    // else
-                                    // {
-                                    //     if (!file_exists('cv_folder/'.$folder_name)) {
-                                    //         mkdir('cv_folder/'.$folder_name, 0777, true);
-                                    //     }
-                                    //      $folder_path_final= 'cv_folder/'.$folder_name;
-                                    // }
-
-                                     
                                    
-
-                                     
-                                 
-                                // }
-                                // else
-                                // {
-                                //     $j = $k-1;
-                                //     $folder_name = $folders[$j];
-                                //      $folder_path_final= 'cv_folder/'.$folders[$j].'/'.$folder_name;
-
-                                // }
-                                // for ($j=0; $j < sizeof($folders) ; $j++) { 
-                                    
-                                 
                                 
                                 
                                
