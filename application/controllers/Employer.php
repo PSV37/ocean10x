@@ -3415,13 +3415,13 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
 
 
-                                               // print_r($this->db->last_query());
+                                               print_r($parent;
                                                // print_r($folder_name); die;
 
                                                if ($parent) {
                                                   $folder_data['folder_name'] = $folder_name;
                                                     $folder_data['company_id'] = $employer_id;
-                                                    $folder_data['parent_id'] = $parent->id;
+                                                    $folder_data['parent_id'] = $parent['id'];
                                                     $folder_data['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
                                                     $folder_data['created_by'] = $employer_id;
                                               
