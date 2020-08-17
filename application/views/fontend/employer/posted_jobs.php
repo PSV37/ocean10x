@@ -1083,8 +1083,8 @@
                      <span id='total_forwarded' </span>
                   </li>
                   <li>
-                     <em>Cats</em>
-                     <span>868</span>
+                     <em>Total Job Post applied</em>
+                     <span id='total_applied' </span>
                   </li>
                   <li>
                      <em>Slugs</em>
@@ -1446,9 +1446,12 @@
                  type: 'post',
                  success: function(response){
                    var getarray = jQuery.parseJSON(response);
+                   console.log(getarray.Total_count_forwarded);
                    var total_count = getarray.Total_count_forwarded;
                    console.log(getarray.Total_count_forwarded);
+                   var total_count_applied = getarray.Total_count_forwarded;
                    $('#total_forwarded').html(total_count.length);
+                   $('#total_applied').html(total_count_applied.length);
                  }
                });
             }
