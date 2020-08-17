@@ -1448,7 +1448,7 @@
                    var getarray = jQuery.parseJSON(response);
                    var total_count = getarray.Total_count_forwarded;
                    console.log(getarray.Total_count_forwarded);
-                   ('#total_forwarded').html(total_count.length);
+                   $('#total_forwarded').html(total_count.length);
                  }
                });
             }
