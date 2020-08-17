@@ -3425,7 +3425,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                                 $folder_data['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
                                                 $folder_data['created_by'] = $employer_id;
                                                 if ($folder_name != $_FILES['files']['name'][$i]) {
-                                                     $result = $this->Master_model->master_insert($folder_data, 'cv_folder');.
+                                                     $result = $this->Master_model->master_insert($folder_data, 'cv_folder');
                                                 }
                                                
                                       
