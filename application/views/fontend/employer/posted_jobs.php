@@ -1079,8 +1079,8 @@
                      <!--<span>718</span> -->
                   </li>    
                   <li>
-                     <em> Total Candidates to whom the Job Post was sent by HR / Corp</em>
-                     <!--<span><?php echo sizeof($Job_Post_was_sent); ?></span>-->
+                     <em> Total Job Post sent by HR / Corp</em>
+                     <span id='total_forwarded' </span>
                   </li>
                   <li>
                      <em>Cats</em>
@@ -1447,6 +1447,7 @@
                  success: function(response){
                    var getarray = jQuery.parseJSON(response);
                    console.log(getarray);
+                   ('#total_forwarded').html(getarray.Total_count_forwarded.length);
                  }
                });
             }
