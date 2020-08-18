@@ -959,6 +959,8 @@ label.btn.btn-secondary {
                      <div class="table-responsive">
                      </div>
                   </div>
+               </div>
+                <div class="tab-content">
                   <div role="tabpanel" class="tab-pane fade" id="music">
                   </div>
                   <div role="tabpanel" class="tab-pane fade in active" id="Commentary">
