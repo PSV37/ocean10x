@@ -49,6 +49,10 @@
    padding: 4px 12px;
    margin-bottom: 25px;
    }
+   label.btn.btn-secondary.active {
+    background-color: #63e8e2;
+    border: none;
+}
 
 </style>
 <body>
@@ -65,9 +69,9 @@
                   <div role="tabpanel" class="tab-pane fade in active" id="Commentary">
                      <div class="row">
                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                          <label class="btn btn-secondary active">
-                            <a href="#add_test"><input type="radio" name="options" id="option1" autocomplete="off" ></a>I want to choose My Own Questions in the Test !
-                          </label>
+                           <a href="#add_test" data-toggle="tab"><label class="btn btn-secondary active">
+                           <input type="radio" name="options" id="option1" autocomplete="off" >I want to choose My Own Questions in the Test !
+                          </label></a>
                           <label class="btn btn-secondary">
                             <input type="radio" name="options" id="option2" autocomplete="off"> Ocean can help me create the Test !
                           </label>
