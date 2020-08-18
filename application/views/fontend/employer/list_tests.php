@@ -195,7 +195,7 @@
    list-style-type: none;
    font-size: 12px;
    font-weight: 100;
-   width:260px;
+   width:150px;
    }
    .icon-info {
    margin-left:60px;
@@ -238,13 +238,12 @@
    margin-top:0px;
    margin-left:18px;
    }
-   .following-info2 {
-   margin-left:309px;
-   line-height:30px;
-   margin-top:0px;
-   margin-bottom:15px;
-   }
-  /* .following-info3 {
+  .following-info2 {
+    margin-left: 270px;
+    line-height: 30px;
+    margin-top: 0px;
+    margin-bottom: 15px;
+}.following-info3 {
    margin-left: 309px;
    line-height: 30px;
    margin-top: 0px;
@@ -262,7 +261,7 @@
    }
    .following-info3 {
    float: right;
-   margin-top: -144px;
+   margin-top: -133px;
    line-height:30px;
    }
    label{display:block;}
