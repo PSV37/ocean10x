@@ -1071,7 +1071,7 @@
                            </form>
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="create_test">
-                           <form method="post" action="<?php echo base_url(); ?>employer/add_to_test">
+                           <form method="post" action="<?php echo base_url(); ?>employer/randomly_create_test">
                               <div class="row">
                                  <div class="col-md-4">
                                     <div class="form-group technical_id">                                       
@@ -1082,7 +1082,7 @@
                                  <div class="col-md-4">
                                     <div class="form-group technical_id">                                       
                                        <label for="exampleInputEmail1">Duration<span class="required">*</span></label>
-                                       <input type="text" class="form-control" id="time" name="test_name">
+                                       <input type="Number" max="60" min="1" class="form-control" id="time" name="test_duration">
                                     </div>
                                  </div>
                                    <div class="col-md-4">
