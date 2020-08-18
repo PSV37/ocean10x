@@ -1697,6 +1697,7 @@
     
             
            });
+
    $("#job_title").autocomplete({
              
              source: "<?php echo base_url();?>Employer/search_job_keywords",
@@ -3861,7 +3862,7 @@
 <script> 
 var rng = document.getElementById("stability_id");
 var ro = document.getElementById("rngOutput");
-var myRange = ["<6Months","<1year","<2years",">2years"];
+var myRange = ["<6 Months","<12 Months","<24 Months",">25 Months"];
 
 function updateRange(){
    ro.textContent = myRange[parseInt(stability_id.value, 10)];
