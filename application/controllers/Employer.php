@@ -1527,7 +1527,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $level = $this->input->post('level');
         $ques_type = $this->input->post('ques_type');
 
-        $where = "technical_id = '$technical_id' and topic_id ='$topic_id' and subtopic_id ='$subtopic_id' and level ='$level' and ques_type ='$ques_type' and sum(time_for_question) = '$test_duration' "
+        $where = "technical_id = '$technical_id' and topic_id ='$topic_id' and subtopic_id ='$subtopic_id' and level ='$level' and ques_type ='$ques_type' and sum(time_for_question) = '$test_duration' ";
         $questions = $this->Master_model->getMaster('questionbank', $where = FALSE, $join = FALSE, $order = 'RANDOM', $field = 'ques_id', $select = false,$limit=20,$start=false, $search=false);
         print_r($this->db->last_query())die;
     }
