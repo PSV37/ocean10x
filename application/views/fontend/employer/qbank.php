@@ -1025,6 +1025,36 @@ label.btn.btn-secondary {
                        </div>
                      </div>               
                    </div>
+                   <div class="box-body">
+        <div class="box" >
+          <p style="float: right;margin-right: 80px"><b>Total Time Duration:</b><span id="total_time"></span></p>
+          
+               <div class="card content">
+                     <!-- <div class="front"> -->
+                      <div class="following-info">
+                         <table class="table table-borderless" id="myTable">
+                            <thead>
+                              <tr>
+
+                                <th scope="col">Sr No</th>
+                                <th scope="col">Line Item 1</th>
+                                <th scope="col">Line Item 2</th>
+                                <th scope="col">Question</th>
+                                <th scope="col">time</th>
+                                <th scope="col">Action</th>
+                               
+                              </tr>
+                            </thead>
+                            <tbody>
+                             
+                            </tbody>
+                          </table>
+                        </div>
+                     <!-- </div> -->
+                   </div>
+               
+            </div>
+      </div>
                 </form>
                   </div>
                    <div role="tabpanel" class="tab-pane fade" id="Videos">
