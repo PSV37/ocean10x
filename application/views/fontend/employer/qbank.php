@@ -930,6 +930,14 @@
    padding: 4px 10px;
    font-weight: 700;
    }
+   button.btn.btn-primary {
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 80px;
+    padding: 5px;
+    margin-right: -199px;
+    min-width: 80px;
+}
 </style>
 </style>
 <body>
@@ -1128,7 +1136,7 @@
                                     <div class="col-md-3">
                                        <button class="btn btn-primary" type="reset">Discard</button>
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-3" style="margin-left: 20;">
                                        <button class="btn btn-primary" type="submit">Create</button>
                                     </div>
                                  </div>
