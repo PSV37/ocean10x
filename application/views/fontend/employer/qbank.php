@@ -917,6 +917,26 @@ input#email {
     color: black;
     font-size: 13px;
 }
+input#option1 {
+    display: none;
+}
+label.btn.btn-secondary.active {
+
+    border-radius: 20px;
+    border: solid 2px;
+    color: #18c5bd;
+    background-color: #fff;
+    border: solid 2px #18c5bd;
+    font-weight: 700;
+}
+label.btn.btn-secondary {
+    color: #949494;
+    background-color: #fff;
+    border: solid 2px #a5a5a5;
+    border-radius: 30px;
+    padding: 4px 10px;
+    font-weight: 700;
+}
 </style>
 
 </style>
