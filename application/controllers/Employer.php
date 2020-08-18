@@ -4642,7 +4642,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $stablity_var = $this->input->post('stability');
         $company_id = $this->session->userdata('company_profile_id');
 
-        $where_active = "login BETWEEN DATE_SUB(NOW(), INTERVAL 30 DAY) And  NOW() and corporate_cv_bank.js_working_since < CURDATE() - INTERVAL 6 MONTH and corporate_cv_bank.js_working_since < CURDATE() - INTERVAL 1 YEAR and corporate_cv_bank.js_working_since < CURDATE() - INTERVAL 2 YEAR and corporate_cv_bank.js_working_since > CURDATE() - INTERVAL 2 YEAR and corporate_cv_bank.company_id = '$company_id' and corporate_cv_bank.js_experience='$exp_var' and corporate_cv_bank.js_current_notice_period='$notice_period_var' and corporate_cv_bank.js_top_education = '$education_var' and corporate_cv_bank.js_current_ctc='$current_ctc_var'";
+        $where_active = "login BETWEEN DATE_SUB(NOW(), INTERVAL 30 DAY) And  NOW() and corporate_cv_bank.js_working_since < CURDATE() - INTERVAL 6 MONTH and corporate_cv_bank.js_working_since < CURDATE() - INTERVAL 12 Months and corporate_cv_bank.js_working_since < CURDATE() - INTERVAL 24 Months and corporate_cv_bank.js_working_since > CURDATE() - INTERVAL 25 Months and corporate_cv_bank.company_id = '$company_id' and corporate_cv_bank.js_experience='$exp_var' and corporate_cv_bank.js_current_notice_period='$notice_period_var' and corporate_cv_bank.js_top_education = '$education_var' and corporate_cv_bank.js_current_ctc='$current_ctc_var'";
 
         $where_active.= ' GROUP by cv_id';
 
