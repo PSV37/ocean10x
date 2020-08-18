@@ -1564,8 +1564,10 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                 $test_data['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
                 $this->Master_model->master_insert($test_data, 'oceanchamp_tests');
             }
+
         
     }
+    redirect('employer/all_tests');
 }
     public function update_test() {
         $test_id = $this->input->post('test_id');
@@ -1614,8 +1616,11 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $data['activemenu'] = 'test_papers';
         $this->session->set_userdata($data);
         $employer_id = $this->session->userdata('company_profile_id');
-        $where_all = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id'";
+        $where_all = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id' and test_status = '1'";
         $data['oceanchamp_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where = $where_all, $join = FALSE, $order = 'desc', $field = 'oceanchamp_tests.test_id', $select = false, $limit = false, $start = false, $search = false);
+
+          $where = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id' and test_status = '2'";
+        $data['ocean_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where = $where, $join = FALSE, $order = 'desc', $field = 'oceanchamp_tests.test_id', $select = false, $limit = false, $start = false, $search = false);
         // echo  $this->db->last_query(); die;
         $this->load->view('fontend/employer/list_tests', $data);
         // $this->load->view('fontend/employer/all_questions.php', $data);

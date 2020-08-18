@@ -63,24 +63,23 @@
    display: inline-block;
    position: relative;
    }
-  .dd-button {
-    display: inline-block;
-    border: 1px solid #dedede;
-    border-radius: 4px;
-    padding: 5px 30px 5px 20px;
-    background-color: #18c5bd;
-    cursor: pointer;
-    width: 100%;
-    white-space: nowrap;
-    border-radius: 33px;
-    margin-right: 15px;
-    margin-top: 10px;
-    color: #fff;
-    margin-left: 13px;
-    font-size: 12px;
-    text-align: center;
-}
-   
+   .dd-button {
+   display: inline-block;
+   border: 1px solid #dedede;
+   border-radius: 4px;
+   padding: 5px 30px 5px 20px;
+   background-color: #18c5bd;
+   cursor: pointer;
+   width: 100%;
+   white-space: nowrap;
+   border-radius: 33px;
+   margin-right: 15px;
+   margin-top: 10px;
+   color: #fff;
+   margin-left: 13px;
+   font-size: 12px;
+   text-align: center;
+   }
    .dd-button:hover {
    background-color:#18c5bd;
    }
@@ -246,11 +245,11 @@
    margin-bottom:15px;
    }
    .following-info3 {
-    margin-left: 309px;
-    line-height: 30px;
-    margin-top: 0px;
-    margin-bottom: 15px;
-}
+   margin-left: 309px;
+   line-height: 30px;
+   margin-top: 0px;
+   margin-bottom: 15px;
+   }
    .active-span{
    position: absolute;
    top: 12px;
@@ -735,57 +734,52 @@
    }
    .input-group-btn:last-child>.btn{background-color:#18c5bd;
    color:#fff;}
-
-  button.btn.btn-primary {
-    float: right;
-    background-color: #18c5bd;
-    border: none;
-    border-radius: 35px;
-    margin-top: 13px;
-    font-size: 12px;
-}
-/* Styles for wrapping the search box */
-
-.main {
-    width: 50%;
-    margin: 50px auto;
-}
-
-/* Bootstrap 4 text input with search icon */
-
-.has-search .form-control {
-    padding-left: 2.375rem;
-}
-
-.has-search .form-control-feedback {
-    position: absolute;
-    z-index: 2;
-    display: block;
-    width: 2.375rem;
-    height: 2.375rem;
-    line-height: 2.375rem;
-    text-align: center;
-    pointer-events: none;
-    color: #aaa;
-    margin-right: 146px;
-    margin-top: 15px;
-}
-.dd-button:after {
-    content: '';
-    position: absolute;
-    top: 58%;
-    right: 8px;
-    transform: translateY(-50%);
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid #7a7c7c;
-}
-div#bulk {
-    margin-top: 20px;
-}
-  .fade-rotate .modal-dialog {
+   button.btn.btn-primary {
+   float: right;
+   background-color: #18c5bd;
+   border: none;
+   border-radius: 35px;
+   margin-top: 13px;
+   font-size: 12px;
+   }
+   /* Styles for wrapping the search box */
+   .main {
+   width: 50%;
+   margin: 50px auto;
+   }
+   /* Bootstrap 4 text input with search icon */
+   .has-search .form-control {
+   padding-left: 2.375rem;
+   }
+   .has-search .form-control-feedback {
+   position: absolute;
+   z-index: 2;
+   display: block;
+   width: 2.375rem;
+   height: 2.375rem;
+   line-height: 2.375rem;
+   text-align: center;
+   pointer-events: none;
+   color: #aaa;
+   margin-right: 146px;
+   margin-top: 15px;
+   }
+   .dd-button:after {
+   content: '';
+   position: absolute;
+   top: 58%;
+   right: 8px;
+   transform: translateY(-50%);
+   width: 0;
+   height: 0;
+   border-left: 5px solid transparent;
+   border-right: 5px solid transparent;
+   border-top: 5px solid #7a7c7c;
+   }
+   div#bulk {
+   margin-top: 20px;
+   }
+   .fade-rotate .modal-dialog {
    position: absolute;
    left: 0;
    right: 0;
@@ -872,339 +866,415 @@ div#bulk {
    font-size: calc(20px + (40 - 20)*(100vw - 320px)/(2560 - 320));
    }
    .ui-autocomplete-input {
-  border: none; 
-  font-size: 14px;
-  width: 300px;
-  height: 24px;
-  margin-bottom: 5px;
-  padding-top: 2px;
-  border: 1px solid #DDD !important;
-  padding-top: 0px !important;
-  z-index: 1511;
-  position: relative;
-}
-.ui-autocomplete {
-    z-index: 5000;
-    background: #b3ebe8;;
-    width: 0%;
-}
-button#frwd_btn {
-    margin-top: -2px;
-    margin-left: 10px;
-}
-button.btn.btn-default {
-    margin-left: 5px;
-    margin-top: 20px;
-}
-input.select2-search__field {
-    /* margin-top: 40px; */
-    display: inline-block;
-    border-radius: 0;
-}
-ul#select2-folder_id-y3-results {
-    margin-top: 27px;
-}
-span.select2-selection.select2-selection--single {
-    width: 330px;
-    text-align: center;
-}
-input#email {
-    width: 100%;
-}
-.sendEmail label {
-    color: black;
-    font-size: 13px;
-}
+   border: none; 
+   font-size: 14px;
+   width: 300px;
+   height: 24px;
+   margin-bottom: 5px;
+   padding-top: 2px;
+   border: 1px solid #DDD !important;
+   padding-top: 0px !important;
+   z-index: 1511;
+   position: relative;
+   }
+   .ui-autocomplete {
+   z-index: 5000;
+   background: #b3ebe8;;
+   width: 0%;
+   }
+   button#frwd_btn {
+   margin-top: -2px;
+   margin-left: 10px;
+   }
+   button.btn.btn-default {
+   margin-left: 5px;
+   margin-top: 20px;
+   }
+   input.select2-search__field {
+   /* margin-top: 40px; */
+   display: inline-block;
+   border-radius: 0;
+   }
+   ul#select2-folder_id-y3-results {
+   margin-top: 27px;
+   }
+   span.select2-selection.select2-selection--single {
+   width: 330px;
+   text-align: center;
+   }
+   input#email {
+   width: 100%;
+   }
+   .sendEmail label {
+   color: black;
+   font-size: 13px;
+   }
 </style>
 <div class="container-fluid main-d">
-      <div class="container">
-         <div class="col-md-12">
-            <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
-            <div class="col-md-6" style="margin-top:75px;">
-               <ul id="myTabs" class="nav nav-pills nav-justified" role="tablist" data-tabs="tabs">
-                  <li class="active"><a href="#Commentary" data-toggle="tab">Corporate QuestionBank</a></li>
-                  <li><a href="#Videos" data-toggle="tab">Ocean QuestionBank !</a></li>
-               </ul>
-               <div class="tab-content">
-                  <div role="tabpanel" class="tab-pane fade in active" id="Commentary">
-                     <div class="row">
-                        <div class="box" >
-               <?php $key = 1; if (!empty($oceanchamp_tests)): foreach ($oceanchamp_tests as $tests) : 
-                  $on_ocean = $tests['ocean_candidate'];
-                        if($on_ocean == 'Yes')
-                        {
-                           $resume = getUploadedResume($tests['js_email']);
-                           $photo = getSeekerPhoto($tests['js_email']);
-                           $updates = getSeekerlastUpdates($tests['js_email']);
-                           if (!empty($updates)) {
-                             if($updates[0]['update_at']=='0000-00-00 00:00:00') { 
-                               $mtime = date('d-M-y',strtotime($updates[0]['create_at']));
-                             } else{
-                               $mtime = date('d-M-y',strtotime($updates[0]['update_at']));
-                             }
-                           }else{
-                             $mtime = date('d-M-y',strtotime($tests['created_on']));
-                           }
-                        }else{
-                         $mtime = date('d-M-y',strtotime($tests['created_on']));
-                        }
-                       
-                       ?>
-               <label>
-                  <div class="check">
-                    
-                    <!--  <input type="checkbox" value="<?php echo $cv_row['js_email']; ?>" data-valuetwo="<?php echo $cv_row['cv_id'];  ?>" data-valueone="<?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ echo $cv_row['js_resume']; } ?>" class="chkbx" /> -->
-                  </div> 
-                  <div class="card content">
-                     <div class="front">
+   <div class="container">
+      <div class="col-md-12">
+         <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
+         <div class="col-md-6" style="margin-top:75px;">
+            <ul id="myTabs" class="nav nav-pills nav-justified" role="tablist" data-tabs="tabs">
+               <li class="active"><a href="#Commentary" data-toggle="tab">Corporate QuestionBank</a></li>
+               <li><a href="#Videos" data-toggle="tab">Ocean QuestionBank !</a></li>
+            </ul>
+            <div class="tab-content">
+               <div role="tabpanel" class="tab-pane fade in active" id="Commentary">
+                  <div class="row">
+                     <div class="box" >
+                        <?php $key = 1; if (!empty($oceanchamp_tests)): foreach ($oceanchamp_tests as $tests) : 
+                           $on_ocean = $tests['ocean_candidate'];
+                                 if($on_ocean == 'Yes')
+                                 {
+                                    $resume = getUploadedResume($tests['js_email']);
+                                    $photo = getSeekerPhoto($tests['js_email']);
+                                    $updates = getSeekerlastUpdates($tests['js_email']);
+                                    if (!empty($updates)) {
+                                      if($updates[0]['update_at']=='0000-00-00 00:00:00') { 
+                                        $mtime = date('d-M-y',strtotime($updates[0]['create_at']));
+                                      } else{
+                                        $mtime = date('d-M-y',strtotime($updates[0]['update_at']));
+                                      }
+                                    }else{
+                                      $mtime = date('d-M-y',strtotime($tests['created_on']));
+                                    }
+                                 }else{
+                                  $mtime = date('d-M-y',strtotime($tests['created_on']));
+                                 }
+                                
+                                ?>
+                        <label>
+                           <div class="check">
+                              <!--  <input type="checkbox" value="<?php echo $cv_row['js_email']; ?>" data-valuetwo="<?php echo $cv_row['cv_id'];  ?>" data-valueone="<?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ echo $cv_row['js_resume']; } ?>" class="chkbx" /> -->
+                           </div>
+                           <div class="card content">
+                              <div class="front">
+                                 <?php
+                                    if($on_ocean == 'Yes')
+                                      {
+                                    if(!empty($photo)){ ?>
+                                 <img src="<?php echo  base_url(); ?>upload/<?php if(!empty($photo[0]['photo_path'])){echo $photo[0]['photo_path'];} ?>" style="height:25px; width:25px;border-radius:5px;float:left" />
+                                 <?php }else{ ?>
+                                 <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" style="height:25px; width:25px;border-radius:5px;float:left" />
+                                 <?php } }else{ ?>
+                                 <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" style="height:25px; width:25px;border-radius:5px;float:left" />
+                                 <?php } ?>
+                                 <div class="job-info">
+                                    <div class="a">
+                                       <li class="right-title" style="font-size:19px;margin-top:-4px;"  ><?php echo $tests['test_name']; ?></li>
+                                    </div>
+                                 </div>
+                                 <div class="following-info">
+                                    <li class="left-title"
+                                       >Type</li>
+                                    <li class="right-title">&nbsp;:<?php echo $tests['type']; ?></li>
+                                    <li class="left-title">Total Questions</li>
+                                    <li class="right-title">&nbsp;:<?php echo $tests['total_questions']; ?></li>
+                                    <li class="left-title">Timer on Each Question</li>
+                                    <li class="right-title">&nbsp;: <?php echo $tests['timer_on_each_que']; ?></li>
+                                    <li class="left-title">Display Correct Answer</li>
+                                    <li class="right-title">&nbsp;:<?php echo $tests['correct_ans_each_ques']; ?></li>
+                                    <div class="clear"></div>
+                                 </div>
+                                 <div class="following-info2">
+                                    <li class="left-title">Level</li>
+                                    <li class="right-title">&nbsp;:<?php echo $tests['level']; ?></li>
+                                    <li class="left-title">Total Duration</li>
+                                    <li class="right-title">&nbsp;:<?php echo $tests['test_duration']; ?></li>
+                                    <li class="left-title">Allowed to Go back</li>
+                                    <li class="right-title">&nbsp;:<?php echo $tests['previous_option']; ?></li>
+                                    <li class="left-title">Display Result </li>
+                                    <li class="right-title">&nbsp;:<?php echo $tests['final_result']; ?></li>
+                                    <div class="clear"></div>
+                                 </div>
+                                 <div class="following-info3">
+                                    <li class="left-title">Topics</li>
+                                    <li class="right-title">&nbsp;: <?php echo $tests['topics']; ?></li>
+                                    <li class="left-title">Allowed to Review</li>
+                                    <li class="right-title">&nbsp;:<?php echo $tests['review_option']; ?></li>
+                                    <li class="left-title">Negative Marking</li>
+                                    <li class="right-title">&nbsp;:<?php echo $tests['negative_marks']; ?></li>
+                                    <div class="clear"></div>
+                                 </div>
+                                 <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                 <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
+                                 </button>
+                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1" style="top:47px;">
+                                    <li ><a class="dropdown-item" href="#" id="div_frwrd" data-toggle="modal" data-target="#rotateModal<?php echo $tests['test_id'] ?>" >Forward This Test</a></li>
+                                    <li> <a class="dropdown-item"  href="#" data-toggle="modal" data-target="#edit_test<?php echo $tests['test_id'] ?>" >Edit Test</a></li>
+                                    <!--  <li><a class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-target="#move_cv" href="#">Move this CV</a></li> -->
+                                 </div>
+                              </div>
+                           </div>
+                        </label>
                         <?php
-                           if($on_ocean == 'Yes')
-                             {
-                           if(!empty($photo)){ ?>
-                        <img src="<?php echo  base_url(); ?>upload/<?php if(!empty($photo[0]['photo_path'])){echo $photo[0]['photo_path'];} ?>" style="height:25px; width:25px;border-radius:5px;float:left" />
-                        <?php }else{ ?>
-                        <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" style="height:25px; width:25px;border-radius:5px;float:left" />
-                       <?php } }else{ ?>
-                        <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" style="height:25px; width:25px;border-radius:5px;float:left" />
-                        <?php } ?>
-                        <div class="job-info">
-                           <div class="a">
-                              <li class="right-title" style="font-size:19px;margin-top:-4px;"  ><?php echo $tests['test_name']; ?></li>
+                           $key++;
+                             endforeach;  
+                           ?>     
+                        <?php else : ?> 
+                        <li colspan="3">
+                           <strong> No Tests Created. Click on "Create A Test" !</strong>
+                        </li>
+                        <?php endif; ?>
+                     </div>
+                  </div>
+               </div>
+               <div role="tabpanel" class="tab-pane fade" id="Videos">
+                  <div class="row">
+                     <div class="box" >
+                        <?php $key = 1; if (!empty($ocean_tests)): foreach ($ocean_tests as $tests) : 
+                           $on_ocean = $tests['ocean_candidate'];
+                                 if($on_ocean == 'Yes')
+                                 {
+                                    $resume = getUploadedResume($tests['js_email']);
+                                    $photo = getSeekerPhoto($tests['js_email']);
+                                    $updates = getSeekerlastUpdates($tests['js_email']);
+                                    if (!empty($updates)) {
+                                      if($updates[0]['update_at']=='0000-00-00 00:00:00') { 
+                                        $mtime = date('d-M-y',strtotime($updates[0]['create_at']));
+                                      } else{
+                                        $mtime = date('d-M-y',strtotime($updates[0]['update_at']));
+                                      }
+                                    }else{
+                                      $mtime = date('d-M-y',strtotime($tests['created_on']));
+                                    }
+                                 }else{
+                                  $mtime = date('d-M-y',strtotime($tests['created_on']));
+                                 }
+                                
+                                ?>
+                        <label>
+                           <div class="check">
+                              <!--  <input type="checkbox" value="<?php echo $cv_row['js_email']; ?>" data-valuetwo="<?php echo $cv_row['cv_id'];  ?>" data-valueone="<?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ echo $cv_row['js_resume']; } ?>" class="chkbx" /> -->
+                           </div>
+                           <div class="card content">
+                              <div class="front">
+                                 <?php
+                                    if($on_ocean == 'Yes')
+                                      {
+                                    if(!empty($photo)){ ?>
+                                 <img src="<?php echo  base_url(); ?>upload/<?php if(!empty($photo[0]['photo_path'])){echo $photo[0]['photo_path'];} ?>" style="height:25px; width:25px;border-radius:5px;float:left" />
+                                 <?php }else{ ?>
+                                 <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" style="height:25px; width:25px;border-radius:5px;float:left" />
+                                 <?php } }else{ ?>
+                                 <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" style="height:25px; width:25px;border-radius:5px;float:left" />
+                                 <?php } ?>
+                                 <div class="job-info">
+                                    <div class="a">
+                                       <li class="right-title" style="font-size:19px;margin-top:-4px;"  ><?php echo $tests['test_name']; ?></li>
+                                    </div>
+                                 </div>
+                                 <div class="following-info">
+                                    <li class="left-title"
+                                       >Type</li>
+                                    <li class="right-title">&nbsp;:<?php echo $tests['type']; ?></li>
+                                    <li class="left-title">Total Questions</li>
+                                    <li class="right-title">&nbsp;:<?php echo $tests['total_questions']; ?></li>
+                                    <li class="left-title">Timer on Each Question</li>
+                                    <li class="right-title">&nbsp;: <?php echo $tests['timer_on_each_que']; ?></li>
+                                    <li class="left-title">Display Correct Answer</li>
+                                    <li class="right-title">&nbsp;:<?php echo $tests['correct_ans_each_ques']; ?></li>
+                                    <div class="clear"></div>
+                                 </div>
+                                 <div class="following-info2">
+                                    <li class="left-title">Level</li>
+                                    <li class="right-title">&nbsp;:<?php echo $tests['level']; ?></li>
+                                    <li class="left-title">Total Duration</li>
+                                    <li class="right-title">&nbsp;:<?php echo $tests['test_duration']; ?></li>
+                                    <li class="left-title">Allowed to Go back</li>
+                                    <li class="right-title">&nbsp;:<?php echo $tests['previous_option']; ?></li>
+                                    <li class="left-title">Display Result </li>
+                                    <li class="right-title">&nbsp;:<?php echo $tests['final_result']; ?></li>
+                                    <div class="clear"></div>
+                                 </div>
+                                 <div class="following-info3">
+                                    <li class="left-title">Topics</li>
+                                    <li class="right-title">&nbsp;: <?php echo $tests['topics']; ?></li>
+                                    <li class="left-title">Allowed to Review</li>
+                                    <li class="right-title">&nbsp;:<?php echo $tests['review_option']; ?></li>
+                                    <li class="left-title">Negative Marking</li>
+                                    <li class="right-title">&nbsp;:<?php echo $tests['negative_marks']; ?></li>
+                                    <div class="clear"></div>
+                                 </div>
+                                 <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                 <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
+                                 </button>
+                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1" style="top:47px;">
+                                    <li ><a class="dropdown-item" href="#" id="div_frwrd" data-toggle="modal" data-target="#rotateModal<?php echo $tests['test_id'] ?>" >Forward This Test</a></li>
+                                    <li> <a class="dropdown-item"  href="#" data-toggle="modal" data-target="#edit_test<?php echo $tests['test_id'] ?>" >Edit Test</a></li>
+                                    <!--  <li><a class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-target="#move_cv" href="#">Move this CV</a></li> -->
+                                 </div>
+                              </div>
+                           </div>
+                        </label>
+                        <?php
+                           $key++;
+                             endforeach;  
+                           ?>     
+                        <?php else : ?> 
+                        <li colspan="3">
+                           <strong> No Tests Created. Click on "Create A Test" !</strong>
+                        </li>
+                        <?php endif; ?>
+                     </div>
+                  </div>
+               </div>
+               <div role="tabpanel" class="tab-pane fade" id="Events">
+                  <div class="table-responsive">
+                  </div>
+               </div>
+               <div role="tabpanel" class="tab-pane fade" id="music">
+               </div>
+            </div>
+         </div>
+         <div class="col-md-3 ">
+            <div class="last_section">
+               <div class="pai_chart">
+                  <main>
+                     <section>
+                        <div class="pieID pie">
+                        </div>
+                        <ul class="pieID legend">
+                           <li>
+                              <em>Total Job Posts</em>
+                              <span><?php echo sizeof($company_active_jobs); ?></span>
+                              <!--<span>718</span> -->
+                           </li>
+                           <li>
+                              <em> Total Job Forwarded</em>
+                              <span id='total_forwarded'> </span>
+                           </li>
+                           <li>
+                              <em>Total Job Applied</em>
+                              <span id='total_applied'> </span>
+                           </li>
+                           <li>
+                              <em>Total attempted test</em>
+                              <span id='total_test'> </span>
+                           </li>
+                           <li>
+                              <em>Total Candidates passed </em>
+                              <span id='total_passed'></span>
+                           </li>
+                           <li>
+                              <em>Total Candidates interview and passed</em>
+                              <span id='total_test_int_pass'></span>
+                           </li>
+                           <li>
+                              <em>Total Candidates interview and failed</em>
+                              <span id='total_test_int_fail'></span>
+                           </li>
+                           <li>
+                              <em>Total Candidates Accepted Offer</em>
+                              <span id='total_offer_accept'></span>
+                           </li>
+                        </ul>
+                     </section>
+                  </main>
+               </div>
+               <div class="filter1">
+                  <div class="panel ">
+                     <div class="panel-heading">
+                        <h3 class="panel-title">Location</h3>
+                        <div class="pull-right">
+                           <span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
+                           <i class="glyphicon glyphicon-filter"></i>
+                           </span>
+                        </div>
+                     </div>
+                     <div class="panel-body">
+                        <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter location" />
+                        <div class="location_fil">
+                           <div class="alert">
+                              <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                              <strong>css</strong>
+                           </div>
+                           <div class="alert">
+                              <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                              <strong>css</strong>
+                           </div>
+                           <div class="alert">
+                              <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                              <strong>css</strong>
                            </div>
                         </div>
-                        <div class="following-info">
-                           <li class="left-title"
-                              >Type</li>
-                           <li class="right-title">&nbsp;:<?php echo $tests['type']; ?></li>
-                           <li class="left-title">Total Questions</li>
-                           <li class="right-title">&nbsp;:<?php echo $tests['total_questions']; ?></li>
-                          
-                           <li class="left-title">Timer on Each Question</li>
-                           <li class="right-title">&nbsp;: <?php echo $tests['timer_on_each_que']; ?></li>
-                           <li class="left-title">Display Correct Answer</li>
-                           <li class="right-title">&nbsp;:<?php echo $tests['correct_ans_each_ques']; ?></li>
-                            
-
-                           <div class="clear"></div>
-                        </div>
-                        <div class="following-info2">
-                           <li class="left-title">Level</li>
-                           <li class="right-title">&nbsp;:<?php echo $tests['level']; ?></li>
-                           <li class="left-title">Total Duration</li>
-                           <li class="right-title">&nbsp;:<?php echo $tests['test_duration']; ?></li>
-                           
-                           <li class="left-title">Allowed to Go back</li>
-                           <li class="right-title">&nbsp;:<?php echo $tests['previous_option']; ?></li>
-
-                           <li class="left-title">Display Result </li>
-                           <li class="right-title">&nbsp;:<?php echo $tests['final_result']; ?></li>
-
-                        
-
-
-                           <div class="clear"></div>
-                        </div>
-
-                        <div class="following-info3">
-                          <li class="left-title">Topics</li>
-                           <li class="right-title">&nbsp;: <?php echo $tests['topics']; ?></li>
-                          <li class="left-title">Allowed to Review</li>
-                           <li class="right-title">&nbsp;:<?php echo $tests['review_option']; ?></li>
-                            <li class="left-title">Negative Marking</li>
-                           <li class="right-title">&nbsp;:<?php echo $tests['negative_marks']; ?></li>
-                            
-
-                        
-
-
-                           <div class="clear"></div>
-                        </div>
-                        <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1" style="top:47px;">
-                           <li ><a class="dropdown-item" href="#" id="div_frwrd" data-toggle="modal" data-target="#rotateModal<?php echo $tests['test_id'] ?>" >Forward This Test</a></li>
-                      
-                           <li> <a class="dropdown-item"  href="#" data-toggle="modal" data-target="#edit_test<?php echo $tests['test_id'] ?>" >Edit Test</a></li>
-                           
-                            <!--  <li><a class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-target="#move_cv" href="#">Move this CV</a></li> -->
-                        </div>
                      </div>
-                  </div>
-               </label>
-               <?php
-                  $key++;
-                    endforeach;  
-                  ?>     
-               <?php else : ?> 
-               <li colspan="3">
-                  <strong> No Tests Created. Click on "Create A Test" !</strong>
-               </li>
-               <?php endif; ?>
-            </div>
-                     </div>
-                    
-                  </div>
-                  <div role="tabpanel" class="tab-pane fade" id="Videos">
-                     <div class="table-responsive">
-                     </div>
-                  </div>
-                  <div role="tabpanel" class="tab-pane fade" id="Events">
-                     <div class="table-responsive">
-                     </div>
-                  </div>
-                  <div role="tabpanel" class="tab-pane fade" id="music">
                   </div>
                </div>
-            </div>
-            <div class="col-md-3 ">
-   <div class="last_section">
-      <div class="pai_chart">
-         <main>
-            <section>
-               <div class="pieID pie">
+               <div class="filter1">
+                  <div class="panel ">
+                     <div class="panel-heading">
+                        <h3 class="panel-title">Education</h3>
+                        <div class="pull-right">
+                           <span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
+                           <i class="glyphicon glyphicon-filter"></i>
+                           </span>
+                        </div>
+                     </div>
+                     <div class="panel-body">
+                        <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter education" />
+                        <div class="location_fil">
+                           <div class="alert">
+                              <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                              <strong>css</strong>
+                           </div>
+                           <div class="alert">
+                              <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                              <strong>css</strong>
+                           </div>
+                           <div class="alert">
+                              <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                              <strong>css</strong>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
                </div>
-               <ul class="pieID legend">
-                  <li>
-                     <em>Total Job Posts</em>
-                     <span><?php echo sizeof($company_active_jobs); ?></span>
-                     <!--<span>718</span> -->
-                  </li>    
-                  <li>
-                     <em> Total Job Forwarded</em>
-                     <span id='total_forwarded'> </span>
-                  </li>
-                  <li>
-                     <em>Total Job Applied</em>
-                     <span id='total_applied'> </span>
-                  </li>
-                  <li>
-                     <em>Total attempted test</em>
-                     <span id='total_test'> </span>
-                  </li>
-                  <li>
-                     <em>Total Candidates passed </em>
-                     <span id='total_passed'></span>
-                  </li>
-                  <li>
-                     <em>Total Candidates interview and passed</em>
-                     <span id='total_test_int_pass'></span>
-                  </li>
-                  <li>
-                     <em>Total Candidates interview and failed</em>
-                     <span id='total_test_int_fail'></span>
-                  </li>     
-                  <li>
-                     <em>Total Candidates Accepted Offer</em>
-                     <span id='total_offer_accept'></span>
-                  </li>
-
-               </ul>
-            </section>
-         </main>
-      </div>
-      <div class="filter1">
-         <div class="panel ">
-            <div class="panel-heading">
-               <h3 class="panel-title">Location</h3>
-               <div class="pull-right">
-                  <span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
-                  <i class="glyphicon glyphicon-filter"></i>
-                  </span>
+               <div class="filter1">
+                  <div class="panel ">
+                     <div class="panel-heading">
+                        <h3 class="panel-title">Mandatory</h3>
+                        <div class="pull-right">
+                           <span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
+                           <i class="glyphicon glyphicon-filter"></i>
+                           </span>
+                        </div>
+                     </div>
+                     <div class="panel-body">
+                        <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter education" />
+                        <div class="location_fil">
+                           <div class="alert">
+                              <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                              <strong>css</strong>
+                           </div>
+                           <div class="alert">
+                              <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                              <strong>css</strong>
+                           </div>
+                           <div class="alert">
+                              <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                              <strong>css</strong>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
                </div>
-            </div>
-            <div class="panel-body">
-               <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter location" />
-               <div class="location_fil">
-                  <div class="alert">
-                     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                     <strong>css</strong>
-                  </div>
-                  <div class="alert">
-                     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                     <strong>css</strong>
-                  </div>
-                  <div class="alert">
-                     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                     <strong>css</strong>
-                  </div>
+               <div class="experience">
+                  <form class="exp_level">
+                     <label for="range1">Experience</label>
+                     <input id="range1" type="range" name="range1" min="1" max="10" step="0.1" value="5">
+                     <label for="range3">Availability</label>
+                     <input id="range3" type="range" name="range3" min="0" max="100" step="1" value="50">
+                  </form>
                </div>
             </div>
          </div>
-      </div>
-      <div class="filter1">
-         <div class="panel ">
-            <div class="panel-heading">
-               <h3 class="panel-title">Education</h3>
-               <div class="pull-right">
-                  <span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
-                  <i class="glyphicon glyphicon-filter"></i>
-                  </span>
-               </div>
-            </div>
-            <div class="panel-body">
-               <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter education" />
-               <div class="location_fil">
-                  <div class="alert">
-                     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                     <strong>css</strong>
-                  </div>
-                  <div class="alert">
-                     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                     <strong>css</strong>
-                  </div>
-                  <div class="alert">
-                     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                     <strong>css</strong>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="filter1">
-         <div class="panel ">
-            <div class="panel-heading">
-               <h3 class="panel-title">Mandatory</h3>
-               <div class="pull-right">
-                  <span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
-                  <i class="glyphicon glyphicon-filter"></i>
-                  </span>
-               </div>
-            </div>
-            <div class="panel-body">
-               <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter education" />
-               <div class="location_fil">
-                  <div class="alert">
-                     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                     <strong>css</strong>
-                  </div>
-                  <div class="alert">
-                     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                     <strong>css</strong>
-                  </div>
-                  <div class="alert">
-                     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                     <strong>css</strong>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="experience">
-         <form class="exp_level">
-            <label for="range1">Experience</label>
-            <input id="range1" type="range" name="range1" min="1" max="10" step="0.1" value="5">
-            <label for="range3">Availability</label>
-            <input id="range3" type="range" name="range3" min="0" max="100" step="1" value="50">
-         </form>
       </div>
    </div>
 </div>
-         </div>
-      </div>
-   </div>
- <?php $key = 1; if (!empty($oceanchamp_tests)): foreach ($oceanchamp_tests as $tests) : ?><div class="modal" id="rotateModal<?php echo $tests['test_id'] ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-   
+<?php $key = 1; if (!empty($oceanchamp_tests)): foreach ($oceanchamp_tests as $tests) : ?>
+<div class="modal" id="rotateModal<?php echo $tests['test_id'] ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
    <div class="modal-dialog" role="document">
       <div class="modal-content">
          <div class="modal-header" style="border-bottom:none;">
@@ -1214,20 +1284,16 @@ input#email {
          <form action="<?php echo base_url() ?>employer/forword_test" class="sendEmail" method="post" autocomplete="off">
             <input type="hidden" name="test_id" id="test_id" value="<?php echo $tests['test_id']; ?>">
             <div class="modal-body" style="padding:15px 40px;">
-             
                <input type="hidden" name="consultant" value="JobSeeker">  
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                   <label class="mdl-textfield__label" for="sample3">E-mail:</label>
                   <input type="email"  name="candiate_email"  id="email" placeholder="Enter comma seperated Emails"  id="subject" data-required="true" multiple style="display: inline-block;" required>
                </div>
                <input type="hidden" name="job_post_id" value="" id="auto-value">
-
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
                   <label class="mdl-textfield__label" for="sample3">Message:</label>
                   <textarea class="form-control" name="message" rows="5" id="comment" value="" required></textarea>
                </div>
-            
-
                <input type="hidden" name="forward_job_email" id="forward_job_email" value="<?php echo $cv_row['js_email']; ?>">
             </div>
             <div class="modal-footer">
@@ -1237,9 +1303,7 @@ input#email {
       </div>
    </div>
 </div>
-
 <div class="modal" id="edit_test<?php echo $tests['test_id'] ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-   
    <div class="modal-dialog" role="document">
       <div class="modal-content">
          <div class="modal-header" style="border-bottom:none;">
@@ -1249,97 +1313,85 @@ input#email {
          <form action="<?php echo base_url() ?>employer/update_test" class="sendEmail" method="post" autocomplete="off">
             <input type="hidden" name="test_id" id="test_id" value="<?php echo $tests['test_id']; ?>">
             <div class="modal-body" style="padding:15px 40px;">
-             
-            <div class="col-md-6">
-              <div class="form-group ques_type">
-                <label for="exampleInputEmail1">Question Type<span class="required">*</span></label>
-                <select name="ques_type" id="ques_type" class="form-control select2" type="text" onchange="get_questuions();">
-                  <option value="MCQ"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='MCQ')echo "selected";?>>MCQ</option>
-                    <option value="Subjective"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Subjective')echo "selected";?>>Subjective</option>
-                    <option value="Practical"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Practical')echo "selected";?>>Practical</option>
-                </select> <?php echo form_error('ques_type'); ?>   
-              </div>
-            </div>
-            <div class="col-md-6"></div>
-
-            <div class="col-md-4">
-              <div class="form-group timer">
-                <label for="male">Timer On each Question</label><br>
-                  <label class="radio-inline" >
-                    <input type="radio" name="timer" style=" margin-right: 11px;" value="Y" checked> Yes
-                  </label>
-                  <label class="radio-inline">
-                    <input type="radio" name="timer" value="N" style="margin-left: -30px;">No
-                  </label>
-                
-              </div>
-            </div>
-
-             <div class="col-md-4">
-              <div class="form-group previous_option">
-                <label for="male">Allowed to Go back</label><br>
-                  <label class="radio-inline">
-                    <input type="radio" name="previous_option"  style=" margin-right: 11px;" value="Y" checked> Yes
-                  </label>
-                  <label class="radio-inline">
-                    <input type="radio" name="previous_option" value="N" style="margin-left: -30px;">No
-                  </label>
-                
-              </div>
-            </div>
-             <div class="col-md-4">
-              <div class="form-group review_option">
-                <label for="male">Allowed to Review</label><br>
-                  <label class="radio-inline">
-                    <input type="radio" name="review_option" style=" margin-right: 11px;" value="Y" checked> Yes
-                  </label>
-                  <label class="radio-inline">
-                    <input type="radio" name="review_option" value="N" style="margin-left: -30px;">No
-                  </label>
-                
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="form-group negative">
-                <label for="male">Negative Marking</label><br>
-                  <label class="radio-inline">
-                    <input type="radio" name="negative" style=" margin-right: 11px;" value="Y" checked> Yes
-                  </label>
-                  <label class="radio-inline">
-                    <input type="radio" name="negative" value="N" style="margin-left: -30px;">No
-                  </label>
-                
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group each_question_ans">
-                <label for="male">Display Correct Answer for each Question</label><br>
-                  <label class="radio-inline">
-                    <input type="radio" name="each_question_ans" style=" margin-right: 11px;" value="Y" checked> Yes
-                  </label>
-                  <label class="radio-inline">
-                    <input type="radio" name="each_question_ans" value="N" style="margin-left: -30px;">No
-                  </label>
-                
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group display_result">
-                <label for="male">Display Test Result to Candidate</label><br>
-                  <label class="radio-inline">
-                    <input type="radio" name="display_result" style=" margin-right: 11px;" value="Y" checked> Yes
-                  </label>
-                  <label class="radio-inline">
-                    <input type="radio" name="display_result" value="N" style="margin-left: -30px;">No
-                  </label>
-                
-              </div>
-            </div>
-          
+               <div class="col-md-6">
+                  <div class="form-group ques_type">
+                     <label for="exampleInputEmail1">Question Type<span class="required">*</span></label>
+                     <select name="ques_type" id="ques_type" class="form-control select2" type="text" onchange="get_questuions();">
+                        <option value="MCQ"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='MCQ')echo "selected";?>>MCQ</option>
+                        <option value="Subjective"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Subjective')echo "selected";?>>Subjective</option>
+                        <option value="Practical"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Practical')echo "selected";?>>Practical</option>
+                     </select>
+                     <?php echo form_error('ques_type'); ?>   
+                  </div>
+               </div>
+               <div class="col-md-6"></div>
+               <div class="col-md-4">
+                  <div class="form-group timer">
+                     <label for="male">Timer On each Question</label><br>
+                     <label class="radio-inline" >
+                     <input type="radio" name="timer" style=" margin-right: 11px;" value="Y" checked> Yes
+                     </label>
+                     <label class="radio-inline">
+                     <input type="radio" name="timer" value="N" style="margin-left: -30px;">No
+                     </label>
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <div class="form-group previous_option">
+                     <label for="male">Allowed to Go back</label><br>
+                     <label class="radio-inline">
+                     <input type="radio" name="previous_option"  style=" margin-right: 11px;" value="Y" checked> Yes
+                     </label>
+                     <label class="radio-inline">
+                     <input type="radio" name="previous_option" value="N" style="margin-left: -30px;">No
+                     </label>
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <div class="form-group review_option">
+                     <label for="male">Allowed to Review</label><br>
+                     <label class="radio-inline">
+                     <input type="radio" name="review_option" style=" margin-right: 11px;" value="Y" checked> Yes
+                     </label>
+                     <label class="radio-inline">
+                     <input type="radio" name="review_option" value="N" style="margin-left: -30px;">No
+                     </label>
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <div class="form-group negative">
+                     <label for="male">Negative Marking</label><br>
+                     <label class="radio-inline">
+                     <input type="radio" name="negative" style=" margin-right: 11px;" value="Y" checked> Yes
+                     </label>
+                     <label class="radio-inline">
+                     <input type="radio" name="negative" value="N" style="margin-left: -30px;">No
+                     </label>
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <div class="form-group each_question_ans">
+                     <label for="male">Display Correct Answer for each Question</label><br>
+                     <label class="radio-inline">
+                     <input type="radio" name="each_question_ans" style=" margin-right: 11px;" value="Y" checked> Yes
+                     </label>
+                     <label class="radio-inline">
+                     <input type="radio" name="each_question_ans" value="N" style="margin-left: -30px;">No
+                     </label>
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <div class="form-group display_result">
+                     <label for="male">Display Test Result to Candidate</label><br>
+                     <label class="radio-inline">
+                     <input type="radio" name="display_result" style=" margin-right: 11px;" value="Y" checked> Yes
+                     </label>
+                     <label class="radio-inline">
+                     <input type="radio" name="display_result" value="N" style="margin-left: -30px;">No
+                     </label>
+                  </div>
+               </div>
                <input type="hidden" name="job_post_id" value="" id="auto-value">
-
-               
-
                <input type="hidden" name="forward_job_email" id="forward_job_email" value="<?php echo $cv_row['js_email']; ?>">
             </div>
             <div class="modal-footer"  style="    margin-top: 340px;">
@@ -1351,8 +1403,7 @@ input#email {
 </div>
 <?php
    endforeach;endif;?>
-
-   <div class="modal" id="rotateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal" id="rotateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
    <input type="hidden" name="cv_id" id="cv_id" value="<?php $cv_row['cv_id']; ?>">
    <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -1376,9 +1427,7 @@ input#email {
                </div>
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
                   <label class="mdl-textfield__label" for="sample3">Number of cvs:<span id="no_of_cvs"></span></label><br>
-                  
                </div>
-
                <input type="hidden" name="forward_job_emails" id="forward_job_emails" value="">
             </div>
             <div class="modal-footer">
@@ -1391,96 +1440,93 @@ input#email {
 <script>
    $('.select2').select2();
 </script>
-   <script>
-     $('#myInput').focus(function(){
+<script>
+   $('#myInput').focus(function(){
    $(this).data('placeholder',$(this).attr('placeholder'))
-          .attr('placeholder','');
-}).blur(function(){
+        .attr('placeholder','');
+   }).blur(function(){
    $(this).attr('placeholder',$(this).data('placeholder'));
-});
-
-$("#sizelist").on("click", "a", function(e){
-    e.preventDefault();
-    var $this = $(this).parent();
-    $this.addClass("select").siblings().removeClass("select");
-    $("#sizevalue").val($this.data("value"));
-    $( "#sort_btn" ).click();
-    $( "#test" ).click();
-})
-
-
-   </script>
+   });
+   
+   $("#sizelist").on("click", "a", function(e){
+   e.preventDefault();
+   var $this = $(this).parent();
+   $this.addClass("select").siblings().removeClass("select");
+   $("#sizevalue").val($this.data("value"));
+   $( "#sort_btn" ).click();
+   $( "#test" ).click();
+   })
+   
+   
+</script>
 <script>
    $(document).ready(function(){
-
+   
     $('#myInput').keyup(function(){
     
      // Search text
      var text1 = $(this).val();
     var text = text1.toUpperCase();
-
+   
      $('.content').hide();
-
+   
      // Search and show
      $('.content:contains("'+text+'")').show();
     
     });
- 
-});
-$.expr[":"].contains = $.expr.createPseudo(function(arg) {
-  return function( elem ) {
+   
+   });
+   $.expr[":"].contains = $.expr.createPseudo(function(arg) {
+   return function( elem ) {
    return $(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
-  };
-});
-
-
+   };
+   });
+   
+   
 </script>
 <script>
-  
-
-   
-$("#job_titles").autocomplete({
-             
-             source: "<?php echo base_url();?>Employer/search_job_keywords",
-             minLength: 2,
-              // append: "#rotateModal",
-              focus: function(event, ui) {
-               // prevent autocomplete from updating the textbox
-               event.preventDefault();
-               // manually update the textbox
-               // alert(source);
-               $(this).val(ui.item.label);
-            },
-            select: function(event, ui) {
-               // prevent autocomplete from updating the textbox
-               event.preventDefault();
-               // manually update the textbox and hidden field
-               $(this).val(ui.item.label);
-               $("#autocomplete2-value").val(ui.item.value);
-            }
-    
-            
-           });
-$("#job_title").autocomplete({
-             
-             source: "<?php echo base_url();?>Employer/search_job_keywords",
-             minLength: 2,
-              // append: "#rotateModal",
-              focus: function(event, ui) {
-               // prevent autocomplete from updating the textbox
-               event.preventDefault();
-               // manually update the textbox
-               // alert(source);
-               $(this).val(ui.item.label);
-            },
-            select: function(event, ui) {
-               // prevent autocomplete from updating the textbox
-               event.preventDefault();
-               // manually update the textbox and hidden field
-               $(this).val(ui.item.label);
-               $("#auto-value").val(ui.item.value);
-            }
-    
-            
-           });
+   $("#job_titles").autocomplete({
+                
+                source: "<?php echo base_url();?>Employer/search_job_keywords",
+                minLength: 2,
+                 // append: "#rotateModal",
+                 focus: function(event, ui) {
+                  // prevent autocomplete from updating the textbox
+                  event.preventDefault();
+                  // manually update the textbox
+                  // alert(source);
+                  $(this).val(ui.item.label);
+               },
+               select: function(event, ui) {
+                  // prevent autocomplete from updating the textbox
+                  event.preventDefault();
+                  // manually update the textbox and hidden field
+                  $(this).val(ui.item.label);
+                  $("#autocomplete2-value").val(ui.item.value);
+               }
+       
+               
+              });
+   $("#job_title").autocomplete({
+                
+                source: "<?php echo base_url();?>Employer/search_job_keywords",
+                minLength: 2,
+                 // append: "#rotateModal",
+                 focus: function(event, ui) {
+                  // prevent autocomplete from updating the textbox
+                  event.preventDefault();
+                  // manually update the textbox
+                  // alert(source);
+                  $(this).val(ui.item.label);
+               },
+               select: function(event, ui) {
+                  // prevent autocomplete from updating the textbox
+                  event.preventDefault();
+                  // manually update the textbox and hidden field
+                  $(this).val(ui.item.label);
+                  $("#auto-value").val(ui.item.value);
+               }
+       
+               
+              });
 </script>
