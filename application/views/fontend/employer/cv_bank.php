@@ -1393,7 +1393,7 @@
                <p style="font-size:18px;margin-top:15px;">Time Period in Current Job</p>
                   <div class="range-wrap">
                   <input type="range" class="range" id="stability_id" onchange="get_data();" min="6" max="25" step="6"  value="6">
-                  <span id="rngOutput" ></span>
+                  <span id="rngOutput"></span>
 
                <!--<select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" id='stability_id' tabindex="-98">
                   <optgroup label="Driver Groups">
