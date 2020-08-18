@@ -1472,7 +1472,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                 $test_data['test_name'] = $test_name;
                 $test_data['company_id'] = $employer_id;
                 $test_data['questions'] = $up_date;
-                $test_data['type'] = $type;
+                // $test_data['type'] = $type;
                 $test_data['total_questions'] = sizeof(explode(',', $up_date));
                 $test_data['test_duration'] = $test_time;
                 $test_data['level'] = $level_data;

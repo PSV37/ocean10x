@@ -976,7 +976,7 @@
                         <div role="tabpanel" class="tab-pane fade" id="add_test">
                            <form method="post" action="<?php echo base_url(); ?>employer/add_to_test">
                            <input type="hidden" id="question_id" name="data_arr" value="">
-                           <input type="text" class="form-control" readonly style="border: none;" id="test_time" name="test_time">
+                           <input type="hidden" class="form-control" readonly style="border: none;" id="test_time" name="test_time">
                               <div class="row">
                                  <div class="col-md-4">
                                     <div class="form-group technical_id">                                       
