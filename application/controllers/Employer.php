@@ -4642,7 +4642,33 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $stablity_var = $this->input->post('stability');
         $company_id = $this->session->userdata('company_profile_id');
 
-        $where_active = "login BETWEEN DATE_SUB(NOW(), INTERVAL 30 DAY) And  NOW() and corporate_cv_bank.js_working_since < CURDATE() - INTERVAL 6 MONTH and corporate_cv_bank.js_working_since < CURDATE() - INTERVAL 12 Months and corporate_cv_bank.js_working_since < CURDATE() - INTERVAL 24 Months and corporate_cv_bank.js_working_since > CURDATE() - INTERVAL 25 Months and corporate_cv_bank.company_id = '$company_id' and corporate_cv_bank.js_experience='$exp_var' and corporate_cv_bank.js_current_notice_period='$notice_period_var' and corporate_cv_bank.js_top_education = '$education_var' and corporate_cv_bank.js_current_ctc='$current_ctc_var'";
+        $stability=$this->input->post('stability');
+//$days_count=30*stability;
+        if($stability==6){
+            $before_date = date('Y-m-d', strtotime("-".$stability." months"));
+            $where = "corporate_cv_bank.js_working_since <= '".$before_date."'";
+        }
+        if($stability==12){
+            $before_months=6;
+            $after_date = date('Y-m-d', strtotime("-".$stability." months"));
+            $before_date = date('Y-m-d', strtotime("-".$before_months." months"));
+            $where = "corporate_cv_bank.js_working_since <= '".$after_date."' and corporate_cv_bank.js_working_since >= '".$before_date."'";
+        }           
+        if($stability==24){
+            $before_months=12;
+            $after_date = date('Y-m-d', strtotime("-".$stability." months"));
+            $before_date = date('Y-m-d', strtotime("-".$before_months." months"));
+            $where = "corporate_cv_bank.js_working_since <= '".$after_date."' and corporate_cv_bank.js_working_since >= '".$before_date."'";
+        }
+        if($stability==25){
+            $before_date = date('Y-m-d', strtotime("-".$stability." months"));
+            $where = "corporate_cv_bank.js_working_since >= '".$before_date."'";
+        }
+
+
+
+
+        $where_active = "login BETWEEN DATE_SUB(NOW(), INTERVAL 30 DAY) And  NOW() and corporate_cv_bank.company_id = '$company_id' and corporate_cv_bank.js_experience='$exp_var' and corporate_cv_bank.js_current_notice_period='$notice_period_var' and corporate_cv_bank.js_top_education = '$education_var' and corporate_cv_bank.js_current_ctc='$current_ctc_var' and corporate_cv_bank.js_working_since = '$stability'";
 
         $where_active.= ' GROUP by cv_id';
 
