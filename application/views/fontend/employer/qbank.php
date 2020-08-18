@@ -884,10 +884,10 @@
    background: #b3ebe8;;
    width: 0%;
    }
-   button#frwd_btn {
+  /* button#frwd_btn {
    margin-top: -2px;
    margin-left: 10px;
-   }
+   }*/
    button.btn.btn-default {
    margin-left: 5px;
    margin-top: 20px;
@@ -1024,7 +1024,7 @@
                                    <div class="col-md-4">
                                    <div class="form-group level">
                                      <label for="exampleInputEmail1">Level<span class="required">*</span></label>
-                                       <select name="level" onchange="get_questuions();" id="level" class="form-control select2">                                     
+                                       <select name="level_data" onchange="get_questuions();" id="level" class="form-control select2">                                     
                                          <option value="Expert"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Expert')echo "selected";?>>Expert</option>
                                          <option value="Medium"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Medium')echo "selected";?>>Medium</option>
                                          <option value="Beginner"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Beginner')echo "selected";?>>Beginner</option>
