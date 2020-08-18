@@ -1528,6 +1528,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $subtopic_id = $this->input->post('subtopic_id');
         $level = $this->input->post('level');
         $ques_type = $this->input->post('ques_type');
+         $employer_id = $this->session->userdata('company_profile_id');
 
         $time = $test_duration/20;
 
@@ -1538,7 +1539,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         foreach ($questions as $row) {
             array_push($test_questions, $row['ques_id']);
         }
-        print_r($test_questions);
+        // print_r($test_questions);
         if (isset($test_name) && !empty($test_name)) {
             $where_all = "oceanchamp_tests.test_name='$test_name'";
             $old_question_data = $this->Master_model->get_master_row('oceanchamp_tests', $select = FALSE, $where_all);
@@ -1548,7 +1549,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                 $test_data['company_id'] = $employer_id;
                 $test_data['questions'] = implode(',', $test_questions);
                 // $test_data['type'] = $type;
-                $test_data['total_questions'] = sizeof(explode(',', $test_questions));
+                $test_data['total_questions'] = sizeof($test_questions);
                 $test_data['test_duration'] = $test_duration;
                 $test_data['level'] = $level;
                 $test_data['topics'] = $technical_id;
