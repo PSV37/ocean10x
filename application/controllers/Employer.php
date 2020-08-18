@@ -4660,7 +4660,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $before_date = date('Y-m-d', strtotime("-".$before_months." months"));
             $where = "corporate_cv_bank.js_working_since <= '".$after_date."' and corporate_cv_bank.js_working_since >= '".$before_date."'";
         }
-        if($stability==25){
+        if($stability==30){
             $before_date = date('Y-m-d', strtotime("-".$stability." months"));
             $where = "corporate_cv_bank.js_working_since >= '".$before_date."'";
         }
