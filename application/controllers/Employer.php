@@ -1522,7 +1522,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $test_name = $this->input->post('test_name');
         $test_duration = $this->input->post('test_duration');
         $technical_id = $this->input->post('technical_id');
-        $topic_id = $this->input->post('topic_id');
+        $topic_id = $this->input->post('topic_id_ocean');
         $subtopic_id = $this->input->post('subtopic_id');
         $level = $this->input->post('level');
         $ques_type = $this->input->post('ques_type');

@@ -1088,7 +1088,7 @@
                                    <div class="col-md-4">
                                     <div class="form-group technical_id">
                                        <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
-                                       <select id="subject" name="technical_id" required class="form-control select2"  onchange="getTopic(this.value)">
+                                       <select id="subject" name="technical_id" required class="form-control select2"  onchange="getTopicocean(this.value)">
                                           <option value="">Select Subject</option>
                                           <?php if (!empty($skill_master))
                                              foreach($skill_master as $skill) 
@@ -1106,7 +1106,7 @@
                                  <div class="col-md-4">
                                     <div class="form-group topic_id">
                                        <label for="exampleInputEmail1">Main Topic <span class="required">*</span></label>
-                                       <select id="topic_id" name="topic_id" class="form-control select2" onchange="getSubtopic(this.value)">
+                                       <select id="topic_id_ocean" name="topic_id" class="form-control select2" onchange="getSubtopics(this.value)">
                                           <option value="">Select Topic</option>
                                           <!-- <option value="1">HTML 5</option>  -->
                                        </select>
@@ -1116,7 +1116,7 @@
                                  <div class="col-md-4">
                                     <div class="form-group subtopic_id">
                                        <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
-                                       <select id="subtopic_id" name="subtopic_id" class="form-control select2" onchange="get_questuions();" >
+                                       <select id="subtopic_id_ocean" name="subtopic_id" class="form-control select2" >
                                        </select> <?php echo form_error('subtopic_id'); ?>   
                                     </div>
                                  </div>
@@ -1322,6 +1322,19 @@
           }); 
           }
        }
+       function getTopicocean(id){
+        if(id){
+          $.ajax({
+            type:'POST',
+            url:'<?php echo base_url();?>employer/gettopic',
+            data:{id:id},
+            success:function(res){
+              $('#topic_id').html(res);
+            }
+            
+          }); 
+          }
+       }
        function getSubtopic(id){
         if(id){
             $.ajax({
@@ -1330,6 +1343,20 @@
                 data:{id:id},
                 success:function(res){
                     $('#subtopic_id').html(res);
+                }
+                
+            }); 
+          }
+   
+    }
+    function getSubtopics(id){
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>employer/getsubtopic',
+                data:{id:id},
+                success:function(res){
+                    $('#subtopic_id_ocean').html(res);
                 }
                 
             }); 
