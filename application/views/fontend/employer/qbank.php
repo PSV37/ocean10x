@@ -917,7 +917,7 @@ input#email {
     color: black;
     font-size: 13px;
 }
-input#option1 {
+input[type=radio] {
     display: none;
 }
 label.btn.btn-secondary.active {
@@ -951,6 +951,16 @@ label.btn.btn-secondary {
                   <li><a href="#Videos" data-toggle="tab">Ocean QuestionBank !</a></li>
                </ul>
                <div class="tab-content">
+                  <div role="tabpanel" class="tab-pane fade" id="Videos">
+                     <div class="table-responsive">
+                     </div>
+                  </div>
+                  <div role="tabpanel" class="tab-pane fade" id="Events">
+                     <div class="table-responsive">
+                     </div>
+                  </div>
+                  <div role="tabpanel" class="tab-pane fade" id="music">
+                  </div>
                   <div role="tabpanel" class="tab-pane fade in active" id="Commentary">
                      <div class="row">
                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -1028,7 +1038,7 @@ label.btn.btn-secondary {
                    <div class="box-body">
         <div class="box" >
           <p style="float: right;margin-right: 80px"><b>Total Time Duration:</b><span id="total_time"></span></p>
-          
+
                <div class="card content">
                      <!-- <div class="front"> -->
                       <div class="following-info">
@@ -1057,16 +1067,7 @@ label.btn.btn-secondary {
       </div>
                 </form>
                   </div>
-                   <div role="tabpanel" class="tab-pane fade" id="Videos">
-                     <div class="table-responsive">
-                     </div>
-                  </div>
-                  <div role="tabpanel" class="tab-pane fade" id="Events">
-                     <div class="table-responsive">
-                     </div>
-                  </div>
-                  <div role="tabpanel" class="tab-pane fade" id="music">
-                  </div>
+                   
                </div>
             </div>
             <div class="col-md-3 ">
