@@ -957,9 +957,9 @@ label.btn.btn-secondary {
                            <a href="#add_test" data-toggle="tab"><label class="btn btn-secondary active">
                            <input type="radio" name="options" id="option1" autocomplete="off" >I want to choose My Own Questions in the Test !
                           </label></a>
-                          <label class="btn btn-secondary">
+                           <a href="#Videos" data-toggle="tab"><label class="btn btn-secondary">
                             <input type="radio" name="options" id="option2" autocomplete="off"> Ocean can help me create the Test !
-                          </label>
+                          </label></a>
                           
                         </div>
                      </div>
