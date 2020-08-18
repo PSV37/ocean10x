@@ -1037,7 +1037,7 @@ label.btn.btn-secondary {
                    </div>
                    <div class="box-body">
         <div class="box" >
-          <p style="float: right;margin-right: 80px"><b>Total Time Duration:</b><span id="total_time"></span></p>
+          <p ><b style="float: left;margin-right: 80px">Total Time Duration:</b><span id="total_time"></span> <b style="float: right;margin-right: 80px" >Total Questions:</b><span id="total_questions"></span></p>
 
                <div class="card content">
                      <!-- <div class="front"> -->
@@ -1243,4 +1243,20 @@ label.btn.btn-secondary {
             
       
       }
+      function get_total(){
+    // if ($('#checkbox').is(':checked')) {
+      // alert('ff');
+      var checkedValsofname = $('.chkbx:checkbox:checked').map(function() {
+                   return this.getAttribute("data-valueone");
+               }).get();
+               var data_arr1= (checkedValsofname.join(","));
+      
+            // alert();
+            var myNameArray =  data_arr1.split(',');
+              // var sum = 0;
+          var total_time = sum(myNameArray);
+
+             $('#total_time').html(total_time+' seconds');
+             $('#total_questions').html(data_arr1.length);
+  }
    </script>
