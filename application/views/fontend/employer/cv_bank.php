@@ -1734,7 +1734,7 @@
       var notice_period_value = $('#notice_period_id').val();
       var education_value = $('#education_id').val();
       var current_ctc_value = $('#current_ctc_id').val();
-      var sta_value = $('#rngOutput').val();
+      var sta_value = $('#stability_id').val();
        $.ajax({
                url: "<?php echo base_url();?>employer/get_active_cvs",
                type: "POST",
