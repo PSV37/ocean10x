@@ -900,10 +900,10 @@
    ul#select2-folder_id-y3-results {
    margin-top: 27px;
    }
-   span.select2-selection.select2-selection--single {
-   width: 330px;
-   text-align: center;
-   }
+    span.select2-selection.select2-selection--single {
+    width: 185px;
+    text-align: center;
+}
    input#email {
    width: 100%;
    }
@@ -975,6 +975,8 @@
                      <div class="tab-content">
                         <div role="tabpanel" class="tab-pane fade" id="add_test">
                            <form method="post" action="<?php echo base_url(); ?>employer/add_to_test">
+                           <input type="hidden" id="question_id" name="data_arr" value="">
+                           <input type="text" class="form-control" readonly style="border: none;" id="test_time" name="test_time">
                               <div class="row">
                                  <div class="col-md-4">
                                     <div class="form-group technical_id">                                       
@@ -985,7 +987,7 @@
                                   <div class="col-md-4">
                                     <div class="form-group technical_id">
                                        <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
-                                       <select id="subject" name="technical_id" required class="form-control select2"  onchange="getTopic(this.value)">
+                                       <select id="subject" name="subject_data" required class="form-control select2"  onchange="getTopic(this.value)">
                                           <option value="">Select Subject</option>
                                           <?php if (!empty($skill_master))
                                              foreach($skill_master as $skill) 
@@ -1062,7 +1064,7 @@
                                        <button class="btn btn-primary" type="reset">Discard</button>
                                     </div>
                                     <div class="col-md-3" style="margin-left: 20;">
-                                       <button class="btn btn-primary" type="submit">Create</button>
+                                       <button class="btn btn-primary" id="frwd_btn" type="submit">Create</button>
                                     </div>
                                  </div>
                               </div>

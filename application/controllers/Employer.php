@@ -1477,12 +1477,12 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                 $test_data['test_duration'] = $test_time;
                 $test_data['level'] = $level_data;
                 $test_data['topics'] = $subject_data;
-                $test_data['timer_on_each_que'] = $this->input->post('timer');
-                $test_data['previous_option'] = $this->input->post('previous_option');
-                $test_data['review_option'] = $this->input->post('review_option');
-                $test_data['negative_marks'] = $this->input->post('negative');
-                $test_data['correct_ans_each_ques'] = $this->input->post('each_question_ans');
-                $test_data['final_result'] = $this->input->post('display_result');
+                // $test_data['timer_on_each_que'] = $this->input->post('timer');
+                // $test_data['previous_option'] = $this->input->post('previous_option');
+                // $test_data['review_option'] = $this->input->post('review_option');
+                // $test_data['negative_marks'] = $this->input->post('negative');
+                // $test_data['correct_ans_each_ques'] = $this->input->post('each_question_ans');
+                // $test_data['final_result'] = $this->input->post('display_result');
                 $test_data['created_by'] = $this->session->userdata('company_profile_id');
                 $test_data['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
                 $this->Master_model->master_insert($test_data, 'oceanchamp_tests');
