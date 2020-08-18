@@ -244,12 +244,12 @@
    margin-top:0px;
    margin-bottom:15px;
    }
-   .following-info3 {
+  /* .following-info3 {
    margin-left: 309px;
    line-height: 30px;
    margin-top: 0px;
    margin-bottom: 15px;
-   }
+   }*/
    .active-span{
    position: absolute;
    top: 12px;
