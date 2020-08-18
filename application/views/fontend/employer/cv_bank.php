@@ -3865,7 +3865,7 @@ var myRange = ["<6Months","<1year","<2years",">2years"];
 
 function updateRange(){
    ro.textContent = myRange[parseInt(stability_id.value, 10)];
-   console.log("Selected value is: " + myRange[parseInt(rng.value, 10)] + ", Associated value is: " + rng.value);
+   console.log("Selected value is: " + myRange[parseInt(stability_id.value, 10)] + ", Associated value is: " + stability_id.value);
 };
 
 window.addEventListener("DOMContentLoaded", updateRange);
