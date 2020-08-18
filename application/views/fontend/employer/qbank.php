@@ -53,6 +53,9 @@
     background-color: #63e8e2;
     border: none;
 }
+input#option1 {
+    display: none;
+}
 
 </style>
 <body>
@@ -80,6 +83,8 @@
                      </div>
                     
                   </div>
+               </div>
+                <div class="tab-content">
                   <div role="tabpanel" class="tab-pane fade" id="add_test">
                      <form method="post" action="<?php echo base_url(); ?>employer/add_to_test">
                      <div class="row">
