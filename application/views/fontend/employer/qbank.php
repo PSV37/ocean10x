@@ -982,26 +982,7 @@
                                        <input type="text" class="form-control" id="test_name" name="test_name">
                                     </div>
                                  </div>
-                                 <div class="col-md-4">
-                                    <div class="form-group topic_id">
-                                       <label for="exampleInputEmail1">Main Topic <span class="required">*</span></label>
-                                       <select id="topic_id" name="topic_id" class="form-control select2" onchange="getSubtopic(this.value)">
-                                          <option value="">Select Topic</option>
-                                          <!-- <option value="1">HTML 5</option>  -->
-                                       </select>
-                                       <?php echo form_error('topic_id'); ?>   
-                                    </div>
-                                 </div>
-                                 <div class="col-md-4">
-                                    <div class="form-group subtopic_id">
-                                       <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
-                                       <select id="subtopic_id" name="subtopic_id" class="form-control select2" onchange="get_questuions();" >
-                                       </select> <?php echo form_error('subtopic_id'); ?>   
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="row">
-                                 <div class="col-md-4">
+                                  <div class="col-md-4">
                                     <div class="form-group technical_id">
                                        <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
                                        <select id="subject" name="technical_id" required class="form-control select2"  onchange="getTopic(this.value)">
@@ -1026,12 +1007,27 @@
                                        <?php echo form_error('topic_id'); ?>   
                                     </div>
                                  </div>
+                              
+                              </div>
+                              <div class="row">
+                                
+                                
                                  <div class="col-md-4">
                                     <div class="form-group subtopic_id">
                                        <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
                                        <select id="subtopic_id" name="subtopic_id" class="form-control select2" onchange="get_questuions();" >
                                        </select> <?php echo form_error('subtopic_id'); ?>   
                                     </div>
+                                 </div>
+                                   <div class="col-md-4">
+                                   <div class="form-group level">
+                                     <label for="exampleInputEmail1">Level<span class="required">*</span></label>
+                                       <select name="level" onchange="get_questuions();" id="level" class="form-control select2">                                     
+                                         <option value="Expert"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Expert')echo "selected";?>>Expert</option>
+                                         <option value="Medium"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Medium')echo "selected";?>>Medium</option>
+                                         <option value="Beginner"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Beginner')echo "selected";?>>Beginner</option>
+                                       </select> <?php echo form_error('level'); ?>   
+                                   </div>
                                  </div>
                               </div>
                               <div class="box-body">
@@ -1059,6 +1055,17 @@
                                     </div>
                                  </div>
                               </div>
+                              <div class="row">
+                                 <div class="col-md-6"></div>
+                                 <div class="col-md-6">
+                                    <div class="col-md-3">
+                                       <button class="btn btn-primary" type="reset">Discard</button>
+                                    </div>
+                                    <div class="col-md-3" style="margin-left: 20;">
+                                       <button class="btn btn-primary" type="submit">Create</button>
+                                    </div>
+                                 </div>
+                              </div>
                            </form>
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="create_test">
@@ -1073,29 +1080,10 @@
                                  <div class="col-md-4">
                                     <div class="form-group technical_id">                                       
                                        <label for="exampleInputEmail1">Duration<span class="required">*</span></label>
-                                       <input type="text" class="form-control" id="test_name" name="test_name">
+                                       <input type="text" class="form-control" id="time" name="test_name">
                                     </div>
                                  </div>
-                                 <div class="col-md-4">
-                                    <div class="form-group topic_id">
-                                       <label for="exampleInputEmail1">Main Topic <span class="required">*</span></label>
-                                       <select id="topic_id" name="topic_id" class="form-control select2" onchange="getSubtopic(this.value)">
-                                          <option value="">Select Topic</option>
-                                          <!-- <option value="1">HTML 5</option>  -->
-                                       </select>
-                                       <?php echo form_error('topic_id'); ?>   
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="row">
-                                 <div class="col-md-4">
-                                    <div class="form-group subtopic_id">
-                                       <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
-                                       <select id="subtopic_id" name="subtopic_id" class="form-control select2" onchange="get_questuions();" >
-                                       </select> <?php echo form_error('subtopic_id'); ?>   
-                                    </div>
-                                 </div>
-                                 <div class="col-md-4">
+                                    <div class="col-md-4">
                                     <div class="form-group technical_id">
                                        <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
                                        <select id="subject" name="technical_id" required class="form-control select2"  onchange="getTopic(this.value)">
@@ -1110,6 +1098,9 @@
                                        <?php echo form_error('technical_id'); ?>   
                                     </div>
                                  </div>
+                                 
+                              </div>
+                              <div class="row">
                                  <div class="col-md-4">
                                     <div class="form-group topic_id">
                                        <label for="exampleInputEmail1">Main Topic <span class="required">*</span></label>
@@ -1120,8 +1111,6 @@
                                        <?php echo form_error('topic_id'); ?>   
                                     </div>
                                  </div>
-                              </div>
-                              <div class="row">
                                  <div class="col-md-4">
                                     <div class="form-group subtopic_id">
                                        <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
@@ -1129,7 +1118,32 @@
                                        </select> <?php echo form_error('subtopic_id'); ?>   
                                     </div>
                                  </div>
+                              
+                                 <div class="col-md-4">
+                                   <div class="form-group level">
+                                     <label for="exampleInputEmail1">Level<span class="required">*</span></label>
+                                       <select name="level" onchange="get_questuions();" id="level" class="form-control select2">                                     
+                                         <option value="Expert"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Expert')echo "selected";?>>Expert</option>
+                                         <option value="Medium"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Medium')echo "selected";?>>Medium</option>
+                                         <option value="Beginner"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Beginner')echo "selected";?>>Beginner</option>
+                                       </select> <?php echo form_error('level'); ?>   
+                                   </div>
+                                 </div>
                               </div>
+                              <div class="row">
+                                 <div class="col-md-4">
+                                   <div class="form-group ques_type">
+                                     <label for="exampleInputEmail1">Question Type<span class="required">*</span></label>
+                                     <select name="ques_type" id="ques_type" class="form-control select2" type="text" onchange="get_questuions();">
+                                       <option value="MCQ"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='MCQ')echo "selected";?>>MCQ</option>
+                                         <option value="Subjective"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Subjective')echo "selected";?>>Subjective</option>
+                                         <option value="Practical"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Practical')echo "selected";?>>Practical</option>
+                                     </select> <?php echo form_error('ques_type'); ?>   
+                                   </div>
+                                 </div>
+                                 
+                              </div>
+                          
                                <div class="row">
                                  <div class="col-md-6"></div>
                                  <div class="col-md-6">
