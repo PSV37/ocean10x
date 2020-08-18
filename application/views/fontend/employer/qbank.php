@@ -737,7 +737,7 @@
    .input-group-btn:last-child>.btn{background-color:#18c5bd;
    color:#fff;}
    button.btn.btn-primary {
-   float: right;
+   /*float: right;*/
    background-color: #18c5bd;
    border: none;
    border-radius: 35px;
