@@ -1083,7 +1083,7 @@
                                        <input type="text" class="form-control" id="time" name="test_name">
                                     </div>
                                  </div>
-                                    <div class="col-md-4">
+                                   <div class="col-md-4">
                                     <div class="form-group technical_id">
                                        <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
                                        <select id="subject" name="technical_id" required class="form-control select2"  onchange="getTopic(this.value)">
@@ -1352,7 +1352,27 @@
 
   }
 
-
+  function get_questuions(job_id)
+  {
+   var subject = $('#subject').val();
+   var topic_id = $('#topic_id').val();
+   var subtopic_id = $('#subtopic_id').val();
+   var ques_type = $('#ques_type').val();
+   var level = $('#level').val();
+    $.ajax({
+              url: "<?php echo base_url();?>employer/get_test_questions",
+              type: "POST",
+              data: {subject:subject,topic_id:topic_id,subtopic_id:subtopic_id,ques_type:ques_type,level:level},
+              // contentType:false,
+              // processData:false,
+               // dataType: "json",
+              success: function(data)
+              {
+                $('tbody').html(data);
+              }
+        });
+       
+  }
    
   
      $(function(){
