@@ -1538,7 +1538,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         foreach ($questions as $row) {
             array_push($test_questions, $row['ques_id']);
         }
-        print_r($test_questions)''
+        print_r($test_questions);
         if (isset($test_name) && !empty($test_name)) {
             $where_all = "oceanchamp_tests.test_name='$test_name'";
             $old_question_data = $this->Master_model->get_master_row('oceanchamp_tests', $select = FALSE, $where_all);
