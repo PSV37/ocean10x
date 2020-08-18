@@ -66,7 +66,7 @@
                      <div class="row">
                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
                           <label class="btn btn-secondary active">
-                            <a href="#Videos"><input type="radio" name="options" id="option1" autocomplete="off" ></a>I want to choose My Own Questions in the Test !
+                            <a href="#add_test"><input type="radio" name="options" id="option1" autocomplete="off" ></a>I want to choose My Own Questions in the Test !
                           </label>
                           <label class="btn btn-secondary">
                             <input type="radio" name="options" id="option2" autocomplete="off"> Ocean can help me create the Test !
@@ -76,7 +76,67 @@
                      </div>
                     
                   </div>
-                  <div role="tabpanel" class="tab-pane fade" id="Videos">
+                  <div role="tabpanel" class="tab-pane fade" id="add_test">
+                     <form method="post" action="<?php echo base_url(); ?>employer/add_to_test">
+                     <div class="row">
+                     <div class="col-md-4">
+                       <div class="form-group technical_id">                                       
+                        <label for="exampleInputEmail1">Test Name <span class="required">*</span></label>
+                         <input type="text" class="form-control" id="test_name" name="test_name">
+                       </div>
+                     </div>
+                     <div class="col-md-4">
+                       <div class="form-group topic_id">
+                         <label for="exampleInputEmail1">Main Topic <span class="required">*</span></label>
+                         <select id="topic_id" name="topic_id" class="form-control select2" onchange="getSubtopic(this.value)">
+                           <option value="">Select Topic</option> 
+                           <!-- <option value="1">HTML 5</option>  -->
+                         </select> <?php echo form_error('topic_id'); ?>   
+                       </div>
+                     </div>
+                     <div class="col-md-4">
+                       <div class="form-group subtopic_id">
+                         <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
+                         <select id="subtopic_id" name="subtopic_id" class="form-control select2" onchange="get_questuions();" >
+                         </select> <?php echo form_error('subtopic_id'); ?>   
+                       </div>
+                     </div>               
+                   </div>
+                     <div class="row">
+                     <div class="col-md-4">
+                       <div class="form-group technical_id">                                       
+                        <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
+                         <select id="subject" name="technical_id" required class="form-control select2"  onchange="getTopic(this.value)">
+                           <option value="">Select Subject</option> 
+                             <?php if (!empty($skill_master))
+                                foreach($skill_master as $skill) 
+                                {
+                             ?>   
+                                 <option value="<?php echo $skill['id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['technical_id']==$skill['id'])echo "selected";?>><?php echo $skill['skill_name']; ?></option> 
+                             <?php } ?>
+                           </select> <?php echo form_error('technical_id'); ?>   
+                       </div>
+                     </div>
+                     <div class="col-md-4">
+                       <div class="form-group topic_id">
+                         <label for="exampleInputEmail1">Main Topic <span class="required">*</span></label>
+                         <select id="topic_id" name="topic_id" class="form-control select2" onchange="getSubtopic(this.value)">
+                           <option value="">Select Topic</option> 
+                           <!-- <option value="1">HTML 5</option>  -->
+                         </select> <?php echo form_error('topic_id'); ?>   
+                       </div>
+                     </div>
+                     <div class="col-md-4">
+                       <div class="form-group subtopic_id">
+                         <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
+                         <select id="subtopic_id" name="subtopic_id" class="form-control select2" onchange="get_questuions();" >
+                         </select> <?php echo form_error('subtopic_id'); ?>   
+                       </div>
+                     </div>               
+                   </div>
+                </form>
+                  </div>
+                   <div role="tabpanel" class="tab-pane fade" id="Videos">
                      <div class="table-responsive">
                      </div>
                   </div>
