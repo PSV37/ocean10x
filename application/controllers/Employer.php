@@ -4677,7 +4677,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $active_cv = $this->Master_model->getMaster('corporate_cv_bank', $where = $where_active, $join = $join_cond, $order = false, $field = false, $select = false, $limit = false, $start = false, $search = false);
 
         //echo $this->db->last_query();
-        //echo $this->db->last_query();
+        echo $this->db->last_query();
 
          echo json_encode($active_cv);
     }
