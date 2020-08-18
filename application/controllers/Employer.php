@@ -1565,6 +1565,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             }
         
     }
+}
     public function update_test() {
         $test_id = $this->input->post('test_id');
         if (isset($test_id) && !empty($test_id)) {
