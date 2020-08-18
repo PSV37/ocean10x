@@ -952,6 +952,7 @@ label.btn.btn-secondary {
                </ul>
                <div class="tab-content">
                   <div role="tabpanel" class="tab-pane fade" id="Videos">
+
                      <div class="table-responsive">
                      </div>
                   </div>
@@ -968,7 +969,7 @@ label.btn.btn-secondary {
                            <a href="#add_test" data-toggle="tab"><label class="btn btn-secondary active">
                            <input type="radio" name="options" id="option1" autocomplete="off" >I want to choose My Questions in the Test !
                           </label></a>
-                           <a href="#Videos" data-toggle="tab"><label class="btn btn-secondary">
+                           <a href="#create_test" data-toggle="tab"><label class="btn btn-secondary">
                             <input type="radio" name="options" id="option2" autocomplete="off"> Ocean can help me create the Test !
                           </label></a>
                           
@@ -1067,8 +1068,14 @@ label.btn.btn-secondary {
       </div>
                 </form>
                   </div>
+                  <div role="tabpanel" class="tab-pane fade" id="create_test">
+
+                     <div class="table-responsive">
+                     </div>
+                  </div>
                </div>
                </div>
+
                    
                </div>
             </div>
