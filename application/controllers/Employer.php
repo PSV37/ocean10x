@@ -1391,7 +1391,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $data['questionbank'] = $this->Master_model->getMaster('questionbank', $where_all, $join_emp, $order = 'desc', $field = 'ques_id', $select = false, $limit = false, $start = false, $search = false);
         // echo  $this->db->last_query(); die;
         // $this->load->view('fontend/employer/list_questions', $data);
-        $this->load->view('fontend/employer/qbank', $data);
+        $this->load->view('fontend/employer/list_questions', $data);
 
         // $this->load->view('fontend/employer/all_questions.php', $data);
         
@@ -1436,7 +1436,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $where_all = "questionbank.ques_status='1' AND ques_created_by='$employer_id'";
         $join_emp = array('skill_master' => 'skill_master.id=questionbank.technical_id |left outer', 'topic' => 'topic.topic_id=questionbank.topic_id |left outer', 'subtopic' => 'subtopic.subtopic_id=questionbank.subtopic_id |left outer', 'lineitem' => 'lineitem.lineitem_id=questionbank.lineitem_id |left outer', 'lineitemlevel' => 'lineitemlevel.lineitemlevel_id=questionbank.lineitemlevel_id |left outer', 'questionbank_answer' => 'questionbank_answer.question_id = questionbank.ques_id|LEFT OUTER');
         $data['questionbank'] = $this->Master_model->getMaster('questionbank', $where_all, $join_emp);
-        $this->load->view('fontend/employer/create_test', $data);
+        $this->load->view('fontend/employer/qbank', $data);
     }
     public function get_test_questions() {
         $employer_id = $this->session->userdata('company_profile_id');
