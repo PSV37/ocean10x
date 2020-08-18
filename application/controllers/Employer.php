@@ -1477,6 +1477,8 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                 $test_data['test_duration'] = $test_time;
                 $test_data['level'] = $level_data;
                 $test_data['topics'] = $subject_data;
+                $test_data['test_status'] = '1';
+
                 // $test_data['timer_on_each_que'] = $this->input->post('timer');
                 // $test_data['previous_option'] = $this->input->post('previous_option');
                 // $test_data['review_option'] = $this->input->post('review_option');
@@ -1531,9 +1533,37 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
 
         $where = "technical_id = '$technical_id' and topic_id ='$topic_id' and subtopic_id ='$subtopic_id' and level ='$level' and ques_type ='$ques_type' ";
         
-        $questions = $this->Master_model->getMaster('questionbank', $where , $join = FALSE, $order = 'RANDOM', $field = 'ques_id', $select = 'questions,sum(time_for_question) as time_duration',$limit=20,$start=false, $search=false);
-        print_r($questions);
-        print_r($this->db->last_query());die;
+        $questions = $this->Master_model->getMaster('questionbank', $where , $join = FALSE, $order = 'RANDOM', $field = 'ques_id', $select = false,$limit=20,$start=false, $search=false);
+        $test_questions = array();
+        foreach ($questions as $row) {
+            array_push($test_questions, $row['ques_id']);
+        }
+        print_r($test_questions)
+        if (isset($test_name) && !empty($test_name)) {
+            $where_all = "oceanchamp_tests.test_name='$test_name'";
+            $old_question_data = $this->Master_model->get_master_row('oceanchamp_tests', $select = FALSE, $where_all);
+
+            if (empty($old_question_data)) {
+                $test_data['test_name'] = $test_name;
+                $test_data['company_id'] = $employer_id;
+                $test_data['questions'] = implode(',', $test_questions);
+                // $test_data['type'] = $type;
+                $test_data['total_questions'] = sizeof(explode(',', $test_questions));
+                $test_data['test_duration'] = $test_duration;
+                $test_data['level'] = $level;
+                $test_data['topics'] = $technical_id;
+                $test_data['test_status'] = '2';
+                // $test_data['timer_on_each_que'] = $this->input->post('timer');
+                // $test_data['previous_option'] = $this->input->post('previous_option');
+                // $test_data['review_option'] = $this->input->post('review_option');
+                // $test_data['negative_marks'] = $this->input->post('negative');
+                // $test_data['correct_ans_each_ques'] = $this->input->post('each_question_ans');
+                // $test_data['final_result'] = $this->input->post('display_result');
+                $test_data['created_by'] = $this->session->userdata('company_profile_id');
+                $test_data['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
+                $this->Master_model->master_insert($test_data, 'oceanchamp_tests');
+            }
+        
     }
     public function update_test() {
         $test_id = $this->input->post('test_id');
