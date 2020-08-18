@@ -1329,7 +1329,7 @@
             url:'<?php echo base_url();?>employer/gettopic',
             data:{id:id},
             success:function(res){
-              $('#topic_id').html(res);
+              $('#topic_id_ocean').html(res);
             }
             
           }); 
