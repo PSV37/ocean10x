@@ -77,6 +77,40 @@
    border: none;
    border-radius: 15px;
    }
+  @media (min-width: 768px){
+   .nav-justified>li {
+   display: inline-block;
+   width: 225px;
+   height: 30px;
+   margin-right:30px;
+   }
+   }
+   .nav>li>a:focus, .nav>li>a:hover {
+   text-decoration: none;
+   background-color:#fff;
+   border: solid 2px #a5a5a5;
+   color: #949494;
+   }
+   .nav li a {
+   color: #949494;
+   background-color: #fff;
+   border: solid 2px #a5a5a5;
+   border-radius: 30px;
+   padding: 4px 10px;
+   font-weight: 700;
+   }
+   .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+   color:  #18c5bd;
+   background-color:#fff;
+   border: solid 2px #18c5bd;
+   font-weight: 700;
+   }
+   .tab-content {
+   margin-top: 45px;
+   }
+   .panel-body {
+   padding: 4px;
+   }
 </style>
 <?php $this->load->view('fontend/layout/employer_new_header.php');?> 
 <!---header-->
@@ -95,7 +129,7 @@
                <li><a href="#Videos" data-toggle="tab">Test Paper Bank</a></li>
             </ul>
             <div class="tab-content">
-               <div role="tabpanel" class="tab-pane fade" id="add_test">
+               <div role="tabpanel" class="tab-pane fade" id="qbank">
                   <div class="select-option">
                      <p style="FONT-SIZE: 12PX;COLOR: #0a5854;">Total No. Of Question:10</p>
                      <a style="float: left;" href="<?php echo base_url(); ?>employer/create-test"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Create Test</i></button></a>
