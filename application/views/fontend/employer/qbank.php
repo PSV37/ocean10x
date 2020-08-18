@@ -65,24 +65,23 @@
    display: inline-block;
    position: relative;
    }
-  .dd-button {
-    display: inline-block;
-    border: 1px solid #dedede;
-    border-radius: 4px;
-    padding: 5px 30px 5px 20px;
-    background-color: #18c5bd;
-    cursor: pointer;
-    width: 100%;
-    white-space: nowrap;
-    border-radius: 33px;
-    margin-right: 15px;
-    margin-top: 10px;
-    color: #fff;
-    margin-left: 13px;
-    font-size: 12px;
-    text-align: center;
-}
-   
+   .dd-button {
+   display: inline-block;
+   border: 1px solid #dedede;
+   border-radius: 4px;
+   padding: 5px 30px 5px 20px;
+   background-color: #18c5bd;
+   cursor: pointer;
+   width: 100%;
+   white-space: nowrap;
+   border-radius: 33px;
+   margin-right: 15px;
+   margin-top: 10px;
+   color: #fff;
+   margin-left: 13px;
+   font-size: 12px;
+   text-align: center;
+   }
    .dd-button:hover {
    background-color:#18c5bd;
    }
@@ -248,11 +247,11 @@
    margin-bottom:15px;
    }
    .following-info3 {
-    margin-left: 309px;
-    line-height: 30px;
-    margin-top: 0px;
-    margin-bottom: 15px;
-}
+   margin-left: 309px;
+   line-height: 30px;
+   margin-top: 0px;
+   margin-bottom: 15px;
+   }
    .active-span{
    position: absolute;
    top: 12px;
@@ -737,57 +736,52 @@
    }
    .input-group-btn:last-child>.btn{background-color:#18c5bd;
    color:#fff;}
-
-  button.btn.btn-primary {
-    float: right;
-    background-color: #18c5bd;
-    border: none;
-    border-radius: 35px;
-    margin-top: 13px;
-    font-size: 12px;
-}
-/* Styles for wrapping the search box */
-
-.main {
-    width: 50%;
-    margin: 50px auto;
-}
-
-/* Bootstrap 4 text input with search icon */
-
-.has-search .form-control {
-    padding-left: 2.375rem;
-}
-
-.has-search .form-control-feedback {
-    position: absolute;
-    z-index: 2;
-    display: block;
-    width: 2.375rem;
-    height: 2.375rem;
-    line-height: 2.375rem;
-    text-align: center;
-    pointer-events: none;
-    color: #aaa;
-    margin-right: 146px;
-    margin-top: 15px;
-}
-.dd-button:after {
-    content: '';
-    position: absolute;
-    top: 58%;
-    right: 8px;
-    transform: translateY(-50%);
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid #7a7c7c;
-}
-div#bulk {
-    margin-top: 20px;
-}
-  .fade-rotate .modal-dialog {
+   button.btn.btn-primary {
+   float: right;
+   background-color: #18c5bd;
+   border: none;
+   border-radius: 35px;
+   margin-top: 13px;
+   font-size: 12px;
+   }
+   /* Styles for wrapping the search box */
+   .main {
+   width: 50%;
+   margin: 50px auto;
+   }
+   /* Bootstrap 4 text input with search icon */
+   .has-search .form-control {
+   padding-left: 2.375rem;
+   }
+   .has-search .form-control-feedback {
+   position: absolute;
+   z-index: 2;
+   display: block;
+   width: 2.375rem;
+   height: 2.375rem;
+   line-height: 2.375rem;
+   text-align: center;
+   pointer-events: none;
+   color: #aaa;
+   margin-right: 146px;
+   margin-top: 15px;
+   }
+   .dd-button:after {
+   content: '';
+   position: absolute;
+   top: 58%;
+   right: 8px;
+   transform: translateY(-50%);
+   width: 0;
+   height: 0;
+   border-left: 5px solid transparent;
+   border-right: 5px solid transparent;
+   border-top: 5px solid #7a7c7c;
+   }
+   div#bulk {
+   margin-top: 20px;
+   }
+   .fade-rotate .modal-dialog {
    position: absolute;
    left: 0;
    right: 0;
@@ -874,71 +868,69 @@ div#bulk {
    font-size: calc(20px + (40 - 20)*(100vw - 320px)/(2560 - 320));
    }
    .ui-autocomplete-input {
-  border: none; 
-  font-size: 14px;
-  width: 300px;
-  height: 24px;
-  margin-bottom: 5px;
-  padding-top: 2px;
-  border: 1px solid #DDD !important;
-  padding-top: 0px !important;
-  z-index: 1511;
-  position: relative;
-}
-.ui-autocomplete {
-    z-index: 5000;
-    background: #b3ebe8;;
-    width: 0%;
-}
-button#frwd_btn {
-    margin-top: -2px;
-    margin-left: 10px;
-}
-button.btn.btn-default {
-    margin-left: 5px;
-    margin-top: 20px;
-}
-input.select2-search__field {
-    /* margin-top: 40px; */
-    display: inline-block;
-    border-radius: 0;
-}
-ul#select2-folder_id-y3-results {
-    margin-top: 27px;
-}
-span.select2-selection.select2-selection--single {
-    width: 330px;
-    text-align: center;
-}
-input#email {
-    width: 100%;
-}
-.sendEmail label {
-    color: black;
-    font-size: 13px;
-}
-input[type=radio] {
-    display: none;
-}
-label.btn.btn-secondary.active {
-
-    border-radius: 20px;
-    border: solid 2px;
-    color: #18c5bd;
-    background-color: #fff;
-    border: solid 2px #18c5bd;
-    font-weight: 700;
-}
-label.btn.btn-secondary {
-    color: #949494;
-    background-color: #fff;
-    border: solid 2px #a5a5a5;
-    border-radius: 30px;
-    padding: 4px 10px;
-    font-weight: 700;
-}
+   border: none; 
+   font-size: 14px;
+   width: 300px;
+   height: 24px;
+   margin-bottom: 5px;
+   padding-top: 2px;
+   border: 1px solid #DDD !important;
+   padding-top: 0px !important;
+   z-index: 1511;
+   position: relative;
+   }
+   .ui-autocomplete {
+   z-index: 5000;
+   background: #b3ebe8;;
+   width: 0%;
+   }
+   button#frwd_btn {
+   margin-top: -2px;
+   margin-left: 10px;
+   }
+   button.btn.btn-default {
+   margin-left: 5px;
+   margin-top: 20px;
+   }
+   input.select2-search__field {
+   /* margin-top: 40px; */
+   display: inline-block;
+   border-radius: 0;
+   }
+   ul#select2-folder_id-y3-results {
+   margin-top: 27px;
+   }
+   span.select2-selection.select2-selection--single {
+   width: 330px;
+   text-align: center;
+   }
+   input#email {
+   width: 100%;
+   }
+   .sendEmail label {
+   color: black;
+   font-size: 13px;
+   }
+   input[type=radio] {
+   display: none;
+   }
+   label.btn.btn-secondary.active {
+   border-radius: 20px;
+   border: solid 2px;
+   color: #18c5bd;
+   background-color: #fff;
+   border: solid 2px #18c5bd;
+   font-weight: 700;
+   }
+   label.btn.btn-secondary {
+   color: #949494;
+   background-color: #fff;
+   border: solid 2px #a5a5a5;
+   border-radius: 30px;
+   padding: 4px 10px;
+   font-weight: 700;
+   }
 </style>
-
 </style>
 <body>
    <div class="container-fluid main-d">
@@ -952,7 +944,6 @@ label.btn.btn-secondary {
                </ul>
                <div class="tab-content">
                   <div role="tabpanel" class="tab-pane fade" id="Videos">
-
                      <div class="table-responsive">
                      </div>
                   </div>
@@ -960,7 +951,6 @@ label.btn.btn-secondary {
                      <div class="table-responsive">
                      </div>
                   </div>
-
                   <div role="tabpanel" class="tab-pane fade" id="music">
                   </div>
                   <div role="tabpanel" class="tab-pane fade in active" id="Commentary">
@@ -968,260 +958,329 @@ label.btn.btn-secondary {
                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
                            <a href="#add_test" data-toggle="tab"><label class="btn btn-secondary active">
                            <input type="radio" name="options" id="option1" autocomplete="off" >I want to choose My Questions in the Test !
-                          </label></a>
+                           </label></a>
                            <a href="#create_test" data-toggle="tab"><label class="btn btn-secondary">
-                            <input type="radio" name="options" id="option2" autocomplete="off"> Ocean can help me create the Test !
-                          </label></a>
-                          
+                           <input type="radio" name="options" id="option2" autocomplete="off"> Ocean can help me create the Test !
+                           </label></a>
                         </div>
                      </div>
-                    
-                  
-                <div class="tab-content">
-                  <div role="tabpanel" class="tab-pane fade" id="add_test">
-                     <form method="post" action="<?php echo base_url(); ?>employer/add_to_test">
-                     <div class="row">
-                     <div class="col-md-4">
-                       <div class="form-group technical_id">                                       
-                        <label for="exampleInputEmail1">Test Name <span class="required">*</span></label>
-                         <input type="text" class="form-control" id="test_name" name="test_name">
-                       </div>
-                     </div>
-                     <div class="col-md-4">
-                       <div class="form-group topic_id">
-                         <label for="exampleInputEmail1">Main Topic <span class="required">*</span></label>
-                         <select id="topic_id" name="topic_id" class="form-control select2" onchange="getSubtopic(this.value)">
-                           <option value="">Select Topic</option> 
-                           <!-- <option value="1">HTML 5</option>  -->
-                         </select> <?php echo form_error('topic_id'); ?>   
-                       </div>
-                     </div>
-                     <div class="col-md-4">
-                       <div class="form-group subtopic_id">
-                         <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
-                         <select id="subtopic_id" name="subtopic_id" class="form-control select2" onchange="get_questuions();" >
-                         </select> <?php echo form_error('subtopic_id'); ?>   
-                       </div>
-                     </div>               
-                   </div>
-                     <div class="row">
-                     <div class="col-md-4">
-                       <div class="form-group technical_id">                                       
-                        <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
-                         <select id="subject" name="technical_id" required class="form-control select2"  onchange="getTopic(this.value)">
-                           <option value="">Select Subject</option> 
-                             <?php if (!empty($skill_master))
-                                foreach($skill_master as $skill) 
-                                {
-                             ?>   
-                                 <option value="<?php echo $skill['id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['technical_id']==$skill['id'])echo "selected";?>><?php echo $skill['skill_name']; ?></option> 
-                             <?php } ?>
-                           </select> <?php echo form_error('technical_id'); ?>   
-                       </div>
-                     </div>
-                     <div class="col-md-4">
-                       <div class="form-group topic_id">
-                         <label for="exampleInputEmail1">Main Topic <span class="required">*</span></label>
-                         <select id="topic_id" name="topic_id" class="form-control select2" onchange="getSubtopic(this.value)">
-                           <option value="">Select Topic</option> 
-                           <!-- <option value="1">HTML 5</option>  -->
-                         </select> <?php echo form_error('topic_id'); ?>   
-                       </div>
-                     </div>
-                     <div class="col-md-4">
-                       <div class="form-group subtopic_id">
-                         <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
-                         <select id="subtopic_id" name="subtopic_id" class="form-control select2" onchange="get_questuions();" >
-                         </select> <?php echo form_error('subtopic_id'); ?>   
-                       </div>
-                     </div>               
-                   </div>
-                   <div class="box-body">
-        <div class="box" >
-          <p ><b style="float: left;margin-right: 80px">Total Time Duration:</b><span id="total_time"></span> <b style="float: right;margin-right: 80px" >Total Questions:</b><span id="total_questions"></span></p>
-
-               <div class="card content">
-                     <!-- <div class="front"> -->
-                      <div class="following-info">
-                         <table class="table table-borderless" id="myTable">
-                            <thead>
-                              <tr>
-
-                                <th scope="col">Sr No</th>
-                                <th scope="col">Line Item 1</th>
-                                <th scope="col">Line Item 2</th>
-                                <th scope="col">Question</th>
-                                <th scope="col">time</th>
-                                <th scope="col">Action</th>
-                               
-                              </tr>
-                            </thead>
-                            <tbody>
-                             
-                            </tbody>
-                          </table>
+                     <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade" id="add_test">
+                           <form method="post" action="<?php echo base_url(); ?>employer/add_to_test">
+                              <div class="row">
+                                 <div class="col-md-4">
+                                    <div class="form-group technical_id">                                       
+                                       <label for="exampleInputEmail1">Test Name <span class="required">*</span></label>
+                                       <input type="text" class="form-control" id="test_name" name="test_name">
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4">
+                                    <div class="form-group topic_id">
+                                       <label for="exampleInputEmail1">Main Topic <span class="required">*</span></label>
+                                       <select id="topic_id" name="topic_id" class="form-control select2" onchange="getSubtopic(this.value)">
+                                          <option value="">Select Topic</option>
+                                          <!-- <option value="1">HTML 5</option>  -->
+                                       </select>
+                                       <?php echo form_error('topic_id'); ?>   
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4">
+                                    <div class="form-group subtopic_id">
+                                       <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
+                                       <select id="subtopic_id" name="subtopic_id" class="form-control select2" onchange="get_questuions();" >
+                                       </select> <?php echo form_error('subtopic_id'); ?>   
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="row">
+                                 <div class="col-md-4">
+                                    <div class="form-group technical_id">
+                                       <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
+                                       <select id="subject" name="technical_id" required class="form-control select2"  onchange="getTopic(this.value)">
+                                          <option value="">Select Subject</option>
+                                          <?php if (!empty($skill_master))
+                                             foreach($skill_master as $skill) 
+                                             {
+                                             ?>   
+                                          <option value="<?php echo $skill['id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['technical_id']==$skill['id'])echo "selected";?>><?php echo $skill['skill_name']; ?></option>
+                                          <?php } ?>
+                                       </select>
+                                       <?php echo form_error('technical_id'); ?>   
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4">
+                                    <div class="form-group topic_id">
+                                       <label for="exampleInputEmail1">Main Topic <span class="required">*</span></label>
+                                       <select id="topic_id" name="topic_id" class="form-control select2" onchange="getSubtopic(this.value)">
+                                          <option value="">Select Topic</option>
+                                          <!-- <option value="1">HTML 5</option>  -->
+                                       </select>
+                                       <?php echo form_error('topic_id'); ?>   
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4">
+                                    <div class="form-group subtopic_id">
+                                       <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
+                                       <select id="subtopic_id" name="subtopic_id" class="form-control select2" onchange="get_questuions();" >
+                                       </select> <?php echo form_error('subtopic_id'); ?>   
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="box-body">
+                                 <div class="box" >
+                                    <p ><b style="float: left;margin-right: 80px">Total Time Duration:</b><span id="total_time"></span> <b style="float: right;margin-right: 80px" >Total Questions:</b><span id="total_questions"></span></p>
+                                    <div class="card content">
+                                       <!-- <div class="front"> -->
+                                       <div class="following-info">
+                                          <table class="table table-borderless" id="myTable">
+                                             <thead>
+                                                <tr>
+                                                   <th scope="col">Sr No</th>
+                                                   <th scope="col">Line Item 1</th>
+                                                   <th scope="col">Line Item 2</th>
+                                                   <th scope="col">Question</th>
+                                                   <th scope="col">time</th>
+                                                   <th scope="col">Action</th>
+                                                </tr>
+                                             </thead>
+                                             <tbody>
+                                             </tbody>
+                                          </table>
+                                       </div>
+                                       <!-- </div> -->
+                                    </div>
+                                 </div>
+                              </div>
+                           </form>
                         </div>
-                     <!-- </div> -->
-                   </div>
-               
-            </div>
-      </div>
-                </form>
-                  </div>
-                  <div role="tabpanel" class="tab-pane fade" id="create_test">
-
-                     <div class="table-responsive">
+                        <div role="tabpanel" class="tab-pane fade" id="create_test">
+                           <form method="post" action="<?php echo base_url(); ?>employer/add_to_test">
+                              <div class="row">
+                                 <div class="col-md-4">
+                                    <div class="form-group technical_id">                                       
+                                       <label for="exampleInputEmail1">Test Name <span class="required">*</span></label>
+                                       <input type="text" class="form-control" id="test_name" name="test_name">
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4">
+                                    <div class="form-group technical_id">                                       
+                                       <label for="exampleInputEmail1">Duration<span class="required">*</span></label>
+                                       <input type="text" class="form-control" id="test_name" name="test_name">
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4">
+                                    <div class="form-group topic_id">
+                                       <label for="exampleInputEmail1">Main Topic <span class="required">*</span></label>
+                                       <select id="topic_id" name="topic_id" class="form-control select2" onchange="getSubtopic(this.value)">
+                                          <option value="">Select Topic</option>
+                                          <!-- <option value="1">HTML 5</option>  -->
+                                       </select>
+                                       <?php echo form_error('topic_id'); ?>   
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="row">
+                                 <div class="col-md-4">
+                                    <div class="form-group subtopic_id">
+                                       <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
+                                       <select id="subtopic_id" name="subtopic_id" class="form-control select2" onchange="get_questuions();" >
+                                       </select> <?php echo form_error('subtopic_id'); ?>   
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4">
+                                    <div class="form-group technical_id">
+                                       <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
+                                       <select id="subject" name="technical_id" required class="form-control select2"  onchange="getTopic(this.value)">
+                                          <option value="">Select Subject</option>
+                                          <?php if (!empty($skill_master))
+                                             foreach($skill_master as $skill) 
+                                             {
+                                             ?>   
+                                          <option value="<?php echo $skill['id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['technical_id']==$skill['id'])echo "selected";?>><?php echo $skill['skill_name']; ?></option>
+                                          <?php } ?>
+                                       </select>
+                                       <?php echo form_error('technical_id'); ?>   
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4">
+                                    <div class="form-group topic_id">
+                                       <label for="exampleInputEmail1">Main Topic <span class="required">*</span></label>
+                                       <select id="topic_id" name="topic_id" class="form-control select2" onchange="getSubtopic(this.value)">
+                                          <option value="">Select Topic</option>
+                                          <!-- <option value="1">HTML 5</option>  -->
+                                       </select>
+                                       <?php echo form_error('topic_id'); ?>   
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="row">
+                                 <div class="col-md-4">
+                                    <div class="form-group subtopic_id">
+                                       <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
+                                       <select id="subtopic_id" name="subtopic_id" class="form-control select2" onchange="get_questuions();" >
+                                       </select> <?php echo form_error('subtopic_id'); ?>   
+                                    </div>
+                                 </div>
+                              </div>
+                               <div class="row">
+                                 <div class="col-md-6"></div>
+                                 <div class="col-md-6">
+                                    <div class="col-md-3">
+                                       <button class="btn btn-primary" type="reset">Discard</button>
+                                    </div>
+                                    <div class="col-md-3">
+                                       <button class="btn btn-primary" type="submit">Create</button>
+                                    </div>
+                                 </div>
+                              </div>
+                           </form>
+                        </div>
                      </div>
                   </div>
-               </div>
-               </div>
-
-                   
                </div>
             </div>
             <div class="col-md-3 ">
-   <div class="last_section">
-      <div class="pai_chart">
-         <main>
-            <section>
-               <div class="pieID pie">
-               </div>
-               <ul class="pieID legend">
-                  <li>
-                     <em>Total Job Posts</em>
-                     <span><?php echo sizeof($company_active_jobs); ?></span>
-                     <!--<span>718</span> -->
-                  </li>    
-                  <li>
-                     <em> Total Job Forwarded</em>
-                     <span id='total_forwarded'> </span>
-                  </li>
-                  <li>
-                     <em>Total Job Applied</em>
-                     <span id='total_applied'> </span>
-                  </li>
-                  <li>
-                     <em>Total attempted test</em>
-                     <span id='total_test'> </span>
-                  </li>
-                  <li>
-                     <em>Total Candidates passed </em>
-                     <span id='total_passed'></span>
-                  </li>
-                  <li>
-                     <em>Total Candidates interview and passed</em>
-                     <span id='total_test_int_pass'></span>
-                  </li>
-                  <li>
-                     <em>Total Candidates interview and failed</em>
-                     <span id='total_test_int_fail'></span>
-                  </li>     
-                  <li>
-                     <em>Total Candidates Accepted Offer</em>
-                     <span id='total_offer_accept'></span>
-                  </li>
-
-               </ul>
-            </section>
-         </main>
-      </div>
-      <div class="filter1">
-         <div class="panel ">
-            <div class="panel-heading">
-               <h3 class="panel-title">Location</h3>
-               <div class="pull-right">
-                  <span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
-                  <i class="glyphicon glyphicon-filter"></i>
-                  </span>
+               <div class="last_section">
+                  <div class="pai_chart">
+                     <main>
+                        <section>
+                           <div class="pieID pie">
+                           </div>
+                           <ul class="pieID legend">
+                              <li>
+                                 <em>Total Job Posts</em>
+                                 <span><?php echo sizeof($company_active_jobs); ?></span>
+                                 <!--<span>718</span> -->
+                              </li>
+                              <li>
+                                 <em> Total Job Forwarded</em>
+                                 <span id='total_forwarded'> </span>
+                              </li>
+                              <li>
+                                 <em>Total Job Applied</em>
+                                 <span id='total_applied'> </span>
+                              </li>
+                              <li>
+                                 <em>Total attempted test</em>
+                                 <span id='total_test'> </span>
+                              </li>
+                              <li>
+                                 <em>Total Candidates passed </em>
+                                 <span id='total_passed'></span>
+                              </li>
+                              <li>
+                                 <em>Total Candidates interview and passed</em>
+                                 <span id='total_test_int_pass'></span>
+                              </li>
+                              <li>
+                                 <em>Total Candidates interview and failed</em>
+                                 <span id='total_test_int_fail'></span>
+                              </li>
+                              <li>
+                                 <em>Total Candidates Accepted Offer</em>
+                                 <span id='total_offer_accept'></span>
+                              </li>
+                           </ul>
+                        </section>
+                     </main>
+                  </div>
+                  <div class="filter1">
+                     <div class="panel ">
+                        <div class="panel-heading">
+                           <h3 class="panel-title">Location</h3>
+                           <div class="pull-right">
+                              <span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
+                              <i class="glyphicon glyphicon-filter"></i>
+                              </span>
+                           </div>
+                        </div>
+                        <div class="panel-body">
+                           <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter location" />
+                           <div class="location_fil">
+                              <div class="alert">
+                                 <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                                 <strong>css</strong>
+                              </div>
+                              <div class="alert">
+                                 <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                                 <strong>css</strong>
+                              </div>
+                              <div class="alert">
+                                 <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                                 <strong>css</strong>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="filter1">
+                     <div class="panel ">
+                        <div class="panel-heading">
+                           <h3 class="panel-title">Education</h3>
+                           <div class="pull-right">
+                              <span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
+                              <i class="glyphicon glyphicon-filter"></i>
+                              </span>
+                           </div>
+                        </div>
+                        <div class="panel-body">
+                           <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter education" />
+                           <div class="location_fil">
+                              <div class="alert">
+                                 <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                                 <strong>css</strong>
+                              </div>
+                              <div class="alert">
+                                 <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                                 <strong>css</strong>
+                              </div>
+                              <div class="alert">
+                                 <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                                 <strong>css</strong>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="filter1">
+                     <div class="panel ">
+                        <div class="panel-heading">
+                           <h3 class="panel-title">Mandatory</h3>
+                           <div class="pull-right">
+                              <span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
+                              <i class="glyphicon glyphicon-filter"></i>
+                              </span>
+                           </div>
+                        </div>
+                        <div class="panel-body">
+                           <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter education" />
+                           <div class="location_fil">
+                              <div class="alert">
+                                 <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                                 <strong>css</strong>
+                              </div>
+                              <div class="alert">
+                                 <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                                 <strong>css</strong>
+                              </div>
+                              <div class="alert">
+                                 <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                                 <strong>css</strong>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="experience">
+                     <form class="exp_level">
+                        <label for="range1">Experience</label>
+                        <input id="range1" type="range" name="range1" min="1" max="10" step="0.1" value="5">
+                        <label for="range3">Availability</label>
+                        <input id="range3" type="range" name="range3" min="0" max="100" step="1" value="50">
+                     </form>
+                  </div>
                </div>
             </div>
-            <div class="panel-body">
-               <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter location" />
-               <div class="location_fil">
-                  <div class="alert">
-                     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                     <strong>css</strong>
-                  </div>
-                  <div class="alert">
-                     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                     <strong>css</strong>
-                  </div>
-                  <div class="alert">
-                     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                     <strong>css</strong>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="filter1">
-         <div class="panel ">
-            <div class="panel-heading">
-               <h3 class="panel-title">Education</h3>
-               <div class="pull-right">
-                  <span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
-                  <i class="glyphicon glyphicon-filter"></i>
-                  </span>
-               </div>
-            </div>
-            <div class="panel-body">
-               <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter education" />
-               <div class="location_fil">
-                  <div class="alert">
-                     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                     <strong>css</strong>
-                  </div>
-                  <div class="alert">
-                     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                     <strong>css</strong>
-                  </div>
-                  <div class="alert">
-                     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                     <strong>css</strong>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="filter1">
-         <div class="panel ">
-            <div class="panel-heading">
-               <h3 class="panel-title">Mandatory</h3>
-               <div class="pull-right">
-                  <span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
-                  <i class="glyphicon glyphicon-filter"></i>
-                  </span>
-               </div>
-            </div>
-            <div class="panel-body">
-               <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter education" />
-               <div class="location_fil">
-                  <div class="alert">
-                     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                     <strong>css</strong>
-                  </div>
-                  <div class="alert">
-                     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                     <strong>css</strong>
-                  </div>
-                  <div class="alert">
-                     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                     <strong>css</strong>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="experience">
-         <form class="exp_level">
-            <label for="range1">Experience</label>
-            <input id="range1" type="range" name="range1" min="1" max="10" step="0.1" value="5">
-            <label for="range3">Availability</label>
-            <input id="range3" type="range" name="range3" min="0" max="100" step="1" value="50">
-         </form>
-      </div>
-   </div>
-</div>
          </div>
       </div>
    </div>
@@ -1253,7 +1312,7 @@ label.btn.btn-secondary {
       
       }
       function get_total(){
-    // if ($('#checkbox').is(':checked')) {
+      // if ($('#checkbox').is(':checked')) {
       // alert('ff');
       var checkedValsofname = $('.chkbx:checkbox:checked').map(function() {
                    return this.getAttribute("data-valueone");
@@ -1264,8 +1323,8 @@ label.btn.btn-secondary {
             var myNameArray =  data_arr1.split(',');
               // var sum = 0;
           var total_time = sum(myNameArray);
-
+      
              $('#total_time').html(total_time+' seconds');
              $('#total_questions').html(data_arr1.length);
-  }
+      }
    </script>
