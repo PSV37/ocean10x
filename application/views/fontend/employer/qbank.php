@@ -1032,7 +1032,7 @@
                               </div>
                               <div class="box-body">
                                  <div class="box" >
-                                    <p ><b style="float: left;margin-right: 80px">Total Time Duration:</b><span id="total_time"></span> <b style="float: right;margin-right: 80px" >Total Questions:</b><span id="total_questions"></span></p>
+                                    <p ><b style="float: left;margin-right: 80px">Total Time Duration:<span id="total_time"></span></b> <b style="float: right;margin-right: 80px" >Total Questions:<span id="total_questions"></span></b></p>
                                     <div class="card content">
                                        <!-- <div class="front"> -->
                                        <div class="following-info">
@@ -1348,7 +1348,7 @@
           var total_time = sum(myNameArray);
 
              $('#total_time').html(total_time+' seconds');
-             $('#total_questions').html(data_arr1.length);
+             $('#total_questions').html(myNameArray.length);
 
   }
 
