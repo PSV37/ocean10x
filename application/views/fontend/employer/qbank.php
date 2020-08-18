@@ -975,7 +975,7 @@ label.btn.btn-secondary {
                         </div>
                      </div>
                     
-                  </div>
+                  
                 <div class="tab-content">
                   <div role="tabpanel" class="tab-pane fade" id="add_test">
                      <form method="post" action="<?php echo base_url(); ?>employer/add_to_test">
@@ -1067,6 +1067,7 @@ label.btn.btn-secondary {
       </div>
                 </form>
                   </div>
+               </div>
                </div>
                    
                </div>
