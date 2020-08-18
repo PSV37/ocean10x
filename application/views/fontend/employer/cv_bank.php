@@ -1392,7 +1392,7 @@
             <div class="filter1">
                <p style="font-size:18px;margin-top:15px;">Time Period in Current Job</p>
                   <div class="range-wrap">
-                  <input type="range" class="range" id="stability_id" onchange="get_data();" min="<6M" max="<1Y" step="5" value="0">
+                  <input type="range" class="range" id="stability_id" onchange="get_data();" min="0" max="3" value="0">
                   <output class="bubble notice_period" ></output>
 
                <!--<select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" id='stability_id' tabindex="-98">
@@ -3856,4 +3856,18 @@
      // Sorta magic numbers based on size of the native UI thumb
      bubble.style.left = `calc(${newVal}% + (${8 - newVal * 0.15}px))`;
    }
+</script>
+
+<script> 
+var rng = document.getElementById("stability_id");
+var ro = document.getElementById("rngOutput");
+var myRange = ["<6Months","<1year","<2years",">2years"];
+
+function updateRange(){
+   ro.textContent = myRange[parseInt(stability_id.value, 10)];
+   console.log("Selected value is: " + myRange[parseInt(rng.value, 10)] + ", Associated value is: " + rng.value);
+};
+
+window.addEventListener("DOMContentLoaded", updateRange);
+rng.addEventListener("input", updateRange);
 </script>
