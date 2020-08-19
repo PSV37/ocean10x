@@ -920,8 +920,9 @@ i.fa.fa-plus {
     height: fit-content;
 }
 span.select2-selection.select2-selection--single {
-    width: 180px;
+  width: 275px;
 }
+
 </style>
 <div class="container-fluid main-d">
    <div class="container">
