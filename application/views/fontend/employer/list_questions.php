@@ -567,3 +567,164 @@ i.fa.fa-plus {
    
    }, false);
 </script>
+ <script>
+ function getTopic(id){
+        if(id){
+          $.ajax({
+            type:'POST',
+            url:'<?php echo base_url();?>employer/gettopic',
+            data:{id:id},
+            success:function(res){
+              $('#topic_id').html(res);
+            }
+            
+          }); 
+          }
+       }
+       function getTopicocean(id){
+        if(id){
+          $.ajax({
+            type:'POST',
+            url:'<?php echo base_url();?>employer/gettopic',
+            data:{id:id},
+            success:function(res){
+              $('#topic_id_ocean').html(res);
+            }
+            
+          }); 
+          }
+       }
+       function getSubtopic(id){
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>employer/getsubtopic',
+                data:{id:id},
+                success:function(res){
+                    $('#subtopic_id').html(res);
+                }
+                
+            }); 
+          }
+   
+    }
+    function getSubtopics(id){
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>employer/getsubtopic',
+                data:{id:id},
+                success:function(res){
+                    $('#subtopic_id_ocean').html(res);
+                }
+                
+            }); 
+          }
+   
+    }
+  function get_total(){
+    // if ($('#checkbox').is(':checked')) {
+      // alert('ff');
+      var checkedValsofname = $('.chkbx:checkbox:checked').map(function() {
+                   return this.getAttribute("data-valueone");
+               }).get();
+               var data_arr1= (checkedValsofname.join(","));
+      
+            // alert();
+            var myNameArray =  data_arr1.split(',');
+              // var sum = 0;
+          var total_time = sum(myNameArray);
+
+             $('#total_time').html(total_time+' seconds');
+             $('#total_questions').html(myNameArray.length);
+
+  }
+
+  function get_questuions(job_id)
+  {
+   var subject = $('#subject').val();
+   var topic_id = $('#topic_id').val();
+   var subtopic_id = $('#subtopic_id').val();
+   var ques_type = $('#ques_type').val();
+   var level = $('#level').val();
+    $.ajax({
+              url: "<?php echo base_url();?>employer/get_test_questions",
+              type: "POST",
+              data: {subject:subject,topic_id:topic_id,subtopic_id:subtopic_id,ques_type:ques_type,level:level},
+              // contentType:false,
+              // processData:false,
+               // dataType: "json",
+              success: function(data)
+              {
+                $('tbody').html(data);
+              }
+        });
+       
+  }
+   
+  
+     $(function(){
+      var test_name = $('#test_name').val();
+  $("#frwd_btn").on("click", function() {
+    // if (confirm("Selected Rows will be updated in external tracker!!")) {
+    //         var data = [];
+            var checkedVals = $('.chkbx:checkbox:checked').map(function() {
+                   return this.value;
+               }).get();
+               var data_arr= (checkedVals.join(","));
+               $('#question_id').val(data_arr);
+
+               var checkedValsofname = $('.chkbx:checkbox:checked').map(function() {
+                   return this.getAttribute("data-valueone");
+               }).get();
+               var data_arr1= (checkedValsofname.join(","));
+      
+            // alert();
+            var myNameArray =  data_arr1.split(',');
+              // var sum = 0;
+          var total_time = sum(myNameArray);
+
+            var level_val = $('')
+             $('#test_time').val(total_time+' seconds');
+             $('#level_data').val($('#level').val());
+             $('#subject_data').val($('#subject').val());
+             $('#type').val($('#ques_type').val());
+
+             $('#timer_data').val($('input[name=timer]:checked').val());
+             $('#previous_option_data').val($('input[name=previous_option]:checked').val());
+             $('#review_option_data').val($('input[name=review_option]:checked').val());
+             $('#negative_data').val($('input[name=negative]:checked').val());
+             $('#each_question_ans_data').val($('input[name=each_question_ans]:checked').val());
+             $('#display_result_data').val($('input[name=display_result]:checked').val());
+              
+                      if($('#js').valid()) 
+                      {
+                          $('#add_test').modal('show');
+
+
+                      }
+
+
+    
+  });
+});
+function sum(input){
+             
+ if (toString.call(input) !== "[object Array]")
+    return false;
+      
+            var total =  0;
+            for(var i=0;i<input.length;i++)
+              {                  
+                if(isNaN(input[i])){
+                continue;
+                 }
+                  total += Number(input[i]);
+               }
+             return total;
+            }
+
+  </script> 
+<script>
+   $('.select2').select2();
+   </script>
