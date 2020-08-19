@@ -776,6 +776,137 @@ span.select2-selection.select2-selection--single {
       </div>
    </div>
 </div>
+<?php $key = 1; if (!empty($oceanchamp_tests)): foreach ($oceanchamp_tests as $tests) : ?>
+<div class="modal" id="rotateModal<?php echo $tests['test_id'] ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+   <div class="modal-dialog" role="document">
+      <div class="modal-content">
+         <div class="modal-header" style="border-bottom:none;">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Forward This Test</h5>
+         </div>
+         <form action="<?php echo base_url() ?>employer/forword_test" class="sendEmail" method="post" autocomplete="off">
+            <input type="hidden" name="test_id" id="test_id" value="<?php echo $tests['test_id']; ?>">
+            <div class="modal-body" style="padding:15px 40px;">
+               <input type="hidden" name="consultant" value="JobSeeker">  
+               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <label class="mdl-textfield__label" for="sample3">E-mail:</label>
+                  <input type="email"  name="candiate_email"  id="email" placeholder="Enter comma seperated Emails"  id="subject" data-required="true" multiple style="display: inline-block;" required>
+               </div>
+               <input type="hidden" name="job_post_id" value="" id="auto-value">
+               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
+                  <label class="mdl-textfield__label" for="sample3">Message:</label>
+                  <textarea class="form-control" name="message" rows="5" id="comment" value="" required></textarea>
+               </div>
+               <input type="hidden" name="forward_job_email" id="forward_job_email" value="<?php echo $cv_row['js_email']; ?>">
+            </div>
+            <div class="modal-footer">
+               <button type="submit" class="btn btn-save">Send</button>
+            </div>
+         </form>
+      </div>
+   </div>
+</div>
+<?php $key = 1; if (!empty($oceanchamp_tests)): foreach ($oceanchamp_tests as $tests) : ?>
+<div class="modal" id="edit_test<?php echo $tests['test_id'] ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+   <div class="modal-dialog" role="document">
+      <div class="modal-content">
+         <div class="modal-header" style="border-bottom:none;">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Forward This Test</h5>
+         </div>
+         <form action="<?php echo base_url() ?>employer/update_test" class="sendEmail" method="post" autocomplete="off">
+            <input type="hidden" name="test_id" id="test_id" value="<?php echo $tests['test_id']; ?>">
+            <div class="modal-body" style="padding:15px 40px;">
+               <div class="col-md-6">
+                  <div class="form-group ques_type">
+                     <label for="exampleInputEmail1">Question Type<span class="required">*</span></label>
+                     <select name="ques_type" id="ques_type" class="form-control select2" type="text" onchange="get_questuions();">
+                        <option value="MCQ"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='MCQ')echo "selected";?>>MCQ</option>
+                        <option value="Subjective"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Subjective')echo "selected";?>>Subjective</option>
+                        <option value="Practical"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Practical')echo "selected";?>>Practical</option>
+                     </select>
+                     <?php echo form_error('ques_type'); ?>   
+                  </div>
+               </div>
+               <div class="col-md-6"></div>
+               <div class="col-md-4">
+                  <div class="form-group timer">
+                     <label for="male">Timer On each Question</label><br>
+                     <label class="radio-inline" >
+                     <input type="radio" name="timer" style=" margin-right: 11px;" value="Y" checked> Yes
+                     </label>
+                     <label class="radio-inline">
+                     <input type="radio" name="timer" value="N" style="margin-left: -30px;">No
+                     </label>
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <div class="form-group previous_option">
+                     <label for="male">Allowed to Go back</label><br>
+                     <label class="radio-inline">
+                     <input type="radio" name="previous_option"  style=" margin-right: 11px;" value="Y" checked> Yes
+                     </label>
+                     <label class="radio-inline">
+                     <input type="radio" name="previous_option" value="N" style="margin-left: -30px;">No
+                     </label>
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <div class="form-group review_option">
+                     <label for="male">Allowed to Review</label><br>
+                     <label class="radio-inline">
+                     <input type="radio" name="review_option" style=" margin-right: 11px;" value="Y" checked> Yes
+                     </label>
+                     <label class="radio-inline">
+                     <input type="radio" name="review_option" value="N" style="margin-left: -30px;">No
+                     </label>
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <div class="form-group negative">
+                     <label for="male">Negative Marking</label><br>
+                     <label class="radio-inline">
+                     <input type="radio" name="negative" style=" margin-right: 11px;" value="Y" checked> Yes
+                     </label>
+                     <label class="radio-inline">
+                     <input type="radio" name="negative" value="N" style="margin-left: -30px;">No
+                     </label>
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <div class="form-group each_question_ans">
+                     <label for="male">Display Correct Answer for each Question</label><br>
+                     <label class="radio-inline">
+                     <input type="radio" name="each_question_ans" style=" margin-right: 11px;" value="Y" checked> Yes
+                     </label>
+                     <label class="radio-inline">
+                     <input type="radio" name="each_question_ans" value="N" style="margin-left: -30px;">No
+                     </label>
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <div class="form-group display_result">
+                     <label for="male">Display Test Result to Candidate</label><br>
+                     <label class="radio-inline">
+                     <input type="radio" name="display_result" style=" margin-right: 11px;" value="Y" checked> Yes
+                     </label>
+                     <label class="radio-inline">
+                     <input type="radio" name="display_result" value="N" style="margin-left: -30px;">No
+                     </label>
+                  </div>
+               </div>
+               <input type="hidden" name="job_post_id" value="" id="auto-value">
+               <input type="hidden" name="forward_job_email" id="forward_job_email" value="<?php echo $cv_row['js_email']; ?>">
+            </div>
+            <div class="modal-footer"  style="    margin-top: 340px;">
+               <button type="submit" class="btn btn-save">update</button>
+            </div>
+         </form>
+      </div>
+   </div>
+</div>
+<?php
+   endforeach;endif;?>
 <script>
    // Show an element
    var show = function (elem) {
