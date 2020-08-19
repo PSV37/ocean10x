@@ -920,7 +920,7 @@ i.fa.fa-plus {
     height: fit-content;
 }
 span.select2-selection.select2-selection--single {
-  width: 285px;
+  width: 180px;
 }
 
 </style>
@@ -928,7 +928,7 @@ span.select2-selection.select2-selection--single {
    <div class="container">
       <div class="col-md-12">
          <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
-         <div class="col-md-9" style="margin-top:75px;">
+         <div class="col-md-6" style="margin-top:75px;">
              <div class="row">
                       <a style="float: right;"  href="<?php echo base_url(); ?>employer/create-test"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Create Test</i></button></a>
                     </div>
@@ -1122,7 +1122,148 @@ span.select2-selection.select2-selection--single {
                      </div>
                   </div>
                </div>
-               
+               <div class="col-md-3 ">
+               <div class="last_section">
+                  <div class="pai_chart">
+                     <main>
+                        <section>
+                           <div class="pieID pie">
+                           </div>
+                           <ul class="pieID legend">
+                              <li>
+                                 <em>Total Job Posts</em>
+                                 <span><?php echo sizeof($company_active_jobs); ?></span>
+                                 <!--<span>718</span> -->
+                              </li>
+                              <li>
+                                 <em> Total Job Forwarded</em>
+                                 <span id='total_forwarded'> </span>
+                              </li>
+                              <li>
+                                 <em>Total Job Applied</em>
+                                 <span id='total_applied'> </span>
+                              </li>
+                              <li>
+                                 <em>Total attempted test</em>
+                                 <span id='total_test'> </span>
+                              </li>
+                              <li>
+                                 <em>Total Candidates passed </em>
+                                 <span id='total_passed'></span>
+                              </li>
+                              <li>
+                                 <em>Total Candidates interview and passed</em>
+                                 <span id='total_test_int_pass'></span>
+                              </li>
+                              <li>
+                                 <em>Total Candidates interview and failed</em>
+                                 <span id='total_test_int_fail'></span>
+                              </li>
+                              <li>
+                                 <em>Total Candidates Accepted Offer</em>
+                                 <span id='total_offer_accept'></span>
+                              </li>
+                           </ul>
+                        </section>
+                     </main>
+                  </div>
+                  <div class="filter1">
+                     <div class="panel ">
+                        <div class="panel-heading">
+                           <h3 class="panel-title">Location</h3>
+                           <div class="pull-right">
+                              <span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
+                              <i class="glyphicon glyphicon-filter"></i>
+                              </span>
+                           </div>
+                        </div>
+                        <div class="panel-body">
+                           <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter location" />
+                           <div class="location_fil">
+                              <div class="alert">
+                                 <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                                 <strong>css</strong>
+                              </div>
+                              <div class="alert">
+                                 <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                                 <strong>css</strong>
+                              </div>
+                              <div class="alert">
+                                 <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                                 <strong>css</strong>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="filter1">
+                     <div class="panel ">
+                        <div class="panel-heading">
+                           <h3 class="panel-title">Education</h3>
+                           <div class="pull-right">
+                              <span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
+                              <i class="glyphicon glyphicon-filter"></i>
+                              </span>
+                           </div>
+                        </div>
+                        <div class="panel-body">
+                           <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter education" />
+                           <div class="location_fil">
+                              <div class="alert">
+                                 <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                                 <strong>css</strong>
+                              </div>
+                              <div class="alert">
+                                 <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                                 <strong>css</strong>
+                              </div>
+                              <div class="alert">
+                                 <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                                 <strong>css</strong>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="filter1">
+                     <div class="panel ">
+                        <div class="panel-heading">
+                           <h3 class="panel-title">Mandatory</h3>
+                           <div class="pull-right">
+                              <span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
+                              <i class="glyphicon glyphicon-filter"></i>
+                              </span>
+                           </div>
+                        </div>
+                        <div class="panel-body">
+                           <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter education" />
+                           <div class="location_fil">
+                              <div class="alert">
+                                 <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                                 <strong>css</strong>
+                              </div>
+                              <div class="alert">
+                                 <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                                 <strong>css</strong>
+                              </div>
+                              <div class="alert">
+                                 <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                                 <strong>css</strong>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="experience">
+                     <form class="exp_level">
+                        <label for="range1">Experience</label>
+                        <input id="range1" type="range" name="range1" min="1" max="10" step="0.1" value="5">
+                        <label for="range3">Availability</label>
+                        <input id="range3" type="range" name="range3" min="0" max="100" step="1" value="50">
+                     </form>
+                  </div>
+               </div>
+            </div>
           
          
       </div>
