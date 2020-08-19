@@ -355,7 +355,7 @@
                      </div>
                   </div>
                  
-               <div role="tabpanel" class="tab-pane fade" id="qbank">
+               <div role="tabpanel" class="tab-pane fade active" id="qbank">
                   <div class="select-option">
                      <p style="FONT-SIZE: 12PX;COLOR: #0a5854;">Total No. Of Question:10</p>
                      <a style="float: left;" href="<?php echo base_url(); ?>employer/create-test"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Create Test</i></button></a>
