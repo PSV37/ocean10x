@@ -120,6 +120,7 @@
    background-color: #fff;
    border: solid 2px #18c5bd;
    font-weight: 700;
+   width: 40%;
    }
    label.btn.btn-secondary {
    color: #949494;
@@ -128,6 +129,7 @@
    border-radius: 30px;
    padding: 4px 10px;
    font-weight: 700;
+   width: 40%;
    }
    button.btn.btn-primary {
     font-size: 15px;
@@ -376,7 +378,8 @@ span.select2-selection.select2-selection--single {
                Question Bank
                <a style="float: right;" href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Add Question</i></button></a>
                </div> -->
-            <ul id="myTabs" class="" role="tablist" data-tabs="tabs">
+            <ul id="myTabs" class="
+            width: 50%;" role="tablist" data-tabs="tabs">
                <li class="btn btn-secondary active"><a href="#qbank" data-toggle="tab">Question Bank</a></li>
                <li class="btn btn-secondary"><a href="#Videos" data-toggle="tab">Test Paper Bank</a></li>
             </ul>
