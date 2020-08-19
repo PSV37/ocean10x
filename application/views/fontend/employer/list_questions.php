@@ -365,12 +365,11 @@ li.btn.btn-secondary.active {
                   </div>
                  
                <div role="tabpanel" class="tab-pane fade active" id="qbank">
-                <div>
-                   <a href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Add a Question</i></button></a>
-                </div>
-                 <div>
+                
+                   <a href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Add a Question</i></button></a><br>
+              
                    <a  href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Bulk Upload Questions</i></button></a>
-                </div>
+              
                
                
                
