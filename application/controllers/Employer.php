@@ -4736,7 +4736,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
         $where_active = "corporate_cv_bank.company_id = '$company_id' and corporate_cv_bank.js_experience='$exp_var' and corporate_cv_bank.js_current_notice_period='$notice_period_var' and corporate_cv_bank.js_top_education = '$education_var' and corporate_cv_bank.js_current_ctc='$current_ctc_var' and corporate_cv_bank.js_working_since = '$stability'";
 
-        $where_active.= ' GROUP by cv_id';
+        $where_active.= ' GROUP by corporate_cv_bank.cv_id';
 
         $join_cond = array('cv_folder_relation' => 'cv_folder_relation.cv_folder_id = cv_folder.id | Left', 'corporate_cv_bank' => 'corporate_cv_bank.cv_id = cv_folder_relation.cv_id | Left');
 
