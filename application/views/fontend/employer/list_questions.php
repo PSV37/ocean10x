@@ -977,12 +977,12 @@ span.select2-selection.select2-selection--single {
             </ul>
             <div class="tab-content">
                <div role="tabpanel" class="tab-pane fade" id="Videos">
-                    <div class="row" style="float: right;margin-right: 200px;">
+                    <div class="row" style="float: right;">
                      <!--  <a style="float: right;margin-right: 200px;"  href="<?php echo base_url(); ?>employer/create-test"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Create Test</i></button></a> -->
                      <div class="btn-group-toggle" data-toggle="buttons" >
                            <a href="#add_test" data-toggle="tab"><label class="btn btn-secondary active">
                            <input type="radio" name="options" id="option1" autocomplete="off"  style="display: none;">I want to choose My Questions in the Test !
-                           </label></a>
+                           </label></a><br>
                            <a href="#create_test" data-toggle="tab"><label class="btn btn-secondary">
                            <input type="radio" name="options" id="option2" autocomplete="off" style="display: none;"> Ocean can help me create the Test !
                            </label></a>
