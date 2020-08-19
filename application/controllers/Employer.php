@@ -4733,7 +4733,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
         $where_active.= ' GROUP by cv_id';
 
-        $join_cond = array('corporate_cv_bank' => 'corporate_cv_bank.cv_id = cv_folder_relation.cv_id|left');
+        $join_cond = array('corporate_cv_bank' => 'corporate_cv_bank.cv_id = cv_folder_relation.cv_id|left', 'cv_folder_relation' => 'cv_folder_relation.cv_id = corporate_cv_bank.cv_id|left' );
 
         $own_cvs = $this->Master_model->getMaster('cv_folder', $where = $where_active, $join = $join_cond, $order = false, $field = false, $select = false, $limit = false, $start = false, $search = false);
 
