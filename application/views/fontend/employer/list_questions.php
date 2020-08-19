@@ -156,6 +156,9 @@ i.fa.fa-plus {
 .box-body {
     height: fit-content;
 }
+span.select2-selection.select2-selection--single {
+    width: 275px;
+}
 </style>
 <?php $this->load->view('fontend/layout/employer_new_header.php');?> 
 <!---header-->
