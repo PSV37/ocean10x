@@ -77,6 +77,7 @@
    background-color: #18c5bd;
    border: none;
    border-radius: 15px;
+   width: 140px;
    }
   @media (min-width: 768px){
    .nav-justified>li {
@@ -143,6 +144,11 @@ li.btn.btn-secondary.active {
     box-shadow: none;
     border: solid 2px #18c5bd;
     border-radius: 65px;
+}
+#qbottons
+{
+      margin-right: 202px;
+    float: right;
 }
 </style>
 <?php $this->load->view('fontend/layout/employer_new_header.php');?> 
@@ -366,9 +372,9 @@ li.btn.btn-secondary.active {
                  
                <div role="tabpanel" class="tab-pane fade active" id="qbank">
                 
-                   <a href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Add a Question</i></button></a><br>
+                   <a id="qbottons" style="margin-top: -41px;" href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Add a Question</i></button></a><br>
               
-                   <a  href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Bulk Upload Questions</i></button></a>
+                   <a id="qbottons" style="margin-top: -25px;" href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Bulk Upload Questions</i></button></a>
               
                
                
