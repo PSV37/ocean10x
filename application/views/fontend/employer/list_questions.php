@@ -138,6 +138,11 @@
 .btn-group-toggle {
     margin-left: 139px;
 }
+li.btn.btn-secondary.active {
+    box-shadow: none;
+    border: solid 2px #18c5bd;
+    border-radius: 65px;
+}
 </style>
 <?php $this->load->view('fontend/layout/employer_new_header.php');?> 
 <!---header-->
@@ -359,6 +364,8 @@
                   </div>
                  
                <div role="tabpanel" class="tab-pane fade active" id="qbank">
+                <a style="float: right;" href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Add a Question</i></button></a>
+                <a style="float: right;" href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Bulk Upload Questions</i></button></a>
                   <div class="select-option">
                      <p style="FONT-SIZE: 12PX;COLOR: #0a5854;">Total No. Of Question:10</p>
                      <a style="float: left;" href="<?php echo base_url(); ?>employer/create-test"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Create Test</i></button></a>
