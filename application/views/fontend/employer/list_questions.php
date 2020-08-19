@@ -338,7 +338,7 @@ span.select2-selection.select2-selection--single {
    margin-top: 29px;
    position:absolute;}
 </style>
-<?php $this->load->view('fontend/layout/employer_new_header.php');?> 
+
 <!---header-->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/questionbank.css">
 <div class="container-fluid main-d">
