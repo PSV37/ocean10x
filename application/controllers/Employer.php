@@ -1389,6 +1389,9 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $where_all = "questionbank.ques_status='1' AND ques_created_by='$employer_id'";
         $join_emp = array('skill_master' => 'skill_master.id=questionbank.technical_id |left outer', 'topic' => 'topic.topic_id=questionbank.topic_id |left outer', 'subtopic' => 'subtopic.subtopic_id=questionbank.subtopic_id |left outer', 'lineitem' => 'lineitem.lineitem_id=questionbank.lineitem_id |left outer', 'lineitemlevel' => 'lineitemlevel.lineitemlevel_id=questionbank.lineitemlevel_id |left outer', 'questionbank_answer' => 'questionbank_answer.question_id = questionbank.ques_id|LEFT OUTER');
         $data['questionbank'] = $this->Master_model->getMaster('questionbank', $where_all, $join_emp, $order = 'desc', $field = 'ques_id', $select = false, $limit = false, $start = false, $search = false);
+        
+        $where_all = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id' and test_status = '1'";
+        $data['oceanchamp_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where = $where_all, $join = FALSE, $order = 'desc', $field = 'oceanchamp_tests.test_id', $select = false, $limit = false, $start = false, $search = false);
         // echo  $this->db->last_query(); die;
         // $this->load->view('fontend/employer/list_questions', $data);
         $this->load->view('fontend/employer/list_questions', $data);
@@ -1621,6 +1624,19 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
 
           $where = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id' and test_status = '2'";
         $data['ocean_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where = $where, $join = FALSE, $order = 'desc', $field = 'oceanchamp_tests.test_id', $select = false, $limit = false, $start = false, $search = false);
+
+
+        $where_cn = "status=1";
+        $data['skill_master'] = $this->Master_model->getMaster('skill_master', $where_cn);
+        //$where_opt= "options.status=1";
+        $data['options'] = $this->Master_model->getMaster('options');
+        $where_state = "topic.topic_status=1";
+        $data['topic'] = $this->Master_model->getMaster('topic', $where_state);
+        $where_subtopic = "subtopic.subtopic_status='1'";
+        $data['subtopic'] = $this->Master_model->getMaster('subtopic', $where_subtopic);
+        $where_lineitem = "lineitem.lineitem_status='1'";
+        $data['lineitem'] = $this->Master_model->getMaster('lineitem', $where_lineitem);
+
         // echo  $this->db->last_query(); die;
         $this->load->view('fontend/employer/list_tests', $data);
         // $this->load->view('fontend/employer/all_questions.php', $data);

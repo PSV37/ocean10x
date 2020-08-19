@@ -248,7 +248,7 @@
    line-height: 30px;
    margin-top: 0px;
    margin-bottom: 15px;
-   }*/
+   }
    .active-span{
    position: absolute;
    top: 12px;
@@ -1128,7 +1128,7 @@ span.select2-selection.select2-selection--single {
       </div>
    </div>
 </div>
-<?php $key = 1; if (!empty($oceanchamp_tests)): foreach ($oceanchamp_tests as $tests) : ?>
+<?php $key = 1; if (!empty($ocean_tests)): foreach ($ocean_tests as $tests) : ?>
 <div class="modal" id="rotateModal<?php echo $tests['test_id'] ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
    <div class="modal-dialog" role="document">
       <div class="modal-content">

@@ -948,22 +948,13 @@
          <div class="col-md-12">
             <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
             <div class="col-md-6" style="margin-top:75px;">
-               <ul id="myTabs" class="nav nav-pills nav-justified" role="tablist" data-tabs="tabs">
+               <!-- <ul id="myTabs" class="nav nav-pills nav-justified" role="tablist" data-tabs="tabs">
                   <li class="active"><a href="#Commentary" data-toggle="tab">Corporate QuestionBank</a></li>
                   <li><a href="#Videos" data-toggle="tab">Ocean QuestionBank !</a></li>
-               </ul>
-               <div class="tab-content">
-                  <div role="tabpanel" class="tab-pane fade" id="Videos">
-                     <div class="table-responsive">
-                     </div>
-                  </div>
-                  <div role="tabpanel" class="tab-pane fade" id="Events">
-                     <div class="table-responsive">
-                     </div>
-                  </div>
-                  <div role="tabpanel" class="tab-pane fade" id="music">
-                  </div>
-                  <div role="tabpanel" class="tab-pane fade in active" id="Commentary">
+               </ul> -->
+               
+                 
+               
                      <div class="row">
                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
                            <a href="#add_test" data-toggle="tab"><label class="btn btn-secondary active">
@@ -1162,8 +1153,8 @@
                            </form>
                         </div>
                      </div>
-                  </div>
-               </div>
+                 
+              
             </div>
             <div class="col-md-3 ">
                <div class="last_section">
