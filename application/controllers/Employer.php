@@ -4688,6 +4688,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
         $where_active.= ' GROUP by cv_id';
 
+
         $join_cond = array('js_info' => 'js_info.email = corporate_cv_bank.js_email|Left', 'js_login_logs' => 'js_info.job_seeker_id = js_login_logs.job_seeker_id|Left');
 
         $active_cv = $this->Master_model->getMaster('corporate_cv_bank', $where = $where_active, $join = $join_cond, $order = false, $field = false, $select = false, $limit = false, $start = false, $search = false);
@@ -4727,6 +4728,12 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $before_date = date('Y-m-d', strtotime("-".$stability." months"));
             $where = "corporate_cv_bank.js_working_since >= '".$before_date."'";
         }
+
+        $where_active = "corporate_cv_bank.company_id = '$company_id' and corporate_cv_bank.js_experience='$exp_var' and corporate_cv_bank.js_current_notice_period='$notice_period_var' and corporate_cv_bank.js_top_education = '$education_var' and corporate_cv_bank.js_current_ctc='$current_ctc_var' and corporate_cv_bank.js_working_since = '$stability'";
+
+        $where_active.= ' GROUP by cv_id';
+
+        $join_cond = array('corporate_cv_bank' => 'corporate_cv_bank.cv_id = cv_folder_relation.cv_id|left');
 
         $own_cvs = $this->Master_model->getMaster('cv_folder', $where = $where_active, $join = $join_cond, $order = false, $field = false, $select = false, $limit = false, $start = false, $search = false);
 
