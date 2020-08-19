@@ -173,7 +173,7 @@ i.fa.fa-plus {
             <div class="tab-content">
                <div role="tabpanel" class="tab-pane fade" id="Videos">
                     <div class="row">
-                      <a style="float: left;" href="<?php echo base_url(); ?>employer/create-test"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Create Test</i></button></a>
+                      <a style="float: right;margin-right: 200px;"  href="<?php echo base_url(); ?>employer/create-test"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Create Test</i></button></a>
                     </div>
                      <div class="row">
                         <div class="btn-group-toggle" data-toggle="buttons" >
