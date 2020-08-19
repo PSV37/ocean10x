@@ -111,6 +111,30 @@
    .panel-body {
    padding: 4px;
    }
+    label.btn.btn-secondary.active {
+   border-radius: 20px;
+   border: solid 2px;
+   color: #18c5bd;
+   background-color: #fff;
+   border: solid 2px #18c5bd;
+   font-weight: 700;
+   }
+   label.btn.btn-secondary {
+   color: #949494;
+   background-color: #fff;
+   border: solid 2px #a5a5a5;
+   border-radius: 30px;
+   padding: 4px 10px;
+   font-weight: 700;
+   }
+   button.btn.btn-primary {
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 80px;
+    padding: 5px;
+    margin-right: -199px;
+    min-width: 80px;
+}
 </style>
 <?php $this->load->view('fontend/layout/employer_new_header.php');?> 
 <!---header-->
@@ -132,7 +156,7 @@
                <div role="tabpanel" class="tab-pane fade" id="Videos">
                    
                      <div class="row">
-                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <div class="btn-group-toggle" data-toggle="buttons" >
                            <a href="#add_test" data-toggle="tab"><label class="btn btn-secondary active">
                            <input type="radio" name="options" id="option1" autocomplete="off" >I want to choose My Questions in the Test !
                            </label></a>
