@@ -77,7 +77,7 @@
    background-color: #18c5bd;
    border: none;
    border-radius: 15px;
-   width: 140px;
+   width: auto;
    }
   @media (min-width: 768px){
    .nav-justified>li {
@@ -149,6 +149,9 @@ li.btn.btn-secondary.active {
 {
       margin-right: 202px;
     float: right;
+}
+i.fa.fa-plus {
+    padding: 2px;
 }
 </style>
 <?php $this->load->view('fontend/layout/employer_new_header.php');?> 
