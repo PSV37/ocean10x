@@ -337,6 +337,32 @@ span.select2-selection.select2-selection--single {
    z-index: 999;
    margin-top: 29px;
    position:absolute;}
+    :root {
+   --bg: #e3e4e8;
+   --fg: #17181c;
+   --bs1: #ffffff;
+   --bs2: #c1c2c5;
+   --tick: #454954;
+   --transDur: 0.1s;
+   font-size: calc(20px + (40 - 20)*(100vw - 320px)/(2560 - 320));
+   }
+      .modal-content {
+   background-image: linear-gradient(#18c5bd, #d4efec);
+   }
+   .sendEmail label{color:#fff;font-size:13px;}
+   .sendEmail input{background-color: #f3f7f663;}
+   .sendEmail textarea.form-control{background-color:#fbffff80;}
+   @media (min-width: 768px){
+   .modal-dialog {
+   width: 460px;
+   margin: 30px auto;
+   }
+   }
+   .fade-rotate .modal-dialog{top:45%;}
+   .modal-footer{border-top:none;}
+   .modal-header{border-bottom:none;}
+   button.btn-save:hover{background-color:#0e776d;
+   transition:0.9s;color:#fff;}
 </style>
 
 <!---header-->
