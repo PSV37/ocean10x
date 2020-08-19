@@ -149,8 +149,8 @@
                <a style="float: right;" href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Add Question</i></button></a>
                </div> -->
             <ul id="myTabs" class="nav nav-pills nav-justified" role="tablist" data-tabs="tabs">
-               <li class="active"><a href="#qbank" data-toggle="tab">Question Bank</a></li>
-               <li><a href="#Videos" data-toggle="tab">Test Paper Bank</a></li>
+               <li class="btn btn-secondary active"><a href="#qbank" data-toggle="tab">Question Bank</a></li>
+               <li class="btn btn-secondary"><a href="#Videos" data-toggle="tab">Test Paper Bank</a></li>
             </ul>
             <div class="tab-content">
                <div role="tabpanel" class="tab-pane fade" id="Videos">
@@ -158,10 +158,10 @@
                      <div class="row">
                         <div class="btn-group-toggle" data-toggle="buttons" >
                            <a href="#add_test" data-toggle="tab"><label class="btn btn-secondary active">
-                           <input type="radio" name="options" id="option1" autocomplete="off" >I want to choose My Questions in the Test !
+                           <input type="radio" name="options" id="option1" autocomplete="off"  style="display: none;">I want to choose My Questions in the Test !
                            </label></a>
                            <a href="#create_test" data-toggle="tab"><label class="btn btn-secondary">
-                           <input type="radio" name="options" id="option2" autocomplete="off"> Ocean can help me create the Test !
+                           <input type="radio" name="options" id="option2" autocomplete="off" style="display: none;"> Ocean can help me create the Test !
                            </label></a>
                         </div>
                      </div>
