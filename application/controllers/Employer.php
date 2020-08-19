@@ -4639,7 +4639,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $notice_period_var = $this->input->post('notice_period');
         $education_var = $this->input->post('education');
         $current_ctc_var = $this->input->post('current_ctc');
-        $stablity_var = $this->input->post('stability');
+        //$stablity_var = $this->input->post('stability');
         $company_id = $this->session->userdata('company_profile_id');
 
         $stability=$this->input->post('stability');
@@ -4687,10 +4687,32 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $notice_period_var = $this->input->post('notice_period');
         $education_var = $this->input->post('education');
         $current_ctc_var = $this->input->post('current_ctc');
-        $stablity_var = $this->input->post('stability');
         $company_id = $this->session->userdata('company_profile_id');
 
-        $own_cvs = $this->Master_model->getMaster('corporate_cv_bank', $where = $where_active, $join = $join_cond, $order = false, $field = false, $select = false, $limit = false, $start = false, $search = false);
+        $stability=$this->input->post('stability');
+//$days_count=30*stability;
+        if($stability==6){
+            $before_date = date('Y-m-d', strtotime("-".$stability." months"));
+            $where = "corporate_cv_bank.js_working_since <= '".$before_date."'";
+        }
+        if($stability==12){
+            $before_months=6;
+            $after_date = date('Y-m-d', strtotime("-".$stability." months"));
+            $before_date = date('Y-m-d', strtotime("-".$before_months." months"));
+            $where = "corporate_cv_bank.js_working_since <= '".$after_date."' and corporate_cv_bank.js_working_since >= '".$before_date."'";
+        }           
+        if($stability==24){
+            $before_months=12;
+            $after_date = date('Y-m-d', strtotime("-".$stability." months"));
+            $before_date = date('Y-m-d', strtotime("-".$before_months." months"));
+            $where = "corporate_cv_bank.js_working_since <= '".$after_date."' and corporate_cv_bank.js_working_since >= '".$before_date."'";
+        }
+        if($stability==30){
+            $before_date = date('Y-m-d', strtotime("-".$stability." months"));
+            $where = "corporate_cv_bank.js_working_since >= '".$before_date."'";
+        }
+
+        $own_cvs = $this->Master_model->getMaster('cv_folder', $where = $where_active, $join = $join_cond, $order = false, $field = false, $select = false, $limit = false, $start = false, $search = false);
 
         echo json_encode($own_cvs);
     }
