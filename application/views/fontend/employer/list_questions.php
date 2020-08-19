@@ -135,6 +135,9 @@
     margin-right: -199px;
     min-width: 80px;
 }
+.btn-group-toggle {
+    margin-left: 139px;
+}
 </style>
 <?php $this->load->view('fontend/layout/employer_new_header.php');?> 
 <!---header-->
@@ -148,7 +151,7 @@
                Question Bank
                <a style="float: right;" href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Add Question</i></button></a>
                </div> -->
-            <ul id="myTabs" class="nav nav-pills nav-justified" role="tablist" data-tabs="tabs">
+            <ul id="myTabs" class="nav nav-justified" role="tablist" data-tabs="tabs">
                <li class="btn btn-secondary active"><a href="#qbank" data-toggle="tab">Question Bank</a></li>
                <li class="btn btn-secondary"><a href="#Videos" data-toggle="tab">Test Paper Bank</a></li>
             </ul>
