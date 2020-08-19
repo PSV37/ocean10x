@@ -914,12 +914,96 @@
       <div class="col-md-12">
          <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
          <div class="col-md-6" style="margin-top:75px;">
-            <ul id="myTabs" class="nav nav-pills nav-justified" role="tablist" data-tabs="tabs">
-               <li class="active"><a href="#Commentary" data-toggle="tab">Corporate QuestionBank</a></li>
-               <li><a href="#Videos" data-toggle="tab">Ocean QuestionBank !</a></li>
-            </ul>
-            <div class="tab-content">
-               <div role="tabpanel" class="tab-pane fade in active" id="Commentary">
+            <div class="row">
+                           <form method="post" action="<?php echo base_url(); ?>employer/randomly_create_test">
+                              <div class="row">
+                                 <div class="col-md-4">
+                                    <div class="form-group technical_id">                                       
+                                       <label for="exampleInputEmail1">Test Name <span class="required">*</span></label>
+                                       <input type="text" class="form-control" id="test_name" name="test_name">
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4">
+                                    <div class="form-group technical_id">                                       
+                                       <label for="exampleInputEmail1">Duration<span class="required">*</span></label>
+                                       <input type="Number" max="60" min="1" class="form-control" id="time" name="test_duration">
+                                    </div>
+                                 </div>
+                                   <div class="col-md-4">
+                                    <div class="form-group technical_id">
+                                       <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
+                                       <select id="subject" name="technical_id" required class="form-control select2"  onchange="getTopicocean(this.value)">
+                                          <option value="">Select Subject</option>
+                                          <?php if (!empty($skill_master))
+                                             foreach($skill_master as $skill) 
+                                             {
+                                             ?>   
+                                          <option value="<?php echo $skill['id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['technical_id']==$skill['id'])echo "selected";?>><?php echo $skill['skill_name']; ?></option>
+                                          <?php } ?>
+                                       </select>
+                                       <?php echo form_error('technical_id'); ?>   
+                                    </div>
+                                 </div>
+                                 
+                              </div>
+                              <div class="row">
+                                 <div class="col-md-4">
+                                    <div class="form-group topic_id">
+                                       <label for="exampleInputEmail1">Main Topic <span class="required">*</span></label>
+                                       <select id="topic_id_ocean" name="topic_id" class="form-control select2" onchange="getSubtopics(this.value)">
+                                          <option value="">Select Topic</option>
+                                          <!-- <option value="1">HTML 5</option>  -->
+                                       </select>
+                                       <?php echo form_error('topic_id'); ?>   
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4">
+                                    <div class="form-group subtopic_id">
+                                       <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
+                                       <select id="subtopic_id_ocean" name="subtopic_id" class="form-control select2" >
+                                       </select> <?php echo form_error('subtopic_id'); ?>   
+                                    </div>
+                                 </div>
+                              
+                                 <div class="col-md-4">
+                                   <div class="form-group level">
+                                     <label for="exampleInputEmail1">Level<span class="required">*</span></label>
+                                       <select name="level" onchange="get_questuions();" id="level" class="form-control select2">                                     
+                                         <option value="Expert"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Expert')echo "selected";?>>Expert</option>
+                                         <option value="Medium"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Medium')echo "selected";?>>Medium</option>
+                                         <option value="Beginner"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Beginner')echo "selected";?>>Beginner</option>
+                                       </select> <?php echo form_error('level'); ?>   
+                                   </div>
+                                 </div>
+                              </div>
+                              <div class="row">
+                                 <div class="col-md-4">
+                                   <div class="form-group ques_type">
+                                     <label for="exampleInputEmail1">Question Type<span class="required">*</span></label>
+                                     <select name="ques_type" id="ques_type" class="form-control select2" type="text" onchange="get_questuions();">
+                                       <option value="MCQ"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='MCQ')echo "selected";?>>MCQ</option>
+                                         <option value="Subjective"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Subjective')echo "selected";?>>Subjective</option>
+                                         <option value="Practical"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Practical')echo "selected";?>>Practical</option>
+                                     </select> <?php echo form_error('ques_type'); ?>   
+                                   </div>
+                                 </div>
+                                 
+                              </div>
+                          
+                               <div class="row">
+                                 <div class="col-md-6"></div>
+                                 <div class="col-md-6">
+                                    <div class="col-md-3">
+                                       <button class="btn btn-primary" type="reset">Discard</button>
+                                    </div>
+                                    <div class="col-md-3" style="margin-left: 20;">
+                                       <button class="btn btn-primary" type="submit">Create</button>
+                                    </div>
+                                 </div>
+                              </div>
+                           </form>
+                        </div>
+           
                   <div class="row">
                      <div class="box" >
                         <?php $key = 1; if (!empty($oceanchamp_tests)): foreach ($oceanchamp_tests as $tests) : 
@@ -1125,8 +1209,7 @@
                </div>
                <div role="tabpanel" class="tab-pane fade" id="music">
                </div>
-            </div>
-         </div>
+          
          <div class="col-md-3 ">
             <div class="last_section">
                <div class="pai_chart">

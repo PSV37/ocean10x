@@ -153,6 +153,9 @@ li.btn.btn-secondary.active {
 i.fa.fa-plus {
     padding: 2px;
 }
+.box-body {
+    height: fit-content;
+}
 </style>
 <?php $this->load->view('fontend/layout/employer_new_header.php');?> 
 <!---header-->
