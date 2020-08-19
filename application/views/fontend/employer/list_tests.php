@@ -920,7 +920,7 @@ i.fa.fa-plus {
     height: fit-content;
 }
 span.select2-selection.select2-selection--single {
-  width: 285px;
+  width: 180px;
 }
 
 </style>
@@ -1122,7 +1122,7 @@ span.select2-selection.select2-selection--single {
                      </div>
                   </div>
                </div>
-               div class="col-md-3 ">
+               <div class="col-md-3 ">
                <div class="last_section">
                   <div class="pai_chart">
                      <main>
