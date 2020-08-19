@@ -4740,8 +4740,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
         $join_cond = array('corporate_cv_bank' => 'corporate_cv_bank.cv_id = cv_folder_relation.cv_id | left', 'cv_folder_relation' => 'cv_folder_relation.cv_id = corporate_cv_bank.cv_id | left' );
 
-        $join_cond = array('js_info' => 'js_info.email = corporate_cv_bank.js_email|Left', 'js_login_logs' => 'js_info.job_seeker_id = js_login_logs.job_seeker_id|Left');
-
+       
         $own_cvs = $this->Master_model->getMaster('cv_folder', $where = $where_active, $join = $join_cond, $order = false, $field = false, $select = false, $limit = false, $start = false, $search = false);
 
         echo json_encode($own_cvs);
