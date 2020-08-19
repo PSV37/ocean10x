@@ -1625,6 +1625,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
           $where = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id' and test_status = '2'";
         $data['ocean_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where = $where, $join = FALSE, $order = 'desc', $field = 'oceanchamp_tests.test_id', $select = false, $limit = false, $start = false, $search = false);
 
+
         $where_cn = "status=1";
         $data['skill_master'] = $this->Master_model->getMaster('skill_master', $where_cn);
         //$where_opt= "options.status=1";
@@ -1635,6 +1636,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $data['subtopic'] = $this->Master_model->getMaster('subtopic', $where_subtopic);
         $where_lineitem = "lineitem.lineitem_status='1'";
         $data['lineitem'] = $this->Master_model->getMaster('lineitem', $where_lineitem);
+
         // echo  $this->db->last_query(); die;
         $this->load->view('fontend/employer/list_tests', $data);
         // $this->load->view('fontend/employer/all_questions.php', $data);
@@ -4691,9 +4693,22 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $active_cv = $this->Master_model->getMaster('corporate_cv_bank', $where = $where_active, $join = $join_cond, $order = false, $field = false, $select = false, $limit = false, $start = false, $search = false);
 
         //echo $this->db->last_query();
-       // echo $this->db->last_query();
+       //echo $this->db->last_query();
 
          echo json_encode($active_cv);
+    }
+
+    public function get_own_cvs() {
+        $exp_var = $this->input->post('exp');
+        $notice_period_var = $this->input->post('notice_period');
+        $education_var = $this->input->post('education');
+        $current_ctc_var = $this->input->post('current_ctc');
+        $stablity_var = $this->input->post('stability');
+        $company_id = $this->session->userdata('company_profile_id');
+
+        $own_cvs = $this->Master_model->getMaster('corporate_cv_bank', $where = $where_active, $join = $join_cond, $order = false, $field = false, $select = false, $limit = false, $start = false, $search = false);
+
+        echo json_encode($own_cvs);
     }
 
     public function job_post_report() {
