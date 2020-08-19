@@ -248,7 +248,7 @@
    line-height: 30px;
    margin-top: 0px;
    margin-bottom: 15px;
-   }*/
+   }
    .active-span{
    position: absolute;
    top: 12px;

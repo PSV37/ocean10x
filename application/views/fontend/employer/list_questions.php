@@ -159,6 +159,23 @@ i.fa.fa-plus {
 span.select2-selection.select2-selection--single {
     width: 275px;
 }
+.following-info {
+   float:left;
+   line-height:30px;
+   margin-top:0px;
+   margin-left:18px;
+   }
+  .following-info2 {
+    margin-left: 270px;
+    line-height: 30px;
+    margin-top: 0px;
+    margin-bottom: 15px;
+}.following-info3 {
+   margin-left: 309px;
+   line-height: 30px;
+   margin-top: 0px;
+   margin-bottom: 15px;
+   }
 </style>
 <?php $this->load->view('fontend/layout/employer_new_header.php');?> 
 <!---header-->
@@ -289,7 +306,7 @@ span.select2-selection.select2-selection--single {
                               </div>
                            </form>
                            <div class="row">
-                     <div class="box" >
+                     <div class="box1" >
                         <?php $key = 1; if (!empty($oceanchamp_tests)): foreach ($oceanchamp_tests as $tests) : 
                            $on_ocean = $tests['ocean_candidate'];
                                  if($on_ocean == 'Yes')
