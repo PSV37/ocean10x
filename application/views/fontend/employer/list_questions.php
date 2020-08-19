@@ -170,9 +170,10 @@ i.fa.fa-plus {
                <li class="btn btn-secondary active"><a href="#qbank" data-toggle="tab">Question Bank</a></li>
                <li class="btn btn-secondary"><a href="#Videos" data-toggle="tab">Test Paper Bank</a></li>
             </ul>
+             <a style="float: right; margin-right: 200px;" href="<?php echo base_url(); ?>employer/create-test"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Create Test</i></button></a>
             <div class="tab-content">
                <div role="tabpanel" class="tab-pane fade" id="Videos">
-                    <a style="float: left;" href="<?php echo base_url(); ?>employer/create-test"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Create Test</i></button></a>
+                   
                      <div class="row">
                         <div class="btn-group-toggle" data-toggle="buttons" >
                            <a href="#add_test" data-toggle="tab"><label class="btn btn-secondary active">
