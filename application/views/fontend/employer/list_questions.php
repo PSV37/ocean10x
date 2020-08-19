@@ -172,7 +172,7 @@ i.fa.fa-plus {
             </ul>
             <div class="tab-content">
                <div role="tabpanel" class="tab-pane fade" id="Videos">
-                   
+                    <a style="float: left;" href="<?php echo base_url(); ?>employer/create-test"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Create Test</i></button></a>
                      <div class="row">
                         <div class="btn-group-toggle" data-toggle="buttons" >
                            <a href="#add_test" data-toggle="tab"><label class="btn btn-secondary active">
@@ -384,7 +384,7 @@ i.fa.fa-plus {
                
                   <div class="select-option">
                      <p style="FONT-SIZE: 12PX;COLOR: #0a5854;">Total No. Of Question:10</p>
-                     <a style="float: left;" href="<?php echo base_url(); ?>employer/create-test"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Create Test</i></button></a>
+                    
                      <label class="dropdown">
                         <div class="dd-button">
                            Filter
