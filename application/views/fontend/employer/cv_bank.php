@@ -1311,7 +1311,7 @@
                         </li>
                         <li>
                            <em>Own cv's</em>
-                           <span>3500</span>
+                           <span id="own_cvs"><?php echo sizeof($own_cvs); ?></span>
                         </li>
                         <li>
                            <em>Consultant cv's</em>
@@ -1746,7 +1746,17 @@
                    $('#active_cv').html(getarray.length);
                  }
            });
-
+       
+       $.ajax({
+               url: "<?php echo base_url();?>employer/get_own_cvs",
+               type: "POST",
+               data:{exp:value,notice_period:notice_period_value,education:education_value,current_ctc:current_ctc_value,stablity:sta_value},
+                 success: function(data)
+                 {
+                     var getarray = jQuery.parseJSON(data);
+                   $('#own_cvs').html(getarray.length);
+                 }
+           });
       // $('#active_cv').html(value);
       // alert(value);
    }
