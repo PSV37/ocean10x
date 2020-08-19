@@ -176,6 +176,167 @@ span.select2-selection.select2-selection--single {
    margin-top: 0px;
    margin-bottom: 15px;
    }
+     .card {
+   position: relative;
+   height: auto;
+   width: 100%;
+   -webkit-transform-style: preserve-3d;  
+   transform-style: preserve-3d;
+   -webkit-transition: all 600ms;
+   transition: all 600ms;
+   border-radius:13px;
+   padding:0px;
+   margin-top:15px;
+   }
+   .card div {
+   -webkit-backface-visibility: hidden;
+   backface-visibility: hidden;
+   border-radius: 5px;
+   }
+   .card .back {
+   background: #222;
+   -webkit-transform: rotateX(180deg);
+   transform: rotateX(180deg);
+   }
+   /*
+   :checked + .card {
+   transform: rotateX(180deg);
+   -webkit-transform: rotateX(180deg);
+   }
+   */
+   .active-job {
+   margin-top:168px;
+   }
+   .dropdown-menu>li>a{padding:3px 20px;}
+   .front{padding:11px;height:auto;}
+   .job-info {
+   margin-left: 40px;
+   margin-top:0px;
+   }
+   li.left-title {
+   list-style-type: none;
+   float: left;
+   font-size: 12px;
+   font-weight: 100;
+   width:auto;
+   height:15px;
+   }
+   li.right-title {
+   list-style-type: none;
+   font-size: 12px;
+   font-weight: 100;
+   width:150px;
+   }
+   .icon-info {
+   margin-left:60px;
+   margin-bottom:10px;
+   }
+   li.left-icon-title{
+   list-style-type: none;
+   float: left;
+   }
+   .left-icon-title i{color:#18c5bd;}
+   li.right-icon-title {
+   list-style-type: none;
+   float: left;
+   margin-right: 20px;
+   font-weight:100;
+   }
+   .front .dropdown {
+   top: -8px;
+   width: 63px;
+   position: absolute;
+   right: 0px;
+   }
+   .detail-btn{
+   background-color: #fff;
+   padding: 3px 19px;
+   border-radius: 20px;
+   background-color: #18c5bd;
+   border: none;
+   color: #fff;
+   font-weight: 100;
+   float:right;
+   margin-left:10px;}
+   .detail-btn:hover{
+   background-color:#107773;
+   transition:0.8s; 
+   }   
+   .following-info {
+   float:left;
+   line-height:30px;
+   margin-top:0px;
+   margin-left:18px;
+   }
+  .following-info2 {
+    margin-left: 270px;
+    line-height: 30px;
+    margin-top: 0px;
+    margin-bottom: 15px;
+}.following-info3 {
+   margin-left: 309px;
+   line-height: 30px;
+   margin-top: 0px;
+   margin-bottom: 15px;
+   }
+   .active-span{
+   position: absolute;
+   top: 12px;
+   left: 405px;
+   background-color: #8BC34A;
+   padding: 1px 17px;
+   border-radius: 9px;
+   color: #fff;
+   font-size: 11px;
+   }
+   .following-info3 {
+   float: right;
+   margin-top: -133px;
+   line-height:30px;
+   }
+   label{display:block;}
+   .test_history{margin-top:80px;}
+   .result {
+   margin-left: 42px;
+   }
+   .open>.dropdown-menu {
+   display: block;
+   width: fit-content;
+   }
+   .dropdown-menu-right {
+   right: 0;
+   left: auto;
+   }
+   button#gedf-drop1 {
+   top: 0px;
+   position: absolute;
+   right: 0px;
+   }
+   .dropdown-menu {
+   position: absolute;
+   top:35;
+   right: 0;
+   z-index: 1000;
+   display: none;
+   float: left;
+   min-width: 160px;
+   padding: 5px 0;
+   margin: 2px 0 0;
+   font-size: 14px;
+   text-align: left;
+   list-style: none;
+   background-color: #fff;
+   background-clip: padding-box;
+   border: 1px solid #ccc;
+   border: 1px solid rgba(0,0,0,.15);
+   border-radius: 4px;
+   -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+   box-shadow: 0 6px 12px rgba(0,0,0,.175);
+   }
+   .check{right: 28px;
+   z-index: 999;
+   margin-top: 29px;
+   position:absolute;}
 </style>
 <?php $this->load->view('fontend/layout/employer_new_header.php');?> 
 <!---header-->
