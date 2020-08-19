@@ -928,6 +928,9 @@ span.select2-selection.select2-selection--single {
       <div class="col-md-12">
          <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
          <div class="col-md-6" style="margin-top:75px;">
+             <div class="row">
+                      <a style="float: right;margin-right: 200px;"  href="<?php echo base_url(); ?>employer/create-test"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Create Test</i></button></a>
+                    </div>
             <div class="row">
                            <form method="post" action="<?php echo base_url(); ?>employer/randomly_create_test">
                               <div class="row">
