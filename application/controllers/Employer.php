@@ -1685,7 +1685,7 @@ public function randomly_create_oceantest()
         $data['oceanchamp_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where = $where_all, $join = FALSE, $order = 'desc', $field = 'oceanchamp_tests.test_id', $select = false, $limit = false, $start = false, $search = false);
 
           $where = "ocean_tests.status='1' AND ocean_tests.company_id='$employer_id' and test_status = '1'";
-        $data['ocean_tests'] = $this->Master_model->getMaster('ocean_tests', $where = $where, $join = FALSE, $order = 'desc', $field = 'oceanchamp_tests.test_id', $select = false, $limit = false, $start = false, $search = false);
+        $data['ocean_tests'] = $this->Master_model->getMaster('ocean_tests', $where = $where, $join = FALSE, $order = 'desc', $field = 'ocean_tests.test_id', $select = false, $limit = false, $start = false, $search = false);
 
 
         $where_cn = "status=1";
