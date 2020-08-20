@@ -1696,11 +1696,7 @@ span.select2-selection.select2-selection--single {
                  <?php } ?>
                </select>
                </div>
-               <input type="hidden" name="job_post_id" value="" id="auto-value">
-               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
-                  <label class="mdl-textfield__label" for="sample3">Message:</label>
-                  <textarea class="form-control" name="message" rows="5" id="comment" value="" required></textarea>
-               </div>
+              
                <input type="hidden" name="forward_job_email" id="forward_job_email" value="<?php echo $cv_row['js_email']; ?>">
             </div>
             <div class="modal-footer">
@@ -1860,10 +1856,7 @@ span.select2-selection.select2-selection--single {
                </select>
                </div>
                <input type="hidden" name="job_post_id" value="" id="auto-value">
-               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
-                  <label class="mdl-textfield__label" for="sample3">Message:</label>
-                  <textarea class="form-control" name="message" rows="5" id="comment" value="" required></textarea>
-               </div>
+               
                <input type="hidden" name="forward_job_email" id="forward_job_email" value="<?php echo $cv_row['js_email']; ?>">
             </div>
             <div class="modal-footer">

@@ -1410,6 +1410,8 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         
         $where['job_post_id'] = $job_id;
         $this->Master_model->master_update($test_data, 'job_posting', $where);
+
+        redirect('employer/active_job');
     }
     /*** Dashboard ***/
     public function add_new_question() {
