@@ -1375,6 +1375,10 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $this->session->unset_userdata('activemenu');
         $data['activemenu'] = 'questionbank';
         $this->session->set_userdata($data);
+        
+        $this->session->unset_userdata('submenu');
+        $data['submenu'] = 'qbank';
+        $this->session->set_userdata($data);
         $employer_id = $this->session->userdata('company_profile_id');
         $where_cn = "status=1";
         $data['skill_master'] = $this->Master_model->getMaster('skill_master', $where_cn);
@@ -1471,6 +1475,10 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         }
     }
     public function add_to_test() {
+
+        $this->session->unset_userdata('submenu');
+        $data['submenu'] = '2';
+        $this->session->set_userdata($data);
         $test_name = $this->input->post('test_name');
         $test_id = $this->input->post('test_id');
         $up_date = $this->input->post('data_arr');
@@ -1538,6 +1546,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
 
     public function randomly_create_test()
     {
+
         $test_name = $this->input->post('test_name');
         $test_duration = $this->input->post('test_duration');
         $technical_id = $this->input->post('technical_id');
@@ -1584,7 +1593,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
 
         
     }
-    redirect('employer/all_tests');
+    redirect('employer/all_questions');
 }
 public function randomly_create_oceantest()
     {

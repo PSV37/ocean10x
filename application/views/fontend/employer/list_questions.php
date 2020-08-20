@@ -972,7 +972,7 @@ span.select2-selection.select2-selection--single {
                <a style="float: right;" href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Add Question</i></button></a>
                </div> -->
             <ul id="myTabs" class="" role="tablist" data-tabs="tabs">
-               <li class="btn btn-secondary active"><a href="#qbank" data-toggle="tab">Question Bank</a></li>
+               <li class="btn btn-secondary <?php $submenu=$this->session->userdata('submenu'); $activemenu=$this->session->userdata('activemenu'); if(isset($submenu) && !empty($submenu)){if($submenu == 'qbank' || $activemenu =='questionbank' ) echo 'active' } ?> "><a href="#qbank" data-toggle="tab">Question Bank</a></li>
                <li class="btn btn-secondary"><a href="#Videos" data-toggle="tab">Test Paper Bank</a></li>
             </ul>
             <div class="tab-content">
