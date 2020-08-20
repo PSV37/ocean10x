@@ -1243,7 +1243,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             $email = explode(',', $candiate_email);
             $where_req = "test_id= '$test'";
             
-            $join_req = array('topic'=>'topic.topic_id = oceanchamp_tests.topic');
+            $join_req = array('topic'=>'topic.topic_id = oceanchamp_tests.topics');
             $req_details = $this->Master_model->getMaster('oceanchamp_tests', $where_req, $join_req , $order = false, $field = false, $select_job = false, $limit = false, $start = false, $search = false);
             for ($i = 0;$i < sizeof($email);$i++) {
                 $where_can = "email='$email[$i]'";
