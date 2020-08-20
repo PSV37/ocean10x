@@ -973,17 +973,17 @@ span.select2-selection.select2-selection--single {
                </div> -->
             <ul id="myTabs" class="" role="tablist" data-tabs="tabs">
                <li class="btn btn-secondary <?php $submenu=$this->session->userdata('submenu'); $activemenu=$this->session->userdata('activemenu'); if(isset($submenu) && !empty($submenu)){if($submenu == 'qbank' || $activemenu =='questionbank' ) echo 'active'; } ?> "><a href="#qbank" data-toggle="tab">Question Bank</a></li>
-               <li class="btn btn-secondary"><a href="#Videos" data-toggle="tab">Test Paper Bank</a></li>
+               <li class="btn btn-secondary <?php $submenu=$this->session->userdata('submenu');  if(isset($submenu) && !empty($submenu)){if($submenu == '1' || $submenu == '2'   ) echo 'active'; } ?>"><a href="#Videos" data-toggle="tab">Test Paper Bank</a></li>
             </ul>
             <div class="tab-content">
                <div role="tabpanel" class="tab-pane fade" id="Videos">
                     <div class="row" style="float: right;">
                      <!--  <a style="float: right;margin-right: 200px;"  href="<?php echo base_url(); ?>employer/create-test"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Create Test</i></button></a> -->
                      <div class="btn-group-toggle" data-toggle="buttons" >
-                           <a href="#add_test" data-toggle="tab"><label class="btn btn-secondary active">
+                           <a href="#add_test" data-toggle="tab"><label class="btn btn-secondary   <?php $submenu=$this->session->userdata('submenu');  if(isset($submenu) && !empty($submenu)){if($submenu == '1' ) echo 'active'; } ?>">
                            <input type="radio" name="options" id="option1" autocomplete="off"  style="display: none;">I want to choose My Questions in the Test !
                            </label></a><br>
-                           <a href="#create_test" data-toggle="tab"><label class="btn btn-secondary">
+                           <a href="#create_test" data-toggle="tab"><label class="btn btn-secondary  <?php $submenu=$this->session->userdata('submenu');  if(isset($submenu) && !empty($submenu)){if( $submenu == '2'   ) echo 'active'; } ?>">
                            <input type="radio" name="options" id="option2" autocomplete="off" style="display: none;"> Ocean can help me create the Test !
                            </label></a>
                         </div>

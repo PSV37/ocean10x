@@ -1375,10 +1375,8 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $this->session->unset_userdata('activemenu');
         $data['activemenu'] = 'questionbank';
         $this->session->set_userdata($data);
-        
-        $this->session->unset_userdata('submenu');
-        $data['submenu'] = 'qbank';
-        $this->session->set_userdata($data);
+
+       
         $employer_id = $this->session->userdata('company_profile_id');
         $where_cn = "status=1";
         $data['skill_master'] = $this->Master_model->getMaster('skill_master', $where_cn);
@@ -1419,6 +1417,10 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
     }
     /*** Dashboard ***/
     public function add_new_question() {
+
+         $this->session->unset_userdata('submenu');
+        $data['submenu'] = 'qbank';
+        $this->session->set_userdata($data);
         $data['title'] = 'Add Questionbank';
         $where_skill = "status=1";
         $data['skill_master'] = $this->Master_model->getMaster('skill_master', $where_skill);
@@ -1477,7 +1479,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
     public function add_to_test() {
 
         $this->session->unset_userdata('submenu');
-        $data['submenu'] = '2';
+        $data['submenu'] = '1';
         $this->session->set_userdata($data);
         $test_name = $this->input->post('test_name');
         $test_id = $this->input->post('test_id');
