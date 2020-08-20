@@ -1548,6 +1548,9 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
 
     public function randomly_create_test()
     {
+         $this->session->unset_userdata('submenu');
+        $data['submenu'] = '2';
+        $this->session->set_userdata($data);
 
         $test_name = $this->input->post('test_name');
         $test_duration = $this->input->post('test_duration');
