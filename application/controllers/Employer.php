@@ -1440,7 +1440,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
 
              $email_name = explode('@', $row['email']);
                     $company_name = $this->session->userdata('company_name');
-                    $subject = 'New Test has been added to the Job Post <b>'.$row['job_title'].' </b>';
+                    $subject = 'New Test has been added to the Job Post'.$row['job_title'];
                     $message = '
                                 <style>
                                     .btn-primary{
