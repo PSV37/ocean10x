@@ -1074,36 +1074,36 @@
                </div>
                <ul class="pieID legend">
                   <li>
-                     <em>Total Job Posts</em>
+                     <em>Total Active Job Posts</em>
                      <span><?php echo sizeof($company_active_jobs); ?></span>
                      <!--<span>718</span> -->
                   </li>    
                   <li>
-                     <em> Total Job Forwarded</em>
+                     <em> Sent to Candidates</em>
                      <span id='total_forwarded'> </span>
                   </li>
                   <li>
-                     <em>Total Job Applied</em>
+                     <em>Applications Rcvd</em>
                      <span id='total_applied'> </span>
                   </li>
                   <li>
-                     <em>Total attempted test</em>
+                     <em>Test Attempted</em> 
                      <span id='total_test'> </span>
                   </li>
                   <li>
-                     <em>Total Candidates passed </em>
+                     <em>Test Passed</em>
                      <span id='total_passed'></span>
                   </li>
                   <li>
-                     <em>Total Candidates interview and passed</em>
+                     <em>Interview Passed</em> 
                      <span id='total_test_int_pass'></span>
                   </li>
                   <li>
-                     <em>Total Candidates interview and failed</em>
+                     <em>Interview Failed</em>
                      <span id='total_test_int_fail'></span>
                   </li>     
                   <li>
-                     <em>Total Candidates Accepted Offer</em>
+                     <em>Offer Accepted</em>
                      <span id='total_offer_accept'></span>
                   </li>
 
