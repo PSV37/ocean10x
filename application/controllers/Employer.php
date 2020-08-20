@@ -17,6 +17,8 @@ class Employer extends MY_Employer_Controller {
     public function index() {
        
         $employer_id = $this->session->userdata('company_profile_id');
+         $this->session->unset_userdata('submenu');
+
         $this->session->unset_userdata('activemenu');
         $data['activemenu'] = 'dashboard';
         $this->session->set_userdata($data);
@@ -175,6 +177,8 @@ class Employer extends MY_Employer_Controller {
         }
     }
     public function job_post() {
+         $this->session->unset_userdata('submenu');
+
         $this->session->unset_userdata('activemenu');
         $data['activemenu'] = 'job_post';
         $this->session->set_userdata($data);
@@ -643,6 +647,8 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         }
     }
     public function active_job() {
+         $this->session->unset_userdata('submenu');
+
         $this->session->unset_userdata('activemenu');
         $data['activemenu'] = 'active_job';
         $this->session->set_userdata($data);
@@ -652,6 +658,8 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $this->load->view('fontend/employer/posted_jobs.php', compact('company_active_jobs', 'employer_id'));
     }
     public function pending_job() {
+         $this->session->unset_userdata('submenu');
+
         $employer_id = $this->session->userdata('company_profile_id');
         $company_pending_jobs = $this->job_posting_model->get_company_pending_jobs($employer_id);
         $this->load->view('fontend/employer/pending_job.php', compact('company_pending_jobs', 'employer_id'));
@@ -2969,6 +2977,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         echo json_encode($result);
     }
     public function corporate_cv_bank($fid = null) {
+         $this->session->unset_userdata('submenu');
+
         $this->session->unset_userdata('activemenu');
         $data['activemenu'] = 'cv_bank';
         $this->session->set_userdata($data);
@@ -3808,6 +3818,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         }
     }
     public function ocean_champ_test() {
+         $this->session->unset_userdata('submenu');
+
         $data['activemenu'] = 'oceanchamp';
         $this->session->set_userdata($data);
         $company_profile_id = $this->session->userdata('company_profile_id');
@@ -4113,6 +4125,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         redirect('employer/corporate_cv_bank/' . $folder_id);
     }
     public function internal_tracker() {
+         $this->session->unset_userdata('submenu');
+
         $this->session->unset_userdata('activemenu');
         $data['activemenu'] = 'internal_tracker';
         $this->session->set_userdata($data);
@@ -4121,6 +4135,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $this->load->view('fontend/employer/internal_tracker.php', compact('company_active_jobs', 'employer_id'));
     }
     public function external_tracker() {
+         $this->session->unset_userdata('submenu');
+
         $this->session->unset_userdata('activemenu');
         $data['activemenu'] = 'external_tracker';
         $this->session->set_userdata($data);
@@ -4129,6 +4145,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $this->load->view('fontend/employer/external_tracker.php', compact('company_active_jobs', 'employer_id'));
     }
     public function shared_tracker() {
+         $this->session->unset_userdata('submenu');
+
         $this->session->unset_userdata('activemenu');
         $data['activemenu'] = 'shared_tracker';
         $this->session->set_userdata($data);
@@ -4501,6 +4519,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         
     }
     public function oceantest() {
+         $this->session->unset_userdata('submenu');
+        
         $employer_id = $this->session->userdata('company_profile_id');
         $where_all = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id'";
         $data['oceanchamp_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where = $where_all, $join = FALSE, $order = false, $field = false, $select = 'DISTINCT type', $limit = false, $start = false, $search = false);
