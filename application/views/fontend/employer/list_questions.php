@@ -999,7 +999,7 @@ span.select2-selection.select2-selection--single {
                         </div> -->
                      </div>
                      <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane fade active" id="add_test">
+                        <div role="tabpanel" class="tab-pane fade in active" id="add_test">
                            <form method="post" action="<?php echo base_url(); ?>employer/add_to_test">
                            <input type="hidden" id="question_id" name="data_arr" value="">
                            <input type="hidden" class="form-control" readonly style="border: none;" id="test_time" name="test_time">
