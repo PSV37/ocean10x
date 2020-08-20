@@ -1315,7 +1315,7 @@ span.select2-selection.select2-selection--single {
                   <label class="mdl-textfield__label" for="sample3">E-mail:</label>
                <select class="form-control select2" name="job_id">
                   <?php foreach ($company_active_jobs as $row) { ?>
-                   <option value="<?php echo $row['job_post_id'] ?>"><?php echo $row['job_title'] ?></option>
+                   <option value="<?php echo $row->job_post_id ?>"><?php echo $row->job_title?></option>
                  <?php } ?>
                </select>
                </div>
