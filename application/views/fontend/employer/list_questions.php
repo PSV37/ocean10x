@@ -1386,7 +1386,7 @@ span.select2-selection.select2-selection--single {
                      </div>
                   </div>
                  
-               <div role="tabpanel" class="tab-pane fade active" id="qbank">
+               <div role="tabpanel" class="tab-pane fade in active" id="qbank">
                 
                    <a id="qbottons" style="margin-top: -41px;" href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Add a Question</i></button></a><br>
               
