@@ -1421,7 +1421,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $where['job_post_id'] = $job_id;
         $this->Master_model->master_update($test_data, 'job_posting', $where);
 
-        $where_seeker = "job_apply.job_post_id = '$job_id' and apply_status < '2' "
+        $where_seeker = "job_apply.job_post_id = '$job_id' and apply_status < '2' ";
         $join_seeker = array('js_info' => 'js_info.job_seeker_id = job_apply.job_seeker_id | Left',
         'job_posting'=>'job_posting.job_post_id = job_apply.job_post_id' );
         $all_seekers = $this->Master_model->getMaster('job_apply', $where_seeker, $join_seeker , $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
