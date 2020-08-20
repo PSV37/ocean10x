@@ -1242,8 +1242,9 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             $job_desc = $this->input->post('message');
             $email = explode(',', $candiate_email);
             $where_req = "test_id= '$test'";
-            $select_job = "job_role.job_role_title,education_specialization.education_specialization,education_level.education_level_name,job_level.job_level_name,job_nature.job_nature_name,job_category.job_category_name,state.state_name,country.country_name,city.city_name,company_profile.company_name,company_profile.company_logo,job_types.job_types_name,job_posting.job_title,job_posting.job_position,job_posting.job_desc,job_posting.education,job_posting.salary_range,job_posting.job_deadline,job_posting.preferred_age,job_posting.preferred_age_to,job_posting.working_hours,job_posting.no_jobs,job_posting.benefits,job_posting.experience,job_posting.skills_required";
-            $req_details = $this->Master_model->getMaster('oceanchamp_tests', $where_req, $join_req = false, $order = false, $field = false, $select_job = false, $limit = false, $start = false, $search = false);
+            
+            $join_req = array('topic'=>'topic.topic_id = oceanchamp_tests.topic');
+            $req_details = $this->Master_model->getMaster('oceanchamp_tests', $where_req, $join_req , $order = false, $field = false, $select_job = false, $limit = false, $start = false, $search = false);
             for ($i = 0;$i < sizeof($email);$i++) {
                 $where_can = "email='$email[$i]'";
                 $can_data = $this->Master_model->getMaster('js_info', $where_can);
@@ -1271,6 +1272,11 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                 if (empty($test_data)) {
                     $frwd = $this->Master_model->master_insert($test_array, 'forwarded_tests');
                 }
+
+            if ($req_details) {
+                foreach ($req_details as $require) {
+                }
+            }
                 //     $external_array = array(
                 //     'cv_id' => $cv_id,
                 //     'company_id' => $employer_id,
@@ -1296,7 +1302,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                 if ($frwd) {
                     $email_name = explode('@', $email[$i]);
                     $company_name = $this->session->userdata('company_name');
-                    $subject = 'Job | Urgent requirement for ' . $require['job_title'];
+                    $subject = $company_name. 'has asked you to take a <Subject/Topic> Test ' . $require['topic_name'];
                     $message = '
                                 <style>
                                     .btn-primary{
@@ -1314,9 +1320,9 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                             <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
                             <a href="#"><img src="' . base_url() . 'upload/' . $require['company_logo'] . '" style="height: 50px;"> </a>
                             <br><br>Hi ' . $email_name[0] . ',<br>';
-                    $message.= '<br/><b>' . $company_name . '</b>
-                        Has Forwarded You a Test please Comolete the test For the hiring process..<br><br>
-                        <a href="' . base_url() . 'employer/ocean_test_start/' . base64_encode($test_id) . '"><button >Give Test</button></a><br><br><br>Good luck for Job search!<br> Team ConsultnHire!<br><small>Enjoy personalized job searching experience<br>Goa a Question? Check out how works and our support team are ready to help.<br><br>You have received this mail because your e-mail ID is registered with Consultnhire.com. This is a system-generated e-mail regarding your Consultnhire account preferences, please do not reply to this message. The jobs sent in this mail have been posted by the clients of Consultnhire.com. And we have enabled auto-login for your convenience, you are strongly advised not to forward this email to protect your account from unauthorized access. IEIL has taken all reasonable steps to ensure that the information in this mailer is authentic. Users are advised to research bonafides of advertisers independently. Please do not pay any money to anyone who promises to find you a job. IEIL shall not have any responsibility in this regard. We recommend that you visit our Terms & Conditions and the Security Advice for more comprehensive information.</small><br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
+                    $message.= '<br/><b>' . $company_name . '</b>has asked you to take a test. Kindly click on the Test URL give below and follow the steps thereon. <br><br>
+                        <a href="' . base_url() . 'employer/ocean_test_start/' . base64_encode($test_id) . '"><button >Give Test</button></a><br><br><br></td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table><br><br>
+                        Regards,<br><br>Team TheOcean.</div>';
                     $send = sendEmail_JobRequest($email[$i], $message, $subject);
                     //echo $send;
                     // echo $message;
