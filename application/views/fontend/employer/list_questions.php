@@ -985,7 +985,7 @@ span.select2-selection.select2-selection--single {
                     <div class="row" style="float: right;">
                      <!--  <a style="float: right;margin-right: 200px;"  href="<?php echo base_url(); ?>employer/create-test"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Create Test</i></button></a> -->
                      <div class="btn-group-toggle" data-toggle="buttons" >
-                           <a href="#add_test" data-toggle="tab"><label class="btn btn-secondary   <?php $submenu=$this->session->userdata('submenu');  if(isset($submenu) && !empty($submenu)){if($submenu == '1' ) echo 'active'; } ?>">
+                           <a href="#add_test" data-toggle="tab"><label class="btn btn-secondary   <?php $submenu=$this->session->userdata('submenu');  if(isset($submenu) && !empty($submenu)){if($submenu == '1' ) {echo 'active'; } }else{ echo 'active'; }?>">
                            <input type="radio" name="options" id="option1" autocomplete="off"  style="display: none;">I want to choose My Questions in the Test !
                            </label></a><br>
                            <a href="#create_test" data-toggle="tab"><label class="btn btn-secondary  <?php $submenu=$this->session->userdata('submenu');  if(isset($submenu) && !empty($submenu)){if( $submenu == '2'   ) echo 'active'; } ?>">
@@ -1004,7 +1004,7 @@ span.select2-selection.select2-selection--single {
                         </div> -->
                      </div>
                      <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane fade <?php $submenu=$this->session->userdata('submenu');  if(isset($submenu) && !empty($submenu)){if($submenu == '1' ) echo 'in active'; }?>" id="add_test">
+                        <div role="tabpanel" class="tab-pane fade <?php $submenu=$this->session->userdata('submenu');  if(isset($submenu) && !empty($submenu)){if($submenu == '1' ){ echo 'in active'; }  }else{ echo 'in active'; }?>" id="add_test">
                            <form method="post" action="<?php echo base_url(); ?>employer/add_to_test">
                            <input type="hidden" id="question_id" name="data_arr" value="">
                            <input type="hidden" class="form-control" readonly style="border: none;" id="test_time" name="test_time">
