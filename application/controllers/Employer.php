@@ -1693,6 +1693,7 @@ public function randomly_create_oceantest()
         }
     }
     public function all_tests() {
+         $this->session->unset_userdata('submenu');
         $this->session->unset_userdata('activemenu');
         $data['activemenu'] = 'test_papers';
         $this->session->set_userdata($data);
