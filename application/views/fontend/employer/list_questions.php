@@ -981,7 +981,7 @@ span.select2-selection.select2-selection--single {
                <li class="btn btn-secondary <?php $submenu=$this->session->userdata('submenu');  if(isset($submenu) && !empty($submenu)){if($submenu == '1' || $submenu == '2'   ) echo 'active'; } ?>"><a href="#Videos" data-toggle="tab">Test Paper Bank</a></li>
             </ul>
             <div class="tab-content">
-               <div role="tabpanel" class="tab-pane fade" id="Videos">
+               <div role="tabpanel" class="tab-pane fade <?php $submenu=$this->session->userdata('submenu');  if(isset($submenu) && !empty($submenu)){if($submenu == '1' || $submenu == '2'   ) echo 'in active'; } ?>" id="Videos">
                     <div class="row" style="float: right;">
                      <!--  <a style="float: right;margin-right: 200px;"  href="<?php echo base_url(); ?>employer/create-test"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Create Test</i></button></a> -->
                      <div class="btn-group-toggle" data-toggle="buttons" >
@@ -1004,7 +1004,7 @@ span.select2-selection.select2-selection--single {
                         </div> -->
                      </div>
                      <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane fade in active" id="add_test">
+                        <div role="tabpanel" class="tab-pane fade <?php $submenu=$this->session->userdata('submenu');  if(isset($submenu) && !empty($submenu)){if($submenu == '1' ) echo 'in active'; }?>" id="add_test">
                            <form method="post" action="<?php echo base_url(); ?>employer/add_to_test">
                            <input type="hidden" id="question_id" name="data_arr" value="">
                            <input type="hidden" class="form-control" readonly style="border: none;" id="test_time" name="test_time">
@@ -1200,7 +1200,7 @@ span.select2-selection.select2-selection--single {
                      </div>
                   </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane fade" id="create_test">
+                        <div role="tabpanel" class="tab-pane fade <?php $submenu=$this->session->userdata('submenu');  if(isset($submenu) && !empty($submenu)){if( $submenu == '2'   ) echo 'in active'; } ?> " id="create_test">
                            <form method="post" action="<?php echo base_url(); ?>employer/randomly_create_test">
                               <div class="row">
                                  <div class="col-md-4">
@@ -1391,7 +1391,12 @@ span.select2-selection.select2-selection--single {
                      </div>
                   </div>
                  
-               <div role="tabpanel" class="tab-pane fade in active" id="qbank">
+               <div role="tabpanel" class="tab-pane fade <?php $submenu=$this->session->userdata('submenu'); $activemenu=$this->session->userdata('activemenu'); 
+               if(isset($submenu) && !empty($submenu))
+               {
+                if($submenu == 'qbank') 
+                { echo 'in active'; }
+                }else{  echo 'in active'; } ?> " id="qbank">
                 
                    <a id="qbottons" style="margin-top: -41px;" href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Add a Question</i></button></a><br>
               
