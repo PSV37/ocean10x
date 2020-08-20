@@ -999,7 +999,7 @@ span.select2-selection.select2-selection--single {
                         </div> -->
                      </div>
                      <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane fade" id="add_test">
+                        <div role="tabpanel" class="tab-pane fade active" id="add_test">
                            <form method="post" action="<?php echo base_url(); ?>employer/add_to_test">
                            <input type="hidden" id="question_id" name="data_arr" value="">
                            <input type="hidden" class="form-control" readonly style="border: none;" id="test_time" name="test_time">
@@ -1478,9 +1478,9 @@ span.select2-selection.select2-selection--single {
                         </ul>
                      </div>
                      <p>
-                        <a class="toggle btn " href="#example">show answer</a>
+                        <a class="toggle btn " href="#example<?php echo $ct_row['question_id'] ?>">show answer</a>
                      </p>
-                     <div class="toggle-content" id="example">
+                     <div class="toggle-content" id="example<?php echo $ct_row['question_id'] ?>">
                         <?php echo $ct_row['answer_id'] ?>
                      </div>
                      <div class="btn-group">

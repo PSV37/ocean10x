@@ -1533,7 +1533,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             $test_data['updated_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
             $this->Master_model->master_update($test_data, 'oceanchamp_tests', $where);
         }
-        redirect('employer/show_saved_tests');
+        redirect('employer/all_questions');
     }
 
     public function randomly_create_test()
