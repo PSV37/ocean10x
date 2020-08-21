@@ -1912,7 +1912,7 @@ public function user_profile()
             }
             $join_company = array('company_profile' => 'company_profile.company_profile_id = forwarded_tests.company_id',
                 'js_info' => 'js_info.job_seeker_id = forwarded_tests.job_seeker_id');
-            $where_test = "test_id = '$test_id' and job_seeker_id = '$seeker_id' ";
+            $where_test = "forwarded_tests.test_id = '$test_id' and forwarded_tests.job_seeker_id = '$seeker_id' ";
             $check_farwarded = $this->Master_model->get_master_row('forwarded_tests', $select = FALSE, $where_test, $join_company);
 
             if ($check_farwarded) {
