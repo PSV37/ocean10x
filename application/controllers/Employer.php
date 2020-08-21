@@ -4931,11 +4931,12 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
 
 
-         $where_applied = "job_apply.apply_date BETWEEN CURDATE()-7 AND CURDATE() and job_apply.job_post_id='$job_id'";
+         $where_applied = "job_apply.apply_date <= apply_date +7 and job_posting.created_at <= created_at +7  job_apply.job_post_id='$job_id'";
+         join_test = array('job_posting' => 'job_posting.job_post_id=job_apply.job_post_id',
+        'seeker_test_result' => 'seeker_test_result.test_id=job_posting.test_for_job');
         $data['Total_count_early_applied'] = $this->Master_model->getMaster('job_apply', $where = $where_applied, $join = FALSE, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
 
-                 echo $this->db->last_query();
-
+        echo $this->db->last_query();
 
 
         $where_test_attempt_mandatory = "job_posting.is_test_required='Yes'";
