@@ -1883,15 +1883,15 @@ public function user_profile()
         );
         $last_id    = $this->Master_model->master_insert($exam_array, 'seeker_test_result');
 
-         $test_array = array(
+         // $test_array = array(
                         
-                        'status' => 'Test Completed',
-                        'updated_on' => date('Y-m-d'),
+         //                'status' => 'Test Completed',
+         //                'updated_on' => date('Y-m-d'),
                         
-                    );
-             $where['test_id'] = $test_id;
-             $where['job_seeker_id'] = $seeker_id;
-            $this->Master_model->master_update($test_array, 'oceanchamp_tests', $where);
+         //            );
+         //     $where['test_id'] = $test_id;
+         //     $where['job_seeker_id'] = $seeker_id;
+         //    $this->Master_model->master_update($test_array, 'oceanchamp_tests', $where);
         }
             
           // if (isset($oceanchamp_tests) && $oceanchamp_tests['final_result'] == 'Y') 
@@ -1914,6 +1914,8 @@ public function user_profile()
                 'js_info' => 'js_info.job_seeker_id = forwarded_tests.job_seeker_id');
             $where_test = "forwarded_tests.test_id = '$test_id' and forwarded_tests.job_seeker_id = '$seeker_id' ";
             $check_farwarded = $this->Master_model->get_master_row('forwarded_tests', $select = FALSE, $where_test, $join_company);
+
+            print_r($check_farwarded);die;
 
             if ($check_farwarded) {
                $subject = 'Candidate has Completed The test';
