@@ -1943,7 +1943,7 @@ public function user_profile()
                     );
             $this->Master_model->master_update($update_array, 'external_tracker', $where);
             $join =array('job_apply' => 'job_apply.job_post_id = external_tracker.job_post_id');
-            $where_cond = "external_tracker.apply_id = '$apply_id'"
+            $where_cond = "external_tracker.apply_id = '$apply_id'";
             $total_ranks = $this->getMaster('external_tracker',  $where_cond, $join , $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
             $before_sorting = array();
             foreach ($total_ranks as $row) {
