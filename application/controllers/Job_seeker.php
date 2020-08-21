@@ -1948,8 +1948,9 @@ public function user_profile()
                // print_r($this->db->last_query());die;
             $before_sorting = array();
             foreach ($total_ranks as $row) {
-                $scores = explode('/', $row->score);
+                $scores = explode('/', $row['score']);
                 print_r($scores);die;
+                
                 array_push($before_sorting, $scores[0]);
 
             }
