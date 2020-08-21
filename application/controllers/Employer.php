@@ -1339,7 +1339,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                             <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
                             <a href="#"><img src="' . base_url() . 'upload/' . $require['company_logo'] . '" style="height: 50px;"> </a>
                             <br><br>Hi ' . $email_name[0] . ',<br>';
-                    $message.= '<br/><b>' . $company_name . '</b>has asked you to take a test. Kindly click on the Test URL give below and follow the steps thereon. <br><br>
+                    $message.= '<br/><b>' . $company_name . '</b> has asked you to take a test. Kindly click on the Test URL give below and follow the steps thereon. <br><br>
                         <a href="' . base_url() . 'employer/ocean_test_start/' . base64_encode($test_id) . '"><button >Give Test</button></a><br><br><br></td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table><br><br>
                         Regards,<br><br>Team TheOcean.</div>';
                     $send = sendEmail_JobRequest($email[$i], $message, $subject);

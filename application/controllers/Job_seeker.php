@@ -1910,13 +1910,39 @@ public function user_profile()
                 $data['result'] =  $data['correct_ans'];
 
             }
-            // $this->load->view('fontend/employer/result_page',$data);
-        // } 
-        // else
-        // {
+            $join_company = array('company_profile' => 'company_profile.company_profile_id = forwarded_tests.company_id',
+                'js_info' => 'js_info.job_seeker_id = forwarded_tests.job_seeker_id')
+            $where_test = "test_id = '$test_id' and job_seeker_id = '$seeker_id' ";
+            $check_farwarded = $this->Master_model->get_master_row('forwarded_tests', $select = FALSE, $where_test, $join_company);
+
+            if ($check_farwarded) {
+               $subject = 'Candidate has Completed The test';
+            $message = '
+                <style>
+                    .btn-primary{
+                        width: 232px;
+                        color: #fff;
+                        text-align: center;
+                        margin: 0 0 0 5%;
+                        background-color: #6495ED;
+                        padding: 5px;
+                        text-decoration: none;
+                    }
+                </style>
+                <div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
+                <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
+                <br><br>Hi '. $check_farwarded->company_name.' <br/>';
+
+                $message .='<br>
+                '.$check_farwarded->full_name.' has completed the test that you have farwarded<br><br>Regards,<br> '.$sender_name.'<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table><br><br>Regards,<br><br>Team TheOcean.</div>';
+
+
+                $send = sendEmail_JobRequest($email,$message,$subject);
+            }
+           
             $this->load->view('fontend/exam/exam_success',$data);
 
-        // }
+        
            
           
         }
