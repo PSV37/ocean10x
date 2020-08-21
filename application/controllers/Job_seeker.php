@@ -1751,10 +1751,13 @@ public function user_profile()
         $oceanchamp_tests = $this->Master_model->get_master_row('forwarded_tests', $select = FALSE, $where = $where_all, $join = FALSE);
     }
 
-   public function ocean_test_start($test_id = null)
+   public function ocean_test_start($test_id = null,$job_post_id= null)
     {
         // $company_profile_id = $this->session->userdata('company_profile_id');
         $test_id           = base64_decode($test_id);
+        $job_post_id           = base64_decode($job_post_id);
+        print_r($test_id);
+        print_r($job_post_id);die;
         
         if (!empty($test_id)) {
             
@@ -1824,8 +1827,9 @@ public function user_profile()
       
         // print_r($_POST);die;
       
-        
+          $seeker_id = $this->session->userdata('job_seeker_id');
         $test_id              = $this->input->post('test_id');
+
         // $employer_id = $this->session->userdata('company_profile_id');
         $where_all = "oceanchamp_tests.status='1' AND test_id = '$test_id'";
 
@@ -1883,15 +1887,17 @@ public function user_profile()
         );
         $last_id    = $this->Master_model->master_insert($exam_array, 'seeker_test_result');
 
-         // $test_array = array(
+         $test_array = array(
                         
-         //                'status' => 'Test Completed',
-         //                'updated_on' => date('Y-m-d'),
+                        'status' => 'Test Completed',
+                        'updated_on' => date('Y-m-d'),
                         
-         //            );
-         //     $where['test_id'] = $test_id;
-         //     $where['job_seeker_id'] = $seeker_id;
-         //    $this->Master_model->master_update($test_array, 'oceanchamp_tests', $where);
+                    );
+             $where['test_id'] = $test_id;
+             $where['job_seeker_id'] = $seeker_id;
+            $this->Master_model->master_update($test_array, 'forwarded_tests', $where);
+
+
         }
             
           // if (isset($oceanchamp_tests) && $oceanchamp_tests['final_result'] == 'Y') 
@@ -1910,11 +1916,19 @@ public function user_profile()
                 $data['result'] =  $data['correct_ans'];
 
             }
-            $seeker_id = $this->session->userdata('job_seeker_id');
+          
             $join_company = array('company_profile' => 'company_profile.company_profile_id = forwarded_tests.company_id',
                 'js_info' => 'js_info.job_seeker_id = forwarded_tests.job_seeker_id');
             $where_test = "forwarded_tests.test_id = '$test_id' and forwarded_tests.job_seeker_id = '$seeker_id' ";
             $check_farwarded = $this->Master_model->get_master_row('forwarded_tests', $select = FALSE, $where_test, $join_company);
+
+            if ($check_farwarded->status == 'Farwarded Test with job') {
+                $where_test_job = "job_posting.test_for_job = '$test_id' and job_posting.company_id = '$check_farwarded->company_profile_id' ";
+                $job_id = $this->Master_model->get_master_row('job_posting', $select = FALSE, $where_test_job);
+
+                print_r($job)
+
+            }
 
             // print_r($this->db->last_query());
             // die;
