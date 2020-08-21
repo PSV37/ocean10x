@@ -1935,10 +1935,10 @@ public function user_profile()
                 </style>
                 <div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
                 <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
-                <br><br>Hi '. $check_farwarded->company_name.' <br/>';
+                <br><br>Hi '. $check_farwarded['company_name'].' <br/>';
 
                 $message .='<br>
-                '.$check_farwarded->full_name.' has completed the test that you have farwarded<br><br>Regards,<br> '.$sender_name.'<br><br>© 2020 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table><br><br>Regards,<br><br>Team TheOcean.</div>';
+                '.$check_farwarded['full_name'].' has completed the test that you have farwarded<br><br>Regards,<br><br> Team TheOcean<br><br>© 2020 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table><br><br>Regards,<br><br>Team TheOcean.</div>';
 
 
                 $send = sendEmail_JobRequest($check_farwarded['company_email'],$message,$subject);
