@@ -1956,7 +1956,7 @@ public function user_profile()
             }
 
             $sorted_array =array(sort(array_unique($before_sorting)));
-             print_r($sorted_array);die;
+             // print_r($sorted_array);die;
             $k=1;
             foreach ($sorted_array as $row) {
                 $array = array(
@@ -1970,7 +1970,7 @@ public function user_profile()
             $this->Master_model->master_update($array,'external_tracker', $where);
 
             $k++;
-            print_r($this->db->last_query());die;
+            // print_r($this->db->last_query());die;
                 
             }
 
