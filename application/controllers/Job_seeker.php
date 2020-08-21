@@ -1963,7 +1963,7 @@ public function user_profile()
                 
              $where['score'] = $row.'/'.$data['total_questions'];
            
-            $this->Master_model->master_update($array, 'external', $where);
+            $this->Master_model->master_update($array, 'external_tracker', $where);
 
             $k++;
                 
