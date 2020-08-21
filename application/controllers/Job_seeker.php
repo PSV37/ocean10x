@@ -1915,7 +1915,8 @@ public function user_profile()
             $where_test = "forwarded_tests.test_id = '$test_id' and forwarded_tests.job_seeker_id = '$seeker_id' ";
             $check_farwarded = $this->Master_model->get_master_row('forwarded_tests', $select = FALSE, $where_test, $join_company);
 
-            print_r($check_farwarded);die;
+            print_r($this->db->last_query());
+            die;
 
             if ($check_farwarded) {
                $subject = 'Candidate has Completed The test';
