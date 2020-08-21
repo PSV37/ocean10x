@@ -1910,13 +1910,14 @@ public function user_profile()
                 $data['result'] =  $data['correct_ans'];
 
             }
+            $seeker_id = $this->session->userdata('job_seeker_id');
             $join_company = array('company_profile' => 'company_profile.company_profile_id = forwarded_tests.company_id',
                 'js_info' => 'js_info.job_seeker_id = forwarded_tests.job_seeker_id');
             $where_test = "forwarded_tests.test_id = '$test_id' and forwarded_tests.job_seeker_id = '$seeker_id' ";
             $check_farwarded = $this->Master_model->get_master_row('forwarded_tests', $select = FALSE, $where_test, $join_company);
 
-            print_r($this->db->last_query());
-            die;
+            // print_r($this->db->last_query());
+            // die;
 
             if ($check_farwarded) {
                $subject = 'Candidate has Completed The test';
