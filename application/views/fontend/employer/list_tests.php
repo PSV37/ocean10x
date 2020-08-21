@@ -1305,14 +1305,14 @@ span.select2-selection.select2-selection--single {
       <div class="modal-content">
          <div class="modal-header" style="border-bottom:none;">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Forward This Test</h5>
+            <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Attach This Test To Job</h5>
          </div>
          <form action="<?php echo base_url() ?>employer/attach_to_job" class="sendEmail" method="post" autocomplete="off">
             <input type="hidden" name="test_id" id="test_id" value="<?php echo $tests['test_id']; ?>">
             <div class="modal-body" style="padding:15px 40px;">
                <input type="hidden" name="consultant" value="JobSeeker">  
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <label class="mdl-textfield__label" for="sample3">E-mail:</label>
+                  <label class="mdl-textfield__label" for="sample3">Active Job:</label>
                <select class="form-control select2" name="job_id">
                   <?php foreach ($company_active_jobs as $row) { ?>
                    <option value="<?php echo $row->job_post_id ?>"><?php echo $row->job_title?></option>
@@ -1320,9 +1320,7 @@ span.select2-selection.select2-selection--single {
                </select>
                </div>
                <input type="hidden" name="job_post_id" value="" id="auto-value">
-               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
-                  <label class="mdl-textfield__label" for="sample3">Message:</label>
-                  <textarea class="form-control" name="message" rows="5" id="comment" value="" required></textarea>
+              
                </div>
                <input type="hidden" name="forward_job_email" id="forward_job_email" value="<?php echo $cv_row['js_email']; ?>">
             </div>

@@ -972,18 +972,23 @@ span.select2-selection.select2-selection--single {
                <a style="float: right;" href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Add Question</i></button></a>
                </div> -->
             <ul id="myTabs" class="" role="tablist" data-tabs="tabs">
-               <li class="btn btn-secondary active"><a href="#qbank" data-toggle="tab">Question Bank</a></li>
-               <li class="btn btn-secondary"><a href="#Videos" data-toggle="tab">Test Paper Bank</a></li>
+               <li class="btn btn-secondary <?php $submenu=$this->session->userdata('submenu'); $activemenu=$this->session->userdata('activemenu'); 
+               if(isset($submenu) && !empty($submenu))
+               {
+                if($submenu == 'qbank') 
+                { echo 'active'; }
+                }else{  echo 'active'; } ?> "><a href="#qbank" data-toggle="tab">Question Bank</a></li>
+               <li class="btn btn-secondary <?php $submenu=$this->session->userdata('submenu');  if(isset($submenu) && !empty($submenu)){if($submenu == '1' || $submenu == '2'   ) echo 'active'; } ?>"><a href="#Videos" data-toggle="tab">Test Paper Bank</a></li>
             </ul>
             <div class="tab-content">
-               <div role="tabpanel" class="tab-pane fade" id="Videos">
+               <div role="tabpanel" class="tab-pane fade <?php $submenu=$this->session->userdata('submenu');  if(isset($submenu) && !empty($submenu)){if($submenu == '1' || $submenu == '2'   ) echo 'in active'; } ?>" id="Videos">
                     <div class="row" style="float: right;">
                      <!--  <a style="float: right;margin-right: 200px;"  href="<?php echo base_url(); ?>employer/create-test"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Create Test</i></button></a> -->
                      <div class="btn-group-toggle" data-toggle="buttons" >
-                           <a href="#add_test" data-toggle="tab"><label class="btn btn-secondary active">
+                           <a href="#add_test" data-toggle="tab"><label class="btn btn-secondary   <?php $submenu=$this->session->userdata('submenu');  if(isset($submenu) && !empty($submenu)){if($submenu == '1' ) {echo 'active'; } }else{ echo 'active'; }?>">
                            <input type="radio" name="options" id="option1" autocomplete="off"  style="display: none;">I want to choose My Questions in the Test !
                            </label></a><br>
-                           <a href="#create_test" data-toggle="tab"><label class="btn btn-secondary">
+                           <a href="#create_test" data-toggle="tab"><label class="btn btn-secondary  <?php $submenu=$this->session->userdata('submenu');  if(isset($submenu) && !empty($submenu)){if( $submenu == '2'   ) echo 'active'; } ?>">
                            <input type="radio" name="options" id="option2" autocomplete="off" style="display: none;"> Ocean can help me create the Test !
                            </label></a>
                         </div>
@@ -999,7 +1004,7 @@ span.select2-selection.select2-selection--single {
                         </div> -->
                      </div>
                      <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane fade" id="add_test">
+                        <div role="tabpanel" class="tab-pane fade <?php $submenu=$this->session->userdata('submenu');  if(isset($submenu) && !empty($submenu)){if($submenu == '1' ){ echo 'in active'; }  }else{ echo 'in active'; }?>" id="add_test">
                            <form method="post" action="<?php echo base_url(); ?>employer/add_to_test">
                            <input type="hidden" id="question_id" name="data_arr" value="">
                            <input type="hidden" class="form-control" readonly style="border: none;" id="test_time" name="test_time">
@@ -1195,7 +1200,7 @@ span.select2-selection.select2-selection--single {
                      </div>
                   </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane fade" id="create_test">
+                        <div role="tabpanel" class="tab-pane fade <?php $submenu=$this->session->userdata('submenu');  if(isset($submenu) && !empty($submenu)){if( $submenu == '2'   ) echo 'in active'; } ?> " id="create_test">
                            <form method="post" action="<?php echo base_url(); ?>employer/randomly_create_test">
                               <div class="row">
                                  <div class="col-md-4">
@@ -1386,7 +1391,12 @@ span.select2-selection.select2-selection--single {
                      </div>
                   </div>
                  
-               <div role="tabpanel" class="tab-pane fade active" id="qbank">
+               <div role="tabpanel" class="tab-pane fade <?php $submenu=$this->session->userdata('submenu'); $activemenu=$this->session->userdata('activemenu'); 
+               if(isset($submenu) && !empty($submenu))
+               {
+                if($submenu == 'qbank') 
+                { echo 'in active'; }
+                }else{  echo 'in active'; } ?> " id="qbank">
                 
                    <a id="qbottons" style="margin-top: -41px;" href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Add a Question</i></button></a><br>
               
@@ -1478,9 +1488,9 @@ span.select2-selection.select2-selection--single {
                         </ul>
                      </div>
                      <p>
-                        <a class="toggle btn " href="#example">show answer</a>
+                        <a class="toggle btn " href="#example<?php echo $ct_row['question_id'] ?>">show answer</a>
                      </p>
-                     <div class="toggle-content" id="example">
+                     <div class="toggle-content" id="example<?php echo $ct_row['question_id'] ?>">
                         <?php echo $ct_row['answer_id'] ?>
                      </div>
                      <div class="btn-group">
@@ -1682,25 +1692,21 @@ span.select2-selection.select2-selection--single {
       <div class="modal-content">
          <div class="modal-header" style="border-bottom:none;">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Forward This Test</h5>
+            <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Attach This Test To Job</h5>
          </div>
          <form action="<?php echo base_url() ?>employer/attach_to_job" class="sendEmail" method="post" autocomplete="off">
             <input type="hidden" name="test_id" id="test_id" value="<?php echo $tests['test_id']; ?>">
             <div class="modal-body" style="padding:15px 40px;">
                <input type="hidden" name="consultant" value="JobSeeker">  
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <label class="mdl-textfield__label" for="sample3">E-mail:</label>
+                  <label class="mdl-textfield__label" for="sample3">Active Job:</label>
                  <select class="form-control select2" name="job_id">
                   <?php foreach ($company_active_jobs as $row) { ?>
                    <option value="<?php echo $row->job_post_id ?>"><?php echo $row->job_title ?></option>
                  <?php } ?>
                </select>
                </div>
-               <input type="hidden" name="job_post_id" value="" id="auto-value">
-               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
-                  <label class="mdl-textfield__label" for="sample3">Message:</label>
-                  <textarea class="form-control" name="message" rows="5" id="comment" value="" required></textarea>
-               </div>
+              
                <input type="hidden" name="forward_job_email" id="forward_job_email" value="<?php echo $cv_row['js_email']; ?>">
             </div>
             <div class="modal-footer">
@@ -1845,14 +1851,14 @@ span.select2-selection.select2-selection--single {
       <div class="modal-content">
          <div class="modal-header" style="border-bottom:none;">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Forward This Test</h5>
+            <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Attach This Test To Job</h5>
          </div>
          <form action="<?php echo base_url() ?>employer/attach_to_job" class="sendEmail" method="post" autocomplete="off">
             <input type="hidden" name="test_id" id="test_id" value="<?php echo $tests['test_id']; ?>">
             <div class="modal-body" style="padding:15px 40px;">
                <input type="hidden" name="consultant" value="JobSeeker">  
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <label class="mdl-textfield__label" for="sample3">E-mail:</label>
+                  <label class="mdl-textfield__label" for="sample3">Active Job:</label>
                   <select class="form-control select2" name="job_id">
                   <?php foreach ($company_active_jobs as $row) { ?>
                    <option value="<?php echo $row->job_post_id ?>"><?php echo $row->job_title ?></option>
@@ -1860,10 +1866,7 @@ span.select2-selection.select2-selection--single {
                </select>
                </div>
                <input type="hidden" name="job_post_id" value="" id="auto-value">
-               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
-                  <label class="mdl-textfield__label" for="sample3">Message:</label>
-                  <textarea class="form-control" name="message" rows="5" id="comment" value="" required></textarea>
-               </div>
+               
                <input type="hidden" name="forward_job_email" id="forward_job_email" value="<?php echo $cv_row['js_email']; ?>">
             </div>
             <div class="modal-footer">
