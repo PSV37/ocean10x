@@ -1915,7 +1915,7 @@ public function user_profile()
 
 
             }
-        }
+        
             
           // if (isset($oceanchamp_tests) && $oceanchamp_tests['final_result'] == 'Y') 
           // { 
