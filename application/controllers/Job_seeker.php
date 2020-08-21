@@ -1945,10 +1945,11 @@ public function user_profile()
             $join =array('job_apply' => 'job_apply.job_post_id = external_tracker.job_post_id');
             $where_cond = "external_tracker.apply_id = '$apply_id'";
             $total_ranks = $this->Master_model->getMaster('external_tracker',  $where_cond, $join , $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
-               print_r($this->db->last_query());die;
+               // print_r($this->db->last_query());die;
             $before_sorting = array();
             foreach ($total_ranks as $row) {
-                $scores = explode('/', $row['score']);
+                $scores = explode('/', $row->score);
+                print_r($scores);die;
                 array_push($before_sorting, $scores[0]);
 
             }
