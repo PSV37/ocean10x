@@ -4845,7 +4845,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         'external_tracker' => 'external_tracker.job_post_id=job_apply.job_post_id | Left ');
         $data['Total_offer_accepted'] = $this->Master_model->getMaster('job_apply', $where = $where_offer, $join = $join_test_passed, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
 
-        // echo $this->db->last_query();
+         echo $this->db->last_query();
 
         echo json_encode($data);
 
