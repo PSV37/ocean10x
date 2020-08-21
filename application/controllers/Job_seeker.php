@@ -1938,7 +1938,7 @@ public function user_profile()
                 <br><br>Hi '. $check_farwarded->company_name.' <br/>';
 
                 $message .='<br>
-                '.$check_farwarded->full_name.' has completed the test that you have farwarded<br><br>Regards,<br> '.$sender_name.'<br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table><br><br>Regards,<br><br>Team TheOcean.</div>';
+                '.$check_farwarded->full_name.' has completed the test that you have farwarded<br><br>Regards,<br> '.$sender_name.'<br><br>© 2020 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table><br><br>Regards,<br><br>Team TheOcean.</div>';
 
 
                 $send = sendEmail_JobRequest($check_farwarded['company_email'],$message,$subject);
