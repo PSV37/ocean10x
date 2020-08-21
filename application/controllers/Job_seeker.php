@@ -1931,14 +1931,14 @@ public function user_profile()
              $where['apply_id'] = $apply_id;
            
             $this->Master_model->master_update($test_array, 'forwarded_jobs_cv', $where);
-            
+
             $score = $data['correct_ans'] ."/". $data['total_questions'];
 
             $update_array = array(
                         
                         'tracking_status' => 2,
                         'score' => $score,
-                        'updated_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));,
+                        'updated_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'))
                         
                     );
             $this->Master_model->master_update($update_array, 'external_tracker', $where);
