@@ -1924,7 +1924,7 @@ public function user_profile()
             $test_array = array(
                         
                         'tracking_status' => 2,
-                        'updated_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));,
+                        'updated_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
                         
                     );
              $where['apply_id'] = $apply_id;
