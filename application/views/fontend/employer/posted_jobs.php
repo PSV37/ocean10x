@@ -1106,6 +1106,10 @@
                      <em>Offer Accepted</em>
                      <span id='total_offer_accept'></span>
                   </li>
+                  <li>
+                     <em>Early Applications</em>
+                     <span id='early_applications'></span>
+                  </li>
 
                </ul>
             </section>
@@ -1474,6 +1478,8 @@
 
                    var total_offer_accepted = getarray.Total_offer_accepted;
 
+                   var total_count_early_applied = getarray.Total_count_early_applied;
+
                    $('#total_forwarded').html(total_count.length);
                    $('#total_applied').html(total_count_applied.length);
                    $('#total_test').html(total_given_test.length);
@@ -1483,6 +1489,8 @@
                    $('#total_test_int_fail').html(total_test_interview_failed.length);
 
                    $('#total_offer_accept').html(total_offer_accepted.length);
+
+                   $('#early_applications').html(total_count_early_applied);
 
                  }
                });
