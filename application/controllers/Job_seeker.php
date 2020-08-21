@@ -1931,7 +1931,7 @@ public function user_profile()
              $where['apply_id'] = $apply_id;
            
             $this->Master_model->master_update($test_array, 'forwarded_jobs_cv', $where);
-            $score = "$data['correct_ans'] / $data['total_questions']";
+            $score = $data['correct_ans'] ."/". $data['total_questions'];
 
             $update_array = array(
                         
