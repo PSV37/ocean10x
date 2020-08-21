@@ -1927,7 +1927,7 @@ public function user_profile()
                         'tracking_status' => 2,
                         'updated_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')));
                         
-                    );
+                
              $where['apply_id'] = $apply_id;
            
             $this->Master_model->master_update($test_array, 'forwarded_jobs_cv', $where);
