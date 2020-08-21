@@ -50,6 +50,7 @@
                                 </td>
 
                                   <td ><input type="text" class="email allowalphabates" id="reminder" readonly="" name="comment" value="<?php echo $job_row->score; ?>" ></td>
+                                   <td ><input type="text" class="email allowalphabates" id="reminder" readonly="" name="comment" value="<?php $rank= $job_row->rank.'/'.sizeof($external_tracking_date); echo $rank ?>" ></td>
 
                                 <td ><input type="text" class="email allowalphabates" id="action" name="comment" value="<?php echo $job_row->action_item; ?>" ></td>
 

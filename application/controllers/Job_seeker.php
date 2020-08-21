@@ -1953,11 +1953,11 @@ public function user_profile()
             }
 
             $sorted_array =(sort(array_unique($before_sorting)));
-            $i=1;
+            $k=1;
             foreach ($sorted_array as $row) {
                 $array = array(
                         
-                        'rank' => $i,
+                        'rank' => $k,
                         'updated_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')));
                         
                 
@@ -1965,7 +1965,7 @@ public function user_profile()
            
             $this->Master_model->master_update($array, 'external', $where);
 
-            $i++;
+            $k++;
                 
             }
 
