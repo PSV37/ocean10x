@@ -1942,6 +1942,35 @@ public function user_profile()
                         
                     );
             $this->Master_model->master_update($update_array, 'external_tracker', $where);
+            $join =array('job_apply' => 'job_apply.job_post_id = external_tracker.job_post_id');
+            $where_cond = "external_tracker.apply_id = '$apply_id'"
+            $total_ranks = $this->getMaster('external_tracker',  $where_cond, $join , $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+            $before_sorting = array();
+            foreach ($total_ranks as $row) {
+                $scores = explode('/', $row['score']);
+                array_push($before_sorting, $scores[0]);
+
+            }
+
+            $sorted_array =(sort(array_unique($before_sorting)));
+            $i=1;
+            foreach ($sorted_array as $row) {
+                $array = array(
+                        
+                        'rank' => $i,
+                        'updated_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')));
+                        
+                
+             $where['score'] = $row.'/'.$data['total_questions'];
+           
+            $this->Master_model->master_update($array, 'external', $where);
+
+            $i++;
+                
+            }
+
+
+
 
 
             }

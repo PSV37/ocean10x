@@ -525,6 +525,7 @@ textarea#comment {
                                 <th scope="col">Notice (days)</th>
                                 <th scope="col">Education</th>
                                 <th scope="col">Status</th>
+                                <th scope="col">Score</th>
                                 <th scope="col">Action Items</th>
                                 <th scope="col">Notes</th>
                                 <th scope="col">Reminders</th>
