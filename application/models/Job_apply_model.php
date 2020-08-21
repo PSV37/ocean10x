@@ -45,7 +45,7 @@ class Job_apply_model extends MY_Model
             return false;
         }   
     }
-
+/*
     public function job_post($company_id,$job_post_id)
     {
         $this->db->select("*");
@@ -59,7 +59,7 @@ class Job_apply_model extends MY_Model
             return false;
         }
     }
-
+*/
  
     public function check_confirmed_interview( $company_id,$job_post_id)
     {
