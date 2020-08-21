@@ -1,5 +1,8 @@
-<?php $this->load->view('fontend/layout/employer_new_header.php');?>
-<!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/oceanchamp_exp.css"> -->
+<!---header-->
+<?php  $this->load->view('fontend/layout/employer_new_header.php'); ?>
+<!---header--->
+<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/oceanchamp_exp.css">
+
 <style>
    .employ_tab {
    margin-top: 55px;
@@ -195,7 +198,7 @@
    list-style-type: none;
    font-size: 12px;
    font-weight: 100;
-   width:150px;
+   width:260px;
    }
    .icon-info {
    margin-left:60px;
@@ -238,12 +241,13 @@
    margin-top:0px;
    margin-left:18px;
    }
-  .following-info2 {
-    margin-left: 270px;
-    line-height: 30px;
-    margin-top: 0px;
-    margin-bottom: 15px;
-}.following-info3 {
+   .following-info2 {
+   margin-left:309px;
+   line-height:30px;
+   margin-top:0px;
+   margin-bottom:15px;
+   }
+   .following-info3 {
    margin-left: 309px;
    line-height: 30px;
    margin-top: 0px;
@@ -261,7 +265,7 @@
    }
    .following-info3 {
    float: right;
-   margin-top: -133px;
+   margin-top: -144px;
    line-height:30px;
    }
    label{display:block;}
@@ -734,7 +738,7 @@
    .input-group-btn:last-child>.btn{background-color:#18c5bd;
    color:#fff;}
    button.btn.btn-primary {
-   float: right;
+   /*float: right;*/
    background-color: #18c5bd;
    border: none;
    border-radius: 35px;
@@ -881,10 +885,10 @@
    background: #b3ebe8;;
    width: 0%;
    }
-   button#frwd_btn {
+  /* button#frwd_btn {
    margin-top: -2px;
    margin-left: 10px;
-   }
+   }*/
    button.btn.btn-default {
    margin-left: 5px;
    margin-top: 20px;
@@ -897,10 +901,10 @@
    ul#select2-folder_id-y3-results {
    margin-top: 27px;
    }
-   span.select2-selection.select2-selection--single {
-   width: 330px;
-   text-align: center;
-   }
+    span.select2-selection.select2-selection--single {
+    width: 185px;
+    text-align: center;
+}
    input#email {
    width: 100%;
    }
@@ -908,32 +912,159 @@
    color: black;
    font-size: 13px;
    }
-   #qbottons
-{
-      margin-right: 202px;
-    float: right;
-}
-i.fa.fa-plus {
-    padding: 2px;
-}
-.box-body {
-    height: fit-content;
-}
-span.select2-selection.select2-selection--single {
-  width: 180px;
+   input[type=radio] {
+   display: none;
+   }
+   label.btn.btn-secondary.active {
+   border-radius: 20px;
+   border: solid 2px;
+   color: #18c5bd;
+   background-color: #fff;
+   border: solid 2px #18c5bd;
+   font-weight: 700;
+   }
+   label.btn.btn-secondary {
+   color: #949494;
+   background-color: #fff;
+   border: solid 2px #a5a5a5;
+   border-radius: 30px;
+   padding: 4px 10px;
+   font-weight: 700;
+   }
+   button.btn.btn-primary {
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 80px;
+    padding: 5px;
+    margin-right: -199px;
+    min-width: 80px;
 }
 
 </style>
-<div class="container-fluid main-d">
-   <div class="container">
-      <div class="col-md-12">
-         <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
-         <div class="col-md-6" style="margin-top:75px;">
-             <div class="row">
-                      <a style="float: right;"  href="<?php echo base_url(); ?>employer/create-test"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Create Test</i></button></a>
-                    </div>
-            <div class="row">
-                           <form method="post" action="<?php echo base_url(); ?>employer/randomly_create_oceantest">
+</style>
+<body>
+   <div class="container-fluid main-d">
+      <div class="container">
+         <div class="col-md-12">
+            <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
+            <div class="col-md-6" style="margin-top:75px;">
+               <!-- <ul id="myTabs" class="nav nav-pills nav-justified" role="tablist" data-tabs="tabs">
+                  <li class="active"><a href="#Commentary" data-toggle="tab">Corporate QuestionBank</a></li>
+                  <li><a href="#Videos" data-toggle="tab">Ocean QuestionBank !</a></li>
+               </ul> -->
+               
+                 
+               
+                     <div class="row">
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                           <a href="#add_test" data-toggle="tab"><label class="btn btn-secondary active">
+                           <input type="radio" name="options" id="option1" autocomplete="off" >I want to choose My Questions in the Test !
+                           </label></a>
+                           <a href="#create_test" data-toggle="tab"><label class="btn btn-secondary">
+                           <input type="radio" name="options" id="option2" autocomplete="off"> Ocean can help me create the Test !
+                           </label></a>
+                        </div>
+                     </div>
+                     <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active" id="add_test">
+                           <form method="post" action="<?php echo base_url(); ?>employer/add_to_test">
+                           <input type="hidden" id="question_id" name="data_arr" value="">
+                           <input type="hidden" class="form-control" readonly style="border: none;" id="test_time" name="test_time">
+                              <div class="row">
+                                 <div class="col-md-4">
+                                    <div class="form-group technical_id">                                       
+                                       <label for="exampleInputEmail1">Test Name <span class="required">*</span></label>
+                                       <input type="text" class="form-control" id="test_name" name="test_name">
+                                    </div>
+                                 </div>
+                                  <div class="col-md-4">
+                                    <div class="form-group technical_id">
+                                       <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
+                                       <select id="subject" name="subject_data" required class="form-control select2"  onchange="getTopic(this.value)">
+                                          <option value="">Select Subject</option>
+                                          <?php if (!empty($skill_master))
+                                             foreach($skill_master as $skill) 
+                                             {
+                                             ?>   
+                                          <option value="<?php echo $skill['id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['technical_id']==$skill['id'])echo "selected";?>><?php echo $skill['skill_name']; ?></option>
+                                          <?php } ?>
+                                       </select>
+                                       <?php echo form_error('technical_id'); ?>   
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4">
+                                    <div class="form-group topic_id">
+                                       <label for="exampleInputEmail1">Main Topic <span class="required">*</span></label>
+                                       <select id="topic_id" name="topic_id" class="form-control select2" onchange="getSubtopic(this.value)">
+                                          <option value="">Select Topic</option>
+                                          <!-- <option value="1">HTML 5</option>  -->
+                                       </select>
+                                       <?php echo form_error('topic_id'); ?>   
+                                    </div>
+                                 </div>
+                              
+                              </div>
+                              <div class="row">
+                                
+                                
+                                 <div class="col-md-4">
+                                    <div class="form-group subtopic_id">
+                                       <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
+                                       <select id="subtopic_id" name="subtopic_id" class="form-control select2" onchange="get_questuions();" >
+                                       </select> <?php echo form_error('subtopic_id'); ?>   
+                                    </div>
+                                 </div>
+                                   <div class="col-md-4">
+                                   <div class="form-group level">
+                                     <label for="exampleInputEmail1">Level<span class="required">*</span></label>
+                                       <select name="level_data" onchange="get_questuions();" id="level" class="form-control select2">                                     
+                                         <option value="Expert"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Expert')echo "selected";?>>Expert</option>
+                                         <option value="Medium"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Medium')echo "selected";?>>Medium</option>
+                                         <option value="Beginner"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Beginner')echo "selected";?>>Beginner</option>
+                                       </select> <?php echo form_error('level'); ?>   
+                                   </div>
+                                 </div>
+                              </div>
+                              <div class="box-body">
+                                 <div class="box" >
+                                    <p ><b style="float: left;margin-right: 80px">Total Time Duration:<span id="total_time"></span></b> <b style="float: right;margin-right: 80px" >Total Questions:<span id="total_questions"></span></b></p>
+                                    <div class="card content">
+                                       <!-- <div class="front"> -->
+                                       <div class="following-info">
+                                          <table class="table table-borderless" id="myTable">
+                                             <thead>
+                                                <tr>
+                                                   <th scope="col">Sr No</th>
+                                                   <th scope="col">Line Item 1</th>
+                                                   <th scope="col">Line Item 2</th>
+                                                   <th scope="col">Question</th>
+                                                   <th scope="col">time</th>
+                                                   <th scope="col">Action</th>
+                                                </tr>
+                                             </thead>
+                                             <tbody>
+                                             </tbody>
+                                          </table>
+                                       </div>
+                                       <!-- </div> -->
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="row">
+                                 <div class="col-md-6"></div>
+                                 <div class="col-md-6">
+                                    <div class="col-md-3">
+                                       <button class="btn btn-primary" type="reset">Discard</button>
+                                    </div>
+                                    <div class="col-md-3" style="margin-left: 20;">
+                                       <button class="btn btn-primary" id="frwd_btn" type="submit">Create</button>
+                                    </div>
+                                 </div>
+                              </div>
+                           </form>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="create_test">
+                           <form method="post" action="<?php echo base_url(); ?>employer/randomly_create_test">
                               <div class="row">
                                  <div class="col-md-4">
                                     <div class="form-group technical_id">                                       
@@ -1021,109 +1152,11 @@ span.select2-selection.select2-selection--single {
                               </div>
                            </form>
                         </div>
-           
-             
-                  <div class="row">
-                     <div class="box" >
-                        <?php $key = 1; if (!empty($ocean_tests)): foreach ($ocean_tests as $tests) : 
-                           $on_ocean = $tests['ocean_candidate'];
-                                 if($on_ocean == 'Yes')
-                                 {
-                                    $resume = getUploadedResume($tests['js_email']);
-                                    $photo = getSeekerPhoto($tests['js_email']);
-                                    $updates = getSeekerlastUpdates($tests['js_email']);
-                                    if (!empty($updates)) {
-                                      if($updates[0]['update_at']=='0000-00-00 00:00:00') { 
-                                        $mtime = date('d-M-y',strtotime($updates[0]['create_at']));
-                                      } else{
-                                        $mtime = date('d-M-y',strtotime($updates[0]['update_at']));
-                                      }
-                                    }else{
-                                      $mtime = date('d-M-y',strtotime($tests['created_on']));
-                                    }
-                                 }else{
-                                  $mtime = date('d-M-y',strtotime($tests['created_on']));
-                                 }
-                                
-                                ?>
-                        <label>
-                           <div class="check">
-                              <!--  <input type="checkbox" value="<?php echo $cv_row['js_email']; ?>" data-valuetwo="<?php echo $cv_row['cv_id'];  ?>" data-valueone="<?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ echo $cv_row['js_resume']; } ?>" class="chkbx" /> -->
-                           </div>
-                           <div class="card content">
-                              <div class="front">
-                                 <?php
-                                    if($on_ocean == 'Yes')
-                                      {
-                                    if(!empty($photo)){ ?>
-                                 <img src="<?php echo  base_url(); ?>upload/<?php if(!empty($photo[0]['photo_path'])){echo $photo[0]['photo_path'];} ?>" style="height:25px; width:25px;border-radius:5px;float:left" />
-                                 <?php }else{ ?>
-                                 <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" style="height:25px; width:25px;border-radius:5px;float:left" />
-                                 <?php } }else{ ?>
-                                 <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" style="height:25px; width:25px;border-radius:5px;float:left" />
-                                 <?php } ?>
-                                 <div class="job-info">
-                                    <div class="a">
-                                       <li class="right-title" style="font-size:19px;margin-top:-4px;"  ><?php echo $tests['test_name']; ?></li>
-                                    </div>
-                                 </div>
-                                 <div class="following-info">
-                                    <li class="left-title"
-                                       >Type</li>
-                                    <li class="right-title">&nbsp;:<?php echo $tests['type']; ?></li>
-                                    <li class="left-title">Total Questions</li>
-                                    <li class="right-title">&nbsp;:<?php echo $tests['total_questions']; ?></li>
-                                    <li class="left-title">Timer on Each Question</li>
-                                    <li class="right-title">&nbsp;: <?php echo $tests['timer_on_each_que']; ?></li>
-                                    <li class="left-title">Display Correct Answer</li>
-                                    <li class="right-title">&nbsp;:<?php echo $tests['correct_ans_each_ques']; ?></li>
-                                    <div class="clear"></div>
-                                 </div>
-                                 <div class="following-info2">
-                                    <li class="left-title">Level</li>
-                                    <li class="right-title">&nbsp;:<?php echo $tests['level']; ?></li>
-                                    <li class="left-title">Total Duration</li>
-                                    <li class="right-title">&nbsp;:<?php echo $tests['test_duration']; ?></li>
-                                    <li class="left-title">Allowed to Go back</li>
-                                    <li class="right-title">&nbsp;:<?php echo $tests['previous_option']; ?></li>
-                                    <li class="left-title">Display Result </li>
-                                    <li class="right-title">&nbsp;:<?php echo $tests['final_result']; ?></li>
-                                    <div class="clear"></div>
-                                 </div>
-                                 <div class="following-info3">
-                                    <li class="left-title">Topics</li>
-                                    <li class="right-title">&nbsp;: <?php echo $tests['topics']; ?></li>
-                                    <li class="left-title">Allowed to Review</li>
-                                    <li class="right-title">&nbsp;:<?php echo $tests['review_option']; ?></li>
-                                    <li class="left-title">Negative Marking</li>
-                                    <li class="right-title">&nbsp;:<?php echo $tests['negative_marks']; ?></li>
-                                    <div class="clear"></div>
-                                 </div>
-                                 <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                 <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
-                                 </button>
-                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1" style="top:47px;">
-                                    <li ><a class="dropdown-item" href="#" id="div_frwrd" data-toggle="modal" data-target="#rotateModal<?php echo $tests['test_id'] ?>" >Forward This Test</a></li>
-                                     <li ><a class="dropdown-item" href="#" id="attach_to_job" data-toggle="modal" data-target="#attach_to_job<?php echo $tests['test_id'] ?>" >Attach To Job Post</a></li>
-                                    <li> <a class="dropdown-item"  href="#" data-toggle="modal" data-target="#edit_test<?php echo $tests['test_id'] ?>" >Edit Test</a></li>
-                                    <!--  <li><a class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-target="#move_cv" href="#">Move this CV</a></li> -->
-                                 </div>
-                              </div>
-                           </div>
-                        </label>
-                        <?php
-                           $key++;
-                             endforeach;  
-                           ?>     
-                        <?php else : ?> 
-                        <li colspan="3">
-                           <strong> No Tests Created. Click on "Create A Test" !</strong>
-                        </li>
-                        <?php endif; ?>
                      </div>
-                  </div>
-               </div>
-               <div class="col-md-3 ">
+                 
+              
+            </div>
+            <div class="col-md-3 ">
                <div class="last_section">
                   <div class="pai_chart">
                      <main>
@@ -1265,300 +1298,10 @@ span.select2-selection.select2-selection--single {
                   </div>
                </div>
             </div>
-          
-         
-      </div>
-   </div>
-</div>
-<?php $key = 1; if (!empty($ocean_tests)): foreach ($ocean_tests as $tests) : ?>
-<div class="modal" id="rotateModal<?php echo $tests['test_id'] ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-   <div class="modal-dialog" role="document">
-      <div class="modal-content">
-         <div class="modal-header" style="border-bottom:none;">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Forward This Test</h5>
          </div>
-         <form action="<?php echo base_url() ?>employer/forword_test" class="sendEmail" method="post" autocomplete="off">
-            <input type="hidden" name="test_id" id="test_id" value="<?php echo $tests['test_id']; ?>">
-            <div class="modal-body" style="padding:15px 40px;">
-               <input type="hidden" name="consultant" value="JobSeeker">  
-               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <label class="mdl-textfield__label" for="sample3">E-mail:</label>
-                  <input type="email"  name="candiate_email"  id="email" placeholder="Enter comma seperated Emails"  id="subject" data-required="true" multiple style="display: inline-block;" required>
-               </div>
-               <input type="hidden" name="job_post_id" value="" id="auto-value">
-               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
-                  <label class="mdl-textfield__label" for="sample3">Message:</label>
-                  <textarea class="form-control" name="message" rows="5" id="comment" value="" required></textarea>
-               </div>
-               <input type="hidden" name="forward_job_email" id="forward_job_email" value="<?php echo $cv_row['js_email']; ?>">
-            </div>
-            <div class="modal-footer">
-               <button type="submit" class="btn btn-save">Send</button>
-            </div>
-         </form>
       </div>
    </div>
-</div>
-<div class="modal" id="attach_to_job<?php echo $tests['test_id'] ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-   <div class="modal-dialog" role="document">
-      <div class="modal-content">
-         <div class="modal-header" style="border-bottom:none;">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Attach This Test To Job</h5>
-         </div>
-         <form action="<?php echo base_url() ?>employer/attach_to_job" class="sendEmail" method="post" autocomplete="off">
-            <input type="hidden" name="test_id" id="test_id" value="<?php echo $tests['test_id']; ?>">
-            <div class="modal-body" style="padding:15px 40px;">
-               <input type="hidden" name="consultant" value="JobSeeker">  
-               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <label class="mdl-textfield__label" for="sample3">Active Job:</label>
-               <select class="form-control select2" name="job_id">
-                  <?php foreach ($company_active_jobs as $row) { ?>
-                   <option value="<?php echo $row->job_post_id ?>"><?php echo $row->job_title?></option>
-                 <?php } ?>
-               </select>
-               </div>
-               <input type="hidden" name="job_post_id" value="" id="auto-value">
-              
-               </div>
-               <input type="hidden" name="forward_job_email" id="forward_job_email" value="<?php echo $cv_row['js_email']; ?>">
-            </div>
-            <div class="modal-footer">
-               <button type="submit" class="btn btn-save">Send</button>
-            </div>
-         </form>
-      </div>
-   </div>
-</div>
-<div class="modal" id="edit_test<?php echo $tests['test_id'] ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-   <div class="modal-dialog" role="document">
-      <div class="modal-content">
-         <div class="modal-header" style="border-bottom:none;">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Forward This Test</h5>
-         </div>
-         <form action="<?php echo base_url() ?>employer/update_test" class="sendEmail" method="post" autocomplete="off">
-            <input type="hidden" name="test_id" id="test_id" value="<?php echo $tests['test_id']; ?>">
-            <div class="modal-body" style="padding:15px 40px;">
-               <div class="col-md-6">
-                  <div class="form-group ques_type">
-                     <label for="exampleInputEmail1">Question Type<span class="required">*</span></label>
-                     <select name="ques_type" id="ques_type" class="form-control select2" type="text" onchange="get_questuions();">
-                        <option value="MCQ"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='MCQ')echo "selected";?>>MCQ</option>
-                        <option value="Subjective"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Subjective')echo "selected";?>>Subjective</option>
-                        <option value="Practical"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Practical')echo "selected";?>>Practical</option>
-                     </select>
-                     <?php echo form_error('ques_type'); ?>   
-                  </div>
-               </div>
-               <div class="col-md-6"></div>
-               <div class="col-md-4">
-                  <div class="form-group timer">
-                     <label for="male">Timer On each Question</label><br>
-                     <label class="radio-inline" >
-                     <input type="radio" name="timer" style=" margin-right: 11px;" value="Y" checked> Yes
-                     </label>
-                     <label class="radio-inline">
-                     <input type="radio" name="timer" value="N" style="margin-left: -30px;">No
-                     </label>
-                  </div>
-               </div>
-               <div class="col-md-4">
-                  <div class="form-group previous_option">
-                     <label for="male">Allowed to Go back</label><br>
-                     <label class="radio-inline">
-                     <input type="radio" name="previous_option"  style=" margin-right: 11px;" value="Y" checked> Yes
-                     </label>
-                     <label class="radio-inline">
-                     <input type="radio" name="previous_option" value="N" style="margin-left: -30px;">No
-                     </label>
-                  </div>
-               </div>
-               <div class="col-md-4">
-                  <div class="form-group review_option">
-                     <label for="male">Allowed to Review</label><br>
-                     <label class="radio-inline">
-                     <input type="radio" name="review_option" style=" margin-right: 11px;" value="Y" checked> Yes
-                     </label>
-                     <label class="radio-inline">
-                     <input type="radio" name="review_option" value="N" style="margin-left: -30px;">No
-                     </label>
-                  </div>
-               </div>
-               <div class="col-md-4">
-                  <div class="form-group negative">
-                     <label for="male">Negative Marking</label><br>
-                     <label class="radio-inline">
-                     <input type="radio" name="negative" style=" margin-right: 11px;" value="Y" checked> Yes
-                     </label>
-                     <label class="radio-inline">
-                     <input type="radio" name="negative" value="N" style="margin-left: -30px;">No
-                     </label>
-                  </div>
-               </div>
-               <div class="col-md-6">
-                  <div class="form-group each_question_ans">
-                     <label for="male">Display Correct Answer for each Question</label><br>
-                     <label class="radio-inline">
-                     <input type="radio" name="each_question_ans" style=" margin-right: 11px;" value="Y" checked> Yes
-                     </label>
-                     <label class="radio-inline">
-                     <input type="radio" name="each_question_ans" value="N" style="margin-left: -30px;">No
-                     </label>
-                  </div>
-               </div>
-               <div class="col-md-6">
-                  <div class="form-group display_result">
-                     <label for="male">Display Test Result to Candidate</label><br>
-                     <label class="radio-inline">
-                     <input type="radio" name="display_result" style=" margin-right: 11px;" value="Y" checked> Yes
-                     </label>
-                     <label class="radio-inline">
-                     <input type="radio" name="display_result" value="N" style="margin-left: -30px;">No
-                     </label>
-                  </div>
-               </div>
-               <input type="hidden" name="job_post_id" value="" id="auto-value">
-               <input type="hidden" name="forward_job_email" id="forward_job_email" value="<?php echo $cv_row['js_email']; ?>">
-            </div>
-            <div class="modal-footer"  style="    margin-top: 340px;">
-               <button type="submit" class="btn btn-save">update</button>
-            </div>
-         </form>
-      </div>
-   </div>
-</div>
-<?php
-   endforeach;endif;?>
-<div class="modal" id="rotateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-   <input type="hidden" name="cv_id" id="cv_id" value="<?php $cv_row['cv_id']; ?>">
-   <div class="modal-dialog" role="document">
-      <div class="modal-content">
-         <div class="modal-header" style="border-bottom:none;">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Forward This Job Post</h5>
-         </div>
-         <form action="<?php echo base_url() ?>employer/forward_posted_job" class="sendEmail" method="post" autocomplete="off">
-            <div class="modal-body" style="padding:15px 40px;">
-               <input type="hidden" name="job_post_id" value="<?php echo $v_companyjobs->job_post_id; ?>">
-               <input type="hidden" name="consultant" value="JobSeeker">  
-               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <label class="mdl-textfield__label" for="sample3">job Post:</label>
-                  <input type="text"  name="job_titles"  id="job_titles" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required>
-               </div>
-               <input type="hidden" name="job_post_id" value="" id="autocomplete2-value">
-               <!-- <input id="" type="text" name="code"> -->
-               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
-                  <label class="mdl-textfield__label" for="sample3">Message:</label>
-                  <textarea class="form-control" name="message" rows="5" id="comment" required></textarea>
-               </div>
-               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
-                  <label class="mdl-textfield__label" for="sample3">Number of cvs:<span id="no_of_cvs"></span></label><br>
-               </div>
-               <input type="hidden" name="forward_job_emails" id="forward_job_emails" value="">
-            </div>
-            <div class="modal-footer">
-               <button type="submit" class="btn btn-save">Send</button>
-            </div>
-         </form>
-      </div>
-   </div>
-</div>
-<script>
-   $('.select2').select2();
-</script>
-<script>
-   $('#myInput').focus(function(){
-   $(this).data('placeholder',$(this).attr('placeholder'))
-        .attr('placeholder','');
-   }).blur(function(){
-   $(this).attr('placeholder',$(this).data('placeholder'));
-   });
-   
-   $("#sizelist").on("click", "a", function(e){
-   e.preventDefault();
-   var $this = $(this).parent();
-   $this.addClass("select").siblings().removeClass("select");
-   $("#sizevalue").val($this.data("value"));
-   $( "#sort_btn" ).click();
-   $( "#test" ).click();
-   })
-   
-   
-</script>
-<script>
-   $(document).ready(function(){
-   
-    $('#myInput').keyup(function(){
-    
-     // Search text
-     var text1 = $(this).val();
-    var text = text1.toUpperCase();
-   
-     $('.content').hide();
-   
-     // Search and show
-     $('.content:contains("'+text+'")').show();
-    
-    });
-   
-   });
-   $.expr[":"].contains = $.expr.createPseudo(function(arg) {
-   return function( elem ) {
-   return $(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
-   };
-   });
-   
-   
-</script>
-<script>
-   $("#job_titles").autocomplete({
-                
-                source: "<?php echo base_url();?>Employer/search_job_keywords",
-                minLength: 2,
-                 // append: "#rotateModal",
-                 focus: function(event, ui) {
-                  // prevent autocomplete from updating the textbox
-                  event.preventDefault();
-                  // manually update the textbox
-                  // alert(source);
-                  $(this).val(ui.item.label);
-               },
-               select: function(event, ui) {
-                  // prevent autocomplete from updating the textbox
-                  event.preventDefault();
-                  // manually update the textbox and hidden field
-                  $(this).val(ui.item.label);
-                  $("#autocomplete2-value").val(ui.item.value);
-               }
-       
-               
-              });
-   $("#job_title").autocomplete({
-                
-                source: "<?php echo base_url();?>Employer/search_job_keywords",
-                minLength: 2,
-                 // append: "#rotateModal",
-                 focus: function(event, ui) {
-                  // prevent autocomplete from updating the textbox
-                  event.preventDefault();
-                  // manually update the textbox
-                  // alert(source);
-                  $(this).val(ui.item.label);
-               },
-               select: function(event, ui) {
-                  // prevent autocomplete from updating the textbox
-                  event.preventDefault();
-                  // manually update the textbox and hidden field
-                  $(this).val(ui.item.label);
-                  $("#auto-value").val(ui.item.value);
-               }
-       
-               
-              });
-</script>
- <script>
+   <script>
  function getTopic(id){
         if(id){
           $.ajax({

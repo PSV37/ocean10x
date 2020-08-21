@@ -46,15 +46,18 @@
                                   <option value=""> </option>
                                   <?php   foreach($tracker_status as $status){?>
                                   <option value="<?php echo $status['status_id']; ?>"<?php if($job_row->tracking_status==$status['status_id']){ echo "selected"; }?>><?php echo $status['status_name']; ?></option>
-                                  <?php } ?>
-                                 
+                                  <?php } ?></select>
+                                </td>
 
-                               </select></td>
+                                  <td ><input type="text" class="email allowalphabates" id="reminder" readonly="" name="comment" value="<?php echo $job_row->score; ?>" ></td>
+                                   <td ><input type="text" class="email allowalphabates" id="reminder" readonly="" name="comment" value="<?php $rank= $job_row->rank.'/'.sizeof($external_tracking_date); echo $rank ?>" ></td>
+
                                 <td ><input type="text" class="email allowalphabates" id="action" name="comment" value="<?php echo $job_row->action_item; ?>" ></td>
 
                                   <td ><textarea class="email allowalphabates" id="comment" name="comment" value=""><?php echo $job_row->comments; ?></textarea></td>
 
                                     <td ><input type="text" class="email allowalphabates" id="reminder" name="comment" value="<?php echo $job_row->reminder; ?>" ></td>
+
 
 
                                     <input type="hidden" class="email allowalphabates" id="tracking_id_val" name="comment" value="<?php echo $job_row->id; ?>" >

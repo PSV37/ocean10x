@@ -954,7 +954,7 @@
    <?php if (!empty($company_active_jobs)): foreach ($company_active_jobs as $v_companyjobs) : ?>
    <label>
       <div class="border-top1"></div>
-      <input type="checkbox" />
+      <input type="checkbox" id='posted_job' onclick="get_report_data(<?php echo $v_companyjobs->job_post_id ?>)" />
       <div class="card">
          <div class="front">
             <img src="<?php echo base_url() ?>upload/<?php echo $this->company_profile_model->company_logoby_id($company_profile_id);?>" style="height:50px; width:50px;border-radius:5px;float:left;border:solid 1px #eae9e9b8;margin-right:15px;" />
@@ -1073,26 +1073,43 @@
                </div>
                <ul class="pieID legend">
                   <li>
-                     <em>Total Job Posts</em>
+                     <em>Total Active Job Posts</em>
                      <span><?php echo sizeof($company_active_jobs); ?></span>
                      <!--<span>718</span> -->
                   </li>    
                   <li>
-                     <em>Candidate Job Post Received</em>
-                     <span>531</span>
+                     <em> Sent to Candidates</em>
+                     <span id='total_forwarded'> </span>
                   </li>
                   <li>
-                     <em>Cats</em>
-                     <span>868</span>
+                     <em>Applications Rcvd</em>
+                     <span id='total_applied'> </span>
                   </li>
                   <li>
-                     <em>Slugs</em>
-                     <span>344</span>
+                     <em>Test Attempted</em> 
+                     <span id='total_test'> </span>
                   </li>
                   <li>
-                     <em>Aliens</em>
-                     <span>1145</span>
+                     <em>Test Passed</em>
+                     <span id='total_passed'></span>
                   </li>
+                  <li>
+                     <em>Interview Passed</em> 
+                     <span id='total_test_int_pass'></span>
+                  </li>
+                  <li>
+                     <em>Interview Failed</em>
+                     <span id='total_test_int_fail'></span>
+                  </li>     
+                  <li>
+                     <em>Offer Accepted</em>
+                     <span id='total_offer_accept'></span>
+                  </li>
+                  <li>
+                     <em>Early Applications</em>
+                     <span id='early_applications'></span>
+                  </li>
+
                </ul>
             </section>
          </main>
@@ -1432,3 +1449,59 @@
      }
    }
 </script>
+<script>
+  function  get_report_data(id)
+  {
+       
+            if($('#posted_job').is(":checked")){
+                console.log("Checkbox is checked.");
+
+                $.ajax({
+                 url:"<?php echo base_url();?>Employer/job_post_report",
+                 data: {id:id},
+                 type: 'post',
+                 success: function(response){
+                   var getarray = jQuery.parseJSON(response);
+                   console.log(getarray.Total_count_forwarded);
+                   var total_count = getarray.Total_count_forwarded;
+
+                   console.log(getarray.Total_count_applied);
+                   var total_count_applied = getarray.Total_count_applied;
+
+                   console.log(getarray.Total_count_test_given);
+                   var total_given_test = getarray.Total_count_test_given;
+
+                   var total_test_passed = getarray.Total_count_test_passed;
+                   var total_test_interview_passed = getarray.Total_count_inteviewed_passed;
+                   var total_test_interview_failed = getarray.Total_count_inteviewed_failed;
+
+                   var total_offer_accepted = getarray.Total_offer_accepted;
+
+                   var total_count_early_applied = getarray.Total_count_early_applied;
+
+                   $('#total_forwarded').html(total_count.length);
+                   $('#total_applied').html(total_count_applied.length);
+                   $('#total_test').html(total_given_test.length);
+
+                   $('#total_passed').html(total_test_passed.length);
+                   $('#total_test_int_pass').html(total_test_interview_passed.length);
+                   $('#total_test_int_fail').html(total_test_interview_failed.length);
+
+                   $('#total_offer_accept').html(total_offer_accepted.length);
+
+                   $('#early_applications').html(total_count_early_applied);
+
+                 }
+               });
+            }
+
+
+            
+        }
+
+
+   
+
+
+</script>
+

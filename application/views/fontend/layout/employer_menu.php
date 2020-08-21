@@ -271,7 +271,7 @@
                                  <span class="icon-container">
                                  <i class="fas fa-map-signs"></i>
                                  </span>
-                                 <span class="text item">Question Bank</span>
+                                 <span class="text item">Corp Q-bank</span>
                                  </a>
                               </li>
                               <li <?php if ($activemenu == 'test_papers') { ?>
@@ -281,7 +281,7 @@
                                  <span class="icon-container">
                                  <i class="fas fa-map-signs"></i>
                                  </span>
-                                 <span class="text item">Tests</span>
+                                 <span class="text item">Ocean T-Bank</span>
                                  </a>
                               </li>
                               <li <?php if ($activemenu == 'oceanchamp') { ?>

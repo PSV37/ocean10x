@@ -84,10 +84,12 @@ class Job_forword_seeker extends CI_Controller {
                                     $this->Master_model->master_update($status_update, 'forwarded_jobs_cv', $where_update);
                                 if($status==true)
                                 {
-                                    $wherejob = "job_post_id='$job_post_id' AND company_profile_id='$company_id'";
-                                    $select_test = "is_test_required,job_post_id,company_profile_id,test_for_job";
+                                    $seeker_id = $this->session->userdata('job_seeker_id');
+                                    $wherejob = "job_posting.job_post_id='$job_post_id' AND company_profile_id='$company_id' and job_apply.job_seeker_id = '$seeker_id'";
+                                    $join = array('job_apply'=>'job_apply.job_post_id = job_posting.job_post_id');
+                                    // $select_test = "is_test_required,job_post_id,company_profile_id,test_for_job,job_apply.*";
                                   
-                                    $data1['job_test'] = $this->Master_model->getMaster('job_posting',$wherejob,$join = FALSE, $order = false, $field = false, $select_test,$limit=false,$start=false, $search=false);
+                                    $data1['job_test'] = $this->Master_model->getMaster('job_posting',$wherejob,$join , $order = false, $field = false, $select_test = false,$limit=false,$start=false, $search=false);
                                         
                                     $this->load->view('fontend/applysucess',$data1);
                                 }

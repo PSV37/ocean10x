@@ -17,6 +17,8 @@ class Employer extends MY_Employer_Controller {
     public function index() {
        
         $employer_id = $this->session->userdata('company_profile_id');
+         $this->session->unset_userdata('submenu');
+
         $this->session->unset_userdata('activemenu');
         $data['activemenu'] = 'dashboard';
         $this->session->set_userdata($data);
@@ -175,6 +177,8 @@ class Employer extends MY_Employer_Controller {
         }
     }
     public function job_post() {
+         $this->session->unset_userdata('submenu');
+
         $this->session->unset_userdata('activemenu');
         $data['activemenu'] = 'job_post';
         $this->session->set_userdata($data);
@@ -643,14 +647,19 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         }
     }
     public function active_job() {
+         $this->session->unset_userdata('submenu');
+
         $this->session->unset_userdata('activemenu');
         $data['activemenu'] = 'active_job';
         $this->session->set_userdata($data);
         $employer_id = $this->session->userdata('company_profile_id');
         $company_active_jobs = $this->job_posting_model->get_company_active_jobs($employer_id);
+        //$Job_Post_was_sent = $this->job_apply_model->job_post($company_id, $job_post_id); 
         $this->load->view('fontend/employer/posted_jobs.php', compact('company_active_jobs', 'employer_id'));
     }
     public function pending_job() {
+         $this->session->unset_userdata('submenu');
+
         $employer_id = $this->session->userdata('company_profile_id');
         $company_pending_jobs = $this->job_posting_model->get_company_pending_jobs($employer_id);
         $this->load->view('fontend/employer/pending_job.php', compact('company_pending_jobs', 'employer_id'));
@@ -1086,7 +1095,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             $select_job = "job_role.job_role_title,education_specialization.education_specialization,education_level.education_level_name,job_level.job_level_name,job_nature.job_nature_name,job_category.job_category_name,state.state_name,country.country_name,city.city_name,company_profile.company_name,company_profile.company_logo,job_types.job_types_name,job_posting.job_title,job_posting.job_position,job_posting.job_desc,job_posting.education,job_posting.salary_range,job_posting.job_deadline,job_posting.preferred_age,job_posting.preferred_age_to,job_posting.working_hours,job_posting.no_jobs,job_posting.benefits,job_posting.experience,job_posting.skills_required,job_posting.test_for_job";
             $req_details = $this->Master_model->getMaster('job_posting', $where_req, $join_req, $order = false, $field = false, $select_job, $limit = false, $start = false, $search = false);
 
-             print_r($this->db->last_query());die;
+             // print_r($this->db->last_query());die;
              
             if ($req_details) {
                 foreach ($req_details as $require) {
@@ -1112,6 +1121,25 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                     }
                     $apply_array = array('company_profile_id' => $comp_id, 'job_post_id' => $job_post_id, 'created_on' => date('Y-m-d H:i:s'), 'created_by' => $comp_id);
                     $apply = $this->Master_model->master_insert($apply_array, 'consultants_jobs');
+                    $whereres = "job_seeker_id='$seeker_id' and company_id = '$employer_id' and job_post_id = '$job_post_id'";
+                    $job_apply_data = $this->Master_model->get_master_row('
+                        job_apply', $select = FALSE, $whereres);
+                    if (empty($job_apply_data)) {
+                        $apply = $this->Master_model->master_insert($apply_array, 'job_apply');
+                        $external_array = array('cv_id' => $cv_id, 'company_id' => $employer_id, 'job_post_id' => $job_post_id, 'apply_id' => $apply, 'status' => 1, 'company_id' => $employer_id, 'name' => $can_data[0]['full_name'], 'email' => $can_data[0]['email'], 'mobile' => $can_data[0]['mobile_no'], 'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),);
+                        $frwd = $this->Master_model->master_insert($external_array, 'external_tracker');
+                        $frwd_array = array('cv_id' => $cv_id, 'company_id' => $employer_id, 'job_post_id' => $job_post_id, 'apply_id' => $apply, 'status' => 1, 'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),);
+                        $frwd = $this->Master_model->master_insert($frwd_array, 'forwarded_jobs_cv');
+                        if (isset($test_id)) {
+                            $test_array = array('job_seeker_id' => $seeker_id, 'company_id' => $employer_id, 'test_id' => $test_id, 'status' => 'Farwarded Test with job', 'updated_on' => date('Y-m-d'),);
+                            $whereres = "job_seeker_id='$seeker_id' and company_id = '$employer_id' and test_id = '$test_id'";
+                            $test_data = $this->Master_model->get_master_row('
+                                forwarded_tests', $select = FALSE, $whereres);
+                            if (empty($test_data)) {
+                                $frwd = $this->Master_model->master_insert($test_array, 'forwarded_tests');
+                            }
+                        }
+                    }
                     if ($apply) {
                         $email_name = explode('@', $email[$i]);
                         $subject = 'Job | Urgent requirement for ' . $require['job_title'];
@@ -1233,8 +1261,9 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             $job_desc = $this->input->post('message');
             $email = explode(',', $candiate_email);
             $where_req = "test_id= '$test'";
-            $select_job = "job_role.job_role_title,education_specialization.education_specialization,education_level.education_level_name,job_level.job_level_name,job_nature.job_nature_name,job_category.job_category_name,state.state_name,country.country_name,city.city_name,company_profile.company_name,company_profile.company_logo,job_types.job_types_name,job_posting.job_title,job_posting.job_position,job_posting.job_desc,job_posting.education,job_posting.salary_range,job_posting.job_deadline,job_posting.preferred_age,job_posting.preferred_age_to,job_posting.working_hours,job_posting.no_jobs,job_posting.benefits,job_posting.experience,job_posting.skills_required";
-            $req_details = $this->Master_model->getMaster('oceanchamp_tests', $where_req, $join_req = false, $order = false, $field = false, $select_job = false, $limit = false, $start = false, $search = false);
+            
+            $join_req = array('topic'=>'topic.topic_id = oceanchamp_tests.topics');
+            $req_details = $this->Master_model->getMaster('oceanchamp_tests', $where_req, $join_req , $order = false, $field = false, $select_job = false, $limit = false, $start = false, $search = false);
             for ($i = 0;$i < sizeof($email);$i++) {
                 $where_can = "email='$email[$i]'";
                 $can_data = $this->Master_model->getMaster('js_info', $where_can);
@@ -1262,6 +1291,11 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                 if (empty($test_data)) {
                     $frwd = $this->Master_model->master_insert($test_array, 'forwarded_tests');
                 }
+
+            if ($req_details) {
+                foreach ($req_details as $require) {
+                }
+            }
                 //     $external_array = array(
                 //     'cv_id' => $cv_id,
                 //     'company_id' => $employer_id,
@@ -1287,7 +1321,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                 if ($frwd) {
                     $email_name = explode('@', $email[$i]);
                     $company_name = $this->session->userdata('company_name');
-                    $subject = 'Job | Urgent requirement for ' . $require['job_title'];
+                    $subject = $company_name. ' has asked you to take a '. $require['topic_name'].' Test ';
                     $message = '
                                 <style>
                                     .btn-primary{
@@ -1305,9 +1339,9 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                             <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
                             <a href="#"><img src="' . base_url() . 'upload/' . $require['company_logo'] . '" style="height: 50px;"> </a>
                             <br><br>Hi ' . $email_name[0] . ',<br>';
-                    $message.= '<br/><b>' . $company_name . '</b>
-                        Has Forwarded You a Test please Comolete the test For the hiring process..<br><br>
-                        <a href="' . base_url() . 'employer/ocean_test_start/' . base64_encode($test_id) . '"><button >Give Test</button></a><br><br><br>Good luck for Job search!<br> Team ConsultnHire!<br><small>Enjoy personalized job searching experience<br>Goa a Question? Check out how works and our support team are ready to help.<br><br>You have received this mail because your e-mail ID is registered with Consultnhire.com. This is a system-generated e-mail regarding your Consultnhire account preferences, please do not reply to this message. The jobs sent in this mail have been posted by the clients of Consultnhire.com. And we have enabled auto-login for your convenience, you are strongly advised not to forward this email to protect your account from unauthorized access. IEIL has taken all reasonable steps to ensure that the information in this mailer is authentic. Users are advised to research bonafides of advertisers independently. Please do not pay any money to anyone who promises to find you a job. IEIL shall not have any responsibility in this regard. We recommend that you visit our Terms & Conditions and the Security Advice for more comprehensive information.</small><br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
+                    $message.= '<br/><b>' . $company_name . '</b> has asked you to take a test. Kindly click on the Test URL give below and follow the steps thereon. <br><br>
+                        <a href="' . base_url() . 'job_seeker/ocean_test_start/' . base64_encode($test_id) . '"><button >Give Test</button></a><br><br><br></td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table><br><br>
+                        Regards,<br><br>Team TheOcean.</div>';
                     $send = sendEmail_JobRequest($email[$i], $message, $subject);
                     //echo $send;
                     // echo $message;
@@ -1374,6 +1408,8 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $this->session->unset_userdata('activemenu');
         $data['activemenu'] = 'questionbank';
         $this->session->set_userdata($data);
+
+       
         $employer_id = $this->session->userdata('company_profile_id');
         $where_cn = "status=1";
         $data['skill_master'] = $this->Master_model->getMaster('skill_master', $where_cn);
@@ -1388,13 +1424,87 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $where_all = "questionbank.ques_status='1' AND ques_created_by='$employer_id'";
         $join_emp = array('skill_master' => 'skill_master.id=questionbank.technical_id |left outer', 'topic' => 'topic.topic_id=questionbank.topic_id |left outer', 'subtopic' => 'subtopic.subtopic_id=questionbank.subtopic_id |left outer', 'lineitem' => 'lineitem.lineitem_id=questionbank.lineitem_id |left outer', 'lineitemlevel' => 'lineitemlevel.lineitemlevel_id=questionbank.lineitemlevel_id |left outer', 'questionbank_answer' => 'questionbank_answer.question_id = questionbank.ques_id|LEFT OUTER');
         $data['questionbank'] = $this->Master_model->getMaster('questionbank', $where_all, $join_emp, $order = 'desc', $field = 'ques_id', $select = false, $limit = false, $start = false, $search = false);
+        
+        $where_all = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id' and test_status = '1'";
+        $data['oceanchamp_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where = $where_all, $join = FALSE, $order = 'desc', $field = 'oceanchamp_tests.test_id', $select = false, $limit = false, $start = false, $search = false);
+        $where = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id' and test_status = '2'";
+        $data['ocean_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where = $where, $join = FALSE, $order = 'desc', $field = 'oceanchamp_tests.test_id', $select = false, $limit = false, $start = false, $search = false);
+        $data['company_active_jobs'] = $this->job_posting_model->get_company_active_jobs($employer_id);
         // echo  $this->db->last_query(); die;
+        // $this->load->view('fontend/employer/list_questions', $data);
         $this->load->view('fontend/employer/list_questions', $data);
+
         // $this->load->view('fontend/employer/all_questions.php', $data);
         
     }
+    public function attach_to_job()
+    {
+        $test_id = $this->input->post('test_id');
+        $job_id = $this->input->post('job_id');
+        $test_data['test_for_job'] = $test_id;
+        
+        $where['job_post_id'] = $job_id;
+        $this->Master_model->master_update($test_data, 'job_posting', $where);
+
+        $where_seeker = "job_apply.job_post_id = '$job_id' and apply_status < '2' ";
+        $join_seeker = array('js_info' => 'js_info.job_seeker_id = job_apply.job_seeker_id | Left',
+        'job_posting'=>'job_posting.job_post_id = job_apply.job_post_id' );
+        $all_seekers = $this->Master_model->getMaster('job_apply', $where_seeker, $join_seeker , $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+         $where_req = "job_post_id= '$job_id'";
+            $join_req = array('job_types' => 'job_types.job_types_id = job_posting.job_types|LEFT OUTER', 'company_profile' => 'company_profile.company_profile_id = job_posting.company_profile_id|LEFT OUTER', 'city' => 'city.id = job_posting.city_id|LEFT OUTER', 'country' => 'country.country_id = job_posting.job_location|LEFT OUTER', 'state' => 'state.state_id = job_posting.state_id|LEFT OUTER', 'job_category' => 'job_category.job_category_id = job_posting.job_category|LEFT OUTER', 'job_nature' => 'job_nature.job_nature_id = job_posting.job_nature|LEFT OUTER', 'job_level' => 'job_level.job_level_id = job_posting.job_level|LEFT OUTER', 'job_role' => 'job_role.id = job_posting.job_role|LEFT OUTER', 'education_level' => 'education_level.education_level_id = job_posting.job_edu|LEFT OUTER', 'education_specialization' => 'education_specialization.id = job_posting.edu_specialization|LEFT OUTER');
+            $select_job = "job_role.job_role_title,education_specialization.education_specialization,education_level.education_level_name,job_level.job_level_name,job_nature.job_nature_name,job_category.job_category_name,state.state_name,country.country_name,city.city_name,company_profile.company_name,company_profile.company_logo,job_types.job_types_name,job_posting.job_title,job_posting.job_position,job_posting.job_desc,job_posting.education,job_posting.salary_range,job_posting.job_deadline,job_posting.preferred_age,job_posting.preferred_age_to,job_posting.working_hours,job_posting.no_jobs,job_posting.benefits,job_posting.experience,job_posting.skills_required,job_posting.test_for_job";
+            $req_details = $this->Master_model->getMaster('job_posting', $where_req, $join_req, $order = false, $field = false, $select_job, $limit = false, $start = false, $search = false);
+
+             // print_r($this->db->last_query());die;
+             
+            if ($req_details) {
+                foreach ($req_details as $require) {
+                }
+            }
+        foreach ($all_seekers as $row) {
+
+             $email_name = explode('@', $row['email']);
+                    $company_name = $this->session->userdata('company_name');
+                    $subject = 'New Test has been added to the Job Post'.$row['job_title'];
+                    $message = '
+                                <style>
+                                    .btn-primary{
+                                        width: 232px;
+                                        color: #fff;
+                                        text-align: center;
+                                        margin: 0 0 0 5%;
+                                        background-color: #6495ED;
+                                        padding: 5px;
+                                        text-decoration: none;
+                                    }
+                                
+                                </style>
+                            <div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
+                            <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
+                            <a href="#"><img src="' . base_url() . 'upload/' . $require['company_logo'] . '" style="height: 50px;"> </a>
+                            <br><br>Hi ' . $email_name[0] . ',<br>';
+                    $message.= '<br/><b>A new test has been added to the job post by '.$company_name.'. Kindly click on the below given URL to view details<br><br>
+                        <a href="' . base_url() . 'job_seeker/ocean_test_start/' . base64_encode($test_id) . '"> <div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
+                            <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
+                           
+                            <br>' . $job_desc . '<br/><br/><em><b>Now Hiring!!</b></em> <br/><br/><b>Company Name:</b>' . $require['company_name'] . '<br/><br/> <b>Job Profile:</b><br/> <b>Job Title: </b> ' . $require['job_title'] . '<br/> <b>job Description: </b> ' . $require['job_desc'] . '<br/> <b>Experience: </b> ' . $require['experience'] . '<br/><b>Salary Offered: </b> ' . $require['salary_range'] . '<br/><b>Vacancies: </b> ' . $require['no_jobs'] . '<br/><b>Job Location: </b> ' . $require['city_name'] . '-' . $require['state_name'] . ',' . $require['country_name'] . '<br/><b>Job Role: </b> ' . $require['job_role_title'] . '<br/><b>Job Type: </b> ' . $require['job_types_name'] . '<br/><b>Job Nature: </b> ' . $require['job_nature_name'] . '<br/><b>Wrking Hrs: </b> ' . $require['working_hours'] . '<br/><b>Job Deadline: </b> ' . $require['job_deadline'] . '<br/><b>Education Required: </b> ' . $require['education_level_name'] . '(' . $require['education_specialization'] . ')' . '<br/><b>Preferred Age: </b> ' . $require['preferred_age'] . '-' . $require['preferred_age_to'] . '<br/><b>Required Skills: </b> ';
+                        for ($j = 0;$j < sizeof($req_skill_details);$j++) {
+                            $message.= ' <br>' . $req_skill_details[$j]['skill_name'];
+                        }
+                        $message.= '<br/><b>Job Description: </b> ' . $require['job_desc'] . '<br/><b>Job Benefits: </b> ' . $require['benefits'] . '<br/><b>Other Job Description: </b> ' . $require['education'] . '<br><br><a href="' . base_url() . 'job_forword_seeker/open_forworded_job?comp_mail=' . base64_encode($row['email']) . '&job_id=' . base64_encode($job_id) . '" class="btn btn-primary" value="open" align="center" target="_blank">Open</a> <br><br><br><br><br></td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table><br>
+                        Regards,<br>Team TheOcean.</div>';
+                    $send = sendEmail_JobRequest($row['email'], $message, $subject);
+            
+        }
+
+        redirect('employer/active_job');
+    }
     /*** Dashboard ***/
     public function add_new_question() {
+
+         $this->session->unset_userdata('submenu');
+        $data['submenu'] = 'qbank';
+        $this->session->set_userdata($data);
         $data['title'] = 'Add Questionbank';
         $where_skill = "status=1";
         $data['skill_master'] = $this->Master_model->getMaster('skill_master', $where_skill);
@@ -1433,7 +1543,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $where_all = "questionbank.ques_status='1' AND ques_created_by='$employer_id'";
         $join_emp = array('skill_master' => 'skill_master.id=questionbank.technical_id |left outer', 'topic' => 'topic.topic_id=questionbank.topic_id |left outer', 'subtopic' => 'subtopic.subtopic_id=questionbank.subtopic_id |left outer', 'lineitem' => 'lineitem.lineitem_id=questionbank.lineitem_id |left outer', 'lineitemlevel' => 'lineitemlevel.lineitemlevel_id=questionbank.lineitemlevel_id |left outer', 'questionbank_answer' => 'questionbank_answer.question_id = questionbank.ques_id|LEFT OUTER');
         $data['questionbank'] = $this->Master_model->getMaster('questionbank', $where_all, $join_emp);
-        $this->load->view('fontend/employer/create_test', $data);
+        $this->load->view('fontend/employer/qbank', $data);
     }
     public function get_test_questions() {
         $employer_id = $this->session->userdata('company_profile_id');
@@ -1451,6 +1561,10 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         }
     }
     public function add_to_test() {
+
+        $this->session->unset_userdata('submenu');
+        $data['submenu'] = '1';
+        $this->session->set_userdata($data);
         $test_name = $this->input->post('test_name');
         $test_id = $this->input->post('test_id');
         $up_date = $this->input->post('data_arr');
@@ -1469,17 +1583,20 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                 $test_data['test_name'] = $test_name;
                 $test_data['company_id'] = $employer_id;
                 $test_data['questions'] = $up_date;
-                $test_data['type'] = $type;
+                // $test_data['type'] = $type;
                 $test_data['total_questions'] = sizeof(explode(',', $up_date));
                 $test_data['test_duration'] = $test_time;
                 $test_data['level'] = $level_data;
                 $test_data['topics'] = $subject_data;
-                $test_data['timer_on_each_que'] = $this->input->post('timer');
-                $test_data['previous_option'] = $this->input->post('previous_option');
-                $test_data['review_option'] = $this->input->post('review_option');
-                $test_data['negative_marks'] = $this->input->post('negative');
-                $test_data['correct_ans_each_ques'] = $this->input->post('each_question_ans');
-                $test_data['final_result'] = $this->input->post('display_result');
+                $test_data['test_status'] = '1';
+                $test_data['status'] = '1';
+
+                // $test_data['timer_on_each_que'] = $this->input->post('timer');
+                // $test_data['previous_option'] = $this->input->post('previous_option');
+                // $test_data['review_option'] = $this->input->post('review_option');
+                // $test_data['negative_marks'] = $this->input->post('negative');
+                // $test_data['correct_ans_each_ques'] = $this->input->post('each_question_ans');
+                // $test_data['final_result'] = $this->input->post('display_result');
                 $test_data['created_by'] = $this->session->userdata('company_profile_id');
                 $test_data['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
                 $this->Master_model->master_insert($test_data, 'oceanchamp_tests');
@@ -1511,8 +1628,114 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             $test_data['updated_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
             $this->Master_model->master_update($test_data, 'oceanchamp_tests', $where);
         }
-        redirect('employer/show_saved_tests');
+        redirect('employer/all_questions');
     }
+
+    public function randomly_create_test()
+    {
+         $this->session->unset_userdata('submenu');
+        $data['submenu'] = '2';
+        $this->session->set_userdata($data);
+
+        $test_name = $this->input->post('test_name');
+        $test_duration = $this->input->post('test_duration');
+        $technical_id = $this->input->post('technical_id');
+        $topic_id = $this->input->post('topic_id');
+        $subtopic_id = $this->input->post('subtopic_id');
+        $level = $this->input->post('level');
+        $ques_type = $this->input->post('ques_type');
+         $employer_id = $this->session->userdata('company_profile_id');
+
+        $time = $test_duration/20;
+
+        $where = "technical_id = '$technical_id' and topic_id ='$topic_id' and subtopic_id ='$subtopic_id' and level ='$level' and ques_type ='$ques_type' ";
+        
+        $questions = $this->Master_model->getMaster('questionbank', $where , $join = FALSE, $order = 'RANDOM', $field = 'ques_id', $select = false,$limit=20,$start=false, $search=false);
+        $test_questions = array();
+        foreach ($questions as $row) {
+            array_push($test_questions, $row['ques_id']);
+        }
+        // print_r($test_questions);
+        if (isset($test_name) && !empty($test_name)) {
+            $where_all = "oceanchamp_tests.test_name='$test_name'";
+            $old_question_data = $this->Master_model->get_master_row('oceanchamp_tests', $select = FALSE, $where_all);
+
+            if (empty($old_question_data)) {
+                $test_data['test_name'] = $test_name;
+                $test_data['company_id'] = $employer_id;
+                $test_data['questions'] = implode(',', $test_questions);
+                // $test_data['type'] = $type;
+                $test_data['total_questions'] = sizeof($test_questions);
+                $test_data['test_duration'] = $test_duration;
+                $test_data['level'] = $level;
+                $test_data['topics'] = $technical_id;
+                $test_data['test_status'] = '2';
+                $test_data['status'] = '1';
+                // $test_data['timer_on_each_que'] = $this->input->post('timer');
+                // $test_data['previous_option'] = $this->input->post('previous_option');
+                // $test_data['review_option'] = $this->input->post('review_option');
+                // $test_data['negative_marks'] = $this->input->post('negative');
+                // $test_data['correct_ans_each_ques'] = $this->input->post('each_question_ans');
+                // $test_data['final_result'] = $this->input->post('display_result');
+                $test_data['created_by'] = $this->session->userdata('company_profile_id');
+                $test_data['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
+                $this->Master_model->master_insert($test_data, 'oceanchamp_tests');
+            }
+
+        
+    }
+    redirect('employer/all_questions');
+}
+public function randomly_create_oceantest()
+    {
+        $test_name = $this->input->post('test_name');
+        $test_duration = $this->input->post('test_duration');
+        $technical_id = $this->input->post('technical_id');
+        $topic_id = $this->input->post('topic_id');
+        $subtopic_id = $this->input->post('subtopic_id');
+        $level = $this->input->post('level');
+        $ques_type = $this->input->post('ques_type');
+         $employer_id = $this->session->userdata('company_profile_id');
+
+        $time = $test_duration/20;
+
+        $where = "technical_id = '$technical_id' and topic_id ='$topic_id' and subtopic_id ='$subtopic_id' and level ='$level' and ques_type ='$ques_type' ";
+        
+        $questions = $this->Master_model->getMaster('questionbank', $where , $join = FALSE, $order = 'RANDOM', $field = 'ques_id', $select = false,$limit=20,$start=false, $search=false);
+        $test_questions = array();
+        foreach ($questions as $row) {
+            array_push($test_questions, $row['ques_id']);
+        }
+        // print_r($test_questions);
+        if (isset($test_name) && !empty($test_name)) {
+            $where_all = "oceanchamp_tests.test_name='$test_name'";
+            $old_question_data = $this->Master_model->get_master_row('oceanchamp_tests', $select = FALSE, $where_all);
+
+            if (empty($old_question_data)) {
+                $test_data['test_name'] = $test_name;
+                $test_data['company_id'] = $employer_id;
+                $test_data['questions'] = implode(',', $test_questions);
+                // $test_data['type'] = $type;
+                $test_data['total_questions'] = sizeof($test_questions);
+                $test_data['test_duration'] = $test_duration;
+                $test_data['level'] = $level;
+                $test_data['topics'] = $technical_id;
+                $test_data['test_status'] = '1';
+                // $test_data['timer_on_each_que'] = $this->input->post('timer');
+                // $test_data['previous_option'] = $this->input->post('previous_option');
+                // $test_data['review_option'] = $this->input->post('review_option');
+                // $test_data['negative_marks'] = $this->input->post('negative');
+                // $test_data['correct_ans_each_ques'] = $this->input->post('each_question_ans');
+                // $test_data['final_result'] = $this->input->post('display_result');
+                $test_data['created_by'] = $this->session->userdata('company_profile_id');
+                $test_data['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
+                $this->Master_model->master_insert($test_data, 'ocean_tests');
+            }
+
+        
+    }
+    redirect('employer/all_tests');
+}
     public function update_test() {
         $test_id = $this->input->post('test_id');
         if (isset($test_id) && !empty($test_id)) {
@@ -1556,12 +1779,29 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         }
     }
     public function all_tests() {
+         $this->session->unset_userdata('submenu');
         $this->session->unset_userdata('activemenu');
         $data['activemenu'] = 'test_papers';
         $this->session->set_userdata($data);
         $employer_id = $this->session->userdata('company_profile_id');
-        $where_all = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id'";
-        $data['oceanchamp_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where = $where_all, $join = FALSE, $order = 'desc', $field = 'oceanchamp_tests.test_id', $select = false, $limit = false, $start = false, $search = false);
+        
+
+          $where = "ocean_tests.status='1' AND ocean_tests.company_id='$employer_id' and test_status = '1'";
+        $data['ocean_tests'] = $this->Master_model->getMaster('ocean_tests', $where = $where, $join = FALSE, $order = 'desc', $field = 'ocean_tests.test_id', $select = false, $limit = false, $start = false, $search = false);
+
+
+        $where_cn = "status=1";
+        $data['skill_master'] = $this->Master_model->getMaster('skill_master', $where_cn);
+        //$where_opt= "options.status=1";
+        $data['options'] = $this->Master_model->getMaster('options');
+        $where_state = "topic.topic_status=1";
+        $data['topic'] = $this->Master_model->getMaster('topic', $where_state);
+        $where_subtopic = "subtopic.subtopic_status='1'";
+        $data['subtopic'] = $this->Master_model->getMaster('subtopic', $where_subtopic);
+        $where_lineitem = "lineitem.lineitem_status='1'";
+        $data['lineitem'] = $this->Master_model->getMaster('lineitem', $where_lineitem);
+        $data['company_active_jobs'] = $this->job_posting_model->get_company_active_jobs($employer_id);
+
         // echo  $this->db->last_query(); die;
         $this->load->view('fontend/employer/list_tests', $data);
         // $this->load->view('fontend/employer/all_questions.php', $data);
@@ -2814,6 +3054,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         echo json_encode($result);
     }
     public function corporate_cv_bank($fid = null) {
+         $this->session->unset_userdata('submenu');
+
         $this->session->unset_userdata('activemenu');
         $data['activemenu'] = 'cv_bank';
         $this->session->set_userdata($data);
@@ -3305,23 +3547,29 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         }
     }
 
-    public function bulk_upload_folder()
-    {
-          $this->load->model('Questionbank_employer_model');
-        
-        if (isset($_POST['upload'])) {
-               // print_r($_FILES);die;
-            if (!empty($_FILES['file']['name'])) {
+   public function bulk_upload_folder()
+{
+    ini_set('upload_max_filesize', '10M');
+    ini_set('post_max_size', '10M');
+    ini_set('max_input_time', 0);
+    ini_set('max_execution_time', 0);
+    $employer_id = $this->session->userdata('company_profile_id');
+
+    $this->load->model('Questionbank_employer_model');
+
+    if (isset($_POST['upload'])) {
+                
+        if (!empty($_FILES['file']['name'])) {
                 // Set preference
-                $config['upload_path'] = 'cv_bank_excel/files/';
-                $ext = strtolower(end(explode('.', $_FILES['file']['name'])));
-                $config['allowed_types'] = 'csv';
-                $config['max_size'] = '1000'; // max_size in kb
-                $config['file_name'] = $_FILES['file']['name'];
+            $config['upload_path'] = 'cv_bank_excel/files/';
+            $ext = strtolower(end(explode('.', $_FILES['file']['name'])));
+            $config['allowed_types'] = 'csv';
+            $config['max_size'] = '10000'; // max_size in kb
+            $config['file_name'] = $_FILES['file']['name'];
                 // Load upload library
-                $this->load->library('upload', $config);
+            $this->load->library('upload', $config);
                 // File upload
-                if($ext === 'csv'){
+            if ($ext === 'csv') {
                 if ($this->upload->do_upload('file')) {
                     // Get data about the file
                     $uploadData = $this->upload->data();
@@ -3332,7 +3580,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     $importData_arr = array();
                     while (($filedata = fgetcsv($file, 1000, ",")) !== FALSE) {
                         $num = count($filedata);
-                        for ($c = 0;$c < $num;$c++) {
+                        for ($c = 0; $c < $num; $c++) {
                             $importData_arr[$i][] = $filedata[$c];
                         }
                         $i++;
@@ -3340,168 +3588,167 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     fclose($file);
                     $skip = 0;
                     // insert import data
-                    $cv =array();
+                    $cv = array();
                     foreach ($importData_arr as $userdata) {
                         if ($skip != 0) {
-                            $cv_id=$this->Questionbank_employer_model->InsertCVData($userdata);
+                            $cv_id = $this->Questionbank_employer_model->InsertCVData($userdata);
                             // print_r($cv_id);die;
                             $company_name = $this->session->userdata('company_name');
                             $data = array(
-                                'company' => $company_name, 
-                                'action_taken_for' => $this->session->userdata('company_name'), 
-                                'field_changed' => 'Imported CVs', 'Action' => 
-                                'Imported Multiple CVs', 
-                                'datetime' => date('Y-m-d H:i:s'), 
-                                'updated_by' => $company_name);
+                                'company' => $company_name,
+                                'action_taken_for' => $this->session->userdata('company_name'),
+                                'field_changed' => 'Imported CVs', 'Action' => 'Imported Multiple CVs',
+                                'datetime' => date('Y-m-d H:i:s'),
+                                'updated_by' => $company_name
+                            );
                             $result = $this->Master_model->master_insert($data, 'employer_audit_record');
                             array_push($cv, $cv_id);
                         }
                         $skip++;
                     }
-                     $count = 0;
-                        $company_id = $this->session->userdata('company_profile_id');
-                        $paths = $this->input->post('paths');
-                        $folder_path = explode(',', $paths);
+                    $count = 0;
+                    $company_id = $this->session->userdata('company_profile_id');
+                    $paths = $this->input->post('paths');
+                    $folder_path = explode(',', $paths);
                         // $now = date('Y-m-d H:i:s');
                         // $folder_name = $now.$company_id;
 
-                        $uploadDir='cv_folder/';
-                        if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-                              
-                             
-                            foreach ($_FILES['files']['name'] as $i => $name) {
-                                
-                                $folders = explode('/', $folder_path[$i]);
+                    $uploadDir = 'cv_folder/';
+                    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                        foreach ($_FILES['files']['name'] as $i => $name) {
+                            $folders = explode('/', $folder_path[$i]);
 
-                                for ($k=0; $k <= sizeof($folders) ; $k++) { 
-
-                                     $folder_name = $folders[$k];
-                                     if ($folder_name == $_FILES['files']['name'][$i] ) {
-                                         if (strlen($_FILES['files']['name'][$i]) > 1) 
-                                         {
+                            for ($k = 0; $k <= sizeof($folders); $k++) {
+                                $folder_name = $folders[$k];
+                                if ($folder_name == $_FILES['files']['name'][$i]) {
+                                    if (strlen($_FILES['files']['name'][$i]) > 1) {
 
                                             if (move_uploaded_file($_FILES['files']['tmp_name'][$i],  $folder_path_final.'/'.$name)) 
                                             {
                                                 $count++;
                                             }
+
+                                    }
+                                } else {
+                                    if ($k > 0) {
+                                        $j = $k - 1;
+                                        $folder_struct = array();
+                                        for ($n = 0; $n <= $j; $n++) {
+                                            array_push($folder_struct, $folders[$n]);
                                         }
-                                         
-                                     }
-                                     else
-                                     {
-                                         if ($k > 0) {
-                                        $j=$k-1;
-                                        if (!file_exists('cv_folder/'.$folders[$j].'/'.$folder_name)) {
-                                            mkdir('cv_folder/'.$folders[$j].'/'.$folder_name, 0777, true);
+
+                                        $names = implode('/', $folder_struct);
+
+                                            if (!file_exists('cv_folder/'.$names.'/'.$folder_name)) {
+                                                mkdir('cv_folder/'.$names.'/'.$folder_name, 0777, true);
+                                            }
+
+                                        $folder_path_final = 'cv_folder/' . $names . '/' . $folder_name;
+
+                                        $where_curr_folder = "cv_folder.folder_name = '$folder_name' and company_id = '$employer_id'";
+                                        $curr_foldr = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_curr_folder, $join = FALSE);
+
+                                        $previous_folder = $folders[$j];
+                                        $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id'";
+                                        $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join = FALSE);
+
+
+
+                                               // print_r($parent);
+                                               // print_r($folder_name); die;
+
+                                        if ($parent && empty($curr_foldr)) {
+                                            $insert_folder_data['folder_name'] = $folder_name;
+                                            $insert_folder_data['company_id'] = $employer_id;
+                                            $insert_folder_data['parent_id'] = $parent['id'];
+                                            $insert_folder_data['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
+                                            $insert_folder_data['created_by'] = $employer_id;
+
+                                            $result = $this->Master_model->master_insert($insert_folder_data, 'cv_folder');
                                         }
-                                        $folder_path_final= 'cv_folder/'.$folders[$j].'/'.$folder_name;
-                                  
-                                        }
-                                        else
-                                        {
+                                    } else {
                                             if (!file_exists('cv_folder/'.$folder_name)) {
                                                 mkdir('cv_folder/'.$folder_name, 0777, true);
                                             }
-                                             $folder_path_final= 'cv_folder/'.$folder_name;
+                                        $folder_path_final = 'cv_folder/' . $folder_name;
+
+                                        $where_folder = "cv_folder.folder_name = '$folder_name' and company_id = '$employer_id'";
+                                        $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join = FALSE);
+                                        if (empty($parent)) {
+                                            $insert_folder_data['folder_name'] = $folder_name;
+                                            $insert_folder_data['company_id'] = $employer_id;
+                                            $insert_folder_data['parent_id'] = '0';
+                                            $insert_folder_data['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
+                                            $insert_folder_data['created_by'] = $employer_id;
+                                            $result = $this->Master_model->master_insert($insert_folder_data, 'cv_folder');
                                         }
-                                     }
-                                    // if ($k < sizeof($folders)) {
-                                    //  $folder_name = $folders[$k];
-                                    // if ($k > 0) {
-                                    //     $j=$k-1;
-                                    //     if (!file_exists('cv_folder/'.$folders[$j].'/'.$folder_name)) {
-                                    //         mkdir('cv_folder/'.$folders[$j].'/'.$folder_name, 0777, true);
-                                    //     }
-                                    //     $folder_path_final= 'cv_folder/'.$folders[$j].'/'.$folder_name;
-                                  
-                                    // }
-                                    // else
-                                    // {
-                                    //     if (!file_exists('cv_folder/'.$folder_name)) {
-                                    //         mkdir('cv_folder/'.$folder_name, 0777, true);
-                                    //     }
-                                    //      $folder_path_final= 'cv_folder/'.$folder_name;
-                                    // }
-
-                                     
-                                   
-
-                                     
-                                 
-                                // }
-                                // else
-                                // {
-                                //     $j = $k-1;
-                                //     $folder_name = $folders[$j];
-                                //      $folder_path_final= 'cv_folder/'.$folders[$j].'/'.$folder_name;
-
-                                // }
-                                // for ($j=0; $j < sizeof($folders) ; $j++) { 
-                                    
-                                 
-                                
-                                
-                               
+                                    }
                                 }
-
-                                
                                 foreach ($cv as $cvs) {
                                     $where = "corporate_cv_bank.cv_id = '$cvs'";
-                                  $cv_name = $this->Master_model->get_master_row('corporate_cv_bank', $select = 'js_name', $where, $join = FALSE);
-                                  // print_r($cv_name);die();
-                                
-                                    $js_name =  explode(' ', $cv_name['js_name']);
-                                    if (strpos($name, $js_name[0]) !== false) 
-                                     {
+                                    $cv_name = $this->Master_model->get_master_row('corporate_cv_bank', $select = 'js_name', $where, $join = FALSE);
+
+                                    $js_name = explode(' ', $cv_name['js_name']);
+                                    if (strpos($name, $js_name[0]) !== false) {
                                         $where11['cv_id'] = $cvs;
-                                        $path = 'cv_folder/'.$folder_name.'/'.$name;
+                                        $path = $folder_path_final;
                                         // print_r($path);die;
-                                        $update_doc['js_document'] =  $path;
+                                        $update_doc['js_document'] = $path;
                                         $this->Master_model->master_update($update_doc, 'corporate_cv_bank', $where11);
+
+                                        $previous_folder = $folders[$k];
+                                        $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id'";
+                                        $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join = FALSE);
+                                            // print_r($this->db->last_query());die;
+
+                                        $folder_id = $parent['id'];
+                                        $whereres = "cv_folder_id='$folder_id' and cv_id = '$cvs' ";
+                                        $folder_dbdata = $this->Master_model->get_master_row('cv_folder_relation', $select = FALSE, $whereres);
+                                        if (empty($folder_dbdata) && !empty($folder_id)) {
+                                            $cv_folder_data['cv_folder_id'] = $folder_id;
+                                            $cv_folder_data['cv_id'] = $cvs;
+                                            $cv_folder_data['status'] = '1';
+                                            $result = $this->Master_model->master_insert($cv_folder_data, 'cv_folder_relation');
+                                        }
                                         // echo 'The specific word is present.';
-                                     }
-                                   
+                                    }
                                 }
                             }
-                        
-                           
-
                         }
-                     $folder_data['company_id'] = $company_id;
-                     $folders = explode('/', $folder_path[0]);
+                    }
+                    $folder_data['company_id'] = $company_id;
+                    $folders = explode('/', $folder_path[0]);
                     $folder_data['folder_name'] = $folders[0];
-                    $folder_data['cv'] = implode(',', $cv) ;
-                     $result = $this->Master_model->master_insert($folder_data, 'folder_company_mapping');
+                    $folder_data['cv'] = implode(',', $cv);
+                    $result = $this->Master_model->master_insert($folder_data, 'folder_company_mapping');
 
                     // $data['response'] = 'successfully uploaded '.$filename;
                     $this->session->set_flashdata('success', '<div class="alert alert-success text-center">CVs Uploaded successfully!</div>');
                     // redirect('employer/bulk_upload_cvs');
-                    
+
                 } else {
                     //$data['response'] = 'failed';
                     $error = $this->upload->display_errors();
-                    $this->session->set_flashdata('success', '<div class="alert alert-warning text-center">CVs Upload failed!' .$error.'</div>');
+                    $this->session->set_flashdata('success', '<div class="alert alert-warning text-center">CVs Upload failed!' . $error . '</div>');
                 }
-            }
-            else
-            {
-                 $this->session->set_flashdata('success', '<div class="alert alert-warning text-center">File Format not supported</div>');
-
-            }
             } else {
-                // $data['response'] = 'failed';
-                $this->session->set_flashdata('success', '<div class="alert alert-danger text-center">CVs Upload failed!</div>');
+                $this->session->set_flashdata('success', '<div class="alert alert-warning text-center">File Format not supported</div>');
             }
+        } else {
+                // $data['response'] = 'failed';
+            $error = $_FILES['file']['error'];
+            $this->session->set_flashdata('success', '<div class="alert alert-danger text-center">CVs Upload failed!'.$error.'</div>');
+        }
             // $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">CVs Uploaded successfully!</div>');
-             redirect('employer/corporate_cv_bank');
+        redirect('employer/corporate_cv_bank');
             // load view
             // $this->load->view('fontend/employer/bulk_cv_upload_view',$data);
-            
-        } else {
+
+    } else {
             // load view
-            redirect('employer/corporate_cv_bank');
-        }
+        redirect('employer/corporate_cv_bank');
     }
+}
     function get_fav_consultants() {
         $emp_id = $this->input->post('emp_id');
         $where_cond = "consultant_company_mapping.company_id='$emp_id' AND consultant_company_mapping.is_favourite='yes'";
@@ -3648,6 +3895,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         }
     }
     public function ocean_champ_test() {
+         $this->session->unset_userdata('submenu');
+
         $data['activemenu'] = 'oceanchamp';
         $this->session->set_userdata($data);
         $company_profile_id = $this->session->userdata('company_profile_id');
@@ -3953,6 +4202,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         redirect('employer/corporate_cv_bank/' . $folder_id);
     }
     public function internal_tracker() {
+         $this->session->unset_userdata('submenu');
+
         $this->session->unset_userdata('activemenu');
         $data['activemenu'] = 'internal_tracker';
         $this->session->set_userdata($data);
@@ -3961,6 +4212,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $this->load->view('fontend/employer/internal_tracker.php', compact('company_active_jobs', 'employer_id'));
     }
     public function external_tracker() {
+         $this->session->unset_userdata('submenu');
+
         $this->session->unset_userdata('activemenu');
         $data['activemenu'] = 'external_tracker';
         $this->session->set_userdata($data);
@@ -3969,6 +4222,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $this->load->view('fontend/employer/external_tracker.php', compact('company_active_jobs', 'employer_id'));
     }
     public function shared_tracker() {
+         $this->session->unset_userdata('submenu');
+
         $this->session->unset_userdata('activemenu');
         $data['activemenu'] = 'shared_tracker';
         $this->session->set_userdata($data);
@@ -4341,6 +4596,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         
     }
     public function oceantest() {
+         $this->session->unset_userdata('submenu');
+
         $employer_id = $this->session->userdata('company_profile_id');
         $where_all = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id'";
         $data['oceanchamp_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where = $where_all, $join = FALSE, $order = false, $field = false, $select = 'DISTINCT type', $limit = false, $start = false, $search = false);
@@ -4575,22 +4832,142 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $notice_period_var = $this->input->post('notice_period');
         $education_var = $this->input->post('education');
         $current_ctc_var = $this->input->post('current_ctc');
+        //$stablity_var = $this->input->post('stability');
         $company_id = $this->session->userdata('company_profile_id');
 
-        $where_active = "login BETWEEN DATE_SUB(NOW(), INTERVAL 30 DAY) And  NOW() and corporate_cv_bank.company_id = '$company_id' and corporate_cv_bank.js_experience='$exp_var' and corporate_cv_bank.js_current_notice_period='$notice_period_var' and corporate_cv_bank.js_top_education = '$education_var' and corporate_cv_bank.js_current_ctc='$current_ctc_var'";
+        $stability=$this->input->post('stability');
+//$days_count=30*stability;
+        if($stability==6){
+            $before_date = date('Y-m-d', strtotime("-".$stability." months"));
+            $where = "corporate_cv_bank.js_working_since <= '".$before_date."'";
+        }
+        if($stability==12){
+            $before_months=6;
+            $after_date = date('Y-m-d', strtotime("-".$stability." months"));
+            $before_date = date('Y-m-d', strtotime("-".$before_months." months"));
+            $where = "corporate_cv_bank.js_working_since <= '".$after_date."' and corporate_cv_bank.js_working_since >= '".$before_date."'";
+        }           
+        if($stability==24){
+            $before_months=12;
+            $after_date = date('Y-m-d', strtotime("-".$stability." months"));
+            $before_date = date('Y-m-d', strtotime("-".$before_months." months"));
+            $where = "corporate_cv_bank.js_working_since <= '".$after_date."' and corporate_cv_bank.js_working_since >= '".$before_date."'";
+        }
+        if($stability==30){
+            $before_date = date('Y-m-d', strtotime("-".$stability." months"));
+            $where = "corporate_cv_bank.js_working_since >= '".$before_date."'";
+        }
+
+
+
+
+        $where_active = "login BETWEEN DATE_SUB(NOW(), INTERVAL 30 DAY) And  NOW() and corporate_cv_bank.company_id = '$company_id' and corporate_cv_bank.js_experience='$exp_var' and corporate_cv_bank.js_current_notice_period='$notice_period_var' and corporate_cv_bank.js_top_education = '$education_var' and corporate_cv_bank.js_current_ctc='$current_ctc_var' and corporate_cv_bank.js_working_since = '$stability'";
 
         $where_active.= ' GROUP by cv_id';
+
+
         $join_cond = array('js_info' => 'js_info.email = corporate_cv_bank.js_email|Left', 'js_login_logs' => 'js_info.job_seeker_id = js_login_logs.job_seeker_id|Left');
+
+
+
         $active_cv = $this->Master_model->getMaster('corporate_cv_bank', $where = $where_active, $join = $join_cond, $order = false, $field = false, $select = false, $limit = false, $start = false, $search = false);
 
-
         //echo $this->db->last_query();
-
-        //echo $this->db->last_query();
-
+       //echo $this->db->last_query();
 
          echo json_encode($active_cv);
     }
+
+
+    public function get_own_cvs() {
+        $exp_var = $this->input->post('exp');
+        $notice_period_var = $this->input->post('notice_period');
+        $education_var = $this->input->post('education');
+        $current_ctc_var = $this->input->post('current_ctc');
+        $company_id = $this->session->userdata('company_profile_id');
+
+        $stability=$this->input->post('stability');
+//$days_count=30*stability;
+        if($stability==6){
+            $before_date = date('Y-m-d', strtotime("-".$stability." months"));
+            $where = "corporate_cv_bank.js_working_since <= '".$before_date."'";
+        }
+        if($stability==12){
+            $before_months=6;
+            $after_date = date('Y-m-d', strtotime("-".$stability." months"));
+            $before_date = date('Y-m-d', strtotime("-".$before_months." months"));
+            $where = "corporate_cv_bank.js_working_since <= '".$after_date."' and corporate_cv_bank.js_working_since >= '".$before_date."'";
+        }           
+        if($stability==24){
+            $before_months=12;
+            $after_date = date('Y-m-d', strtotime("-".$stability." months"));
+            $before_date = date('Y-m-d', strtotime("-".$before_months." months"));
+            $where = "corporate_cv_bank.js_working_since <= '".$after_date."' and corporate_cv_bank.js_working_since >= '".$before_date."'";
+        }
+        if($stability==30){
+            $before_date = date('Y-m-d', strtotime("-".$stability." months"));
+            $where = "corporate_cv_bank.js_working_since >= '".$before_date."'";
+        }
+
+        $where_active = "corporate_cv_bank.company_id = '$company_id' and corporate_cv_bank.js_experience='$exp_var' and corporate_cv_bank.js_current_notice_period='$notice_period_var' and corporate_cv_bank.js_top_education = '$education_var' and corporate_cv_bank.js_current_ctc='$current_ctc_var' and corporate_cv_bank.js_working_since = '$stability'";
+
+        $where_active.= ' GROUP by corporate_cv_bank.cv_id';
+
+        $join_cond = array('cv_folder_relation' => 'cv_folder_relation.cv_folder_id = cv_folder.id | Left', 'corporate_cv_bank' => 'corporate_cv_bank.cv_id = cv_folder_relation.cv_id | Left');
+
+      
+        $own_cvs = $this->Master_model->getMaster('cv_folder', $where = $where_active, $join = $join_cond, $order = false, $field = false, $select = false, $limit = false, $start = false, $search = false);
+
+        echo json_encode($own_cvs);
+    }
+
+    public function job_post_report() {
+        $job_id = $this->input->post('id');
+        $where_forwarded = "job_apply.job_post_id='$job_id' and job_apply.forword_job_status = 1";
+        $data['Total_count_forwarded'] = $this->Master_model->getMaster('job_apply', $where = $where_forwarded, $join = FALSE, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+
+        $where_applied = "job_apply.job_post_id='$job_id'";
+        $data['Total_count_applied'] = $this->Master_model->getMaster('job_apply', $where = $where_applied, $join = FALSE, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+
+
+
+         $where_applied = "job_apply.apply_date <= apply_date(NOW(),INTERVAL 7 DAYS )') and job_posting.created_at <=created_at(NOW(),INTERVAL 7 DAYS )') job_apply.job_post_id='$job_id'";
+         join_test = array('job_posting' => 'job_posting.job_post_id=job_apply.job_post_id',
+        'seeker_test_result' => 'seeker_test_result.test_id=job_posting.test_for_job');
+        $data['Total_count_early_applied'] = $this->Master_model->getMaster('job_apply', $where = $where_applied, $join = FALSE, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+
+        echo $this->db->last_query();
+
+
+        $where_test_attempt_mandatory = "job_posting.is_test_required='Yes'";
+        $join_test = array('job_posting' => 'job_posting.job_post_id=job_apply.job_post_id',
+        'seeker_test_result' => 'seeker_test_result.test_id=job_posting.test_for_job');
+        $data['Total_count_test_given'] = $this->Master_model->getMaster('job_apply', $where = $where_applied, $join = $join_test, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+
+        $where_test_passed = "job_posting.is_test_required='Yes' and seeker_test_result.correct_status = 'Yes' ";
+        $where_test_passed .= "HAVING count(*) > min_marks ";
+        $join_test_passed = array('job_posting' => 'job_posting.job_post_id=job_apply.job_post_id | Left ',
+        'seeker_test_result' => 'seeker_test_result.test_id=job_posting.test_for_job | Left ',
+        'oceanchamp_tests' => 'oceanchamp_tests.test_id = seeker_test_result.test_id | Left');
+
+        $data['Total_count_test_passed'] = $this->Master_model->getMaster('job_apply', $where =  $where_test_passed, $join = $join_test_passed, $order = false, $field = false, $select = 'count(*),oceanchamp_tests.total_questions/2 as min_marks',$limit=false,$start=false, $search=false);
+
+        $where_finalized = "job_apply.job_post_id='$job_id' and job_apply.apply_status = 3";
+        $data['Total_count_inteviewed_passed'] = $this->Master_model->getMaster('job_apply', $where = $where_finalized, $join = FALSE, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+
+        $where_finalized = "job_apply.job_post_id='$job_id' and job_apply.apply_status = 2";
+        $data['Total_count_inteviewed_failed'] = $this->Master_model->getMaster('job_apply', $where = $where_finalized, $join = FALSE, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+
+        $where_offer = "job_apply.job_post_id='$job_id' and (forwarded_jobs_cv.tracking_status=7 or external_tracker.tracking_status=7)";
+        $join_test_passed = array('forwarded_jobs_cv' => 'forwarded_jobs_cv.job_post_id=job_apply.job_post_id | Left ',
+        'external_tracker' => 'external_tracker.job_post_id=job_apply.job_post_id | Left ');
+        $data['Total_offer_accepted'] = $this->Master_model->getMaster('job_apply', $where = $where_offer, $join = $join_test_passed, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+
+        // echo $this->db->last_query();
+
+        echo json_encode($data);
+
+        }
 
 }
 

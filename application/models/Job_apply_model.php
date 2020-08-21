@@ -45,6 +45,21 @@ class Job_apply_model extends MY_Model
             return false;
         }   
     }
+
+    public function job_post($company_id,$job_post_id)
+    {
+        $this->db->select("*");
+        $this->db->where('company_id', $company_id);
+        $this->db->where('job_post_id', $job_post_id);
+        $this->db->where('forword_job_status',1);
+        $query = $this->db->get($this->_table_name);
+        if ($query->num_rows() > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
  
     public function check_confirmed_interview( $company_id,$job_post_id)
     {

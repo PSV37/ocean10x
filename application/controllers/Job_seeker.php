@@ -1,4 +1,7 @@
 <?php
+ ini_set('file_uploads ', 'on');
+ ini_set('post_max_size  ', '100M');
+ ini_set('upload_max_filesize  ', '100M');
 if (!defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
@@ -1748,10 +1751,13 @@ public function user_profile()
         $oceanchamp_tests = $this->Master_model->get_master_row('forwarded_tests', $select = FALSE, $where = $where_all, $join = FALSE);
     }
 
-   public function ocean_test_start($test_id = null)
+   public function ocean_test_start($test_id = null,$apply_id= null)
     {
         // $company_profile_id = $this->session->userdata('company_profile_id');
         $test_id           = base64_decode($test_id);
+        $apply_id           = base64_decode($apply_id);
+        // print_r($test_id);
+        // print_r($job_post_id);die;
         
         if (!empty($test_id)) {
             
@@ -1808,6 +1814,7 @@ public function user_profile()
             $data['oceanchamp_tests'] = $oceanchamp_tests;
             
             $data['test_id'] = $test_id;
+            $data['apply_id'] = $apply_id;
             $this->load->view('fontend/exam/ocean_test_questions', $data);
             // $this->load->view('fontend/exam/oceantest_test',$data);
             
@@ -1821,8 +1828,10 @@ public function user_profile()
       
         // print_r($_POST);die;
       
-        
+          $seeker_id = $this->session->userdata('job_seeker_id');
         $test_id              = $this->input->post('test_id');
+        $apply_id              = $this->input->post('apply_id');
+
         // $employer_id = $this->session->userdata('company_profile_id');
         $where_all = "oceanchamp_tests.status='1' AND test_id = '$test_id'";
 
@@ -1880,7 +1889,11 @@ public function user_profile()
         );
         $last_id    = $this->Master_model->master_insert($exam_array, 'seeker_test_result');
 
-         $test_array = array(
+         
+
+
+        }
+        $test_array = array(
                         
                         'status' => 'Test Completed',
                         'updated_on' => date('Y-m-d'),
@@ -1888,8 +1901,9 @@ public function user_profile()
                     );
              $where['test_id'] = $test_id;
              $where['job_seeker_id'] = $seeker_id;
-            $this->Master_model->master_update($test_array, 'oceanchamp_tests', $where);
-        }
+            $this->Master_model->master_update($test_array, 'forwarded_tests', $where);
+        
+        
             
           // if (isset($oceanchamp_tests) && $oceanchamp_tests['final_result'] == 'Y') 
           // { 
@@ -1907,13 +1921,103 @@ public function user_profile()
                 $data['result'] =  $data['correct_ans'];
 
             }
-            // $this->load->view('fontend/employer/result_page',$data);
-        // } 
-        // else
-        // {
+            if (isset($apply_id) && ! empty($apply_id)) {
+            $test_array = array(
+                        
+                        'tracking_status' => 2,
+                        'updated_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')));
+                        
+                
+             $where['apply_id'] = $apply_id;
+           
+            $this->Master_model->master_update($test_array, 'forwarded_jobs_cv', $where);
+
+            $score = $data['correct_ans'] ."/". $data['total_questions'];
+
+            $update_array = array(
+                        
+                        'tracking_status' => 2,
+                        'score' => $score,
+                        'updated_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'))
+                        
+                    );
+            $this->Master_model->master_update($update_array, 'external_tracker', $where);
+            $join =array('job_apply' => 'job_apply.job_post_id = external_tracker.job_post_id');
+            $where_cond = "external_tracker.apply_id = '$apply_id'";
+            $total_ranks = $this->Master_model->getMaster('external_tracker',  $where_cond, $join , $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+               // print_r($this->db->last_query());die;
+            $before_sorting = array();
+            foreach ($total_ranks as $row) {
+                $scores = explode('/', $row['score']);
+               
+
+                array_push($before_sorting, $scores[0]);
+
+            }
+
+            $sorted_array =array(sort(array_unique($before_sorting)));
+             // print_r($sorted_array);die;
+            $k=1;
+            foreach ($sorted_array as $row) {
+                $array = array(
+                        
+                        'rank' => $k,
+                        'updated_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')));
+                        
+                
+             $where['score'] = $row.'/'.$data['total_questions'];
+           
+            $this->Master_model->master_update($array,'external_tracker', $where);
+
+            $k++;
+            // print_r($this->db->last_query());die;
+                
+            }
+
+
+
+
+
+            }
+
+            $join_company = array('company_profile' => 'company_profile.company_profile_id = forwarded_tests.company_id',
+                'js_info' => 'js_info.job_seeker_id = forwarded_tests.job_seeker_id');
+            $where_test = "forwarded_tests.test_id = '$test_id' and forwarded_tests.job_seeker_id = '$seeker_id' ";
+            $check_farwarded = $this->Master_model->get_master_row('forwarded_tests', $select = FALSE, $where_test, $join_company);
+
+           
+
+            // print_r($this->db->last_query());
+            // die;
+
+            if ($check_farwarded) {
+               $subject = 'Candidate has Completed The test';
+            $message = '
+                <style>
+                    .btn-primary{
+                        width: 232px;
+                        color: #fff;
+                        text-align: center;
+                        margin: 0 0 0 5%;
+                        background-color: #6495ED;
+                        padding: 5px;
+                        text-decoration: none;
+                    }
+                </style>
+                <div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
+                <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
+                <br><br>Hi '. $check_farwarded['company_name'].' <br/>';
+
+                $message .='<br>
+                '.$check_farwarded['full_name'].' has completed the test that you have farwarded<br><br>Regards,<br><br> Team TheOcean<br><br>© 2020 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table><br><br>Regards,<br><br>Team TheOcean.</div>';
+
+
+                $send = sendEmail_JobRequest($check_farwarded['company_email'],$message,$subject);
+            }
+           
             $this->load->view('fontend/exam/exam_success',$data);
 
-        // }
+        
            
           
         }

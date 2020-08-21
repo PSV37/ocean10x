@@ -1311,7 +1311,7 @@
                         </li>
                         <li>
                            <em>Own cv's</em>
-                           <span>3500</span>
+                           <span id="own_cvs"><?php echo sizeof($own_cvs); ?></span>
                         </li>
                         <li>
                            <em>Consultant cv's</em>
@@ -1392,8 +1392,9 @@
             <div class="filter1">
                <p style="font-size:18px;margin-top:15px;">Time Period in Current Job</p>
                   <div class="range-wrap">
-                  <input type="range" class="range" id="stability_id" onchange="get_data();" min="<6M" max="<1Y" step="5" value="0">
-                  <output class="bubble notice_period" ></output>
+                  <input type="range" class="range" id="stability_id" onchange="get_data();" min="6" max="30" step="6"  value="6">
+                  <output class="bubble "></output>
+                  <!--<span id="rngOutput "></span>-->
 
                <!--<select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" id='stability_id' tabindex="-98">
                   <optgroup label="Driver Groups">
@@ -1697,6 +1698,7 @@
     
             
            });
+
    $("#job_title").autocomplete({
              
              source: "<?php echo base_url();?>Employer/search_job_keywords",
@@ -1737,17 +1739,26 @@
        $.ajax({
                url: "<?php echo base_url();?>employer/get_active_cvs",
                type: "POST",
-               data:{exp:value,notice_period:notice_period_value,education:education_value,current_ctc:current_ctc_value},
+               data:{exp:value,notice_period:notice_period_value,education:education_value,current_ctc:current_ctc_value,stablity:sta_value},
                  success: function(data)
                  {
                      var getarray = jQuery.parseJSON(data);
                    $('#active_cv').html(getarray.length);
                  }
            });
-
+       
+       $.ajax({
+               url: "<?php echo base_url();?>employer/get_own_cvs",
+               type: "POST",
+               data:{exp:value,notice_period:notice_period_value,education:education_value,current_ctc:current_ctc_value,stablity:sta_value},
+                 success: function(data)
+                 {
+                     var getarray = jQuery.parseJSON(data);
+                   $('#own_cvs').html(getarray.length);
+                 }
+           });
       // $('#active_cv').html(value);
       // alert(value);
-   
    }
    
   
@@ -3857,4 +3868,18 @@
      // Sorta magic numbers based on size of the native UI thumb
      bubble.style.left = `calc(${newVal}% + (${8 - newVal * 0.15}px))`;
    }
+</script>
+
+<script> 
+var rng = document.getElementById("stability_id");
+var ro = document.getElementById("rngOutput");
+var myRange = ["6 Months","12 Months","24 Months","30 Months"];
+
+function updateRange(){
+   ro.textContent = myRange[parseInt(rng.value, 10)];
+   console.log("Selected value is: " + myRange[parseInt(rng.value, 10)] + ", Associated value is: " + rng.value);
+};
+
+window.addEventListener("DOMContentLoaded", updateRange);
+rng.addEventListener("input", updateRange);
 </script>
