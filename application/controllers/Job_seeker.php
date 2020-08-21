@@ -1949,13 +1949,14 @@ public function user_profile()
             $before_sorting = array();
             foreach ($total_ranks as $row) {
                 $scores = explode('/', $row['score']);
-                print_r($scores);die;
-                
+               
+
                 array_push($before_sorting, $scores[0]);
 
             }
 
             $sorted_array =(sort(array_unique($before_sorting)));
+             print_r($sorted_array);die;
             $k=1;
             foreach ($sorted_array as $row) {
                 $array = array(
