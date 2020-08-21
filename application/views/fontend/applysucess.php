@@ -22,13 +22,13 @@ $jobseeker_id = $this->session->userdata('job_seeker_id');
                 foreach ($job_test as $value) {}
                 $status = $value['is_test_required'];
                 $job_id = $value['test_for_job'];
-                $job_post_id = $value['job_post_id'];
+                $apply_id = $value['job_apply_id'];
                 $company_profile_id = $value['company_profile_id'];
                 
                 if($status=='Yes')
                 {
               ?>
-              <br>If you want's to increase your chance for this job please go through online test. <br><a href="<?php echo base_url(); ?>job_seeker/ocean_test_start/<?php echo base64_encode($job_id); ?>/<?php echo base64_encode($job_post_id); ?>" class="btn btn-info">Go Now </a>&nbsp;&nbsp; <a href="<?php echo base_url(); ?>" class="btn btn-default">Go Later </a>.</p>
+              <br>If you want's to increase your chance for this job please go through online test. <br><a href="<?php echo base_url(); ?>job_seeker/ocean_test_start/<?php echo base64_encode($job_id); ?>/<?php echo base64_encode($apply_id); ?>" class="btn btn-info">Go Now </a>&nbsp;&nbsp; <a href="<?php echo base_url(); ?>" class="btn btn-default">Go Later </a>.</p>
             
               <?php }else{ ?>
                 <br>Please go to <a href="<?php echo base_url(); ?>">Home </a> or search something from search form.</p>

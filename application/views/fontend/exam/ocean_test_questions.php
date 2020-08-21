@@ -912,6 +912,7 @@ input[type="radio"] {
                           <form id="nextques" class="submit-form" action="<?php echo base_url();?>job_seeker/insert_test_data" method="post">
 
                               <input type="hidden" name="test_id" value="<?php echo($test_id); ?>">
+                              <input type="hidden" name="apply_id" value="<?php echo($apply_id); ?>">
                             
                               <div class="quiz-container">
                                 <div id="quiz"></div>
