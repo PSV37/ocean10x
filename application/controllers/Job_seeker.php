@@ -1926,7 +1926,7 @@ public function user_profile()
                 $where_test_job = "job_posting.test_for_job = '$test_id' and job_posting.company_id = '$check_farwarded->company_profile_id' ";
                 $job_id = $this->Master_model->get_master_row('job_posting', $select = FALSE, $where_test_job);
 
-                print_r($job)
+                // print_r($job)
 
             }
 
