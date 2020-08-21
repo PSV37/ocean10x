@@ -1589,6 +1589,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                 $test_data['level'] = $level_data;
                 $test_data['topics'] = $subject_data;
                 $test_data['test_status'] = '1';
+                $test_data['status'] = '1';
 
                 // $test_data['timer_on_each_que'] = $this->input->post('timer');
                 // $test_data['previous_option'] = $this->input->post('previous_option');
@@ -1669,6 +1670,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                 $test_data['level'] = $level;
                 $test_data['topics'] = $technical_id;
                 $test_data['test_status'] = '2';
+                $test_data['status'] = '1';
                 // $test_data['timer_on_each_que'] = $this->input->post('timer');
                 // $test_data['previous_option'] = $this->input->post('previous_option');
                 // $test_data['review_option'] = $this->input->post('review_option');
