@@ -1955,7 +1955,7 @@ public function user_profile()
 
             }
 
-            $sorted_array =(sort(array_unique($before_sorting)));
+            $sorted_array =array(sort(array_unique($before_sorting)));
              print_r($sorted_array);die;
             $k=1;
             foreach ($sorted_array as $row) {
