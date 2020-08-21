@@ -1491,7 +1491,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                         for ($j = 0;$j < sizeof($req_skill_details);$j++) {
                             $message.= ' <br>' . $req_skill_details[$j]['skill_name'];
                         }
-                        $message.= '<br/><b>Job Description: </b> ' . $require['job_desc'] . '<br/><b>Job Benefits: </b> ' . $require['benefits'] . '<br/><b>Other Job Description: </b> ' . $require['education'] . '<br><br><a href="' . base_url() . 'job_forword_seeker/open_forworded_job?comp_mail=' . base64_encode($email[$i]) . '&job_id=' . base64_encode($apply) . '" class="btn btn-primary" value="open" align="center" target="_blank">Open</a> <br><br><br><br><br></td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table><br>
+                        $message.= '<br/><b>Job Description: </b> ' . $require['job_desc'] . '<br/><b>Job Benefits: </b> ' . $require['benefits'] . '<br/><b>Other Job Description: </b> ' . $require['education'] . '<br><br><a href="' . base_url() . 'job_forword_seeker/open_forworded_job?comp_mail=' . base64_encode($row['email']) . '&job_id=' . base64_encode($job_id) . '" class="btn btn-primary" value="open" align="center" target="_blank">Open</a> <br><br><br><br><br></td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table><br>
                         Regards,<br>Team TheOcean.</div>';
                     $send = sendEmail_JobRequest($row['email'], $message, $subject);
             
