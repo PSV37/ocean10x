@@ -1889,7 +1889,11 @@ public function user_profile()
         );
         $last_id    = $this->Master_model->master_insert($exam_array, 'seeker_test_result');
 
-         $test_array = array(
+         
+
+
+        }
+        $test_array = array(
                         
                         'status' => 'Test Completed',
                         'updated_on' => date('Y-m-d'),
@@ -1898,9 +1902,6 @@ public function user_profile()
              $where['test_id'] = $test_id;
              $where['job_seeker_id'] = $seeker_id;
             $this->Master_model->master_update($test_array, 'forwarded_tests', $where);
-
-
-        }
         
         
             
