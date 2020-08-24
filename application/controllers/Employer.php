@@ -4959,7 +4959,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         'external_tracker' => 'external_tracker.job_post_id=job_apply.job_post_id | Left ');
         $data['Total_offer_accepted'] = $this->Master_model->getMaster('job_apply', $where = $where_offer, $join = $join_test_passed, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
 
-        $where_applied = "job_apply.apply_date BETWEEN job_posting.created_at AND DATE_ADD(job_posting.created_at, INTERVAL 7 DAY) AND job_apply.job_post_id='$job_id'";
+        $where_applied = "job_apply.job_post_id='$job_id' AND job_apply.apply_date BETWEEN job_posting.created_at AND DATE_ADD(job_posting.created_at, INTERVAL 7 DAY)";
         $join_test = array('job_posting' => 'job_posting.job_post_id=job_apply.job_post_id');
         $data['Total_count_early_applied'] = $this->Master_model->getMaster('job_apply', $where = $where_applied, $join = $join_test, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
 
