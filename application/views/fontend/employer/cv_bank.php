@@ -1065,7 +1065,7 @@
                                           $wheres  = "status='1' AND company_id='$employer_id' ";
                                              $folders     = $this->Master_model->getMaster('cv_folder', $where = $wheres); ?>
                                        <select class="form-control select2" name="folder_id">
-                                          <option value="0">None</option>
+                                          <option value="0">CV Bank</option>
                                           <?php foreach ($folders as $row) { ?>
                                           <option value="<?php echo $row['id'] ?>"><?php echo $row['folder_name'] ?></option>
                                           <? } ?>
@@ -1114,7 +1114,7 @@
                                           $wheres  = "status='1' AND company_id='$employer_id' ";
                                              $folders     = $this->Master_model->getMaster('cv_folder', $where = $wheres); ?>
                                        <select class="form-control select2" name="folder_id">
-                                          <option value="0">None</option>
+                                          <option value="0">CV Bank</option>
                                           <?php foreach ($folders as $row) { ?>
                                           <option value="<?php echo $row['id'] ?>"><?php echo $row['folder_name'] ?></option>
                                           <? } ?>
