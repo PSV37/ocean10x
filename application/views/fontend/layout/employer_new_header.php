@@ -122,8 +122,9 @@ a.dropdown-toggle {
     <p class="profile-accoutnt-p data-toggle="tooltip title="<?php echo $this->Company_profile_model->company_name($employer_id); ?>"><?php echo $this->Company_profile_model->company_name($employer_id); ?></p>
    
     </a>
-     <p>last login : <?php echo $last_login; ?> </p>
+
     <ul class="dropdown-menu">
+      <li> <p>last login : <?php echo $last_login; ?> </p></li>
       <li><a href="<?php echo base_url() ?>employer/profile-setting"><i class="fas fa-user"></i>My Profile</a> </li>
       <li><a href="<?php echo base_url() ?>employer/addemployee"><i class="fas fa-user"></i>Employee Management</a> </li>
       <li><a href="<?php echo base_url(); ?>employer/change-password"><i class="fas fa-lock"></i>Change Password</a></li>
