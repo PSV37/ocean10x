@@ -1491,6 +1491,13 @@
    </div>
 </div>
 <script>
+   $(document).ready (function(){
+     $("#smsg").fadeTo(2000, 500).slideUp(500, function(){
+     $("#smsg").slideUp(500);
+     });   
+   });
+</script>
+<script>
    document.getElementById("files").addEventListener("change", function(event) {
   let output = document.getElementById("paths");
   let files = event.target.files;
