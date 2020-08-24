@@ -336,8 +336,7 @@
    clip: rect(0px, 200px, 200px, 100px);
    }
    .legend {
-   margin-left:20px !important;
-   margin-top: 20px;
+   margin-left:8px !important;
    list-style-type: none;
    padding: 0;
    margin: 0;

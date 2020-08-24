@@ -28,9 +28,24 @@ class Job_apply_model extends MY_Model
             return true;
         } else {
             return false;
-        }
+        }   
     }
 
+
+    public function job_post( $company_id,$job_post_id)
+    {
+        $this->db->select("*");
+        $this->db->where('company_id', $company_id);
+        $this->db->where('job_post_id', $job_post_id);
+        $this->db->where('forword_job_status',1);
+        $query = $this->db->get($this->_table_name);
+        if ($query->num_rows() > 0) {
+            return true;
+        } else {
+            return false;
+        }   
+    }
+/*
     public function job_post($company_id,$job_post_id)
     {
         $this->db->select("*");
@@ -44,12 +59,11 @@ class Job_apply_model extends MY_Model
             return false;
         }
     }
-
+*/
  
-    public function check_confirmed_interview($userId, $company_id,$job_post_id)
+    public function check_confirmed_interview( $company_id,$job_post_id)
     {
         $this->db->select("*");
-        $this->db->where('job_seeker_id', $userId);
         $this->db->where('company_id', $company_id);
         $this->db->where('job_post_id', $job_post_id);
         $this->db->where('confirm_status',1);
@@ -60,7 +74,52 @@ class Job_apply_model extends MY_Model
             return false;
         }
     }
-    
+
+    public function check_confirmed_interview_status( $company_id,$job_post_id, $interview_complete_status)
+    {
+        $this->db->select("*");
+        $this->db->where('company_id', $company_id);
+        $this->db->where('job_post_id', $job_post_id);
+        $this->db->where('confirm_status',1);
+        $this->db->where('interview_complete_status', $interview_complete_status);
+        $query = $this->db->get('interview_scheduler');
+        if ($query->num_rows() > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function attempted_test($test_id, $question_id)
+    {
+        $this->db->select("*");
+        $this->db->where('test_id', $test_id);
+        $this->db->where('question_id', $question_id);
+        //$this->db->where('correct_status',$correct_status);
+        $query = $this->db->get('seeker_test_result');
+        if ($query->num_rows() > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    public function passed_test($test_id, $question_id, $correct_status)
+    {
+        $this->db->select("*");
+        $this->db->where('test_id', $test_id);
+        $this->db->where('question_id', $question_id);
+        $this->db->where('correct_status',$correct_status);
+        $query = $this->db->get('seeker_test_result');
+        if ($query->num_rows() > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
     public function check_apply_forwarded_job($userId, $company_id,$job_post_id)
     {
         $this->db->select("*");
