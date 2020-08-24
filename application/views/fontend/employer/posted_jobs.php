@@ -1490,7 +1490,7 @@
 
                    $('#total_offer_accept').html(total_offer_accepted.length);
 
-                   $('#early_applications').html(total_count_early_applied);
+                   $('#early_applications').html(total_count_early_applied.length);
 
                  }
                });
