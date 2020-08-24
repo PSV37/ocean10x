@@ -4930,6 +4930,13 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $data['Total_count_applied'] = $this->Master_model->getMaster('job_apply', $where = $where_applied, $join = FALSE, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
 
 
+        // $stability=$this->input->post('stability');
+
+        //if($stability==6){
+          //  $before_date = date('Y-m-d', strtotime("-".$stability." months"));
+           // $where = "corporate_cv_bank.js_working_since <= '".$before_date."'";
+        //}
+
 
          //$where_applied = "job_apply.apply_date <= apply_date(NOW(),INTERVAL 7 DAYS )') and job_posting.created_at <=created_at(NOW(),INTERVAL 7 DAYS )') job_apply.job_post_id='$job_id'";
         // join_test = array('job_posting' => 'job_posting.job_post_id=job_apply.job_post_id',
