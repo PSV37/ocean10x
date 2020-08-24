@@ -4155,10 +4155,10 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $folder_data['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
             $folder_data['created_by'] = $employer_id;
             $result = $this->Master_model->master_insert($folder_data, 'cv_folder');
-            $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Succesfully added</div>');
+            $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Succesfully added</div>');
             redirect('employer/corporate_cv_bank');
         } else {
-            $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">already exists</div>');
+            $this->session->set_flashdata('success', '<div class="alert alert-warning text-center">already exists</div>');
             redirect('employer/corporate_cv_bank');
         }
     }
