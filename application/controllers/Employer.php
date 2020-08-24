@@ -1074,7 +1074,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                 // }
                 
             }
-            $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Job Forwarded Successfully</div>');
+            $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Job Forwarded Successfully</div>');
             redirect('employer/corporate_cv_bank');
         }
         redirect('employer/corporate_cv_bank');
