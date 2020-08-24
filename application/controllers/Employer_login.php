@@ -92,6 +92,9 @@ class Employer_Login extends CI_Controller
 
             $whereres = "company_profile_id='$company_profile_id'";
             $employer_data= $this->Master_model->get_master_row('company_profile',$select = FALSE,$whereres);
+
+              $data['last_login'] = $employer_data['last_login'];
+            $this->session->set_userdata($data);
           
             if($employer_data['last_login']=="0000-00-00 00:00:00")
             {
@@ -107,7 +110,7 @@ class Employer_Login extends CI_Controller
             }else{
              $this->session->set_flashdata('emp_msg', '<div class="alert alert-success alert-dismissable">Welcome to TheOcean ! You are logged in as Administrator for '.$this->session->userdata('company_name').' !</div>');
              $this->session->set_flashdata('employee', '<div class="alert alert-success alert-dismissable">To start using TheOcean resources, we have created 3 users. Please enter their details !</div>');
-               $update_data=array('last_login'=>date('Y-m-d H:i:s'));
+               $update_data=array('last_login'=>date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),);
           $where11['company_profile_id']=$company_profile_id;
              
         $this->Master_model->master_update($update_data,'company_profile',$where11);
