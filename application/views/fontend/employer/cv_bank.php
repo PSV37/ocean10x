@@ -1255,7 +1255,7 @@
                                           $wheres  = "status='1' AND company_id='$employer_id' ";
                                              $folders     = $this->Master_model->getMaster('cv_folder', $where = $wheres); ?>
                                        <select class="form-control select2" name="parent">
-                                          <option value="0">None</option>
+                                          <option value="0">CV Bank</option>
                                           <?php $new_array=array(); $i=0; foreach ($folders as $row) { 
                                              $id = $folders[$i]['id'];
                                              // echo $id;
