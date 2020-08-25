@@ -246,23 +246,15 @@ input:-internal-autofill-selected{background-color:#fff !important;}
   z-index: 2;
   cursor:pointer;    
 }   
-.user-box input:focus{background-color:#fff;}
+/*.user-box input:focus{background-color:#fff;}
 :focus {
     outline: none !important;
-}
-:focus {
-  /* You can remove this to use the browser's defaults */
-  outline: #06f auto 2px;
-}
-
-body.using-mouse :focus {
-  outline: none;
-}
+}*/
 
          
 </style>
 
-<body>
+
 <div class="login-box">
   <h3>Employer Login</h3>
   <form class="submit-form customform loginform" action="<?php echo base_url() ?>employer_login/check_login?redirect=<?php echo $this->input->get('redirect'); ?>" method="post">
@@ -300,17 +292,8 @@ body.using-mouse :focus {
   <div class="newuser"><i class="fa fa-user" aria-hidden="true"></i> Not on Ocean ? <a href="<?php echo base_url(); ?>employer_register">Register Now</a></div>
   </div>
 </div>
-</body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>
-  document.body.addEventListener('mousedown', function() {
-  document.body.classList.add('using-mouse');
-});
 
-document.body.addEventListener('keydown', function() {
-  document.body.classList.remove('using-mouse');
-});
-</script>
 <script>
   $(".toggle-password").click(function() {
 
