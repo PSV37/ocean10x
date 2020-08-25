@@ -288,8 +288,8 @@ input:-internal-autofill-selected{background-color:#fff !important;}
        <a href="<?php echo base_url() . 'employer_login/forgot_pass' ?>" tabindex="3"><p class="forgot" style="color:#7b7a7a;font-size: 12px;margin-top: 9px;">Forgot Password ?</p></a>
     </div>
   </form>
-  <div class="row" style="text-align:center;"  tabindex="4">
-  <div class="newuser"><i class="fa fa-user" aria-hidden="true"></i> Not on Ocean ? <a href="<?php echo base_url(); ?>employer_register">Register Now</a></div>
+  <div class="row" style="text-align:center;"  >
+  <div class="newuser"><i class="fa fa-user" aria-hidden="true"></i> Not on Ocean ? <a href="<?php echo base_url(); ?>employer_register" tabindex="4">Register Now</a></div>
   </div>
 </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
