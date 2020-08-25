@@ -432,6 +432,13 @@ input.select2-search__field {
         </div>
       </div>
     </div>
+    <script>
+  $(document).on('focus', '.select2-selection.select2-selection--single', function (e) {
+  $(this).closest(".select2-container").siblings('select:enabled').select2('open');
+});
+
+
+</script>
     <script type="text/javascript" src="<?php echo base_url(); ?>asset/js/tinymce/tinymce.min.js"></script> 
 <script type="text/javascript">
 document.getElementsByClassName('form-control').innerHTML+="<br />";
