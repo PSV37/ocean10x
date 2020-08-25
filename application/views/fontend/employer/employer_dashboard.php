@@ -264,8 +264,6 @@
    margin-top: -15px;
    }
 </style>
-
-
 <div class="container-fluid main-d">
    <div class="container">
       <div class="col-md-12">
@@ -281,8 +279,7 @@
                               <div class="card-body-icon">
                                  <i class="fas fa-fw fa-download"></i>
                               </div>
-<?php if (!empty($company_active_jobs)): foreach ($company_active_jobs as $v_companyjobs) : ?>
-
+                              
                               <span>Active Job Posts </span>
                            </div>
                            <a class="card-footer text-white clearfix small z-1" href="#">
