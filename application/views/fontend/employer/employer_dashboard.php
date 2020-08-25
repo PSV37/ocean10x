@@ -279,7 +279,7 @@
                               <div class="card-body-icon">
                                  <i class="fas fa-fw fa-download"></i>
                               </div>
-                              <span>Saved Job</span>
+                              <span>Active Job Posts</span>
                            </div>
                            <a class="card-footer text-white clearfix small z-1" href="#">
                            <span class="float-left" style="font-size:2px;">10</span>
@@ -292,7 +292,7 @@
                               <div class="card-body-icon">
                                  <i class="fas fa-volume-up fa-fw"></i>
                               </div>
-                              <div >Job Alerts</div>
+                              <div >Customers</div>
                            </div>
                            <a class="card-footer text-white clearfix small z-1" href="#">
                            <span class="float-left" style="font-size:22px;">20</span>
@@ -305,7 +305,7 @@
                               <div class="card-body-icon">
                                  <i class="fas fa-users fa-fw"></i>
                               </div>
-                              <div>Profile Views</div>
+                              <div>CV Bank</div>
                            </div>
                            <a class="card-footer text-white clearfix small z-1" href="#">
                            <span class="float-left" style="font-size:22px;">20</span>
