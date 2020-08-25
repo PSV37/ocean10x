@@ -279,12 +279,13 @@
                               <div class="card-body-icon">
                                  <i class="fas fa-fw fa-download"></i>
                               </div>
-                              <span><?php echo sizeof($company_active_jobs); ?></span>
+                              <div >Active Job Posts</div>
+                              
 
                               <!--<span>Active Job Posts </span>-->
                            </div>
                            <a class="card-footer text-white clearfix small z-1" href="#">
-                           <span class="float-left" style="font-size:2px;">10</span>
+                           <span class="float-left" style="font-size:2px;"><?php echo sizeof($company_active_jobs); ?></span>
                            </a>
                         </div>
                      </div>
