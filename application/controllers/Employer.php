@@ -4210,6 +4210,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $employer_id = $this->session->userdata('company_profile_id');
         $company_active_jobs = $this->job_posting_model->get_company_active_jobs($employer_id);
         $this->load->view('fontend/employer/internal_tracker.php', compact('company_active_jobs', 'employer_id'));
+        $this->load->view('fontend/employer/employer_dashboard', compact('company_active_jobs',  'employer_id'));
+
     }
     public function external_tracker() {
          $this->session->unset_userdata('submenu');
