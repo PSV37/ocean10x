@@ -315,7 +315,7 @@ input.select2-search__field {
                   <div class="col-md-3">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Department<span class="required">*</span></label>
-                      <select name="dept_id" id="dept_id" class="form-control department select2" tabindex="-1" aria-hidden="true">
+                      <select name="dept_id" id="dept_id" class="form-control department select2"  aria-hidden="true">
                         <option value="">Select</option>
                         
                           <?php foreach($department as $key){?>
