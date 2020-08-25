@@ -250,11 +250,19 @@ input:-internal-autofill-selected{background-color:#fff !important;}
 :focus {
     outline: none !important;
 }
+:focus {
+  /* You can remove this to use the browser's defaults */
+  outline: #06f auto 2px;
+}
+
+body.using-mouse :focus {
+  outline: none;
+}
 
          
 </style>
 
-
+<body>
 <div class="login-box">
   <h3>Employer Login</h3>
   <form class="submit-form customform loginform" action="<?php echo base_url() ?>employer_login/check_login?redirect=<?php echo $this->input->get('redirect'); ?>" method="post">
@@ -267,33 +275,42 @@ input:-internal-autofill-selected{background-color:#fff !important;}
 
            ?>
 
-    <div class="user-box" tabindex="0">
+    <div class="user-box">
       <input type="text" name="email" value="<?php if(isset($company_details['company_email'])){ echo $company_details['company_email']; } ?>"  required>
       <label>Username</label>
     </div>
-    <div class="user-box"  tabindex="1">
+    <div class="user-box">
       <input type="password" name="password" id="myInput" required>
       <label>Password </label>
       <span toggle="#password-field" class="fa fa-eye-slash field-icon toggle-password"></span>
      
     </div>    
-    <div class="row" >
+    <div class="row">
       <div class="col-md-6 remb">
         <input id="checkbox_qu_01" type="checkbox" class="styled" checked="">
         <label for="checkbox_qu_01"><small class="remember" style="color:#7b7a7a;font-weight:100;">Remember me</small></label>
       </div>
     </div>           
-    <div class="row" style="text-align:center;" >
-       <button class="sign_in" type="submit"  tabindex="2">Sign in</button>
-       <a href="<?php echo base_url() . 'employer_login/forgot_pass' ?>" tabindex="3"><p class="forgot" style="color:#7b7a7a;font-size: 12px;margin-top: 9px;">Forgot Password ?</p></a>
+    <div class="row" style="text-align:center;">
+       <button class="sign_in" type="submit">Sign in</button>
+       <a href="<?php echo base_url() . 'employer_login/forgot_pass' ?>"><p class="forgot" style="color:#7b7a7a;font-size: 12px;margin-top: 9px;">Forgot Password ?</p></a>
     </div>
   </form>
-  <div class="row" style="text-align:center;"  tabindex="4">
+  <div class="row" style="text-align:center;">
   <div class="newuser"><i class="fa fa-user" aria-hidden="true"></i> Not on Ocean ? <a href="<?php echo base_url(); ?>employer_register">Register Now</a></div>
   </div>
 </div>
+</body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  document.body.addEventListener('mousedown', function() {
+  document.body.classList.add('using-mouse');
+});
 
+document.body.addEventListener('keydown', function() {
+  document.body.classList.remove('using-mouse');
+});
+</script>
 <script>
   $(".toggle-password").click(function() {
 
