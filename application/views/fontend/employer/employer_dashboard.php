@@ -264,7 +264,6 @@
    margin-top: -15px;
    }
 </style>
-<?php if (!empty($company_active_jobs)): foreach ($company_active_jobs as $v_companyjobs) : ?>
 <div class="container-fluid main-d">
    <div class="container">
       <div class="col-md-12">
