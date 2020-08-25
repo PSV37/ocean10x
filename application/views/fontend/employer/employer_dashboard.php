@@ -308,7 +308,7 @@
                               <div>CV Bank</div>
                            </div>
                            <a class="card-footer text-white clearfix small z-1" href="#">
-                           <span class="float-left" style="font-size:22px;">20</span>
+                           <span class="float-left" style="font-size:22px;"><span><?php echo sizeof($cv_bank_data); ?></span>
                            </a>
                         </div>
                      </div>
