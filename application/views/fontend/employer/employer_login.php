@@ -262,7 +262,7 @@ body.using-mouse :focus {
          
 </style>
 
-
+<body>
 <div class="login-box">
   <h3>Employer Login</h3>
   <form class="submit-form customform loginform" action="<?php echo base_url() ?>employer_login/check_login?redirect=<?php echo $this->input->get('redirect'); ?>" method="post">
@@ -300,6 +300,7 @@ body.using-mouse :focus {
   <div class="newuser"><i class="fa fa-user" aria-hidden="true"></i> Not on Ocean ? <a href="<?php echo base_url(); ?>employer_register">Register Now</a></div>
   </div>
 </div>
+</body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
   document.body.addEventListener('mousedown', function() {
