@@ -804,7 +804,7 @@ input.capital {
    
    required: true,
    
-   url: true,
+   // url: true,
 
    remote:{
     url: "validatorAJAX.php",
