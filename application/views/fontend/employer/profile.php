@@ -547,7 +547,7 @@ input.capital {
                      <div class="col-md-6 col-sm-12">
                         <div class="formrow">
                            <label class="control-label">Company Services:</label><span class="required">*</span>
-                           <select name="company_category"  class="form-control select2" data-style="btn-default" data-live-search="true" tabindex="-1" aria-hidden="true">
+                           <select name="company_category"  class="form-control select2" data-style="btn-default" data-live-search="true" aria-hidden="true">
                               <option value="">Select Services</option>
                               <?php $value =  set_value('company_category');   if (!empty($value)) {
                                  echo $this->job_category_model->selected($value);
@@ -574,7 +574,7 @@ input.capital {
                      <div class="col-md-3 col-sm-4">
                         <div class="formrow">
                            <label class="control-label ">Company Country: <span class="required">*</span></label>
-                           <select name="country_id" id="country_id" class="form-control select2" onchange="getStates(this.value)" tabindex="-1" aria-hidden="true">
+                           <select name="country_id" id="country_id" class="form-control select2" onchange="getStates(this.value)" aria-hidden="true">
                               <?php 
                                  $val =   set_value('country_id'); 
                                   foreach($country as $key){?>
@@ -685,6 +685,13 @@ input.capital {
       </form>
    </div>
 </div>
+<script>
+  $(document).on('focus', '.select2-selection.select2-selection--single', function (e) {
+  $(this).closest(".select2-container").siblings('select:enabled').select2('open');
+});
+
+
+</script>
 <script>
    $(".allownumericwithdecimal").on("keypress keyup blur",function (event) {
              //this.value = this.value.replace(/[^0-9\.]/g,'');
@@ -798,7 +805,7 @@ input.capital {
    
    required: true,
    
-   url: true,
+   // url: true,
 
    remote:{
     url: "validatorAJAX.php",
