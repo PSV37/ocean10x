@@ -1466,6 +1466,13 @@ span.select2-selection.select2-selection--single {
    </div>
 </div>
 <script>
+  $(document).on('focus', '.select2-selection.select2-selection--single', function (e) {
+  $(this).closest(".select2-container").siblings('select:enabled').select2('open');
+});
+
+
+</script>
+<script>
    $('.select2').select2();
 </script>
 <script>

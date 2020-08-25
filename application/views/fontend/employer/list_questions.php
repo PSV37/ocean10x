@@ -1976,6 +1976,13 @@ span.select2-selection.select2-selection--single {
 </div>
 <?php
    endforeach;endif;?>
+   <script>
+  $(document).on('focus', '.select2-selection.select2-selection--single', function (e) {
+  $(this).closest(".select2-container").siblings('select:enabled').select2('open');
+});
+
+
+</script>
 <script>
    // Show an element
    var show = function (elem) {
