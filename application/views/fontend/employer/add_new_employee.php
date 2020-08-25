@@ -27,12 +27,12 @@
           <div class="col-md-4">
             <div class="form-group">
               <label for="exampleInputEmail1">Department<span class="required">*</span></label>
-              <select name="dept_id" id="dept_id" class="form-control department select2-hidden-accessible" required="" tabindex="-1" aria-hidden="true">
+              <select name="dept_id" id="dept_id" class="form-control department select2-hidden-accessible" required=""  aria-hidden="true">
                 <option value="">Select Department</option>
                  <?php foreach($department as $key){?>
                   <option value="<?php echo $key['dept_id']; ?>"<?php if($result['dept_id'] == $key['dept_id']){ echo "selected"; }?>><?php echo $key['department_name']; ?></option>
                 <?php } ?>
-                 </select><span class="select2 select2-container select2-container--default select2-container--below select2-container--focus" dir="ltr" style="width: 272px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-dept_id-container"><span class="select2-selection__rendered" id="select2-dept_id-container"><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span></span>
+                 </select>
             </div>
           </div>       
         </div>
@@ -141,6 +141,13 @@
     </div>
   </div>
 </div>
+<script>
+  $(document).on('focus', '.select2-selection.select2-selection--single', function (e) {
+  $(this).closest(".select2-container").siblings('select:enabled').select2('open');
+});
+
+
+</script>
 <script type="text/javascript" src="<?php echo base_url(); ?>asset/js/tinymce/tinymce.min.js"></script> 
 <script type="text/javascript">
 document.getElementsByClassName('form-control').innerHTML+="<br />";
