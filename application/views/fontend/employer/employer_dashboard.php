@@ -269,8 +269,6 @@
 <div class="container-fluid main-d">
    <div class="container">
       <div class="col-md-12">
-         <?php if (!empty($company_active_jobs)): foreach ($company_active_jobs as $v_companyjobs) : ?>
-
          <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
          <div class="col-lg-6 mid-section">
             <div class="row">
@@ -283,6 +281,7 @@
                               <div class="card-body-icon">
                                  <i class="fas fa-fw fa-download"></i>
                               </div>
+<?php if (!empty($company_active_jobs)): foreach ($company_active_jobs as $v_companyjobs) : ?>
 
                               <span>Active Job Posts </span>
                            </div>
