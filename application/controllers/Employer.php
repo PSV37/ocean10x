@@ -3073,6 +3073,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $data['cv_bank_data'] = $this->Master_model->getMaster('cv_folder_relation', $where_c, $join_cond, $order = 'desc', $field = 'relation_id', $select = false, $limit = false, $start = false, $search = false);
             // print_r($this->db->last_query());die;
             $this->load->view('fontend/employer/cv_bank', $data);
+            $this->load->view('fontend/employer/employer_dashboard', $data);
+
         } elseif (isset($_POST['sort'])) {
             $sort_val = $this->input->post('sort_val');
             if (isset($sort_val) && !empty($sort_val)) {
