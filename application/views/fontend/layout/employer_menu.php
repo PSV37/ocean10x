@@ -94,7 +94,7 @@
    /*width: 100px;*/
    background-color: #09a59d;
    }
-  a:active, a:focus,
+  
 li:active, li:focus {border: solid 2px #18c5bd;}
 </style>
 <?php $activemenu = $this->session->userdata('activemenu'); 
