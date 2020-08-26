@@ -29,7 +29,12 @@ class Employer extends MY_Employer_Controller {
         $whereres = "emp_id='$employer_id' or js_id = '$employer_id'";
         $whereres.= "group by emp_js_connection.emp_js_connection_id";
         $chatbox = $this->Master_model->getMaster('emp_js_connection', $where = $whereres, $join = $Join_data, $order = 'desc', $field = 'max', $select = ' messaging.*, MAX( messaging.message_id) as max,emp_js_connection.*', $limit = false, $start = false, $search = false);
-        $this->load->view('fontend/employer/employer_dashboard', compact('company_info', 'chatbox'));
+        $company_active_jobs = $this->job_posting_model->get_company_active_jobs($employer_id);
+
+        $where_c['company_id'] = $employer_id;
+            $cv_bank_data = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join = false, $order = 'desc', $field = 'cv_id', $select = false, $limit = false, $start = false, $search = false);
+        $this->load->view('fontend/employer/employer_dashboard', compact('cv_bank_data', 'company_active_jobs', 'company_info', 'chatbox'));
+
     }
     /*** Dashboard ***/
     public function profile_setting() {
@@ -3073,7 +3078,6 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $data['cv_bank_data'] = $this->Master_model->getMaster('cv_folder_relation', $where_c, $join_cond, $order = 'desc', $field = 'relation_id', $select = false, $limit = false, $start = false, $search = false);
             // print_r($this->db->last_query());die;
             $this->load->view('fontend/employer/cv_bank', $data);
-            $this->load->view('fontend/employer/employer_dashboard', $data);
 
         } elseif (isset($_POST['sort'])) {
             $sort_val = $this->input->post('sort_val');
@@ -3081,13 +3085,11 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $where_c['company_id'] = $company_id;
                 $data['cv_bank_data'] = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join = false, $order = 'asc', $field = $sort_val, $select = false, $limit = false, $start = false, $search = false);
                 $this->load->view('fontend/employer/cv_bank', $data);
-                $this->load->view('fontend/employer/employer_dashboard', $data);
             }
         } else {
             $where_c['company_id'] = $company_id;
             $data['cv_bank_data'] = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join = false, $order = 'desc', $field = 'cv_id', $select = false, $limit = false, $start = false, $search = false);
             $this->load->view('fontend/employer/cv_bank', $data);
-            $this->load->view('fontend/employer/employer_dashboard', $data);
         }
         // $this->load->view('fontend/employer/corporate_cv_bank',$data);
         
@@ -4214,7 +4216,6 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $employer_id = $this->session->userdata('company_profile_id');
         $company_active_jobs = $this->job_posting_model->get_company_active_jobs($employer_id);
         $this->load->view('fontend/employer/internal_tracker.php', compact('company_active_jobs', 'employer_id'));
-        $this->load->view('fontend/employer/employer_dashboard', compact('company_active_jobs',  'employer_id'));
 
     }
     public function external_tracker() {
