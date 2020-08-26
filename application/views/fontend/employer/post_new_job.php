@@ -288,7 +288,7 @@
                <input type="hidden" name="job_post_id" value="<?php if(!empty($job_info->job_post_id)){echo $job_info->job_post_id;} ?>">
                <div id="svg_wrap"></div>
                <!-- <section> -->
-               <div class="col-md-3 col-sm-4" tabindex="0">
+               <div class="col-md-3 col-sm-4">
                   <div class="formrow">
                      <label class="control-label ">Job Title / Designation<span class="required"> * </span> </label>
                      <input class="form-control allowalphanumeric" type="text"  name="job_title" placeholder="Enter Job Title" id="job_title" value="<?php if(!empty($this->session->userdata('title')) ){echo $this->session->userdata('title'); } elseif(!empty($job_info->job_title)){
@@ -296,7 +296,7 @@
                      <?php echo form_error('job_title'); ?>
                   </div>
                </div>
-               <div class="col-md-3 col-sm-4" tabindex="1">
+               <div class="col-md-3 col-sm-4" >
                   <div class="formrow">
                      <label class="control-label ">Job Locations<span class="required"> * </span> </label>
                      <input type="text" name="city_id" class="allowalphanumeric form-control" id="tokenfield" style="display: inline-block;"  placeholder="Enter Location" onkeydown="check_key();"
@@ -304,7 +304,7 @@
                   </div>
                   <label for="tokenfield" generated="true" class="error"></label>
                </div>
-               <div class="col-md-3 col-sm-12" tabindex="2">
+               <div class="col-md-3 col-sm-12" >
                   <div class="formrow exp_domain">
                      <label class="control-label ">Expected Domain<span class="required"> * </span> </label>
                      <select name="job_category" id="job_category" class="form-control select2 limiter-options" data-role="limiter" data-style="btn-default" data-live-search="true" >
@@ -328,7 +328,7 @@
                      <?php echo form_error('job_category'); ?>               
                   </div>
                </div>
-               <div class="col-sm-3 p-m-2" tabindex="3">
+               <div class="col-sm-3 p-m-2">
                   <div class="formrow job_role">
                      <label  class="control-label ">Job Role<span class="required"> *</span></label>
                      <select name="job_role" id="job_role" class="form-control col-sm-5 select2" onchange="getSkillsdetails(this.value)" >
@@ -347,7 +347,7 @@
                      </select>
                   </div>
                </div>
-               <div class="col-md-3 col-sm-12" id="job_education" tabindex="4">
+               <div class="col-md-3 col-sm-12" id="job_education" >
                   <div class="formrow job_edu">
                      <label class="control-label">Education Level<span class="required"> * </span></label>
                      <select name="job_edu" id="job_edu" class="form-control select2" data-style="btn-default" data-live-search="true" onchange="getEducationSpecial(this.value)" >
@@ -361,14 +361,14 @@
                      <?php echo form_error('job_edu'); ?>                
                   </div>
                </div>
-               <div class="col-md-3 col-sm-12" id="training_title1" tabindex="5">
+               <div class="col-md-3 col-sm-12" id="training_title1" >
                   <div class="formrow">
                      <label class="control-label">Education Level<span class="required"> * </span></label>
                      <input type="text" name="other_edu" class="form-control" id="other_edu" placeholder="ex.B.E"
                         value=""> <button type="button" id="edu_txt" onclick="education_list();"><i class="fa fa-undo" aria-hidden="true"></i></button>
                   </div>
                </div>
-               <div class="col-md-3 col-sm-12" tabindex="6">
+               <div class="col-md-3 col-sm-12" >
                   <div class="formrow job_nature">
                      <label class="control-label ">Engagement Model<span class="required"> * </span> </label>
                      <select name="job_nature" class="form-control select2" data-style="btn-default" data-live-search="true" >
@@ -386,7 +386,7 @@
                      <?php echo form_error('job_nature'); ?>               
                   </div>
                </div>
-               <div class="col-md-3 col-sm-12" tabindex="7">
+               <div class="col-md-3 col-sm-12" >
                   <div class="formrow exp_experience" >
                      <label class="control-label ">Expected Experience (in years)<span class="required"> *</span> </label>
                      <?php $exp=explode('-', $job_info->experience);  ?>
@@ -399,13 +399,13 @@
                      </div>
                   </div>
                </div>
-               <div class="col-md-3 col-sm-12" tabindex="8">
+               <div class="col-md-3 col-sm-12" >
                   <div class="formrow">
                      <label class="control-label ">Number of Positions<span class="required"> *</span> </label>
                      <input class="form-control allownumericwithdecimal" min="1" type="text" maxlength="2" name="no_jobs" placeholder="ex.02"  value="<?php if(!empty($this->session->userdata('no_jobs')) ){echo $this->session->userdata('no_jobs'); }elseif(!empty($job_info->no_jobs)){ echo $job_info->no_jobs; } ?><?php echo set_value('no_jobs'); ?>" autocomplete="off">  <?php echo form_error('no_jobs'); ?>                
                   </div>
                </div>
-               <div class="col-md-3 col-sm-12" id="spectial" tabindex="9">
+               <div class="col-md-3 col-sm-12" id="spectial" >
                   <div class="formrow preffered_certificates" >
                      <label class="control-label ">Certifications Preferred <span class="required"> * </span></label>
                      <select name="preffered_certificates" id="preffered_certificates" class="form-control select2" data-style="btn-default" data-live-search="true">
@@ -416,7 +416,7 @@
                      </select>
                   </div>
                </div>
-               <div class="col-md-3 col-sm-12" tabindex="12">
+               <div class="col-md-3 col-sm-12" >
                   <div class="formrow">
                      <label class="control-label">Deadline<span class="required"> * </span> </label>
                      <?php
@@ -429,7 +429,7 @@
                   </div>
                </div>
                
-               <div class="col-md-3 col-sm-12" tabindex="11">
+               <div class="col-md-3 col-sm-12">
                   <div class="formrow salrange" >
                      <label class="control-label " style="margin-left:-162px;">Salary Range (INR)<span class="required"> *</span> </label>
                      <div class="col-md-3 formrow" style="width:100px;margin-left:-14px;margin-top:37px;">
@@ -441,7 +441,7 @@
                      </div>
                   </div>
                </div>
-               <div class="col-md-3 col-sm-12" tabindex="10">
+               <div class="col-md-3 col-sm-12" >
                   <div class="formrow">
                      <label class="control-label ">Ocean Test Required <span class="required">*</span></label>
                      <select name="job_test_requirment" onchange="set_test();" id="job_test_requirment" class="form-control select2" data-style="btn-default" data-live-search="true" >
@@ -452,7 +452,7 @@
                      <?php echo form_error('job_test_requirment'); ?>             
                   </div>
                </div>
-               <div class="col-md-3 col-sm-12" tabindex="11" style="    margin-right: 1;">
+               <div class="col-md-3 col-sm-12"  style="    margin-right: 1;">
                   <div class="formrow test_div">
                      <label class="control-label ">Test<span class="required">*</span></label>
                      <select name="test_for_job" id="test_for_job" class="form-control select2" data-style="btn-default" data-live-search="true" >
@@ -466,7 +466,7 @@
                   </div>
                </div>
                
-               <div class="col-sm-12 p-m-2" tabindex="13">
+               <div class="col-sm-12 p-m-2" >
                   <div class="formrow">
                      <!-- donain is nothing but industry -->
                      <label class="control-label ">Skill Set<span class="required"> * </span> </label>
@@ -490,12 +490,12 @@
                   <div id="other_skills"><input type="text"  name="otr_skl" id="other_skill"  style="display: inline-block; width: 30%" ><button type="button" id="check-btn" onclick="save_skill();"><i class="fa fa-check"></i></button></div>
                   <?php echo form_error('skill_set[]'); ?>                                  
                </div>
-               <div class="col-md-12 col-sm-12" tabindex="14">
+               <div class="col-md-12 col-sm-12" >
                   <div class="formrow" >
                      <label class="control-label">Other Benefits <span class="required"> * </span></label>
                   </div>
                </div>
-               <div class="col-md-12 col-sm-12" tabindex="15">
+               <div class="col-md-12 col-sm-12" >
                   <div class="formrow" id="benifit">
                      <?php 
                         // print_r(set_value('benefits'));
@@ -543,7 +543,7 @@
                <?php echo form_error('benefits[]'); ?>                                  
                <!-- </div>
                   </div>  -->
-               <div class="col-md-6 col-sm-12" tabindex="16" >
+               <div class="col-md-6 col-sm-12"  >
                   <div id="errorbox"></div>
                   <div class=" formrow">
                      <label class="control-label">Upload JD <span class="required"> * </span></label>  <?php if (!empty($job_info->jd_file)) { ?>  <a id="jd_file"   style="margin-left: 10px;" href="<?php echo base_url() ?>upload/job_description/<?php echo $job_info->jd_file; ?>" download name="jd_file"><?php echo $job_info->jd_file; ?></a><span style="margin-left: 15px" onclick="cancel_jd();" id="cross_btn"  ><i class="fa fa-times" aria-hidden="true"></i></span> <?php   } ?> 
@@ -552,12 +552,12 @@
                   </div>
                </div>
                <?php if (!empty($this->session->userdata('jd_file')) ) { ?>
-               <div class="col-md-6 col-sm-12" tabindex="16" style=" margin-top: 45px;" >
+               <div class="col-md-6 col-sm-12"  style=" margin-top: 45px;" >
                   <div class=" formrow">
                   </div>
                </div>
                <?php   } ?> 
-               <div class="col-md-12 col-sm-4" tabindex="17">
+               <div class="col-md-12 col-sm-4" >
                   <p id="or">OR</p>
                   <div class="formrow">
                      <label class="control-label">Job Description <span class="required"> * </span></label>
@@ -570,8 +570,8 @@
                <div class="btn-bottom_3">
                   <!-- <div class="button" id="prev">&larr; Previous</div> -->
                   <!-- <div class="button" id="next">Next &rarr;</div> -->
-                  <button tabindex="18" class="button" type="submit" name="preview">preview</button>
-                  <button tabindex="19" type="submit" class="button">Post Job</button>
+                  <button  class="button" type="submit" name="preview">preview</button>
+                  <button  type="submit" class="button">Post Job</button>
                </div>
             </div>
          </form>
