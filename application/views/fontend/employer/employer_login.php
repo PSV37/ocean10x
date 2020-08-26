@@ -247,10 +247,10 @@ input:-internal-autofill-selected{background-color:#fff !important;}
   cursor:pointer;    
 }  
 a#forgot_pass:focus{
-  background-color: yellow;
+  border: solid 2px #18c5bd;
 } 
 a#register:focus{
-  background-color: yellow;
+ border: solid 2px #18c5bd;
 } 
 /*.user-box input:focus{background-color:#fff;}
 :focus {
