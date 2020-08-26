@@ -268,24 +268,24 @@ input:-internal-autofill-selected{background-color:#fff !important;}
            ?>
 
     <div class="user-box">
-      <input type="text" name="email" value="<?php if(isset($company_details['company_email'])){ echo $company_details['company_email']; } ?>"  required tabindex="0">
+      <input type="text" name="email" value="<?php if(isset($company_details['company_email'])){ echo $company_details['company_email']; } ?>"  required>
       <label>Username</label>
     </div>
     <div class="user-box">
-      <input type="password" name="password" id="myInput" required tabindex="1">
+      <input type="password" name="password" id="myInput" required >
       <label>Password </label>
       <span toggle="#password-field" class="fa fa-eye-slash field-icon toggle-password"></span>
      
     </div>    
     <div class="row">
       <div class="col-md-6 remb">
-        <input id="checkbox_qu_01" type="checkbox" class="styled" checked="" tabindex="2">
+        <input id="checkbox_qu_01" type="checkbox" class="styled" checked="" >
         <label for="checkbox_qu_01"><small class="remember" style="color:#7b7a7a;font-weight:100;">Remember me</small></label>
       </div>
     </div>           
     <div class="row" style="text-align:center;">
-       <button class="sign_in" type="submit" tabindex="3">Sign in</button>
-       <a href="<?php echo base_url() . 'employer_login/forgot_pass' ?>" tabindex="4"><p class="forgot" style="color:#7b7a7a;font-size: 12px;margin-top: 9px;">Forgot Password ?</p></a>
+       <button class="sign_in" type="submit">Sign in</button>
+       <a href="<?php echo base_url() . 'employer_login/forgot_pass' ?>"><p class="forgot" style="color:#7b7a7a;font-size: 12px;margin-top: 9px;" tabindex="4">Forgot Password ?</p></a>
     </div>
   </form>
   <div class="row" style="text-align:center;">
