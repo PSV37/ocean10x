@@ -282,8 +282,8 @@
                               <span>Active Job Posts </span>
                            </div>
                            <a class="card-footer text-white clearfix small z-1" href="#">
-                           <span class="float-left" style="font-size:2px;"><?php echo sizeof($company_active_jobs); ?></span>
-                           </a>
+                           <span class="float-left" style="font-size:22px;"><?php echo sizeof($company_active_jobs); ?></span>
+                           </a>  
                         </div>
                      </div>
                      <div class="col-md-4 card-lb">
