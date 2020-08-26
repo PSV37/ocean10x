@@ -219,6 +219,7 @@ order by created_date asc limit 10");
         // $job_types = array('1', '3', '4','5','6');
         // $this->db->where_in('job_types',$job_types);
         $query = $this->db->get()->result();
+        echo $query;
         return $query;
     }
 
@@ -237,6 +238,7 @@ order by created_date asc limit 10");
         // $job_types = array('1', '3', '4','5','6');
         // $this->db->where_in('job_types',$job_types);
         $query = $this->db->get()->result();
+
         return $query;
     }
 
