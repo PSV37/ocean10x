@@ -95,7 +95,7 @@
    background-color: #09a59d;
    }
   a:active, a:focus,
-li:active, li:focus {border: 5px solid orange}
+li:active, li:focus {border: solid 2px #18c5bd;}
 </style>
 <?php $activemenu = $this->session->userdata('activemenu'); 
    $employer_id = $this->session->userdata('company_profile_id');
