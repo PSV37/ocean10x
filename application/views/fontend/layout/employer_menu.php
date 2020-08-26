@@ -95,8 +95,7 @@
    background-color: #09a59d;
    }
   a:active, a:focus,
-li:active, li:focus {border: 5px solid orange,
-color:#18c5bd;; }
+li:active, li:focus {border: 5px solid orange}
 </style>
 <?php $activemenu = $this->session->userdata('activemenu'); 
    $employer_id = $this->session->userdata('company_profile_id');
@@ -125,7 +124,7 @@ color:#18c5bd;; }
                            <ul class="menu-principal-list" style="">
                               <li <?php if ($activemenu == 'dashboard') { ?>
                                  class="active"
-                                 <?php } ?>>
+                                 <?php } ?>  tabindex="1" >
                                  <a data-dl-view="true" data-dl-title="Dashboard" href="<?php echo base_url(); ?>employer">
                                  <span class="icon-container">
                                  <i class="fas fa-tachometer-alt"></i>
@@ -135,7 +134,7 @@ color:#18c5bd;; }
                               </li>
                               <li <?php if ($activemenu == 'cv_bank') { ?>
                                  class="active"
-                                 <?php } ?>>
+                                 <?php } ?> tabindex="2">
                                  <a data-dl-view="true" data-dl-title="My profile" href="<?php echo base_url() ?>employer/corporate-cv-bank">
                                  <span class="icon-container"><i class="fas fa-university"></i></span>
                                  <span class="text item cv">CV Bank</span>
