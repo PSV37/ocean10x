@@ -94,9 +94,8 @@
    /*width: 100px;*/
    background-color: #09a59d;
    }
-   a#register:focus{
- border: solid 2px #18c5bd;
-}
+  a:active, a:focus,
+li:active, li:focus {border: 5px solid orange}
 </style>
 <?php $activemenu = $this->session->userdata('activemenu'); 
    $employer_id = $this->session->userdata('company_profile_id');
