@@ -222,14 +222,16 @@ li:active, li:focus {border: solid 2px #18c5bd;}
                               </li>
                               <li <?php if ($activemenu == 'active_job') { ?>
                                  class="active"
-                                 <?php } ?>>
+                                 <?php } ?> tabindex="4">
                                  <a data-dl-view="true" data-dl-title="Recruitments" href="<?php echo base_url() ?>employer/active-job">
                                  <span class="icon-container">
                                  <i class="fas fa-filter"></i></span>
                                  <span class="text item">Active Job Post</span>
                                  </a>
                               </li>
-                              <li>
+                              <li <?php if ($activemenu == 'pending_job') { ?>
+                                 class="active"
+                                 <?php } ?> tabindex="5">
                                  <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url() ?>employer/pending-job">
                                  <span class="icon-container">
                                  <i class="fas fa-map-signs"></i></span>
@@ -238,7 +240,7 @@ li:active, li:focus {border: solid 2px #18c5bd;}
                               </li>
                               <li <?php if ($activemenu == 'internal_tracker') { ?>
                                  class="active"
-                                 <?php } ?> >
+                                 <?php } ?>  tabindex="6" >
                                  <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url() ?>employer/internal_tracker">
                                  <span class="icon-container">
                                  <i class="fas fa-map-signs"></i>
@@ -248,7 +250,7 @@ li:active, li:focus {border: solid 2px #18c5bd;}
                               </li>
                               <li <?php if ($activemenu == 'external_tracker') { ?>
                                  class="active"
-                                 <?php } ?> >
+                                 <?php } ?>  tabindex="7" >
                                  <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url() ?>employer/external_tracker">
                                  <span class="icon-container">
                                  <i class="fas fa-map-signs"></i>
@@ -258,7 +260,7 @@ li:active, li:focus {border: solid 2px #18c5bd;}
                               </li>
                               <li <?php if ($activemenu == 'shared_tracker') { ?>
                                  class="active"
-                                 <?php } ?> >
+                                 <?php } ?>  tabindex="8" >
                                  <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url() ?>employer/shared_tracker">
                                  <span class="icon-container">
                                  <i class="fas fa-map-signs"></i>
@@ -268,7 +270,7 @@ li:active, li:focus {border: solid 2px #18c5bd;}
                               </li>
                               <li <?php if ($activemenu == 'questionbank') { ?>
                                  class="active"
-                                 <?php } ?> >
+                                 <?php } ?>  tabindex="9" >
                                  <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url(); ?>employer/all-questions">
                                  <span class="icon-container">
                                  <i class="fas fa-map-signs"></i>
@@ -278,7 +280,7 @@ li:active, li:focus {border: solid 2px #18c5bd;}
                               </li>
                               <li <?php if ($activemenu == 'test_papers') { ?>
                                  class="active"
-                                 <?php } ?> >
+                                 <?php } ?>  tabindex="10" >
                                  <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url(); ?>employer/all-tests">
                                  <span class="icon-container">
                                  <i class="fas fa-map-signs"></i>
@@ -288,7 +290,7 @@ li:active, li:focus {border: solid 2px #18c5bd;}
                               </li>
                               <li <?php if ($activemenu == 'oceanchamp') { ?>
                                  class="active"
-                                 <?php } ?> >
+                                 <?php } ?>  tabindex="11" >
                                  <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url() ?>employer/ocean_champ_test">
                                  <span class="icon-container">
                                  <i class="fas fa-map-signs"></i>
@@ -296,7 +298,7 @@ li:active, li:focus {border: solid 2px #18c5bd;}
                                  <span class="text item">OceanChamp</span>
                                  </a>
                               </li>
-                              <li>
+                              <li  tabindex="12">
                                  <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url() ?>employer/oceantest">
                                  <span class="icon-container">
                                  <i class="fas fa-map-signs"></i>
