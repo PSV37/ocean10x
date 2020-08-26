@@ -33,7 +33,9 @@ class Employer extends MY_Employer_Controller {
 
         $where_c['company_id'] = $employer_id;
             $cv_bank_data = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join = false, $order = 'desc', $field = 'cv_id', $select = false, $limit = false, $start = false, $search = false);
-        $this->load->view('fontend/employer/employer_dashboard', compact('cv_bank_data', 'company_active_jobs', 'company_info', 'chatbox'));
+
+        $open_positions = $this->job_posting_model->open_positions_active_jobs($employer_id)
+        $this->load->view('fontend/employer/employer_dashboard', compact('open_positions', 'cv_bank_data', 'company_active_jobs', 'company_info', 'chatbox'));
 
     }
     /*** Dashboard ***/
