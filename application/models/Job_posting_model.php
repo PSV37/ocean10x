@@ -206,7 +206,7 @@ order by created_date asc limit 10");
 
     public function get_company_active_jobs($company_id)
     {
-        $this->db->select('*');
+        $this->db->select(sum(no_jobs));
         $this->db->from('job_posting');
         $this->db->where('company_profile_id', $company_id);
         $this->db->where('job_status',"1")->order_by($this->_order_by);
