@@ -664,6 +664,9 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
     }
     public function pending_job() {
          $this->session->unset_userdata('submenu');
+          $this->session->unset_userdata('activemenu');
+        $data['activemenu'] = 'pending_job';
+        $this->session->set_userdata($data);
 
         $employer_id = $this->session->userdata('company_profile_id');
         $company_pending_jobs = $this->job_posting_model->get_company_pending_jobs($employer_id);

@@ -94,6 +94,9 @@
    /*width: 100px;*/
    background-color: #09a59d;
    }
+  a:active, a:focus,
+li:active, li:focus {border: 5px solid orange,
+color:#18c5bd;; }
 </style>
 <?php $activemenu = $this->session->userdata('activemenu'); 
    $employer_id = $this->session->userdata('company_profile_id');
@@ -122,7 +125,7 @@
                            <ul class="menu-principal-list" style="">
                               <li <?php if ($activemenu == 'dashboard') { ?>
                                  class="active"
-                                 <?php } ?> >
+                                 <?php } ?>>
                                  <a data-dl-view="true" data-dl-title="Dashboard" href="<?php echo base_url(); ?>employer">
                                  <span class="icon-container">
                                  <i class="fas fa-tachometer-alt"></i>
