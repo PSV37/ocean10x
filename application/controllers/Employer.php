@@ -29,7 +29,9 @@ class Employer extends MY_Employer_Controller {
         $whereres = "emp_id='$employer_id' or js_id = '$employer_id'";
         $whereres.= "group by emp_js_connection.emp_js_connection_id";
         $chatbox = $this->Master_model->getMaster('emp_js_connection', $where = $whereres, $join = $Join_data, $order = 'desc', $field = 'max', $select = ' messaging.*, MAX( messaging.message_id) as max,emp_js_connection.*', $limit = false, $start = false, $search = false);
-        $this->load->view('fontend/employer/employer_dashboard', compact('company_info', 'chatbox'));
+        $company_active_jobs = $this->job_posting_model->get_company_active_jobs($employer_id);
+        $this->load->view('fontend/employer/employer_dashboard', compact('company_active_jobs', 'company_info', 'chatbox'));
+
     }
     /*** Dashboard ***/
     public function profile_setting() {
@@ -4214,7 +4216,6 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $employer_id = $this->session->userdata('company_profile_id');
         $company_active_jobs = $this->job_posting_model->get_company_active_jobs($employer_id);
         $this->load->view('fontend/employer/internal_tracker.php', compact('company_active_jobs', 'employer_id'));
-        $this->load->view('fontend/employer/employer_dashboard', compact('company_active_jobs',  'employer_id'));
 
     }
     public function external_tracker() {
