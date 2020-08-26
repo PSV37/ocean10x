@@ -212,7 +212,7 @@ li:active, li:focus {border: solid 2px #18c5bd;}
                               </li>
                               <li <?php if ($activemenu == 'job_post') { ?>
                                  class="active"
-                                 <?php } ?> >
+                                 <?php } ?> tabindex="3" >
                                  <a data-dl-view="true" data-dl-title="Contacts" href="<?php echo base_url(); ?>employer/job_post">
                                  <span class="icon-container">
                                  <i class="fas fa-phone-volume"></i>
