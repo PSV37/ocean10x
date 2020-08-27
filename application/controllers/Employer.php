@@ -487,7 +487,7 @@ class Employer extends MY_Employer_Controller {
                     $result = $this->Master_model->master_insert($data, 'employer_audit_record');
                     $this->session->set_flashdata('success', '<div class="alert alert-success alert-dismissable">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                  Vacancy post is sucessfully created  
+                  New Job Posted Succcessfully! 
                   </div>');
                     // redirect('job/show/'.$job_info['job_slugs']);
                     redirect('employer/active_job');
@@ -519,7 +519,7 @@ class Employer extends MY_Employer_Controller {
                     $this->job_posting_model->update($job_info, $job_post_id);
                     $this->session->set_flashdata('update', '<div class="alert alert-success alert-dismissable">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                   Vacancy post is sucessfully Update;
+                   Job Details Updated Succcessfully!
                   </div>');
                     // redirect('job/show/'.$job_info['job_slugs']);
                     redirect('employer/active_job');

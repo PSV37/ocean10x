@@ -94,9 +94,11 @@
    /*width: 100px;*/
    background-color: #09a59d;
    }
-  a:active, a:focus,
-li:active, li:focus {border: 5px solid orange,
-color:#18c5bd;; }
+   #left-panel .inner-left-pannel .inner-tabs .menu-tab .menu-principal ul li:focus span.icon-container i {
+    left: 0;
+}
+  
+/*li:active, li:focus {border: solid 2px #18c5bd;}*/
 </style>
 <?php $activemenu = $this->session->userdata('activemenu'); 
    $employer_id = $this->session->userdata('company_profile_id');
@@ -125,7 +127,7 @@ color:#18c5bd;; }
                            <ul class="menu-principal-list" style="">
                               <li <?php if ($activemenu == 'dashboard') { ?>
                                  class="active"
-                                 <?php } ?>>
+                                 <?php } ?>  tabindex="1" >
                                  <a data-dl-view="true" data-dl-title="Dashboard" href="<?php echo base_url(); ?>employer">
                                  <span class="icon-container">
                                  <i class="fas fa-tachometer-alt"></i>
@@ -135,7 +137,7 @@ color:#18c5bd;; }
                               </li>
                               <li <?php if ($activemenu == 'cv_bank') { ?>
                                  class="active"
-                                 <?php } ?>>
+                                 <?php } ?> tabindex="2">
                                  <a data-dl-view="true" data-dl-title="My profile" href="<?php echo base_url() ?>employer/corporate-cv-bank">
                                  <span class="icon-container"><i class="fas fa-university"></i></span>
                                  <span class="text item cv">CV Bank</span>
@@ -213,7 +215,7 @@ color:#18c5bd;; }
                               </li>
                               <li <?php if ($activemenu == 'job_post') { ?>
                                  class="active"
-                                 <?php } ?> >
+                                 <?php } ?> tabindex="3" >
                                  <a data-dl-view="true" data-dl-title="Contacts" href="<?php echo base_url(); ?>employer/job_post">
                                  <span class="icon-container">
                                  <i class="fas fa-phone-volume"></i>
@@ -223,14 +225,16 @@ color:#18c5bd;; }
                               </li>
                               <li <?php if ($activemenu == 'active_job') { ?>
                                  class="active"
-                                 <?php } ?>>
+                                 <?php } ?> tabindex="4">
                                  <a data-dl-view="true" data-dl-title="Recruitments" href="<?php echo base_url() ?>employer/active-job">
                                  <span class="icon-container">
                                  <i class="fas fa-filter"></i></span>
                                  <span class="text item">Active Job Post</span>
                                  </a>
                               </li>
-                              <li>
+                              <li <?php if ($activemenu == 'pending_job') { ?>
+                                 class="active"
+                                 <?php } ?> tabindex="5">
                                  <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url() ?>employer/pending-job">
                                  <span class="icon-container">
                                  <i class="fas fa-map-signs"></i></span>
@@ -239,7 +243,7 @@ color:#18c5bd;; }
                               </li>
                               <li <?php if ($activemenu == 'internal_tracker') { ?>
                                  class="active"
-                                 <?php } ?> >
+                                 <?php } ?>  tabindex="6" >
                                  <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url() ?>employer/internal_tracker">
                                  <span class="icon-container">
                                  <i class="fas fa-map-signs"></i>
@@ -249,7 +253,7 @@ color:#18c5bd;; }
                               </li>
                               <li <?php if ($activemenu == 'external_tracker') { ?>
                                  class="active"
-                                 <?php } ?> >
+                                 <?php } ?>  tabindex="7" >
                                  <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url() ?>employer/external_tracker">
                                  <span class="icon-container">
                                  <i class="fas fa-map-signs"></i>
@@ -259,7 +263,7 @@ color:#18c5bd;; }
                               </li>
                               <li <?php if ($activemenu == 'shared_tracker') { ?>
                                  class="active"
-                                 <?php } ?> >
+                                 <?php } ?>  tabindex="8" >
                                  <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url() ?>employer/shared_tracker">
                                  <span class="icon-container">
                                  <i class="fas fa-map-signs"></i>
@@ -269,7 +273,7 @@ color:#18c5bd;; }
                               </li>
                               <li <?php if ($activemenu == 'questionbank') { ?>
                                  class="active"
-                                 <?php } ?> >
+                                 <?php } ?>  tabindex="9" >
                                  <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url(); ?>employer/all-questions">
                                  <span class="icon-container">
                                  <i class="fas fa-map-signs"></i>
@@ -279,7 +283,7 @@ color:#18c5bd;; }
                               </li>
                               <li <?php if ($activemenu == 'test_papers') { ?>
                                  class="active"
-                                 <?php } ?> >
+                                 <?php } ?>  tabindex="10" >
                                  <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url(); ?>employer/all-tests">
                                  <span class="icon-container">
                                  <i class="fas fa-map-signs"></i>
@@ -289,7 +293,7 @@ color:#18c5bd;; }
                               </li>
                               <li <?php if ($activemenu == 'oceanchamp') { ?>
                                  class="active"
-                                 <?php } ?> >
+                                 <?php } ?>  tabindex="11" >
                                  <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url() ?>employer/ocean_champ_test">
                                  <span class="icon-container">
                                  <i class="fas fa-map-signs"></i>
@@ -297,7 +301,7 @@ color:#18c5bd;; }
                                  <span class="text item">OceanChamp</span>
                                  </a>
                               </li>
-                              <li>
+                              <li  tabindex="12">
                                  <a data-dl-view="true" data-dl-title="Mobility" href="<?php echo base_url() ?>employer/oceantest">
                                  <span class="icon-container">
                                  <i class="fas fa-map-signs"></i>
