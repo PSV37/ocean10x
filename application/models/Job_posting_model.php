@@ -222,10 +222,10 @@ order by created_date asc limit 10");
         return $query;
     }
 
-    public function open_positions_active_jobs()
+    public function open_positions_active_jobs($company_id)
     {
         $sub_query_from = '((SELECT SUM(no_jobs) FROM job_posting) as no_jobs)';
-        $this->db->select('SUM(no_jobs)');
+        $this->db->select('*');
         $this->db->from($sub_query_from);
         $this->db->from('job_posting');
         $this->db->where('company_profile_id', $company_id);
