@@ -1567,7 +1567,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $subtopic_id = $this->input->post('subtopic_id');
         $ques_type = $this->input->post('ques_type');
         $level = $this->input->post('level');
-        if (!empty($subject) && !empty($topic_id) && !empty($subtopic_id) && !empty($ques_type) && !empty($level)) {
+        if (!empty($subject)) {
             $where_all = "questionbank.ques_status='1' AND ques_created_by='$employer_id' and questionbank.technical_id = '$subject' and questionbank.topic_id = '$topic_id' and questionbank.subtopic_id  = '$subtopic_id' and questionbank.ques_type = '$ques_type' and questionbank.level = '$level' AND time_for_question != '' ";
             $join_emp = array('skill_master' => 'skill_master.id=questionbank.technical_id |left outer', 'topic' => 'topic.topic_id=questionbank.topic_id |left outer', 'subtopic' => 'subtopic.subtopic_id=questionbank.subtopic_id |left outer', 'lineitem' => 'lineitem.lineitem_id=questionbank.lineitem_id |left outer', 'lineitemlevel' => 'lineitemlevel.lineitemlevel_id=questionbank.lineitemlevel_id |left outer', 'questionbank_answer' => 'questionbank_answer.question_id = questionbank.ques_id|LEFT OUTER');
             $data['questionbank'] = $this->Master_model->getMaster('questionbank', $where_all, $join_emp);
