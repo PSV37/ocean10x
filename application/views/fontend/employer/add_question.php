@@ -296,7 +296,12 @@ ul.select2-results__options {
             data:{id:id},
             success:function(res){
                   alert(res.length);
-              
+                  if (res.length == 0) 
+                  {
+                    $('#topic_id').attr('readonly', true);
+
+                  }
+
               $('#topic_id').html(res);
             }
             
@@ -432,7 +437,7 @@ ul.select2-results__options {
         return false;
     }
 })
-
+$.validator.setDefaults(':hidden, [readonly=readonly]');
  $("#js").validate (  
 
 {
