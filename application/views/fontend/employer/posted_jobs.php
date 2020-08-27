@@ -962,7 +962,7 @@
         
 
 <div class="col-md-6 active-job">
-    <?php echo $this->session->flashdata('success'); ?><br>
+    <?php echo $this->session->flashdata('success'); ?><br><br>
    <?php if (!empty($company_active_jobs)): foreach ($company_active_jobs as $v_companyjobs) : ?>
    <label>
       <div class="border-top1"></div>
