@@ -1134,6 +1134,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                     $whereres = "job_seeker_id='$seeker_id' and company_id = '$employer_id' and job_post_id = '$job_post_id'";
                     $job_apply_data = $this->Master_model->get_master_row('
                         job_apply', $select = FALSE, $whereres);
+                     $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Jobseeker has already applied to this job post</div>');
                     if (empty($job_apply_data)) {
                         $apply = $this->Master_model->master_insert($apply_array, 'job_apply');
                         $external_array = array('cv_id' => $cv_id, 'company_id' => $employer_id, 'job_post_id' => $job_post_id, 'apply_id' => $apply, 'status' => 1, 'company_id' => $employer_id, 'name' => $can_data[0]['full_name'], 'email' => $can_data[0]['email'], 'mobile' => $can_data[0]['mobile_no'], 'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),);
@@ -1180,6 +1181,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                         $company_name = $this->session->userdata('company_name');
                         $data = array('company' => $company_name, 'action_taken_for' => $email[$i], 'field_changed' => 'Forwarded Job ', 'Action' => 'Forwarded job for the position of ' . $require['job_title'], 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
                         $result = $this->Master_model->master_insert($data, 'employer_audit_record');
+                        $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Job Forwarded Successfully</div>');
                         redirect('employer/active_job');
                     }
                 } else {
@@ -1251,10 +1253,12 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                         // echo $message;
                         $company_name = $this->session->userdata('company_name');
                         $data = array('company' => $company_name, 'action_taken_for' => $email[$i], 'field_changed' => 'Forwarded Job ', 'Action' => $company_name . ' Forwarded job for the position of ' . $require['job_title'], 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
+                         $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Job Forwarded Successfully</div>');
                     }
-                    // else{
-                    //     redirect('employer/active_job');
-                    // }
+
+                    else{
+                         $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Jobseeker ha already applied for this job</div>');
+                    }
                     
                 }
             }
