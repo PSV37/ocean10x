@@ -1899,7 +1899,7 @@ public function randomly_create_oceantest()
                     $where_update_sub_answer['ques_id'] = $q_id;
                     $this->Master_model->master_update($ans_update, 'questionbank', $where_update_sub_answer);
                 }
-                $this->session->set_flashdata('sucess', '<div class="alert alert-success text-center">New Question Added Successfully!</div>');
+                $this->session->set_flashdata('success', '<div class="alert alert-success text-center">New Question Added Successfully!</div>');
                 redirect('employer/all_questions');
             } else {
                 $state_dt['ques_updated_date'] = date('Y-m-d H:i:s');
@@ -1951,7 +1951,7 @@ public function randomly_create_oceantest()
                     $where_update_sub_answer['ques_id'] = $id;
                     $this->Master_model->master_update($ans_update, 'questionbank', $where_update_sub_answer);
                 }
-                $this->session->set_flashdata('sucess', '<div class="alert alert-success text-center">Question Updated Successfully!</div>');
+                $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Question Updated Successfully!</div>');
                 redirect('employer/all_questions');
             }
         }
