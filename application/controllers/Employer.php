@@ -2575,7 +2575,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $result.= '<option value="' . $key['topic_id'] . '">' . $key['topic_name'] . '</option>';
             }
         } else {
-            $result.= '<option value="">Topic not available</option>';
+            // $result.= '<option value="">Topic not available</option>';
+            $result.= '';
+
         }
         echo $result;
     }
