@@ -2080,6 +2080,7 @@ span.select2-selection.select2-selection--single {
             
           }); 
           }
+          get_questuions();
        }
        function getTopicocean(id){
         if(id){
@@ -2103,6 +2104,8 @@ span.select2-selection.select2-selection--single {
             
           }); 
           }
+          get_questuions();
+
        }
        function getSubtopic(id){
         if(id){
@@ -2126,7 +2129,8 @@ span.select2-selection.select2-selection--single {
                 
             }); 
           }
-   
+          get_questuions();
+      
     }
     function getSubtopics(id){
         if(id){
@@ -2150,6 +2154,7 @@ span.select2-selection.select2-selection--single {
                 
             }); 
           }
+          get_questuions();
    
     }
   function get_total(){
