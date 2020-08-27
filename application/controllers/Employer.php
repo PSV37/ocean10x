@@ -1824,10 +1824,10 @@ public function randomly_create_oceantest()
     }
     public function save_questionbank($id = null) {
         $this->form_validation->set_rules('technical_id', 'Subject', 'required');
-        $this->form_validation->set_rules('topic_id', 'Main Topic', 'required');
-        $this->form_validation->set_rules('subtopic_id', 'Sub Topic', 'required');
-        $this->form_validation->set_rules('lineitem_id', 'Line Item Level 1', 'required');
-        $this->form_validation->set_rules('lineitemlevel_id', 'Line Item Level 2', 'required');
+        // $this->form_validation->set_rules('topic_id', 'Main Topic', 'required');
+        // $this->form_validation->set_rules('subtopic_id', 'Sub Topic', 'required');
+        // $this->form_validation->set_rules('lineitem_id', 'Line Item Level 1', 'required');
+        // $this->form_validation->set_rules('lineitemlevel_id', 'Line Item Level 2', 'required');
         $this->form_validation->set_rules('ques_type', 'Question Type', 'required');
         $this->form_validation->set_rules('question', 'Question', 'required');
         $this->form_validation->set_rules('option1', 'Option 1', 'required');
@@ -2575,7 +2575,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $result.= '<option value="' . $key['topic_id'] . '">' . $key['topic_name'] . '</option>';
             }
         } else {
-            $result.= '<option value="">Topic not available</option>';
+            // $result.= '<option value="">Topic not available</option>';
+            $result.= '';
+
         }
         echo $result;
     }
@@ -2590,7 +2592,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $result.= '<option value="' . $key['subtopic_id'] . '">' . $key['subtopic_name'] . '</option>';
             }
         } else {
-            $result.= '<option value="">Subtopic not available</option>';
+            // $result.= '<option value="">Subtopic not available</option>';
+             $result.= '';
         }
         echo $result;
     }
@@ -2605,7 +2608,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $result.= '<option value="' . $key['lineitem_id'] . '">' . $key['title'] . '</option>';
             }
         } else {
-            $result.= '<option value="">Lineitem not available</option>';
+            // $result.= '<option value="">Lineitem not available</option>';
+             $result.= '';
         }
         echo $result;
     }
@@ -2621,6 +2625,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             }
         } else {
             $result.= '<option value="">Lineitem Level not available</option>';
+             $result.= '';
         }
         echo $result;
     }
