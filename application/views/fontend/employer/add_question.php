@@ -298,7 +298,7 @@ ul.select2-results__options {
                   alert(res.length);
                   if (res.length == 0) 
                   {
-                    $('#topic_id').attr('readonly', true);
+                    $('#topic_id').attr('disabled', true);
 
                   }else
                   {
