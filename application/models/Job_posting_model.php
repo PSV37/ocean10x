@@ -224,15 +224,17 @@ order by created_date asc limit 10");
 
     public function open_positions_active_jobs($company_id)
     {
-        $this->db->select('SUM(no_jobs)');
+        $sub_query_from = '((SELECT SUM(no_jobs) FROM job_posting) as no_jobs)';
+        $this->db->select('*');
+        $this->db->from($sub_query_from);
         $this->db->from('job_posting');
         $this->db->where('company_profile_id', $company_id);
-        $this->db->where('job_status',"1")->order_by($this->_order_by);
-        $this->db->join('job_nature','job_nature.job_nature_id=job_posting.job_nature');
-        $this->db->join('job_category','job_category.job_category_id=job_posting.job_category');
-        // $this->db->join('education_specialization','education_specialization.id=job_posting.edu_specialization');
-        $this->db->join('job_role','job_role.id=job_posting.job_role');
-        $this->db->join('education_level','education_level.education_level_id=job_posting.job_edu');
+        //$this->db->where('job_status',"1")->order_by($this->_order_by);
+        //$this->db->join('job_nature','job_nature.job_nature_id=job_posting.job_nature');
+        //$this->db->join('job_category','job_category.job_category_id=job_posting.job_category');
+        //// $this->db->join('education_specialization','education_specialization.id=job_posting.edu_specialization');
+        //$this->db->join('job_role','job_role.id=job_posting.job_role');
+        //$this->db->join('education_level','education_level.education_level_id=job_posting.job_edu');
        
         // $job_types = array('1', '3', '4','5','6');
         // $this->db->where_in('job_types',$job_types);
