@@ -295,10 +295,13 @@ ul.select2-results__options {
             url:'<?php echo base_url();?>employer/gettopic',
             data:{id:id},
             success:function(res){
-                  alert(res.length);
+                  // alert(res.length);
                   if (res.length == 0) 
                   {
                     $('#topic_id').attr('disabled', true);
+                    $('#subtopic_id').attr('disabled', true);
+                    $('#lineitem_id').attr('disabled', true);
+                    $('#lineitemlevel_id').attr('disabled', true);
 
                   }else
                   {
@@ -318,7 +321,17 @@ ul.select2-results__options {
                 url:'<?php echo base_url();?>employer/getsubtopic',
                 data:{id:id},
                 success:function(res){
+                  if (res.length == 0) 
+                  {
+                    
+                    $('#subtopic_id').attr('disabled', true);
+                    $('#lineitem_id').attr('disabled', true);
+                    $('#lineitemlevel_id').attr('disabled', true);
+
+                  }else
+                  {
                     $('#subtopic_id').html(res);
+                  }
                 }
                 
             }); 
@@ -332,8 +345,16 @@ ul.select2-results__options {
                 url:'<?php echo base_url();?>employer/getlineitem',
                 data:{id:id},
                 success:function(res){
-                  alert(res.length);
+                 if (res.length == 0) 
+                  {
+                   
+                    $('#lineitem_id').attr('disabled', true);
+                    $('#lineitemlevel_id').attr('disabled', true);
+
+                  }else
+                  {
                     $('#lineitem_id').html(res);
+                  }
                 }
                 
             }); 
@@ -347,7 +368,15 @@ ul.select2-results__options {
                 url:'<?php echo base_url();?>employer/getlineitemlevel',
                 data:{id:id},
                 success:function(res){
+                  if (res.length == 0) 
+                  {
+                    
+                    $('#lineitemlevel_id').attr('disabled', true);
+
+                  }else
+                  {
                     $('#lineitemlevel_id').html(res);
+                  }
                 }
                 
             }); 

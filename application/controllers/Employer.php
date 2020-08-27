@@ -2592,7 +2592,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $result.= '<option value="' . $key['subtopic_id'] . '">' . $key['subtopic_name'] . '</option>';
             }
         } else {
-            $result.= '<option value="">Subtopic not available</option>';
+            // $result.= '<option value="">Subtopic not available</option>';
+             $result.= '';
         }
         echo $result;
     }
@@ -2607,7 +2608,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $result.= '<option value="' . $key['lineitem_id'] . '">' . $key['title'] . '</option>';
             }
         } else {
-            $result.= '<option value="">Lineitem not available</option>';
+            // $result.= '<option value="">Lineitem not available</option>';
+             $result.= '';
         }
         echo $result;
     }
@@ -2623,6 +2625,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             }
         } else {
             $result.= '<option value="">Lineitem Level not available</option>';
+             $result.= '';
         }
         echo $result;
     }
