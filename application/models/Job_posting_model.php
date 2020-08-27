@@ -229,7 +229,7 @@ order by created_date asc limit 10");
         $this->db->from($sub_query_from);
         $this->db->from('job_posting');
         $this->db->where('company_profile_id', $company_id);
-        $this->db->where('job_status',"1")->order_by($this->_order_by);
+        //$this->db->where('job_status',"1")->order_by($this->_order_by);
         //$this->db->join('job_nature','job_nature.job_nature_id=job_posting.job_nature');
         //$this->db->join('job_category','job_category.job_category_id=job_posting.job_category');
         //// $this->db->join('education_specialization','education_specialization.id=job_posting.edu_specialization');
