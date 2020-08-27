@@ -1824,10 +1824,10 @@ public function randomly_create_oceantest()
     }
     public function save_questionbank($id = null) {
         $this->form_validation->set_rules('technical_id', 'Subject', 'required');
-        $this->form_validation->set_rules('topic_id', 'Main Topic', 'required');
-        $this->form_validation->set_rules('subtopic_id', 'Sub Topic', 'required');
-        $this->form_validation->set_rules('lineitem_id', 'Line Item Level 1', 'required');
-        $this->form_validation->set_rules('lineitemlevel_id', 'Line Item Level 2', 'required');
+        // $this->form_validation->set_rules('topic_id', 'Main Topic', 'required');
+        // $this->form_validation->set_rules('subtopic_id', 'Sub Topic', 'required');
+        // $this->form_validation->set_rules('lineitem_id', 'Line Item Level 1', 'required');
+        // $this->form_validation->set_rules('lineitemlevel_id', 'Line Item Level 2', 'required');
         $this->form_validation->set_rules('ques_type', 'Question Type', 'required');
         $this->form_validation->set_rules('question', 'Question', 'required');
         $this->form_validation->set_rules('option1', 'Option 1', 'required');
