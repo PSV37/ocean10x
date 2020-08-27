@@ -94,8 +94,11 @@
    /*width: 100px;*/
    background-color: #09a59d;
    }
+   #left-panel .inner-left-pannel .inner-tabs .menu-tab .menu-principal ul li:focus span.icon-container i {
+    left: 0;
+}
   
-li:active, li:focus {border: solid 2px #18c5bd;}
+/*li:active, li:focus {border: solid 2px #18c5bd;}*/
 </style>
 <?php $activemenu = $this->session->userdata('activemenu'); 
    $employer_id = $this->session->userdata('company_profile_id');
