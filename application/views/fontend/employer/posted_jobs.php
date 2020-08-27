@@ -943,6 +943,15 @@
    .modal-footer {
     background: none;
 }
+.alert.alert-success.alert-dismissable {
+    /* margin-bottom: -17px; */
+    margin-left: 175px;
+    /* margin-top: 0px; */
+    /* background: black; */
+    height: 26px;
+    width: 250px;
+    padding: 14px;
+}
 </style>
 
 <div class="container-fluid main-d">
@@ -953,7 +962,7 @@
         
 
 <div class="col-md-6 active-job">
-    <?php echo $this->session->flashdata('success'); ?>
+    <?php echo $this->session->flashdata('success'); ?><br>
    <?php if (!empty($company_active_jobs)): foreach ($company_active_jobs as $v_companyjobs) : ?>
    <label>
       <div class="border-top1"></div>
