@@ -586,6 +586,10 @@ class Employer extends MY_Employer_Controller {
                 $employer_id = $this->session->userdata('company_profile_id');
                 $where_all = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id'";
                 $data['oceanchamp_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where_all);
+                 $this->session->set_flashdata('success', '<div class="alert alert-success alert-dismissable">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                   Job Details Updated Succcessfully!
+                  </div>');
                 $this->load->view('fontend/employer/post_new_job', $data);
             } else {
                 echo "error";
