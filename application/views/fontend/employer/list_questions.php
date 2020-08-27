@@ -967,6 +967,8 @@ span.select2-selection.select2-selection--single {
       <div class="col-md-12">
          <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
          <div class="col-md-6 question-bank">
+    <?php echo $this->session->flashdata('success'); ?><br><br>
+            
             <!-- <div class="header-bookbank">
                Question Bank
                <a style="float: right;" href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Add Question</i></button></a>

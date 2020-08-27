@@ -1855,7 +1855,21 @@ public function randomly_create_oceantest()
             
         } else {
             $user_id = $this->session->userdata('company_profile_id');
-            $state_dt = array('technical_id' => $this->input->post('technical_id'), 'topic_id' => $this->input->post('topic_id'), 'subtopic_id' => $this->input->post('subtopic_id'), 'lineitem_id' => $this->input->post('lineitem_id'), 'lineitemlevel_id' => $this->input->post('lineitemlevel_id'), 'level' => $this->input->post('level'), 'ques_type' => $this->input->post('ques_type'), 'question' => $this->input->post('question'), 'option1' => $this->input->post('option1'), 'option2' => $this->input->post('option2'), 'option3' => $this->input->post('option3'), 'option4' => $this->input->post('option4'), 'time_for_question' => $this->input->post('time'), 'is_admin' => $this->input->post('is_admin'));
+            $state_dt = array(
+                'technical_id' => $this->input->post('technical_id'), 
+                'topic_id' => $this->input->post('topic_id'), 
+                'subtopic_id' => $this->input->post('subtopic_id'), 
+                'lineitem_id' => $this->input->post('lineitem_id'), 
+                'lineitemlevel_id' =>$this->input->post('lineitemlevel_id'), 
+                'level' => $this->input->post('level'), 
+                'ques_type' => $this->input->post('ques_type'), 
+                'question' => $this->input->post('question'), 
+                'option1' => $this->input->post('option1'), 
+                'option2' => $this->input->post('option2'), 
+                'option3' => $this->input->post('option3'), 
+                'option4' => $this->input->post('option4'), 
+                'time_for_question' => $this->input->post('time'), 
+                'is_admin' => $this->input->post('is_admin'));
             if (empty($id)) {
                 $state_dt['ques_created_date'] = date('Y-m-d H:i:s');
                 $state_dt['ques_created_by'] = $user_id;
@@ -1885,6 +1899,7 @@ public function randomly_create_oceantest()
                     $where_update_sub_answer['ques_id'] = $q_id;
                     $this->Master_model->master_update($ans_update, 'questionbank', $where_update_sub_answer);
                 }
+                $this->session->set_flashdata('success', '<div class="alert alert-success text-center">New Question Added Successfully!</div>');
                 redirect('employer/all_questions');
             } else {
                 $state_dt['ques_updated_date'] = date('Y-m-d H:i:s');
@@ -1936,6 +1951,7 @@ public function randomly_create_oceantest()
                     $where_update_sub_answer['ques_id'] = $id;
                     $this->Master_model->master_update($ans_update, 'questionbank', $where_update_sub_answer);
                 }
+                $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Question Updated Successfully!</div>');
                 redirect('employer/all_questions');
             }
         }

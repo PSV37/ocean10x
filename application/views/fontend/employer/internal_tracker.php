@@ -447,7 +447,7 @@ textarea#comment {
       <div class="col-md-12">
          <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
          <div class="col-md-9 cv_bank">
-            
+              <?php echo $this->session->flashdata('success'); ?><br><br>
               <div class="row">
              
                <div class="col-md-4">
