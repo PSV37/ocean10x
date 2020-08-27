@@ -300,9 +300,12 @@ ul.select2-results__options {
                   {
                     $('#topic_id').attr('readonly', true);
 
+                  }else
+                  {
+                    $('#topic_id').html(res);
                   }
 
-              $('#topic_id').html(res);
+              
             }
             
           }); 
