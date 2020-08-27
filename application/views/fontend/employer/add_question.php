@@ -322,6 +322,7 @@ ul.select2-results__options {
                 url:'<?php echo base_url();?>employer/getlineitem',
                 data:{id:id},
                 success:function(res){
+                  alert(res.length);
                     $('#lineitem_id').html(res);
                 }
                 
