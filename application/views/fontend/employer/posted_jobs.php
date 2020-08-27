@@ -950,6 +950,8 @@
 <div class="col-md-12">
 <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
 <!-- <div class="panel-body"></div> -->
+         <?php echo $this->session->flashdata('success'); ?>
+
 <div class="col-md-6 active-job">
    <?php if (!empty($company_active_jobs)): foreach ($company_active_jobs as $v_companyjobs) : ?>
    <label>
