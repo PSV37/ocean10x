@@ -949,7 +949,7 @@
     /* margin-top: 0px; */
     /* background: black; */
     height: 26px;
-    width: 250px;
+    width: auto;
     padding: 14px;
 }
 </style>
