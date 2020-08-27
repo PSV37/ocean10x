@@ -1020,7 +1020,7 @@ span.select2-selection.select2-selection--single {
                                   <div class="col-md-4">
                                     <div class="form-group technical_id">
                                        <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
-                                       <select id="subject" name="subject_data" required class="form-control select2"  onchange="getTopic(this.value);get_questuions();">
+                                       <select id="subject" name="subject_data" required class="form-control select2"  onchange="getTopic(this.value)">
                                           <option value="">Select Subject</option>
                                           <?php if (!empty($skill_master))
                                              foreach($skill_master as $skill) 
@@ -1035,7 +1035,7 @@ span.select2-selection.select2-selection--single {
                                  <div class="col-md-4">
                                     <div class="form-group topic_id">
                                        <label for="exampleInputEmail1">Main Topic <span class="required">*</span></label>
-                                       <select id="topic_id" name="topic_id" class="form-control select2" onchange="getSubtopic(this.value);get_questuions();">
+                                       <select id="topic_id" name="topic_id" class="form-control select2" onchange="getSubtopic(this.value)">
                                           <option value="">Select Topic</option>
                                           <!-- <option value="1">HTML 5</option>  -->
                                        </select>
@@ -2066,21 +2066,21 @@ span.select2-selection.select2-selection--single {
             url:'<?php echo base_url();?>employer/gettopic',
             data:{id:id},
             success:function(res){
-            if (res.length == 0) 
-                  {
-                    $('#topic_id').attr('disabled', true);
-                    $('#subtopic_id').attr('disabled', true);
-                   
+               if (res.length == 0) 
+               {
+                  $('#topic_id').attr('disabled', true);
+                  $('#subtopic_id').attr('disabled', true);
 
-                  }else
-                  {
-                    $('#topic_id').html(res);
-                  }
+               }
+               else
+               {
+                 $('#topic_id').html(res);
+               }
+            }
             
           }); 
           }
        }
-    }
        function getTopicocean(id){
         if(id){
           $.ajax({
@@ -2088,18 +2088,17 @@ span.select2-selection.select2-selection--single {
             url:'<?php echo base_url();?>employer/gettopic',
             data:{id:id},
             success:function(res){
-               if (res.length == 0) 
-                  {
-                    
-                    $('#subtopic_id_ocean').attr('disabled', true);
-                    // $('#lineitem_id').attr('disabled', true);
-                    // $('#lineitemlevel_id').attr('disabled', true);
+                if (res.length == 0) 
+               {
+                  $('#topic_id_ocean').attr('disabled', true);
+                  $('#subtopic_id_ocean').attr('disabled', true);
 
-                  }else
-                  {
-                    $('#topic_id_ocean').html(res);
-                  }
-              $('#topic_id_ocean').html(res);
+               }
+               else
+               {
+                 $('#topic_id_ocean').html(res);
+               }
+            
             }
             
           }); 
@@ -2113,22 +2112,22 @@ span.select2-selection.select2-selection--single {
                 data:{id:id},
                 success:function(res){
                   if (res.length == 0) 
-                  {
-                    
-                    $('#subtopic_id').attr('disabled', true);
-                    // $('#lineitem_id').attr('disabled', true);
-                    // $('#lineitemlevel_id').attr('disabled', true);
+               {
+                  
+                  $('#subtopic_id').attr('disabled', true);
 
-                  }else
-                  {
-                    $('#subtopic_id').html(res);
-                  }
+               }
+               else
+               {
+                 $('#subtopic_id').html(res);
+               }
+                  
+                }
                 
             }); 
           }
    
     }
- }
     function getSubtopics(id){
         if(id){
             $.ajax({
@@ -2137,17 +2136,16 @@ span.select2-selection.select2-selection--single {
                 data:{id:id},
                 success:function(res){
                    if (res.length == 0) 
-                  {
-                    
-                    $('#subtopic_id_ocean').attr('disabled', true);
-                    // $('#lineitem_id').attr('disabled', true);
-                    // $('#lineitemlevel_id').attr('disabled', true);
+               {
+                  
+                  $('#subtopic_id_ocean').attr('disabled', true);
 
-                  }else
-                  {
-                    $('#subtopic_id_ocean').html(res);
-                  }
-                    // $('#subtopic_id_ocean').html(res);
+               }
+               else
+               {
+                 $('#subtopic_id_ocean').html(res);
+               }
+                   
                 }
                 
             }); 
