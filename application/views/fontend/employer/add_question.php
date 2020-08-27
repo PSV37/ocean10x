@@ -296,9 +296,8 @@ ul.select2-results__options {
             data:{id:id},
             success:function(res){
                   alert(res.length);
-
+              
               $('#topic_id').html(res);
-              $('#topic_id').val();
             }
             
           }); 
