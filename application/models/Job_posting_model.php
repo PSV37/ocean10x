@@ -225,7 +225,7 @@ order by created_date asc limit 10");
     public function open_positions_active_jobs($company_id)
     {
         
-        $this->db->select_SUM('no_jobs');
+        $this->db->selectSUM('no_jobs');
         $this->db->from('job_posting');
         $this->db->where('company_profile_id', $company_id);
         
