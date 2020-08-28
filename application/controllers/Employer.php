@@ -35,7 +35,14 @@ class Employer extends MY_Employer_Controller {
             $cv_bank_data = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join = false, $order = 'desc', $field = 'cv_id', $select = false, $limit = false, $start = false, $search = false);
 
         $open_positions = $this->job_posting_model->open_positions_active_jobs($employer_id);
-        $this->load->view('fontend/employer/employer_dashboard', compact('open_positions', 'cv_bank_data', 'company_active_jobs', 'company_info', 'chatbox'));
+
+        $where_offer = "job_apply.job_post_id='$job_id' and (forwarded_jobs_cv.tracking_status=7 or external_tracker.tracking_status=7)";
+        $join_test_passed = array('forwarded_jobs_cv' => 'forwarded_jobs_cv.job_post_id=job_apply.job_post_id | Left ',
+        'external_tracker' => 'external_tracker.job_post_id=job_apply.job_post_id | Left ');
+        $success_full_hiring = $this->Master_model->getMaster('job_apply', $where = $where_offer, $join = $join_test_passed, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+
+
+        $this->load->view('fontend/employer/employer_dashboard', compact('success_full_hiring', 'open_positions', 'cv_bank_data', 'company_active_jobs', 'company_info', 'chatbox'));
 
     }
     /*** Dashboard ***/
