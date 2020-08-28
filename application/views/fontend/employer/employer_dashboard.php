@@ -331,7 +331,7 @@
                               <div class="card-body-icon">
                                  <i class="fas fa-volume-up fa-fw"></i>
                               </div>
-                              <div>courses Completed</div>
+                              <div>Successful Hiring</div>
                            </div>
                            <a class="card-footer text-white clearfix small z-1" href="#">
                            <span class="float-left" style="font-size:22px;">20</span>
