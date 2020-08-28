@@ -322,7 +322,8 @@
                            </div>
                            <a class="card-footer text-white clearfix small z-1" href="#">
                            <span class="float-left" style="font-size:22px;"><span>
-                           <?php if(isset($open_positions) && isset($open_positions[0]) && isset($open_positions[0]['no_jobs']){
+                           <?php 
+                           if(isset($open_positions) && isset($open_positions[0]) && isset($open_positions[0]['no_jobs'])){
                                  echo $open_positions[0]['no_jobs'];
                            }else{
                                  echo "0";
