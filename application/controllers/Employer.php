@@ -36,7 +36,7 @@ class Employer extends MY_Employer_Controller {
 
         $open_positions = $this->job_posting_model->open_positions_active_jobs($employer_id);
         //echo $this->db->last_query(); die;
-        print_r($open_positions); die;
+        //print_r($open_positions); die;
         $where_offer = "job_apply.job_post_id='$job_id' and (forwarded_jobs_cv.tracking_status=7 or external_tracker.tracking_status=7)";
         $join_test_passed = array('forwarded_jobs_cv' => 'forwarded_jobs_cv.job_post_id=job_apply.job_post_id | Left ',
         'external_tracker' => 'external_tracker.job_post_id=job_apply.job_post_id | Left ');
