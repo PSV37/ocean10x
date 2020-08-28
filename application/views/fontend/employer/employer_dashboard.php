@@ -321,7 +321,7 @@
                               <span>Open Positions</span>
                            </div>
                            <a class="card-footer text-white clearfix small z-1" href="#">
-                           <span class="float-left" style="font-size:22px;"><span><?php echo array_values($open_positions)[0]; ?></span>
+                           <span class="float-left" style="font-size:22px;"><span><?php echo count_all_results($open_positions[0]); ?></span>
                            </a>
                         </div>
                      </div>
