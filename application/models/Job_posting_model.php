@@ -224,13 +224,12 @@ order by created_date asc limit 10");
 
     public function open_positions_active_jobs($company_id)
     {
-        
+        $current_date=date('Y-m-d');
         $this->db->select_SUM('no_jobs');
         $this->db->from('job_posting');
         $this->db->where('company_profile_id', $company_id);
-        
+        $this->db->where('job_deadline', $current_date);
         $query = $this->db->get()->result();
-
         return $query;
     }
 
