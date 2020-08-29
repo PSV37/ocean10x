@@ -401,7 +401,7 @@ input.select2-search__field {
                  <div class="col-md-3">
                     <div class="form-group">
                       <label for="exampleInputEmail1" required="">Pincode<span class="required">*</span></label>
-                      <input type="text" maxlength="6" name="pincode" id="pincode" class="form-control allownumericwithoutdecimal" autocomplete="off" value="<?php echo $result['pincode']; ?>"><?php echo form_error('pincode'); ?>             
+                      <input type="text"  name="pincode" id="pincode" class="form-control allownumericwithoutdecimal" autocomplete="off" value="<?php echo $result['pincode']; ?>"><?php echo form_error('pincode'); ?>             
                     </div>
                   </div>    
               </div>
