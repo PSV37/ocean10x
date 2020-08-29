@@ -1579,16 +1579,16 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             $where_all = "questionbank.ques_status='1' AND ques_created_by='$employer_id' and questionbank.technical_id = '$subject' AND time_for_question != ''";
         }
         if (!empty($topic_id)) {
-            $where_all .= " and questionbank.topic_id = '$topic_id'"
+            $where_all .= " and questionbank.topic_id = '$topic_id'";
         }
         if (!empty($subtopic_id)) {
-            $where_all .= " and questionbank.subtopic_id = '$subtopic_id'"
+            $where_all .= " and questionbank.subtopic_id = '$subtopic_id'";
         }
         if (!empty($level)) {
-            $where_all .= " and questionbank.level = '$level'"
+            $where_all .= " and questionbank.level = '$level'";
         }
         if (!empty($ques_type)) {
-            $where_all .= " and questionbank.ques_type = '$ques_type'"
+            $where_all .= " and questionbank.ques_type = '$ques_type'";
         }
 
 
