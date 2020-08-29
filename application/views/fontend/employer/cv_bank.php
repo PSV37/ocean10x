@@ -869,7 +869,6 @@
          <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
          <div class="col-md-6 cv_bank">
                           
- <div id="smsg"><?php echo $this->session->flashdata('success'); ?></div>
             <div class="row">
                <div class="col-md-12">
                   <button class="folder_popup" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal_add" style="float: right;">Create&emsp;<i class="fas fa-folder-open"></i></button>
@@ -892,6 +891,7 @@
                   <div class="clear"></div>
                </div>
                <div class="col-md-3">
+                  <div id="smsg"><?php echo $this->session->flashdata('success'); ?></div>
                   <form method="post" action="<?php echo base_url(); ?>employer/corporate_cv_bank">
                      <label class="dropdown" style="float:right;">
                         <div class="dd-button">
