@@ -306,7 +306,7 @@ ul.select2-results__options {
           url:'<?php echo base_url();?>employer/gettopic',
           data:{id:id},
           success:function(res){
-            f (res.length == 0) 
+            if (res.length == 0) 
                   {
                     $('#topic_id').attr('disabled', true);
                     $('#subtopic_id').attr('disabled', true);
