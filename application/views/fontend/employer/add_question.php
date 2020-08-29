@@ -223,8 +223,17 @@ ul.select2-results__options {
           url:'<?php echo base_url();?>employer/getlineitemlevel',
           data:{id:id},
           success:function(res){
-            $('#lineitemlevel_id').html(res);
-            $('#lineitemlevel_id').val(<?php echo $row['lineitemlevel_id']; ?>);
+            if (res.length == 0) 
+                  {
+                    
+                    $('#lineitemlevel_id').attr('disabled', true);
+
+                  }else
+                  {
+                    $('#lineitemlevel_id').html(res);
+                    $('#lineitemlevel_id').val(<?php echo $row['lineitemlevel_id']; ?>);
+                  }
+           
           }
         }); 
         }
@@ -239,9 +248,19 @@ ul.select2-results__options {
           url:'<?php echo base_url();?>employer/getlineitem',
           data:{id:id},
           success:function(res){
-            $('#lineitem_id').html(res);
-            $('#lineitem_id').val(<?php echo $row['lineitem_id']; ?>);
-             getLineitemlevel_load();
+            if (res.length == 0) 
+                  {
+                   
+                    $('#lineitem_id').attr('disabled', true);
+                    $('#lineitemlevel_id').attr('disabled', true);
+
+                  }else
+                  {
+                    $('#lineitem_id').html(res);
+                    $('#lineitem_id').val(<?php echo $row['lineitem_id']; ?>);
+                     getLineitemlevel_load();
+                  }
+            
           }
           
         }); 
@@ -258,9 +277,20 @@ ul.select2-results__options {
                 url:'<?php echo base_url();?>employer/getsubtopic',
                 data:{id:id},
                 success:function(res){
+                  if (res.length == 0) 
+                  {
+                    
+                    $('#subtopic_id').attr('disabled', true);
+                    $('#lineitem_id').attr('disabled', true);
+                    $('#lineitemlevel_id').attr('disabled', true);
+
+                  }else
+                  {
                     $('#subtopic_id').html(res);
                     $('#subtopic_id').val(<?php echo $row['subtopic_id']; ?>);
-          getLineitem_load();
+                    getLineitem_load();
+                  }
+                    
                 }
                 
             }); 
@@ -276,9 +306,20 @@ ul.select2-results__options {
           url:'<?php echo base_url();?>employer/gettopic',
           data:{id:id},
           success:function(res){
-            $('#topic_id').html(res);
-            $('#topic_id').val(<?php echo $row['topic_id']; ?>);
-            getSubtopic_load();
+            f (res.length == 0) 
+                  {
+                    $('#topic_id').attr('disabled', true);
+                    $('#subtopic_id').attr('disabled', true);
+                    $('#lineitem_id').attr('disabled', true);
+                    $('#lineitemlevel_id').attr('disabled', true);
+
+                  }else
+                  {
+                    $('#topic_id').html(res);
+                    $('#topic_id').val(<?php echo $row['topic_id']; ?>);
+                    getSubtopic_load();
+                  }
+            
           }
           
         }); 
