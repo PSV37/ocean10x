@@ -1508,7 +1508,7 @@ li.right-title {
       </div>
    </label<br><br>   <a href="'.base_url().'job/show/'. $require['job_slugs'].'">Link</a>
     <br><br>Thanks,<br><br>Team TheOcean<br><br>
-</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>'
+</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
   
                         $send = sendEmail_JobRequest($email[$i], $message, $subject);
                         //echo $send;
