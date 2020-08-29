@@ -1286,7 +1286,7 @@ span.select2-selection.select2-selection--single {
                                     </div>
                                     <div class="col-md-3" style="margin-left: 20;">
                                        
-                                       <button style="margin-left: 20;" class="btn btn-primary" type="submit">Create</button>
+                                       <button  class="btn btn-primary" type="submit">Create</button>
                                     </div>
                                    
                                  </div>
