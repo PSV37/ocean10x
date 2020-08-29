@@ -206,6 +206,9 @@ input.select2-search__field {
     display: inline-block;
     border-radius: 0px;
 }
+.bootstrap-select > .dropdown-toggle {
+    display: block;
+  }
 
 </style>
 
@@ -361,8 +364,8 @@ input.select2-search__field {
                     <div class="form-group">
                       <label for="exampleInputEmail1">Give Acces To User<span class="required">*</span></label>
                      
-                      <select class="selectpicker form-control" multiple data-live-search="true" name="user_acc[]" id="user_accc" >
-                      </select>
+                      <select class="selectpicker form-control" multiple data-live-search="true" name="user_acc[]" id="user_accc" required>
+                            </select>
                     </div>
                   </div>                      
                 </div>
@@ -370,34 +373,35 @@ input.select2-search__field {
                 <div class="col-md-3">
                   <div class="formrow">
                     <label class="control-label">Country: <span class="required">*</span></label>
-                    <select name="country_id " id="country_id" class="form-control department select2" >
-                      <option value="">Select</option>
-                        <?php foreach($country as $key){?>
-                        <option value="<?php echo $key['country_id']; ?>"<?php if($result['country_id']==$key['country_id']){ echo "selected"; } elseif ($key['country_name']=='India') {echo "selected";}?>><?php echo $key['country_name']; ?></option>
-                        <?php } ?>
-                    </select>
+                   <select  name="country_id" id="country_id" class="form-control select2" onchange="getStates(this.value)" required>
+                           <option value="">Select Country</option>
+                          <?php foreach($country as $key){?>
+                          <option value="<?php echo $key['country_id']; ?>"<?php if($result['country_id']==$key['country_id']){ echo "selected"; } elseif ($key['country_name']=='India') {echo "selected";}?>><?php echo $key['country_name']; ?></option>
+                          <?php } ?>
+                        </select>
                   </div>
                  </div>
                 <div class="col-md-3">
                   <div class="formrow">
                     <label class="control-label">State: <span class="required">*</span></label>
-                    <select name="state_id" id="state_id" class="form-control department select2" >
-                      <option value="">Select</option>
-                    </select>
+                    <select  name="state_id" id="state_id" class="form-control select2" onchange="getCitys(this.value)" required>
+                         <option value="">Select State</option>
+                      </select>
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="formrow">
                     <label class="control-label">City: <span class="required">*</span></label>
-                    <select name="city_id" id="city_id" class="form-control department select2" >
-                      <option value="">Select</option>
-                    </select>
+                    <select  name="city_id" id="city_id" class="form-control select2" required>
+                      <option value="">Select City</option>
+                       
+                      </select>
                   </div>
                 </div>  
                  <div class="col-md-3">
                     <div class="form-group">
                       <label for="exampleInputEmail1" required="">Pincode<span class="required">*</span></label>
-                      <input type="text" maxlength="6" name="pincode" id="pincode" class="form-control allownumericwithoutdecimal" autocomplete="off" value="<?php echo $result['pincode']; ?>"><?php echo form_error('pincode'); ?>             
+                      <input type="text"  name="pincode" id="pincode" class="form-control allownumericwithoutdecimal" autocomplete="off" value="<?php echo $result['pincode']; ?>"><?php echo form_error('pincode'); ?>             
                     </div>
                   </div>    
               </div>
