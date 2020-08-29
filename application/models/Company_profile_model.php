@@ -140,7 +140,7 @@ class Company_Profile_Model extends MY_Model
                <li class="left-title">JD attached&nbsp;<i class="fas fa-link"></i></li>
                <li class="right-title">&nbsp;: ';
                 if (isset($v_companyjobs->jd_file) && !empty($v_companyjobs->jd_file)) { 
-                       $message.= "Yes".'  <a style="margin-left: 15px" href="'. base_url('upload/job_description/' .$v_companyjobs->jd_file.'" download><i class="fa fa-download" aria-hidden="true"></i></a> ';
+                       $message.= 'Yes <a style="margin-left: 15px" href="'. base_url().'upload/job_description/' .$v_companyjobs->jd_file.'" download><i class="fa fa-download" aria-hidden="true"></i></a> ';
                         } else 
                         { 
                               $message.= "No";} '</li>
