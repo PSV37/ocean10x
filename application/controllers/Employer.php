@@ -500,7 +500,7 @@ class Employer extends MY_Employer_Controller {
                         'education_level'=>'education_level.education_level_id=job_posting.job_edu'
 
                 );
-                    $job_details = $this->Master_model->get_master_row('job_posting', $select = FALSE, $where = $where_job, $join = $join_job)
+                    $job_details = $this->Master_model->get_master_row('job_posting', $select = FALSE, $where = $where_job, $join = $join_job);
                     $to_email = $this->session->userdata('email');
                     $this->company_profile_model->sendjobEmail($to_email,$job_details);
                     $this->session->set_flashdata('success', '<div class="alert alert-success alert-dismissable">
