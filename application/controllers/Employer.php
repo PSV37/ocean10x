@@ -1483,12 +1483,9 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                         <div class="clear"></div>
                       </div>
                       <!-- <div id="skills"> -->
-                      ';
+                      <span>Skill sets</span>:';
                       $sk=$require['skills_required'];
                       if (isset($sk) && !empty($sk)) {
-                        $message.='
-                      <br>
-                      <span>Skills</span>:';
                       $where_sk= "id IN (".$sk.") AND status=1";
                       $select_sk = "skill_name ,id";
                       $skills = $this->Master_model->getMaster('skill_master',$where_sk,$join = FALSE, $order = false, $field = false, $select_sk,$limit=10,$start=false, $search=false);
@@ -1499,26 +1496,6 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                       ';
                       }
                       } }   
-                      $benefits=explode(',', $require['benefits']);
-                      if(!empty($benefits)){ 
-                        $message.='
-                      <br>
-                      <span>Benefits</span>:';
-                      $i=0;
-                      foreach($benefits as $benefit){ 
-                      $message.='
-                      <br>
-                      <span>Benefits</span>:<lable class=""><button id="sklbtn">'. $benefits[$i].'</button></lable>
-                      ';
-                      $i++; }
-                      } if ($require['job_deadline'] > date('Y-m-d')){
-                      // echo '<button class="btn btn-success btn-xs">Live <i class="fa fa-check-circle" aria-hidden="true"></i></button>';
-                      $message.='<span class="active-span">Active</span>';
-                      }
-                      else {
-                      // echo'<button class="btn btn-danger btn-xs">Expired <i class="fa fa-times" aria-hidden="true"></i></button> ';
-                      $message.= '<span class="pasive-span">Expired</span>';
-                      } 
                       
                    $message.='</div>
                   </label<br><br>   <a href="'.base_url().'job/show/'. $v_companyjobs['job_slugs'].'">Link</a>
