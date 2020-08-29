@@ -1497,7 +1497,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                       }
                       } }   
                       
-                  </div>
+                   $message.='</div>
                   </label<br><br>   <a href="'.base_url().'job/show/'. $v_companyjobs['job_slugs'].'">Link</a>
                   <br><br>Thanks,<br><br>Team TheOcean<br><br>
                 </td>
