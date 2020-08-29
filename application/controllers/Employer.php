@@ -1511,7 +1511,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                       <span>Benefits</span>:<lable class=""><button id="sklbtn">'. $benefits[$i].'</button></lable>
                       ';
                       $i++; }
-                      } if ($v_companyjobs['job_deadline'] > date('Y-m-d')){
+                      } if ($require['job_deadline'] > date('Y-m-d')){
                       // echo '<button class="btn btn-success btn-xs">Live <i class="fa fa-check-circle" aria-hidden="true"></i></button>';
                       $message.='<span class="active-span">Active</span>';
                       }
@@ -1520,7 +1520,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                       $message.= '<span class="pasive-span">Expired</span>';
                       } 
                       
-                   $message.='<span>Skill sets</span>:</div>
+                   $message.='</div>
                   </label<br><br>   <a href="'.base_url().'job/show/'. $v_companyjobs['job_slugs'].'">Link</a>
                   <br><br>Thanks,<br><br>Team TheOcean<br><br>
                 </td>
