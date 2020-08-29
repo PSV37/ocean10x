@@ -967,7 +967,7 @@ span.select2-selection.select2-selection--single {
       <div class="col-md-12">
          <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
          <div class="col-md-6 question-bank">
-    <?php echo $this->session->flashdata('success'); ?><br><br>
+    <div id="smsg"><?php echo $this->session->flashdata('success'); ?></div><br><br>
             
             <!-- <div class="header-bookbank">
                Question Bank
@@ -1978,6 +1978,13 @@ span.select2-selection.select2-selection--single {
 </div>
 <?php
    endforeach;endif;?>
+   <script>
+   $(document).ready (function(){
+     $("#smsg").fadeTo(2000, 500).slideUp(500, function(){
+     $("#smsg").slideUp(500);
+     });   
+   });
+</script>
    <script>
   $(document).on('focus', '.select2-selection.select2-selection--single', function (e) {
   $(this).closest(".select2-container").siblings('select:enabled').select2('open');
