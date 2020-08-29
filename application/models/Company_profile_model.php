@@ -161,8 +161,8 @@ li.right-title {
             <div class="following-info3">
                <li class="left-title">JD attached&nbsp;<i class="fas fa-link"></i></li>
                <li class="right-title">&nbsp;: ';
-                if (isset($v_companyjobs->jd_file) && !empty($v_companyjobs->jd_file)) { 
-                       $message.= 'Yes <a style="margin-left: 15px" href="'. base_url().'upload/job_description/' .$v_companyjobs->jd_file.'" download><i class="fa fa-download" aria-hidden="true"></i></a> ';
+                if (isset($v_companyjobs['jd_file']) && !empty($v_companyjobs['jd_file'])) { 
+                       $message.= 'Yes <a style="margin-left: 15px" href="'. base_url().'upload/job_description/' .$v_companyjobs['jd_file'].'" download><i class="fa fa-download" aria-hidden="true"></i></a> ';
                         } else 
                         { 
                               $message.= "No";} '</li>
@@ -170,8 +170,8 @@ li.right-title {
                <li class="right-title">&nbsp;:'.$v_companyjobs['is_test_required'] .'</li>
                <li class="left-title">Published on</li>
                <li class="right-title">&nbsp;:';
-               if(!is_null($v_companyjobs->created_at)) {    
-                $message.= date('M j Y',strtotime($v_companyjobs->created_at)); }'</li>
+               if(!is_null($v_companyjobs['created_at'])) {    
+                $message.= date('M j Y',strtotime($v_companyjobs['created_at'])); }'</li>
                <li class="left-title">Job expiry</li>
                <li class="right-title">&nbsp;:';
                if(!is_null($v_companyjobs['job_deadline'])) {   

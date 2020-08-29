@@ -2374,7 +2374,7 @@ public function randomly_create_oceantest()
 
                 $this->session->set_flashdata('success', '<div class="alert alert-success text-center">New CV added sucessfully!</div>');
 
-                redirect('employer/addemployee');
+                redirect('employer/corporate_cv_bank');
                 $comp_name = $this->session->userdata('company_name');
                 $to_email = $this->input->post('email');
                 $pass = $this->input->post('password');
