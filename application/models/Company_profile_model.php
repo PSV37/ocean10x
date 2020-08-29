@@ -89,16 +89,21 @@ class Company_Profile_Model extends MY_Model
             $config['mailtype'] = "html";
             $config['newline'] = "\r\n";
 
-        $message = '<div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
+        $message = '<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/post_new_job.css"><style> .following-info{margin-bottom:10px;}
+   .following-info2{margin-bottom:10px;}   
+   .following-info3{margin-bottom:10px; margin-top: -154px;}
+   </script>
+
+   <div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
 <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
 <br><br>Hi '.ucfirst($email_name[0]).',<br><br>A new job has been posted by <username> from your organization. Details of this job post are as follows:-<br><br><label>
       <div class="border-top1"></div>
-      <
+    
       <div class="card">
          <div class="front">
            
             <div class="job-info">
-               <p class="job_title">'. $v_companyjobs->job_title.'</p>
+               <p class="job_title">'. $v_companyjobs['job_title'].'</p>
             </div>
             <div class="icon-info">
                <li class="left-icon-title"><i class="fas fa-map-marker-alt"></i></li>
