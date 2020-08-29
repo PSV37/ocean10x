@@ -1379,9 +1379,28 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                     }
                     if ($apply) {
                         $email_name = explode('@', $email[$i]);
-                        $subject = $require['company_name'].'has invited you to apply for a New Job Post ';
+                        $subject = 'Job | Urgent requirement for ' . $require['job_title'];
                         $message = '
-                                
+                                <style>
+  .card div {border-radius:0px !important;}    
+  .following-info{margin-bottom:10px;}
+  .following-info2{margin-bottom:10px;}   
+  .following-info3{margin-bottom:10px; margin-top: -154px;}
+  li.left-title {
+  list-style-type: none;
+  float: left;
+  font-size: 12px;
+  font-weight: 100;
+  width: 83px;
+  height: 15px;
+  }
+  li.right-title {
+  list-style-type: none;
+  font-size: 12px;
+  font-weight: 100;
+  width: 179px;
+  }
+</style>
 <div style="max-width:600px!important;padding:4px">
   <table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0">
     <tbody>
@@ -1489,7 +1508,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                       <lable class=""><button id="sklbtn">'. $benefits[$i].'</button></lable>
                       ';
                       $i++; }
-                      } if ($require['job_deadline'] > date('Y-m-d')){
+                      } if ($v_companyjobs->job_deadline > date('Y-m-d')){
                       // echo '<button class="btn btn-success btn-xs">Live <i class="fa fa-check-circle" aria-hidden="true"></i></button>';
                       $message.='<span class="active-span">Active</span>';
                       }
@@ -1500,7 +1519,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                       $message.='
                     </div>
                   </div>
-                  </label<br><br>   <a href="'.base_url().'job/show/'. $require['job_slugs'].'">Link</a>
+                  </label<br><br>   <a href="'.base_url().'job/show/'. $v_companyjobs['job_slugs'].'">Link</a>
                   <br><br>Thanks,<br><br>Team TheOcean<br><br>
                 </td>
               </tr>
@@ -2347,12 +2366,11 @@ public function randomly_create_oceantest()
                 $data = array('company' => $company_name, 'action_taken_for' => $this->input->post('emp_name'), 'field_changed' => 'Added new Employee', 'Action' => 'Added ' . $this->input->post('emp_name') . ' As an Employee.', 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
                 $result = $this->Master_model->master_insert($data, 'employer_audit_record');
                 
-                $this->session->set_flashdata('success', '<div class="alert alert-success text-center">New CV added sucessfully!</div>');
-                
+
                 $data1 = array('company' => $company_name, 'action_taken_for' => $this->input->post('emp_name'), 'field_changed' => 'Added new Employee', 'Action' => 'Added ' . $this->input->post('emp_name') . ' As an Employee.', 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
                 $result = $this->Master_model->master_insert($data1, 'employer_audit_record');
 
-
+                $this->session->set_flashdata('success', '<div class="alert alert-success text-center">New CV added sucessfully!</div>');
 
                 $comp_name = $this->session->userdata('company_name');
                 $to_email = $this->input->post('email');
