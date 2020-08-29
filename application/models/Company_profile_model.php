@@ -104,20 +104,20 @@ class Company_Profile_Model extends MY_Model
             </div>
             <div class="icon-info">
                <li class="left-icon-title"><i class="fas fa-map-marker-alt"></i></li>
-               <li class="right-icon-title"> &emsp;'.$v_companyjobs->city_id.'</li>
+               <li class="right-icon-title"> &emsp;'.$v_companyjobs['city_id'].'</li>
                <li class="left-icon-title"><i class="fas fa-briefcase"></i></li>
-               <li class="right-title" style="width:100%;"> &emsp;'.$v_companyjobs->experience.'(experience)</li>
+               <li class="right-title" style="width:100%;"> &emsp;'.$v_companyjobs['experience'].'(experience)</li>
                <div class="clear"></div>
             </div>
             <div class="following-info">
                <li class="left-title"
                   >Job Roll</li>
-               <li class="right-title">&nbsp;: '.$v_companyjobs->job_role_title.'</li>
+               <li class="right-title">&nbsp;: '.$v_companyjobs['job_role_title'].'</li>
                <li class="left-title">Engagement</li>
-               <li class="right-title">&nbsp;: '.$v_companyjobs->job_nature_name.'</li>
+               <li class="right-title">&nbsp;: '.$v_companyjobs['job_nature_name'].'</li>
                <li class="left-title">Domain</li>
-               <li class="right-title">&nbsp;:'.$v_companyjobs->job_category_name.'</li>
-               <!--  <li class="left-title">Role Type </li><li class="right-title">&nbsp;:</li> -->
+               <li class="right-title">&nbsp;:'.$v_companyjobs['job_category_name'].'</li>
+               <!--  <li class="left-title">Role Type </li><li class="right-title">&nbsp;:</li>
                <li class="left-title">Dummy1</li>
                <li class="right-title">&nbsp;:</li>
                <!--  <li class="left-title">Dummy2</li><li class="right-title">&nbsp;:</li> -->
@@ -125,14 +125,14 @@ class Company_Profile_Model extends MY_Model
             </div>
             <div class="following-info2">
                <li class="left-title">Education</li>
-               <li class="right-title">&nbsp;: '.$v_companyjobs->education_level_name.'</li>
+               <li class="right-title">&nbsp;: '.$v_companyjobs['education_level_name'].'</li>
                <li class="left-title">experience</li>
-               <li class="right-title">&nbsp;:'.$v_companyjobs->experience.'</li>
+               <li class="right-title">&nbsp;:'.$v_companyjobs['experience'].'</li>
                <li class="left-title">CTC</li>
-               <li class="right-title">&nbsp;:'.$v_companyjobs->salary_range.'</li>
+               <li class="right-title">&nbsp;:'.$v_companyjobs['salary_range'].'</li>
                <li class="left-title">Vacancies</li>
-               <li class="right-title">&nbsp;: '.$v_companyjobs->no_jobs.'</li>
-               <!-- <li class="left-title">Specialization</li><li class="right-title">&nbsp;:'.$v_companyjobs->education_specialization.'</li> -->
+               <li class="right-title">&nbsp;: '.$v_companyjobs['no_jobs'].'</li>
+               <!-- <li class="left-title">Specialization</li><li class="right-title">&nbsp;:'.$v_companyjobs['education_specialization'].'</li> -->
                <!--  <li class="left-title">Joining ETA</li><li class="right-title">&nbsp;:30 days</li> -->
                <!--  <li class="left-title">Benifits</li><li class="right-title">&nbsp;:'.$v_companyjobs->benefits.' </li> -->
                <!--   <li class="left-title">Dummy3</li><li class="right-title">&nbsp;:value</li> -->
@@ -147,14 +147,15 @@ class Company_Profile_Model extends MY_Model
                         { 
                               $message.= "No";} '</li>
                <li class="left-title">Ocean Test</li>
-               <li class="right-title">&nbsp;:'.$v_companyjobs->is_test_required .'</li>
+               <li class="right-title">&nbsp;:'.$v_companyjobs['is_test_required'] .'</li>
                <li class="left-title">Published on</li>
                <li class="right-title">&nbsp;:';
                if(!is_null($v_companyjobs->created_at)) {    
                 $message.= date('M j Y',strtotime($v_companyjobs->created_at)); }'</li>
                <li class="left-title">Job expiry</li>
                <li class="right-title">&nbsp;:';
-               if(!is_null($v_companyjobs->job_deadline)) {   $message.= date('M j Y',strtotime($v_companyjobs->job_deadline)); }'</li>
+               if(!is_null($v_companyjobs['job_deadline'])) {   
+                $message.= date('M j Y',strtotime($v_companyjobs['job_deadline'])); }'</li>
                <div class="clear"></div>
             </div>
             <!-- <div id="skills"> -->
@@ -191,7 +192,7 @@ class Company_Profile_Model extends MY_Model
             
          </div>
       </div>
-   </label<br><br>   <a href="<?php echo base_url(); ?>job/show/<?php echo $v_companyjobs->job_slugs; ?>">Link</a>
+   </label<br><br>   <a href="<?php echo base_url(); ?>job/show/'. $v_companyjobs['job_slugs'].'">Link</a>
     <br><br>Thanks,<br><br>Team TheOcean<br><br>Copyright © 2020 TheOcean, All rights reserved.
 </td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
 
