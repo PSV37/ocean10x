@@ -3255,7 +3255,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                         // print_r($this->db->last_query());die;
                         if (empty($job_apply_data)) {
                             $apply = $this->Master_model->($apply_array, 'job_apply');
-                            $frwd_array = array('cv_id' => $cv_id, 'company_id' => $company_id, 'job_post_id' => $job_post_id, 'apply_id' => $apply, 'status' => 1, 'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),);master_insert
+                            $frwd_array = array('cv_id' => $cv_id, 'company_id' => $company_id, 'job_post_id' => $job_post_id, 'apply_id' => $apply, 'status' => 1, 'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),);
                             $frwd = $this->Master_model->master_insert($frwd_array, 'forwarded_jobs_cv');
                             $external_array = array('cv_id' => $cv_id, 'company_id' => $employer_id, 'job_post_id' => $job_post_id, 'apply_id' => $apply, 'status' => 1, 'company_id' => $company_id, 'name' => $this->input->post('candidate_name'), 'email' => $this->input->post('candidate_email'), 'mobile' => $this->input->post('candidate_phone'), 'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),);
                             $frwd = $this->Master_model->master_insert($external_array, 'external_tracker');
