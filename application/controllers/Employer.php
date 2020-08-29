@@ -1382,8 +1382,127 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                        
                      
                         $subject = $require['company_name'].' has invited you to apply for a New Job Post ';
-                        $message = 'hi
-                                ';
+                        $message = '
+                                <style>
+  .card div {border-radius:0px !important;}    
+  .following-info{margin-bottom:10px;}
+  .following-info2{margin-bottom:10px;}   
+  .following-info3{margin-bottom:10px; margin-top: -154px;}
+  li.left-title {
+  list-style-type: none;
+  float: left;
+  font-size: 12px;
+  font-weight: 100;
+  width: 83px;
+  height: 15px;
+  }
+  li.right-title {
+  list-style-type: none;
+  font-size: 12px;
+  font-weight: 100;
+  width: 179px;
+  }
+</style>
+<div style="max-width:600px!important;padding:4px">
+  <table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0">
+    <tbody>
+      <tr>
+        <td align="center">
+          <table width="100%" cellspacing="0" border="0">
+            <tbody>
+              <tr>
+                <td style="font-size:0px;text-align:left" valign="top"></td>
+              </tr>
+            </tbody>
+          </table>
+          <table width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left">
+                <td>
+                  <a href="#"><img src="' . base_url() . 'upload/' . $require['company_logo'] . '" style="height: 50px;"> </a>
+                  <br><br>Hi ' . $email_name[0] . ',<br>' . $job_desc . '<br/><br/><em><b>
+                  <div class="card">
+                    <div class="front">
+                      <div class="job-info">
+                        <p class="job_title">'. $require['job_title'].'</p>
+                      </div>
+                      <div class="icon-info">
+                        <li class="left-icon-title"><i class="fas fa-map-marker-alt"></i></li>
+                        <li class="right-icon-title"> &emsp;'.$require['city_id'].'</li>
+                        <li class="left-icon-title"><i class="fas fa-briefcase"></i></li>
+                        <li class="right-title" style="width:100%;"> &emsp;'.$require['experience'].'(experience)</li>
+                        <div class="clear"></div>
+                      </div>
+                      <div class="following-info">
+                        <li class="left-title"
+                          >Job Roll</li>
+                        <li class="right-title">&nbsp;: '.$require['job_role_title'].'</li>
+                        <li class="left-title">Engagement</li>
+                        <li class="right-title">&nbsp;: '.$require['job_nature_name'].'</li>
+                        <li class="left-title">Domain</li>
+                        <li class="right-title">&nbsp;:'.$require['job_category_name'].'</li>
+                        <!--  <li class="left-title">Role Type </li><li class="right-title">&nbsp;:</li>
+                          <li class="left-title">Dummy1</li>
+                          <li class="right-title">&nbsp;:</li>
+                          <!--  <li class="left-title">Dummy2</li><li class="right-title">&nbsp;:</li> -->
+                        <div class="clear"></div>
+                      </div>
+                      <div class="following-info2">
+                        <li class="left-title">Education</li>
+                        <li class="right-title">&nbsp;: '.$require['education_level_name'].'</li>
+                        <li class="left-title">experience</li>
+                        <li class="right-title">&nbsp;:'.$require['experience'].'</li>
+                        <li class="left-title">CTC</li>
+                        <li class="right-title">&nbsp;:'.$require['salary_range'].'</li>
+                        <li class="left-title">Vacancies</li>
+                        <li class="right-title">&nbsp;: '.$require['no_jobs'].'</li>
+                      
+                        <div class="clear"></div>
+                      </div>
+                      <div class="following-info3">
+                        <li class="left-title">JD attached&nbsp;<i class="fas fa-link"></i></li>
+                        <li class="right-title">&nbsp;: ';
+                          if (isset($require['jd_file']) && !empty($require['jd_file'])) { 
+                          $message.= 'Yes <a style="margin-left: 15px" href="'. base_url().'upload/job_description/' .$require['jd_file'].'" download><i class="fa fa-download" aria-hidden="true"></i></a> ';
+                          } else 
+                          { 
+                          $message.= "No";} '
+                        </li>
+                        <li class="left-title">Ocean Test</li>
+                        <li class="right-title">&nbsp;:'.$require['is_test_required'] .'</li>
+                        <li class="left-title">Published on</li>
+                        <li class="right-title">&nbsp;:';
+                          if(!is_null($require['created_at'])) {    
+                          $message.= date('M j Y',strtotime($require->created_at)); }'
+                        </li>
+                        <li class="left-title">Job expiry</li>
+                        <li class="right-title">&nbsp;:';
+                          if(!is_null($require['job_deadline'])) {   
+                          $message.= date('M j Y',strtotime($require['job_deadline'])); }'
+                        </li>
+                        <div class="clear"></div>
+                      </div>
+                      <!-- <div id="skills"> -->
+                      <span>Skill sets</span>:
+                      
+                      
+                  </div>
+                  </label<br><br>   <a href="'.base_url().'job/show/'. $v_companyjobs['job_slugs'].'">Link</a>
+                  <br><br>Thanks,<br><br>Team TheOcean<br><br>
+                </td>
+              </tr>
+              <tr>
+                <td height="40"></td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+';
+  
                         $send = sendEmail_JobRequest($email[$i], $message, $subject);
                         //echo $send;
                         // echo $message;
