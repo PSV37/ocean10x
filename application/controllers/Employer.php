@@ -1599,7 +1599,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             // print_r($this->db->last_query());die;
             $this->load->view('fontend/employer/qb_test_card.php', $data);
         }
-    }
+    
     public function add_to_test() {
 
         $this->session->unset_userdata('submenu');
