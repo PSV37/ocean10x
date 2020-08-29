@@ -66,6 +66,7 @@ public function check_forgot_user_info($email)
             $config['charset'] = "utf-8";
             $config['mailtype'] = "html";
             $config['newline'] = "\r\n";
+            $email = explode('@', $to_email);
 
             $message='<div style="max-width:600px!important;padding:4px">
   <table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0">
@@ -83,13 +84,14 @@ public function check_forgot_user_info($email)
               <tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left">
                 <td><br>
                   <br>
-                  Hello Dear,<br>
-                  Please click on link below to reset your password: <br>
+                  Hi '. $email[0].',<br><br>
+                  We have received a forgot password request for your account. Click on the below link to change your password. <br><br>
                   
                <a style="border-radius:4px;font-size:15px;color:white;text-decoration:none;padding:14px 7px 14px 7px;width:210px;max-width:210px;font-family:&quot;Open Sans&quot;,&quot;Helvetica Neue&quot;,Arial;margin:0;display:block;background-color:#6caa4d;text-align:center" href="'.base_url().'employer_login/reset_password/' . md5($to_email) . '">Reset Password</a>
                   <br>
                   <br>
-                  © 2017 ConsultnHire All Rights Reserved.</td>
+                  In case you have not requested for a password change, then kindly contact our Customer Care team on cc@theocean.com immediately.<br> <br> <br>
+                  Regards,<br> <br>Team TheOcean.</td>
               </tr>
               <tr>
                 <td height="40"></td>
@@ -106,7 +108,7 @@ public function check_forgot_user_info($email)
             $ci->email->from('info@consultnhire.com', 'ConsultnHire');
             $ci->email->to($to_email);
             $ci->email->reply_to('info@consultnhire.com', 'Vorerpata Mail');
-            $ci->email->subject('Account Recovery');
+            $ci->email->subject('TheOcean Password reset request.');
             $ci->email->message($message);
             $ci->email->send(FALSE);
           //  $ci->email->print_debugger(array('headers'));
