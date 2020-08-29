@@ -108,7 +108,7 @@ class Employer extends MY_Employer_Controller {
                     'country_id' => $this->input->post('country_id'), 
                     'state_id' => $this->input->post('state_id'), 
                     'city_id' => $this->input->post('city_id'), 
-                    'company_pincode' => $this->input->post('company_pincode'), 
+                    'company_pincode' => $thiss->input->post('company_pincode'), 
                     'company_aboutus' => $this->input->post('company_aboutus'), 
                     'cont_person_level' => 'Admin', 
                     'alternate_email_id' => $this->input->post('alternate_email_id'), 
@@ -2096,15 +2096,21 @@ public function randomly_create_oceantest()
                 $this->Master_model->master_insert($data, 'employee');
                 $company_name = $this->session->userdata('company_name');
 
-                $data1 = array('company' => $company_name, 'action_taken_for' => $this->input->post('emp_name'), 'field_changed' => 'Added new Employee', 'Action' => 'Added ' . $this->input->post('emp_name') . ' As an Employee.', 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
-                $result = $this->Master_model->master_insert($data1, 'employer_audit_record');
+
+                $data = array('company' => $company_name, 'action_taken_for' => $this->input->post('emp_name'), 'field_changed' => 'Added new Employee', 'Action' => 'Added ' . $this->input->post('emp_name') . ' As an Employee.', 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
+                $result = $this->Master_model->master_insert($data, 'employer_audit_record');
                 $this->session->set_flashdata('success', '<div class="alert alert-success text-center">New CV added sucessfully!</div>');
+
+
+                //$data1 = array('company' => $company_name, 'action_taken_for' => $this->input->post('emp_name'), 'field_changed' => 'Added new Employee', 'Action' => 'Added ' . $this->input->post('emp_name') . ' As an Employee.', 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
+                //$result = $this->Master_model->master_insert($data1, 'employer_audit_record');
 
 
                 $comp_name = $this->session->userdata('company_name');
                 $to_email = $this->input->post('email');
                 $pass = $this->input->post('password');
                 $subject = "Registration done successfully";
+
                 $message = '<div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
 <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
 <br><br>Hi Dear,<br>Your account has been created successfully by ' . $comp_name . ' <br><br>You can login to our portal using following credentials<br>
