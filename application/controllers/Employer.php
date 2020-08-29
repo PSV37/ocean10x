@@ -1380,12 +1380,10 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                     }
                     if ($apply) {
                         $email_name = explode('@', $email[$i]);
-                       
-                     
-                        $subject = $require['company_name'].' has invited you to apply for a New Job Post ';
+                        $subject = $require['company_name'].'has invited you to apply for a New Job Post ';
                         $message = '
                                 <style>
- 
+  .card div {border-radius:0px !important;}    
   .following-info{margin-bottom:10px;}
   .following-info2{margin-bottom:10px;}   
   .following-info3{margin-bottom:10px; margin-top: -154px;}
@@ -1457,14 +1455,17 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                         <li class="right-title">&nbsp;:'.$require['salary_range'].'</li>
                         <li class="left-title">Vacancies</li>
                         <li class="right-title">&nbsp;: '.$require['no_jobs'].'</li>
-                      
+                        <!-- <li class="left-title">Specialization</li><li class="right-title">&nbsp;:'.$require['education_specialization'].'</li> -->
+                        <!--  <li class="left-title">Joining ETA</li><li class="right-title">&nbsp;:30 days</li> -->
+                        <!--  <li class="left-title">Benifits</li><li class="right-title">&nbsp;:'.$require->benefits.' </li> -->
+                        <!--   <li class="left-title">Dummy3</li><li class="right-title">&nbsp;:value</li> -->
                         <div class="clear"></div>
                       </div>
                       <div class="following-info3">
                         <li class="left-title">JD attached&nbsp;<i class="fas fa-link"></i></li>
                         <li class="right-title">&nbsp;: ';
-                          if (isset($require['jd_file']) && !empty($require['jd_file'])) { 
-                          $message.= 'Yes <a style="margin-left: 15px" href="'. base_url().'upload/job_description/' .$require['jd_file'].'" download><i class="fa fa-download" aria-hidden="true"></i></a> ';
+                          if (isset($require->jd_file) && !empty($require->jd_file)) { 
+                          $message.= 'Yes <a style="margin-left: 15px" href="'. base_url().'upload/job_description/' .$require->jd_file.'" download><i class="fa fa-download" aria-hidden="true"></i></a> ';
                           } else 
                           { 
                           $message.= "No";} '
@@ -1473,7 +1474,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                         <li class="right-title">&nbsp;:'.$require['is_test_required'] .'</li>
                         <li class="left-title">Published on</li>
                         <li class="right-title">&nbsp;:';
-                          if(!is_null($require['created_at'])) {    
+                          if(!is_null($require->created_at)) {    
                           $message.= date('M j Y',strtotime($require->created_at)); }'
                         </li>
                         <li class="left-title">Job expiry</li>
@@ -1484,7 +1485,8 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                         <div class="clear"></div>
                       </div>
                       <!-- <div id="skills"> -->
-                      <span>Skill sets</span>:';
+                      <span>Skill sets</span>:
+                      ';
                       $sk=$require['skills_required'];
                       if (isset($sk) && !empty($sk)) {
                       $where_sk= "id IN (".$sk.") AND status=1";
@@ -1497,9 +1499,28 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                       ';
                       }
                       } }   
-                      
-                   $message.='</div>
-                  </label<br><br>   <a href="'.base_url().'job/show/'. $v_companyjobs['job_slugs'].'">Link</a>
+                      $message.='<br>
+                      <span>Benefits</span>:';
+                      $benefits=explode(',', $require['benefits']);
+                      if(!empty($benefits)){ 
+                      $i=0;
+                      foreach($benefits as $benefit){ 
+                      $message.='
+                      <lable class=""><button id="sklbtn">'. $benefits[$i].'</button></lable>
+                      ';
+                      $i++; }
+                      } if ($require'job_deadline'] > date('Y-m-d')){
+                      // echo '<button class="btn btn-success btn-xs">Live <i class="fa fa-check-circle" aria-hidden="true"></i></button>';
+                      $message.='<span class="active-span">Active</span>';
+                      }
+                      else {
+                      // echo'<button class="btn btn-danger btn-xs">Expired <i class="fa fa-times" aria-hidden="true"></i></button> ';
+                      $message.= '<span class="pasive-span">Expired</span>';
+                      } 
+                      $message.='
+                    </div>
+                  </div>
+                  </label<br><br>   <a href="'.base_url().'job/show/'. $require['job_slugs'].'">Link</a>
                   <br><br>Thanks,<br><br>Team TheOcean<br><br>
                 </td>
               </tr>
@@ -1514,7 +1535,6 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
   </table>
 </div>
 ';
-  
                         $send = sendEmail_JobRequest($email[$i], $message, $subject);
                         //echo $send;
                         // echo $message;
@@ -2347,13 +2367,15 @@ public function randomly_create_oceantest()
                 $data = array('company' => $company_name, 'action_taken_for' => $this->input->post('emp_name'), 'field_changed' => 'Added new Employee', 'Action' => 'Added ' . $this->input->post('emp_name') . ' As an Employee.', 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
                 $result = $this->Master_model->master_insert($data, 'employer_audit_record');
                 
-
+               
+                
                 $data1 = array('company' => $company_name, 'action_taken_for' => $this->input->post('emp_name'), 'field_changed' => 'Added new Employee', 'Action' => 'Added ' . $this->input->post('emp_name') . ' As an Employee.', 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
                 $result = $this->Master_model->master_insert($data1, 'employer_audit_record');
 
+
                 $this->session->set_flashdata('success', '<div class="alert alert-success text-center">New CV added sucessfully!</div>');
 
-
+                redirect('employer/corporate_cv_bank');
                 $comp_name = $this->session->userdata('company_name');
                 $to_email = $this->input->post('email');
                 $pass = $this->input->post('password');
@@ -2367,7 +2389,7 @@ Password: ' . $pass . '<br>
 <a href="https://www.consultnhire.com/employee_login" class="btn btn-primary" value="Login" align="center" target="_blank">Login Now</a>
 Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out how works and our support team are ready to help.<br><br>© 2017 ConsultnHire All Rights Reserved.<br><br>You have received this mail because your e-mail ID is registered with Consultnhire.com. This is a system-generated e-mail regarding your Consultnhire account preferences, please do not reply to this message. The jobs sent in this mail have been posted by the clients of Consultnhire.com. And we have enabled auto-login for your convenience, you are strongly advised not to forward this email to protect your account from unauthorized access. IEIL has taken all reasonable steps to ensure that the information in this mailer is authentic. Users are advised to research bonafides of advertisers independently. Please do not pay any money to anyone who promises to find you a job. IEIL shall not have any responsibility in this regard. We recommend that you visit our Terms & Conditions and the Security Advice for more comprehensive information.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
                 $send = sendEmail_JobRequest($to_email, $message, $subject);
-                redirect(base_url() . 'employer/employee_management');
+                redirect(base_url() . 'employer/allemployee');
             }
         }
         $c_id = $this->input->get('id');
