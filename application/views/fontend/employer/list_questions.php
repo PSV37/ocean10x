@@ -837,7 +837,7 @@ span.select2-selection.select2-selection--single {
    .input-group-btn:last-child>.btn{background-color:#18c5bd;
    color:#fff;}
    button.btn.btn-primary {
-   float: right;
+   /*float: right;*/
    background-color: #18c5bd;
    border: none;
    border-radius: 35px;
@@ -1281,12 +1281,14 @@ span.select2-selection.select2-selection--single {
                                <div class="row">
                                  <div class="col-md-6"></div>
                                  <div class="col-md-6">
-                               
+                                    <div class="col-md-3">
                                        <button class="btn btn-primary" type="reset">Discard</button>
-                                  
-                                   
+                                    </div>
+                                    <div class="col-md-3" style="margin-left: 20;">
+                                       
                                        <button style="margin-left: 20;" class="btn btn-primary" type="submit">Create</button>
-                                 
+                                    </div>
+                                   
                                  </div>
                               </div>
                            </form>
