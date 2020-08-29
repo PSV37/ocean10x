@@ -1639,7 +1639,10 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                 // $test_data['final_result'] = $this->input->post('display_result');
                 $test_data['created_by'] = $this->session->userdata('company_profile_id');
                 $test_data['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
-                $this->Master_model->master_insert($test_data, 'oceanchamp_tests');
+                $result = $this->Master_model->master_insert($test_data, 'oceanchamp_tests');
+                if ($result) {
+                    $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Test Created Successfully</div>');
+                }
             }
         } elseif (isset($test_id) && !empty($test_id)) {
             $where['test_id'] = $test_id;
@@ -1666,7 +1669,10 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             $test_data['total_questions'] = sizeof($new_arr);
             $test_data['test_duration'] = array_sum($new_arr_test_duration);
             $test_data['updated_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
-            $this->Master_model->master_update($test_data, 'oceanchamp_tests', $where);
+            $result = $this->Master_model->master_update($test_data, 'oceanchamp_tests', $where);
+            if ($result) {
+                    $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Test Updated Successfully</div>');
+                }
         }
         redirect('employer/all_questions');
     }
