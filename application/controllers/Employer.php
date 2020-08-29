@@ -489,10 +489,20 @@ class Employer extends MY_Employer_Controller {
                 }
                 // print_r($job_info);
                 if (empty($job_post_id)) {
-                    $this->job_posting_model->insert($job_info);
+                    $job_id = $this->job_posting_model->insert($job_info);
                     $company_name = $this->session->userdata('company_name');
                     $data = array('company' => $company_name, 'action_taken_for' => $company_name, 'field_changed' => 'Posted A new Job', 'Action' => 'Posted A new  Job ', 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
                     $result = $this->Master_model->master_insert($data, 'employer_audit_record');
+                    $where_job = "job_post_id = '$job_id'";
+                    $join_job =array('job_nature'=>'job_nature.job_nature_id=job_posting.job_nature',
+                        'job_category'=>'job_category.job_category_id=job_posting.job_category',
+                        'job_role'=>'job_role.id=job_posting.job_role',
+                        'education_level'=>'education_level.education_level_id=job_posting.job_edu'
+
+                );
+                    $job_details = $this->Master_model->get_master_row('job_posting', $select = FALSE, $where = $where_job, $join = $join_job)
+                    $to_email = $this->session->userdata('email');
+                    $this->company_profile_model->sendjobEmail($to_email,$job_details);
                     $this->session->set_flashdata('success', '<div class="alert alert-success alert-dismissable">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
                   New Job Posted Succcessfully! 
@@ -2084,8 +2094,8 @@ public function randomly_create_oceantest()
                 $data['emp_created_date'] = date('Y-m-d H:i:s');
                 $this->Master_model->master_insert($data, 'employee');
                 $company_name = $this->session->userdata('company_name');
-                $data = array('company' => $company_name, 'action_taken_for' => $this->input->post('emp_name'), 'field_changed' => 'Added new Employee', 'Action' => 'Added ' . $this->input->post('emp_name') . ' As an Employee.', 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
-                $result = $this->Master_model->master_insert($data, 'employer_audit_record');
+                $data1 = array('company' => $company_name, 'action_taken_for' => $this->input->post('emp_name'), 'field_changed' => 'Added new Employee', 'Action' => 'Added ' . $this->input->post('emp_name') . ' As an Employee.', 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
+                $result = $this->Master_model->master_insert($data1, 'employer_audit_record');
                 $comp_name = $this->session->userdata('company_name');
                 $to_email = $this->input->post('email');
                 $pass = $this->input->post('password');
