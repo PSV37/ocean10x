@@ -138,18 +138,26 @@ class Company_Profile_Model extends MY_Model
             </div>
             <div class="following-info3">
                <li class="left-title">JD attached&nbsp;<i class="fas fa-link"></i></li>
-               <li class="right-title">&nbsp;: 'if (isset($v_companyjobs->jd_file) && !empty($v_companyjobs->jd_file)) { echo "Yes".'  <a style="margin-left: 15px" href="'. base_url('upload/job_description/' .$v_companyjobs->jd_file.'" download><i class="fa fa-download" aria-hidden="true"></i></a> ' } else { echo "No";} '</li>
+               <li class="right-title">&nbsp;: ';
+                if (isset($v_companyjobs->jd_file) && !empty($v_companyjobs->jd_file)) { 
+                       $message.= "Yes".'  <a style="margin-left: 15px" href="'. base_url('upload/job_description/' .$v_companyjobs->jd_file.'" download><i class="fa fa-download" aria-hidden="true"></i></a> ';
+                        } else 
+                        { 
+                              $message.= "No";} '</li>
                <li class="left-title">Ocean Test</li>
                <li class="right-title">&nbsp;:'.$v_companyjobs->is_test_required .'</li>
                <li class="left-title">Published on</li>
-               <li class="right-title">&nbsp;:'if(!is_null($v_companyjobs->created_at)) { echo date('M j Y',strtotime($v_companyjobs->created_at)); }'</li>
+               <li class="right-title">&nbsp;:';
+               if(!is_null($v_companyjobs->created_at)) {    
+                $message.= date('M j Y',strtotime($v_companyjobs->created_at)); }'</li>
                <li class="left-title">Job expiry</li>
-               <li class="right-title">&nbsp;:'if(!is_null($v_companyjobs->job_deadline)) { echo date('M j Y',strtotime($v_companyjobs->job_deadline)); }'</li>
+               <li class="right-title">&nbsp;:';
+               if(!is_null($v_companyjobs->job_deadline)) {   $message.= date('M j Y',strtotime($v_companyjobs->job_deadline)); }'</li>
                <div class="clear"></div>
             </div>
             <!-- <div id="skills"> -->
             <span>Skill sets</span>:
-           '
+           ';
                $sk=$v_companyjobs->skills_required;
                if (isset($sk) && !empty($sk)) {
                   $where_sk= "id IN (".$sk.") AND status=1";
@@ -157,17 +165,17 @@ class Company_Profile_Model extends MY_Model
                 $skills = $this->Master_model->getMaster('skill_master',$where_sk,$join = FALSE, $order = false, $field = false, $select_sk,$limit=10,$start=false, $search=false);
                 if(!empty($skills)){ 
                   foreach($skills as $skill_row){ ?>
-            '<lable class=""><button id="sklbtn">'.$skill_row['skill_name'].'</button></lable>'
+               $message.='<lable class=""><button id="sklbtn">'.$skill_row['skill_name'].'</button></lable>';
              }
                } }   
-            '<br>
-            <span>Benefits</span>:'
+               $message.='<br>
+            <span>Benefits</span>:';
                $benefits=explode(',', $v_companyjobs->benefits);
                
                 if(!empty($benefits)){ 
                   $i=0;
                   foreach($benefits as $benefit){ ?>
-            '<lable class=""><button id="sklbtn">'. $benefits[$i].'</button></lable>'
+               $message.='<lable class=""><button id="sklbtn">'. $benefits[$i].'</button></lable>';
            $i++; }
                } '
             <!--  <div class="clear"></div>
@@ -175,12 +183,13 @@ class Company_Profile_Model extends MY_Model
        
             'if ($v_companyjobs->job_deadline > date('Y-m-d')){
                // echo '<button class="btn btn-success btn-xs">Live <i class="fa fa-check-circle" aria-hidden="true"></i></button>';
-               echo '<span class="active-span">Active</span>';
+                  $message.='<span class="active-span">Active</span>';
                }
                else {
                // echo'<button class="btn btn-danger btn-xs">Expired <i class="fa fa-times" aria-hidden="true"></i></button> ';
-               echo '<span class="pasive-span">Expired</span>';
-               } '
+                  $message.= '<span class="pasive-span">Expired</span>';
+               } 
+                  $message.='
             
          </div>
       </div>
