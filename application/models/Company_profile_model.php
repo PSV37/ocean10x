@@ -184,8 +184,7 @@ class Company_Profile_Model extends MY_Model
             
          </div>
       </div>
-   </label<br><br>You can confirm your e-mail by clicking the button below.<br><br><a style="border-radius:4px;font-size:15px;color:white;text-decoration:none;padding:14px 7px 14px 7px;width:210px;max-width:210px;font-family:&quot;Open Sans&quot;,&quot;Helvetica Neue&quot;,Arial;margin:0;display:block;background-color:#6caa4d;text-align:center" href="' . base_url() . 'employer_register/verify/' . md5($to_email) . '">Activate Account</a><br><br>Alternatively, copy paste and open the link in your browser.<br><br>
-    <a href="'. base_url() . 'employer_register/verify/' . md5($to_email) .' ">'. base_url() . 'employer_register/verify/' . md5($to_email) .'</a>
+   </label<br><br>   <a href="<?php echo base_url(); ?>job/show/<?php echo $v_companyjobs->job_slugs; ?>">Link</a>
     <br><br>Thanks,<br><br>Team TheOcean<br><br>Copyright © 2020 TheOcean, All rights reserved.
 </td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
 
