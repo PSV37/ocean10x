@@ -192,8 +192,8 @@ class Company_Profile_Model extends MY_Model
             
          </div>
       </div>
-   </label<br><br>   <a href="<?php echo base_url(); ?>job/show/'. $v_companyjobs['job_slugs'].'">Link</a>
-    <br><br>Thanks,<br><br>Team TheOcean<br><br>Copyright © 2020 TheOcean, All rights reserved.
+   </label<br><br>   <a href="'.base_url().'job/show/'. $v_companyjobs['job_slugs'].'">Link</a>
+    <br><br>Thanks,<br><br>Team TheOcean<br><br>
 </td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
 
 

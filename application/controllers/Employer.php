@@ -2096,18 +2096,21 @@ public function randomly_create_oceantest()
                 $this->Master_model->master_insert($data, 'employee');
                 $company_name = $this->session->userdata('company_name');
 
+
                 $data = array('company' => $company_name, 'action_taken_for' => $this->input->post('emp_name'), 'field_changed' => 'Added new Employee', 'Action' => 'Added ' . $this->input->post('emp_name') . ' As an Employee.', 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
                 $result = $this->Master_model->master_insert($data, 'employer_audit_record');
                 $this->session->set_flashdata('success', '<div class="alert alert-success text-center">New CV added sucessfully!</div>');
 
 
-                $data1 = array('company' => $company_name, 'action_taken_for' => $this->input->post('emp_name'), 'field_changed' => 'Added new Employee', 'Action' => 'Added ' . $this->input->post('emp_name') . ' As an Employee.', 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
-                $result = $this->Master_model->master_insert($data1, 'employer_audit_record');
+                //$data1 = array('company' => $company_name, 'action_taken_for' => $this->input->post('emp_name'), 'field_changed' => 'Added new Employee', 'Action' => 'Added ' . $this->input->post('emp_name') . ' As an Employee.', 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
+                //$result = $this->Master_model->master_insert($data1, 'employer_audit_record');
+
 
                 $comp_name = $this->session->userdata('company_name');
                 $to_email = $this->input->post('email');
                 $pass = $this->input->post('password');
                 $subject = "Registration done successfully";
+
                 $message = '<div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
 <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
 <br><br>Hi Dear,<br>Your account has been created successfully by ' . $comp_name . ' <br><br>You can login to our portal using following credentials<br>
@@ -3257,8 +3260,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                         job_apply', $select = FALSE, $whereres);
                         // print_r($this->db->last_query());die;
                         if (empty($job_apply_data)) {
-                            $apply = $this->Master_model->($apply_array, 'job_apply');
-                            $frwd_array = array('cv_id' => $cv_id, 'company_id' => $company_id, 'job_post_id' => $job_post_id, 'apply_id' => $apply, 'status' => 1, 'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),);master_insert
+                            $apply = $this->Master_model->master_insert($apply_array, 'job_apply');
+                            $frwd_array = array('cv_id' => $cv_id, 'company_id' => $company_id, 'job_post_id' => $job_post_id, 'apply_id' => $apply, 'status' => 1, 'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),);
                             $frwd = $this->Master_model->master_insert($frwd_array, 'forwarded_jobs_cv');
                             $external_array = array('cv_id' => $cv_id, 'company_id' => $employer_id, 'job_post_id' => $job_post_id, 'apply_id' => $apply, 'status' => 1, 'company_id' => $company_id, 'name' => $this->input->post('candidate_name'), 'email' => $this->input->post('candidate_email'), 'mobile' => $this->input->post('candidate_phone'), 'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),);
                             $frwd = $this->Master_model->master_insert($external_array, 'external_tracker');
