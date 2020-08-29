@@ -2341,11 +2341,7 @@ public function randomly_create_oceantest()
 
                 $this->session->set_flashdata('success', '<div class="alert alert-success text-center">New CV added sucessfully!</div>');
 
-<<<<<<< HEAD
-                $this->session->set_flashdata('success', '<div class="alert alert-success text-center">New CV added sucessfully!</div>');
 
-=======
->>>>>>> a78bcbaa34af5d71ca11bc664ba61be6faa72857
                 $comp_name = $this->session->userdata('company_name');
                 $to_email = $this->input->post('email');
                 $pass = $this->input->post('password');
