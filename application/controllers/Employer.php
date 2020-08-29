@@ -1174,6 +1174,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                     if ($apply) {
                         $email_name = explode('@', $email[$i]);
                         $subject = $require['company_name'].'has invited you to apply for a New Job Post ';
+
                         $message = '
                                 <style>
   .card div {border-radius:0px !important;}    
@@ -1212,7 +1213,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
               <tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left">
                 <td>
                   <a href="#"><img src="' . base_url() . 'upload/' . $require['company_logo'] . '" style="height: 50px;"> </a>
-                  <br><br>Hi ' . $email_name[0] . ',<br>' . $job_desc . '<br/><br/><em><b>
+                  <br><br>Hi ' . $email_name[0] . ',<br>' . $job_desc . '<br/><br/>A new job post invitation has been sent to you by '.$require['company_name'].' . Details of this job post are as follows:-<em><b>
                   <div class="card">
                     <div class="front">
                       <div class="job-info">
@@ -1418,7 +1419,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
               <tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left">
                 <td>
                   <a href="#"><img src="' . base_url() . 'upload/' . $require['company_logo'] . '" style="height: 50px;"> </a>
-                  <br><br>Hi ' . $email_name[0] . ',<br>' . $job_desc . '<br/><br/><em><b>
+                  <br><br>Hi ' . $email_name[0] . ',<br>' . $job_desc . '<br/><br/>A new job post invitation has been sent to you by '.$require['company_name'].' . Details of this job post are as follows:-<em><b>
                   <div class="card">
                     <div class="front">
                       <div class="job-info">
