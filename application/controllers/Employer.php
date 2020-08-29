@@ -2160,8 +2160,8 @@ public function randomly_create_oceantest()
     /*Add Employee*/
     public function addemployee() {
         $this->session->unset_userdata('activemenu');
-        $data['activemenu'] = 'addemployee';
-        $this->session->set_userdata($data);
+        $session_data['activemenu'] = 'addemployee';
+        $this->session->set_userdata($session_data);
         $user_id = $this->session->userdata('company_profile_id');
         if (isset($_POST['submit_employee'])) {
             $this->form_validation->set_rules('Password', 'password', 'required|max_length[15]|min_length[8]|regex_match[/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/]');
