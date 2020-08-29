@@ -29,7 +29,7 @@
       <?php $this->load->view('fontend/layout/employer_left.php'); ?>
       <div class="content col-md-9">
         <div class="userccount empdash">
-          <div class="formpanel"> <?php echo $this->session->flashdata('success'); ?>
+          <div id="smsg"> class="formpanel"> <?php echo $this->session->flashdata('success'); ?></div>
            
         <form method="post" action="<?php echo base_url();?>employer/addemployee" enctype="multipart/form-data">
 
@@ -190,6 +190,13 @@
 </div>
 <!-- end section --> 
 </div>
+<script>
+   $(document).ready (function(){
+     $("#smsg").fadeTo(2000, 500).slideUp(500, function(){
+     $("#smsg").slideUp(500);
+     });   
+   });
+</script>
 <script type="text/javascript" src="<?php echo base_url(); ?>asset/js/tinymce/tinymce.min.js"></script> 
 <script type="text/javascript">
 document.getElementsByClassName('form-control').innerHTML+="<br />";
