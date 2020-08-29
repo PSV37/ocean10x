@@ -1381,26 +1381,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                         $email_name = explode('@', $email[$i]);
                         $subject = $require['company_name'].'has invited you to apply for a New Job Post ';
                         $message = '
-                                <style>
-  .card div {border-radius:0px !important;}    
-  .following-info{margin-bottom:10px;}
-  .following-info2{margin-bottom:10px;}   
-  .following-info3{margin-bottom:10px; margin-top: -154px;}
-  li.left-title {
-  list-style-type: none;
-  float: left;
-  font-size: 12px;
-  font-weight: 100;
-  width: 83px;
-  height: 15px;
-  }
-  li.right-title {
-  list-style-type: none;
-  font-size: 12px;
-  font-weight: 100;
-  width: 179px;
-  }
-</style>
+                                
 <div style="max-width:600px!important;padding:4px">
   <table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0">
     <tbody>
