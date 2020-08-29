@@ -89,10 +89,7 @@ class Company_Profile_Model extends MY_Model
             $config['mailtype'] = "html";
             $config['newline'] = "\r\n";
 
-        $message = '<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/post_new_job.css"><style> .following-info{margin-bottom:10px;}
-   .following-info2{margin-bottom:10px;}   
-   .following-info3{margin-bottom:10px; margin-top: -154px;}
-   </script>
+        $message = '
 
    <div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
 <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
