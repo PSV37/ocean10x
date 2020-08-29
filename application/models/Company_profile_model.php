@@ -90,6 +90,26 @@ class Company_Profile_Model extends MY_Model
             $config['newline'] = "\r\n";
 
         $message = '
+        <style> .card div {border-radius:0px !important;}    
+   .following-info{margin-bottom:10px;}
+   .following-info2{margin-bottom:10px;}   
+   .following-info3{margin-bottom:10px; margin-top: -154px;}
+   li.left-title {
+    list-style-type: none;
+    float: left;
+    font-size: 12px;
+    font-weight: 100;
+    width: 83px;
+    height: 15px;
+}
+li.right-title {
+    list-style-type: none;
+    font-size: 12px;
+    font-weight: 100;
+    width: 179px;
+}
+                                
+                                </style>
 
    <div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
 <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
@@ -161,7 +181,7 @@ class Company_Profile_Model extends MY_Model
             <!-- <div id="skills"> -->
             <span>Skill sets</span>:
            ';
-               $sk=$v_companyjobs->skills_required;
+               $sk=$v_companyjobs['skills_required'];
                if (isset($sk) && !empty($sk)) {
                   $where_sk= "id IN (".$sk.") AND status=1";
                 $select_sk = "skill_name ,id";
@@ -173,7 +193,7 @@ class Company_Profile_Model extends MY_Model
                } }   
                $message.='<br>
             <span>Benefits</span>:';
-               $benefits=explode(',', $v_companyjobs->benefits);
+               $benefits=explode(',', $v_companyjobs['benefits']);
                
                 if(!empty($benefits)){ 
                   $i=0;
