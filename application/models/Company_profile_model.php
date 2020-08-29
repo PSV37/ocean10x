@@ -164,7 +164,7 @@ class Company_Profile_Model extends MY_Model
                 $select_sk = "skill_name ,id";
                 $skills = $this->Master_model->getMaster('skill_master',$where_sk,$join = FALSE, $order = false, $field = false, $select_sk,$limit=10,$start=false, $search=false);
                 if(!empty($skills)){ 
-                  foreach($skills as $skill_row){ ?>
+                  foreach($skills as $skill_row){ 
                $message.='<lable class=""><button id="sklbtn">'.$skill_row['skill_name'].'</button></lable>';
              }
                } }   
@@ -174,7 +174,7 @@ class Company_Profile_Model extends MY_Model
                
                 if(!empty($benefits)){ 
                   $i=0;
-                  foreach($benefits as $benefit){ ?>
+                  foreach($benefits as $benefit){ 
                $message.='<lable class=""><button id="sklbtn">'. $benefits[$i].'</button></lable>';
            $i++; }
                } '
