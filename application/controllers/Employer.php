@@ -490,10 +490,20 @@ class Employer extends MY_Employer_Controller {
                 }
                 // print_r($job_info);
                 if (empty($job_post_id)) {
-                    $this->job_posting_model->insert($job_info);
+                    $job_id = $this->job_posting_model->insert($job_info);
                     $company_name = $this->session->userdata('company_name');
                     $data = array('company' => $company_name, 'action_taken_for' => $company_name, 'field_changed' => 'Posted A new Job', 'Action' => 'Posted A new  Job ', 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
                     $result = $this->Master_model->master_insert($data, 'employer_audit_record');
+                    $where_job = "job_post_id = '$job_id'";
+                    $join_job =array('job_nature'=>'job_nature.job_nature_id=job_posting.job_nature',
+                        'job_category'=>'job_category.job_category_id=job_posting.job_category',
+                        'job_role'=>'job_role.id=job_posting.job_role',
+                        'education_level'=>'education_level.education_level_id=job_posting.job_edu'
+
+                );
+                    $job_details = $this->Master_model->get_master_row('job_posting', $select = FALSE, $where = $where_job, $join = $join_job);
+                    $to_email = $this->session->userdata('email');
+                    $this->company_profile_model->sendjobEmail($to_email,$job_details);
                     $this->session->set_flashdata('success', '<div class="alert alert-success alert-dismissable">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
                   New Job Posted Succcessfully! 
@@ -1577,13 +1587,30 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $ques_type = $this->input->post('ques_type');
         $level = $this->input->post('level');
         if (!empty($subject)) {
-            $where_all = "questionbank.ques_status='1' AND ques_created_by='$employer_id' and questionbank.technical_id = '$subject' and questionbank.topic_id = '$topic_id' and questionbank.subtopic_id  = '$subtopic_id' and questionbank.ques_type = '$ques_type' and questionbank.level = '$level' AND time_for_question != '' ";
+            $where_all = "questionbank.ques_status='1' AND ques_created_by='$employer_id' and questionbank.technical_id = '$subject' AND time_for_question != ''";
+        }
+        if (!empty($topic_id)) {
+            $where_all .= " and questionbank.topic_id = '$topic_id'";
+        }
+        if (!empty($subtopic_id)) {
+            $where_all .= " and questionbank.subtopic_id = '$subtopic_id'";
+        }
+        if (!empty($level)) {
+            $where_all .= " and questionbank.level = '$level'";
+        }
+        if (!empty($ques_type)) {
+            $where_all .= " and questionbank.ques_type = '$ques_type'";
+        }
+
+
+
+             // and questionbank.topic_id = '$topic_id' and questionbank.subtopic_id  = '$subtopic_id' and questionbank.ques_type = '$ques_type' and questionbank.level = '$level'  ";
             $join_emp = array('skill_master' => 'skill_master.id=questionbank.technical_id |left outer', 'topic' => 'topic.topic_id=questionbank.topic_id |left outer', 'subtopic' => 'subtopic.subtopic_id=questionbank.subtopic_id |left outer', 'lineitem' => 'lineitem.lineitem_id=questionbank.lineitem_id |left outer', 'lineitemlevel' => 'lineitemlevel.lineitemlevel_id=questionbank.lineitemlevel_id |left outer', 'questionbank_answer' => 'questionbank_answer.question_id = questionbank.ques_id|LEFT OUTER');
             $data['questionbank'] = $this->Master_model->getMaster('questionbank', $where_all, $join_emp);
             // print_r($this->db->last_query());die;
             $this->load->view('fontend/employer/qb_test_card.php', $data);
         }
-    }
+    
     public function add_to_test() {
 
         $this->session->unset_userdata('submenu');
@@ -1623,7 +1650,10 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                 // $test_data['final_result'] = $this->input->post('display_result');
                 $test_data['created_by'] = $this->session->userdata('company_profile_id');
                 $test_data['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
-                $this->Master_model->master_insert($test_data, 'oceanchamp_tests');
+                $result = $this->Master_model->master_insert($test_data, 'oceanchamp_tests');
+                if ($result) {
+                    $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Test Created Successfully</div>');
+                }
             }
         } elseif (isset($test_id) && !empty($test_id)) {
             $where['test_id'] = $test_id;
@@ -1650,7 +1680,10 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             $test_data['total_questions'] = sizeof($new_arr);
             $test_data['test_duration'] = array_sum($new_arr_test_duration);
             $test_data['updated_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
-            $this->Master_model->master_update($test_data, 'oceanchamp_tests', $where);
+            $result = $this->Master_model->master_update($test_data, 'oceanchamp_tests', $where);
+            if ($result) {
+                    $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Test Updated Successfully</div>');
+                }
         }
         redirect('employer/all_questions');
     }
@@ -2062,10 +2095,15 @@ public function randomly_create_oceantest()
                 $data['emp_created_date'] = date('Y-m-d H:i:s');
                 $this->Master_model->master_insert($data, 'employee');
                 $company_name = $this->session->userdata('company_name');
+<<<<<<< HEAD
                 $data = array('company' => $company_name, 'action_taken_for' => $this->input->post('emp_name'), 'field_changed' => 'Added new Employee', 'Action' => 'Added ' . $this->input->post('emp_name') . ' As an Employee.', 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
                 $result = $this->Master_model->master_insert($data, 'employer_audit_record');
                 $this->session->set_flashdata('success', '<div class="alert alert-success text-center">New CV added sucessfully!</div>');
 
+=======
+                $data1 = array('company' => $company_name, 'action_taken_for' => $this->input->post('emp_name'), 'field_changed' => 'Added new Employee', 'Action' => 'Added ' . $this->input->post('emp_name') . ' As an Employee.', 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
+                $result = $this->Master_model->master_insert($data1, 'employer_audit_record');
+>>>>>>> 18239c94c617acc8ed4534dcdf99f9df657fd87b
                 $comp_name = $this->session->userdata('company_name');
                 $to_email = $this->input->post('email');
                 $pass = $this->input->post('password');

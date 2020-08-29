@@ -233,7 +233,7 @@ input.capital {
       <form id="submit" action="<?php echo base_url(); ?>employer/profile-setting" method="post"  enctype="multipart/form-data"  >
          <input type="hidden" name="company_profile_id" value="<?php echo $company_info->company_profile_id;?>">
          <div class="col-md-12">
-            <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
+          
 
             <div class="col-md-9 edit-profile">
                <div class="col-md-12 header-profile">
@@ -259,9 +259,12 @@ input.capital {
                   </div>
                </div>
                <div class="forms">
-                  <?php echo $this->session->flashdata('emp_msg');?>
+                 <div id="smsg">
+                   <?php echo $this->session->flashdata('emp_msg');?>
                   <?php echo $this->session->flashdata('msg'); ?>
                   <?php echo $this->session->flashdata('success_msg'); ?>
+                 </div>
+                  
                   <div class="row f-1">
                      <div class="col-md-6 col-sm-12">
                         <div class="formrow">
@@ -685,6 +688,13 @@ input.capital {
       </form>
    </div>
 </div>
+<script>
+   $(document).ready (function(){
+     $("#smsg").fadeTo(2000, 500).slideUp(500, function(){
+     $("#smsg").slideUp(500);
+     });   
+   });
+</script>
 <script>
   $(document).on('focus', '.select2-selection.select2-selection--single', function (e) {
   $(this).closest(".select2-container").siblings('select:enabled').select2('open');

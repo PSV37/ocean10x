@@ -46,17 +46,7 @@ class Company_Profile_Model extends MY_Model
     //send verification email to user's email id
     public function sendEmail($to_email)
     {
-        // $ci = get_instance();
-        // $ci->load->library('email');
-        // $config['protocol']    = 'smtp';
-		// $config['smtp_host']    = 'mail.consultnhire.com';
-		// $config['smtp_port']    = '465';
-		// $config['smtp_timeout'] = '7'; 	
-		// $config['smtp_user'] = "info@consultnhire.com";
-		// $config['smtp_pass'] = "yQB;H[V&o64I";
-		// $config['charset']    = 'utf-8';
-		// $config['newline']    = "\r\n";
-		// $config['mailtype'] = 'html'; // or html
+        
 	   
           $ci = get_instance();
           $ci->load->library('email');
@@ -80,6 +70,138 @@ class Company_Profile_Model extends MY_Model
             $ci->email->to($to_email);
             $ci->email->reply_to('info@consultnhire.com', 'ConsultnHire');
             $ci->email->subject('Account Verification - TheOcean');
+            $ci->email->message($message);
+            $ci->email->send(FALSE);
+
+        return true;
+    }
+
+     public function sendjobEmail($to_email,$v_companyjobs)
+    {
+        
+       
+          $ci = get_instance();
+          $ci->load->library('email');
+            $email_name = explode('@', $to_email);
+          
+            $config['protocol'] = "mail";
+            $config['charset'] = "utf-8";
+            $config['mailtype'] = "html";
+            $config['newline'] = "\r\n";
+
+        $message = '
+
+   <div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
+<table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
+<br><br>Hi '.ucfirst($email_name[0]).',<br><br>A new job has been posted by <username> from your organization. Details of this job post are as follows:-<br><br><label>
+      <div class="border-top1"></div>
+    
+      <div class="card">
+         <div class="front">
+           
+            <div class="job-info">
+               <p class="job_title">'. $v_companyjobs['job_title'].'</p>
+            </div>
+            <div class="icon-info">
+               <li class="left-icon-title"><i class="fas fa-map-marker-alt"></i></li>
+               <li class="right-icon-title"> &emsp;'.$v_companyjobs['city_id'].'</li>
+               <li class="left-icon-title"><i class="fas fa-briefcase"></i></li>
+               <li class="right-title" style="width:100%;"> &emsp;'.$v_companyjobs['experience'].'(experience)</li>
+               <div class="clear"></div>
+            </div>
+            <div class="following-info">
+               <li class="left-title"
+                  >Job Roll</li>
+               <li class="right-title">&nbsp;: '.$v_companyjobs['job_role_title'].'</li>
+               <li class="left-title">Engagement</li>
+               <li class="right-title">&nbsp;: '.$v_companyjobs['job_nature_name'].'</li>
+               <li class="left-title">Domain</li>
+               <li class="right-title">&nbsp;:'.$v_companyjobs['job_category_name'].'</li>
+               <!--  <li class="left-title">Role Type </li><li class="right-title">&nbsp;:</li>
+               <li class="left-title">Dummy1</li>
+               <li class="right-title">&nbsp;:</li>
+               <!--  <li class="left-title">Dummy2</li><li class="right-title">&nbsp;:</li> -->
+               <div class="clear"></div>
+            </div>
+            <div class="following-info2">
+               <li class="left-title">Education</li>
+               <li class="right-title">&nbsp;: '.$v_companyjobs['education_level_name'].'</li>
+               <li class="left-title">experience</li>
+               <li class="right-title">&nbsp;:'.$v_companyjobs['experience'].'</li>
+               <li class="left-title">CTC</li>
+               <li class="right-title">&nbsp;:'.$v_companyjobs['salary_range'].'</li>
+               <li class="left-title">Vacancies</li>
+               <li class="right-title">&nbsp;: '.$v_companyjobs['no_jobs'].'</li>
+               <!-- <li class="left-title">Specialization</li><li class="right-title">&nbsp;:'.$v_companyjobs['education_specialization'].'</li> -->
+               <!--  <li class="left-title">Joining ETA</li><li class="right-title">&nbsp;:30 days</li> -->
+               <!--  <li class="left-title">Benifits</li><li class="right-title">&nbsp;:'.$v_companyjobs->benefits.' </li> -->
+               <!--   <li class="left-title">Dummy3</li><li class="right-title">&nbsp;:value</li> -->
+               <div class="clear"></div>
+            </div>
+            <div class="following-info3">
+               <li class="left-title">JD attached&nbsp;<i class="fas fa-link"></i></li>
+               <li class="right-title">&nbsp;: ';
+                if (isset($v_companyjobs->jd_file) && !empty($v_companyjobs->jd_file)) { 
+                       $message.= 'Yes <a style="margin-left: 15px" href="'. base_url().'upload/job_description/' .$v_companyjobs->jd_file.'" download><i class="fa fa-download" aria-hidden="true"></i></a> ';
+                        } else 
+                        { 
+                              $message.= "No";} '</li>
+               <li class="left-title">Ocean Test</li>
+               <li class="right-title">&nbsp;:'.$v_companyjobs['is_test_required'] .'</li>
+               <li class="left-title">Published on</li>
+               <li class="right-title">&nbsp;:';
+               if(!is_null($v_companyjobs->created_at)) {    
+                $message.= date('M j Y',strtotime($v_companyjobs->created_at)); }'</li>
+               <li class="left-title">Job expiry</li>
+               <li class="right-title">&nbsp;:';
+               if(!is_null($v_companyjobs['job_deadline'])) {   
+                $message.= date('M j Y',strtotime($v_companyjobs['job_deadline'])); }'</li>
+               <div class="clear"></div>
+            </div>
+            <!-- <div id="skills"> -->
+            <span>Skill sets</span>:
+           ';
+               $sk=$v_companyjobs->skills_required;
+               if (isset($sk) && !empty($sk)) {
+                  $where_sk= "id IN (".$sk.") AND status=1";
+                $select_sk = "skill_name ,id";
+                $skills = $this->Master_model->getMaster('skill_master',$where_sk,$join = FALSE, $order = false, $field = false, $select_sk,$limit=10,$start=false, $search=false);
+                if(!empty($skills)){ 
+                  foreach($skills as $skill_row){ 
+               $message.='<lable class=""><button id="sklbtn">'.$skill_row['skill_name'].'</button></lable>';
+             }
+               } }   
+               $message.='<br>
+            <span>Benefits</span>:';
+               $benefits=explode(',', $v_companyjobs->benefits);
+               
+                if(!empty($benefits)){ 
+                  $i=0;
+                  foreach($benefits as $benefit){ 
+               $message.='<lable class=""><button id="sklbtn">'. $benefits[$i].'</button></lable>';
+           $i++; }
+               } if ($v_companyjobs->job_deadline > date('Y-m-d')){
+               // echo '<button class="btn btn-success btn-xs">Live <i class="fa fa-check-circle" aria-hidden="true"></i></button>';
+                  $message.='<span class="active-span">Active</span>';
+               }
+               else {
+               // echo'<button class="btn btn-danger btn-xs">Expired <i class="fa fa-times" aria-hidden="true"></i></button> ';
+                  $message.= '<span class="pasive-span">Expired</span>';
+               } 
+                  $message.='
+            
+         </div>
+      </div>
+   </label<br><br>   <a href="<?php echo base_url(); ?>job/show/'. $v_companyjobs['job_slugs'].'">Link</a>
+    <br><br>Thanks,<br><br>Team TheOcean<br><br>Copyright © 2020 TheOcean, All rights reserved.
+</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
+
+
+            $ci->email->initialize($config);
+            $ci->email->from('info@consultnhire.com', 'ConsultnHire');
+            $ci->email->to($to_email);
+            $ci->email->reply_to('info@consultnhire.com', 'ConsultnHire');
+            $ci->email->subject('New Job Posted ');
             $ci->email->message($message);
             $ci->email->send(FALSE);
 

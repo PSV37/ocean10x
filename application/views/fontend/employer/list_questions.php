@@ -837,7 +837,7 @@ span.select2-selection.select2-selection--single {
    .input-group-btn:last-child>.btn{background-color:#18c5bd;
    color:#fff;}
    button.btn.btn-primary {
-   float: right;
+   /*float: right;*/
    background-color: #18c5bd;
    border: none;
    border-radius: 35px;
@@ -967,7 +967,7 @@ span.select2-selection.select2-selection--single {
       <div class="col-md-12">
          <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
          <div class="col-md-6 question-bank">
-    <?php echo $this->session->flashdata('success'); ?><br><br>
+    <div id="smsg"><?php echo $this->session->flashdata('success'); ?></div><br><br>
             
             <!-- <div class="header-bookbank">
                Question Bank
@@ -1014,7 +1014,7 @@ span.select2-selection.select2-selection--single {
                                  <div class="col-md-4">
                                     <div class="form-group technical_id">                                       
                                        <label for="exampleInputEmail1">Test Name <span class="required">*</span></label>
-                                       <input type="text" class="form-control" id="test_name" name="test_name">
+                                       <input type="text" class="form-control" id="test_name" name="test_name" required="">
                                     </div>
                                  </div>
                                   <div class="col-md-4">
@@ -1213,8 +1213,8 @@ span.select2-selection.select2-selection--single {
                                  </div>
                                  <div class="col-md-4">
                                     <div class="form-group technical_id">                                       
-                                       <label for="exampleInputEmail1">Duration<span class="required">*</span></label>
-                                       <input type="Number" max="60" min="1" class="form-control" id="time" name="test_duration">
+                                       <label for="exampleInputEmail1">Duration(min)<span class="required">*</span></label>
+                                       <input type="Number" max="60" min="1" class="form-control" maxlength="2" id="time" name="test_duration">
                                     </div>
                                  </div>
                                    <div class="col-md-4">
@@ -1285,8 +1285,10 @@ span.select2-selection.select2-selection--single {
                                        <button class="btn btn-primary" type="reset">Discard</button>
                                     </div>
                                     <div class="col-md-3" style="margin-left: 20;">
-                                       <button class="btn btn-primary" type="submit">Create</button>
+                                       
+                                       <button  class="btn btn-primary" type="submit">Create</button>
                                     </div>
+                                   
                                  </div>
                               </div>
                            </form>
@@ -1978,6 +1980,13 @@ span.select2-selection.select2-selection--single {
 </div>
 <?php
    endforeach;endif;?>
+   <script>
+   $(document).ready (function(){
+     $("#smsg").fadeTo(2000, 500).slideUp(500, function(){
+     $("#smsg").slideUp(500);
+     });   
+   });
+</script>
    <script>
   $(document).on('focus', '.select2-selection.select2-selection--single', function (e) {
   $(this).closest(".select2-container").siblings('select:enabled').select2('open');
