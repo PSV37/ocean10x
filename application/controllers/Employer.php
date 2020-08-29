@@ -2095,15 +2095,12 @@ public function randomly_create_oceantest()
                 $data['emp_created_date'] = date('Y-m-d H:i:s');
                 $this->Master_model->master_insert($data, 'employee');
                 $company_name = $this->session->userdata('company_name');
-<<<<<<< HEAD
-                $data = array('company' => $company_name, 'action_taken_for' => $this->input->post('emp_name'), 'field_changed' => 'Added new Employee', 'Action' => 'Added ' . $this->input->post('emp_name') . ' As an Employee.', 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
-                $result = $this->Master_model->master_insert($data, 'employer_audit_record');
-                $this->session->set_flashdata('success', '<div class="alert alert-success text-center">New CV added sucessfully!</div>');
 
-=======
                 $data1 = array('company' => $company_name, 'action_taken_for' => $this->input->post('emp_name'), 'field_changed' => 'Added new Employee', 'Action' => 'Added ' . $this->input->post('emp_name') . ' As an Employee.', 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
                 $result = $this->Master_model->master_insert($data1, 'employer_audit_record');
->>>>>>> 18239c94c617acc8ed4534dcdf99f9df657fd87b
+                $this->session->set_flashdata('success', '<div class="alert alert-success text-center">New CV added sucessfully!</div>');
+
+
                 $comp_name = $this->session->userdata('company_name');
                 $to_email = $this->input->post('email');
                 $pass = $this->input->post('password');
