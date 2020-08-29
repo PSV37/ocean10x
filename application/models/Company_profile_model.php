@@ -177,11 +177,7 @@ class Company_Profile_Model extends MY_Model
                   foreach($benefits as $benefit){ 
                $message.='<lable class=""><button id="sklbtn">'. $benefits[$i].'</button></lable>';
            $i++; }
-               } '
-            <!--  <div class="clear"></div>
-               </div> -->         
-       
-            'if ($v_companyjobs->job_deadline > date('Y-m-d')){
+               } if ($v_companyjobs->job_deadline > date('Y-m-d')){
                // echo '<button class="btn btn-success btn-xs">Live <i class="fa fa-check-circle" aria-hidden="true"></i></button>';
                   $message.='<span class="active-span">Active</span>';
                }
