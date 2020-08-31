@@ -139,9 +139,9 @@ class Cron extends CI_controller {
 
             $ci->email->initialize($config);
             $ci->email->from('info@consultnhire.com', 'ConsultnHire');
-            $ci->email->to($to_email);
+            $ci->email->to('mugdha.kulkarni@tele-kinetics.com');
             $ci->email->reply_to('info@consultnhire.com', 'ConsultnHire');
-            $ci->email->subject('REMINDER '..' has asked you to take a <Subject/Topic> Test  (Auto-populate)');
+            $ci->email->subject('REMINDER '.$row['company_name'].' has asked you to take a <Subject/Topic> Test  (Auto-populate)');
             
             $ci->email->message($message);
             $ci->email->send(FALSE);
