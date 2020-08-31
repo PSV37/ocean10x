@@ -5,7 +5,7 @@ if (!defined('BASEPATH')) {
 class Cron extends CI_controller {
 	public function index()
 	{
-		$where =  "DATE_FORMAT(company_profile.create_at, '%Y-%m-%d') BETWEEN DATE_FORMAT( NOW(), '%Y-%m-%d') AND DATE_ADD(DATE_FORMAT(company_profile.create_at, '%Y-%m-%d') , INTERVAL 3 DAY) and company_status = 0";
+		$where =  "DATE_FORMAT(now(), '%Y-%m-%d') BETWEEN DATE_FORMAT(company_profile.create_at, '%Y-%m-%d') AND DATE_ADD(DATE_FORMAT(company_profile.create_at, '%Y-%m-%d') , INTERVAL 3 DAY) and company_status = 0";
 		$all_mails = $this->Master_model->getMaster('company_profile', $where , $join = FALSE, $order = false, $field = false, $select = 'company_email',$limit=false,$start=false, $search=false);
 		// print_r($all_mails);
 		// print_r($this->db->last_query());
@@ -40,7 +40,7 @@ class Cron extends CI_controller {
             $ci->email->send(FALSE);
 		}
 		$join = array('company_profile' => 'company_profile.company_profile_id = job_posting.company_profile_id');
-		$where_job =  "DATE_FORMAT(job_posting.job_deadline, '%Y-%m-%d') BETWEEN DATE_FORMAT( NOW(), '%Y-%m-%d') AND DATE_SUB(DATE_FORMAT(job_posting.job_deadline, '%Y-%m-%d') , INTERVAL 3 DAY) and job_status = 1";
+		$where_job =  "DATE_FORMAT(now(), '%Y-%m-%d') BETWEEN DATE_FORMAT(job_posting.job_deadline, '%Y-%m-%d') AND DATE_SUB(DATE_FORMAT(job_posting.job_deadline, '%Y-%m-%d') , INTERVAL 3 DAY) and job_status = 1";
 		$all_jobs = $this->Master_model->getMaster('job_posting', $where_job , $join, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
 		// print_r($all_mails);
 		print_r($this->db->last_query());
