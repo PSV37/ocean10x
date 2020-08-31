@@ -110,10 +110,15 @@ input.capital {
          <form role="form" id="js" enctype="multipart/form-data" action="<?php echo base_url(); ?>employer/add_new_cv/<?php if(!empty($id)){echo $id;} ?>" method="post">
                <div id="smsg"><?php echo $this->session->flashdata('success'); ?></div>
             <div class="col-md-9 employe_add">
-               <div class="col-md-12">
-                  <h4 class="employee_heading">ADD NEW CV</h4>
-                 <input style="float: right;" type="checkbox" name="send_email">Send Registration Email
+               <div class="row">
+                  <div class="col-md-6">
+                     <h4 class="employee_heading">ADD NEW CV</h4>
+                  </div>
+                  <div class="col-md-6">
+                     <input style="float: right;" type="checkbox" name="send_email">Send Registration Email
+                  </div>
                </div>
+              
                <div class="col-md-12">
                   <div class="col-md-4">
                      <div class="form-group">                                       
