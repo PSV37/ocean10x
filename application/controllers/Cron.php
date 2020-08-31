@@ -114,12 +114,12 @@ class Cron extends CI_controller {
 			'oceanchamp_tests' => 'oceanchamp_tests.test_id = forwarded_tests.test_id',
 			'topic' => ' FIND_IN_SET(topic.topic_id,oceanchamp_tests.topics) <> 0 |LEFT');
 		$where_tests =  "DATE_FORMAT(now(), '%Y-%m-%d') BETWEEN DATE_FORMAT(forwarded_tests.updated_on, '%Y-%m-%d') and DATE_ADD(DATE_FORMAT(forwarded_tests.updated_on, '%Y-%m-%d') , INTERVAL 1 DAY) AND forwarded_tests.status = 'Farwarded Test individually'";
-		$tests_forwarded = $this->Master_model->getMaster('forwarded_tests', $where_tests , $join_tests, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+		$tests_forwarded = $this->Master_model->getMaster('forwarded_tests', $where_tests , $join_tests, $order = false, $field = false, $select = 'GROUP_CONCAT(topic.topic_name) as topics_common,*',$limit=false,$start=false, $search=false);
 		// print_r($all_mails);
 		print_r($this->db->last_query());
 		foreach ($tests_forwarded as $row) {
 			 $company_name = $this->session->userdata('company_name');
-			 $to_email = $row['company_email'];
+			 $to_email = $row['email'];
           $ci = get_instance();
           $ci->load->library('email');
             $email_name = explode('@', $to_email);
@@ -131,7 +131,7 @@ class Cron extends CI_controller {
 
         $message = '<div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
 			<table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
-			<br><br>Hi '.ucfirst($row['company_name']).',<br><br>Kindly note that your job post '.$row['job_title'].'  has expired on '.$row['job_deadline'].'. <br><br>You can login to TheOcean and check the performance metrics related to this job post by clicking on the below given URL.<br><br>OR<br><br>In case you wish to re-activate this job post the you can click on the below given URL and proceed further. <br><br><a href="'.base_url().'job/show/'. $row['job_slugs'].'">Job Post</a>
+			<br><br>Hi '.ucfirst($email_name[0]).',<br><br>'.$row['company_name'].' has asked you to take a test. Kindly click on the Test URL give below and follow the steps thereon. <br><br><a href="' . base_url() . 'job_seeker/ocean_test_start/' . base64_encode($row['test_id']) . '"><button >Give Test</button></a><br><br><a href="'.base_url().'job/show/'. $row['job_slugs'].'">Job Post</a>
 			    <br><br>Thanks,<br><br>Team TheOcean
 				</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
 
@@ -139,9 +139,9 @@ class Cron extends CI_controller {
 
             $ci->email->initialize($config);
             $ci->email->from('info@consultnhire.com', 'ConsultnHire');
-            $ci->email->to('mugdha.kulkarni@tele-kinetics.com');
+            $ci->email->to($to_email);
             $ci->email->reply_to('info@consultnhire.com', 'ConsultnHire');
-            $ci->email->subject('REMINDER '.$row['company_name'].' has asked you to take a <Subject/Topic> Test  (Auto-populate)');
+            $ci->email->subject('REMINDER '.$row['company_name'].' has asked you to take a '.$row['topics_common'] .' Test ');
             
             $ci->email->message($message);
             $ci->email->send(FALSE);
