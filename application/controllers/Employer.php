@@ -2352,7 +2352,7 @@ public function randomly_create_oceantest()
                 $result = $this->Master_model->master_insert($data1, 'employer_audit_record');
 
                 $this->session->set_flashdata('success01', '<div class="alert alert-success text-center">New Employee added sucessfully!</div>');
-                redirect(base_url() . 'employer/employee_management');
+               
 
                 $comp_name = $this->session->userdata('company_name');
                 $to_email = $this->input->post('email');
