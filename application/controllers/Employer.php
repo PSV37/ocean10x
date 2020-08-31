@@ -2351,7 +2351,7 @@ public function randomly_create_oceantest()
                 $data1 = array('company' => $company_name, 'action_taken_for' => $this->input->post('emp_name'), 'field_changed' => 'Added new Employee', 'Action' => 'Added ' . $this->input->post('emp_name') . ' As an Employee.', 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
                 $result = $this->Master_model->master_insert($data1, 'employer_audit_record');
 
-                $this->session->set_flashdata('success01', '<div class="alert alert-success text-center">New Employee added sucessfully!</div>');
+                $this->session->set_flashdata('success', '<div class="alert alert-success text-center">New Employee added sucessfully!</div>');
                
 
                 $comp_name = $this->session->userdata('company_name');
