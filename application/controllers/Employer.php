@@ -2841,7 +2841,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                         $action = str_replace("_", ' ', $parameter);
                         $data = array('company' => $company_name, 'action_taken_for' => $employee_name, 'field_changed' => $action, 'Action' => 'Updated ' . $action . ' of ' . $employee_name, 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
                         $result = $this->Master_model->master_insert($data, 'employer_audit_record');
-                        $this->session->set_flashdata('success', '<div class="alert alert-success text-center">New Employee added sucessfully!</div>');
+                        $this->session->set_flashdata('success01', '<div class="alert alert-success text-center">New Employee added sucessfully!</div>');
 
                                                 // print_r($this->db->last_query());die;
                         
