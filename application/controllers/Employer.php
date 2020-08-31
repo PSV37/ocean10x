@@ -3719,7 +3719,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $data['education_level'] = $this->Master_model->getMaster('education_level', $where = false);
             $data['certificates'] = $this->Master_model->getMaster('certification_master', $where = false);
             $data['skills'] = $this->Master_model->getMaster('skill_master', $where = false);
-            // $data['fid']=$this->input->get('fid');
+            $data['fid']=$this->input->get('fid');
             //$data['cv_info'] = $this->Master_model->getMaster('corporate_cv_bank',$where=false);
             $this->load->view('fontend/employer/add_cv', $data);
         }
