@@ -3608,7 +3608,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     $cv_data['created_by'] = $company_id;
                     $cv_id=$this->Master_model->master_insert($cv_data, 'corporate_cv_bank');
                      $fid = $this->input->get('fid');
-                     if (isset($fid)&&!empty($fid)) {
+                     print_r($fid);die;
+                     if (isset($fid) && !empty($fid)) {
                         $cv_folder_data['cv_folder_id'] = $fid;
                         $cv_folder_data['cv_id'] = $cv_id;
                         $cv_folder_data['status'] = '1';
