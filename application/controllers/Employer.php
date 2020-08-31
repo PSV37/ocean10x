@@ -3710,7 +3710,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     }
                     $this->session->set_flashdata('success', '<div class="alert alert-success text-center">New CV added sucessfully!</div>');
                 }
-                redirect('employer/corporate_cv_bank/'$fid);
+                redirect('employer/corporate_cv_bank/'.$fid);
             }
         } else {
             $data['industry_master'] = $this->Master_model->getMaster('job_category', $where = false);
