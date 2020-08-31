@@ -112,7 +112,7 @@ input.capital {
             <div class="col-md-9 employe_add">
                <div class="col-md-12">
                   <h4 class="employee_heading">ADD NEW CV</h4>
-                  <div style="float: right;"><input type="checkbox" name="send_email">Send Registration Email</div>
+                 <input style="float: right;" type="checkbox" name="send_email">Send Registration Email
                </div>
                <div class="col-md-12">
                   <div class="col-md-4">
