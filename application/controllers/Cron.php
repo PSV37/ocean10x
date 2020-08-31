@@ -112,7 +112,7 @@ class Cron extends CI_controller {
 		$join_tests = array('js_info' => 'js_info.job_seeker_id = forwarded_tests.job_seeker_id',
 			'company_profile' =>'company_profile.company_profile_id = forwarded_tests.company_id',
 			'oceanchamp_tests' => 'oceanchamp_tests.test_id = forwarded_tests.test_id',
-			'topic' => ' FIND_IN_SET(topic.topic_id,oceanchamp_tests.topics)');
+			'topic' => ' FIND_IN_SET(topic.topic_id,oceanchamp_tests.topics) <> 0 |LEFT');
 		$where_tests =  "DATE_FORMAT(now(), '%Y-%m-%d') BETWEEN DATE_FORMAT(forwarded_tests.updated_on, '%Y-%m-%d') and DATE_ADD(DATE_FORMAT(forwarded_tests.updated_on, '%Y-%m-%d') , INTERVAL 1 DAY) AND forwarded_tests.status = 'Farwarded Test individually'";
 		$tests_forwarded = $this->Master_model->getMaster('forwarded_tests', $where_tests , $join_tests, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
 		// print_r($all_mails);
