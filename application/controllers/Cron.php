@@ -116,7 +116,7 @@ class Cron extends CI_controller {
 		$where_tests =  "DATE_FORMAT(now(), '%Y-%m-%d') BETWEEN DATE_FORMAT(forwarded_tests.updated_on, '%Y-%m-%d') and DATE_ADD(DATE_FORMAT(forwarded_tests.updated_on, '%Y-%m-%d') , INTERVAL 1 DAY) AND forwarded_tests.status = 'Farwarded Test individually'";
 		$tests_forwarded = $this->Master_model->getMaster('forwarded_tests', $where_tests , $join_tests, $order = false, $field = false, $select = 'GROUP_CONCAT(topic.topic_name) as topics_common,*',$limit=false,$start=false, $search=false);
 		// print_r($all_mails);
-		print_r($this->db->last_query());
+		// print_r($this->db->last_query());
 		foreach ($tests_forwarded as $row) {
 			 $company_name = $this->session->userdata('company_name');
 			 $to_email = $row['email'];
