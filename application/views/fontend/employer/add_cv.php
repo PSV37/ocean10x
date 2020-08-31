@@ -99,6 +99,9 @@ input[type="text"] {
 input#candidate_skills {
     display: none;
 }
+input.capital {
+    text-transform: capitalize;
+}
 </style>
 <div class="container-fluid main-d">
    <div class="container">
@@ -109,12 +112,13 @@ input#candidate_skills {
             <div class="col-md-9 employe_add">
                <div class="col-md-12">
                   <h4 class="employee_heading">ADD NEW CV</h4>
+                  <div style="float: right;"><input type="checkbox" name="send_email">Send Registration Email</div>
                </div>
                <div class="col-md-12">
                   <div class="col-md-4">
                      <div class="form-group">                                       
                         <label for="exampleInputEmail1">Full Name <span class="required">*</span></label>
-                        <input type="text" name="candidate_name" id="candidate_name" class="form-control allowalphabates " value="<?php echo  set_value('candidate_name'); ?>"> <?php echo form_error('candidate_name'); ?>
+                        <input type="text" name="candidate_name" id="candidate_name" class="form-control allowalphabates capital " value="<?php echo  set_value('candidate_name'); ?>"> <?php echo form_error('candidate_name'); ?>
                      </div>
                   </div>
                   <div class="col-md-4">
@@ -166,7 +170,7 @@ input#candidate_skills {
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Current Job Designation</label>
-                        <input type="text" name="current_job_desig" id="current_job_desig" class="form-control allowalphabatesspace" value="<?php echo  set_value('current_job_desig'); ?>">    <?php echo form_error('current_job_desig'); ?> 
+                        <input type="text" name="current_job_desig" id="current_job_desig" class="form-control allowalphabatesspace capital" value="<?php echo  set_value('current_job_desig'); ?>">    <?php echo form_error('current_job_desig'); ?> 
                      </div>
                   </div>
                   <div class="col-md-4">
