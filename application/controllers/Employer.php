@@ -2752,8 +2752,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $data['city'] = $this->Master_model->getMaster('city', $where = false);
         $data['roles'] = $this->Master_model->getMaster('user_role', $where = false);
 
-        $this->session->set_flashdata('success', '<div class="alert alert-success text-center">New Employee added sucessfully!</div>'); 
-        
+        $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Employee Updated Sucessfully!</div>'); 
+
         //echo $this->db->last_query(); die;
         $this->load->view('fontend/employer/employee_management', $data);
         // $this->load->view('fontend/employer/edit_employee',$data);
