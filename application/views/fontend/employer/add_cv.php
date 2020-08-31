@@ -107,7 +107,7 @@ input.capital {
    <div class="container">
       <div class="col-md-12">
          <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
-         <form role="form" id="js" enctype="multipart/form-data" action="<?php echo base_url(); ?>employer/add_new_cv/<?php if(!empty($id)){echo $id;} ?>" method="post">
+         <form role="form" id="js" enctype="multipart/form-data" action="<?php echo base_url(); ?>employer/add_new_cv/<?php if(!empty($id)){echo $id;} ?><?php if(!empty($id)){echo '?fid='.$id;} ?>" method="post">
                <div id="smsg"><?php echo $this->session->flashdata('success'); ?></div>
             <div class="col-md-9 employe_add">
                <div class="row">
