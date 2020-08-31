@@ -39,7 +39,7 @@ class Cron extends CI_controller {
             $ci->email->message($message);
             $ci->email->send(FALSE);
 		}
-		$join = array('company_profile' => 'company_profile.company_profile_id = job_posting.company_profile_id')
+		$join = array('company_profile' => 'company_profile.company_profile_id = job_posting.company_profile_id');
 		$where =  "DATE_FORMAT(job_posting.job_deadline, '%Y-%m-%d') BETWEEN DATE_FORMAT( NOW(), '%Y-%m-%d') AND DATE_SUB(DATE_FORMAT(job_posting.job_deadline, '%Y-%m-%d') , INTERVAL 3 DAY) and job_status = 1";
 		$all_jobs = $this->Master_model->getMaster('job_posting', $where , $join, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
 		// print_r($all_mails);
