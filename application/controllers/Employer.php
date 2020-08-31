@@ -2351,7 +2351,7 @@ public function randomly_create_oceantest()
                 $data1 = array('company' => $company_name, 'action_taken_for' => $this->input->post('emp_name'), 'field_changed' => 'Added new Employee', 'Action' => 'Added ' . $this->input->post('emp_name') . ' As an Employee.', 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
                 $result = $this->Master_model->master_insert($data1, 'employer_audit_record');
 
-                $this->session->set_flashdata('success', '<div class="alert alert-success text-center">New Employee added sucessfully!</div>');
+                $this->session->set_flashdata('success', '<div class="alert alert-success text-center">New Employee added sucessfully!</div>');  
                
 
                 $comp_name = $this->session->userdata('company_name');
@@ -2751,6 +2751,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $data['state'] = $this->Master_model->getMaster('state', $where = false);
         $data['city'] = $this->Master_model->getMaster('city', $where = false);
         $data['roles'] = $this->Master_model->getMaster('user_role', $where = false);
+
+        $this->session->set_flashdata('success', '<div class="alert alert-success text-center">New Employee added sucessfully!</div>'); 
+        
         //echo $this->db->last_query(); die;
         $this->load->view('fontend/employer/employee_management', $data);
         // $this->load->view('fontend/employer/edit_employee',$data);
