@@ -218,6 +218,7 @@ input.select2-search__field {
     <div class="col-md-12">
        <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
         <div class="col-md-9 emplye_n">
+          <div id="smsg"><?php echo $this->session->flashdata('success'); ?></div>  
           <form action="/action_page.php" style="float: left;margin-right: 25px;">
             <div class="col-md-12">
               <div class="row">
@@ -436,6 +437,14 @@ input.select2-search__field {
         </div>
       </div>
     </div>
+
+<script>
+   $(document).ready (function(){
+     $("#smsg").fadeTo(2000, 500).slideUp(500, function(){
+     $("#smsg").slideUp(500);
+     });   
+   });
+</script>
     <script>
   $(document).on('focus', '.select2-selection.select2-selection--single', function (e) {
   $(this).closest(".select2-container").siblings('select:enabled').select2('open');
