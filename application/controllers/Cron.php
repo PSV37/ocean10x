@@ -74,12 +74,12 @@ class Cron extends CI_controller {
             $ci->email->send(FALSE);
 		}
 
-		$join = array('company_profile' => 'company_profile.company_profile_id = job_posting.company_profile_id');
-		$where_job =  "DATE_FORMAT(now(), '%Y-%m-%d') BETWEEN DATE_FORMAT(job_posting.job_deadline, '%Y-%m-%d') and DATE_ADD(DATE_FORMAT(job_posting.job_deadline, '%Y-%m-%d') , INTERVAL 1 DAY) AND job_status = 1";
-		$all_jobs = $this->Master_model->getMaster('job_posting', $where_job , $join, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+		$join_expired = array('company_profile' => 'company_profile.company_profile_id = job_posting.company_profile_id');
+		$where_expired =  "DATE_FORMAT(now(), '%Y-%m-%d') BETWEEN DATE_FORMAT(job_posting.job_deadline, '%Y-%m-%d') and DATE_ADD(DATE_FORMAT(job_posting.job_deadline, '%Y-%m-%d') , INTERVAL 1 DAY) AND job_status = 1";
+		$all_expired_jobs = $this->Master_model->getMaster('job_posting', $where_expired , $join_expired, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
 		// print_r($all_mails);
 		// print_r($this->db->last_query());
-		foreach ($all_jobs as $row) {
+		foreach ($all_expired_jobs as $row) {
 			 $company_name = $this->session->userdata('company_name');
 			 $to_email = $row['company_email'];
           $ci = get_instance();
