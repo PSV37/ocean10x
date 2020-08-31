@@ -131,7 +131,7 @@ class Cron extends CI_controller {
 
         $message = '<div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
 			<table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
-			<br><br>Hi '.ucfirst($email_name[0]).',<br><br>'.$row['company_name'].' has asked you to take a test. Kindly click on the Test URL give below and follow the steps thereon. <br><br><a href="' . base_url() . 'job_seeker/ocean_test_start/' . base64_encode($row['test_id']) . '"><button >Give Test</button></a><br><br><a href="'.base_url().'job/show/'. $row['job_slugs'].'">Job Post</a>
+			<br><br>Hi '.ucfirst($email_name[0]).',<br><br>'.$row['company_name'].' has asked you to take a test. Kindly click on the Test URL give below and follow the steps thereon. <br><br><a href="' . base_url() . 'job_seeker/ocean_test_start/' . base64_encode($row['test_id']) . '"><button >Give Test</button></a>
 			    <br><br>Thanks,<br><br>Team TheOcean
 				</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
 
