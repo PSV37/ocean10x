@@ -2,7 +2,7 @@
 if (!defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
-class Cron extends MY_Employer_Controller {
+class Cron extends CI_controller {
 	public function index()
 	{
 		$where =  "company_profile.create_at BETWEEN NOW() AND DATE_ADD(company_profile.create_at, INTERVAL 3 DAY) and verify = 'N'";
