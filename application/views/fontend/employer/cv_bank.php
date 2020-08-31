@@ -914,7 +914,7 @@
                   </form>
                </div>
                <div class="col-md-3">
-                  <a href="<?php echo base_url() ?>employer/add_new_cv<?php if(!empty($id)){echo '?fid ='.$id;} ?>"><button class="btn btn-primary"><i class="fas fa-plus"></i> Add New CV</button></a>
+                  <a href="<?php echo base_url() ?>employer/add_new_cv<?php if(!empty($id)){echo '?fid='.$id;} ?>"><button class="btn btn-primary"><i class="fas fa-plus"></i> Add New CV</button></a>
                </div>
             </div>
             <div class="row" id="bulk">
