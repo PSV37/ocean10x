@@ -2351,8 +2351,8 @@ public function randomly_create_oceantest()
                 $data1 = array('company' => $company_name, 'action_taken_for' => $this->input->post('emp_name'), 'field_changed' => 'Added new Employee', 'Action' => 'Added ' . $this->input->post('emp_name') . ' As an Employee.', 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
                 $result = $this->Master_model->master_insert($data1, 'employer_audit_record');
 
-                $this->session->set_flashdata('success', '<div class="alert alert-success text-center">New CV added sucessfully!</div>');
-
+                $this->session->set_flashdata('success', '<div class="alert alert-success text-center">New Employee added sucessfully!</div>');
+                redirect(base_url() . 'employer/employee_management');
 
                 $comp_name = $this->session->userdata('company_name');
                 $to_email = $this->input->post('email');
@@ -2841,7 +2841,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                         $action = str_replace("_", ' ', $parameter);
                         $data = array('company' => $company_name, 'action_taken_for' => $employee_name, 'field_changed' => $action, 'Action' => 'Updated ' . $action . ' of ' . $employee_name, 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
                         $result = $this->Master_model->master_insert($data, 'employer_audit_record');
-                        // print_r($this->db->last_query());die;
+                        $this->session->set_flashdata('success', '<div class="alert alert-success text-center">New Employee added sucessfully!</div>');
+
+                                                // print_r($this->db->last_query());die;
                         
                     }
                 }
@@ -3607,10 +3609,6 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     $cv_data['created_on'] = date('Y-m-d H:i:s');
                     $cv_data['created_by'] = $company_id;
                     $cv_id=$this->Master_model->master_insert($cv_data, 'corporate_cv_bank');
-                    $to_email = $this->input->post('candidate_email');
-                    if (isset($_POST['send_email'])) {
-                        $this->company_profile_model->sendcandEmail($to_email);
-                    }
                      $fid = $this->input->get('fid');
                      // print_r($fid);die;
                      if (isset($fid) && !empty($fid)) {
@@ -3659,7 +3657,6 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                         if (empty($cv_data)) {
                             $cv_array = array('company_id' => $company_id, 'js_name' => $can_data[0]['full_name'], 'js_email' => $can_data[0]['email'], 'js_mobile' => $can_data[0]['mobile_no'], 'created_on' => date('Y-m-d'), 'created_by' => $company_id);
                             $add_cv = $this->Master_model->master_insert($cv_array, 'corporate_cv_bank');
-
                             $cv_id = $add_cv;
                         } else {
                             $cv_id = $cv_data[0]['cv_id'];
