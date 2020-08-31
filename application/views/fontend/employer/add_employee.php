@@ -29,7 +29,7 @@
       <?php $this->load->view('fontend/layout/employer_left.php'); ?>
       <div class="content col-md-9">
         <div class="userccount empdash">
-          <div id="smsg"> class="formpanel"> <?php echo $this->session->flashdata('success'); ?></div>  
+          <div id="smsg"><?php echo $this->session->flashdata('success'); ?></div>  
           <form method="post" action="<?php echo base_url();?>employer/addemployee" enctype="multipart/form-data">
 
                <input type="hidden" name="cid" id="cid" value="<?php echo $result['emp_id'];?>">
