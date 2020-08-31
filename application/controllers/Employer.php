@@ -3409,7 +3409,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $where_c['status'] = 1;
             $join_cond = array('corporate_cv_bank' => 'corporate_cv_bank.cv_id = cv_folder_relation.cv_id|Left outer');
             $data['cv_bank_data'] = $this->Master_model->getMaster('cv_folder_relation', $where_c, $join_cond, $order = 'desc', $field = 'relation_id', $select = false, $limit = false, $start = false, $search = false);
-            $data['id']=$fid;
+            $data['fid']=$fid;
             // print_r($this->db->last_query());die;
             $this->load->view('fontend/employer/cv_bank', $data);
 
@@ -3608,7 +3608,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     $cv_data['created_by'] = $company_id;
                     $cv_id=$this->Master_model->master_insert($cv_data, 'corporate_cv_bank');
                      $fid = $this->input->get('fid');
-                     print_r($fid);die;
+                     // print_r($fid);die;
                      if (isset($fid) && !empty($fid)) {
                         $cv_folder_data['cv_folder_id'] = $fid;
                         $cv_folder_data['cv_id'] = $cv_id;
@@ -3719,6 +3719,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $data['education_level'] = $this->Master_model->getMaster('education_level', $where = false);
             $data['certificates'] = $this->Master_model->getMaster('certification_master', $where = false);
             $data['skills'] = $this->Master_model->getMaster('skill_master', $where = false);
+            $data['fid']=$this->input->get('fid');
             //$data['cv_info'] = $this->Master_model->getMaster('corporate_cv_bank',$where=false);
             $this->load->view('fontend/employer/add_cv', $data);
         }
