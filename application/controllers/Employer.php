@@ -670,7 +670,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                     redirect('employer/change_password');
                 }
             } else {
-                $this->session->set_flashdata('change_password', '<div class="alert alert-danger text-center"> Current Password is incorrect !</div>');
+                $this->session->set_flashdata('change_password', '<div class="alert alert-danger text-center"> Current Password is Incorrect !</div>');
                 redirect('employer/change_password');
             }
         } else {
