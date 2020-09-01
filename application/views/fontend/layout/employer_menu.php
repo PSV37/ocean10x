@@ -101,7 +101,7 @@
     font-weight: 500!important;
     color: #18c5bd!important;
 }
-#left-panel .inner-left-pannel .inner-tabs .menu-tab .menu-principal ul li.active div.tree ul li.active ul li.active span.txt {
+#left-panel .inner-left-pannel .inner-tabs .menu-tab .menu-principal ul li.active div.tree ul.right_click li.active ul li.active span.txt {
     font-weight: 500!important;
     color: #18c5bd!important;
 }

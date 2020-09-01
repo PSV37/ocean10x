@@ -4568,7 +4568,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             redirect('employer/corporate_cv_bank');
         }
     }
-    public function move_cvto_folder() {
+    public function copy_cvto_folder() {
         $employer_id = $this->session->userdata('company_profile_id');
         $folder_id = $this->input->post('folder_id');
         $cv_idS = $this->input->post('cv_id');
@@ -4581,6 +4581,26 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $folder_data['cv_id'] = $row;
                 $folder_data['status'] = '1';
                 $result = $this->Master_model->master_insert($folder_data, 'cv_folder_relation');
+                $this->session->set_flashdata('success', '<div class="alert alert-success text-center">CV Copied to the folder Succesfully</div>');
+            }
+        }
+        redirect('employer/corporate_cv_bank/' . $folder_id);
+    }
+    public function move_cvto_folder()
+    {
+        $employer_id = $this->session->userdata('company_profile_id');
+        $folder_id = $this->input->post('folder_id');
+        $cv_idS = $this->input->post('cv_id');
+        $cv = explode(',', $cv_idS);
+        foreach ($cv as $row) {
+            $whereres = "cv_folder_id='$folder_id' and cv_id = '$row'";
+            $folder_dbdata = $this->Master_model->get_master_row('cv_folder_relation', $select = FALSE, $whereres);
+            if (empty($folder_dbdata)) {
+                $where['cv_id'] = $row;
+                $folder_data['cv_folder_id'] = $folder_id;
+                $folder_data['cv_id'] = $row;
+                $folder_data['status'] = '1';
+                $result = $this->Master_model->master_update($folder_data, 'cv_folder_relation',$where);
                 $this->session->set_flashdata('success', '<div class="alert alert-success text-center">CV Moved to the folder Succesfully</div>');
             }
         }
