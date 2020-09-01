@@ -90,6 +90,7 @@ class Employer extends MY_Employer_Controller {
                             $result = $this->Master_model->master_insert($data, 'employer_audit_record');
                             // print_r($this->db->last_query());die;
                             
+
                         }
                     }
                 }
@@ -109,7 +110,7 @@ class Employer extends MY_Employer_Controller {
                     'country_id' => $this->input->post('country_id'), 
                     'state_id' => $this->input->post('state_id'), 
                     'city_id' => $this->input->post('city_id'), 
-                    'company_pincode' => $thiss->input->post('company_pincode'), 
+                    'company_pincode' => $this->input->post('company_pincode'), 
                     'company_aboutus' => $this->input->post('company_aboutus'), 
                     'cont_person_level' => 'Admin', 
                     'alternate_email_id' => $this->input->post('alternate_email_id'), 
@@ -162,6 +163,7 @@ class Employer extends MY_Employer_Controller {
                             $response['created_on'] = date('Y-m-d H:i:s');
                             // print_r($response);
                             $result = $this->Master_model->master_insert($response, 'company_branches');
+                            $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Profile Updated Successfully !</div>'); 
                         }
                     }
                     $wheres = "status='0' AND company_profile_id='$employer_id' ";
@@ -2358,7 +2360,7 @@ public function randomly_create_oceantest()
                 $data['emp_created_by'] = $user_id;
                 $data['photo'] = $NewFileName;
                 $data['emp_created_date'] = date('Y-m-d H:i:s');
-                $this->Master_model->master_insert($data, 'employee');
+                $this->Master_model->master_insert($data,   'employee');
                 $company_name = $this->session->userdata('company_name');
 
 
@@ -2770,8 +2772,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $data['city'] = $this->Master_model->getMaster('city', $where = false);
         $data['roles'] = $this->Master_model->getMaster('user_role', $where = false);
 
-       
-        redirect(base_url() . 'employer/employee_management');
+
         //echo $this->db->last_query(); die;
         $this->load->view('fontend/employer/employee_management', $data);
         // $this->load->view('fontend/employer/edit_employee',$data);
