@@ -2879,8 +2879,10 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $update_data = array('last_login' => date('Y-m-d H:i:s'));
                 $where11['company_profile_id'] = $user_id;
                 $this->Master_model->master_update($update_data, 'company_profile', $where11);
-                $this->session->set_flashdata('success', '<div class="alert alert-success text-center">' . $this->input->post('emp_name') . ' Changes  updated successfully !</div>');
+
+                $this->session->set_flashdata('success', '<div class="alert alert-success text-center">' . $this->input->post('emp_name') . ' Changes happen updated successfully !</div>');
                 redirect(base_url() . 'employer/addemployee');
+
             }
         }
     }
