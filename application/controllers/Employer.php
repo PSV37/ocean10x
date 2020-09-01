@@ -2310,7 +2310,7 @@ public function randomly_create_oceantest()
             $this->form_validation->set_message('required', 'You must provide this field');
             $this->form_validation->set_message('regex_match', 'You must provide One Uppercase,One Lowercase,Numbers and special Character');
             // print_r($this->form_validation->run());die;
-            $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Employee Updated Sucessfully !</div>'); 
+            
             if ($this->form_validation->run() == FALSE) {
                 $data['result'] = $this->Master_model->getMaster('department', $select = false);
                 //$this->load->view('organization/add_employee',$data);
@@ -2879,7 +2879,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $update_data = array('last_login' => date('Y-m-d H:i:s'));
                 $where11['company_profile_id'] = $user_id;
                 $this->Master_model->master_update($update_data, 'company_profile', $where11);
-                $this->session->set_flashdata('success', '<div class="alert alert-success text-center">' . $this->input->post('emp_name') . ' has been activated !!</div>');
+                $this->session->set_flashdata('success', '<div class="alert alert-success text-center">' . $this->input->post('emp_name') . ' Changes happen updated successfully !</div>');
                 redirect(base_url() . 'employer/addemployee');
             }
         }
