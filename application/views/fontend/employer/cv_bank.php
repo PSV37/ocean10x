@@ -862,13 +862,23 @@
     background: transparent;
     background-color: #68dcd7;
 }
+.alert.alert-warning.text-center {
+    width: 100%;
+    height: 30px;
+    border-radius: 0;
+    text-align: center;
+    padding: 13px;
+    background: transparent;
+    background-color: orange;
+}
 </style>
 <div class="container-fluid main-d">
    <div class="container">
       <div class="col-md-12">
          <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
          <div class="col-md-6 cv_bank">
-         <div id="smsg"><?php echo $this->session->flashdata('success'); ?></div>
+         <div id="">
+            <?php echo $this->session->flashdata('success'); ?></div>
             <div class="row">
                <div class="col-md-12">
                   <button class="folder_popup" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal_add" style="float: right;">Create&emsp;<i class="fas fa-folder-open"></i></button>
