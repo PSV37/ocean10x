@@ -307,13 +307,13 @@ input.select2-search__field {
            	      <div class="col-md-3">
                     <div class="form-group">                                       
                      <label for="exampleInputEmail1">Employee ID<span class="required">*</span></label>
-                      <input type="text" min="1" name="emp_no" id="emp_no" class="form-control allownumericwithoutdecimal" value="<?php echo $result['emp_no']; ?>" ><?php echo form_error('emp_no'); ?>                    
+                      <input type="text" min="1" name="emp_no" id="emp_no" class="form-control allownumericwithoutdecimal" value="<?php  $val = set_value('company_email'); if(!empty($val)){ echo $val; } else{ echo $result['emp_no'];} ?>" ><?php echo form_error('emp_no'); ?>                    
                     </div>
                   </div>
                   <div class="col-md-3">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Employee Name<span class="required">*</span></label>
-                      <input type="text" name="emp_name" id="emp_name" class="form-control allowalphabates" value="<?php echo $result['emp_name']; ?>" ><?php echo form_error('emp_name'); ?>                      
+                      <input type="text" name="emp_name" id="emp_name" class="form-control allowalphabates" value="<?php  $val = set_value('company_email'); if(!empty($val)){ echo $val; } else {echo $result['emp_name'];} ?>" ><?php echo form_error('emp_name'); ?>                      
                     </div>
                   </div>
                   <div class="col-md-3">
@@ -323,7 +323,7 @@ input.select2-search__field {
                         <option value="">Select</option>
                         
                           <?php foreach($department as $key){?>
-                          <option value="<?php echo $key['dept_id']; ?>"<?php if($result['dept_id'] == $key['dept_id']){ echo "selected"; }?>><?php echo $key['department_name']; ?></option>
+                          <option value="<?php echo $key['dept_id']; ?>"<?php  $val = set_value('company_email'); if(!empty($val)){ echo $val; } else if($result['dept_id'] == $key['dept_id']){ echo "selected"; }?>><?php echo $key['department_name']; ?></option>
                         <?php } ?>
                       </select>
                     </div>
@@ -331,7 +331,7 @@ input.select2-search__field {
                   <div class="col-md-3">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Contact No.<span class="required">*</span></label>
-                      <input type="tel" name="mobile" id="mobile" class="form-control allowphonenumber" value="<?php echo $result['mobile']; ?>" onkeypress="phoneno()" maxlength="10" >     <?php echo form_error('mobile'); ?>                  
+                      <input type="tel" name="mobile" id="mobile" class="form-control allowphonenumber" value="<?php  $val = set_value('company_email'); if(!empty($val)){ echo $val; } else{ echo $result['mobile'];} ?>" onkeypress="phoneno()" maxlength="10" >     <?php echo form_error('mobile'); ?>                  
                     </div>
                   </div>        
                 </div>
@@ -339,13 +339,13 @@ input.select2-search__field {
            	      <div class="col-md-3">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Email-Id<span class="required">*</span></label>
-                      <input type="email" name="email" id="email" class="form-control" value="<?php echo $result['email']; ?>" ><?php echo form_error('email'); ?>
+                      <input type="email" name="email" id="email" class="form-control" value="<?php  $val = set_value('company_email'); if(!empty($val)){ echo $val; } else{ echo $result['email'];} ?>" ><?php echo form_error('email'); ?>
                     </div>
                   </div>
                   <div class="col-md-3">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Password<span class="required">*</span></label>
-                      <input type="Password" name="Password" id="Password" maxlength="15" class="form-control" value="<?php echo $result['Password']; ?>"  ><?php echo form_error('Password'); ?>                     
+                      <input type="Password" name="Password" id="Password" maxlength="15" class="form-control" value="<?php  $val = set_value('company_email'); if(!empty($val)){ echo $val; } else { echo $result['Password'];} ?>"  ><?php echo form_error('Password'); ?>                     
                     </div>
                   </div>
                   <div class="col-md-3">
@@ -402,14 +402,14 @@ input.select2-search__field {
                  <div class="col-md-3">
                     <div class="form-group">
                       <label for="exampleInputEmail1" required="">Pincode<span class="required">*</span></label>
-                      <input type="text"  name="pincode" id="pincode" class="form-control allownumericwithoutdecimal" autocomplete="off" value="<?php echo $result['pincode']; ?>"><?php echo form_error('pincode'); ?>             
+                      <input type="text"  name="pincode" id="pincode" class="form-control allownumericwithoutdecimal" autocomplete="off" value="<?php  $val = set_value('company_email'); if(!empty($val)){ echo $val; } else {echo $result['pincode'];} ?>"><?php echo form_error('pincode'); ?>             
                     </div>
                   </div>    
               </div>
               <div class="row">
                 <div class="col-md-6 form-group">
                   <label for="comment">Address</label>
-    		            <textarea class="form-control" rows="5" name="address" id="comment"><?php echo $result['address']; ?><?php echo form_error('address'); ?></textarea>
+    		            <textarea class="form-control" rows="5" name="address" id="comment"><?php  $val = set_value('company_email'); if(!empty($val)){ echo $val; } else{echo $result['address'];} ?><?php echo form_error('address'); ?></textarea>
                 </div>
               </div>
               <div class="row">

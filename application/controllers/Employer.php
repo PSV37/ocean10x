@@ -2820,7 +2820,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $data['country'] = $this->Master_model->getMaster('country', $where = false);
             $data['state'] = $this->Master_model->getMaster('state', $where = false);
             $data['city'] = $this->Master_model->getMaster('city', $where = false);
-            $this->load->view('fontend/employer/edit_employee', $data);
+            $this->load->view('fontend/employer/employee_management', $data);
         } else {
             $id = $this->input->post('cid');
             $where['emp_id'] = $id;
