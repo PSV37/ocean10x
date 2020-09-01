@@ -2394,6 +2394,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         if (isset($c_id) && !empty($c_id)) {
             $where = "emp_id='$c_id'";
             $data['result'] = $this->Master_model->get_master_row('employee', $select = FALSE, $where);
+            $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Employee Updated Sucessfully !</div>'); 
         }
         $where = 'employee.org_id="' . $user_id . '" and employee.emp_status!="0" ';
         //$data['result'] = $this->Master_model->getMaster('industry',$where=FALSE);
@@ -2435,8 +2436,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $data['country'] = $this->Master_model->getMaster('country', $where = false);
         $data['state'] = $this->Master_model->getMaster('state', $where = false);
         $data['roles'] = $this->Master_model->getMaster('user_role', $where = false);
-        $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Employee Updated Sucessfully !</div>'); 
-        redirect(base_url() . 'employer/employee_management');
+        
         $this->load->view('fontend/employer/employee_management', $data);
         // $this->load->view('fontend/employer/add_new_employee',$data);
         
