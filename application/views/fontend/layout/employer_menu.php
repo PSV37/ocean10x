@@ -151,7 +151,7 @@
                                     <ul class="right_click">
                                        <?php 
                                           $activesubmenu = $this->session->userdata('activesubmenu');
-                                           $this->session->unset_userdata('activesubmenu'); 
+                                           
                                           
                                           $wheres       = "status='1' AND company_id='$employer_id' and parent_id = '0'";
                                           $folders     = $this->Master_model->getMaster('cv_folder', $where = $wheres); 

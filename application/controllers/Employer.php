@@ -18,6 +18,7 @@ class Employer extends MY_Employer_Controller {
        
         $employer_id = $this->session->userdata('company_profile_id');
          $this->session->unset_userdata('submenu');
+          $this->session->unset_userdata('activesubmenu');
 
         $this->session->unset_userdata('activemenu');
         $data['activemenu'] = 'dashboard';
@@ -194,6 +195,7 @@ class Employer extends MY_Employer_Controller {
     }
     public function job_post() {
          $this->session->unset_userdata('submenu');
+          $this->session->unset_userdata('activesubmenu');
 
         $this->session->unset_userdata('activemenu');
         $data['activemenu'] = 'job_post';
@@ -675,6 +677,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
     }
     public function active_job() {
          $this->session->unset_userdata('submenu');
+          $this->session->unset_userdata('activesubmenu');
 
         $this->session->unset_userdata('activemenu');
         $data['activemenu'] = 'active_job';
@@ -686,6 +689,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
     }
     public function pending_job() {
          $this->session->unset_userdata('submenu');
+          $this->session->unset_userdata('activesubmenu');
           $this->session->unset_userdata('activemenu');
         $data['activemenu'] = 'pending_job';
         $this->session->set_userdata($data);
@@ -1784,6 +1788,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
     public function add_new_question() {
 
          $this->session->unset_userdata('submenu');
+          $this->session->unset_userdata('activesubmenu');
         $data['submenu'] = 'qbank';
         $this->session->set_userdata($data);
         $data['title'] = 'Add Questionbank';
@@ -1861,6 +1866,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
     public function add_to_test() {
 
         $this->session->unset_userdata('submenu');
+         $this->session->unset_userdata('activesubmenu');
         $data['submenu'] = '1';
         $this->session->set_userdata($data);
         $test_name = $this->input->post('test_name');
@@ -1938,6 +1944,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
     public function randomly_create_test()
     {
          $this->session->unset_userdata('submenu');
+          $this->session->unset_userdata('activesubmenu');
         $data['submenu'] = '2';
         $this->session->set_userdata($data);
 
@@ -2084,6 +2091,7 @@ public function randomly_create_oceantest()
     }
     public function all_tests() {
          $this->session->unset_userdata('submenu');
+          $this->session->unset_userdata('activesubmenu');
         $this->session->unset_userdata('activemenu');
         $data['activemenu'] = 'test_papers';
         $this->session->set_userdata($data);
@@ -3397,6 +3405,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     }
     public function corporate_cv_bank($fid = null) {
          $this->session->unset_userdata('submenu');
+          $this->session->unset_userdata('activesubmenu');
 
         $this->session->unset_userdata('activemenu');
         $data['activemenu'] = 'cv_bank';
@@ -4268,6 +4277,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     }
     public function ocean_champ_test() {
          $this->session->unset_userdata('submenu');
+          $this->session->unset_userdata('activesubmenu');
 
         $data['activemenu'] = 'oceanchamp';
         $this->session->set_userdata($data);
@@ -4575,6 +4585,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     }
     public function internal_tracker() {
          $this->session->unset_userdata('submenu');
+          $this->session->unset_userdata('activesubmenu');
 
         $this->session->unset_userdata('activemenu');
         $data['activemenu'] = 'internal_tracker';
@@ -4586,6 +4597,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     }
     public function external_tracker() {
          $this->session->unset_userdata('submenu');
+          $this->session->unset_userdata('activesubmenu');
 
         $this->session->unset_userdata('activemenu');
         $data['activemenu'] = 'external_tracker';
@@ -4596,6 +4608,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     }
     public function shared_tracker() {
          $this->session->unset_userdata('submenu');
+          $this->session->unset_userdata('activesubmenu');
 
         $this->session->unset_userdata('activemenu');
         $data['activemenu'] = 'shared_tracker';
@@ -4970,6 +4983,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     }
     public function oceantest() {
          $this->session->unset_userdata('submenu');
+          $this->session->unset_userdata('activesubmenu');
 
         $employer_id = $this->session->userdata('company_profile_id');
         $where_all = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id'";

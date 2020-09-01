@@ -412,11 +412,13 @@ input.capital {
    
       $(function() { 
      
-     $("#my_date_picker").datepicker({ dateFormat: 'yy-mm-dd',maxDate: '0' });
+     $("#my_date_picker").datepicker({ dateFormat: 'dd-mm-yy',maxDate: '0', changeMonth: true,
+     changeYear: true,
+     yearRange: "2000:2020" });
      $("#last_salary_hike").datepicker(
       { dateFormat: 'dd-mm-yy',maxDate: '0', changeMonth: true,
      changeYear: true,
-     yearRange: "1930:2010" });
+     yearRange: "2000:2020" });
      });
 
  $("#js").validate (  
