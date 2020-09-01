@@ -4601,7 +4601,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $folder_data['cv_folder_id'] = $folder_id;
                 $folder_data['cv_id'] = $row;
                 $folder_data['status'] = '1';
-                $result = $this->Master_model->master_update($folder_data, 'cv_folder_relation',$where);
+                $this->Master_model->master_delete('cv_folder_relation',$where);
+                $result = $this->Master_model->master_insert($folder_data, 'cv_folder_relation',$where);
                 $this->session->set_flashdata('success', '<div class="alert alert-success text-center">CV Moved to the folder Succesfully</div>');
             }
         }
