@@ -382,6 +382,10 @@ class Employer extends MY_Employer_Controller {
             $job_info['job_status'] = '1';
             $this->job_posting_model->update($job_info, $job_post_id);
             // redirect('job/show/'.$job_info['job_slugs']);
+            $this->session->set_flashdata('success', '<div class="alert alert-success alert-dismissable">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                  A New Job Post has been created Successfully ! 
+                  </div>');
             redirect('employer/active_job');
         } elseif ($_POST) {
             $this->form_validation->set_rules('job_title', 'job title', 'required');
@@ -510,7 +514,7 @@ class Employer extends MY_Employer_Controller {
                     $this->company_profile_model->sendjobEmail($to_email,$job_details);
                     $this->session->set_flashdata('success', '<div class="alert alert-success alert-dismissable">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                  New Job Posted Succcessfully! 
+                  A New Job Post has been created Successfully !
                   </div>');
                     // redirect('job/show/'.$job_info['job_slugs']);
                     redirect('employer/active_job');
