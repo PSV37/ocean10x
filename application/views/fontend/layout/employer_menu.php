@@ -97,7 +97,7 @@
    #left-panel .inner-left-pannel .inner-tabs .menu-tab .menu-principal ul li:focus span.icon-container i {
     left: 0;
 }
-#left-panel .inner-left-pannel .inner-tabs .menu-tab .menu-principal ul li.active div.tree ul li.active span.txt {
+#left-panel .inner-left-pannel .inner-tabs .menu-tab .menu-principal ul li.active div.tree ul.right_click li.active span.txt {
     font-weight: 500!important;
     color: #18c5bd!important;
 }
