@@ -2310,6 +2310,7 @@ public function randomly_create_oceantest()
             $this->form_validation->set_message('required', 'You must provide this field');
             $this->form_validation->set_message('regex_match', 'You must provide One Uppercase,One Lowercase,Numbers and special Character');
             // print_r($this->form_validation->run());die;
+            $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Employee Updated Sucessfully !</div>'); 
             if ($this->form_validation->run() == FALSE) {
                 $data['result'] = $this->Master_model->getMaster('department', $select = false);
                 //$this->load->view('organization/add_employee',$data);
@@ -2424,7 +2425,6 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $config['num_tag_open'] = '<span style="margin-left:8px;">';
         $config['num_tag_close'] = '</span>';
         $this->pagination->initialize($config);
-        $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Employee Updated Sucessfully !</div>'); 
         $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
         $this->pagination->initialize($config);
         $data["links"] = $this->pagination->create_links();
