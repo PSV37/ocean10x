@@ -861,6 +861,7 @@
     padding: 13px;
     background: transparent;
     background-color: #68dcd7;
+    font-weight: bold;
 }
 .alert.alert-warning.text-center {
     width: 100%;
@@ -869,7 +870,8 @@
     text-align: center;
     padding: 13px;
     background: transparent;
-    background-color: orange;
+    background-color: #f0ad4e;
+    font-weight: bold;
 }
 </style>
 <div class="container-fluid main-d">
@@ -877,7 +879,7 @@
       <div class="col-md-12">
          <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
          <div class="col-md-6 cv_bank">
-         <div id="">
+         <div id="smsg">
             <?php echo $this->session->flashdata('success'); ?></div>
             <div class="row">
                <div class="col-md-12">
