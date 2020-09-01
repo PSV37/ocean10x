@@ -110,7 +110,7 @@ class Employer extends MY_Employer_Controller {
                     'country_id' => $this->input->post('country_id'), 
                     'state_id' => $this->input->post('state_id'), 
                     'city_id' => $this->input->post('city_id'), 
-                    'company_pincode' => $thiss->input->post('company_pincode'), 
+                    'company_pincode' => $this->input->post('company_pincode'), 
                     'company_aboutus' => $this->input->post('company_aboutus'), 
                     'cont_person_level' => 'Admin', 
                     'alternate_email_id' => $this->input->post('alternate_email_id'), 
@@ -2772,7 +2772,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $data['city'] = $this->Master_model->getMaster('city', $where = false);
         $data['roles'] = $this->Master_model->getMaster('user_role', $where = false);
 
-        
+
         //echo $this->db->last_query(); die;
         $this->load->view('fontend/employer/employee_management', $data);
         // $this->load->view('fontend/employer/edit_employee',$data);
@@ -2870,13 +2870,13 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 }
             }
             if ($employer_data['last_login'] == "0000-00-00 00:00:00") {
-                $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">“Add Superadmin Details</div>');
+                $this->session->set_flashdata('success', '<div class="alert alert-success text-center">“Add Superadmin Details</div>');
                 $this->load->view('fontend/employer/Superadmin', $data);
             } else {
                 $update_data = array('last_login' => date('Y-m-d H:i:s'));
                 $where11['company_profile_id'] = $user_id;
                 $this->Master_model->master_update($update_data, 'company_profile', $where11);
-                $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">' . $this->input->post('emp_name') . ' has been activated !!</div>');
+                $this->session->set_flashdata('success', '<div class="alert alert-success text-center">' . $this->input->post('emp_name') . ' has been activated !!</div>');
                 redirect(base_url() . 'employer/addemployee');
             }
         }
