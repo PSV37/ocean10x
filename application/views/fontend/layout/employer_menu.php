@@ -97,6 +97,10 @@
    #left-panel .inner-left-pannel .inner-tabs .menu-tab .menu-principal ul li:focus span.icon-container i {
     left: 0;
 }
+#left-panel .inner-left-pannel .inner-tabs .menu-tab .menu-principal ul li.active div.tree ul li.active span.txt {
+    font-weight: 500!important;
+    color: #18c5bd!important;
+}
   
 /*li:active, li:focus {border: solid 2px #18c5bd;}*/
 </style>
@@ -155,7 +159,7 @@
                                        <li id="submenu" data-action=" <?php echo $row['id'] ?>"<?php if ($activesubmenu ==  $row['id']) { ?>
                                           class="active"
                                           <?php } ?>  >
-                                          <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row['id'] ?>" > <span   ><i class="fas fa-folder-open"></i></span><span data-action=" <?php echo $row['id'] ?>" id="r<?php echo $row['id']; ?>"> <?php echo $row['folder_name']; ?></span></a>
+                                          <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row['id'] ?>" > <span   ><i class="fas fa-folder-open"></i></span><span class="txt" data-action=" <?php echo $row['id'] ?>" id="r<?php echo $row['id']; ?>"> <?php echo $row['folder_name']; ?></span></a>
                                           <!--  <input type="text" id="<?php echo $row['id']; ?>" class="edit" style="display:none"/ value="<?php echo $row['folder_name']; ?>"> -->
                                           <ul>
                                              <?php 

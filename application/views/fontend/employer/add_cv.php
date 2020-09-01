@@ -179,10 +179,14 @@ input.capital {
                      </div>
                   </div>
                   <div class="col-md-4">
-                     <div class="form-group">
+                     <div class="form-group md-form md-outline input-with-post-icon datepicker" id="date-picker-example">
                         <label for="exampleInputEmail1">Working at Current Job Since</label>
 
-                         <input type="text" id="my_date_picker" name="working_current_since" style="display: inline-block;" class="form-control datepicker "   value="<?php echo  set_value('working_current_since'); ?>">  
+  <input placeholder="Select date" type="text" id="example" class="form-control">
+  
+  <i class="fas fa-calendar input-prefix" tabindex=0></i>
+
+                         <!-- <input type="text" id="my_date_picker" name="working_current_since" style="display: inline-block;" class="form-control datepicker "   value="<?php echo  set_value('working_current_since'); ?>">   -->
                        <!--  <input type="text" name="working_current_since" id="working_current_since" class="form-control datepicker">  <?php echo form_error('working_current_since'); ?>    -->
                      </div>
                   </div>
