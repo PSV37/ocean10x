@@ -1039,7 +1039,7 @@
                            <li id="div_download"> <a class="dropdown-item"  href="<?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ echo base_url(); echo 'upload/Resumes/'.$cv_row['js_resume']; } ?>" download >Download this cv</a></li>
                            <?php } ?>
                            <li><a class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-target="#copy_cv<?php echo $cv_row['cv_id']; ?>" href="#">Copy this CV</a></li>
-                           <li><a class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-target="#Move_cv<?php echo $cv_row['cv_id']; ?>" href="#">Move this CV</a></li>
+                           <li><a class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-target="#move_cv<?php echo $cv_row['cv_id']; ?>" href="#">Move this CV</a></li>
                         </div>
                      </div>
                   </div>
