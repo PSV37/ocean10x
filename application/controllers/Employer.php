@@ -2394,7 +2394,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         if (isset($c_id) && !empty($c_id)) {
             $where = "emp_id='$c_id'";
             $data['result'] = $this->Master_model->get_master_row('employee', $select = FALSE, $where);
-            $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Employee Updated Sucessfully !</div>'); 
+
         }
         $where = 'employee.org_id="' . $user_id . '" and employee.emp_status!="0" ';
         //$data['result'] = $this->Master_model->getMaster('industry',$where=FALSE);
@@ -2424,6 +2424,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $config['num_tag_open'] = '<span style="margin-left:8px;">';
         $config['num_tag_close'] = '</span>';
         $this->pagination->initialize($config);
+        $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Employee Updated Sucessfully !</div>'); 
         $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
         $this->pagination->initialize($config);
         $data["links"] = $this->pagination->create_links();
