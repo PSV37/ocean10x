@@ -163,7 +163,7 @@ class Employer extends MY_Employer_Controller {
                             $response['created_on'] = date('Y-m-d H:i:s');
                             // print_r($response);
                             $result = $this->Master_model->master_insert($response, 'company_branches');
-                            $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Profile Updated Successfully !</div>'); 
+                            
                         }
                     }
                     $wheres = "status='0' AND company_profile_id='$employer_id' ";
@@ -180,7 +180,7 @@ class Employer extends MY_Employer_Controller {
                         $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">“To start using TheOcean resources, we have created 3 users. Please enter their details !</div>');
                         redirect('employer/addemployee');
                     } else {
-                        $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">Updated Successfully!</div>');
+                        $this->session->set_flashdata('success_msg', '<div class="alert alert-success text-center">Profile Updated Successfully !</div>');
                         $company_info = $this->company_profile_model->get($employer_id);
                         $country = $this->Master_model->getMaster('country', $where = false);
                         $this->load->view('fontend/employer/profile', compact('company_info', 'country', 'branches'));
@@ -670,7 +670,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                     redirect('employer/change_password');
                 }
             } else {
-                $this->session->set_flashdata('change_password', '<div class="alert alert-danger text-center"> Old Password Not Found!</div>');
+                $this->session->set_flashdata('change_password', '<div class="alert alert-danger text-center"> Current Password is incorrect !</div>');
                 redirect('employer/change_password');
             }
         } else {

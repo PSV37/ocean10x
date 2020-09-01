@@ -229,7 +229,6 @@ input.capital {
 </style>
 <div class="container-fluid main-d">
    <div class="container">
-      <div id="smsg"><?php echo $this->session->flashdata('success'); ?></div>
       <form id="submit" action="<?php echo base_url(); ?>employer/profile-setting" method="post"  enctype="multipart/form-data"  >
          <input type="hidden" name="company_profile_id" value="<?php echo $company_info->company_profile_id;?>">
          <div class="col-md-12">
