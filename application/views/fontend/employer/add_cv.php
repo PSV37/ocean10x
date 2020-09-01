@@ -179,14 +179,10 @@ input.capital {
                      </div>
                   </div>
                   <div class="col-md-4">
-                     <div class="form-group md-form md-outline input-with-post-icon datepicker" id="date-picker-example">
+                     <div class="form-group">
                         <label for="exampleInputEmail1">Working at Current Job Since</label>
 
-  <input placeholder="Select date" type="text" id="example" class="form-control">
-  
-  <i class="fas fa-calendar input-prefix" tabindex=0></i>
-
-                         <!-- <input type="text" id="my_date_picker" name="working_current_since" style="display: inline-block;" class="form-control datepicker "   value="<?php echo  set_value('working_current_since'); ?>">   -->
+                         <input type="text" id="my_date_picker" name="working_current_since" style="display: inline-block;" class="form-control datepicker "   value="<?php echo  set_value('working_current_since'); ?>">  
                        <!--  <input type="text" name="working_current_since" id="working_current_since" class="form-control datepicker">  <?php echo form_error('working_current_since'); ?>    -->
                      </div>
                   </div>
@@ -372,7 +368,6 @@ input.capital {
   </script> 
 <script>
    $('.select2').select2();
-   $('.datepicker').datepicker();
 </script>
 <script>
    function check_other(value)
@@ -418,7 +413,10 @@ input.capital {
       $(function() { 
      
      $("#my_date_picker").datepicker({ dateFormat: 'yy-mm-dd',maxDate: '0' });
-     $("#last_salary_hike").datepicker({ dateFormat: 'yy-mm-dd',maxDate: '0' });
+     $("#last_salary_hike").datepicker(
+      { dateFormat: 'dd-mm-yy',maxDate: '0', changeMonth: true,
+     changeYear: true,
+     yearRange: "1930:2010" });
      });
 
  $("#js").validate (  
