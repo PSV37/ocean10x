@@ -307,13 +307,13 @@ input.select2-search__field {
            	      <div class="col-md-3">
                     <div class="form-group">                                       
                      <label for="exampleInputEmail1">Employee ID<span class="required">*</span></label>
-                      <input type="text" min="1" name="emp_no" id="emp_no" class="form-control allownumericwithoutdecimal" value="<?php  $val = set_value('company_email'); if(!empty($val)){ echo $val; } else{ echo $result['emp_no'];} ?>" ><?php echo form_error('emp_no'); ?>                    
+                      <input type="text" min="1" name="emp_no" id="emp_no" class="form-control allownumericwithoutdecimal" value="<?php  $val = set_value('emp_no'); if(!empty($val)){ echo $val; } else{ echo $result['emp_no'];} ?>" ><?php echo form_error('emp_no'); ?>                    
                     </div>
                   </div>
                   <div class="col-md-3">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Employee Name<span class="required">*</span></label>
-                      <input type="text" name="emp_name" id="emp_name" class="form-control allowalphabates" value="<?php  $val = set_value('company_email'); if(!empty($val)){ echo $val; } else {echo $result['emp_name'];} ?>" ><?php echo form_error('emp_name'); ?>                      
+                      <input type="text" name="emp_name" id="emp_name" class="form-control allowalphabates" value="<?php  $val = set_value('emp_name'); if(!empty($val)){ echo $val; } else {echo $result['emp_name'];} ?>" ><?php echo form_error('emp_name'); ?>                      
                     </div>
                   </div>
                   <div class="col-md-3">
@@ -783,6 +783,12 @@ required: true
 
 
 'pincode':{
+
+required: true
+
+},
+
+'address':{
 
 required: true
 
