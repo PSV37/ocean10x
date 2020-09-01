@@ -3638,7 +3638,10 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     $cv_data['created_by'] = $company_id;
                     $cv_id=$this->Master_model->master_insert($cv_data, 'corporate_cv_bank');
                     $to_email = $this->input->post('candidate_email');
-                      $this->company_profile_model->sendcandEmail($to_email);
+                    if (isset($_POST['send_email'])) {
+                         $this->company_profile_model->sendcandEmail($to_email);
+                    }
+                     
                      $fid = $this->input->get('fid');
                      // print_r($fid);die;
                      if (isset($fid) && !empty($fid)) {
