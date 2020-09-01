@@ -109,6 +109,44 @@ class Cron extends CI_controller {
             $ci->email->send(FALSE);
 		}
 
+		$join_tests = array('js_info' => 'js_info.job_seeker_id = forwarded_tests.job_seeker_id',
+			'company_profile' =>'company_profile.company_profile_id = forwarded_tests.company_id',
+			'oceanchamp_tests' => 'oceanchamp_tests.test_id = forwarded_tests.test_id',
+			'topic' => ' FIND_IN_SET(topic.topic_id,oceanchamp_tests.topics) <> 0 |LEFT');
+		$where_tests =  "DATE_FORMAT(now(), '%Y-%m-%d') BETWEEN DATE_FORMAT(forwarded_tests.updated_on, '%Y-%m-%d') and DATE_ADD(DATE_FORMAT(forwarded_tests.updated_on, '%Y-%m-%d') , INTERVAL 1 DAY) AND forwarded_tests.status = 'Farwarded Test individually'";
+		$tests_forwarded = $this->Master_model->getMaster('forwarded_tests', $where_tests , $join_tests, $order = false, $field = false, $select = 'GROUP_CONCAT(topic.topic_name) as topics_common,js_info.*,company_profile.*,oceanchamp_tests.*',$limit=false,$start=false, $search=false);
+		// print_r($all_mails);
+		// print_r($this->db->last_query());
+		foreach ($tests_forwarded as $row) {
+			 $company_name = $this->session->userdata('company_name');
+			 $to_email = $row['email'];
+          $ci = get_instance();
+          $ci->load->library('email');
+            $email_name = explode('@', $to_email);
+          
+            $config['protocol'] = "mail";
+            $config['charset'] = "utf-8";
+            $config['mailtype'] = "html";
+            $config['newline'] = "\r\n";
+
+        $message = '<div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
+			<table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
+			<br><br>Hi '.ucfirst($email_name[0]).',<br><br>'.$row['company_name'].' has asked you to take a test. Kindly click on the Test URL give below and follow the steps thereon. <br><br><a href="' . base_url() . 'job_seeker/ocean_test_start/' . base64_encode($row['test_id']) . '"><button >Give Test</button></a>
+			    <br><br>Thanks,<br><br>Team TheOcean
+				</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
+
+
+
+            $ci->email->initialize($config);
+            $ci->email->from('info@consultnhire.com', 'ConsultnHire');
+            $ci->email->to($to_email);
+            $ci->email->reply_to('info@consultnhire.com', 'ConsultnHire');
+            $ci->email->subject('REMINDER '.$row['company_name'].' has asked you to take a '.$row['topics_common'] .' Test ');
+            
+            $ci->email->message($message);
+            $ci->email->send(FALSE);
+		}
+
 
 
 
