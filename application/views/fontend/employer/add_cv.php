@@ -115,7 +115,7 @@ input.capital {
                      <h4 class="employee_heading">ADD NEW CV</h4>
                   </div>
                   <div class="col-md-6">
-                     <input style="float: right;" type="checkbox" name="send_email">Send Registration Email
+                     <input style="float: right;" type="checkbox" name="send_email">Send Email to Candidate ?
                   </div>
                </div>
               
