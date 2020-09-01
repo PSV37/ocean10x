@@ -952,6 +952,26 @@
     width: auto;
     padding: 14px;
 }
+.alert.alert-success.text-center {
+    width: 100%;
+    height: 30px;
+    border-radius: 0;
+    text-align: center;
+    padding: 13px;
+    background: transparent;
+    background-color: #68dcd7;
+    font-weight: bold;
+}
+.alert.alert-warning.text-center {
+    width: 100%;
+    height: 30px;
+    border-radius: 0;
+    text-align: center;
+    padding: 13px;
+    background: transparent;
+    background-color: #f0ad4e;
+    font-weight: bold;
+}
 </style>
 
 <div class="container-fluid main-d">
@@ -962,7 +982,7 @@
         
 
 <div class="col-md-6 active-job">
-    <?php echo $this->session->flashdata('success'); ?><br><br>
+   <div id="smsg"> <?php echo $this->session->flashdata('success'); ?></div><br><br>
    <?php if (!empty($company_active_jobs)): foreach ($company_active_jobs as $v_companyjobs) : ?>
    <label>
       <div class="border-top1"></div>

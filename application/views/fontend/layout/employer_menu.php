@@ -101,7 +101,7 @@
     font-weight: 500!important;
     color: #18c5bd!important;
 }
-#left-panel .inner-left-pannel .inner-tabs .menu-tab .menu-principal ul li.active div.tree ul.right_click li.active ul li.active span.txt {
+#left-panel .inner-left-pannel .inner-tabs .menu-tab .menu-principal ul li.active div.tree ul.right_click li.active ul li.active span.subtxt {
     font-weight: 500!important;
     color: #18c5bd!important;
 }
@@ -175,7 +175,7 @@
                                                   foreach ($child_folders as $row1) { ?>
                                              <li id="submenu"  <?php if ($activesubmenu ==  $row1['id']) { ?> class="active" <?php } ?> data-action=" <?php echo $row1['id'] ?>">
                                                 <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row1['id'] ?>"><span><i class="fas fa-folder-open"></i></span>
-                                                <span class="txt"data-action=" <?php echo $row1['id'] ?>"> <?php echo $row1['folder_name']; ?></span> </a>
+                                                <span class="subtxt"data-action=" <?php echo $row1['id'] ?>"> <?php echo $row1['folder_name']; ?></span> </a>
                                                 <input type="text" class="edit" style="display:none"/ value="<?php echo $row1['folder_name']; ?>">
                                                 <ul>
                                                    <?php $cparent_id = $row1['id']; 
