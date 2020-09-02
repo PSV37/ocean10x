@@ -972,10 +972,10 @@
     background-color: #f0ad4e;
     font-weight: bold;
 }
-.ui-autocomplete-input {
+/*.ui-autocomplete-input {
    border: none; 
    font-size: 14px;
-   /*width: 300px;*/
+   width: 300px;
    height: 24px;
    margin-bottom: 5px;
    padding-top: 2px;
@@ -983,7 +983,7 @@
    padding-top: 0px !important;
    z-index: 1511;
    position: relative;
-   }
+   }*/
    .ui-autocomplete {
    z-index: 5000;
    background: #b3ebe8;;
