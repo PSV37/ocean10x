@@ -1559,7 +1559,32 @@
 <script>
    function get_copy_folders(cv_id)
    {
-      if (cv_id)
+     
+         var folder_id = ' <?php if(!empty($fid)){echo $fid;} ?>';
+         if (folder_id)
+       {
+          $.ajax({
+               url: "<?php echo base_url();?>employer/get_copy_folders",
+               type: "POST",
+               data:{cv_id:cv_id,folder_id:folder_id},
+                 success: function(data)
+                 {
+                   $('#cv_folders_text'+cv_id).html('This CV is also available in ')
+                  var obj = [];
+                  const parsed = JSON.parse(data);
+                     jQuery.each(parsed, function(index, item) {
+                           obj[item.cv_folder_id] = item.folder_name;
+                           var url = '<?php echo base_url(); ?>employer/corporate_cv_bank/'+item.cv_folder_id;
+
+                           $('#cv_folders'+cv_id).append(' <a href="'+url+'">'+item.folder_name+'</a>');
+
+                       });
+
+                     console.log(obj);
+                 }
+           });
+       }
+     else if (cv_id)
        {
           $.ajax({
                url: "<?php echo base_url();?>employer/get_copy_folders",
@@ -1582,6 +1607,7 @@
                  }
            });
        }
+
    }
 </script>
 <script>
