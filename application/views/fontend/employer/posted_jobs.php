@@ -1292,7 +1292,29 @@
 </div>
 <?php
    endforeach;endif;
-   ?><script>
+   ?>
+   <script>
+   $(document).ready (function(){
+     $("#smsg").fadeTo(2000, 500).slideUp(500, function(){
+     $("#smsg").slideUp(500);
+     });   
+   });
+</script>
+<script>
+    $(function() {
+   $("#candiate_email").autocomplete({
+       source: "<?php echo base_url('employer/get_candidate_by_email'); ?>",
+       select: function(a,b)
+         {
+              // alert(b.item.value);
+           $(this).val(b.item.value); //grabed the selected value
+           // getcandidateinfo(b.item.value);
+   
+         }
+     });
+   });
+</script>
+   <script>
    function sliceSize(dataNum, dataTotal) {
      return (dataNum / dataTotal) * 360;
    }
