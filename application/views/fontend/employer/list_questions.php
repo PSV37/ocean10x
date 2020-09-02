@@ -1477,7 +1477,7 @@ span.select2-selection.select2-selection--single {
                                     <div class="checkbox">
                                        <input type="checkbox" id="checkbox" <?php if ($ct_row['answer_id']==1){ echo "checked"; } ?>
                                           
-                                       <?php endif ?> />
+                                       />
                                        <label for="checkbox">
                                        <?php echo $ct_row['option1'] ?>
                                        </label>
