@@ -3555,6 +3555,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                 'mobile' => $this->input->post('candidate_phone'), 
                                 'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),);
                             $frwd = $this->Master_model->master_insert($external_array, 'external_tracker');
+                            $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Employee Updated Sucessfully !</div>'); 
+
                         }
                         if ($apply) {
                             $email_name = explode('@', $email);
