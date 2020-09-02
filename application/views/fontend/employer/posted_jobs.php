@@ -1303,15 +1303,14 @@
 <script>
     
    $("#candiate_email").autocomplete({
-       source: "<?php echo base_url('employer/get_candidate_by_email'); ?>",
-       select: function(a,b)
-         {
-              // alert(b.item.value);
-           $(this).val(b.item.value); //grabed the selected value
-           // getcandidateinfo(b.item.value);
-   
-         }
-     });
+             
+             source: "<?php echo base_url();?>Employer/get_candidate_by_email",
+             minLength: 2,
+              // append: "#rotateModal",
+            
+    
+            
+           });
 
 </script>
    <script>
