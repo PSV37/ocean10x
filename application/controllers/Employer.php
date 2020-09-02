@@ -2008,6 +2008,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                 $test_data['created_by'] = $this->session->userdata('company_profile_id');
                 $test_data['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
                 $this->Master_model->master_insert($test_data, 'oceanchamp_tests');
+                 $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Test Created Successfully</div>');
             }
 
         
@@ -2058,6 +2059,7 @@ public function randomly_create_oceantest()
                 $test_data['created_by'] = $this->session->userdata('company_profile_id');
                 $test_data['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
                 $this->Master_model->master_insert($test_data, 'ocean_tests');
+                 $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Test Created Successfully</div>');
             }
 
         
