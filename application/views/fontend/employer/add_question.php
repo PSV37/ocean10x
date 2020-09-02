@@ -198,6 +198,7 @@ ul.select2-results__options {
 
         <div class="col-md-4"></div>
           <div class="col-md-4" style="text-align:right;">
+            <button id="submit" type="button" onclick="history.back()" class="save_question">Cancel</button>
             <button id="submit" type="Submit" class="save_question">Save question</button>
           </div>
       </div>
