@@ -2008,6 +2008,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                 $test_data['created_by'] = $this->session->userdata('company_profile_id');
                 $test_data['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
                 $this->Master_model->master_insert($test_data, 'oceanchamp_tests');
+                 $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Test Created Successfully</div>');
             }
 
         
@@ -2058,6 +2059,7 @@ public function randomly_create_oceantest()
                 $test_data['created_by'] = $this->session->userdata('company_profile_id');
                 $test_data['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
                 $this->Master_model->master_insert($test_data, 'ocean_tests');
+                 $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Test Created Successfully</div>');
             }
 
         
@@ -2274,8 +2276,9 @@ public function randomly_create_oceantest()
         $data['title'] = "Edit Questionbank";
         $data['options'] = $this->Master_model->getMaster('options');
         $data['questionbank'] = $this->Master_model->getMaster('questionbank', $where_all, $join_emp);
+        $join = array('questionbank_answer' => 'questionbank_answer.question_id = questionbank.ques_id|LEFT OUTER');
         $where_questionbank = "ques_id='$id'";
-        $data['edit_questionbank_info'] = $this->Master_model->getMaster('questionbank', $where_questionbank);
+        $data['edit_questionbank_info'] = $this->Master_model->getMaster('questionbank', $where = $where_questionbank, $join, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
         $where_answer = "question_id='$id'";
         $data['questionbank_answer'] = $this->Master_model->getMaster('questionbank_answer', $where_answer);
         $where_lineitem = "lineitem.lineitem_status='1'";
@@ -2903,7 +2906,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $topics = $this->Master_model->getMaster('topic', $where);
         $result = '';
         if (!empty($topics)) {
-            $result.= '<option value="">Select Topic</option>';
+            $result.= '<option value="0">General</option>';
             foreach ($topics as $key) {
                 $result.= '<option value="' . $key['topic_id'] . '">' . $key['topic_name'] . '</option>';
             }
@@ -2920,7 +2923,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $subtopics = $this->Master_model->getMaster('subtopic', $where);
         $result = '';
         if (!empty($subtopics)) {
-            $result.= '<option value="">Select Subtopic</option>';
+            $result.= '<option value="0">General</option>';
             foreach ($subtopics as $key) {
                 $result.= '<option value="' . $key['subtopic_id'] . '">' . $key['subtopic_name'] . '</option>';
             }
@@ -2936,7 +2939,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $lineitems = $this->Master_model->getMaster('lineitem', $where);
         $result = '';
         if (!empty($lineitems)) {
-            $result.= '<option value="">Select Lineitem</option>';
+            $result.= '<option value="0">General</option>';
             foreach ($lineitems as $key) {
                 $result.= '<option value="' . $key['lineitem_id'] . '">' . $key['title'] . '</option>';
             }
@@ -2952,7 +2955,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $lineitemlevels = $this->Master_model->getMaster('lineitemlevel', $where);
         $result = '';
         if (!empty($lineitemlevels)) {
-            $result.= '<option value="">Select Lineitem Level 2</option>';
+            $result.= '<option value="0">General</option>';
             foreach ($lineitemlevels as $keys) {
                 $result.= '<option value="' . $keys['lineitemlevel_id'] . '">' . $keys['titles'] . '</option>';
             }

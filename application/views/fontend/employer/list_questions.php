@@ -958,6 +958,26 @@ span.select2-selection.select2-selection--single {
    .closebtn:hover {
    color: black;
    }
+   .alert.alert-success.text-center {
+    width: 100%;
+    height: 30px;
+    border-radius: 0;
+    text-align: center;
+    padding: 13px;
+    background: transparent;
+    background-color: #68dcd7;
+    font-weight: bold;
+}
+.alert.alert-warning.text-center {
+    width: 100%;
+    height: 30px;
+    border-radius: 0;
+    text-align: center;
+    padding: 13px;
+    background: transparent;
+    background-color: #f0ad4e;
+    font-weight: bold;
+}
 </style>
 
 <!---header-->
@@ -1455,7 +1475,7 @@ span.select2-selection.select2-selection--single {
                               <div class="optionbox-1 col-md-3">
                                  <li class = "list-group-item">
                                     <div class="checkbox">
-                                       <input type="checkbox" id="checkbox" />
+                                       <input type="checkbox" id="checkbox"  />
                                        <label for="checkbox">
                                        <?php echo $ct_row['option1'] ?>
                                        </label>
@@ -1495,7 +1515,7 @@ span.select2-selection.select2-selection--single {
                         <a class="toggle btn " href="#example<?php echo $ct_row['question_id'] ?>">show answer</a>
                      </p>
                      <div class="toggle-content" id="example<?php echo $ct_row['question_id'] ?>">
-                        <?php echo $ct_row['answer_id'] ?>
+                        <?php echo $ct_row['option'.$ct_row['answer_id']] ?>
                      </div>
                      <div class="btn-group">
                         <a href=" <?php echo base_url('employer/edit_questionbank/' . $ct_row['ques_id']); ?>"><i class="far fa-edit icon_backg"></i></a>

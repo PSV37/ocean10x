@@ -48,6 +48,7 @@ class Employer_Login extends CI_Controller
             $data['company_name']       = $result->company_name;
             $data['comp_type']          = $result->comp_type;
             $data['email']          = $result->company_email;
+            $data['currency']          = $result->currency_code;
             $this->session->set_userdata($data);
             $company_profile_id=$this->session->userdata('company_profile_id');
              
