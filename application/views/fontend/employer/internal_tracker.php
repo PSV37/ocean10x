@@ -643,7 +643,7 @@ textarea#comment {
                 $('.smsg').html('<div class="alert alert-success text-center">Changes to this Internal Tracker have been Saved !</div>')
                 $("#smsg").fadeTo(2000, 500).slideUp(500, function(){
                  $("#smsg").slideUp(500);
-               }
+                });
                 // window.location.reload();
                  tracker_card(job_id);
               }
@@ -692,6 +692,7 @@ textarea#comment {
                 $('.smsg').html('<div class="alert alert-success text-center">Changes to this External Tracker have been Updated !</div>')
                 $("#smsg").fadeTo(2000, 500).slideUp(500, function(){
                  $("#smsg").slideUp(500);
+               });
                 // window.location.reload();
                  tracker_card(job_id);
               }
