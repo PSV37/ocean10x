@@ -441,6 +441,26 @@ textarea#comment {
    {
    color: red;
    }
+   .alert.alert-success.text-center {
+    width: 100%;
+    height: 30px;
+    border-radius: 0;
+    text-align: center;
+    padding: 13px;
+    background: transparent;
+    background-color: #68dcd7;
+    font-weight: bold;
+}
+.alert.alert-warning.text-center {
+    width: 100%;
+    height: 30px;
+    border-radius: 0;
+    text-align: center;
+    padding: 13px;
+    background: transparent;
+    background-color: #f0ad4e;
+    font-weight: bold;
+}
 </style>
 <div class="container-fluid main-d">
    <div class="container">
@@ -621,6 +641,9 @@ textarea#comment {
               {
                 // alert('Updated Successfully');
                 $('.smsg').html('<div class="alert alert-success text-center">Changes to this Internal Tracker have been Saved !</div>')
+                $("#smsg").fadeTo(2000, 500).slideUp(500, function(){
+                 $("#smsg").slideUp(500);
+               }
                 // window.location.reload();
                  tracker_card(job_id);
               }
@@ -665,7 +688,10 @@ textarea#comment {
                // dataType: "json",
               success: function(data)
               {
-                alert('Updated Successfully');
+                // alert('Updated Successfully');
+                $('.smsg').html('<div class="alert alert-success text-center">Changes to this External Tracker have been Updated !</div>')
+                $("#smsg").fadeTo(2000, 500).slideUp(500, function(){
+                 $("#smsg").slideUp(500);
                 // window.location.reload();
                  tracker_card(job_id);
               }
