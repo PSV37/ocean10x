@@ -3775,6 +3775,10 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             }
         }
     }
+    function get_copy_folders()
+    {
+
+    }
     // desired career
     function get_candidate_info_by_email() {
         $email_id = $this->input->post('email');
@@ -4545,6 +4549,14 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         }
         $zip->close();
         echo base_url() . $filename;
+    }
+    function get_copy_folders()
+    {
+        $cv_id = $this->input->post('cv_id');
+        $where = "cv_folder_relation.cv_id = '$cv_id'";
+        $join = array('cv_folder' => 'cv_folder.id = cv_folder_relation.cv_folder_id ');
+        $result = $this->Master_model->getMaster('cv_folder_relation', $where, $join, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+        echo  json_encode($result);
     }
     public function add_cv_folder() {
         $employer_id = $this->session->userdata('company_profile_id');
