@@ -3747,7 +3747,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                         }
                         $data['job_id'] = $id;
                         $this->session->set_userdata($data);
-                        $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Tracker happen Updated Sucessfully !</div>'); 
+                        $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Changes to this Internal Tracker have been Saved !</div>'); 
 
                         redirect('employer/internal_tracker');
                     }
