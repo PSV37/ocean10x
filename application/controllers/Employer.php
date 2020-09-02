@@ -2923,7 +2923,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $subtopics = $this->Master_model->getMaster('subtopic', $where);
         $result = '';
         if (!empty($subtopics)) {
-            $result.= '<option value="">Select Subtopic</option>';
+            $result.= '<option value="0">General</option>';
             foreach ($subtopics as $key) {
                 $result.= '<option value="' . $key['subtopic_id'] . '">' . $key['subtopic_name'] . '</option>';
             }
@@ -2939,7 +2939,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $lineitems = $this->Master_model->getMaster('lineitem', $where);
         $result = '';
         if (!empty($lineitems)) {
-            $result.= '<option value="">Select Lineitem</option>';
+            $result.= '<option value="0">General</option>';
             foreach ($lineitems as $key) {
                 $result.= '<option value="' . $key['lineitem_id'] . '">' . $key['title'] . '</option>';
             }
@@ -2955,7 +2955,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $lineitemlevels = $this->Master_model->getMaster('lineitemlevel', $where);
         $result = '';
         if (!empty($lineitemlevels)) {
-            $result.= '<option value="">Select Lineitem Level 2</option>';
+            $result.= '<option value="0">General</option>';
             foreach ($lineitemlevels as $keys) {
                 $result.= '<option value="' . $keys['lineitemlevel_id'] . '">' . $keys['titles'] . '</option>';
             }
