@@ -189,7 +189,11 @@ input.capital {
                   </div>
                   <div class="col-md-4">
                      <div class="form-group">
-                        <label for="exampleInputEmail1">Current CTC</label>
+                        <?php $currency = $this->session->userdata('currency') ?>
+                        <label for="exampleInputEmail1">Current CTC <?php if (isset($currency) && !empty($currency)) {
+                           setlocale(LC_MONETARY, $currency);
+                           echo money_format('%n');
+                        } ?></label>
                         <input type="text" name="current_ctc" id="current_ctc" class="form-control allownumericwithdecimal" maxlength="3" value="<?php echo  set_value('current_ctc'); ?>">   <?php echo form_error('current_ctc'); ?>
                      </div>
                   </div>

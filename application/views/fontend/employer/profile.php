@@ -232,7 +232,7 @@ input.capital {
       <form id="submit" action="<?php echo base_url(); ?>employer/profile-setting" method="post"  enctype="multipart/form-data"  >
          <input type="hidden" name="company_profile_id" value="<?php echo $company_info->company_profile_id;?>">
          <div class="col-md-12">
-          
+           <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
 
             <div class="col-md-9 edit-profile">
                <div class="col-md-12 header-profile">
