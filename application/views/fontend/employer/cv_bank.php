@@ -1410,7 +1410,7 @@
                </div>
             </div>
             <div class="filter1">
-               <p style="font-size:18px;margin-top:15px;">Notice Period</p>
+               <p style="font-size:18px;margin-top:9px;">Notice Period</p>
                <div class="range-wrap">
                   <input type="range" class="range" id="notice_period_id" onchange="get_data();" min="0" max="90" step="5" value="0">
                   <output class="bubble notice_period" ></output>
