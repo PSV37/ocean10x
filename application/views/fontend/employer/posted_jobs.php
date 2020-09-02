@@ -1261,7 +1261,7 @@
                <input type="hidden" name="consultant" value="JobSeeker">  
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                   <label class="mdl-textfield__label" for="sample3">E-mail:</label>
-                  <input type="email"  class="form-control ui-autocomplete-input" name="candiate_email"  id="email" placeholder="Enter comma seperated Emails"  id="subject" data-required="true" multiple style="display: inline-block;" required>
+                  <input type="email"  class="form-control" name="candiate_email"  id="email" placeholder="Enter comma seperated Emails"  id="subject" data-required="true" multiple style="display: inline-block;" required>
                </div>
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
                   <label class="mdl-textfield__label" for="sample3">Message:</label>
@@ -1301,7 +1301,7 @@
    });
 </script>
 <script>
-    $(function() {
+    
    $("#candiate_email").autocomplete({
        source: "<?php echo base_url('employer/get_candidate_by_email'); ?>",
        select: function(a,b)
@@ -1312,7 +1312,7 @@
    
          }
      });
-   });
+
 </script>
    <script>
    function sliceSize(dataNum, dataTotal) {
