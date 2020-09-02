@@ -157,7 +157,7 @@ ul.select2-results__options {
                     <li style="position:relative;"><span style="position:absolute;font-weight: 700;">1.</span>
                       <div class="checkbox">
                         <label>
-                          <input type="checkbox" value="1" class="btn-default1 checkbox"  name="correct_answer[]">
+                          <input type="checkbox" value="1" class="btn-default1 checkbox"  name="correct_answer[]" <?php if ($row['answer_id'] == 1): echo "checked"; endif ?>>
                           <span>option1</span>
                         </label>
                       </div>
@@ -165,7 +165,8 @@ ul.select2-results__options {
                     <li style="position:relative;"><span style="position:absolute;font-weight: 700;">3.</span>
                       <div class="checkbox">
                         <label>
-                          <input type="checkbox" value="3" class="btn-default1 checkbox"  name="correct_answer[]">
+                          <input type="checkbox" value="3" class="btn-default1 checkbox"  name="correct_answer[]"
+                          <?php if ($row['answer_id'] == 3): echo "checked"; endif ?>>
                           <span>option3</span>
                         </label>
                       </div>
@@ -175,7 +176,8 @@ ul.select2-results__options {
                     <li style="position:relative;"><span style="position:absolute;font-weight: 700;">2.</span>
                       <div class="checkbox">
                         <label>
-                          <input type="checkbox" value="2" class="btn-default1 checkbox"   name="correct_answer[]">
+                          <input type="checkbox" value="2" class="btn-default1 checkbox"   name="correct_answer[]"
+                          <?php if ($row['answer_id'] == 2): echo "checked"; endif ?>>
                           <span>option2</span>
                         </label>
                       </div>
@@ -183,7 +185,8 @@ ul.select2-results__options {
                     <li style="position:relative;"><span style="position:absolute;font-weight: 700;">4.</span>
                       <div class="checkbox">
                         <label>
-                        <input type="checkbox" value="4" class="btn-default1 checkbox"  name="correct_answer[]">
+                        <input type="checkbox" value="4" class="btn-default1 checkbox"  name="correct_answer[]"
+                        <?php if ($row['answer_id'] == 4): echo "checked"; endif ?>>
                         <span>option4</span>
                         </label>
                       </div>
@@ -196,8 +199,8 @@ ul.select2-results__options {
           </div>
         </div>
 
-        <div class="col-md-4"></div>
-          <div class="col-md-4" style="text-align:right;">
+        <!-- <div class="col-md-4"></div> -->
+          <div class="col-md-6" style="text-align:right;">
             <button id="submit" type="button" onclick="history.back()" class="save_question">Cancel</button>
             <button id="submit" type="Submit" class="save_question">Save question</button>
           </div>

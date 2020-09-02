@@ -1475,9 +1475,7 @@ span.select2-selection.select2-selection--single {
                               <div class="optionbox-1 col-md-3">
                                  <li class = "list-group-item">
                                     <div class="checkbox">
-                                       <input type="checkbox" id="checkbox" <?php if ($ct_row['answer_id']=='1'){ echo "checked"; } ?>
-                                          
-                                       />
+                                       <input type="checkbox" id="checkbox"  />
                                        <label for="checkbox">
                                        <?php echo $ct_row['option1'] ?>
                                        </label>
@@ -1485,7 +1483,7 @@ span.select2-selection.select2-selection--single {
                                  </li>
                                  <li class = "list-group-item" >
                                     <div class="checkbox">
-                                       <input type="checkbox" id="checkbox" <?php if ($ct_row['answer_id']=='2'){ echo "checked"; } ?>/>
+                                       <input type="checkbox" id="checkbox" />
                                        <label for="checkbox">
                                        <?php echo $ct_row['option2'] ?>
                                        </label>
@@ -1495,7 +1493,7 @@ span.select2-selection.select2-selection--single {
                               <div class="optionbox-2 col-md-3">
                                  <li class = "list-group-item">
                                     <div class="checkbox">
-                                       <input type="checkbox" id="checkbox" <?php if ($ct_row['answer_id']=='3'){ echo "checked"; } ?>/>
+                                       <input type="checkbox" id="checkbox" />
                                        <label for="checkbox">
                                        <?php echo $ct_row['option3'] ?>
                                        </label>
@@ -1503,7 +1501,7 @@ span.select2-selection.select2-selection--single {
                                  </li>
                                  <li class = "list-group-item">
                                     <div class="checkbox">
-                                       <input type="checkbox" id="checkbox"<?php if ($ct_row['answer_id']=='4'){ echo "checked"; } ?> />
+                                       <input type="checkbox" id="checkbox" />
                                        <label for="checkbox">
                                        <?php echo $ct_row['option4'] ?>
                                        </label>
