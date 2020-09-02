@@ -192,7 +192,7 @@ input.capital {
                         <?php $currency = $this->session->userdata('currency') ?>
                         <label for="exampleInputEmail1">Current CTC <?php if (isset($currency) && !empty($currency)) {
                           $locale='en-US'; //browser or user locale
-                           $currency='INR';
+                           $currency='USD';
                            $fmt = new NumberFormatter( $locale."@currency=$currency", NumberFormatter::CURRENCY );
                            $symbol = $fmt->getSymbol(NumberFormatter::CURRENCY_SYMBOL);
                            header("Content-Type: text/html; charset=UTF-8;");
