@@ -61,7 +61,7 @@ ul.select2-results__options {
                 <label for="exampleInputEmail1">Main Topic <span class="required">*</span></label>
                 <select id="topic_id" name="topic_id" class="form-control select2" onchange="getSubtopic(this.value)">
                   <option value="">Select Topic</option> 
-                  <!-- <option value="1">HTML 5</option>  -->
+                  <option value="0">General Topic</option> 
                 </select> <?php echo form_error('topic_id'); ?>   
               </div>
             </div>
@@ -69,6 +69,8 @@ ul.select2-results__options {
               <div class="form-group subtopic_id">
                 <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
                 <select id="subtopic_id" name="subtopic_id" class="form-control select2" onchange="getLineitem(this.value)">
+                  <option value="0">General Subtopic</option> 
+
                 </select> <?php echo form_error('subtopic_id'); ?>   
               </div>
             </div>               
@@ -78,6 +80,8 @@ ul.select2-results__options {
               <div class="form-group lineitem_id ">
                 <label for="exampleInputEmail1">Line Item(Level 1)<span class="required">*</span></label>
                 <select id="lineitem_id" name="lineitem_id" class="form-control select2" onchange="getLineitemlevel(this.value)">
+                  <option value="0">General</option> 
+
                 </select>  <?php echo form_error('lineitem_id'); ?>   
               </div>
             </div>
@@ -85,6 +89,8 @@ ul.select2-results__options {
               <div class="form-group lineitemlevel_id">
                   <label for="exampleInputEmail1">Line Item(Level 2)<span class="required">*</span></label>
                   <select id="lineitemlevel_id" name="lineitemlevel_id" class="form-control select2">
+                  <option value="0">General</option> 
+                    
                   </select>  <?php echo form_error('lineitemlevel_id'); ?>   
               </div>
             </div>
