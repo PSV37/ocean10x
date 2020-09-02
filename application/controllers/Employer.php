@@ -2906,7 +2906,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $topics = $this->Master_model->getMaster('topic', $where);
         $result = '';
         if (!empty($topics)) {
-            $result.= '<option value="">Select Topic</option>';
+            $result.= '<option value="0">General</option>';
             foreach ($topics as $key) {
                 $result.= '<option value="' . $key['topic_id'] . '">' . $key['topic_name'] . '</option>';
             }
