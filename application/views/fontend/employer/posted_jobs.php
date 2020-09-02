@@ -975,7 +975,7 @@
 .ui-autocomplete-input {
    border: none; 
    font-size: 14px;
-   width: 300px;
+   /*width: 300px;*/
    height: 24px;
    margin-bottom: 5px;
    padding-top: 2px;
