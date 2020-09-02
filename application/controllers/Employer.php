@@ -3533,6 +3533,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                         if (empty($cv_data)) {
                             $cv_array = array('company_id' => $company_id, 'js_name' => $can_data[0]['full_name'], 'js_email' => $can_data[0]['email'], 'js_mobile' => $can_data[0]['mobile_no'], 'created_on' => date('Y-m-d'), 'created_by' => $company_id);
                             $add_cv = $this->Master_model->master_insert($cv_array, 'corporate_cv_bank');
+                            $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Employee Updated Sucessfully !</div>'); 
+
                             $cv_id = $add_cv;
                         } else {
                             $cv_id = $cv_data[0]['cv_id'];
@@ -3561,8 +3563,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                                 'mobile' => $this->input->post('candidate_phone'), 
                                 'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),);
                             $frwd = $this->Master_model->master_insert($external_array, 'external_tracker');
-                            $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Employee Updated Sucessfully !</div>'); 
-
+                            
                         }
                         if ($apply) {
                             $email_name = explode('@', $email);
