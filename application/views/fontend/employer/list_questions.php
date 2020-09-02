@@ -1515,7 +1515,7 @@ span.select2-selection.select2-selection--single {
                         <a class="toggle btn " href="#example<?php echo $ct_row['question_id'] ?>">show answer</a>
                      </p>
                      <div class="toggle-content" id="example<?php echo $ct_row['question_id'] ?>">
-                        <?php echo $ct_row['answer_id'] ?>
+                        <?php echo $ct_row['option'.$ct_row['answer_id']] ?>
                      </div>
                      <div class="btn-group">
                         <a href=" <?php echo base_url('employer/edit_questionbank/' . $ct_row['ques_id']); ?>"><i class="far fa-edit icon_backg"></i></a>
