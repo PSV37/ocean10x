@@ -639,11 +639,12 @@ textarea#comment {
                // dataType: "json",
               success: function(data)
               {
-                // alert('Updated Successfully');
-                $('.smsg').html('<div class="alert alert-success text-center">Changes to this Internal Tracker have been Saved !</div>').slideUp(500);
-                // $("#smsg").fadeTo(2000, 500).slideUp(500, function(){
-                //  $("#smsg").slideUp(500);
-                // });
+                (function (el) {
+                  setTimeout(function () {
+                      el.children().remove('span');
+                  }, 5000);
+              }($('.smsg').html('<span><div class="alert alert-success text-center">Changes to this Internal Tracker have been Saved !</div></span>')));
+                
                 // window.location.reload();
                  tracker_card(job_id);
               }
@@ -693,12 +694,8 @@ textarea#comment {
                   setTimeout(function () {
                       el.children().remove('span');
                   }, 5000);
-              }($('.smsg').html('<span><div class="alert alert-success text-center">Changes to this External Tracker have been Updated !</div></span>')));
-                // $('.smsg').html('<div class="alert alert-success text-center">Changes to this External Tracker have been Updated !</div>').slideUp(500);
-               //  $("#smsg").fadeTo(2000, 500).slideUp(500, function(){
-               //   $("#smsg").slideUp(500);
-               // });
-                // window.location.reload();
+              }($('.smsg').html('<span><div class="alert alert-success text-center">Changes to  External Tracker have been Updated !</div></span>')));
+                
                  tracker_card(job_id);
               }
         });
