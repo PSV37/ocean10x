@@ -952,6 +952,43 @@
     width: auto;
     padding: 14px;
 }
+.alert.alert-success.text-center {
+    width: 100%;
+    height: 30px;
+    border-radius: 0;
+    text-align: center;
+    padding: 13px;
+    background: transparent;
+    background-color: #68dcd7;
+    font-weight: bold;
+}
+.alert.alert-warning.text-center {
+    width: 100%;
+    height: 30px;
+    border-radius: 0;
+    text-align: center;
+    padding: 13px;
+    background: transparent;
+    background-color: #f0ad4e;
+    font-weight: bold;
+}
+/*.ui-autocomplete-input {
+   border: none; 
+   font-size: 14px;
+   width: 300px;
+   height: 24px;
+   margin-bottom: 5px;
+   padding-top: 2px;
+   border: 1px solid #DDD !important;
+   padding-top: 0px !important;
+   z-index: 1511;
+   position: relative;
+   }*/
+   .ui-autocomplete {
+   z-index: 5000;
+   background: #b3ebe8;;
+   width: 0%;
+   }
 </style>
 
 <div class="container-fluid main-d">
@@ -962,7 +999,7 @@
         
 
 <div class="col-md-6 active-job">
-    <?php echo $this->session->flashdata('success'); ?><br><br>
+   <div id="smsg"> <?php echo $this->session->flashdata('success'); ?></div><br><br>
    <?php if (!empty($company_active_jobs)): foreach ($company_active_jobs as $v_companyjobs) : ?>
    <label>
       <div class="border-top1"></div>
@@ -1241,7 +1278,7 @@
                <input type="hidden" name="consultant" value="JobSeeker">  
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                   <label class="mdl-textfield__label" for="sample3">E-mail:</label>
-                  <input type="email"  name="candiate_email"  id="email" placeholder="Enter comma seperated Emails"  id="subject" data-required="true" multiple style="display: inline-block;" required>
+                  <input type="email"  class="form-control" name="candiate_email"  id="email" placeholder="Enter comma seperated Emails"  data-required="true" multiple style="display: inline-block;" required>
                </div>
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
                   <label class="mdl-textfield__label" for="sample3">Message:</label>
@@ -1272,7 +1309,28 @@
 </div>
 <?php
    endforeach;endif;
-   ?><script>
+   ?>
+   <script>
+   $(document).ready (function(){
+     $("#smsg").fadeTo(2000, 500).slideUp(500, function(){
+     $("#smsg").slideUp(500);
+     });   
+   });
+</script>
+<script>
+    
+   $("#email").autocomplete({
+             
+             source: "<?php echo base_url();?>Employer/get_candidate_by_email",
+             minLength: 2,
+              // append: "#rotateModal",
+            
+    
+            
+           });
+
+</script>
+   <script>
    function sliceSize(dataNum, dataTotal) {
      return (dataNum / dataTotal) * 360;
    }

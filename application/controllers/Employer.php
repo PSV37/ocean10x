@@ -382,6 +382,10 @@ class Employer extends MY_Employer_Controller {
             $job_info['job_status'] = '1';
             $this->job_posting_model->update($job_info, $job_post_id);
             // redirect('job/show/'.$job_info['job_slugs']);
+            $this->session->set_flashdata('success', '<div class="alert alert-success alert-dismissable">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                  A New Job Post has been created Successfully ! 
+                  </div>');
             redirect('employer/active_job');
         } elseif ($_POST) {
             $this->form_validation->set_rules('job_title', 'job title', 'required');
@@ -510,7 +514,7 @@ class Employer extends MY_Employer_Controller {
                     $this->company_profile_model->sendjobEmail($to_email,$job_details);
                     $this->session->set_flashdata('success', '<div class="alert alert-success alert-dismissable">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                  New Job Posted Succcessfully! 
+                  A New Job Post has been created Successfully !
                   </div>');
                     // redirect('job/show/'.$job_info['job_slugs']);
                     redirect('employer/active_job');
@@ -1135,7 +1139,8 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             $job_post_id = $this->input->post('job_post_id');
             $job_desc = $this->input->post('message');
             $mandatory = $this->input->post('mandatory');
-            $email = explode(',', $candiate_email);
+            $email =  preg_split('/;|,/', $candiate_email); 
+            // $email = explode(',', $candiate_email);
             $where_req = "job_post_id= '$job_post_id'";
             $join_req = array('job_types' => 'job_types.job_types_id = job_posting.job_types|LEFT OUTER', 'company_profile' => 'company_profile.company_profile_id = job_posting.company_profile_id|LEFT OUTER', 'city' => 'city.id = job_posting.city_id|LEFT OUTER', 'country' => 'country.country_id = job_posting.job_location|LEFT OUTER', 'state' => 'state.state_id = job_posting.state_id|LEFT OUTER', 'job_category' => 'job_category.job_category_id = job_posting.job_category|LEFT OUTER', 'job_nature' => 'job_nature.job_nature_id = job_posting.job_nature|LEFT OUTER', 'job_level' => 'job_level.job_level_id = job_posting.job_level|LEFT OUTER', 'job_role' => 'job_role.id = job_posting.job_role|LEFT OUTER', 'education_level' => 'education_level.education_level_id = job_posting.job_edu|LEFT OUTER', 'education_specialization' => 'education_specialization.id = job_posting.edu_specialization|LEFT OUTER');
             $select_job = "job_role.job_role_title,education_specialization.education_specialization,education_level.education_level_name,job_level.job_level_name,job_nature.job_nature_name,job_category.job_category_name,state.state_name,country.country_name,city.city_name,company_profile.company_name,company_profile.company_logo,job_types.job_types_name,job_posting.job_title,job_posting.job_position,job_posting.job_desc,job_posting.education,job_posting.salary_range,job_posting.job_deadline,job_posting.preferred_age,job_posting.preferred_age_to,job_posting.working_hours,job_posting.no_jobs,job_posting.benefits,job_posting.experience,job_posting.skills_required,job_posting.test_for_job";
@@ -1351,7 +1356,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                         $company_name = $this->session->userdata('company_name');
                         $data = array('company' => $company_name, 'action_taken_for' => $email[$i], 'field_changed' => 'Forwarded Job ', 'Action' => 'Forwarded job for the position of ' . $require['job_title'], 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
                         $result = $this->Master_model->master_insert($data, 'employer_audit_record');
-                        $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Job Forwarded Successfully</div>');
+                        $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Job Post has been Forwarded & Tracker Entry Created Successfully  !</div>');
                         redirect('employer/active_job');
                     }
                 } else {
@@ -1536,7 +1541,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                         // echo $message;
                         $company_name = $this->session->userdata('company_name');
                         $data = array('company' => $company_name, 'action_taken_for' => $email[$i], 'field_changed' => 'Forwarded Job ', 'Action' => $company_name . ' Forwarded job for the position of ' . $require['job_title'], 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
-                         $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Job Forwarded Successfully</div>');
+                         $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Job Post has been Forwarded & Tracker Entry Created Successfully  !</div>');
                     }
 
                     else{
@@ -3434,8 +3439,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $this->session->unset_userdata('activesubmenu');
             $data['activesubmenu'] = $fid;
             $this->session->set_userdata($data);
-            $where_c['cv_folder_id'] = $fid;
-            $where_c['status'] = 1;
+            // $where_c['cv_folder_id'] = $fid;
+            // $where_c['status'] = 1;
+            $where_c = "cv_folder_id = '$fid' and status = '1' group by cv_folder_relation.cv_id";
             $join_cond = array('corporate_cv_bank' => 'corporate_cv_bank.cv_id = cv_folder_relation.cv_id|Left outer');
             $data['cv_bank_data'] = $this->Master_model->getMaster('cv_folder_relation', $where_c, $join_cond, $order = 'desc', $field = 'relation_id', $select = false, $limit = false, $start = false, $search = false);
             $data['fid']=$fid;
@@ -3771,6 +3777,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             }
         }
     }
+    
     // desired career
     function get_candidate_info_by_email() {
         $email_id = $this->input->post('email');
@@ -4542,6 +4549,14 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $zip->close();
         echo base_url() . $filename;
     }
+    function get_copy_folders()
+    {
+        $cv_id = $this->input->post('cv_id');
+        $where = "cv_folder_relation.cv_id = '$cv_id'";
+        $join = array('cv_folder' => 'cv_folder.id = cv_folder_relation.cv_folder_id ');
+        $result = $this->Master_model->getMaster('cv_folder_relation', $where, $join, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+        echo  json_encode($result);
+    }
     public function add_cv_folder() {
         $employer_id = $this->session->userdata('company_profile_id');
         $parent = $this->input->post('parent');
@@ -4566,7 +4581,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             redirect('employer/corporate_cv_bank');
         }
     }
-    public function move_cvto_folder() {
+    public function copy_cvto_folder() {
         $employer_id = $this->session->userdata('company_profile_id');
         $folder_id = $this->input->post('folder_id');
         $cv_idS = $this->input->post('cv_id');
@@ -4579,6 +4594,27 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $folder_data['cv_id'] = $row;
                 $folder_data['status'] = '1';
                 $result = $this->Master_model->master_insert($folder_data, 'cv_folder_relation');
+                $this->session->set_flashdata('success', '<div class="alert alert-success text-center">CV Copied to the folder Succesfully</div>');
+            }
+        }
+        redirect('employer/corporate_cv_bank/' . $folder_id);
+    }
+    public function move_cvto_folder()
+    {
+        $employer_id = $this->session->userdata('company_profile_id');
+        $folder_id = $this->input->post('folder_id');
+        $cv_idS = $this->input->post('cv_id');
+        $cv = explode(',', $cv_idS);
+        foreach ($cv as $row) {
+            $whereres = "cv_folder_id='$folder_id' and cv_id = '$row'";
+            $folder_dbdata = $this->Master_model->get_master_row('cv_folder_relation', $select = FALSE, $whereres);
+            if (empty($folder_dbdata)) {
+                $where['cv_id'] = $row;
+                $folder_data['cv_folder_id'] = $folder_id;
+                $folder_data['cv_id'] = $row;
+                $folder_data['status'] = '1';
+                $this->Master_model->master_delete('cv_folder_relation',$where);
+                $result = $this->Master_model->master_insert($folder_data, 'cv_folder_relation',$where);
                 $this->session->set_flashdata('success', '<div class="alert alert-success text-center">CV Moved to the folder Succesfully</div>');
             }
         }

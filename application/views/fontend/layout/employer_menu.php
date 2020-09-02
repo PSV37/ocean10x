@@ -97,7 +97,11 @@
    #left-panel .inner-left-pannel .inner-tabs .menu-tab .menu-principal ul li:focus span.icon-container i {
     left: 0;
 }
-#left-panel .inner-left-pannel .inner-tabs .menu-tab .menu-principal ul li.active div.tree ul li.active span.txt {
+#left-panel .inner-left-pannel .inner-tabs .menu-tab .menu-principal ul li.active div.tree ul.right_click li.active span.txt {
+    font-weight: 500!important;
+    color: #18c5bd!important;
+}
+#left-panel .inner-left-pannel .inner-tabs .menu-tab .menu-principal ul li.active div.tree  ul.second_level li.active span.subtxt {
     font-weight: 500!important;
     color: #18c5bd!important;
 }
@@ -162,7 +166,7 @@
                                           <?php } ?>  >
                                           <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row['id'] ?>" > <span   ><i class="fas fa-folder-open"></i></span><span class="txt" data-action=" <?php echo $row['id'] ?>" id="r<?php echo $row['id']; ?>"> <?php echo $row['folder_name']; ?></span></a>
                                           <!--  <input type="text" id="<?php echo $row['id']; ?>" class="edit" style="display:none"/ value="<?php echo $row['folder_name']; ?>"> -->
-                                          <ul>
+                                          <ul class="second_level">
                                              <?php 
                                                 $parent_id = $row['id']; 
                                                 $where_child  = "status='1' AND company_id='$employer_id' and parent_id = '$parent_id'";
@@ -171,7 +175,7 @@
                                                   foreach ($child_folders as $row1) { ?>
                                              <li id="submenu"  <?php if ($activesubmenu ==  $row1['id']) { ?> class="active" <?php } ?> data-action=" <?php echo $row1['id'] ?>">
                                                 <a href="<?php echo base_url() ?>employer/corporate_cv_bank/<?php echo $row1['id'] ?>"><span><i class="fas fa-folder-open"></i></span>
-                                                <span  data-action=" <?php echo $row1['id'] ?>"> <?php echo $row1['folder_name']; ?></span> </a>
+                                                <span class="subtxt"data-action=" <?php echo $row1['id'] ?>"> <?php echo $row1['folder_name']; ?></span> </a>
                                                 <input type="text" class="edit" style="display:none"/ value="<?php echo $row1['folder_name']; ?>">
                                                 <ul>
                                                    <?php $cparent_id = $row1['id']; 
