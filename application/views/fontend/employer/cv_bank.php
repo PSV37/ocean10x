@@ -1568,7 +1568,8 @@
                  success: function(data)
                  {
                   var obj = [];
-                     jQuery.each(data, function(index, item) {
+                  const parsed = JSON.parse(data);
+                     jQuery.each(parsed, function(index, item) {
                            obj[item.cv_folder_id] = item.folder_name;
                            var url = '<?php echo base_url(); ?>employer/corporate_cv_bank/'+item.cv_folder_id;
                            $('#cv_folders').append('<a href="'+url+'">'+item.folder_name+'</a>');
