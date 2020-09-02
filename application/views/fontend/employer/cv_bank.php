@@ -1572,7 +1572,7 @@
                      jQuery.each(parsed, function(index, item) {
                            obj[item.cv_folder_id] = item.folder_name;
                            var url = '<?php echo base_url(); ?>employer/corporate_cv_bank/'+item.cv_folder_id;
-                           $('#cv_folders').html('<b>'+item.folder_name+'</b>');
+                           $('#cv_folders').append('<b>'+item.folder_name+'</b>');
 
                        });
 
