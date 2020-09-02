@@ -2276,8 +2276,9 @@ public function randomly_create_oceantest()
         $data['title'] = "Edit Questionbank";
         $data['options'] = $this->Master_model->getMaster('options');
         $data['questionbank'] = $this->Master_model->getMaster('questionbank', $where_all, $join_emp);
+        $join = array('questionbank_answer' => 'questionbank_answer.question_id = questionbank.ques_id|LEFT OUTER');
         $where_questionbank = "ques_id='$id'";
-        $data['edit_questionbank_info'] = $this->Master_model->getMaster('questionbank', $where_questionbank);
+        $data['edit_questionbank_info'] = $this->Master_model->getMaster('questionbank', $where = $where_questionbank, $join, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
         $where_answer = "question_id='$id'";
         $data['questionbank_answer'] = $this->Master_model->getMaster('questionbank_answer', $where_answer);
         $where_lineitem = "lineitem.lineitem_status='1'";
