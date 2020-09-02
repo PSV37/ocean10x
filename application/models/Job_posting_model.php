@@ -305,7 +305,7 @@ order by created_date asc limit 10");
         
         $this->db->join('education_level','education_level.education_level_id=corporate_cv_bank.js_top_education','left');
         $this->db->join('tracker_status_master','tracker_status_master.status_id=forwarded_jobs_cv.tracking_status','left');
-        $this->db->order_by('forwarded_jobs_cv.id','created_on');
+        $this->db->order_by('forwarded_jobs_cv.id','desc');
         // $this->db->group_by('job_apply.job_seeker_id');
        
         // $job_types = array('1', '3', '4','5','6');
@@ -324,7 +324,7 @@ order by created_date asc limit 10");
         
         $this->db->join('education_level','education_level.education_level_id=external_tracker.education','left');
         $this->db->join('tracker_status_master','tracker_status_master.status_id=external_tracker.tracking_status','left');
-        $this->db->order_by('external_tracker.id','created_on');
+        $this->db->order_by('external_tracker.id','desc');
         // $this->db->group_by('job_apply.job_seeker_id');
        
         // $job_types = array('1', '3', '4','5','6');
@@ -345,7 +345,7 @@ order by created_date asc limit 10");
          $this->db->join('external_tracker','external_tracker.id=tracker_consultant_mapping.tracking_id','left');
         $this->db->join('education_level','education_level.education_level_id=external_tracker.education','left');
         $this->db->join('tracker_status_master','tracker_status_master.status_id=external_tracker.tracking_status','left');
-        $this->db->order_by('external_tracker.id','created_on');
+        $this->db->order_by('external_tracker.id','desc');
         // $this->db->group_by('job_apply.job_seeker_id');
        
         // $job_types = array('1', '3', '4','5','6');

@@ -4552,7 +4552,12 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     function get_copy_folders()
     {
         $cv_id = $this->input->post('cv_id');
-        $where = "cv_folder_relation.cv_id = '$cv_id'";
+        $folder_id = $this->input->post('folder_id');
+         $where = "cv_folder_relation.cv_id = '$cv_id'";
+        if (isset($folder_id) && !empty($folder_id)) {
+            $where .= "and cv_folder_relation.cv_folder_id != '$folder_id'";
+        }
+       
         $join = array('cv_folder' => 'cv_folder.id = cv_folder_relation.cv_folder_id ');
         $result = $this->Master_model->getMaster('cv_folder_relation', $where, $join, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
         echo  json_encode($result);

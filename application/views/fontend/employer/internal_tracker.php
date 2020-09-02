@@ -441,13 +441,35 @@ textarea#comment {
    {
    color: red;
    }
+   .alert.alert-success.text-center {
+    width: 100%;
+    height: 30px;
+    border-radius: 0;
+    text-align: center;
+    padding: 13px;
+    background: transparent;
+    background-color: #68dcd7;
+    font-weight: bold;
+}
+.alert.alert-warning.text-center {
+    width: 100%;
+    height: 30px;
+    border-radius: 0;
+    text-align: center;
+    padding: 13px;
+    background: transparent;
+    background-color: #f0ad4e;
+    font-weight: bold;
+}
 </style>
 <div class="container-fluid main-d">
    <div class="container">
       <div class="col-md-12">
          <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
          <div class="col-md-9 cv_bank">
-              <?php echo $this->session->flashdata('success'); ?><br><br>
+              <div id="smsg"><?php echo $this->session->flashdata('success'); ?></div>
+              <div class="smsg" id="smsg"></div>
+              <br><br>
               <div class="row">
              
                <div class="col-md-4">
@@ -568,7 +590,13 @@ textarea#comment {
       </div>
    </div>
 </div>
-
+<script>
+   $(document).ready (function(){
+     $("#smsg").fadeTo(2000, 500).slideUp(500, function(){
+     $("#smsg").slideUp(500);
+     });   
+   });
+</script>
 <script>
    $(document).on(' change','input[name="check_all"]',function() {
             $('.chkbx').prop("checked" , this.checked);
@@ -611,7 +639,11 @@ textarea#comment {
                // dataType: "json",
               success: function(data)
               {
-                alert('Updated Successfully');
+                // alert('Updated Successfully');
+                $('.smsg').html('<div class="alert alert-success text-center">Changes to this Internal Tracker have been Saved !</div>')
+                $("#smsg").fadeTo(2000, 500).slideUp(500, function(){
+                 $("#smsg").slideUp(500);
+               }
                 // window.location.reload();
                  tracker_card(job_id);
               }
@@ -656,7 +688,10 @@ textarea#comment {
                // dataType: "json",
               success: function(data)
               {
-                alert('Updated Successfully');
+                // alert('Updated Successfully');
+                $('.smsg').html('<div class="alert alert-success text-center">Changes to this External Tracker have been Updated !</div>')
+                $("#smsg").fadeTo(2000, 500).slideUp(500, function(){
+                 $("#smsg").slideUp(500);
                 // window.location.reload();
                  tracker_card(job_id);
               }
