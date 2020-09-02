@@ -1071,7 +1071,7 @@
                               <div class="col-md-12" style="margin-top: 20px;">
                                  <div class="row">
                                      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
-                                       <p id="cv_folders"></p><br>
+                                       <p><span id="cv_folders"></span></p><br>
                                     </div>
                                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                        <label class="mdl-textfield__label" for="sample3">Choose Folder</label>
@@ -1572,7 +1572,7 @@
                      jQuery.each(parsed, function(index, item) {
                            obj[item.cv_folder_id] = item.folder_name;
                            var url = '<?php echo base_url(); ?>employer/corporate_cv_bank/'+item.cv_folder_id;
-                           $('#cv_folders').append('<b>'+item.folder_name+'</b>');
+                           $('#cv_folders').html('<b>'+item.folder_name+'</b>');
 
                        });
 
