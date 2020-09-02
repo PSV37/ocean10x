@@ -3775,10 +3775,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             }
         }
     }
-    function get_copy_folders()
-    {
-
-    }
+    
     // desired career
     function get_candidate_info_by_email() {
         $email_id = $this->input->post('email');
