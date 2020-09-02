@@ -1560,7 +1560,7 @@
    function get_copy_folders(cv_id)
    {
      
-         var folder_id = ' <?php if(!empty($fid)){echo $fid;} ?>';
+         var folder_id = '<?php if(!empty($fid)){echo $fid;} ?>';
          if (folder_id)
        {
           $.ajax({
