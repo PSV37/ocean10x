@@ -1627,6 +1627,9 @@ function myFunction(){
     $("#myForm").load(window.location.href + " #myForm" );
     //jQuery.ready();
 
+    $(document).ready();
+
+
   // document.getElementById("myForm").reset();
 }
 </script>
