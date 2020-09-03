@@ -1440,7 +1440,7 @@ input.btn-default1 {
                   </section>
                </main>
             </div>
-            <div id="myform">
+            <div id="myForm">
             <div class="filter1">
                <p style="font-size:18px;">Domain</p>
                <select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" tabindex="-98">
