@@ -1733,9 +1733,7 @@ input.btn-default1 {
    
 </script>
 <script>
-   $(".bulkdropdown").on('mouseleave',function(){
-    $('.dd-menu').hide();
-});
+  
    $(document).on(' change','input[name="check_all"]',function() {
             $('.chkbx').prop("checked" , this.checked);
     });
