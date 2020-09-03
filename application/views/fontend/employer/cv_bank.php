@@ -1531,9 +1531,10 @@ input.btn-default1 {
                </select> -->
             </div>
             <!--<button class="reset_filter">Reset Filter</button>-->
-            <button  class="reset_filter" type="submit" name="reset">Reset Filter</button>
+            <input type="button" onclick="myFunction()" value="Reset Filter" >
 
          </div>
+      </div>
       </div>
       </div>
    </div>
