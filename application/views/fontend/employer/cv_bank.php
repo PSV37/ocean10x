@@ -656,7 +656,7 @@
    }
    .range-wrap {
    position: relative;
-   margin: 0 auto 3rem;
+   margin: 0 auto 2rem;
    }
    .range {
    width: 100%;
@@ -873,6 +873,35 @@
     background-color: #f0ad4e;
     font-weight: bold;
 }
+input.btn-default1 {
+    position: absolute;
+    display: none;
+}
+.btn-default1:not(:checked) + span {
+    padding: 4px 15px;
+    border-radius: 30px;
+    background: #d5e9f7;
+    width: 100%;
+    border-radius: 30px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+     color: black; 
+    line-height: 20px;
+}
+:checked + span {
+    background: #18c5bd !important;
+    display: inline-block; */
+     width: 100%; 
+     color: #fff; 
+    padding: 4px 15px;
+     border-radius: 30px; 
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 20px;
+    box-shadow: 1px 1px 6px #cccbcb;
+}
+}
 </style>
 <div class="container-fluid main-d">
    <div class="container">
@@ -904,8 +933,33 @@
                </div>
                <div class="col-md-3">
                 
-                  <form method="post" action="<?php echo base_url(); ?>employer/corporate_cv_bank">
-                     <label class="dropdown" style="float:right;">
+                 
+               </div>
+               <div class="col-md-3">
+                  <a href="<?php echo base_url() ?>employer/add_new_cv<?php if(!empty($fid)){echo '?fid='.$fid;} ?>"><button class="btn btn-primary"><i class="fas fa-plus"></i> Add New CV</button></a>
+               </div>
+            </div>
+            <div class="row" id="bulk">
+               <label class="dropdown" style="float:left;">
+                        <div class="dd-button">
+                           Bulk Action
+                        </div>
+                        <input type="checkbox" class="dd-input" id="test">
+                        <!-- <ul class="dd-menu" id="test"> -->
+                        <!-- <li>Name</li> -->
+                        <!-- /<li>Experience</li> -->
+                        <!-- <li value="edu">Education</li> -->
+                        <!-- </ul> -->
+                        <ul  class="dd-menu">
+                           <li> <a href="#" id="frwd_btn"  onclick="frwd_post();">Forward Job</a></li>
+                           <li> <a href="#" id="frwd_btn"  onclick="copy_cvs();">Copy CV</a></li>
+                           <li> <a href="#" id="frwd_btn"  onclick="download_cvs();">Download CV</a></li>
+                           <li> <a href="#" id="frwd_btn" data-toggle="modal"  data-target="#bulkupload">Bulk Upload</a></li>
+                           <li> <a href="#" id="frwd_btn" data-toggle="modal" data-target="#bulkupload_folder">Folder Upload</a></li>
+                        </ul>
+                     </label>
+                      <form method="post" action="<?php echo base_url(); ?>employer/corporate_cv_bank">
+                     <label class="dropdown">
                         <div class="dd-button">
                            Sort by
                         </div>
@@ -924,44 +978,43 @@
                      <input id="sizevalue" size="15" name="sort_val" type="hidden" />
                      <button type="submit" name="sort" class="hidden" id="sort_btn"></button>
                   </form>
-               </div>
-               <div class="col-md-3">
-                  <a href="<?php echo base_url() ?>employer/add_new_cv<?php if(!empty($fid)){echo '?fid='.$fid;} ?>"><button class="btn btn-primary"><i class="fas fa-plus"></i> Add New CV</button></a>
-               </div>
-            </div>
-            <div class="row" id="bulk">
-               <div class="col-md-4">
+              <!--  <div class="col-md-4">
                   <label class="dropdown">
                   <input type="checkbox" name="bulk_forward" id="checkAll" style="font-weight:500">&nbsp;Forward
                   <button type="button" id="frwd_btn" class="btn btn-primary" onclick="frwd_post();">Forward Job</button>
                   </label>
-               </div>
-               <div class="col-md-4">
+               </div> -->
+              <!--  <div class="col-md-4">
                   <label class="dropdown">
                   <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp;  Copy
                   <button type="button" id="frwd_btn" class="btn btn-primary" onclick="copy_cvs();">Copy CV</button>
                   </label>
-               </div>
-               <div class="col-md-4">
+               </div> -->
+               <!-- div class="col-md-4">
                   <label class="dropdown">
                   <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp; Download
                   <button type="button" id="frwd_btn" class="btn btn-primary" onclick="download_cvs();">Download CV</button>
                   </label>
-               </div>
+               </div> -->
             </div>
             <div class="row" id="bulk">
                <div class="col-md-6">
-                  <label class="dropdown">
+                 <!--  <label class="dropdown">
                   <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp;  Upload
                   <button type="button" id="frwd_btn" class="btn btn-primary" data-toggle="modal" data-target="#bulkupload">Bulk Upload</button>
-                  </label>
+                  </label> -->
                </div>
           
                <div class="col-md-6">
-                  <label class="dropdown">
+                  <!-- <label class="dropdown"> -->
                  <!--  <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp;  Upload Folder -->
-                  <button type="button" id="frwd_btn" class="btn btn-primary" data-toggle="modal" data-target="#bulkupload_folder">Folder Upload</button>
-                  </label>
+                  <!-- <button type="button" id="frwd_btn" class="btn btn-primary" data-toggle="modal" data-target="#bulkupload_folder">Folder Upload</button>
+                  </label> -->
+                  <label style="float: right;">
+                        <input type="checkbox" class="btn-default1 checkbox" name="bulk_download" id="checkAllchk" >
+                        <span>select all</span>
+                        </label>
+                  <!-- <input type="checkbox" name="bulk_download" id="checkAllchk" style="float: right;">&nbsp; S -->
                </div>
             </div>
             <div class="box" >

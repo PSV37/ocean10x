@@ -572,7 +572,9 @@
                   <!-- <div class="button" id="prev">&larr; Previous</div> -->
                   <!-- <div class="button" id="next">Next &rarr;</div> -->
                   <button  class="button" type="submit" name="preview">preview</button>
-                  <button  type="submit" class="button">Post Job</button>
+                  <button  type="submit" class="button"><?php if(!empty($job_info->job_post_id)){echo 'Update Job Post';} else{
+                     echo "Post Job";
+                  } ?></button>
                </div>
             </div>
          </form>
