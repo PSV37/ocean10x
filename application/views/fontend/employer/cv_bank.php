@@ -1441,7 +1441,7 @@ input.btn-default1 {
                </main>
             </div>
 
-            <div id="myForm">
+            <form id="myForm">
             <div class="filter1">
                <p style="font-size:18px;">Domain</p>
                <select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" tabindex="-98">
@@ -1530,10 +1530,11 @@ input.btn-default1 {
                   </optgroup>
                </select> -->
             </div>
-            <!--<button class="reset_filter">Reset Filter</button>-->
-            <input type="button" onclick="myFunction(myForm)" value="Reset Filter">
+            <button type="reset" class="reset_filter">Reset Filter</button>
+           <!--  <input type="button" onclick="myFunction(myForm)" value="Reset Filter"> -->
 
          </div>
+      </form>
       </div>
       </div>
       </div>
