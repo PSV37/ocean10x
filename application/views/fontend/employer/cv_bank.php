@@ -656,7 +656,7 @@
    }
    .range-wrap {
    position: relative;
-   margin: 0 auto 1rem;
+   margin: 0 auto 2rem;
    }
    .range {
    width: 100%;
