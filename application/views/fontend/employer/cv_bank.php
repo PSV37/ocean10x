@@ -1626,7 +1626,7 @@ function myFunction(){
     $(document).ready();
     $("#myForm").load(window.location.href + " #myForm" );
 
-   $(window).load(window.location);
+   
 
     //jQuery.ready();
 
