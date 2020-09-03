@@ -944,7 +944,7 @@ input.btn-default1 {
                         <div class="dd-button">
                            Bulk Action
                         </div>
-                        <input type="checkbox" class="dd-input" id="test">
+                        <input type="checkbox" class="dd-input" id="test1">
                         <!-- <ul class="dd-menu" id="test"> -->
                         <!-- <li>Name</li> -->
                         <!-- /<li>Experience</li> -->
@@ -1621,7 +1621,7 @@ input.btn-default1 {
 <script>
 function myFunction(){
 
-    $( "#myForm" ).load(window.location.href + " #myForm" );
+    $("#myForm").load(window.location.href + " #myForm" );
 
   // document.getElementById("myForm").reset();
 }
