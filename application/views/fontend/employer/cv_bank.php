@@ -932,7 +932,7 @@
             <div class="row" id="bulk">
                <label class="dropdown" style="float:left;">
                         <div class="dd-button">
-                           Sort by
+                           Bulk Action
                         </div>
                         <input type="checkbox" class="dd-input" id="test">
                         <!-- <ul class="dd-menu" id="test"> -->
@@ -969,17 +969,18 @@
             </div>
             <div class="row" id="bulk">
                <div class="col-md-6">
-                  <label class="dropdown">
+                 <!--  <label class="dropdown">
                   <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp;  Upload
                   <button type="button" id="frwd_btn" class="btn btn-primary" data-toggle="modal" data-target="#bulkupload">Bulk Upload</button>
-                  </label>
+                  </label> -->
                </div>
           
                <div class="col-md-6">
-                  <label class="dropdown">
+                  <!-- <label class="dropdown"> -->
                  <!--  <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp;  Upload Folder -->
-                  <button type="button" id="frwd_btn" class="btn btn-primary" data-toggle="modal" data-target="#bulkupload_folder">Folder Upload</button>
-                  </label>
+                  <!-- <button type="button" id="frwd_btn" class="btn btn-primary" data-toggle="modal" data-target="#bulkupload_folder">Folder Upload</button>
+                  </label> -->
+                  <input type="checkbox" name="bulk_download" id="checkAllchk">
                </div>
             </div>
             <div class="box" >
