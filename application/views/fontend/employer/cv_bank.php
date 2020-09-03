@@ -1619,7 +1619,7 @@ input.btn-default1 {
 <script>
 
 function myFunction(){
-  document.getElementById("myForm").reset();
+  document.getElementById("myForm").reset()
 }
 </script>
 
