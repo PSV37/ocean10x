@@ -1350,7 +1350,7 @@ input.btn-default1 {
                <div class="modal fade" id="myModal_add" role="dialog">
                   <div class="modal-dialog modal-sm">
                      <div class="modal-content">
-                        <form method="post" action="<?php echo base_url(); ?>employer/add_cv_folder">
+                        <form id="myForm" method="post" action="<?php echo base_url(); ?>employer/add_cv_folder">
                            <div class="modal-header">
                               <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
                               <h4 class="modal-title">Add folder</h4>
@@ -1528,8 +1528,7 @@ input.btn-default1 {
                   </optgroup>
                </select> -->
             </div>
-            <!--<button class="reset_filter">Reset Filter</button>-->
-            <input type="button" onclick="myFunction()" class="reset_filter" value="Reset Filter">
+            <button class="reset_filter">Reset Filter</button>
          </div>
       </div>
    </div>
@@ -1615,6 +1614,7 @@ function myFunction() {
   document.getElementById("myForm").reset();
 }
 </script>
+
 <script>
    function get_copy_folders(cv_id)
    {
