@@ -944,7 +944,7 @@ input.btn-default1 {
                         <div class="dd-button">
                            Bulk Action
                         </div>
-                        <input type="checkbox" class="dd-input" id="test">
+                        <input type="checkbox" class="dd-input" id="test1">
                         <!-- <ul class="dd-menu" id="test"> -->
                         <!-- <li>Name</li> -->
                         <!-- /<li>Experience</li> -->
@@ -1530,15 +1530,17 @@ input.btn-default1 {
                   </optgroup>
                </select> -->
             </div>
-            <!--<button class="reset_filter">Reset Filter</button>-->
-            <input type="button" onclick="myFunction(myForm)" value="Reset Filter">
+            <button type="reset" onclick="myFunction();" class="reset_filter">Reset Filter</button>
+           <!--  <input type="button" onclick="myFunction(myForm)" value="Reset Filter"> -->
 
          </div>
+      
       </div>
       </div>
       </div>
    </div>
 </div>
+
 <?php if (!empty($cv_bank_data)): foreach ($cv_bank_data as $cv_row) : ?>
 <div class="modal" id="rotateModal<?php echo $cv_row['cv_id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
    <input type="hidden" name="cv_id" id="cv_id" value="<?php $cv_row['cv_id']; ?>">
@@ -1617,9 +1619,13 @@ input.btn-default1 {
 </div>
 
 <script>
-
 function myFunction(){
-  document.getElementById("myForm").reset()
+
+//document.getElementById("myForm").reset()
+    $("#myForm").load(window.location.href + " #myForm" );
+    jQuery.ready();
+
+  // document.getElementById("myForm").reset();
 }
 </script>
 
