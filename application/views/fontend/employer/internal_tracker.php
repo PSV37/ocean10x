@@ -492,7 +492,7 @@ textarea#comment {
                   <div class="clear"></div>
                </div>
                <div class="col-md-3">
-                  <form id="int_track" method="post" action="<?php echo base_url(); ?>employer/corporate_cv_bank">
+                  <form id="int_track" method="post" action="<?php echo base_url(); ?>employer/internal_tracker">
                   <label class="dropdown" style="float:right;">
                      <div class="dd-button">
                         Active Job
@@ -504,8 +504,8 @@ textarea#comment {
                         <!-- <li value="edu">Education</li> -->
                      <!-- </ul> -->
                      <ul id="sizelist" class="dd-menu">
-                       <li data-value="js_name" ><a href="#">Active Job</a></li>
-                       <li data-value="js_experience"><a href="#">Expired Jobs</a></li>
+                       <li data-value="active_jobs" ><a href="#">Active Job</a></li>
+                       <li data-value="expired_jobs"><a href="#">Expired Jobs</a></li>
                      
                        
                      </ul>
@@ -596,6 +596,14 @@ textarea#comment {
      $("#smsg").slideUp(500);
      });   
    });
+   $("#sizelist").on("click", "a", function(e){
+   e.preventDefault();
+   var $this = $(this).parent();
+   $this.addClass("select").siblings().removeClass("select");
+   $("#sizevalue").val($this.data("value"));
+   $( "#sort_btn" ).click();
+   $( "#test" ).click();
+   })
 </script>
 <script>
    $(document).on(' change','input[name="check_all"]',function() {
