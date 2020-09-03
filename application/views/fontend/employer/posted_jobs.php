@@ -1084,7 +1084,7 @@
             <!--  <div class="clear"></div>
                </div> -->         
             <button class="detail-btn">details</button>
-            <?php  if ($v_companyjobs->job_deadline > date('Y-m-d')){
+            <?php  if ($v_companyjobs->job_deadline > date('DD-MM-YY')){
                // echo '<button class="btn btn-success btn-xs">Live <i class="fa fa-check-circle" aria-hidden="true"></i></button>';
                echo '<span class="active-span">Active</span>';
                }
