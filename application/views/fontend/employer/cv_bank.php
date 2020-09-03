@@ -886,7 +886,7 @@ input.btn-default1 {
     cursor: pointer;
     display: inline-block;
     font-size: 12px;
-    color: #707171;
+     color: black; 
     line-height: 20px;
 }
 :checked + span {
