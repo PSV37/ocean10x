@@ -656,7 +656,7 @@
    }
    .range-wrap {
    position: relative;
-   margin: 0 auto 3rem;
+   margin: 0 auto 1rem;
    }
    .range {
    width: 100%;
@@ -930,24 +930,40 @@
                </div>
             </div>
             <div class="row" id="bulk">
-               <div class="col-md-4">
+               <label class="dropdown" style="float:right;">
+                        <div class="dd-button">
+                           Sort by
+                        </div>
+                        <input type="checkbox" class="dd-input" id="test">
+                        <!-- <ul class="dd-menu" id="test"> -->
+                        <!-- <li>Name</li> -->
+                        <!-- /<li>Experience</li> -->
+                        <!-- <li value="edu">Education</li> -->
+                        <!-- </ul> -->
+                        <ul id="sizelist" class="dd-menu">
+                           <li data-value="js_name" > <button type="button" id="frwd_btn" class="btn btn-primary" onclick="frwd_post();">Forward Job</button></li>
+                           <li data-value="js_experience"> <button type="button" id="frwd_btn" class="btn btn-primary" onclick="copy_cvs();">Copy CV</button></li>
+                           <li data-value="js_top_education"> <button type="button" id="frwd_btn" class="btn btn-primary" onclick="download_cvs();">Download CV</button></li>
+                        </ul>
+                     </label>
+              <!--  <div class="col-md-4">
                   <label class="dropdown">
                   <input type="checkbox" name="bulk_forward" id="checkAll" style="font-weight:500">&nbsp;Forward
                   <button type="button" id="frwd_btn" class="btn btn-primary" onclick="frwd_post();">Forward Job</button>
                   </label>
-               </div>
-               <div class="col-md-4">
+               </div> -->
+              <!--  <div class="col-md-4">
                   <label class="dropdown">
                   <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp;  Copy
                   <button type="button" id="frwd_btn" class="btn btn-primary" onclick="copy_cvs();">Copy CV</button>
                   </label>
-               </div>
-               <div class="col-md-4">
+               </div> -->
+               <<!-- div class="col-md-4">
                   <label class="dropdown">
                   <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp; Download
                   <button type="button" id="frwd_btn" class="btn btn-primary" onclick="download_cvs();">Download CV</button>
                   </label>
-               </div>
+               </div> -->
             </div>
             <div class="row" id="bulk">
                <div class="col-md-6">
