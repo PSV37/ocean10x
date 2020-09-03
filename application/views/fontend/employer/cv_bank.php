@@ -940,7 +940,7 @@ input.btn-default1 {
                </div>
             </div>
             <div class="row" id="bulk">
-               <label class="dropdown" style="float:left;">
+               <label class="dropdown bulkdropdown" style="float:left;">
                         <div class="dd-button">
                            Bulk Action
                         </div>
@@ -1733,6 +1733,9 @@ input.btn-default1 {
    
 </script>
 <script>
+   $(".bulkdropdown").on('mouseleave',function(){
+    dropdown.hide();
+});
    $(document).on(' change','input[name="check_all"]',function() {
             $('.chkbx').prop("checked" , this.checked);
     });
@@ -1802,10 +1805,10 @@ input.btn-default1 {
                 // var totalFiles = myArray.length;
    
     
-   
+               
                 // alert(totalFiles);
              //Throw an error if no boxes are checked
-                if (myNameArray.length == 0) {
+                if (cvs_name.length == 0) {
                    alert("Please choose a file to download");
                 } else {
                   var newArray = myNameArray.filter(value => Object.keys(value).length !== 0);
