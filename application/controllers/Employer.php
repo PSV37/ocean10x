@@ -4669,7 +4669,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $data['activemenu'] = 'external_tracker';
         $this->session->set_userdata($data);
         $employer_id = $this->session->userdata('company_profile_id');
-        $company_active_jobs = $this->job_posting_model->get_company_active_jobs($employer_id);
+        $company_active_jobs = $this->job_posting_model->get_company_activedeasline_jobs($employer_id);
         $this->load->view('fontend/employer/external_tracker.php', compact('company_active_jobs', 'employer_id'));
     }
     public function shared_tracker() {
