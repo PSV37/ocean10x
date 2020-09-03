@@ -950,7 +950,7 @@ input.btn-default1 {
                         <!-- /<li>Experience</li> -->
                         <!-- <li value="edu">Education</li> -->
                         <!-- </ul> -->
-                        <ul id="sizelist" class="dd-menu">
+                        <ul  class="dd-menu">
                            <li> <a href="#" id="frwd_btn"  onclick="frwd_post();">Forward Job</a></li>
                            <li> <a href="#" id="frwd_btn"  onclick="copy_cvs();">Copy CV</a></li>
                            <li> <a href="#" id="frwd_btn"  onclick="download_cvs();">Download CV</a></li>
