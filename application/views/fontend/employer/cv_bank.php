@@ -873,6 +873,31 @@
     background-color: #f0ad4e;
     font-weight: bold;
 }
+input.btn-default1 {
+    position: absolute;
+    display: none;
+}
+.btn-default1:not(:checked) + span {
+    padding: 4px 15px;
+    border-radius: 30px;
+    background: #d5e9f7;
+    width: 100%;
+    border-radius: 30px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    color: #707171;
+    line-height: 20px;
+}
+:checked + span {
+    background: #18c5bd !important;
+    display: inline-block;
+    width: 100%;
+    color: #fff;
+    padding: 5px 12px !important;
+    font-size: 11px;
+    border-radius: 13px !important;
+}
 </style>
 <div class="container-fluid main-d">
    <div class="container">
@@ -982,7 +1007,7 @@
                   <!-- <button type="button" id="frwd_btn" class="btn btn-primary" data-toggle="modal" data-target="#bulkupload_folder">Folder Upload</button>
                   </label> -->
                   <label style="float: right;">
-                        <input type="checkbox" name="bulk_download" id="checkAllchk" >
+                        <input type="checkbox" class="btn-default1 checkbox" name="bulk_download" id="checkAllchk" >
                         <span>select all</span>
                         </label>
                   <!-- <input type="checkbox" name="bulk_download" id="checkAllchk" style="float: right;">&nbsp; S -->
