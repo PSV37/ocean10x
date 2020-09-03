@@ -1623,7 +1623,7 @@ function myFunction(){
 
 //document.getElementById("myForm").reset()
     $("#myForm").load(window.location.href + " #myForm" );
-    jQuery.ready();
+    $(document).ready();
 
   // document.getElementById("myForm").reset();
 }
