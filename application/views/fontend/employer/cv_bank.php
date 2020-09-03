@@ -1617,7 +1617,7 @@ input.btn-default1 {
 </div>
 
 <script>
-$(document).ready (myFunction(){
+function myFunction(){
   document.getElementById("myForm").reset();
 }
 </script>
