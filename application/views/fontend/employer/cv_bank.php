@@ -1623,13 +1623,12 @@ input.btn-default1 {
 function myFunction(){
 
 //document.getElementById("myForm").reset()
-
+    $(document).ready();
     $("#myForm").load(window.location.href + " #myForm" );
 
     $.ready(); 
 
     //jQuery.ready();
-
 
   // document.getElementById("myForm").reset();
 }
