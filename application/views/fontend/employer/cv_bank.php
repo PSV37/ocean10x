@@ -941,9 +941,9 @@
                         <!-- <li value="edu">Education</li> -->
                         <!-- </ul> -->
                         <ul id="sizelist" class="dd-menu">
-                           <li data-value="js_name" > <a href="#" id="frwd_btn" class="btn btn-primary" onclick="frwd_post();">Forward Job</a></li>
-                           <li data-value="js_experience"> <a href="#" id="frwd_btn" class="btn btn-primary" onclick="copy_cvs();">Copy CV</a></li>
-                           <li data-value="js_top_education"> <a href="#" id="frwd_btn" class="btn btn-primary" onclick="download_cvs();">Download CV</a></li>
+                           <li data-value="js_name" > <a href="#" id="frwd_btn"  onclick="frwd_post();">Forward Job</a></li>
+                           <li data-value="js_experience"> <a href="#" id="frwd_btn"  onclick="copy_cvs();">Copy CV</a></li>
+                           <li data-value="js_top_education"> <a href="#" id="frwd_btn"  onclick="download_cvs();">Download CV</a></li>
                         </ul>
                      </label>
               <!--  <div class="col-md-4">
