@@ -421,8 +421,8 @@
                   <div class="formrow">
                      <label class="control-label">Deadline<span class="required"> * </span> </label>
                      <?php
-                        $old_date = date('dd-mm-yy');
-                        $next_due_date = date('dd-mm-yy', strtotime($old_date. ' +30 days'));
+                        $old_date = date('d-m-Y');
+                        $next_due_date = date('d-m-Y', strtotime($old_date. ' +30 days'));
                         
                         ?>
                      <!-- <input type="date" name="job_deadline" class="form-control datepicker" id="job_deadline_day" min="<?php echo date('Y-m-d'); ?>" required value="<?php echo $next_due_date; ?>" autocomplete="off">  -->    
