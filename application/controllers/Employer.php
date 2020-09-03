@@ -301,7 +301,7 @@ class Employer extends MY_Employer_Controller {
                     'preffered_certificates' => $this->input->post('preffered_certificates'), 
                     'job_role' => $this->input->post('job_role'), //new added field
                 'skills_required' => implode(',', $all_skills), //new added field
-                'salary_range' => $salary_range, "job_deadline" => date('Y-m-d', strtotime(str_replace('/', '-', $this->input->post('job_deadline')))), "job_status" => '1', 'is_test_required' => $this->input->post('job_test_requirment'));
+                'salary_range' => $salary_range, "job_deadline" => date('Y-m-d', strtotime($this->input->post('job_deadline'))), "job_status" => '1', 'is_test_required' => $this->input->post('job_test_requirment'));
                 if (isset($job_desc_file) && !empty($job_desc_file)) {
                     $job_info['jd_file'] = $job_desc_file;
                 } elseif (empty($this->input->post('jd_session'))) {
@@ -1137,7 +1137,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             $employer_id = $this->session->userdata('company_profile_id');
             $candiate_email = $this->input->post('candiate_email');
             $job_post_id = $this->input->post('job_post_id');
-            $job_desc = $this->input->post('message');
+            $job_desc = $this->input->post('message_id');
             $mandatory = $this->input->post('mandatory');
             $email =  preg_split('/;|,/', $candiate_email); 
             // $email = explode(',', $candiate_email);
