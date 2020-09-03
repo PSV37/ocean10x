@@ -1621,6 +1621,7 @@ input.btn-default1 {
 <script>
 function myFunction(){
 
+//document.getElementById("myForm").reset()
     $("#myForm").load(window.location.href + " #myForm" );
     jQuery.ready();
 
