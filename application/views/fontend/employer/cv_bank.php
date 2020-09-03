@@ -1530,7 +1530,7 @@ input.btn-default1 {
                   </optgroup>
                </select> -->
             </div>
-            <button type="reset" onclick="myFunction();" onchange="get_data();" class="reset_filter">Reset Filter</button>
+            <button type="reset" onclick="myFunction();"  class="reset_filter">Reset Filter</button>
            <!--  <input type="button" onclick="myFunction(myForm)" value="Reset Filter"> -->
 
          </div>
@@ -1618,11 +1618,14 @@ input.btn-default1 {
    </div>
 </div>
 
+
 <script>
 function myFunction(){
 
 //document.getElementById("myForm").reset()
-    $("#myForm").load(window.location.href + " #myForm" );
+    //$("#myForm").load(window.location.href + " #myForm" );
+
+    $("#myForm").(window.location.href + " #myForm" );
     jQuery.ready();
 
   // document.getElementById("myForm").reset();
