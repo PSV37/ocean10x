@@ -1530,7 +1530,8 @@ input.btn-default1 {
                   </optgroup>
                </select> -->
             </div>
-            <!--<button class="reset_filter">Reset Filter</button>-->
+            <button type="submit" class="reset_filter">Reset Filter</button>
+
          </div>
       </div>
       </div>
