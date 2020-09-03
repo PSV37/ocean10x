@@ -1530,7 +1530,7 @@ input.btn-default1 {
                   </optgroup>
                </select> -->
             </div>
-            <button type="reset" onclick="myFunction();" class="reset_filter">Reset Filter</button>
+            <button type="reset" onclick="myFunction();" class="reset_filter bubble ">Reset Filter</button>
            <!--  <input type="button" onclick="myFunction(myForm)" value="Reset Filter"> -->
 
          </div>
