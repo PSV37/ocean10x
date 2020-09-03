@@ -944,6 +944,8 @@
                            <li data-value="js_name" > <a href="#" id="frwd_btn"  onclick="frwd_post();">Forward Job</a></li>
                            <li data-value="js_experience"> <a href="#" id="frwd_btn"  onclick="copy_cvs();">Copy CV</a></li>
                            <li data-value="js_top_education"> <a href="#" id="frwd_btn"  onclick="download_cvs();">Download CV</a></li>
+                           <li data-value="js_top_education"> <a href="#" id="frwd_btn" data-toggle="modal"  data-target="#bulkupload">Bulk Upload</a></li>
+                           <li data-value="js_top_education"> <a href="#" id="frwd_btn" data-toggle="modal" data-target="#bulkupload_folder">Folder Upload</a></li>
                         </ul>
                      </label>
               <!--  <div class="col-md-4">
