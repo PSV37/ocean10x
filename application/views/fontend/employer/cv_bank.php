@@ -1440,6 +1440,7 @@ input.btn-default1 {
                   </section>
                </main>
             </div>
+            <div id="myform">
             <div class="filter1">
                <p style="font-size:18px;">Domain</p>
                <select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" tabindex="-98">
@@ -1528,8 +1529,10 @@ input.btn-default1 {
                   </optgroup>
                </select> -->
             </div>
-            <button class="reset_filter">Reset Filter</button>
+            <!--<button class="reset_filter">Reset Filter</button>-->
+            <input type="button" onclick="myFunction()" class="reset_filter" value="Reset Filter">
          </div>
+      </div>
       </div>
    </div>
 </div>
@@ -1609,6 +1612,11 @@ input.btn-default1 {
       </div>
    </div>
 </div>
+<script>
+function myFunction() {
+  document.getElementById("myForm").reset();
+}
+</script>
 <script>
    function get_copy_folders(cv_id)
    {
