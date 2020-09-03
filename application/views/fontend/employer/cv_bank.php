@@ -1441,7 +1441,7 @@ input.btn-default1 {
                </main>
             </div>
 
-            <form id="myForm">
+            <div id="myForm">
             <div class="filter1">
                <p style="font-size:18px;">Domain</p>
                <select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" tabindex="-98">
@@ -1530,16 +1530,17 @@ input.btn-default1 {
                   </optgroup>
                </select> -->
             </div>
-            <button type="reset" class="reset_filter">Reset Filter</button>
+            <button type="reset" onclick="myFunction();" class="reset_filter">Reset Filter</button>
            <!--  <input type="button" onclick="myFunction(myForm)" value="Reset Filter"> -->
 
          </div>
-      </form>
+      
       </div>
       </div>
       </div>
    </div>
 </div>
+
 <?php if (!empty($cv_bank_data)): foreach ($cv_bank_data as $cv_row) : ?>
 <div class="modal" id="rotateModal<?php echo $cv_row['cv_id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
    <input type="hidden" name="cv_id" id="cv_id" value="<?php $cv_row['cv_id']; ?>">
@@ -1619,7 +1620,10 @@ input.btn-default1 {
 
 <script>
 function myFunction(){
-  document.getElementById("myForm").reset();
+
+    $( "#myForm" ).load(window.location.href + " #myForm" );
+
+  // document.getElementById("myForm").reset();
 }
 </script>
 
