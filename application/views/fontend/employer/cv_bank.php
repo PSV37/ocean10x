@@ -958,7 +958,7 @@
                   <button type="button" id="frwd_btn" class="btn btn-primary" onclick="copy_cvs();">Copy CV</button>
                   </label>
                </div> -->
-               <<!-- div class="col-md-4">
+               <!-- div class="col-md-4">
                   <label class="dropdown">
                   <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp; Download
                   <button type="button" id="frwd_btn" class="btn btn-primary" onclick="download_cvs();">Download CV</button>
