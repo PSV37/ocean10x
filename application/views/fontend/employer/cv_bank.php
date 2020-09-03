@@ -1623,10 +1623,9 @@ input.btn-default1 {
 function myFunction(){
 
 //document.getElementById("myForm").reset()
-    //$("#myForm").load(window.location.href + " #myForm" );
 
-    $("#myForm").(window.location.href + " #myForm" );
-    jQuery.ready();
+    $("#myForm").load(window.location.href + " #myForm" );
+    //jQuery.ready();
 
   // document.getElementById("myForm").reset();
 }
