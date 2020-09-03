@@ -1802,10 +1802,10 @@ input.btn-default1 {
                 // var totalFiles = myArray.length;
    
     
-   
+               
                 // alert(totalFiles);
              //Throw an error if no boxes are checked
-                if (myNameArray.length == 0) {
+                if (cvs_name.length == 0) {
                    alert("Please choose a file to download");
                 } else {
                   var newArray = myNameArray.filter(value => Object.keys(value).length !== 0);
