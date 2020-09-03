@@ -2034,7 +2034,7 @@ function myFunction(){
       'use strict';
    
    
-   
+   console.log('document loaded');
    
    
      var $ = jQuery;
