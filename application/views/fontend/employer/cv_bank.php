@@ -891,12 +891,16 @@ input.btn-default1 {
 }
 :checked + span {
     background: #18c5bd !important;
-    display: inline-block;
-    width: 100%;
-    color: #fff;
-    padding: 5px 12px !important;
-    font-size: 11px;
-    border-radius: 13px !important;
+    display: inline-block; */
+     width: 100%; 
+     color: #fff; 
+    padding: 4px 15px;
+     border-radius: 30px; 
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 20px;
+    box-shadow: 1px 1px 6px #cccbcb;
+}
 }
 </style>
 <div class="container-fluid main-d">
@@ -955,7 +959,7 @@ input.btn-default1 {
                         </ul>
                      </label>
                       <form method="post" action="<?php echo base_url(); ?>employer/corporate_cv_bank">
-                     <label class="dropdown" style="float:right;">
+                     <label class="dropdown">
                         <div class="dd-button">
                            Sort by
                         </div>
