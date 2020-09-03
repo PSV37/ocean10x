@@ -904,26 +904,7 @@
                </div>
                <div class="col-md-3">
                 
-                  <form method="post" action="<?php echo base_url(); ?>employer/corporate_cv_bank">
-                     <label class="dropdown" style="float:right;">
-                        <div class="dd-button">
-                           Sort by
-                        </div>
-                        <input type="checkbox" class="dd-input" id="test">
-                        <!-- <ul class="dd-menu" id="test"> -->
-                        <!-- <li>Name</li> -->
-                        <!-- /<li>Experience</li> -->
-                        <!-- <li value="edu">Education</li> -->
-                        <!-- </ul> -->
-                        <ul id="sizelist" class="dd-menu">
-                           <li data-value="js_name" ><a href="#">Name</a></li>
-                           <li data-value="js_experience"><a href="#">Experience</a></li>
-                           <li data-value="js_top_education"><a href="#">Education</a></li>
-                        </ul>
-                     </label>
-                     <input id="sizevalue" size="15" name="sort_val" type="hidden" />
-                     <button type="submit" name="sort" class="hidden" id="sort_btn"></button>
-                  </form>
+                 
                </div>
                <div class="col-md-3">
                   <a href="<?php echo base_url() ?>employer/add_new_cv<?php if(!empty($fid)){echo '?fid='.$fid;} ?>"><button class="btn btn-primary"><i class="fas fa-plus"></i> Add New CV</button></a>
@@ -948,6 +929,26 @@
                            <li data-value="js_top_education"> <a href="#" id="frwd_btn" data-toggle="modal" data-target="#bulkupload_folder">Folder Upload</a></li>
                         </ul>
                      </label>
+                      <form method="post" action="<?php echo base_url(); ?>employer/corporate_cv_bank">
+                     <label class="dropdown" style="float:right;">
+                        <div class="dd-button">
+                           Sort by
+                        </div>
+                        <input type="checkbox" class="dd-input" id="test">
+                        <!-- <ul class="dd-menu" id="test"> -->
+                        <!-- <li>Name</li> -->
+                        <!-- /<li>Experience</li> -->
+                        <!-- <li value="edu">Education</li> -->
+                        <!-- </ul> -->
+                        <ul id="sizelist" class="dd-menu">
+                           <li data-value="js_name" ><a href="#">Name</a></li>
+                           <li data-value="js_experience"><a href="#">Experience</a></li>
+                           <li data-value="js_top_education"><a href="#">Education</a></li>
+                        </ul>
+                     </label>
+                     <input id="sizevalue" size="15" name="sort_val" type="hidden" />
+                     <button type="submit" name="sort" class="hidden" id="sort_btn"></button>
+                  </form>
               <!--  <div class="col-md-4">
                   <label class="dropdown">
                   <input type="checkbox" name="bulk_forward" id="checkAll" style="font-weight:500">&nbsp;Forward
@@ -980,7 +981,11 @@
                  <!--  <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp;  Upload Folder -->
                   <!-- <button type="button" id="frwd_btn" class="btn btn-primary" data-toggle="modal" data-target="#bulkupload_folder">Folder Upload</button>
                   </label> -->
-                  <input type="checkbox" name="bulk_download" id="checkAllchk">
+                  <label style="float: right;">
+                        <input type="checkbox" name="bulk_download" id="checkAllchk" >
+                        <span>select all</span>
+                        </label>
+                  <!-- <input type="checkbox" name="bulk_download" id="checkAllchk" style="float: right;">&nbsp; S -->
                </div>
             </div>
             <div class="box" >
