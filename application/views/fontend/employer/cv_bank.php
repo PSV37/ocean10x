@@ -930,7 +930,7 @@
                </div>
             </div>
             <div class="row" id="bulk">
-               <label class="dropdown" style="float:right;">
+               <label class="dropdown" style="float:left;">
                         <div class="dd-button">
                            Sort by
                         </div>
@@ -941,9 +941,9 @@
                         <!-- <li value="edu">Education</li> -->
                         <!-- </ul> -->
                         <ul id="sizelist" class="dd-menu">
-                           <li data-value="js_name" > <button type="button" id="frwd_btn" class="btn btn-primary" onclick="frwd_post();">Forward Job</button></li>
-                           <li data-value="js_experience"> <button type="button" id="frwd_btn" class="btn btn-primary" onclick="copy_cvs();">Copy CV</button></li>
-                           <li data-value="js_top_education"> <button type="button" id="frwd_btn" class="btn btn-primary" onclick="download_cvs();">Download CV</button></li>
+                           <li data-value="js_name" > <a href="#" id="frwd_btn" class="btn btn-primary" onclick="frwd_post();">Forward Job</a></li>
+                           <li data-value="js_experience"> <a href="#" id="frwd_btn" class="btn btn-primary" onclick="copy_cvs();">Copy CV</a></li>
+                           <li data-value="js_top_education"> <a href="#" id="frwd_btn" class="btn btn-primary" onclick="download_cvs();">Download CV</a></li>
                         </ul>
                      </label>
               <!--  <div class="col-md-4">
