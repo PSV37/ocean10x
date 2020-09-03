@@ -1430,7 +1430,7 @@ span.select2-selection.select2-selection--single {
                
                
                   <div class="select-option">
-                     <p style="FONT-SIZE: 12PX;COLOR: #0a5854;">Total No. Of Question:10</p>
+                     <p style="FONT-SIZE: 12PX;COLOR: #0a5854;">Total No. Of Question:<?php echo sizeof($questionbank); ?></p>
                     
                      <label class="dropdown">
                         <div class="dd-button">
@@ -1515,7 +1515,7 @@ span.select2-selection.select2-selection--single {
                         <a class="toggle btn " href="#example<?php echo $ct_row['question_id'] ?>">show answer</a>
                      </p>
                      <div class="toggle-content" id="example<?php echo $ct_row['question_id'] ?>">
-                        <?php echo $ct_row['option'.$ct_row['answer_id']] ?>
+                        <?php echo 'option'.$ct_row['answer_id'] .':'. $ct_row['option'.$ct_row['answer_id']] ?>
                      </div>
                      <div class="btn-group">
                         <a href=" <?php echo base_url('employer/edit_questionbank/' . $ct_row['ques_id']); ?>"><i class="far fa-edit icon_backg"></i></a>
