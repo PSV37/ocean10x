@@ -512,13 +512,14 @@
     
    $('ul.menu-principal-list li').click(function(e) 
     { 
+      $('.save').click();
      
-     if (confirm('All the changes you made will get overwritten?')) {
-        // myForm.submit();
-    } else {
-        e.preventDefault();
-        // window.location = 'http://google.com'; // redirect to your own URL here
-    }
+    //  if (confirm('All the changes you made will get overwritten?')) {
+    //     // myForm.submit();
+    // } else {
+    //     e.preventDefault();
+    //     // window.location = 'http://google.com'; // redirect to your own URL here
+    // }
     });
    <?php } ?>
 </script>
