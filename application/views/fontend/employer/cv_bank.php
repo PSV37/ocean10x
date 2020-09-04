@@ -1705,6 +1705,10 @@ if ($('#test1').is(":checked"))
 {
    $('#test1').click();
 }
+if ($('#test').is(":checked")) 
+{
+   $('#test').click();
+}
   //  var atLeastOneIsChecked = $('#test1:checkbox:checked').length > 0;
   // document.getElementById("myDropdown").classList.remove("show");
   // document.getElementById("sizelist").classList.remove("show");
