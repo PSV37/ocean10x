@@ -1332,6 +1332,7 @@ input#posted_job {
       $('.checkbox_label').removeClass(addclass);
       $(this).addClass(addclass);
    });
+      
    </script>
    <script>
    $(document).ready (function(){
