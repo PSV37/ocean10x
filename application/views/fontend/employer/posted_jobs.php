@@ -1321,7 +1321,7 @@
       var checkbox = $(this).find('input[type=checkbox]');
       checkbox.prop("checked", !checkbox.prop("checked"));
       var addclass = 'highlight_div';
-      checkbox.removeClass(addclass);
+      $('.checkbox_label').removeClass(addclass);
       $(this).addClass(addclass);
    });
    </script>
