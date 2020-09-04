@@ -1698,21 +1698,16 @@ function myFunction(){
      });   
    });
 
-  function myFunction(event) {
-  event.stopPropagation();
-  document.getElementById("myDropdown").classList.toggle("show");
-  $('#myDropdown').toggleClass("show");
-}
-
-function myFunction2(event) {
-  event.stopPropagation();
-  document.getElementById("sizelist").classList.toggle("show");
-}
- var addclass = 'show';
+  var addclass = 'show';
 // Close the dropdown menu if the user clicks outside of it
 window.onclick = function(event) {
-  document.getElementById("myDropdown").classList.remove("show");
-  document.getElementById("sizelist").classList.remove("show");
+if ($('#test1').is(":checked")) 
+{
+   $('#test1').click();
+}
+  //  var atLeastOneIsChecked = $('#test1:checkbox:checked').length > 0;
+  // document.getElementById("myDropdown").classList.remove("show");
+  // document.getElementById("sizelist").classList.remove("show");
 }
 </script>
 <script>
