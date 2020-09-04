@@ -113,8 +113,9 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
           //changeMonth: true,
 
           //changeYear: true,
+          "dialog", "10/12/2012"
 
-          dateFormat: 'dd-mm-yy'
+          ////dateFormat: 'dd-mm-yy'
 
           //yearRange: '2000:2019',                               
          });
