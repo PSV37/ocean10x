@@ -157,7 +157,7 @@ echo $this->job_level_model->selected($experinece->job_level); */
 
    <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Start Date:</label>
-                <div class="col-sm-9"><input class="datepicker form-control"  required name="start_date" value="<?php
+                <div class="col-sm-9"><input class="start_date form-control"  required name="start_date" value="<?php
 if (!empty($experinece->start_date)) {
     echo date('d-m-Y',strtotime($experinece->start_date));
 }
@@ -366,8 +366,8 @@ if (!empty($experinece->start_date)) {
   </div>
 </div>
 <script>
-        $( ".datepicker" ).datepicker({ dateFormat: 'dd-mm-yy' });
-/*
+        //$( ".datepicker" ).datepicker({ dateFormat: 'dd-mm-yy' });
+
       $(document).on("click", ".modal-body", function () {
        $(".datepicker").datepicker({
          // dateFormat: 'dd-mm-yy'     
@@ -382,7 +382,7 @@ if (!empty($experinece->start_date)) {
          });
        });  
     </script> 
-    
+
 <script type="text/javascript">
   // $(document).ready(function() {
   //     $("#demo-input-onadd-ondelete").tokenInput("<?php echo base_url(); ?>job_seeker/get_autocomplete", {
