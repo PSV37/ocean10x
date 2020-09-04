@@ -106,7 +106,21 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Experince Information</h4>
       </div>
-       
+       <script>
+      $(document).on("click", ".modal-body", function () {
+       $(".datepicker").datepicker({
+         // dateFormat: 'dd-mm-yy'     
+          //changeMonth: true,
+
+          //changeYear: true,
+          "dialog", "10/12/2012"
+
+          ////dateFormat: 'dd-mm-yy'
+
+          //yearRange: '2000:2019',                               
+         });
+       });  
+    </script> 
       <div class="modal-body">
          <form id="UpdateExperience-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_experience');?>" method="post" style="padding: 30px;">
          <input type="hidden" name="js_experience_id" value="<?php echo $v_experience->js_experience_id; ?>">
@@ -157,7 +171,7 @@ echo $this->job_level_model->selected($experinece->job_level); */
 
    <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Start Date:</label>
-                <div class="col-sm-9"><input id="my_date_picker" class="my_date_picker form-control"  required name="start_date" value="<?php
+                <div class="col-sm-9"><input class="datepicker form-control"  required name="start_date" value="<?php
 if (!empty($experinece->start_date)) {
     echo date('d-m-Y',strtotime($experinece->start_date));
 }
@@ -365,27 +379,6 @@ if (!empty($experinece->start_date)) {
 
   </div>
 </div>
-
-<script>
-$("#my_date_picker").datepicker({ dateFormat: 'dd-mm-yy',minDate: '0' });
-     
-  $(function() { 
-     
-     
-
-      $(document).on("click", ".modal-body", function () {
-       $(".datepicker").datepicker({
-         // dateFormat: 'dd-mm-yy'     
-          //changeMonth: true,
-
-          //changeYear: true,
-
-          dateFormat: 'dd-mm-yy', minDate: '0' 
-
-          //yearRange: '2000:2019',                               
-         });
-       });  
-    </script> 
 
 <script type="text/javascript">
   // $(document).ready(function() {
