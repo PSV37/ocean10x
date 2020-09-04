@@ -3237,7 +3237,7 @@ namespace_regex: true
 
 
 'dept_id':{
-phonenumber_regex: true
+//phonenumber_regex: true
 }, 
 
 'start_date':{
@@ -3247,7 +3247,7 @@ phonenumber_regex: true
 
 
 'end_date':{
-maxlength:3
+//maxlength:3
 //email: true
 },
 
@@ -3346,7 +3346,7 @@ namespace_regex: true
 
 
 'end_date':{
-maxlength:3
+//maxlength:3
 //email: true
 },
 
