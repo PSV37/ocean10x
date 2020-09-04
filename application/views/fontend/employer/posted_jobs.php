@@ -1327,11 +1327,8 @@ input#posted_job {
    {
       var checkbox = $(this).find('input[type=checkbox]');
       $('.posted_job').prop("checked",false);
-      if (checkbox.prop("checked") == false) 
-      {
-         this.click();
-      }
-      // checkbox.prop("checked", !checkbox.prop("checked")).trigger("click");
+      
+      checkbox.prop("checked", !checkbox.prop("checked"));
       var addclass = 'highlight_div';
       $('.checkbox_label').removeClass(addclass);
       $(this).addClass(addclass);
