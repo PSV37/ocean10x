@@ -1703,13 +1703,13 @@ function myFunction(){
 
 function myFunction2(event) {
   event.stopPropagation();
-  document.getElementById("sizelist").classList.toggle("show");
+  document.getElementById("sizelist").toggleClass("show");
 }
-
+ var addclass = 'show';
 // Close the dropdown menu if the user clicks outside of it
 window.onclick = function(event) {
-  document.getElementById("myDropdown").classList.remove("show");
-  document.getElementById("sizelist").classList.remove("show");
+  document.getElementById("myDropdown").classList.remove(addclass);
+  document.getElementById("sizelist").classList.remove(addclass);
 }
 </script>
 <script>
