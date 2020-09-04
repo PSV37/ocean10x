@@ -943,7 +943,7 @@ input.btn-default1 {
             </div>
             <div class="row" id="bulk">
                <label class="dropdown bulkdropdown" style="float:left;">
-                        <div class="dd-button" onclick="myFunction(event)">
+                        <div class="dd-button" id="dd1" onclick="myFunction(event)">
                            Bulk Action
                         </div>
                         <input type="checkbox" class="dd-input" id="test1">
@@ -1696,6 +1696,12 @@ function myFunction(){
      $("#smsg").slideUp(500);
      });   
    });
+   $(document).on("click", function(event){
+        var $trigger = $("#dd1");
+        if($trigger !== event.target && !$trigger.has(event.target).length){
+            $("#myDropdown").slideUp("fast");
+        }            
+    });
   function myFunction(event) {
   event.stopPropagation();
   document.getElementById("myDropdown").classList.toggle("show");
