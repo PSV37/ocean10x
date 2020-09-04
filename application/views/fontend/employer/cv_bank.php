@@ -941,7 +941,7 @@ input.btn-default1 {
             </div>
             <div class="row" id="bulk">
                <label class="dropdown bulkdropdown" style="float:left;">
-                        <div class="dd-button1">
+                        <div class="dd-button">
                            Bulk Action
                         </div>
                         <input type="checkbox" class="dd-input" id="test1">
@@ -950,7 +950,7 @@ input.btn-default1 {
                         <!-- /<li>Experience</li> -->
                         <!-- <li value="edu">Education</li> -->
                         <!-- </ul> -->
-                        <ul  class="dd-menu1">
+                        <ul  class="dd-menu">
                            <li> <a href="#" id="frwd_btn"  onclick="frwd_post();">Forward Job</a></li>
                            <li> <a href="#" id="frwd_btn"  onclick="copy_cvs();">Copy CV</a></li>
                            <li> <a href="#" id="frwd_btn"  onclick="download_cvs();">Download CV</a></li>
