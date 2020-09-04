@@ -901,6 +901,8 @@ input.btn-default1 {
     line-height: 20px;
     box-shadow: 1px 1px 6px #cccbcb;
 }
+.show {
+  display: block;
 }
 </style>
 <div class="container-fluid main-d">
@@ -960,7 +962,7 @@ input.btn-default1 {
                      </label>
                       <form method="post" action="<?php echo base_url(); ?>employer/corporate_cv_bank">
                      <label class="dropdown">
-                        <div class="dd-button">
+                        <div class="dd-button" onclick="myFunction2(event)">
                            Sort by
                         </div>
                         <input type="checkbox" class="dd-input" id="test">
@@ -1701,13 +1703,13 @@ function myFunction(){
 
 function myFunction2(event) {
   event.stopPropagation();
-  document.getElementById("myDropdown2").classList.toggle("show");
+  document.getElementById("sizelist").classList.toggle("show");
 }
 
 // Close the dropdown menu if the user clicks outside of it
 window.onclick = function(event) {
   document.getElementById("myDropdown").classList.remove("show");
-  document.getElementById("myDropdown2").classList.remove("show");
+  document.getElementById("sizelist").classList.remove("show");
 }
 </script>
 <script>
