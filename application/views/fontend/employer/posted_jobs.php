@@ -1319,7 +1319,7 @@
       $('.checkbox_label').click(function ()
    {
       var checkbox = $(this).find('input[type=checkbox]');
-      $('#posted_job').prop("checked",false);
+      $('.posted_job').prop("checked",false);
       checkbox.prop("checked", !checkbox.prop("checked"));
       var addclass = 'highlight_div';
       $('.checkbox_label').removeClass(addclass);
