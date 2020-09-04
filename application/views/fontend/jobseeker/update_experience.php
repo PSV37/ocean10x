@@ -302,7 +302,7 @@ if (!empty($experinece->start_date)) {
             <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Start Date</label>
                 <div class="col-sm-9">
-                  <input type="text" class="form-control datepicker"  required id="start_date" name="start_date">
+                  <input type="text" class="form-control datepicker"  required id="my_date_picker" name="start_date">
                   <label><input type="checkbox" id="chkDisable" onclick="disableAddDP()">  Current Job</label>
                 </div>
               </div>
@@ -372,7 +372,7 @@ if (!empty($experinece->start_date)) {
      
      $("#my_date_picker").datepicker({ dateFormat: 'dd-mm-yy',minDate: '0' });
      }); 
-  
+
       $(document).on("click", ".modal-body", function () {
        $(".datepicker").datepicker({
          // dateFormat: 'dd-mm-yy'     
