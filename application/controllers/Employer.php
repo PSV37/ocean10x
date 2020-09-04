@@ -198,7 +198,6 @@ class Employer extends MY_Employer_Controller {
     public function job_post() {
          $this->session->unset_userdata('submenu');
           $this->session->unset_userdata('activesubmenu');
-
         $this->session->unset_userdata('activemenu');
         $data['activemenu'] = 'job_post';
         $this->session->set_userdata($data);
