@@ -1329,7 +1329,7 @@ input#posted_job {
       $('.posted_job').prop("checked",false);
       if (checkbox.prop("checked") == false) 
       {
-         checkbox.click();
+         $(this).click();
       }
       // checkbox.prop("checked", !checkbox.prop("checked"));
       var addclass = 'highlight_div';
