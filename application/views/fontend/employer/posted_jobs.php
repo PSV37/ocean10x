@@ -1548,7 +1548,7 @@ input#posted_job {
   function  get_report_data(id)
   {
        
-            if($('#posted_job').is(":checked")){
+            // if($('#posted_job').is(":checked")){
                 console.log("Checkbox is checked.");
 
                 $.ajax({
@@ -1588,7 +1588,7 @@ input#posted_job {
 
                  }
                });
-            }
+            // }
 
 
             
