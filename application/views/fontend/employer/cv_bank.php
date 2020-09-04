@@ -40,7 +40,7 @@
    .dd-input {
    display: none;
    }
-   .dd-menu {
+   /*.dd-menu {
    position: absolute;
    top: 100%;
    border: 1px solid #ccc;
@@ -50,7 +50,17 @@
    box-shadow: 0 0 6px 0 rgba(0,0,0,0.1);
    background-color: #ffffff;
    list-style-type: none;
-   }
+   }*/
+   .dd-menu{
+   
+ 
+        min-width: 100%; /* Set width of the dropdown */
+        background: #f2f2f2;
+        display: none;
+        position: absolute;
+        z-index: 999;
+        left: 0;
+    }
    .dd-input + .dd-menu {
    display: none;
    } 
