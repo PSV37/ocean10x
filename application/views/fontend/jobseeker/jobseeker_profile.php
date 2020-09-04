@@ -3247,7 +3247,7 @@ namespace_regex: true
 
 
 'end_date':{
-maxlength:3
+//maxlength:3
 //email: true
 },
 
