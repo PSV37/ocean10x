@@ -755,7 +755,7 @@ label {
                                  <strong>: <?php echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?></strong>
                               </li>
                               <li>
-                                 <h4>Date of birth</h4>
+                                 <h4>Date of Birth</h4>
                                  <strong>: <?php if($js_personal_info->date_of_birth=="0000-00-00") {
                                     echo "";
                                     } else {
@@ -3769,7 +3769,7 @@ $(".allowalphabates").keypress(function (e) {
 $(document).ready(function () {
         var today = new Date();
         $('.datepicker').datepicker({
-            format: 'mm-dd-yyyy',
+            format: 'dd-mm-yyyy',
             autoclose:true,
             endDate: "today",
             maxDate: today
