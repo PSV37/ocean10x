@@ -1008,7 +1008,7 @@
    <?php if (!empty($company_active_jobs)): foreach ($company_active_jobs as $v_companyjobs) : ?>
    <label class="checkbox_label">
       <div class="border-top1"></div>
-      <input type="checkbox" id='posted_job' onclick="get_report_data(<?php echo $v_companyjobs->job_post_id ?>)" />
+      <input type="checkbox" id='posted_job' class="posted_job" onclick="get_report_data(<?php echo $v_companyjobs->job_post_id ?>)" />
       <div class="card">
          <div class="front">
             <img src="<?php echo base_url() ?>upload/<?php echo $this->company_profile_model->company_logoby_id($company_profile_id);?>" style="height:50px; width:50px;border-radius:5px;float:left;border:solid 1px #eae9e9b8;margin-right:15px;" />
