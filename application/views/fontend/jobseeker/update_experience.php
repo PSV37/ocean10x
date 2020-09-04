@@ -107,6 +107,8 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
         <h4 class="modal-title">Experince Information</h4>
       </div>
        <script>
+        $( ".datepicker" ).datepicker({ dateFormat: 'dd-mm-yy' });
+/*
       $(document).on("click", ".modal-body", function () {
        $(".datepicker").datepicker({
          // dateFormat: 'dd-mm-yy'     
