@@ -106,23 +106,7 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Experince Information</h4>
       </div>
-       <script>
-        $( ".datepicker" ).datepicker({ dateFormat: 'dd-mm-yy' });
-/*
-      $(document).on("click", ".modal-body", function () {
-       $(".datepicker").datepicker({
-         // dateFormat: 'dd-mm-yy'     
-          //changeMonth: true,
-
-          //changeYear: true,
-          "dialog", "10/12/2012"
-
-          ////dateFormat: 'dd-mm-yy'
-
-          //yearRange: '2000:2019',                               
-         });
-       });  
-    </script> 
+       
       <div class="modal-body">
          <form id="UpdateExperience-info" class="form-horizontal" action="<?php echo base_url('job_seeker/update_experience');?>" method="post" style="padding: 30px;">
          <input type="hidden" name="js_experience_id" value="<?php echo $v_experience->js_experience_id; ?>">
@@ -381,7 +365,24 @@ if (!empty($experinece->start_date)) {
 
   </div>
 </div>
+<script>
+        $( ".datepicker" ).datepicker({ dateFormat: 'dd-mm-yy' });
+/*
+      $(document).on("click", ".modal-body", function () {
+       $(".datepicker").datepicker({
+         // dateFormat: 'dd-mm-yy'     
+          //changeMonth: true,
 
+          //changeYear: true,
+          "dialog", "10/12/2012"
+
+          ////dateFormat: 'dd-mm-yy'
+
+          //yearRange: '2000:2019',                               
+         });
+       });  
+    </script> 
+    
 <script type="text/javascript">
   // $(document).ready(function() {
   //     $("#demo-input-onadd-ondelete").tokenInput("<?php echo base_url(); ?>job_seeker/get_autocomplete", {
