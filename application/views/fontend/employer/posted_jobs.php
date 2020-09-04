@@ -1001,7 +1001,7 @@
 <div class="col-md-6 active-job">
    <div id="smsg"> <?php echo $this->session->flashdata('success'); ?></div><br><br>
    <?php if (!empty($company_active_jobs)): foreach ($company_active_jobs as $v_companyjobs) : ?>
-   <label>
+   <label class="label">
       <div class="border-top1"></div>
       <input type="checkbox" id='posted_job' onclick="get_report_data(<?php echo $v_companyjobs->job_post_id ?>)" />
       <div class="card">
@@ -1310,6 +1310,13 @@
 <?php
    endforeach;endif;
    ?>
+   <script>
+      $('.label').click(function ()
+   {
+      var checkbox = $(this).find('input[type=checkbox]');
+      checkbox.prop("checked", !checkbox.prop("checked"));
+   });
+   </script>
    <script>
    $(document).ready (function(){
      $("#smsg").fadeTo(2000, 500).slideUp(500, function(){
