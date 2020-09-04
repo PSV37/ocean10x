@@ -40,7 +40,7 @@
    .dd-input {
    display: none;
    }
-   /*.dd-menu {
+   .dd-menu {
    position: absolute;
    top: 100%;
    border: 1px solid #ccc;
@@ -50,17 +50,7 @@
    box-shadow: 0 0 6px 0 rgba(0,0,0,0.1);
    background-color: #ffffff;
    list-style-type: none;
-   }*/
-   .dd-menu{
-   
- 
-        min-width: 100%; /* Set width of the dropdown */
-        background: #f2f2f2;
-        display: none;
-        position: absolute;
-        z-index: 999;
-        left: 0;
-    }
+   }
    .dd-input + .dd-menu {
    display: none;
    } 
@@ -912,7 +902,8 @@ input.btn-default1 {
     box-shadow: 1px 1px 6px #cccbcb;
 }
 .show {
-  display: block;
+  display: block !important;
+  background-color: yellow;
 }
 </style>
 <div class="container-fluid main-d">
@@ -953,7 +944,7 @@ input.btn-default1 {
             </div>
             <div class="row" id="bulk">
                <label class="dropdown bulkdropdown" style="float:left;">
-                        <div class="dd-button" id="dd1" onclick="myFunction(event)">
+                        <div class="dd-button" onclick="myFunction(event)">
                            Bulk Action
                         </div>
                         <input type="checkbox" class="dd-input" id="test1">
@@ -1706,12 +1697,7 @@ function myFunction(){
      $("#smsg").slideUp(500);
      });   
    });
-   $(document).on("click", function(event){
-        var $trigger = $("#dd1");
-        if($trigger !== event.target && !$trigger.has(event.target).length){
-            $("#myDropdown").slideUp("fast");
-        }            
-    });
+
   function myFunction(event) {
   event.stopPropagation();
   document.getElementById("myDropdown").classList.toggle("show");
