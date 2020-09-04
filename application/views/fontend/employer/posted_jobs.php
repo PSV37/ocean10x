@@ -989,6 +989,14 @@
    background: #b3ebe8;;
    width: 0%;
    }
+   .highlight_div {
+     border: 1px solid ;
+  padding: 10px;
+  box-shadow: 5px 5px #888888;
+}
+.active-job label:hover {
+    /* box-shadow: 0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06)!important; */
+}
 </style>
 
 <div class="container-fluid main-d">
@@ -1001,9 +1009,9 @@
 <div class="col-md-6 active-job">
    <div id="smsg"> <?php echo $this->session->flashdata('success'); ?></div><br><br>
    <?php if (!empty($company_active_jobs)): foreach ($company_active_jobs as $v_companyjobs) : ?>
-   <label>
+   <label class="checkbox_label">
       <div class="border-top1"></div>
-      <input type="checkbox" id='posted_job' onclick="get_report_data(<?php echo $v_companyjobs->job_post_id ?>)" />
+      <input type="checkbox" id='posted_job' class="posted_job" onclick="get_report_data(<?php echo $v_companyjobs->job_post_id ?>)" />
       <div class="card">
          <div class="front">
             <img src="<?php echo base_url() ?>upload/<?php echo $this->company_profile_model->company_logoby_id($company_profile_id);?>" style="height:50px; width:50px;border-radius:5px;float:left;border:solid 1px #eae9e9b8;margin-right:15px;" />
@@ -1310,6 +1318,17 @@
 <?php
    endforeach;endif;
    ?>
+   <script>
+      $('.checkbox_label').click(function ()
+   {
+      var checkbox = $(this).find('input[type=checkbox]');
+      $('.posted_job').prop("checked",false);
+      checkbox.prop("checked", !checkbox.prop("checked"));
+      var addclass = 'highlight_div';
+      $('.checkbox_label').removeClass(addclass);
+      $(this).addClass(addclass);
+   });
+   </script>
    <script>
    $(document).ready (function(){
      $("#smsg").fadeTo(2000, 500).slideUp(500, function(){

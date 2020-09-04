@@ -1625,10 +1625,10 @@ function myFunction(){
 //document.getElementById("myForm").reset()
     $(document).ready();
     $("#myForm").load(window.location.href + " #myForm" );
-    //jQuery.ready();
 
    
 
+    //jQuery.ready();
 
   // document.getElementById("myForm").reset();
 }
