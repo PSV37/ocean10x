@@ -901,6 +901,8 @@ input.btn-default1 {
     line-height: 20px;
     box-shadow: 1px 1px 6px #cccbcb;
 }
+.show {
+  display: block;
 }
 </style>
 <div class="container-fluid main-d">
@@ -941,7 +943,7 @@ input.btn-default1 {
             </div>
             <div class="row" id="bulk">
                <label class="dropdown bulkdropdown" style="float:left;">
-                        <div class="dd-button">
+                        <div class="dd-button" onclick="myFunction(event)">
                            Bulk Action
                         </div>
                         <input type="checkbox" class="dd-input" id="test1">
@@ -950,7 +952,7 @@ input.btn-default1 {
                         <!-- /<li>Experience</li> -->
                         <!-- <li value="edu">Education</li> -->
                         <!-- </ul> -->
-                        <ul  class="dd-menu">
+                        <ul id="myDropdown"  class="dd-menu">
                            <li> <a href="#" id="frwd_btn"  onclick="frwd_post();">Forward Job</a></li>
                            <li> <a href="#" id="frwd_btn"  onclick="copy_cvs();">Copy CV</a></li>
                            <li> <a href="#" id="frwd_btn"  onclick="download_cvs();">Download CV</a></li>
@@ -960,7 +962,7 @@ input.btn-default1 {
                      </label>
                       <form method="post" action="<?php echo base_url(); ?>employer/corporate_cv_bank">
                      <label class="dropdown">
-                        <div class="dd-button">
+                        <div class="dd-button" onclick="myFunction2(event)">
                            Sort by
                         </div>
                         <input type="checkbox" class="dd-input" id="test">
@@ -1694,18 +1696,21 @@ function myFunction(){
      $("#smsg").slideUp(500);
      });   
    });
-   $(document).ready(function(){
-        // Show hide popover
-        $(".dd-button").click(function(){
-            $(this).find(".dd-menu").slideToggle("fast");
-        });
-    });
-   $(document).on("click", function(event){
-        var $trigger = $(".dd-button");
-        if($trigger !== event.target && !$trigger.has(event.target).length){
-            $(".dd-menu").slideUp("fast");
-        }            
-    });
+  function myFunction(event) {
+  event.stopPropagation();
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function myFunction2(event) {
+  event.stopPropagation();
+  document.getElementById("sizelist").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  document.getElementById("myDropdown").classList.remove("show");
+  document.getElementById("sizelist").classList.remove("show");
+}
 </script>
 <script>
    document.getElementById("files").addEventListener("change", function(event) {
