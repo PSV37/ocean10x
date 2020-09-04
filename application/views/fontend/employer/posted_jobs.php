@@ -989,6 +989,11 @@
    background: #b3ebe8;;
    width: 0%;
    }
+   .highlight_div {
+     border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px #888888;
+}
 </style>
 
 <div class="container-fluid main-d">
@@ -1001,7 +1006,7 @@
 <div class="col-md-6 active-job">
    <div id="smsg"> <?php echo $this->session->flashdata('success'); ?></div><br><br>
    <?php if (!empty($company_active_jobs)): foreach ($company_active_jobs as $v_companyjobs) : ?>
-   <label class="label">
+   <label class="checkbox_label">
       <div class="border-top1"></div>
       <input type="checkbox" id='posted_job' onclick="get_report_data(<?php echo $v_companyjobs->job_post_id ?>)" />
       <div class="card">
@@ -1311,10 +1316,13 @@
    endforeach;endif;
    ?>
    <script>
-      $('.label').click(function ()
+      $('.checkbox_label').click(function ()
    {
       var checkbox = $(this).find('input[type=checkbox]');
       checkbox.prop("checked", !checkbox.prop("checked"));
+      var addclass = 'highlight_div';
+      checkbox.removeClass(addclass);
+      $(this).addClass(addclass);
    });
    </script>
    <script>
