@@ -1696,7 +1696,6 @@ function myFunction(){
      $("#smsg").slideUp(500);
      });   
    });
-
   function myFunction(event) {
   event.stopPropagation();
   document.getElementById("myDropdown").classList.toggle("show");
@@ -1709,12 +1708,8 @@ function myFunction2(event) {
  var addclass = 'show';
 // Close the dropdown menu if the user clicks outside of it
 window.onclick = function(event) {
-if ($('#sizelist').visible(true)) {
-   console.log('The element is visible');
-} else {
-   console.log('The element is NOT visible');
-    // The element is NOT visible, do something else
-}
+  document.getElementById("myDropdown").classList.remove("show");
+  document.getElementById("sizelist").classList.remove("show");
 }
 </script>
 <script>
