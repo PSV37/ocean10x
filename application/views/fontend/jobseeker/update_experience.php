@@ -114,7 +114,7 @@ $experinece = $this->Job_seeker_experience_model->get($v_experience->js_experien
 
           //changeYear: true,
 
-          dateFormat: 'dd-mm-yy',
+          dateFormat: 'dd-mm-yy', minDate: '0' 
 
           //yearRange: '2000:2019',                               
          });
