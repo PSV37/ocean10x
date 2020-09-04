@@ -1701,6 +1701,7 @@ function myFunction(){
   function myFunction(event) {
   event.stopPropagation();
   document.getElementById("myDropdown").classList.toggle("show");
+  $('#myDropdown').toggleClass("show");
 }
 
 function myFunction2(event) {
