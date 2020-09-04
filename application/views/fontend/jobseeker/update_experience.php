@@ -157,7 +157,7 @@ echo $this->job_level_model->selected($experinece->job_level); */
 
    <div class="form-group">
                 <label class="control-label col-sm-3" for="email">Start Date:</label>
-                <div class="col-sm-9"><input class="datepicker form-control"  required name="start_date" value="<?php
+                <div class="col-sm-9"><input id="my_date_picker" class="datepicker form-control"  required name="start_date" value="<?php
 if (!empty($experinece->start_date)) {
     echo date('d-m-Y',strtotime($experinece->start_date));
 }
@@ -367,6 +367,12 @@ if (!empty($experinece->start_date)) {
 </div>
 
 <script>
+
+  $(function() { 
+     
+     $("#my_date_picker").datepicker({ dateFormat: 'dd-mm-yy',minDate: '0' });
+     }); 
+  
       $(document).on("click", ".modal-body", function () {
        $(".datepicker").datepicker({
          // dateFormat: 'dd-mm-yy'     
