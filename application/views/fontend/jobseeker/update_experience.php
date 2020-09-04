@@ -369,7 +369,7 @@ if (!empty($experinece->start_date)) {
 <script>
 $("#my_date_picker").datepicker({ dateFormat: 'dd-mm-yy',minDate: '0' });
      
-  $(function() { 
+ /*$(function() { 
      
      
 
@@ -384,7 +384,7 @@ $("#my_date_picker").datepicker({ dateFormat: 'dd-mm-yy',minDate: '0' });
 
           //yearRange: '2000:2019',                               
          });
-       });  
+       });   
     </script> 
 
 <script type="text/javascript">
