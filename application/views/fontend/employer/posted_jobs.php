@@ -990,7 +990,7 @@
    width: 0%;
    }
    .highlight_div {
-     border: 1px solid;
+     border: 1px solid ;
   padding: 10px;
   box-shadow: 5px 10px #888888;
 }
@@ -1319,6 +1319,7 @@
       $('.checkbox_label').click(function ()
    {
       var checkbox = $(this).find('input[type=checkbox]');
+      $('#posted_job').prop("checked",false);
       checkbox.prop("checked", !checkbox.prop("checked"));
       var addclass = 'highlight_div';
       $('.checkbox_label').removeClass(addclass);
