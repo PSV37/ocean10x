@@ -1694,6 +1694,12 @@ function myFunction(){
      $("#smsg").slideUp(500);
      });   
    });
+   $(document).on("click", function(event){
+        var $trigger = $(".dd-button");
+        if($trigger !== event.target && !$trigger.has(event.target).length){
+            $(".dd-menu").slideUp("fast");
+        }            
+    });
 </script>
 <script>
    document.getElementById("files").addEventListener("change", function(event) {

@@ -997,6 +997,10 @@
 .active-job label:hover {
     /* box-shadow: 0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06)!important; */
 }
+input#posted_job {
+    display: none;
+   
+}
 </style>
 
 <div class="container-fluid main-d">
@@ -1328,6 +1332,7 @@
       $('.checkbox_label').removeClass(addclass);
       $(this).addClass(addclass);
    });
+      
    </script>
    <script>
    $(document).ready (function(){

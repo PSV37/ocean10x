@@ -307,8 +307,8 @@ button.btn-save {
 
 }
 .active-job label{margin-bottom:15px !important;}
-.active-job label:hover{box-shadow: 0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06)!important;
-}
+/*.active-job label:hover{box-shadow: 0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06)!important;
+}*/
 
 .modal-content {
     background-image: linear-gradient(#18c5bd, #d4efec);
