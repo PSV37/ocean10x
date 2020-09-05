@@ -72,7 +72,7 @@ class Register extends CI_Controller
                 if ($exist_email) 
                 {
                     // all Ready Account Message
-                    $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your Email Or Account Already Use This!</div>');
+                    $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Your Email Or Account Already exists! Please Login!</div>');
                     redirect('register');
                 } else 
                 {
