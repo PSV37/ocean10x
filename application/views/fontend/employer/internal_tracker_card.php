@@ -10,7 +10,7 @@
                      <!-- <div class="front"> -->
                         
                             <!-- <tbody> -->
-                              <!--<p style="    font-weight: 700;"><?php echo $job_row1->datecreation; . date("Y-m-d h:i:sa", $d);?></p><br>-->
+                              
 
                               <p style="    font-weight: 700;"><?php echo date("d-m-Y", $job_row1->datecreation);?></p><br>
 
