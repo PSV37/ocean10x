@@ -4873,7 +4873,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         // foreach ($skus as $element) {
         //$filename = "internal_tracker." . date("jS F Y") . ".csv";
         //
-        $filename = "internal_tracker." . date("d-m-y") . ".csv";
+        $filename = "internal_tracker." . date("jS F D") . ".csv";
         header('Content-Type: application/vnd.ms-excel');
         header('Content-Disposition: attachment;filename="' . $filename . '"');
         header('Cache-Control: max-age=0');

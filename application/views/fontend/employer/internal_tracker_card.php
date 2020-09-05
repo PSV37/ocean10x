@@ -22,7 +22,7 @@
                                 <input class="attrValue" type="hidden" name="" id="cv_id" value="<?php echo $job_row->cv_id; ?>">
                                  <td >
 
-                                   <?php $today = date('Y-m-d');  if($job_row->updated_on == $today)
+                                   <?php $today = date('d-m-Y');  if($job_row->updated_on == $today)
                                 { ?> <span class="required"> * </span>
 
                                <?php } ?>
