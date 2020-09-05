@@ -227,7 +227,7 @@ class Register extends CI_Controller
             redirect('register/jobseeker_login');
         }
         else {
-            $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Sorry! There is error verifying your Email Address!</div>');
+            $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Email is not registered with TheOcean ! Please register !</div>');
             redirect('register/jobseeker_login');
         }
     }
