@@ -353,6 +353,7 @@
       <div class="col-md-12">
          <?php $this->load->view('fontend/layout/seeker_left_menu.php'); ?>
          <div class="col-md-6 mid-section">
+              <?php echo $this->session->flashdata('msg'); ?>
             <div class="row">
                <div class="col-md-12 bd-1">
                   <div class="dash-box-w">

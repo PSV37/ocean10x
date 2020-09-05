@@ -220,14 +220,14 @@ class Register extends CI_Controller
             $results = $this->Master_model->get_master_row("js_login_logs", $select ='login', $where_sek, $join = false);
             $this->session->set_userdata($data);
             $this->session->set_flashdata('type', 'success');
-            $this->session->set_flashdata('Message', "Welcome Back - ".$result->full_name."<br>Your Last Successfull Login Was - ".$results['login']);
+            $this->session->set_flashdata('msg', "<div class='alert alert-danger text-center'>Welcome Back - ".$result->full_name."<br>Your Last Successfull Login Was - ".$results['login'].'</div>');
             redirect('job_seeker/my_dashboard');
         } elseif (!empty($email_check)) {
-            $this->session->set_flashdata('invalid', '<div class="alert alert-danger text-center">You have entered a Wrong password!</div>');
+            $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">You have entered a Wrong password!</div>');
             redirect('register/jobseeker_login');
         }
         else {
-            $this->session->set_flashdata('invalid', '<div class="alert alert-danger text-center">Sorry! There is error verifying your Email Address!</div>');
+            $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Email is not registered with TheOcean ! Please register !</div>');
             redirect('register/jobseeker_login');
         }
     }
