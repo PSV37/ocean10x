@@ -10,7 +10,7 @@
                      <!-- <div class="front"> -->
                         
                             <!-- <tbody> -->
-                              <p style="    font-weight: 700;"><?php echo $job_row1->datecreation; ?></p><br>
+                              <p style="    font-weight: 700;"><?php echo $job_row1->datecreation d-m-y; ?></p><br>
                               <?php $forwarded_job_tracking_date = $this->job_posting_model->get_job_forwarded_candidate_by_date($job_id,$job_row1->datecreation);
                               // echo $this->db->last_query();die;
 
@@ -22,7 +22,7 @@
                                 <input class="attrValue" type="hidden" name="" id="cv_id" value="<?php echo $job_row->cv_id; ?>">
                                  <td >
 
-                                   <?php $today = date('d-m-Y');  if($job_row->updated_on == $today)
+                                   <?php $today = date('Y-m-d');  if($job_row->updated_on == $today)
                                 { ?> <span class="required"> * </span>
 
                                <?php } ?>
