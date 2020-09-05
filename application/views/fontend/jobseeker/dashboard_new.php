@@ -347,11 +347,7 @@
    .alert.alert-success.text-center {
     margin-top: 100px;
 }
-/*<?php if ($this->session->flashdata('msg')) { ?>
-  .col-md-12.bd-1 {
-    margin-top: 0;
-}
-<?php } ?>*/
+
    /*.ui-autocomplete {
    z-index: 1000;
    }*/
