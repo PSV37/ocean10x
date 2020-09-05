@@ -110,7 +110,7 @@ class Register extends CI_Controller
                         $this->Job_specialization_model->insert($js_specialiazation);
                         // successfully sent mail
                        $result = $this->job_seeker_model->sendEmail($email_to,$full_name);
-                       print_r($result);die;
+                       // print_r($result);die;
                         $this->session->unset_userdata('reg_jobseeker');
       
 
