@@ -1834,7 +1834,7 @@ label {
                                  </div>
                                  <div class="modal-body">
                                     <form id="work_experience" class="form-horizontal" action="<?php echo base_url('job_seeker/update_experience');?>" method="post" style="padding: 30px;">
-                                       <input type="hidden" name="js_experience_id" value="286"> 
+                                       <input type="hidden" name="js_experience_id" value=""> 
                                        <div class="form-group">
                                           <label class="control-label col-sm-3" for="email">Company Name:</label>
                                           <div class="col-sm-9">
