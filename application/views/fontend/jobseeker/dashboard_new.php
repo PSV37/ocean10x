@@ -344,6 +344,10 @@
    padding-top: -55px;
    margin-top: -15px;
    }
+   .alert.alert-success.text-center {
+    margin-top: 100px;
+}
+
    /*.ui-autocomplete {
    z-index: 1000;
    }*/
@@ -353,7 +357,7 @@
       <div class="col-md-12">
          <?php $this->load->view('fontend/layout/seeker_left_menu.php'); ?>
          <div class="col-md-6 mid-section">
-              <?php echo $this->session->flashdata('msg'); ?>
+              <div id="smsg">  <?php echo $this->session->flashdata('msg'); ?></div>
             <div class="row">
                <div class="col-md-12 bd-1">
                   <div class="dash-box-w">
@@ -676,6 +680,12 @@
                  event.preventDefault();
              }
          });
+
+   $(document).ready (function(){
+     $("#smsg").fadeTo(2000, 500).slideUp(500, function(){
+     $("#smsg").slideUp(500);
+     });   
+   });
 </script> 
 <script>
    $(function(){
