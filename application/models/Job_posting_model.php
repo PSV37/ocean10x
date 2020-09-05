@@ -294,7 +294,7 @@ order by created_date asc limit 10");
 
     public function get_job_forwarded_candidate($job_id)
     {
-        $this->db->select('DATE_FORMAT(forwarded_jobs_cv.created_on,"%d-%m-%y")as datecreation');
+        $this->db->select('DATE_FORMAT(forwarded_jobs_cv.created_on,"%y-%m-%d")as datecreation');
         $this->db->from('forwarded_jobs_cv');
         $this->db->where('forwarded_jobs_cv.job_post_id', $job_id);
        
