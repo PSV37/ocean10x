@@ -347,7 +347,7 @@
    .alert.alert-success.text-center {
     margin-top: 100px;
 }
-<?php if (isset($this->session->flashdata('msg');)) { ?>
+<?php if (isset($this->session->flashdata('msg'))) { ?>
   .col-md-12.bd-1 {
     margin-top: 0;
 }
@@ -684,7 +684,7 @@
                  event.preventDefault();
              }
          });
-  
+
    $(document).ready (function(){
      $("#smsg").fadeTo(2000, 500).slideUp(500, function(){
      $("#smsg").slideUp(500);
