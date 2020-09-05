@@ -10,7 +10,10 @@
                      <!-- <div class="front"> -->
                         
                             <!-- <tbody> -->
-                              <p style="    font-weight: 700;"><?php echo $job_row1->datecreation; . date("Y-m-d h:i:sa", $d);?></p><br>
+                              <!--<p style="    font-weight: 700;"><?php echo $job_row1->datecreation; . date("Y-m-d h:i:sa", $d);?></p><br>-->
+
+                              <p style="    font-weight: 700;"><?php echo date("d-m-Y", $job_row1->datecreation);?></p><br>
+
                               <?php $forwarded_job_tracking_date = $this->job_posting_model->get_job_forwarded_candidate_by_date($job_id,$job_row1->datecreation);
                               // echo $this->db->last_query();die;
 
