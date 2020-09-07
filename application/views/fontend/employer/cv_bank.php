@@ -4096,6 +4096,8 @@ if ($('#test').is(":checked"))
    allRanges.forEach(wrap => {
      const range = wrap.querySelector(".range");
      const bubble = wrap.querySelector(".bubble");
+     console.log(range);
+     console.log(bubble);
    
      range.addEventListener("input", () => {
        setBubble(range, bubble);
