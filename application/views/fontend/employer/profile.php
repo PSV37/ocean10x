@@ -234,8 +234,7 @@ input.capital {
            <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
 
             <div class="col-md-9 edit-profile">
-              <form id="submit" action="<?php echo base_url(); ?>employer/profile-setting" method="post"  enctype="multipart/form-data"  >
-         <input type="hidden" name="company_profile_id" value="<?php echo $company_info->company_profile_id;?>">
+              
                <div class="col-md-12 header-profile">
                   <div class="col-md-2"> 
                   <?php $profile_pic = $this->company_profile_model->company_logoby_id($company_profile_id);
@@ -683,12 +682,11 @@ input.capital {
                   </div>
                   <button class="btn-save-profile" id="submitbtn"  type="submit">save</button>            
                </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-
+            </div>
+         </div>
+      </form>
+   </div>
+</div>
 <script>
    $(document).ready (function(){
      $("#smsg").fadeTo(2000, 500).slideUp(500, function(){
@@ -777,7 +775,7 @@ input.capital {
    
    required: true,
    
-   contactname_regex: true
+   // contactname_regex: true
    
    },
    
