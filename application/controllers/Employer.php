@@ -3460,7 +3460,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         } else {
             $where_c = "corporate_cv_bank.cv_id NOT IN (select cv_id from cv_folder_relation) and company_id ='$company_id'";
             // $where_c['company_id'] = $company_id;
-            $data['cv_bank_data'] = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join = false, $order = 'desc', $field = 'cv_id', $select = false, $limit = false, $start = false, $search = false);
+            $join = array('education_level' => 'education_level.education_level_id = corporate_cv_bank.js_top_education | left outer ')
+            $data['cv_bank_data'] = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join , $order = 'desc', $field = 'cv_id', $select = false, $limit = false, $start = false, $search = false);
             $this->load->view('fontend/employer/cv_bank', $data);
         }
         // $this->load->view('fontend/employer/corporate_cv_bank',$data);

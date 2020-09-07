@@ -905,6 +905,15 @@ input.btn-default1 {
   display: block !important;
   background-color: yellow;
 }
+button#sklbtn {
+    background-color: #18c5bd;
+    color: #ffffff;
+    border-radius: 20px;
+    border: none;
+    padding: 1px 10px;
+    margin-bottom: 7px;
+    font-size: 11px;
+}
 </style>
 <div class="container-fluid main-d">
    <div class="container">
@@ -1072,6 +1081,8 @@ input.btn-default1 {
                           
                            <li class="left-title">Work Experince</li>
                            <li class="right-title">&nbsp;: <?php echo $cv_row['js_experience']; ?></li>
+                           <li class="left-title">Education</li>
+                           <li class="right-title">&nbsp;: <?php echo $cv_row['education_level_name']; ?></li>
                            <div class="clear"></div>
                         </div>
                         <div class="following-info2">
@@ -1092,7 +1103,7 @@ input.btn-default1 {
             <lable class=""><button id="sklbtn"><?php echo  $skill_row;?></button></lable>
             <?php }
                 }   ?>
-                           <li class="right-title">&nbsp;: <?php echo $cv_row['js_skill_set']; ?></li></span>
+                        
                         <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
                         </button>
