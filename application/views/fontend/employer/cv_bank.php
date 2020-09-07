@@ -1646,6 +1646,7 @@ function myFunction(){
 // document.getElementById("myForm").reset()
 $('.range').val(0);
 var clivk =wrap.querySelector(".range");
+console.log(clivk);
 clivk.trigger("input");
 
     // $(document).ready();
