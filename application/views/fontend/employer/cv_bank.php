@@ -958,7 +958,7 @@ input.btn-default1 {
                            <li> <a href="#" id="frwd_btn"  onclick="copy_cvs();">Copy CV</a></li>
                            <li> <a href="#" id="frwd_btn"  onclick="download_cvs();">Download CV</a></li>
                            <li> <a href="#" id="frwd_btn" data-toggle="modal" data-keyboard="true"  data-target="#bulkupload">Bulk Upload</a></li>
-                           <li> <a href="#" id="frwd_btn" data-toggle="modal" data-target="#bulkupload_folder">Folder Upload</a></li>
+                           <li> <a href="#" id="frwd_btn" data-toggle="modal" data-keyboard="true" data-target="#bulkupload_folder">Folder Upload</a></li>
                         </ul>
                      </label>
                       <form method="post" action="<?php echo base_url(); ?>employer/corporate_cv_bank">
@@ -1296,7 +1296,7 @@ input.btn-default1 {
                      </div>
                   </div>
                </div>
-               <div class="modal fade" id="bulkupload_folder" role="dialog">
+               <div class="modal fade" id="bulkupload_folder" tabindex="-1" role="dialog">
                   <div class="modal-dialog modal-sm">
                      <div class="modal-content">
                         <form method="post" action="<?php echo base_url();?>employer/bulk_upload_folder" enctype="multipart/form-data">
