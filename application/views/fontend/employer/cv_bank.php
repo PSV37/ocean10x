@@ -1261,7 +1261,7 @@ input.btn-default1 {
                      </div>
                   </div>
                </div>
-               <div class="modal fade" id="bulkupload" role="dialog">
+               <div class="modal fade hide" id="bulkupload" tabindex='-1' >
                   <div class="modal-dialog modal-sm">
                      <div class="modal-content">
                         <form method="post" action="<?php echo base_url();?>employer/bulk_upload_cvs" enctype="multipart/form-data">
