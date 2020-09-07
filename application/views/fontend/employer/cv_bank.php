@@ -1647,8 +1647,8 @@ function myFunction(){
     // $(document).ready();
     // $("#myForm").load(window.location.href + " #myForm" );
      var $slider = $(".range-wrap");
-  $slider.slider("values", 0, initialMinimumValue);
-  $slider.slider("values", 1, initialMaximumValue);
+  $slider.slider("values", 0, 0);
+  // $slider.slider("values", 1, initialMaximumValue);
 
    
 
