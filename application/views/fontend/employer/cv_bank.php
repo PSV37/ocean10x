@@ -964,8 +964,8 @@ button#sklbtn {
                         <!-- </ul> -->
                         <ul id="myDropdown"  class="dd-menu">
                            <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="frwd_post();">Forward Job</a></li>
-                           <li> <a href="#" id="frwd_btn"  onclick="copy_cvs();">Copy CV</a></li>
-                           <li> <a href="#" id="frwd_btn"  onclick="download_cvs();">Download CV</a></li>
+                           <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="copy_cvs();">Copy CV</a></li>
+                           <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="download_cvs();">Download CV</a></li>
                            <li> <a href="#" id="frwd_btn" data-toggle="modal" data-keyboard="true"  data-target="#bulkupload">Bulk Upload</a></li>
                            <li> <a href="#" id="frwd_btn" data-toggle="modal" data-keyboard="true" data-target="#bulkupload_folder">Folder Upload</a></li>
                         </ul>
