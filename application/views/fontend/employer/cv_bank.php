@@ -1185,7 +1185,7 @@ button#sklbtn {
                     endforeach;  
                   ?>
                    <?php foreach ($cv_bank_data as $cv_row) :  ?>
-               <div class="modal fade" id="move_cv<?php echo $cv_row['cv_id']; ?>" role="dialog">
+               <div class="modal fade" tabindex='-1' id="move_cv<?php echo $cv_row['cv_id']; ?>" role="dialog">
                   <div class="modal-dialog modal-sm">
                      <div class="modal-content">
                         <form method="post" action="<?php echo base_url(); ?>employer/move_cvto_folder">
