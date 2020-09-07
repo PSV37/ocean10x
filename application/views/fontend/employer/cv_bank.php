@@ -1075,7 +1075,7 @@ button#sklbtn {
                         <div class="following-info">
                            <li class="left-title"
                               >Email</li>
-                           <li class="right-title">&nbsp;:<?php echo $cv_row['js_email']; ?></li>
+                           <li class="right-title">&nbsp;<span style="color: blue;">:</span><?php echo $cv_row['js_email']; ?></li>
                            <li class="left-title">Current Sal</li>
                            <li class="right-title">&nbsp;:<?php echo $cv_row['js_current_ctc']; ?></li>
                            <li class="left-title">Phone</li>
