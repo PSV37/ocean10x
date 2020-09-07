@@ -1075,25 +1075,25 @@ button#sklbtn {
                         <div class="following-info">
                            <li class="left-title"
                               >Email</li>
-                           <li class="right-title"><span style="color: blue;">:</span><?php echo $cv_row['js_email']; ?></li>
+                           <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span><?php echo $cv_row['js_email']; ?></li>
                            <li class="left-title">Current Sal</li>
-                           <li class="right-title">&nbsp;:<?php echo $cv_row['js_current_ctc']; ?></li>
+                           <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span><?php echo $cv_row['js_current_ctc']; ?></li>
                            <li class="left-title">Phone</li>
-                           <li class="right-title">&nbsp;:<?php echo $cv_row['js_mobile']; ?></li>
+                           <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span><?php echo $cv_row['js_mobile']; ?></li>
                           
                            <li class="left-title">Education</li>
-                           <li class="right-title">&nbsp;: <?php echo $cv_row['education_level_name']; ?></li>
+                           <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span> <?php echo $cv_row['education_level_name']; ?></li>
                            <div class="clear"></div>
                         </div>
                         <div class="following-info2">
                            <li class="left-title">Current Org</li>
-                           <li class="right-title">&nbsp;:TKNS</li>
+                           <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span>TKNS</li>
                            <li class="left-title">Notice Period </li>
-                           <li class="right-title">&nbsp;:<?php echo $cv_row['js_current_notice_period']; ?></li>
-                           <li class="left-title">Work Experince</li>
-                           <li class="right-title">&nbsp;: <?php echo $cv_row['js_experience']; ?></li>
+                           <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span><?php echo $cv_row['js_current_notice_period']; ?></li>
+                           <li class="left-title">Work Exp</li>
+                           <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span> <?php echo $cv_row['js_experience']; ?></li>
                            <li class="left-title">Designation</li>
-                           <li class="right-title">&nbsp;:<?php echo $cv_row['js_current_designation']; ?></li>
+                           <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span><?php echo $cv_row['js_current_designation']; ?></li>
                            <div class="clear"></div>
                         </div>
                         <span>Skill Set</span> <?php
