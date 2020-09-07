@@ -1069,8 +1069,7 @@ input.btn-default1 {
                            <li class="right-title">&nbsp;:<?php echo $cv_row['js_email']; ?></li>
                            <li class="left-title">Current Sal</li>
                            <li class="right-title">&nbsp;:<?php echo $cv_row['js_current_ctc']; ?></li>
-                           <li class="left-title">SkillSet</li>
-                           <li class="right-title">&nbsp;: <?php echo $cv_row['js_skill_set']; ?></li>
+                          
                            <li class="left-title">Work Experince</li>
                            <li class="right-title">&nbsp;: <?php echo $cv_row['js_experience']; ?></li>
                            <div class="clear"></div>
@@ -1086,6 +1085,12 @@ input.btn-default1 {
                            <li class="right-title">&nbsp;:<?php echo $cv_row['js_current_designation']; ?></li>
                            <div class="clear"></div>
                         </div>
+                        <span>Skill Set</span> <?php if(!empty($cv_row['js_skill_set'])){ 
+                  foreach($cv_row['js_skill_set'] as $skill_row){ ?>
+            <lable class=""><button id="sklbtn"><?php echo  $skill_row;?></button></lable>
+            <?php }
+                }   ?>
+                           <li class="right-title">&nbsp;: <?php echo $cv_row['js_skill_set']; ?></li></span>
                         <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
                         </button>
