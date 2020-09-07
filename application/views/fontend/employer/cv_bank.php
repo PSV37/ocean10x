@@ -1649,8 +1649,7 @@ $('.range').val(0);
    allRanges.forEach(wrap => {
      var range = wrap.querySelector(".range");
      var bubble = wrap.querySelector(".bubble");
-     console.log(range);
-     console.log(bubble);
+   
     
    
   
@@ -4112,8 +4111,7 @@ if ($('#test').is(":checked"))
    allRanges.forEach(wrap => {
      const range = wrap.querySelector(".range");
      const bubble = wrap.querySelector(".bubble");
-     console.log(range);
-     console.log(bubble);
+   
    
      range.addEventListener("input", () => {
       console.log('input');
@@ -4128,8 +4126,7 @@ if ($('#test').is(":checked"))
      const max = range.max ? range.max : 100;
      const newVal = Number(((val - min) * 100) / (max - min));
      bubble.innerHTML = val;
-      console.log(range);
-     console.log(bubble);
+    
    
      // Sorta magic numbers based on size of the native UI thumb
      bubble.style.left = `calc(${newVal}% + (${8 - newVal * 0.15}px))`;
