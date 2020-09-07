@@ -4689,8 +4689,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $employer_id = $this->session->userdata('company_profile_id');
         $company_active_jobs = $this->job_posting_model->get_company_active_jobs($employer_id);
         $this->load->view('fontend/employer/external_tracker.php', compact('company_active_jobs', 'employer_id'));
-    }
-    public function shared_tracker() {
+    
+        public function shared_tracker() {
          $this->session->unset_userdata('submenu');
           $this->session->unset_userdata('activesubmenu');
 
@@ -4871,9 +4871,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             }
         }
         // foreach ($skus as $element) {
-        //$filename = "internal_tracker." . date("jS F Y") . ".csv";
+        $filename = "internal_tracker." . date("jS F Y") . ".csv";
         //
-        $filename = "internal_tracker." . date("jS F D") . ".csv";
         header('Content-Type: application/vnd.ms-excel');
         header('Content-Disposition: attachment;filename="' . $filename . '"');
         header('Cache-Control: max-age=0');
