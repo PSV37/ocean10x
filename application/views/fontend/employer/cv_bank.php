@@ -1645,9 +1645,22 @@ function myFunction(){
 
 // document.getElementById("myForm").reset()
 $('.range').val(0);
-var clivk =wrap.querySelector(".range");
-console.log(clivk);
-clivk.trigger("input");
+ const var = document.querySelectorAll(".range-wrap");
+   allRanges.forEach(wrap => {
+     var range = wrap.querySelector(".range");
+     var bubble = wrap.querySelector(".bubble");
+     console.log(range);
+     console.log(bubble);
+     range.trigger("input");
+   
+     range.addEventListener("input", () => {
+      console.log('input');
+       setBubble(range, bubble);
+     });
+     setBubble(range, bubble);
+   });
+console.log('myFunction');
+// clivk.trigger("input");
 
     // $(document).ready();
     // $("#myForm").load(window.location.href + " #myForm" );
