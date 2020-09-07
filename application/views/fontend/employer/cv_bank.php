@@ -1085,8 +1085,10 @@ input.btn-default1 {
                            <li class="right-title">&nbsp;:<?php echo $cv_row['js_current_designation']; ?></li>
                            <div class="clear"></div>
                         </div>
-                        <span>Skill Set</span> <?php if(!empty($cv_row['js_skill_set'])){ 
-                  foreach($cv_row['js_skill_set'] as $skill_row){ ?>
+                        <span>Skill Set</span> <?php
+                        $skills = explode(',', $cv_row['js_skill_set']) 
+                        if(!empty($cv_row['js_skill_set'])){ 
+                  foreach($skills as $skill_row){ ?>
             <lable class=""><button id="sklbtn"><?php echo  $skill_row;?></button></lable>
             <?php }
                 }   ?>
