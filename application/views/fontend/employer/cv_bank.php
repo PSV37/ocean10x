@@ -1078,9 +1078,9 @@ button#sklbtn {
                            <li class="right-title">&nbsp;:<?php echo $cv_row['js_email']; ?></li>
                            <li class="left-title">Current Sal</li>
                            <li class="right-title">&nbsp;:<?php echo $cv_row['js_current_ctc']; ?></li>
+                           <li class="left-title">Phone</li>
+                           <li class="right-title">&nbsp;:<?php echo $cv_row['js_mobile']; ?></li>
                           
-                           <li class="left-title">Work Experince</li>
-                           <li class="right-title">&nbsp;: <?php echo $cv_row['js_experience']; ?></li>
                            <li class="left-title">Education</li>
                            <li class="right-title">&nbsp;: <?php echo $cv_row['education_level_name']; ?></li>
                            <div class="clear"></div>
@@ -1090,8 +1090,8 @@ button#sklbtn {
                            <li class="right-title">&nbsp;:TKNS</li>
                            <li class="left-title">Notice Period </li>
                            <li class="right-title">&nbsp;:<?php echo $cv_row['js_current_notice_period']; ?></li>
-                           <li class="left-title">Phone</li>
-                           <li class="right-title">&nbsp;:<?php echo $cv_row['js_mobile']; ?></li>
+                           <li class="left-title">Work Experince</li>
+                           <li class="right-title">&nbsp;: <?php echo $cv_row['js_experience']; ?></li>
                            <li class="left-title">Designation</li>
                            <li class="right-title">&nbsp;:<?php echo $cv_row['js_current_designation']; ?></li>
                            <div class="clear"></div>
