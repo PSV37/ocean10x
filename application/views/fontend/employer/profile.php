@@ -744,9 +744,7 @@ input.capital {
    });
 </script>
 <script>
-   $(document).ready(function()
-   
-   {
+   $(document).ready(function(){
    
    $("#submit").validate (  
    
@@ -777,8 +775,7 @@ input.capital {
    'contact_name':{
    
    required: true,
-   
-   contactname_regex: true
+  
    
    },
    
@@ -809,6 +806,22 @@ input.capital {
    
      required: true
    },
+
+    'country_id': {
+   
+     required: true
+   },
+   
+    'state_id': {
+    
+      required: true
+   },
+   
+    'city_id': {
+   
+     required: true
+   },
+   
    
    'company_url':{
    
@@ -816,11 +829,7 @@ input.capital {
    
    // url: true,
 
-   remote:{
-    url: "validatorAJAX.php",
-    type: "post"
-    }
-
+  url_regex: true,
    
    },
    
@@ -863,6 +872,21 @@ input.capital {
    maxlength: "Choose a company name of at least 14 letters!"
    
    },
+   'country_id': {
+   
+     required: "This field is mandatory!"
+   },
+   
+    'state_id': {
+    
+     required: "This field is mandatory!"
+   },
+   
+    'city_id': {
+   
+     required: "This field is mandatory!"
+   },
+   
    
    'cont_person_level':{
    
@@ -1021,6 +1045,7 @@ input.capital {
                data:{id:id},
                success:function(res){
                    $('#state_id').html(res);
+                   $('#company_pincode').val('');
                }
                
            }); 

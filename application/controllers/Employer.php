@@ -866,7 +866,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $states = $this->Master_model->getMaster('state', $where);
         $result = '';
         if (!empty($states)) {
-            $result.= '<option value="0">Select State</option>';
+            $result.= '<option value="">Select State</option>';
             foreach ($states as $key) {
                 $result.= '<option value="' . $key['state_id'] . '">' . $key['state_name'] . '</option>';
             }
@@ -881,7 +881,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $citys = $this->Master_model->getMaster('city', $where);
         $result = '';
         if (!empty($citys)) {
-            $result.= '<option value="0" >Select City</option>';
+            $result.= '<option value="" >Select City</option>';
             foreach ($citys as $key) {
                 $result.= '<option value="' . $key['id'] . '" >' . $key['city_name'] . '</option>';
             }
