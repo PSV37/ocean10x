@@ -814,7 +814,7 @@ input.capital {
    
     'state_id': {
     
-     required: true
+      required: true
    },
    
     'city_id': {
@@ -1045,6 +1045,7 @@ input.capital {
                data:{id:id},
                success:function(res){
                    $('#state_id').html(res);
+                   $('#company_pincode').val('');
                }
                
            }); 
