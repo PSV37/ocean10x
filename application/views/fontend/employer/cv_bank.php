@@ -1174,7 +1174,7 @@ button#sklbtn {
                            </div>
                            <div class="modal-footer">
                               <button type="submit" class="btn btn-default">Copy</button>
-                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                            </div>
                         </form>
                      </div>
@@ -1224,7 +1224,7 @@ button#sklbtn {
                            </div>
                            <div class="modal-footer">
                               <button type="submit" class="btn btn-default">Move</button>
-                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                            </div>
                         </form>
                      </div>
@@ -1308,7 +1308,7 @@ button#sklbtn {
                            </div>
                            <div class="modal-footer">
                               <button type="submit" name='upload' class="btn btn-default">Upload Now</button>
-                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                            </div>
                         </form>
                      </div>
@@ -1362,7 +1362,7 @@ button#sklbtn {
                            </div>
                            <div class="modal-footer">
                               <button type="submit" name='upload' class="btn btn-default">Upload Now</button>
-                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                            </div>
                         </form>
                      </div>
@@ -1428,7 +1428,7 @@ button#sklbtn {
                            </div>
                            <div class="modal-footer">
                               <button type="submit" class="btn btn-default">Add</button>
-                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                            </div>
                         </form>
                      </div>
