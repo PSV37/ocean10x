@@ -809,6 +809,22 @@ input.capital {
    
      required: true
    },
+
+    'country_id': {
+   
+     required: true
+   },
+   
+    'state_id': {
+    
+     required: true
+   },
+   
+    'city_id': {
+   
+     required: true
+   },
+   
    
    'company_url':{
    
@@ -863,6 +879,21 @@ input.capital {
    maxlength: "Choose a company name of at least 14 letters!"
    
    },
+   'country_id': {
+   
+     required: "This field is mandatory!"
+   },
+   
+    'state_id': {
+    
+     required: "This field is mandatory!"
+   },
+   
+    'city_id': {
+   
+     required: "This field is mandatory!"
+   },
+   
    
    'cont_person_level':{
    
