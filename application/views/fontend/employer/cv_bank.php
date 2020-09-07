@@ -1495,7 +1495,7 @@ button#sklbtn {
             <div class="filter1">
                <p style="font-size:18px;margin-top:15px;">Current CTC</p>
                <div class="range-wrap">
-               <input type="range" class="range" id='current_ctc_id' onchange="get_data();" min="1" max="99" value="0">
+               <input type="range" class="range" id='current_ctc_id' onchange="get_data();" min="0" max="99" value="0">
                   <output class="bubble "></output>
                </div>
                <!--<select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" id='current_ctc_id' onchange="get_data();" tabindex="-98">
@@ -1534,7 +1534,7 @@ button#sklbtn {
             <div class="filter1">
                <p style="font-size:18px;margin-top:15px;">Time Period in Current Job</p>
                   <div class="range-wrap">
-                  <input type="range" class="range" id="stability_id" onchange="get_data();" min="6" max="30" step="6"  value="6">
+                  <input type="range" class="range" id="stability_id" onchange="get_data();" min="0" max="30" step="6"  value="6">
                   <output class="bubble "></output>
                   <!--<span id="rngOutput "></span>-->
 
@@ -1643,16 +1643,17 @@ button#sklbtn {
 <script>
 function myFunction(){
 
-//document.getElementById("myForm").reset()
+// document.getElementById("myForm").reset()
+$('.range').val(0);
     // $(document).ready();
     // $("#myForm").load(window.location.href + " #myForm" );
-   $('.range-wrap').each(function(){
+//    $('.range-wrap').each(function(){
 
-  var options = $(this).slider( 'option' );
+//   var options = $(this).slider( 'option' );
 
-  $(this).slider( 'values', [ options.min, options.max ] );
+//   $(this).slider( 'values', [ options.min, options.max ] );
 
-});
+// });
 }
 </script>
 
