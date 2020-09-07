@@ -963,7 +963,7 @@ button#sklbtn {
                         <!-- <li value="edu">Education</li> -->
                         <!-- </ul> -->
                         <ul id="myDropdown"  class="dd-menu">
-                           <li> <a href="#" id="frwd_btn"  onclick="frwd_post();">Forward Job</a></li>
+                           <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="frwd_post();">Forward Job</a></li>
                            <li> <a href="#" id="frwd_btn"  onclick="copy_cvs();">Copy CV</a></li>
                            <li> <a href="#" id="frwd_btn"  onclick="download_cvs();">Download CV</a></li>
                            <li> <a href="#" id="frwd_btn" data-toggle="modal" data-keyboard="true"  data-target="#bulkupload">Bulk Upload</a></li>
@@ -1108,7 +1108,7 @@ button#sklbtn {
                         <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1" style="top:47px;">
-                           <li ><a class="dropdown-item" href="#" id="div_frwrd" data-toggle="modal" data-target="#rotateModal<?php echo $cv_row['cv_id']; ?>" >Forward Job Post</a></li>
+                           <li ><a class="dropdown-item" href="#" id="div_frwrd" data-toggle="modal" data-keyboard="true" data-target="#rotateModal<?php echo $cv_row['cv_id']; ?>" >Forward Job Post</a></li>
                            <?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ ?>
                            <li id="div_download"> <a class="dropdown-item"  href="<?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ echo base_url(); echo 'upload/Resumes/'.$cv_row['js_resume']; } ?>" download >Download this cv</a></li>
                            <?php } ?>
