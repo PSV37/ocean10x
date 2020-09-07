@@ -1534,7 +1534,7 @@ button#sklbtn {
             <div class="filter1">
                <p style="font-size:18px;margin-top:15px;">Time Period in Current Job</p>
                   <div class="range-wrap">
-                  <input type="range" class="range" id="stability_id" onchange="get_data();" min="0" max="30" step="6"  value="6">
+                  <input type="range" class="range" id="stability_id" onchange="get_data();" min="0" max="30" step="6"  value="0">
                   <output class="bubble "></output>
                   <!--<span id="rngOutput "></span>-->
 
