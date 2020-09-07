@@ -1234,7 +1234,7 @@ button#sklbtn {
                   $key++;
                     endforeach;  
                   ?>
-               <div class="modal fade" id="bulkcopy_cv" role="dialog">
+               <div class="modal fade" id="bulkcopy_cv" tabindex='-1' role="dialog">
                   <div class="modal-dialog modal-sm">
                      <div class="modal-content">
                         <form method="post" action="<?php echo base_url(); ?>employer/copy_cvto_folder">
