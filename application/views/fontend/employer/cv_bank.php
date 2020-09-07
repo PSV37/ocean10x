@@ -1644,7 +1644,7 @@ button#sklbtn {
 function myFunction(){
 
 // document.getElementById("myForm").reset()
-$('.range').val(0);
+$('.range').val(0).trigger("input");
     // $(document).ready();
     // $("#myForm").load(window.location.href + " #myForm" );
 //    $('.range-wrap').each(function(){
