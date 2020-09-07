@@ -905,6 +905,15 @@ input.btn-default1 {
   display: block !important;
   background-color: yellow;
 }
+button#sklbtn {
+    background-color: #18c5bd;
+    color: #ffffff;
+    border-radius: 20px;
+    border: none;
+    padding: 1px 10px;
+    margin-bottom: 7px;
+    font-size: 11px;
+}
 </style>
 <div class="container-fluid main-d">
    <div class="container">
@@ -957,8 +966,8 @@ input.btn-default1 {
                            <li> <a href="#" id="frwd_btn"  onclick="frwd_post();">Forward Job</a></li>
                            <li> <a href="#" id="frwd_btn"  onclick="copy_cvs();">Copy CV</a></li>
                            <li> <a href="#" id="frwd_btn"  onclick="download_cvs();">Download CV</a></li>
-                           <li> <a href="#" id="frwd_btn" data-toggle="modal"  data-target="#bulkupload">Bulk Upload</a></li>
-                           <li> <a href="#" id="frwd_btn" data-toggle="modal" data-target="#bulkupload_folder">Folder Upload</a></li>
+                           <li> <a href="#" id="frwd_btn" data-toggle="modal" data-keyboard="true"  data-target="#bulkupload">Bulk Upload</a></li>
+                           <li> <a href="#" id="frwd_btn" data-toggle="modal" data-keyboard="true" data-target="#bulkupload_folder">Folder Upload</a></li>
                         </ul>
                      </label>
                       <form method="post" action="<?php echo base_url(); ?>employer/corporate_cv_bank">
@@ -1069,10 +1078,11 @@ input.btn-default1 {
                            <li class="right-title">&nbsp;:<?php echo $cv_row['js_email']; ?></li>
                            <li class="left-title">Current Sal</li>
                            <li class="right-title">&nbsp;:<?php echo $cv_row['js_current_ctc']; ?></li>
-                           <li class="left-title">SkillSet</li>
-                           <li class="right-title">&nbsp;: <?php echo $cv_row['js_skill_set']; ?></li>
-                           <li class="left-title">Work Experince</li>
-                           <li class="right-title">&nbsp;: <?php echo $cv_row['js_experience']; ?></li>
+                           <li class="left-title">Phone</li>
+                           <li class="right-title">&nbsp;:<?php echo $cv_row['js_mobile']; ?></li>
+                          
+                           <li class="left-title">Education</li>
+                           <li class="right-title">&nbsp;: <?php echo $cv_row['education_level_name']; ?></li>
                            <div class="clear"></div>
                         </div>
                         <div class="following-info2">
@@ -1080,12 +1090,20 @@ input.btn-default1 {
                            <li class="right-title">&nbsp;:TKNS</li>
                            <li class="left-title">Notice Period </li>
                            <li class="right-title">&nbsp;:<?php echo $cv_row['js_current_notice_period']; ?></li>
-                           <li class="left-title">Phone</li>
-                           <li class="right-title">&nbsp;:<?php echo $cv_row['js_mobile']; ?></li>
+                           <li class="left-title">Work Experince</li>
+                           <li class="right-title">&nbsp;: <?php echo $cv_row['js_experience']; ?></li>
                            <li class="left-title">Designation</li>
                            <li class="right-title">&nbsp;:<?php echo $cv_row['js_current_designation']; ?></li>
                            <div class="clear"></div>
                         </div>
+                        <span>Skill Set</span> <?php
+                        $skills = explode(',', $cv_row['js_skill_set']) ;
+                        if(!empty($cv_row['js_skill_set'])){ 
+                  foreach($skills as $skill_row){ ?>
+            <lable class=""><button id="sklbtn"><?php echo  $skill_row;?></button></lable>
+            <?php }
+                }   ?>
+                        
                         <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
                         </button>
@@ -1261,7 +1279,7 @@ input.btn-default1 {
                      </div>
                   </div>
                </div>
-               <div class="modal fade" id="bulkupload" role="dialog">
+               <div class="modal fade" id="bulkupload" tabindex='-1' role="dialog">
                   <div class="modal-dialog modal-sm">
                      <div class="modal-content">
                         <form method="post" action="<?php echo base_url();?>employer/bulk_upload_cvs" enctype="multipart/form-data">
@@ -1296,7 +1314,7 @@ input.btn-default1 {
                      </div>
                   </div>
                </div>
-               <div class="modal fade" id="bulkupload_folder" role="dialog">
+               <div class="modal fade" id="bulkupload_folder" tabindex="-1" role="dialog">
                   <div class="modal-dialog modal-sm">
                      <div class="modal-content">
                         <form method="post" action="<?php echo base_url();?>employer/bulk_upload_folder" enctype="multipart/form-data">
