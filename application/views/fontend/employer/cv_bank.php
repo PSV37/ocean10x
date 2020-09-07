@@ -963,9 +963,9 @@ button#sklbtn {
                         <!-- <li value="edu">Education</li> -->
                         <!-- </ul> -->
                         <ul id="myDropdown"  class="dd-menu">
-                           <li> <a href="#" id="frwd_btn"  onclick="frwd_post();">Forward Job</a></li>
-                           <li> <a href="#" id="frwd_btn"  onclick="copy_cvs();">Copy CV</a></li>
-                           <li> <a href="#" id="frwd_btn"  onclick="download_cvs();">Download CV</a></li>
+                           <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="frwd_post();">Forward Job</a></li>
+                           <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="copy_cvs();">Copy CV</a></li>
+                           <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="download_cvs();">Download CV</a></li>
                            <li> <a href="#" id="frwd_btn" data-toggle="modal" data-keyboard="true"  data-target="#bulkupload">Bulk Upload</a></li>
                            <li> <a href="#" id="frwd_btn" data-toggle="modal" data-keyboard="true" data-target="#bulkupload_folder">Folder Upload</a></li>
                         </ul>
@@ -1108,12 +1108,12 @@ button#sklbtn {
                         <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1" style="top:47px;">
-                           <li ><a class="dropdown-item" href="#" id="div_frwrd" data-toggle="modal" data-target="#rotateModal<?php echo $cv_row['cv_id']; ?>" >Forward Job Post</a></li>
+                           <li ><a class="dropdown-item" href="#" id="div_frwrd" data-toggle="modal" data-keyboard="true" data-target="#rotateModal<?php echo $cv_row['cv_id']; ?>" >Forward Job Post</a></li>
                            <?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ ?>
                            <li id="div_download"> <a class="dropdown-item"  href="<?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ echo base_url(); echo 'upload/Resumes/'.$cv_row['js_resume']; } ?>" download >Download this cv</a></li>
                            <?php } ?>
-                           <li><a onclick="get_copy_folders(<?php echo $cv_row['cv_id']; ?>);" class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-target="#copy_cv<?php echo $cv_row['cv_id']; ?>"  href="#">Copy this CV</a></li>
-                           <li><a class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-target="#move_cv<?php echo $cv_row['cv_id']; ?>" href="#">Move this CV</a></li>
+                           <li><a onclick="get_copy_folders(<?php echo $cv_row['cv_id']; ?>);" class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-keyboard="true" data-target="#copy_cv<?php echo $cv_row['cv_id']; ?>"  href="#">Copy this CV</a></li>
+                           <li><a class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-keyboard="true" data-target="#move_cv<?php echo $cv_row['cv_id']; ?>" href="#">Move this CV</a></li>
                         </div>
                      </div>
                   </div>
@@ -1132,7 +1132,7 @@ button#sklbtn {
          <div class="col-md-3 right_side">
             <div class="row" style="text-align: justify;margin: 10 auto;width: fit-content;">
                <?php foreach ($cv_bank_data as $cv_row) :  ?>
-               <div class="modal fade" id="copy_cv<?php echo $cv_row['cv_id']; ?>" role="dialog">
+               <div class="modal fade" tabindex='-1' id="copy_cv<?php echo $cv_row['cv_id']; ?>" role="dialog">
                   <div class="modal-dialog modal-sm">
                      <div class="modal-content">
                         <form method="post" action="<?php echo base_url(); ?>employer/copy_cvto_folder">
@@ -1174,7 +1174,7 @@ button#sklbtn {
                            </div>
                            <div class="modal-footer">
                               <button type="submit" class="btn btn-default">Copy</button>
-                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                            </div>
                         </form>
                      </div>
@@ -1185,7 +1185,7 @@ button#sklbtn {
                     endforeach;  
                   ?>
                    <?php foreach ($cv_bank_data as $cv_row) :  ?>
-               <div class="modal fade" id="move_cv<?php echo $cv_row['cv_id']; ?>" role="dialog">
+               <div class="modal fade" tabindex='-1' id="move_cv<?php echo $cv_row['cv_id']; ?>" role="dialog">
                   <div class="modal-dialog modal-sm">
                      <div class="modal-content">
                         <form method="post" action="<?php echo base_url(); ?>employer/move_cvto_folder">
@@ -1224,7 +1224,7 @@ button#sklbtn {
                            </div>
                            <div class="modal-footer">
                               <button type="submit" class="btn btn-default">Move</button>
-                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                            </div>
                         </form>
                      </div>
@@ -1234,7 +1234,7 @@ button#sklbtn {
                   $key++;
                     endforeach;  
                   ?>
-               <div class="modal fade" id="bulkcopy_cv" role="dialog">
+               <div class="modal fade" id="bulkcopy_cv" tabindex='-1' role="dialog">
                   <div class="modal-dialog modal-sm">
                      <div class="modal-content">
                         <form method="post" action="<?php echo base_url(); ?>employer/copy_cvto_folder">
@@ -1273,7 +1273,7 @@ button#sklbtn {
                            </div>
                            <div class="modal-footer">
                               <button type="submit" class="btn btn-default">Add</button>
-                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                            </div>
                         </form>
                      </div>
@@ -1308,7 +1308,7 @@ button#sklbtn {
                            </div>
                            <div class="modal-footer">
                               <button type="submit" name='upload' class="btn btn-default">Upload Now</button>
-                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                            </div>
                         </form>
                      </div>
@@ -1362,7 +1362,7 @@ button#sklbtn {
                            </div>
                            <div class="modal-footer">
                               <button type="submit" name='upload' class="btn btn-default">Upload Now</button>
-                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                            </div>
                         </form>
                      </div>
@@ -1428,7 +1428,7 @@ button#sklbtn {
                            </div>
                            <div class="modal-footer">
                               <button type="submit" class="btn btn-default">Add</button>
-                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                            </div>
                         </form>
                      </div>
