@@ -345,8 +345,8 @@ input.capital {
                 <div class="col-md-12">
                   <!-- <div class="col-md-4"> -->
                      <div class="form-group">
-                        <button id="submit" style="float: right;" type="button" onclick="history.back()" class="btn btn-primary cancel">Cancel</button>
                         <button  style="float: right;" class="btn btn-primary save_cv">save cv</button>
+                        <button id="submit" style="float: right;" type="button" onclick="history.back()" class="btn btn-primary cancel">Cancel</button>
                      </div>
                   <!-- </div> -->
                </div>
