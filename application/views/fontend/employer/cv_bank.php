@@ -1646,15 +1646,13 @@ function myFunction(){
 //document.getElementById("myForm").reset()
     // $(document).ready();
     // $("#myForm").load(window.location.href + " #myForm" );
-     var $slider = $(".range-wrap");
-  $slider.slider("values", 0, 0);
-  // $slider.slider("values", 1, initialMaximumValue);
+   $('.range-wrap').each(function(){
 
-   
+  var options = $(this).slider( 'option' );
 
-    //jQuery.ready();
+  $(this).slider( 'values', [ options.min, options.max ] );
 
-  // document.getElementById("myForm").reset();
+});
 }
 </script>
 
