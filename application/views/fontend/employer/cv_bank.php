@@ -1075,25 +1075,25 @@ button#sklbtn {
                         <div class="following-info">
                            <li class="left-title"
                               >Email</li>
-                           <li class="right-title">&nbsp;:<?php echo $cv_row['js_email']; ?></li>
+                           <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span><?php echo $cv_row['js_email']; ?></li>
                            <li class="left-title">Current Sal</li>
-                           <li class="right-title">&nbsp;:<?php echo $cv_row['js_current_ctc']; ?></li>
+                           <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span><?php echo $cv_row['js_current_ctc']; ?></li>
                            <li class="left-title">Phone</li>
-                           <li class="right-title">&nbsp;:<?php echo $cv_row['js_mobile']; ?></li>
+                           <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span><?php echo $cv_row['js_mobile']; ?></li>
                           
                            <li class="left-title">Education</li>
-                           <li class="right-title">&nbsp;: <?php echo $cv_row['education_level_name']; ?></li>
+                           <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span> <?php echo $cv_row['education_level_name']; ?></li>
                            <div class="clear"></div>
                         </div>
                         <div class="following-info2">
                            <li class="left-title">Current Org</li>
-                           <li class="right-title">&nbsp;:TKNS</li>
+                           <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span>TKNS</li>
                            <li class="left-title">Notice Period </li>
-                           <li class="right-title">&nbsp;:<?php echo $cv_row['js_current_notice_period']; ?></li>
-                           <li class="left-title">Work Experince</li>
-                           <li class="right-title">&nbsp;: <?php echo $cv_row['js_experience']; ?></li>
+                           <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span><?php echo $cv_row['js_current_notice_period']; ?></li>
+                           <li class="left-title">Work Exp</li>
+                           <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span> <?php echo $cv_row['js_experience']; ?></li>
                            <li class="left-title">Designation</li>
-                           <li class="right-title">&nbsp;:<?php echo $cv_row['js_current_designation']; ?></li>
+                           <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span><?php echo $cv_row['js_current_designation']; ?></li>
                            <div class="clear"></div>
                         </div>
                         <span>Skill Set</span> <?php
@@ -1495,7 +1495,7 @@ button#sklbtn {
             <div class="filter1">
                <p style="font-size:18px;margin-top:15px;">Current CTC</p>
                <div class="range-wrap">
-               <input type="range" class="range" id='current_ctc_id' onchange="get_data();" min="1" max="99" value="0">
+               <input type="range" class="range" id='current_ctc_id' onchange="get_data();" min="0" max="99" value="0">
                   <output class="bubble "></output>
                </div>
                <!--<select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" id='current_ctc_id' onchange="get_data();" tabindex="-98">
@@ -1534,7 +1534,7 @@ button#sklbtn {
             <div class="filter1">
                <p style="font-size:18px;margin-top:15px;">Time Period in Current Job</p>
                   <div class="range-wrap">
-                  <input type="range" class="range" id="stability_id" onchange="get_data();" min="6" max="30" step="6"  value="6">
+                  <input type="range" class="range" id="stability_id" onchange="get_data();" min="0" max="30" step="6"  value="6">
                   <output class="bubble "></output>
                   <!--<span id="rngOutput "></span>-->
 
@@ -1643,15 +1643,17 @@ button#sklbtn {
 <script>
 function myFunction(){
 
-//document.getElementById("myForm").reset()
-    $(document).ready();
-    $("#myForm").load(window.location.href + " #myForm" );
+// document.getElementById("myForm").reset()
+$('.range').val(0);
+    // $(document).ready();
+    // $("#myForm").load(window.location.href + " #myForm" );
+//    $('.range-wrap').each(function(){
 
-   
+//   var options = $(this).slider( 'option' );
 
-    //jQuery.ready();
+//   $(this).slider( 'values', [ options.min, options.max ] );
 
-  // document.getElementById("myForm").reset();
+// });
 }
 </script>
 
