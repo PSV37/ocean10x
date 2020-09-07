@@ -1596,6 +1596,7 @@ button#sklbtn {
                <input type="hidden" name="forward_job_email" id="forward_job_email" value="<?php echo $cv_row['js_email']; ?>">
             </div>
             <div class="modal-footer">
+               <button id="submit" type="button" onclick="history.back()" class="save_question">Cancel</button>
                <button type="submit" class="btn btn-save">Send</button>
             </div>
          </form>
