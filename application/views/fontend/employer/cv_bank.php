@@ -1645,7 +1645,7 @@ function myFunction(){
 
 // document.getElementById("myForm").reset()
 $('.range').val(0);
- const var = document.querySelectorAll(".range-wrap");
+  var allRanges = document.querySelectorAll(".range-wrap");
    allRanges.forEach(wrap => {
      var range = wrap.querySelector(".range");
      var bubble = wrap.querySelector(".bubble");
