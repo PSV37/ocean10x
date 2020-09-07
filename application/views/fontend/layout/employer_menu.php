@@ -491,7 +491,7 @@
                   <div class="row">
                      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                         <label class="mdl-textfield__label" for="sample3">Folder Name:</label>
-                        <input type="text"  name="folder_name"  id="folder_name" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required>
+                        <input type="text"  name="folder_name"  id="folder_name" placeholder="" data-toggle="modal" data-keyboard="true"  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required>
                      </div>
                   </div>
                </div>
@@ -500,7 +500,7 @@
             </div>
             <div class="modal-footer">
                <button type="submit" style="width: 100px" class="btn btn-default">Rename</button>
-               <button type="button" style="width: 100px" class="btn btn-default" data-dismiss="modal">Close</button>
+               <button type="button" style="width: 100px" class="btn btn-default" data-dismiss="modal">Cancel</button>
             </div>
          </form>
       </div>
