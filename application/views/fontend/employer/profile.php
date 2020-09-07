@@ -829,11 +829,7 @@ input.capital {
    
    // url: true,
 
-   remote:{
-    url: "validatorAJAX.php",
-    type: "post"
-    }
-
+  url_regex: true,
    
    },
    
