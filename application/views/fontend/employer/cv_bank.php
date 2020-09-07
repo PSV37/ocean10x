@@ -1644,7 +1644,10 @@ button#sklbtn {
 function myFunction(){
 
 // document.getElementById("myForm").reset()
-$('.range').val(0).trigger("input");
+$('.range').val(0);
+var clivk =wrap.querySelector(".range");
+clivk.trigger("input");
+
     // $(document).ready();
     // $("#myForm").load(window.location.href + " #myForm" );
 //    $('.range-wrap').each(function(){
