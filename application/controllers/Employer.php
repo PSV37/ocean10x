@@ -4282,7 +4282,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $this->Master_model->master_update($update_profile, 'corporate_cv_bank', $where11);
         }
         elseif (isset($emails) && !empty($emails)) {
-            $email = explode(',', $emails)
+            $email = explode(',', $emails);
             foreach ($email as $email_id) {
                 $where1 = "js_info.email = '$email_id' AND js_experience.end_date IS NULL";
         $join = array("js_career_info" => "js_career_info.job_seeker_id=js_info.job_seeker_id | LEFT OUTER", "js_experience" => "js_experience.job_seeker_id=js_info.job_seeker_id | LEFT OUTER", "job_role" => "job_role.id=js_experience.designation_id | LEFT OUTER", "job_seeker_skills" => "job_seeker_skills.job_seeker_id=js_info.job_seeker_id | LEFT OUTER", "js_education" => "js_education.job_seeker_id=js_info.job_seeker_id | LEFT OUTER", "js_training" => "js_training.job_seeker_id=js_info.job_seeker_id | LEFT OUTER", "industry_master" => "industry_master.id=js_career_info.industry_id | LEFT OUTER");
