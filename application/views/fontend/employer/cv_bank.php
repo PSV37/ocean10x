@@ -986,7 +986,7 @@ button#sklbtn {
                 
                   <label style="float: right;">
                         <input type="checkbox" class="btn-default1 checkbox" name="check_all" id="checkAllchk" >
-                        <span>select all</span>
+                        <span id="check_txt">select all</span>
                 
                </div>
             </div>
@@ -1075,6 +1075,7 @@ button#sklbtn {
                            <?php } ?>
                            <li><a onclick="get_copy_folders(<?php echo $cv_row['cv_id']; ?>);" class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-keyboard="true" data-target="#copy_cv<?php echo $cv_row['cv_id']; ?>"  href="#">Copy this CV</a></li>
                            <li><a class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-keyboard="true" data-target="#move_cv<?php echo $cv_row['cv_id']; ?>" href="#">Move this CV</a></li>
+                             <li><a href="<?php echo base_url(); ?>employer/getocean_profile/<?php echo base64_encode($cv_row['js_email']); ?>" class="btn btn-success btn-xs">Get Ocean Profile</a></li>
                         </div>
                      </div>
                   </div>
@@ -1778,7 +1779,7 @@ if ($('#test').is(":checked"))
             $('.chkbx').prop("checked" , this.checked);
             if (this.checked == true) 
             {
-               $('#checkAllchk').text('Deselect All');
+               $('#check_txt').text('Deselect All');
             }
     });
     $(document).on(' change','input[name="bulk_download"]',function() {
