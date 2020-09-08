@@ -3818,7 +3818,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 
                 }
                 redirect('employer/corporate_cv_bank/'.$fid);
-            
+            }
         } else {
             $data['industry_master'] = $this->Master_model->getMaster('job_category', $where = false);
             $data['department'] = $this->Master_model->getMaster('department', $where = false);
@@ -3830,7 +3830,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             //$data['cv_info'] = $this->Master_model->getMaster('corporate_cv_bank',$where=false);
             $this->load->view('fontend/employer/add_cv', $data);
         }
-    }
+    
     }
 
     public function edit_cv($id=NULL)
