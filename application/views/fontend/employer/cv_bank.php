@@ -1036,12 +1036,13 @@ button#sklbtn {
                         <div class="job-info">
                            <div class="a">
                               <li class="right-title" style="font-size:19px;margin-top:-4px;"  ><?php echo $cv_row['js_name']; ?></li>
+                              <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span><?php echo $cv_row['js_email']; ?></li>
                            </div>
                         </div>
                         <div class="following-info">
-                           <li class="left-title"
+                           <!-- <li class="left-title"
                               >Email</li>
-                           <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span><?php echo $cv_row['js_email']; ?></li>
+                           <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span><?php echo $cv_row['js_email']; ?></li> -->
                            <li class="left-title">Current Sal</li>
                            <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span><?php echo $cv_row['js_current_ctc']; ?></li>
                            <li class="left-title">Phone</li>
@@ -1052,8 +1053,8 @@ button#sklbtn {
                            <div class="clear"></div>
                         </div>
                         <div class="following-info2">
-                           <li class="left-title">Current Org</li>
-                           <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span><?php echo $cv_row['current_org']; ?></li>
+                          <!--  <li class="left-title">Current Org</li>
+                           <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span><?php echo $cv_row['current_org']; ?></li> -->
                            <li class="left-title">Notice Period </li>
                            <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span><?php echo $cv_row['js_current_notice_period']; ?></li>
                            <li class="left-title">Work Exp</li>
