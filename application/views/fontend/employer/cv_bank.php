@@ -1249,6 +1249,35 @@ button#sklbtn {
                      </div>
                   </div>
                </div>
+               <div class="modal fade" id="bulkupdate_cv" tabindex='-1' role="dialog">
+                  <div class="modal-dialog modal-sm">
+                     <div class="modal-content">
+                        <form method="post" action="<?php echo base_url(); ?>employer/copy_cvto_folder">
+                           <div class="modal-header">
+                              <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+                              <h4 class="modal-title">Move CV to folder</h4>
+                           </div>
+                           <div class="modal-body">
+                              <input type="hidden" name="cv_email" id="cv_email" value="">
+                              <div class="col-md-12" style="margin-top: 20px;">
+                                Do You want to update  all the cvs?
+                              <div class="col-md-12">
+                                 <div class="row">
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
+                                       <label class="mdl-textfield__label" id="no_of_cvs_move" for="sample3">Number of cvs: 1</label><br>
+                                    </div>
+                                 </div>
+                              </div>
+                              <!--  <p>This is a small modal.</p> -->
+                           </div>
+                           <div class="modal-footer">
+                              <button type="submit" class="btn btn-default">update</button>
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
                <div class="modal fade" id="bulkupload" tabindex='-1' role="dialog">
                   <div class="modal-dialog modal-sm">
                      <div class="modal-content">
@@ -1910,6 +1939,29 @@ if ($('#test').is(":checked"))
                   $('#cv_id').val(cvs_name);
                   setTimeout(function(){
                   $('#bulkcopy_cv').modal('show'); }, 500);
+               }else
+               {
+                  alert('Please select atleast one cv move!')
+               }
+   }
+   function update_cvs()
+   {
+   var checkedValsofname = $('.chkbx:checkbox:checked').map(function() {
+                   return this.value;
+               }).get();
+        var cvs_name= (checkedValsofname.join(","));
+            
+            
+   
+               // alert(emails.length);
+                 if (cvs_name.length > 0) 
+               {
+               var elements = cvs_name.split(',').length;
+             
+                  $('#no_of_cvs_move').html(elements);
+                  $('#cv_email').val(cvs_name);
+                  setTimeout(function(){
+                  $('#bulkupdate_cv').modal('show'); }, 500);
                }else
                {
                   alert('Please select atleast one cv move!')
