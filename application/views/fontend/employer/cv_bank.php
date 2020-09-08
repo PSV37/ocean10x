@@ -986,7 +986,7 @@ button#sklbtn {
                 
                   <label style="float: right;">
                         <input type="checkbox" class="btn-default1 checkbox" name="check_all" id="checkAllchk" >
-                        <span id="check_txt">select all</span>
+                        <span id="check_txt">Select all</span>
                 
                </div>
             </div>
@@ -1048,7 +1048,7 @@ button#sklbtn {
                         </div>
                         <div class="following-info2">
                            <li class="left-title">Current Org</li>
-                           <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span>TKNS</li>
+                           <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span><?php echo $cv_row['current_org']; ?></li>
                            <li class="left-title">Notice Period </li>
                            <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span><?php echo $cv_row['js_current_notice_period']; ?></li>
                            <li class="left-title">Work Exp</li>

@@ -224,6 +224,12 @@ input.capital {
                         <?php echo form_error('last_salary_hike'); ?>     
                      </div>
                   </div>
+                   <div class="col-md-4">
+                     <div class="form-group">
+                        <label for="exampleInputEmail1">Current Organization</label>
+                        <input type="text" name="current_org" id="current_org" class="form-control allowalphabatesspace capital" value="<?php echo  set_value('current_org'); ?>">    <?php echo form_error('current_org'); ?> 
+                     </div>
+                  </div>
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Top Education</label>
@@ -247,6 +253,9 @@ input.capital {
                         <?php echo form_error('skills'); ?>   
                      </div>
                   </div> -->
+                  
+               </div>
+               <div class="col-md-12">
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Certifications</label>
@@ -259,9 +268,6 @@ input.capital {
                      </select>
                      </div>
                   </div>
-               </div>
-               <div class="col-md-12">
-                  
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Industry</label>
@@ -302,16 +308,16 @@ input.capital {
                         <?php echo form_error('candidate_role'); ?>
                      </div>
                   </div>
-                  <div class="col-md-4">
+                 
+               </div>
+               <div class="col-md-12">
+                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Expected Salary</label>
                         <input type="text" name="candidate_expected_sal" id="candidate_expected_sal" class="form-control allownumericwithdecimal"  maxlength="3" value="<?php echo  set_value('candidate_expected_sal'); ?>">   <?php echo form_error('candidate_expected_sal'); ?>
 
                      </div>
                   </div>
-               </div>
-               <div class="col-md-12">
-                  
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Desired Work Location</label>
