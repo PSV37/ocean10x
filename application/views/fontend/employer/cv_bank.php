@@ -1061,7 +1061,7 @@ button#sklbtn {
                            <li class="left-title">Designation</li>
                            <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span><?php echo $cv_row['js_current_designation']; ?></li>
                            <div class="clear"></div>
-                        </div>
+                        </div><br>
                         <span>Skill Set</span> <?php
                         $skills = explode(',', $cv_row['js_skill_set']) ;
                         if(!empty($cv_row['js_skill_set'])){ 
