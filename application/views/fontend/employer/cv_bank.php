@@ -141,7 +141,7 @@
    float: left;
    font-size: 12px;
    font-weight: 100;
-   width:97px;
+   width:86px;
    height:15px;
    }
    li.right-title {
@@ -733,7 +733,7 @@
    top: 50%;
    transform: translateY(-50%) !important;
    }
-   input{padding:7px 25px;}
+   input{padding:7px 0px;}
    .modal-footer{text-align:center;}
    .modal-body {
    padding: 0px 65px;
@@ -930,16 +930,9 @@ button#sklbtn {
             <div class="row">
                <div class="col-md-6">
                   <form class="navbar-form" role="search">
-                     <!-- <div class="form-group has-search"> -->
-                     <!-- <span class="fa fa-search form-control-feedback"></span> -->
+                    
                      <input type="text" id="myInput" class="form-control" placeholder="Search with Email or Name or Number" style="width: 100%">
-                     <!-- </div> -->
-                     <!--  <div class="input-group add-on" style="width:100%;margin-left:-15px;">
-                        <input class="form-control" placeholder="Search based oh Name, Email id, Phone no." name="srch-term" id="srch-term" type="text">
-                        <div class="input-group-btn">
-                           <button class="btn " type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                        </div>
-                        </div> -->
+                    
                   </form>
                   <div class="clear"></div>
                </div>
@@ -957,11 +950,7 @@ button#sklbtn {
                            Bulk Action
                         </div>
                         <input type="checkbox" class="dd-input" id="test1">
-                        <!-- <ul class="dd-menu" id="test"> -->
-                        <!-- <li>Name</li> -->
-                        <!-- /<li>Experience</li> -->
-                        <!-- <li value="edu">Education</li> -->
-                        <!-- </ul> -->
+                    
                         <ul id="myDropdown"  class="dd-menu">
                            <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="frwd_post();">Forward Job</a></li>
                            <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="copy_cvs();">Copy CV</a></li>
@@ -976,11 +965,7 @@ button#sklbtn {
                            Sort by
                         </div>
                         <input type="checkbox" class="dd-input" id="test">
-                        <!-- <ul class="dd-menu" id="test"> -->
-                        <!-- <li>Name</li> -->
-                        <!-- /<li>Experience</li> -->
-                        <!-- <li value="edu">Education</li> -->
-                        <!-- </ul> -->
+                      
                         <ul id="sizelist" class="dd-menu">
                            <li data-value="js_name" ><a href="#">Name</a></li>
                            <li data-value="js_experience"><a href="#">Experience</a></li>
@@ -990,43 +975,19 @@ button#sklbtn {
                      <input id="sizevalue" size="15" name="sort_val" type="hidden" />
                      <button type="submit" name="sort" class="hidden" id="sort_btn"></button>
                   </form>
-              <!--  <div class="col-md-4">
-                  <label class="dropdown">
-                  <input type="checkbox" name="bulk_forward" id="checkAll" style="font-weight:500">&nbsp;Forward
-                  <button type="button" id="frwd_btn" class="btn btn-primary" onclick="frwd_post();">Forward Job</button>
-                  </label>
-               </div> -->
-              <!--  <div class="col-md-4">
-                  <label class="dropdown">
-                  <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp;  Copy
-                  <button type="button" id="frwd_btn" class="btn btn-primary" onclick="copy_cvs();">Copy CV</button>
-                  </label>
-               </div> -->
-               <!-- div class="col-md-4">
-                  <label class="dropdown">
-                  <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp; Download
-                  <button type="button" id="frwd_btn" class="btn btn-primary" onclick="download_cvs();">Download CV</button>
-                  </label>
-               </div> -->
+              
             </div>
             <div class="row" id="bulk">
                <div class="col-md-6">
-                 <!--  <label class="dropdown">
-                  <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp;  Upload
-                  <button type="button" id="frwd_btn" class="btn btn-primary" data-toggle="modal" data-target="#bulkupload">Bulk Upload</button>
-                  </label> -->
+                 
                </div>
           
                <div class="col-md-6">
-                  <!-- <label class="dropdown"> -->
-                 <!--  <input type="checkbox" name="bulk_download" id="checkAllchk">&nbsp;  Upload Folder -->
-                  <!-- <button type="button" id="frwd_btn" class="btn btn-primary" data-toggle="modal" data-target="#bulkupload_folder">Folder Upload</button>
-                  </label> -->
+                
                   <label style="float: right;">
-                        <input type="checkbox" class="btn-default1 checkbox" name="bulk_download" id="checkAllchk" >
+                        <input type="checkbox" class="btn-default1 checkbox" name="check_all" id="checkAllchk" >
                         <span>select all</span>
-                        </label>
-                  <!-- <input type="checkbox" name="bulk_download" id="checkAllchk" style="float: right;">&nbsp; S -->
+                
                </div>
             </div>
             <div class="box" >
@@ -1643,7 +1604,7 @@ button#sklbtn {
 <script>
 function myFunction(){
 
-// document.getElementById("myForm").reset()
+$("#education_id").val(1);
 $('.range').val(0);
   var allRanges = document.querySelectorAll(".range-wrap");
    allRanges.forEach(wrap => {
@@ -1815,6 +1776,10 @@ if ($('#test').is(":checked"))
   
    $(document).on(' change','input[name="check_all"]',function() {
             $('.chkbx').prop("checked" , this.checked);
+            if (this.checked == true) 
+            {
+               $('#checkAllchk').text('Deselect All');
+            }
     });
     $(document).on(' change','input[name="bulk_download"]',function() {
             $('.chkbx').prop("checked" , this.checked);
