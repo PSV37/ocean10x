@@ -119,16 +119,16 @@ a.dropdown-toggle {
   
     <?php $last_login = $this->session->userdata('last_login'); ?>
     <span class="caret"></span>     
-    <p class="profile-accoutnt-p  data-toggle="tooltip title="<?php echo $this->Company_profile_model->company_name($employer_id); ?>"><?php echo $this->Company_profile_model->company_name($employer_id); ?></p>
+    <p class="profile-accoutnt-p data-toggle="tooltip title="<?php echo $this->Company_profile_model->company_name($employer_id); ?>"><?php echo $this->Company_profile_model->company_name($employer_id); ?></p>
    
     </a>
 
-    <ul class="dropdown-menu dropdown-menu dropdown-menu-right">
+    <ul class="dropdown-menu">
       <li> <p>Last Login : <?php echo date("d-m-Y h:i:s ", strtotime($last_login)); ?> </p></li>
       <li><a href="<?php echo base_url() ?>employer/profile-setting"><i class="fas fa-user"></i>Profile</a> </li>
       <li><a href="<?php echo base_url() ?>employer/addemployee"><i class="fas fa-user"></i>Employee Management</a> </li>
       <li><a href="<?php echo base_url(); ?>employer/change-password"><i class="fas fa-lock"></i>Change Password</a></li>
-      <li ><a href="#" class="btn-logoff" data-toggle="modal"  data-keyboard="true" data-target="#modal_logoff"><i class="fas fa-power-off"></i>Logout</a></li>
+      <li ><a href="#" class="btn-logoff" data-toggle="modal" data-target="#modal_logoff"><i class="fas fa-power-off"></i>Logout</a></li>
     </ul>
   </div>
     </div>
@@ -137,7 +137,7 @@ a.dropdown-toggle {
   </div>
 
 </div>
-<div class="modal fade" id="modal_logoff" tabindex='-1 29' role="dialog">
+<div class="modal fade" id="modal_logoff" role="dialog">
     <div class="modal-dialog">
        <form method="post" action="<?php echo base_url(); ?>employer/logout" > 
       
@@ -165,4 +165,3 @@ a.dropdown-toggle {
     
   }
 </script>
-
