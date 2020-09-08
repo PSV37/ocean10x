@@ -951,12 +951,12 @@ button#sklbtn {
             </div>
             <div class="row"  id="bulk">
                <label class="dropdown bulkdropdown" style="float:left;">
-                        <div class="dd-button nav-hide" onclick="myFunction(event)">
+                        <div class="dd-button" onclick="myFunction(event)">
                            Bulk Action
                         </div>
                         <input type="checkbox" class="dd-input" id="test1">
                     
-                        <ul id="myDropdown"  class="dd-menu nav-hide">
+                        <ul id="myDropdown"  class="dd-menu">
                            <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="frwd_post();">Forward Job</a></li>
                            <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="copy_cvs();">Copy CV</a></li>
                             <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="update_cvs();">Update From Ocean</a></li>
