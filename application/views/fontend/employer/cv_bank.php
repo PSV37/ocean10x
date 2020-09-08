@@ -733,7 +733,7 @@
    top: 50%;
    transform: translateY(-50%) !important;
    }
-   input{padding:7px 25px;}
+   input{padding:7px 0px;}
    .modal-footer{text-align:center;}
    .modal-body {
    padding: 0px 65px;
@@ -1643,7 +1643,7 @@ button#sklbtn {
 <script>
 function myFunction(){
 
-// document.getElementById("myForm").reset()
+$("#education_id").val(1);
 $('.range').val(0);
   var allRanges = document.querySelectorAll(".range-wrap");
    allRanges.forEach(wrap => {
