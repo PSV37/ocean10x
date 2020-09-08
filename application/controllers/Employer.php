@@ -3503,6 +3503,61 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 
                 $this->load->view('fontend/employer/add_cv', $data);
             } else {
+            $update_cv_id = $this->input->post('cv_id');
+            if (isset($update_cv_id) && !empty($update_cv_id)) {
+                     $candidate_resume = isset($_FILES['candidate_resume']['name']) ? $_FILES['candidate_resume']['name'] : null;
+                    // print_r($_FILES);die;
+                    if (!empty($candidate_resume)) {
+                        $config['upload_path'] = 'upload/Resumes/';
+                        $config['allowed_types'] = '*';
+                        $config['encrypt_name'] = false;
+                        $config['max_size'] = 1000;
+                        $config['max_width'] = 300;
+                        $config['max_height'] = 300;
+                        $this->load->library('upload', $config);
+                        $result_upload = $this->upload->do_upload('candidate_resume');
+                        $upload_data = $this->upload->data();
+                        $resume = $upload_data['file_name'];
+                        $cand_resume = $resume;
+                        if (!$result_upload == true) {
+                            $error = array('error' => $this->upload->display_errors());
+                            $this->session->set_flashdata('msg', '<div class="alert alert-warning text-center">Please Upload a Valid Logo Size Max size 300*300</div>');
+                            redirect('employer/profile-setting');
+                        }
+                    }
+                    $cv_data = array('company_id' => $company_id, 
+                        'js_name' => $this->input->post('candidate_name'), 
+                        'js_email' => $this->input->post('candidate_email'), 
+                        'js_mobile' => $this->input->post('candidate_phone'), 
+                        'js_job_type' => $this->input->post('job_type'), 
+                        'js_current_designation' => $this->input->post('current_job_desig'),
+                 
+                        'js_working_since' => date('Y-m-d', strtotime($this->input->post('working_current_since'))), 
+                        'js_current_ctc' => $this->input->post('current_ctc'), 
+                        'js_current_notice_period' => $this->input->post('candidate_notice_period'), 
+                        'js_experience' => $this->input->post('candidate_experiance'), 
+                        'js_last_salary_hike' => date('Y-m-d', strtotime($this->input->post('last_salary_hike'))), 
+                        'js_top_education' => $this->input->post('top_education'),
+                    // 'js_edu_special'             => $this->input->post('education_specialization'),
+                    'js_skill_set' => implode(',', $this->input->post('candidate_skills')), 
+                    'js_certifications' => $this->input->post('candidate_certification'), 'js_industry' => $this->input->post('candidate_industry'), 
+                    'js_role' => $this->input->post('candidate_role'), 
+                    'js_expected_salary' => $this->input->post('candidate_expected_sal'),
+                    'js_desired_work_location' => $this->input->post('desired_wrok_location'), 
+                    'current_org' => $this->input->post('current_org'),
+                    'ocean_candidate' => $ocean_candidate, 
+                    'js_resume' => $cand_resume,);
+
+                    $cv_data['created_on'] = date('Y-m-d H:i:s');
+                    $cv_data['created_by'] = $company_id;
+               
+                         $where_del['cv_id'] = $update_cv_id;
+      
+                        $this->Master_model->master_update($status, 'corporate_cv_bank', $where_del);
+                        $this->session->set_flashdata('success', '<div class="alert alert-success text-center">CV Updated Successfully !</div>');
+                        redirect('employer/corporate_cv_bank'); 
+                    }else
+                    {
                 $email = $this->input->post('candidate_email');
                 $where_find = "js_email= '$email'";
                 $exists = $this->Master_model->get_master_row('corporate_cv_bank', $select = FALSE, $where_find, $join = FALSE);
@@ -3647,14 +3702,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     $cv_data['created_on'] = date('Y-m-d H:i:s');
                     $cv_data['created_by'] = $company_id;
                     $update_cv_id = $this->input->post('cv_id');
-                    if (isset($update_cv_id) && !empty($update_cv_id)) {
-                         $where_del['cv_id'] = $update_cv_id;
-      
-                        $this->Master_model->master_update($status, 'corporate_cv_bank', $where_del);
-                        $this->session->set_flashdata('success', '<div class="alert alert-success text-center">CV Updated Successfully !</div>');
-                    }
-                    else
-                    {
+                    
 
 
                     $cv_id=$this->Master_model->master_insert($cv_data, 'corporate_cv_bank');
@@ -3767,10 +3815,10 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                         redirect('employer/internal_tracker');
                     }
                     $this->session->set_flashdata('success', '<div class="alert alert-success text-center">New CV Added Successfully !</div>');
-                }
+                
                 }
                 redirect('employer/corporate_cv_bank/'.$fid);
-            }
+            
         } else {
             $data['industry_master'] = $this->Master_model->getMaster('job_category', $where = false);
             $data['department'] = $this->Master_model->getMaster('department', $where = false);
@@ -3782,6 +3830,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             //$data['cv_info'] = $this->Master_model->getMaster('corporate_cv_bank',$where=false);
             $this->load->view('fontend/employer/add_cv', $data);
         }
+    }
     }
 
     public function edit_cv($id=NULL)
