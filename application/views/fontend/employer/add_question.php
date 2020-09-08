@@ -215,10 +215,13 @@ ul.select2-results__options {
   </form>
   </div>
 </div>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.js">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/mode/xml/xml.min.js">
 <link href="https://editor-latest.s3.amazonaws.com/v3/js/froala_editor.pkgd.min.js">
 <link href="https://editor-latest.s3.amazonaws.com/v3/css/froala_editor.pkgd.min.css">
 <link href="https://editor-latest.s3.amazonaws.com/v3/css/froala_style.min.css">
+
 <script>
    new FroalaEditor('textarea#froala-editor');
 </script>
