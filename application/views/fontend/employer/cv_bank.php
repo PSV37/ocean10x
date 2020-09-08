@@ -959,6 +959,7 @@ button#sklbtn {
                         <ul id="myDropdown"  class="dd-menu">
                            <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="frwd_post();">Forward Job</a></li>
                            <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="copy_cvs();">Copy CV</a></li>
+                            <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="copy_cvs();">Update From Ocean</a></li>
                            <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="download_cvs();">Download CV</a></li>
                            <li> <a href="#" id="frwd_btn" data-toggle="modal" data-keyboard="true"  data-target="#bulkupload">Bulk Upload</a></li>
                            <li> <a href="#" id="frwd_btn" data-toggle="modal" data-keyboard="true" data-target="#bulkupload_folder">Folder Upload</a></li>
@@ -1036,7 +1037,7 @@ button#sklbtn {
                         <div class="job-info">
                            <div class="a" style="display: inline-flex;">
                               <li class="right-title" style="font-size:19px;margin-top:-4px;"  ><?php echo $cv_row['js_name']; ?></li>
-                              <li class="right-title"><?php echo $cv_row['js_email']; ?></li>
+                              <li class="right-title" style="font-size: 15px;margin-top:-4px;font-weight: 600;margin-left: -106px;width: fit-content;"><?php echo $cv_row['js_email']; ?></li>
                            </div>
                         </div>
                         <div class="following-info">
