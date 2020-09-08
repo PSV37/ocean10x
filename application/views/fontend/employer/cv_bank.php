@@ -1781,6 +1781,11 @@ if ($('#test').is(":checked"))
             {
                $('#check_txt').text('Deselect All');
             }
+            else
+            {
+               $('#check_txt').text('Select All');
+
+            }
     });
     $(document).on(' change','input[name="bulk_download"]',function() {
             $('.chkbx').prop("checked" , this.checked);
