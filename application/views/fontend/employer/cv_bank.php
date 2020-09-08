@@ -1252,15 +1252,15 @@ button#sklbtn {
                <div class="modal fade" id="bulkupdate_cv" tabindex='-1' role="dialog">
                   <div class="modal-dialog modal-sm">
                      <div class="modal-content">
-                        <form method="post" action="<?php echo base_url(); ?><?php echo base_url(); ?>employer/getocean_profile">
+                        <form method="post" action="<?php echo base_url(); ?>employer/getocean_profile">
                            <div class="modal-header">
                               <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
-                              <h4 class="modal-title">Move CV to folder</h4>
+                              <h4 class="modal-title">Update From Ocean</h4>
                            </div>
                            <div class="modal-body">
                               <input type="hidden" name="cv_email" id="cv_email" value="">
                               <div class="col-md-12" style="margin-top: 20px;">
-                                Do You want to update  all the cvs?
+                                Do You want to update selected  cvs?
                               <div class="col-md-12">
                                  <div class="row">
                                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
