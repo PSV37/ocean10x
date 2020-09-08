@@ -959,7 +959,7 @@ button#sklbtn {
                         <ul id="myDropdown"  class="dd-menu">
                            <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="frwd_post();">Forward Job</a></li>
                            <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="copy_cvs();">Copy CV</a></li>
-                            <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="copy_cvs();">Update From Ocean</a></li>
+                            <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="update_cvs();">Update From Ocean</a></li>
                            <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="download_cvs();">Download CV</a></li>
                            <li> <a href="#" id="frwd_btn" data-toggle="modal" data-keyboard="true"  data-target="#bulkupload">Bulk Upload</a></li>
                            <li> <a href="#" id="frwd_btn" data-toggle="modal" data-keyboard="true" data-target="#bulkupload_folder">Folder Upload</a></li>
@@ -1252,7 +1252,7 @@ button#sklbtn {
                <div class="modal fade" id="bulkupdate_cv" tabindex='-1' role="dialog">
                   <div class="modal-dialog modal-sm">
                      <div class="modal-content">
-                        <form method="post" action="<?php echo base_url(); ?>employer/copy_cvto_folder">
+                        <form method="post" action="<?php echo base_url(); ?><?php echo base_url(); ?>employer/getocean_profile">
                            <div class="modal-header">
                               <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
                               <h4 class="modal-title">Move CV to folder</h4>
@@ -1964,7 +1964,7 @@ if ($('#test').is(":checked"))
                   $('#bulkupdate_cv').modal('show'); }, 500);
                }else
                {
-                  alert('Please select atleast one cv move!')
+                  alert('Please select atleast one cv update !')
                }
    }
    $("#job_titles").autocomplete({
