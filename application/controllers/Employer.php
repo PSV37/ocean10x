@@ -3755,7 +3755,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
                         redirect('employer/internal_tracker');
                     }
-                    $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Tracker happen Updated Sucessfully !</div>');
+                    $this->session->set_flashdata('success', '<div class="alert alert-success text-center">New CV Added Successfully !</div>');
                 }
                 redirect('employer/corporate_cv_bank/'.$fid);
             }
