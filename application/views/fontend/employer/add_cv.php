@@ -127,10 +127,7 @@ input.capital {
                <div class="row">
                   <div class="col-md-6">
                      <h4 class="employee_heading">ADD NEW CV</h4>
-                     <?php print_r($cv_bank_data);
-                      echo $cv_bank_data->js_name;
-                      echo "string";
-                       echo $cv_bank_data['js_name']; ?>
+                    
                   </div>
                   <div class="col-md-6">
                      <input style="float: right;" type="checkbox" name="send_email">Send Email to Candidate ?
@@ -146,20 +143,32 @@ input.capital {
                            echo $val;
                         }
                         elseif(isset($cv_bank_data) && !empty($cv_bank_data)){
-                           echo $cv_bank_data->js_name;
+                           echo $cv_bank_data['js_name'];
                         } ?>"> <?php echo form_error('candidate_name'); ?>
                      </div>
                   </div>
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Email Id <span class="required"> *</span></label>
-                        <input type="email" name="candidate_email" id="candidate_email" class="form-control ui-autocomplete-input" value="<?php echo  set_value('candidate_email'); ?>"  autocomplete="off"> <?php echo form_error('candidate_email'); ?>
+                        <input type="email" name="candidate_email" id="candidate_email" class="form-control ui-autocomplete-input" value="<?php $val=set_value('candidate_email'); if(isset($val) && !empty($val))
+                        {
+                           echo $val;
+                        }
+                        elseif(isset($cv_bank_data) && !empty($cv_bank_data)){
+                           echo $cv_bank_data['js_email'];
+                        } ?>" autocomplete="off"> <?php echo form_error('candidate_email'); ?>
                      </div>
                   </div>
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Phone Number<span class="required"> *</span></label>
-                        <input type="text" name="candidate_phone" id="candidate_phone" class="form-control allownumericwithoutdecimal" maxlength="10" value="<?php echo  set_value('candidate_phone'); ?>" >   <?php echo form_error('candidate_phone'); ?>          
+                        <input type="text" name="candidate_phone" id="candidate_phone" class="form-control allownumericwithoutdecimal" maxlength="10" value="<?php $val=set_value('candidate_phone'); if(isset($val) && !empty($val))
+                        {
+                           echo $val;
+                        }
+                        elseif(isset($cv_bank_data) && !empty($cv_bank_data)){
+                           echo $cv_bank_data['js_mobile'];
+                        } ?>">   <?php echo form_error('candidate_phone'); ?>          
                      </div>
                   </div>
                </div>
@@ -167,13 +176,25 @@ input.capital {
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Yrs of Experience</label>
-                        <input type="text" name="candidate_experiance" id="candidate_experiance" value="<?php echo  set_value('candidate_experiance'); ?>" maxlength="3"  class="form-control allownumericwithdecimal"><?php echo form_error('candidate_experiance'); ?>
+                        <input type="text" name="candidate_experiance" id="candidate_experiance" value="<?php $val=set_value('candidate_experiance'); if(isset($val) && !empty($val))
+                        {
+                           echo $val;
+                        }
+                        elseif(isset($cv_bank_data) && !empty($cv_bank_data)){
+                           echo $cv_bank_data['js_experience'];
+                        } ?>"> maxlength="3"  class="form-control allownumericwithdecimal"><?php echo form_error('candidate_experiance'); ?>
                      </div>
                   </div>
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Notice Period at Current Job (Days)</label>
-                        <input type="text" name="candidate_notice_period" id="candidate_notice_period " maxlength="3"  value="<?php echo  set_value('candidate_notice_period'); ?>" class="form-control allownumericwithoutdecimal">  <?php echo form_error('candidate_notice_period'); ?> 
+                        <input type="text" name="candidate_notice_period" id="candidate_notice_period " maxlength="3"  value="<?php $val=set_value('candidate_notice_period'); if(isset($val) && !empty($val))
+                        {
+                           echo $val;
+                        }
+                        elseif(isset($cv_bank_data) && !empty($cv_bank_data)){
+                           echo $cv_bank_data['js_current_notice_period'];
+                        } ?>" class="form-control allownumericwithoutdecimal">  <?php echo form_error('candidate_notice_period'); ?> 
                      </div>
                   </div>
                   <div class="col-md-4">
@@ -199,14 +220,26 @@ input.capital {
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Current Job Designation</label>
-                        <input type="text" name="current_job_desig" id="current_job_desig" class="form-control allowalphabatesspace capital" value="<?php echo  set_value('current_job_desig'); ?>">    <?php echo form_error('current_job_desig'); ?> 
+                        <input type="text" name="current_job_desig" id="current_job_desig" class="form-control allowalphabatesspace capital" value="<?php $val=set_value('current_job_desig'); if(isset($val) && !empty($val))
+                        {
+                           echo $val;
+                        }
+                        elseif(isset($cv_bank_data) && !empty($cv_bank_data)){
+                           echo $cv_bank_data['js_current_designation'];
+                        } ?>">    <?php echo form_error('current_job_desig'); ?> 
                      </div>
                   </div>
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Working at Current Job Since</label>
 
-                         <input type="text" id="my_date_picker" name="working_current_since" style="display: inline-block;" class="form-control datepicker "   value="<?php echo  set_value('working_current_since'); ?>">  
+                         <input type="text" id="my_date_picker" name="working_current_since" style="display: inline-block;" class="form-control datepicker "   value="<?php $val=set_value('working_current_since'); if(isset($val) && !empty($val))
+                        {
+                           echo $val;
+                        }
+                        elseif(isset($cv_bank_data) && !empty($cv_bank_data)){
+                           echo $cv_bank_data['js_working_since'];
+                        } ?>">  
                        <!--  <input type="text" name="working_current_since" id="working_current_since" class="form-control datepicker">  <?php echo form_error('working_current_since'); ?>    -->
                      </div>
                   </div>
@@ -221,7 +254,13 @@ input.capital {
                            header("Content-Type: text/html; charset=UTF-8;");
                               echo $symbol;
                         } ?></label>
-                        <input type="text" name="current_ctc" id="current_ctc" class="form-control allownumericwithdecimal" maxlength="3" value="<?php echo  set_value('current_ctc'); ?>">   <?php echo form_error('current_ctc'); ?>
+                        <input type="text" name="current_ctc" id="current_ctc" class="form-control allownumericwithdecimal" maxlength="3" value="<?php $val=set_value('current_ctc'); if(isset($val) && !empty($val))
+                        {
+                           echo $val;
+                        }
+                        elseif(isset($cv_bank_data) && !empty($cv_bank_data)){
+                           echo $cv_bank_data['js_current_ctc'];
+                        } ?>">   <?php echo form_error('current_ctc'); ?>
                      </div>
                   </div>
                </div>
@@ -229,7 +268,13 @@ input.capital {
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Last Salary Hike</label>
-                        <input type="text" name="last_salary_hike" id="last_salary_hike" class="form-control datepicker" max="<?php echo date('Y-m-d'); ?>" value="<?php echo  set_value('last_salary_hike'); ?>">
+                        <input type="text" name="last_salary_hike" id="last_salary_hike" class="form-control datepicker" max="<?php echo date('Y-m-d'); ?>" value="<?php $val=set_value('last_salary_hike'); if(isset($val) && !empty($val))
+                        {
+                           echo $val;
+                        }
+                        elseif(isset($cv_bank_data) && !empty($cv_bank_data)){
+                           echo $cv_bank_data['js_last_salary_hike'];
+                        } ?>">
                        <!--  <span><i class="fa fa-calendar" aria-hidden="true"></i></span> -->  
                         <?php echo form_error('last_salary_hike'); ?>     
                      </div>
@@ -237,7 +282,13 @@ input.capital {
                    <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Current Organization</label>
-                        <input type="text" name="current_org" id="current_org" class="form-control allowalphabatesspace capital" value="<?php echo  set_value('current_org'); ?>">    <?php echo form_error('current_org'); ?> 
+                        <input type="text" name="current_org" id="current_org" class="form-control allowalphabatesspace capital" value="<?php $val=set_value('current_org'); if(isset($val) && !empty($val))
+                        {
+                           echo $val;
+                        }
+                        elseif(isset($cv_bank_data) && !empty($cv_bank_data)){
+                           echo $cv_bank_data['current_org'];
+                        } ?>">>    <?php echo form_error('current_org'); ?> 
                      </div>
                   </div>
                   <div class="col-md-4">
@@ -324,14 +375,26 @@ input.capital {
                    <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Expected Salary</label>
-                        <input type="text" name="candidate_expected_sal" id="candidate_expected_sal" class="form-control allownumericwithdecimal"  maxlength="3" value="<?php echo  set_value('candidate_expected_sal'); ?>">   <?php echo form_error('candidate_expected_sal'); ?>
+                        <input type="text" name="candidate_expected_sal" id="candidate_expected_sal" class="form-control allownumericwithdecimal"  maxlength="3" value="<?php $val=set_value('candidate_expected_sal'); if(isset($val) && !empty($val))
+                        {
+                           echo $val;
+                        }
+                        elseif(isset($cv_bank_data) && !empty($cv_bank_data)){
+                           echo $cv_bank_data['js_expected_salary'];
+                        } ?>">  <?php echo form_error('candidate_expected_sal'); ?>
 
                      </div>
                   </div>
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Desired Work Location</label>
-                        <input type="text" name="desired_wrok_location" id="tokenfield" class="form-control" style="display: inline-block;" value="<?php echo  set_value('desired_wrok_location'); ?>">   <?php echo form_error('desired_wrok_location'); ?>
+                        <input type="text" name="desired_wrok_location" id="tokenfield" class="form-control" style="display: inline-block;" value="<?php $val=set_value('desired_wrok_location'); if(isset($val) && !empty($val))
+                        {
+                           echo $val;
+                        }
+                        elseif(isset($cv_bank_data) && !empty($cv_bank_data)){
+                           echo $cv_bank_data['js_desired_work_location'];
+                        } ?>"> <?php echo form_error('desired_wrok_location'); ?>
                      </div>
                   </div>
                   <div class="col-md-4">
