@@ -3640,7 +3640,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     'js_role' => $this->input->post('candidate_role'), 
                     'js_expected_salary' => $this->input->post('candidate_expected_sal'),
                     'js_desired_work_location' => $this->input->post('desired_wrok_location'), 
-                    'current_org' => $this->input->post('current_org');
+                    'current_org' => $this->input->post('current_org'),
                     'ocean_candidate' => $ocean_candidate, 
                     'js_resume' => $cand_resume,);
 
