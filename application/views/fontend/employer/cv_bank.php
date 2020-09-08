@@ -1036,7 +1036,7 @@ button#sklbtn {
                         <div class="job-info">
                            <div class="a" style="display: inline-flex;">
                               <li class="right-title" style="font-size:19px;margin-top:-4px;"  ><?php echo $cv_row['js_name']; ?></li>
-                              <li class="right-title" style="font-size:19px;margin-top:-4px;"><?php echo $cv_row['js_email']; ?></li>
+                              <li class="right-title" style="font-size: 15px;margin-top:-4px;font-weight: 600;"><?php echo $cv_row['js_email']; ?></li>
                            </div>
                         </div>
                         <div class="following-info">
