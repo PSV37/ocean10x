@@ -137,7 +137,13 @@ input.capital {
                   <div class="col-md-4">
                      <div class="form-group">                                       
                         <label for="exampleInputEmail1">Full Name <span class="required">*</span></label>
-                        <input type="text" name="candidate_name" id="candidate_name" class="form-control allowalphabates capital " value="<?php echo  set_value('candidate_name'); ?>"> <?php echo form_error('candidate_name'); ?>
+                        <input type="text" name="candidate_name" id="candidate_name" class="form-control allowalphabates capital " value="<?php $val=set_value('candidate_name'); if(isset($val) && !empty($val))
+                        {
+                           echo $val;
+                        }
+                        elseif(isset($cv_bank_data['candidate_name']) && !empty($cv_bank_data['candidate_name'])){
+                           echo $cv_bank_data['candidate_name'];
+                        } ?>"> <?php echo form_error('candidate_name'); ?>
                      </div>
                   </div>
                   <div class="col-md-4">
