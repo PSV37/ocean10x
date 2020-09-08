@@ -28,7 +28,6 @@
      <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src= "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" > 
   </script> 
-
  <link href="<?php echo base_url(); ?>asset/css/bootstrap-multiselect.css" rel="stylesheet" type="text/css" />
 
      
@@ -109,7 +108,7 @@ a.dropdown-toggle {
 </div>     
     
     <div class="col-md-2">
-    	 <div class="dropdown modal-body">
+    	 <div class="dropdown">
             <?php $profile_pic = $this->Company_profile_model->company_logoby_id($employer_id);
                   if (isset($profile_pic) && !empty($profile_pic)) { ?>
                      <img src="<?php echo base_url() ?>upload/<?php echo $profile_pic;?>" class="img-thumbnail" style="height:45px; width:45px; border-radius:50%;" />&emsp;<a class=" dropdown-toggle" data-toggle="dropdown">
@@ -165,11 +164,4 @@ a.dropdown-toggle {
      }
     
   }
-
-  document.onkeydown = function(evt) {
-    evt = evt || window.event;
-    if (evt.keyCode == 27) {
-        alert('Esc key pressed.');
-    }
-};
 </script>
