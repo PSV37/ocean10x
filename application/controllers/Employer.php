@@ -3556,8 +3556,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                         $this->Master_model->master_update($status, 'corporate_cv_bank', $where_del);
                         $this->session->set_flashdata('success', '<div class="alert alert-success text-center">CV Updated Successfully !</div>');
                         redirect('employer/corporate_cv_bank'); 
-                    }else
-                    {
+                    }
                 $email = $this->input->post('candidate_email');
                 $where_find = "js_email= '$email'";
                 $exists = $this->Master_model->get_master_row('corporate_cv_bank', $select = FALSE, $where_find, $join = FALSE);
@@ -3818,7 +3817,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 
                 }
                 redirect('employer/corporate_cv_bank/'.$fid);
-            }
+            
         } else {
             $data['industry_master'] = $this->Master_model->getMaster('job_category', $where = false);
             $data['department'] = $this->Master_model->getMaster('department', $where = false);
