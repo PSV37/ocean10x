@@ -954,7 +954,7 @@ button#sklbtn {
                         <div class="dd-button" onclick="myFunction(event)">
                            Bulk Action
                         </div>
-                        <input type="checkbox" class="dd-input" id="test1">
+                        <input type="checkbox" tabindex="-98" class="dd-input" id="test1">
                     
                         <ul id="myDropdown"  class="dd-menu">
                            <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="frwd_post();">Forward Job</a></li>
