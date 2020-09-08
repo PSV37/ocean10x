@@ -1264,7 +1264,7 @@ button#sklbtn {
                               <div class="col-md-12">
                                  <div class="row">
                                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
-                                       <label class="mdl-textfield__label" id="no_of_cvs_update" for="sample3">Number of cvs:<span id="no_of_cvs_update"></span></label><br>
+                                       <label class="mdl-textfield__label"  for="sample3">Number of cvs:<span id="no_of_cvs_update"></span></label><br>
                                     </div>
                                  </div>
                               </div>
