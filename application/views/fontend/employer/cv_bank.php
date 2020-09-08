@@ -1034,9 +1034,9 @@ button#sklbtn {
                         <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" style="height:25px; width:25px;border-radius:5px;float:left" />
                         <?php } ?>
                         <div class="job-info">
-                           <div class="a">
+                           <div class="a" style="display: inline-flex;">
                               <li class="right-title" style="font-size:19px;margin-top:-4px;"  ><?php echo $cv_row['js_name']; ?></li>
-                              <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span><?php echo $cv_row['js_email']; ?></li>
+                              <li class="right-title"><?php echo $cv_row['js_email']; ?></li>
                            </div>
                         </div>
                         <div class="following-info">
