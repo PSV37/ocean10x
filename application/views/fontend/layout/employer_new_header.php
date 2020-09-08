@@ -119,7 +119,7 @@ a.dropdown-toggle {
   
     <?php $last_login = $this->session->userdata('last_login'); ?>
     <span class="caret"></span>     
-    <p data-live-search="true" class="profile-accoutnt-p  data-toggle="tooltip title="<?php echo $this->Company_profile_model->company_name($employer_id); ?>"><?php echo $this->Company_profile_model->company_name($employer_id); ?></p>
+    <p class="profile-accoutnt-p  data-toggle="tooltip title="<?php echo $this->Company_profile_model->company_name($employer_id); ?>"><?php echo $this->Company_profile_model->company_name($employer_id); ?></p>
    
     </a>
 
@@ -165,3 +165,6 @@ a.dropdown-toggle {
     
   }
 </script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
