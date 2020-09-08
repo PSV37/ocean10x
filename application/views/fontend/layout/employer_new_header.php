@@ -137,7 +137,7 @@ a.dropdown-toggle {
   </div>
 
 </div>
-<div class="modal fade" id="modal_logoff" tabindex='-1' role="dialog">
+<div class="modal fade" id="modal_logoff" tabindex='-1 29' role="dialog">
     <div class="modal-dialog">
        <form method="post" action="<?php echo base_url(); ?>employer/logout" > 
       
