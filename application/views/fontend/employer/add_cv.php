@@ -143,7 +143,7 @@ input.capital {
                            echo $val;
                         }
                         elseif(isset($cv_bank_data) && !empty($cv_bank_data)){
-                           echo $cv_bank_data['candidate_name'];
+                           echo $cv_bank_data->candidate_name;
                         } ?>"> <?php echo form_error('candidate_name'); ?>
                      </div>
                   </div>
