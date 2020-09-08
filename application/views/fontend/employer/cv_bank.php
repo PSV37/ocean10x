@@ -1264,7 +1264,7 @@ button#sklbtn {
                               <div class="col-md-12">
                                  <div class="row">
                                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
-                                       <label class="mdl-textfield__label" id="no_of_cvs_move" for="sample3">Number of cvs: 1</label><br>
+                                       <label class="mdl-textfield__label" id="no_of_cvs_update" for="sample3">Number of cvs:<span id="no_of_cvs_update"></span></label><br>
                                     </div>
                                  </div>
                               </div>
@@ -1958,7 +1958,7 @@ if ($('#test').is(":checked"))
                {
                var elements = cvs_name.split(',').length;
              
-                  $('#no_of_cvs_move').html(elements);
+                  $('#no_of_cvs_update').text(elements);
                   $('#cv_email').val(cvs_name);
                   setTimeout(function(){
                   $('#bulkupdate_cv').modal('show'); }, 500);
