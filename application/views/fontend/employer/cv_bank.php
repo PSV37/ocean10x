@@ -914,6 +914,11 @@ button#sklbtn {
     margin-bottom: 7px;
     font-size: 11px;
 }
+.dropdown-menu li {
+    font-size: 11px;
+    padding: 5px 0px;
+    cursor: pointer;
+}
 </style>
 <div class="container-fluid main-d">
    <div class="container">
@@ -986,7 +991,7 @@ button#sklbtn {
                 
                   <label style="float: right;">
                         <input type="checkbox" class="btn-default1 checkbox" name="check_all" id="checkAllchk" >
-                        <span>select all</span>
+                        <span id="check_txt">Select all</span>
                 
                </div>
             </div>
@@ -1048,7 +1053,7 @@ button#sklbtn {
                         </div>
                         <div class="following-info2">
                            <li class="left-title">Current Org</li>
-                           <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span>TKNS</li>
+                           <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span><?php echo $cv_row['current_org']; ?></li>
                            <li class="left-title">Notice Period </li>
                            <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span><?php echo $cv_row['js_current_notice_period']; ?></li>
                            <li class="left-title">Work Exp</li>
@@ -1068,13 +1073,15 @@ button#sklbtn {
                         <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
                         </button>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1" style="top:47px;">
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1" style="top:20px;">
                            <li ><a class="dropdown-item" href="#" id="div_frwrd" data-toggle="modal" data-keyboard="true" data-target="#rotateModal<?php echo $cv_row['cv_id']; ?>" >Forward Job Post</a></li>
                            <?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ ?>
                            <li id="div_download"> <a class="dropdown-item"  href="<?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ echo base_url(); echo 'upload/Resumes/'.$cv_row['js_resume']; } ?>" download >Download this cv</a></li>
                            <?php } ?>
                            <li><a onclick="get_copy_folders(<?php echo $cv_row['cv_id']; ?>);" class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-keyboard="true" data-target="#copy_cv<?php echo $cv_row['cv_id']; ?>"  href="#">Copy this CV</a></li>
                            <li><a class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-keyboard="true" data-target="#move_cv<?php echo $cv_row['cv_id']; ?>" href="#">Move this CV</a></li>
+                            <li><a href="<?php echo base_url(); ?>employer/edit_cv/<?php echo base64_encode($cv_row['cv_id']); ?>" >Edit CV</a></li>
+                             <li><a href="<?php echo base_url(); ?>employer/getocean_profile/<?php echo base64_encode($cv_row['js_email']); ?>" >Get Ocean Profile</a></li>
                         </div>
                      </div>
                   </div>
@@ -1778,7 +1785,12 @@ if ($('#test').is(":checked"))
             $('.chkbx').prop("checked" , this.checked);
             if (this.checked == true) 
             {
-               $('#checkAllchk').text('Deselect All');
+               $('#check_txt').text('Deselect All');
+            }
+            else
+            {
+               $('#check_txt').text('Select All');
+
             }
     });
     $(document).on(' change','input[name="bulk_download"]',function() {
