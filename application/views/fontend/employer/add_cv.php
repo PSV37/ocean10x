@@ -127,7 +127,10 @@ input.capital {
                <div class="row">
                   <div class="col-md-6">
                      <h4 class="employee_heading">ADD NEW CV</h4>
-                     <?php print_r($cv_bank_data); ?>
+                     <?php print_r($cv_bank_data);
+                      echo $cv_bank_data->candidate_name;
+                      echo "string";
+                       echo $cv_bank_data['candidate_name']; ?>
                   </div>
                   <div class="col-md-6">
                      <input style="float: right;" type="checkbox" name="send_email">Send Email to Candidate ?
