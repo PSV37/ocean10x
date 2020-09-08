@@ -32,6 +32,7 @@
    margin-left: 13px;
    font-size: 12px;
    text-align: center;
+   overflow:hidden;
    }
    .dd-button:hover {
    background-color:#18c5bd;
@@ -920,13 +921,7 @@ button#sklbtn {
     cursor: pointer;
 }
 
-.selectWrapper{
-  border-radius:36px;
-  display:inline-block;
-  overflow:hidden;
-  background:#cccccc;
-  border:1px solid #cccccc;
-}
+
 </style>
 <div class="container-fluid main-d">
    <div class="container">
@@ -958,7 +953,7 @@ button#sklbtn {
                </div>
             </div>
             <div class="row"  id="bulk">
-               <label class="dropdown bulkdropdown selectWrapper" style="float:left;">
+               <label class="dropdown bulkdropdown" style="float:left;">
                         <div class="dd-button" onclick="myFunction(event)">
                            Bulk Action
                         </div>
