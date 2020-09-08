@@ -3646,6 +3646,17 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
                     $cv_data['created_on'] = date('Y-m-d H:i:s');
                     $cv_data['created_by'] = $company_id;
+                    $update_cv_id = $this->input->post('cv_id');
+                    if (isset($update_cv_id) && !empty($update_cv_id)) {
+                         $where_del['cv_id'] = $update_cv_id;
+      
+                        $this->Master_model->master_update($status, 'corporate_cv_bank', $where_del);
+                        $this->session->set_flashdata('success', '<div class="alert alert-success text-center">CV Updated Successfully !</div>');
+                    }
+                    else
+                    {
+
+
                     $cv_id=$this->Master_model->master_insert($cv_data, 'corporate_cv_bank');
                     $to_email = $this->input->post('candidate_email');
                     if (isset($_POST['send_email'])) {
@@ -3756,6 +3767,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                         redirect('employer/internal_tracker');
                     }
                     $this->session->set_flashdata('success', '<div class="alert alert-success text-center">New CV Added Successfully !</div>');
+                }
                 }
                 redirect('employer/corporate_cv_bank/'.$fid);
             }

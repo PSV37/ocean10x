@@ -136,7 +136,10 @@ input.capital {
               
                <div class="col-md-12">
                   <div class="col-md-4">
-                     <div class="form-group">                                       
+                     <div class="form-group">                   
+                        <input type="hidden" name="cv_id" value="<?php if(isset($cv_bank_data) && !empty($cv_bank_data)){
+                           echo $cv_bank_data['cv_id'];
+                        } ?>">                
                         <label for="exampleInputEmail1">Full Name <span class="required">*</span></label>
                         <input type="text" name="candidate_name" id="candidate_name" class="form-control allowalphabates capital " value="<?php $val=set_value('candidate_name'); if(isset($val) && !empty($val))
                         {
@@ -182,7 +185,7 @@ input.capital {
                         }
                         elseif(isset($cv_bank_data) && !empty($cv_bank_data)){
                            echo $cv_bank_data['js_experience'];
-                        } ?>"> maxlength="3"  class="form-control allownumericwithdecimal"><?php echo form_error('candidate_experiance'); ?>
+                        } ?>" maxlength="3"  class="form-control allownumericwithdecimal"><?php echo form_error('candidate_experiance'); ?>
                      </div>
                   </div>
                   <div class="col-md-4">
