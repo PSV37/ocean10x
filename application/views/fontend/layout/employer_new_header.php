@@ -123,7 +123,7 @@ a.dropdown-toggle {
    
     </a>
 
-    <ul class="dropdown-menu modal-body">
+    <ul class="dropdown-menu">
       <li> <p>Last Login : <?php echo date("d-m-Y h:i:s ", strtotime($last_login)); ?> </p></li>
       <li><a href="<?php echo base_url() ?>employer/profile-setting"><i class="fas fa-user"></i>Profile</a> </li>
       <li><a href="<?php echo base_url() ?>employer/addemployee"><i class="fas fa-user"></i>Employee Management</a> </li>
