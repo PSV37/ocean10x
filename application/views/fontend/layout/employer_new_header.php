@@ -119,7 +119,7 @@ a.dropdown-toggle {
   
     <?php $last_login = $this->session->userdata('last_login'); ?>
     <span class="caret" tabindex="-98"></span>     
-    <p class="profile-accoutnt-p data-toggle="tooltip title="<?php echo $this->Company_profile_model->company_name($employer_id); ?>"><?php echo $this->Company_profile_model->company_name($employer_id); ?></p>
+    <p tabindex="-98" class="profile-accoutnt-p data-toggle="tooltip title="<?php echo $this->Company_profile_model->company_name($employer_id); ?>"><?php echo $this->Company_profile_model->company_name($employer_id); ?></p>
    
     </a>
 
