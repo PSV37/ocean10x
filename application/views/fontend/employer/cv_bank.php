@@ -949,9 +949,9 @@ button#sklbtn {
                   <a href="<?php echo base_url() ?>employer/add_new_cv<?php if(!empty($fid)){echo '?fid='.$fid;} ?>"><button class="btn btn-primary"><i class="fas fa-plus"></i> Add New CV</button></a>
                </div>
             </div>
-            <div class="row" id="bulk">
+            <div class="row" tabindex="-98" id="bulk">
                <label class="dropdown bulkdropdown" style="float:left;">
-                        <div class="dd-button" tabindex="-98" onclick="myFunction(event)">
+                        <div class="dd-button" onclick="myFunction(event)">
                            Bulk Action
                         </div>
                         <input type="checkbox" class="dd-input" id="test1">
