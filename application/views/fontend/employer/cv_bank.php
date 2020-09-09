@@ -1746,8 +1746,6 @@ $('.range').val(0);
 
   var addclass = 'show';
 // Close the dropdown menu if the user clicks outside of it
-</script>
-<script>
 window.onclick = function(event) {
 if ($('#test1').is(":checked")) 
 {
