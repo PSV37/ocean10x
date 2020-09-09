@@ -257,7 +257,7 @@ input.capital {
                            header("Content-Type: text/html; charset=UTF-8;");
                               echo $symbol;
                         } ?></label>
-                        <input type="text" name="current_ctc" id="current_ctc" class="form-control allownumericwithdecimal" maxlength="3" value="<?php $val=set_value('current_ctc'); if(isset($val) && !empty($val))
+                        <input type="text" name="current_ctc" id="current_ctc" class="form-control allownumericwithdecimal" maxlength="5" value="<?php $val=set_value('current_ctc'); if(isset($val) && !empty($val))
                         {
                            echo $val;
                         }
@@ -378,7 +378,7 @@ input.capital {
                    <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Expected Salary</label>
-                        <input type="text" name="candidate_expected_sal" id="candidate_expected_sal" class="form-control allownumericwithdecimal"  maxlength="3" value="<?php $val=set_value('candidate_expected_sal'); if(isset($val) && !empty($val))
+                        <input type="text" name="candidate_expected_sal" id="candidate_expected_sal" class="form-control allownumericwithdecimal"  maxlength="5" value="<?php $val=set_value('candidate_expected_sal'); if(isset($val) && !empty($val))
                         {
                            echo $val;
                         }
@@ -812,7 +812,7 @@ return this.optional(element) || /^[0-9]{1,2}[:.,-]?$/.test(value);
 
   $.validator.addMethod("twodecimal_regex", function(value, element) {
 
-return this.optional(element) || /^\d{1,3}(\.\d{0,2})?$/.test(value);
+return this.optional(element) || /^\d{1,2}(\.\d{1,2})?$/.test(value);
     
 }, "Please type only two decimal numbers");
 
