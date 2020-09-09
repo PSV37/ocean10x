@@ -952,7 +952,7 @@ button#sklbtn {
                </div>
             </div>
             <div class="row"  id="bulk">
-               <label class="dropdown-toggle bulkdropdown" style="float:left;">
+               <label class="dropdown dropdown-toggle bulkdropdown" style="float:left;">
                         <div class="dd-button"  onclick="myFunction(event)">
                            Bulk Action
                         </div>
