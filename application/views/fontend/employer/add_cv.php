@@ -223,7 +223,7 @@ input.capital {
                   <div class="col-md-4">
                      <div class="form-group">
                         <label for="exampleInputEmail1">Current Job Designation</label>
-                        <input type="text" name="current_job_desig" id="current_job_desig" class="form-control allowalphabatesspace capital" value="<?php $val=set_value('current_job_desig'); if(isset($val) && !empty($val))
+                        <input type="text" name="current_job_desig" id="current_job_desig" class="form-control allowalphabates capital" value="<?php $val=set_value('current_job_desig'); if(isset($val) && !empty($val))
                         {
                            echo $val;
                         }
@@ -240,7 +240,7 @@ input.capital {
                         {
                            echo date("d-m-Y", strtotime($val));
                         }
-                        elseif(isset($cv_bank_data) && !empty($cv_bank_data)){
+                        elseif(isset($cv_bank_data) && !empty($cv_bank_data['js_working_since'])){
                            echo date("d-m-Y", strtotime($cv_bank_data['js_working_since']));
                         } ?>">  
                        <!--  <input type="text" name="working_current_since" id="working_current_since" class="form-control datepicker">  <?php echo form_error('working_current_since'); ?>    -->
@@ -889,7 +889,7 @@ return this.optional(element) || /^[1-9][0-9][0-9][0-9][0-9][0-9]$/.test(value);
 
     $(".allownumericwithdecimal").on("keypress keyup blur",function (event) {
             //this.value = this.value.replace(/[^0-9\.]/g,'');
-     $(this).val($(this).val().replace(/[^0-9\.]/g,''));
+     $(this).val($(this).val().replace(/[^0-9\.\d{1,2}]/g,''));
             if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 48 || event.which > 57)) {
                 event.preventDefault();
             }
@@ -908,7 +908,7 @@ return this.optional(element) || /^[1-9][0-9][0-9][0-9][0-9][0-9]$/.test(value);
          }
      });
 $(".allowalphabates").keypress(function (e) {
-         var regex = new RegExp("^[a-zA-Z ]*$");
+         var regex = new RegExp("^[a-zA-Z -]*$");
          var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
          if (regex.test(str)) {
              return true;
