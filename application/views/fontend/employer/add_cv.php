@@ -259,10 +259,10 @@ input.capital {
                         } ?></label>
                         <input type="text" name="current_ctc" id="current_ctc" class="form-control allownumericwithdecimal" maxlength="3" value="<?php $val=set_value('current_ctc'); if(isset($val) && !empty($val))
                         {
-                           echo $val;
+                           echo date("d-m-Y", strtotime($val));
                         }
                         elseif(isset($cv_bank_data) && !empty($cv_bank_data)){
-                           echo $cv_bank_data['js_current_ctc'];
+                           echo date("d-m-Y", strtotime($cv_bank_data['js_current_ctc']));
                         } ?>">   <?php echo form_error('current_ctc'); ?>
                      </div>
                   </div>
@@ -291,7 +291,7 @@ input.capital {
                         }
                         elseif(isset($cv_bank_data) && !empty($cv_bank_data)){
                            echo $cv_bank_data['current_org'];
-                        } ?>">>    <?php echo form_error('current_org'); ?> 
+                        } ?>">    <?php echo form_error('current_org'); ?> 
                      </div>
                   </div>
                   <div class="col-md-4">
