@@ -952,8 +952,8 @@ button#sklbtn {
                </div>
             </div>
             <div class="row"  id="bulk">
-               <label class="dropdown bulkdropdown" style="float:left;">
-                        <div class="dd-button" aria-labelledby="myDropdown"    onclick="myFunction(event)">
+               <label class="dropdown dropdown-toggle bulkdropdown" style="float:left;">
+                        <div class="dd-button"  onclick="myFunction(event)">
                            Bulk Action
                         </div>
                         <input type="checkbox" class="dd-input" id="test1">
