@@ -652,6 +652,7 @@
    border-radius: 46px;
    color: #fff;
    font-weight: 700;
+   margin-left: -7px;
    }
    button.reset_filter:hover {
    background-color:#15a8a1;
@@ -955,9 +956,11 @@ button#sklbtn {
             </div>
             <div class="row"  id="bulk">
                <label class="dropdown bulkdropdown" style="float:left;">
-                        <div class="dd-button"  onclick="myFunction(event)">
+
+                         <div class="dd-button"  onclick="myFunction(event)">
                            Bulk Action
                         </div>
+                       
                         <input type="checkbox" class="dd-input" id="test1">
                     
                         <ul id="myDropdown"  class="dd-menu">
@@ -1040,7 +1043,7 @@ button#sklbtn {
                         <?php } ?>
                         <div class="job-info">
                            <div class="a" style="display: inline-flex;">
-                              <li class="right-title" style="font-size:19px;margin-top:-4px;"  ><?php echo $cv_row['js_name']; ?></li>
+                              <li class="right-title" style="font-size:19px;margin-top:-4px;"  ><a href="<?php echo base_url(); ?>employer/edit_cv/<?php echo base64_encode($cv_row['cv_id']); ?>" style="color: black;cursor: pointer;" ><?php echo $cv_row['js_name']; ?></a></li>
                               <li class="right-title" style="font-size: 15px;margin-top:-4px;font-weight: 600;margin-left: -106px;width: fit-content;"><?php echo $cv_row['js_email']; ?></li>
                            </div>
                         </div>
@@ -1756,6 +1759,19 @@ if ($('#test').is(":checked"))
   // document.getElementById("myDropdown").classList.remove("show");
   // document.getElementById("sizelist").classList.remove("show");
 }
+$(document).keyup(function(e) {
+     if (e.keyCode == 27) { // escape key maps to keycode `27`
+      // alert('dd');
+      if ($('#test1').is(":checked")) 
+         {
+            $('#test1').click();
+         }
+         if ($('#test').is(":checked")) 
+         {
+            $('#test').click();
+         }
+    }
+});
 </script>
 <script>
    document.getElementById("files").addEventListener("change", function(event) {

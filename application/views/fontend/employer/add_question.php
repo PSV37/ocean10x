@@ -26,6 +26,9 @@ ul.select2-results__options {
     /*font-weight: bold;*/
    color: red;
    }
+   div#cke_1_contents {
+    height: 100px !important;
+}
 </style>
 
  <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/questionbank.css">
@@ -128,7 +131,7 @@ ul.select2-results__options {
     <div class="row">
        <div class="col-md-12 form-group">
         <label for="comment">Question </label>
-        <textarea class="form-control" name="question" rows="5" id="froala-editor"   ><?php if (!empty($edit_questionbank_info)) echo $row['question'];?></textarea> <?php echo form_error('question'); ?>   
+        <textarea class="form-control ckeditor" name="question" rows="5"    ><?php if (!empty($edit_questionbank_info)) echo $row['question'];?></textarea> <?php echo form_error('question'); ?>   
       </div>
     
        <div class="col-md-12 form-group">
@@ -217,14 +220,7 @@ ul.select2-results__options {
 </div>
 <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.js"> -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/mode/xml/xml.min.js">
-<link href="https://editor-latest.s3.amazonaws.com/v3/js/froala_editor.pkgd.min.js">
-<link href="https://editor-latest.s3.amazonaws.com/v3/css/froala_editor.pkgd.min.css">
-<link href="https://editor-latest.s3.amazonaws.com/v3/css/froala_style.min.css">
 
-<script>
-   new FroalaEditor('textarea#froala-editor');
-</script>
 <script>
   $(document).on('focus', '.select2-selection.select2-selection--single', function (e) {
   $(this).closest(".select2-container").siblings('select:enabled').select2('open');
