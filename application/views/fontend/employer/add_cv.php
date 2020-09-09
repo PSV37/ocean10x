@@ -238,10 +238,10 @@ input.capital {
 
                          <input type="text" id="my_date_picker" name="working_current_since" style="display: inline-block;" class="form-control datepicker "   value="<?php $val=set_value('working_current_since'); if(isset($val) && !empty($val))
                         {
-                           echo $val;
+                           echo date("d-m-Y", strtotime($val));
                         }
                         elseif(isset($cv_bank_data) && !empty($cv_bank_data)){
-                           echo $cv_bank_data['js_working_since'];
+                           echo date("d-m-Y", strtotime($cv_bank_data['js_working_since']));
                         } ?>">  
                        <!--  <input type="text" name="working_current_since" id="working_current_since" class="form-control datepicker">  <?php echo form_error('working_current_since'); ?>    -->
                      </div>
