@@ -259,10 +259,10 @@ input.capital {
                         } ?></label>
                         <input type="text" name="current_ctc" id="current_ctc" class="form-control allownumericwithdecimal" maxlength="3" value="<?php $val=set_value('current_ctc'); if(isset($val) && !empty($val))
                         {
-                           echo date("d-m-Y", strtotime($val));
+                           echo $val;
                         }
                         elseif(isset($cv_bank_data) && !empty($cv_bank_data)){
-                           echo date("d-m-Y", strtotime($cv_bank_data['js_current_ctc']));
+                           echo $cv_bank_data['js_current_ctc'];
                         } ?>">   <?php echo form_error('current_ctc'); ?>
                      </div>
                   </div>
@@ -273,10 +273,10 @@ input.capital {
                         <label for="exampleInputEmail1">Last Salary Hike</label>
                         <input type="text" name="last_salary_hike" id="last_salary_hike" class="form-control datepicker" max="<?php echo date('Y-m-d'); ?>" value="<?php $val=set_value('last_salary_hike'); if(isset($val) && !empty($val))
                         {
-                           echo $val;
+                           echo date("d-m-Y", strtotime($val));
                         }
                         elseif(isset($cv_bank_data) && !empty($cv_bank_data)){
-                           echo $cv_bank_data['js_last_salary_hike'];
+                           echo date("d-m-Y", strtotime($cv_bank_data['js_last_salary_hike']));
                         } ?>">
                        <!--  <span><i class="fa fa-calendar" aria-hidden="true"></i></span> -->  
                         <?php echo form_error('last_salary_hike'); ?>     
