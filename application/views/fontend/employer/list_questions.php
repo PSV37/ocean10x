@@ -1436,7 +1436,7 @@ span.select2-selection.select2-selection--single {
                         <div class="dd-button">
                            Filter
                         </div>
-                        <input type="checkbox" class="dd-input" id="test">
+                        <input type="checkbox" class="dd-input" data-keyboard="true" id="test">
                         <ul class="dd-menu">
                            <li>Action</li>
                            <li>Another action</li>
