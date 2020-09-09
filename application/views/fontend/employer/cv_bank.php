@@ -1081,7 +1081,7 @@ button#sklbtn {
                         <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1" style="top:20px;">
-                          <?php if (isset($company_active_jobs) && empty($company_active_jobs)) { ?>
+                          <?php if (isset($company_active_jobs) && !empty($company_active_jobs)) { ?>
                            <li ><a class="dropdown-item" href="#" id="div_frwrd" data-toggle="modal" data-keyboard="true" data-target="#rotateModal<?php echo $cv_row['cv_id']; ?>" >Forward Job Post</a></li>
                         <?php } ?>
                            <?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ ?>
