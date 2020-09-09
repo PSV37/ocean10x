@@ -251,12 +251,10 @@
    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
    box-shadow: 0 6px 12px rgba(0,0,0,.175);
    }
-   .check {
-    right: 55px;
-    z-index: 999;
-    margin-top: 6px;
-    position: absolute;
-}
+   .check{right: 28px;
+   z-index: 999;
+   margin-top: 29px;
+   position:absolute;}
    @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
    @keyframes bake-pie {
    from {
@@ -955,8 +953,7 @@ button#sklbtn {
             </div>
             <div class="row"  id="bulk">
                <label class="dropdown bulkdropdown" style="float:left;">
-                       <!-- <div class="dd-button" onclick="myFunction(event)">-->
-                        <div class="dd-button" onclick="myFunction()">
+                        <div class="dd-button" onclick="myFunction(event)">
                            Bulk Action
                         </div>
                         <input type="checkbox" class="dd-input" id="test1">
@@ -1042,7 +1039,7 @@ button#sklbtn {
                         <div class="job-info">
                            <div class="a" style="display: inline-flex;">
                               <li class="right-title" style="font-size:19px;margin-top:-4px;"  ><?php echo $cv_row['js_name']; ?></li>
-                              <li class="right-title" style="font-size: 14px;margin-top:-4px;;margin-left: -106px;width: fit-content;"><?php echo $cv_row['js_email']; ?></li>
+                              <li class="right-title" style="font-size: 15px;margin-top:-4px;font-weight: 600;margin-left: -106px;width: fit-content;"><?php echo $cv_row['js_email']; ?></li>
                            </div>
                         </div>
                         <div class="following-info">
@@ -1081,9 +1078,7 @@ button#sklbtn {
                         <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1" style="top:20px;">
-                          <?php if (isset($company_active_jobs) && empty($company_active_jobs)) { ?>
                            <li ><a class="dropdown-item" href="#" id="div_frwrd" data-toggle="modal" data-keyboard="true" data-target="#rotateModal<?php echo $cv_row['cv_id']; ?>" >Forward Job Post</a></li>
-                        <?php } ?>
                            <?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ ?>
                            <li id="div_download"> <a class="dropdown-item"  href="<?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ echo base_url(); echo 'upload/Resumes/'.$cv_row['js_resume']; } ?>" download >Download this cv</a></li>
                            <?php } ?>
@@ -1582,16 +1577,9 @@ button#sklbtn {
                <input type="hidden" name="consultant" value="JobSeeker">  
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                   <label class="mdl-textfield__label" for="sample3">job Post:</label>
-                  <select class="form-control select2" name="job_post_id" id="job_select" >
-                     <?php  if (isset($company_active_jobs) && !empty($company_active_jobs)) {
-                        foreach ($company_active_jobs as $row) { ?>
-                          <option  value="<?php echo $row->job_post_id; ?>"><?php echo $row->job_title; ?></option>
-                     <?php   }
-                     }  ?>
-                     </select>
-                  <!-- <input type="text"  name="job_title"  id="job_title" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required>
+                  <input type="text"  name="job_title"  id="job_title" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required>
                </div>
-               <input type="hidden" name="job_post_id" value="" id="auto-value"> -->
+               <input type="hidden" name="job_post_id" value="" id="auto-value">
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
                   <label class="mdl-textfield__label" for="sample3">Message:</label>
                   <textarea class="form-control" name="message" rows="5" id="comment" value="" required>Dear Candidate,
@@ -1609,8 +1597,7 @@ button#sklbtn {
                <input type="hidden" name="forward_job_email" id="forward_job_email" value="<?php echo $cv_row['js_email']; ?>">
             </div>
             <div class="modal-footer">
-               <button type="submit" class="btn btn-save" <?php  if (isset($company_active_jobs) && empty($company_active_jobs)) { ?> disabled
-                    <?php   } ?> >Send</button>
+               <button type="submit" class="btn btn-save">Send</button>
             </div>
          </form>
       </div>
@@ -4197,7 +4184,7 @@ rng.addEventListener("input", updateRange);
 
 <script>
 function myFunction() {
-  var x = document.getElementById("bulk").selectedIndex;
+  var x = document.getElementById("myDropdown").selectedIndex;
   alert(document.getElementsByTagName("option")[x].value);
 }
 </script>
