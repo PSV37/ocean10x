@@ -26,7 +26,7 @@ ul.select2-results__options {
     /*font-weight: bold;*/
    color: red;
    }
-   div#cke_1_contents {
+  div.cke_contents {
     height: 100px !important;
 }
 </style>
