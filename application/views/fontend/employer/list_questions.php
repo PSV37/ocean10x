@@ -1511,7 +1511,7 @@ span.select2-selection.select2-selection--single {
                            </div>
                         </ul>
                      </div>
-                     <p>
+                     <br><p>
                         <a class="toggle btn " href="#example<?php echo $ct_row['question_id'] ?>">show answer</a>
                      </p>
                      <div class="toggle-content" id="example<?php echo $ct_row['question_id'] ?>">
