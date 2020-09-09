@@ -128,7 +128,7 @@ ul.select2-results__options {
     <div class="row">
        <div class="col-md-12 form-group">
         <label for="comment">Question </label>
-        <textarea class="form-control" name="question" rows="5" id="froala-editor"   ><?php if (!empty($edit_questionbank_info)) echo $row['question'];?></textarea> <?php echo form_error('question'); ?>   
+        <textarea class="form-control ckeditor" name="question" rows="5" id="froala-editor"   ><?php if (!empty($edit_questionbank_info)) echo $row['question'];?></textarea> <?php echo form_error('question'); ?>   
       </div>
     
        <div class="col-md-12 form-group">
