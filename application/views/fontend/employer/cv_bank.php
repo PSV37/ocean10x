@@ -1607,7 +1607,8 @@ button#sklbtn {
                <input type="hidden" name="forward_job_email" id="forward_job_email" value="<?php echo $cv_row['js_email']; ?>">
             </div>
             <div class="modal-footer">
-               <button type="submit" class="btn btn-save" >Send</button>
+               <button type="submit" class="btn btn-save" <?php  if (isset($company_active_jobs) && empty($company_active_jobs)) { ?> disabled
+                    <?php   } ?> >Send</button>
             </div>
          </form>
       </div>
