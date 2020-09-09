@@ -1433,10 +1433,10 @@ span.select2-selection.select2-selection--single {
                      <p style="FONT-SIZE: 12PX;COLOR: #0a5854;">Total No. Of Question:<?php echo sizeof($questionbank); ?></p>
                     
                      <label class="dropdown">
-                        <div class="dd-button">
+                        <div class="dd-button" onclick="myFunction(event)">
                            Filter
                         </div>
-                        <input type="checkbox" class="dd-input" data-keyboard="true" id="test">
+                        <input type="checkbox" class="dd-input" id="test">
                         <ul class="dd-menu">
                            <li>Action</li>
                            <li>Another action</li>
@@ -2006,6 +2006,33 @@ span.select2-selection.select2-selection--single {
      $("#smsg").slideUp(500);
      });   
    });
+
+   window.onclick = function(event) {
+if ($('#test1').is(":checked")) 
+{
+   $('#test1').click();
+}
+if ($('#test').is(":checked")) 
+{
+   $('#test').click();
+}
+  //  var atLeastOneIsChecked = $('#test1:checkbox:checked').length > 0;
+  // document.getElementById("myDropdown").classList.remove("show");
+  // document.getElementById("sizelist").classList.remove("show");
+}
+$(document).keyup(function(e) {
+     if (e.keyCode == 27) { // escape key maps to keycode `27`
+      // alert('dd');
+      if ($('#test1').is(":checked")) 
+         {
+            $('#test1').click();
+         }
+         if ($('#test').is(":checked")) 
+         {
+            $('#test').click();
+         }
+    }
+});
 </script>
    <script>
   $(document).on('focus', '.select2-selection.select2-selection--single', function (e) {
