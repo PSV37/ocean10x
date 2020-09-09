@@ -652,6 +652,7 @@
    border-radius: 46px;
    color: #fff;
    font-weight: 700;
+   margin-left: -7px;
    }
    button.reset_filter:hover {
    background-color:#15a8a1;
