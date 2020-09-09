@@ -956,10 +956,10 @@ button#sklbtn {
             </div>
             <div class="row"  id="bulk">
                <label class="dropdown bulkdropdown" style="float:left;">
-                        <!-- <div class="dd-button"  onclick="myFunction(event)">
+                         <div class="dd-button"  onclick="myFunction(event)">
                            Bulk Action
-                        </div>-->
-                        <button class="dd-button dropdown dropdown-toggle" type="button" data-toggle="dropdown" onclick="myFunction(event)">Bulk Action</button>
+                        </div>
+                       <!--  <button class="dd-button dropdown dropdown-toggle" type="button" data-toggle="dropdown" onclick="myFunction(event)">Bulk Action</button> -->
                         <input type="checkbox" class="dd-input" id="test1">
                     
                         <ul id="myDropdown"  class="dd-menu">
@@ -1760,7 +1760,7 @@ if ($('#test').is(":checked"))
 }
 $(document).keyup(function(e) {
      if (e.keyCode == 27) { // escape key maps to keycode `27`
-      alert('dd');
+      // alert('dd');
       if ($('#test1').is(":checked")) 
          {
             $('#test1').click();
