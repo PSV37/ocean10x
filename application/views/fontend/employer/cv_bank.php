@@ -952,10 +952,12 @@ button#sklbtn {
                </div>
             </div>
             <div class="row"  id="bulk">
-               <label class="dropdown dropdown-toggle bulkdropdown" style="float:left;">
-                        <div class="dd-button"  onclick="myFunction(event)">
+               <label class="dropdown bulkdropdown" style="float:left;">
+                        <!-- <div class="dd-button"  onclick="myFunction(event)">
                            Bulk Action
-                        </div>
+                        </div>-->
+                        <button class="dd-button dropdown-toggle" type="button" data-toggle="dropdown">Bulk Action
+                        <span class="caret"></span></button>
                         <input type="checkbox" class="dd-input" id="test1">
                     
                         <ul id="myDropdown"  class="dd-menu">
