@@ -3462,7 +3462,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             // $where_c['company_id'] = $company_id;
             $join = array('education_level' => 'education_level.education_level_id = corporate_cv_bank.js_top_education | left outer');
             $data['cv_bank_data'] = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join , $order = 'desc', $field = 'cv_id', $select = false, $limit = false, $start = false, $search = false);
-             $data['company_active_jobs'] = $this->job_posting_model->get_company_activedeasline_jobs($employer_id);
+             $data['company_active_jobs'] = $this->job_posting_model->get_company_activedeasline_jobs($company_id);
             $this->load->view('fontend/employer/cv_bank', $data);
         }
         // $this->load->view('fontend/employer/corporate_cv_bank',$data);
