@@ -26,6 +26,9 @@ ul.select2-results__options {
     /*font-weight: bold;*/
    color: red;
    }
+   div#cke_1_contents {
+    height: 100px !important;
+}
 </style>
 
  <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/questionbank.css">
