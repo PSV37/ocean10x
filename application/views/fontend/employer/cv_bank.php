@@ -953,7 +953,7 @@ button#sklbtn {
             </div>
             <div class="row"  id="bulk">
                <label class="dropdown bulkdropdown" style="float:left;">
-                        <div class="dd-button" onclick="myFunction(event)">
+                        <div class="dd-button" aria-labelledby="myDropdown"    onclick="myFunction(event)">
                            Bulk Action
                         </div>
                         <input type="checkbox" class="dd-input" id="test1">
@@ -4187,9 +4187,5 @@ window.addEventListener("DOMContentLoaded", updateRange);
 rng.addEventListener("input", updateRange);
 </script>
 
-<script>
-function myFunction() {
-  var x = document.getElementById("myDropdown").selectedIndex;
-  alert(document.getElementsByTagName("option")[x].value);
-}
-</script>
+
+
