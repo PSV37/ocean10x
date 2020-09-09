@@ -251,10 +251,12 @@
    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
    box-shadow: 0 6px 12px rgba(0,0,0,.175);
    }
-   .check{right: 28px;
-   z-index: 999;
-   margin-top: 29px;
-   position:absolute;}
+   .check {
+    right: 55px;
+    z-index: 999;
+    margin-top: 5px;
+    position: absolute;
+}
    @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
    @keyframes bake-pie {
    from {
