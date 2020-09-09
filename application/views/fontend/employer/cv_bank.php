@@ -252,10 +252,12 @@
    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
    box-shadow: 0 6px 12px rgba(0,0,0,.175);
    }
-   .check{right: 28px;
-   z-index: 999;
-   margin-top: 29px;
-   position:absolute;}
+   .check {
+    right: 55px;
+    z-index: 999;
+    margin-top: 6px;
+    position: absolute;
+}
    @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
    @keyframes bake-pie {
    from {
@@ -1040,7 +1042,7 @@ button#sklbtn {
                         <div class="job-info">
                            <div class="a" style="display: inline-flex;">
                               <li class="right-title" style="font-size:19px;margin-top:-4px;"  ><?php echo $cv_row['js_name']; ?></li>
-                              <li class="right-title" style="font-size: 15px;margin-top:-4px;font-weight: 600;margin-left: -106px;width: fit-content;"><?php echo $cv_row['js_email']; ?></li>
+                              <li class="right-title" style="font-size: 14px;margin-top:-4px;;margin-left: -106px;width: fit-content;"><?php echo $cv_row['js_email']; ?></li>
                            </div>
                         </div>
                         <div class="following-info">
