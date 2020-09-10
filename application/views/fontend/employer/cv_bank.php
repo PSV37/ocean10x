@@ -1657,7 +1657,22 @@ button#sklbtn {
            
 
 <script>
-   
+    $(document).ready (function(){
+     $("#smsg").fadeTo(2000, 500).slideUp(500, function(){
+     $("#smsg").slideUp(500);
+     });   
+   });
+
+     window.onclick = function(event) {
+if ($('#test1').is(":checked")) 
+{
+   $('#test1').click();
+}
+if ($('#test').is(":checked")) 
+{
+   $('#test').click();
+}
+}
 $(document).keyup(function(e) {
      if (e.keyCode == 27) { // escape key maps to keycode `27`
       // alert('dd');
