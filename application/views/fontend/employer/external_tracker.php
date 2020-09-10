@@ -466,7 +466,7 @@ textarea#comment {
                <div class="col-md-3">
                   <form method="post" action="<?php echo base_url(); ?>employer/corporate_cv_bank">
                   <label class="dropdown" style="float:right;">
-                     <div class="dd-button">
+                     <div class="dd-button" onclick="myFunction(event)">
                         Active Job
                      </div>
                      <input type="checkbox" class="dd-input" id="test">
@@ -593,6 +593,43 @@ textarea#comment {
       </div>
    </div>
 </div>
+
+<script>
+   $(document).ready (function(){
+     $("#smsg").fadeTo(2000, 500).slideUp(500, function(){
+     $("#smsg").slideUp(500);
+     });   
+   });
+
+  var addclass = 'show';
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+if ($('#test1').is(":checked")) 
+{
+   $('#test1').click();
+}
+if ($('#test').is(":checked")) 
+{
+   $('#test').click();
+}
+  //  var atLeastOneIsChecked = $('#test1:checkbox:checked').length > 0;
+  // document.getElementById("myDropdown").classList.remove("show");
+  // document.getElementById("sizelist").classList.remove("show");
+}
+$(document).keyup(function(e) {
+     if (e.keyCode == 27) { // escape key maps to keycode `27`
+      // alert('dd');
+      if ($('#test1').is(":checked")) 
+         {
+            $('#test1').click();
+         }
+         if ($('#test').is(":checked")) 
+         {
+            $('#test').click();
+         }
+    }
+});
+</script>
 
 <script>
  function get_value(tracking_id)
