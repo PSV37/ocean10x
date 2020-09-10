@@ -5408,7 +5408,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $current_ctc_var = $this->input->post('current_ctc');
         //$stablity_var = $this->input->post('stability');
         $company_id = $this->session->userdata('company_profile_id');
-        $where_active = "corporate_cv_bank.company_id = '$company_id'";
+        $where_active = "(corporate_cv_bank.company_id = '$company_id' and login BETWEEN DATE_SUB(NOW(), INTERVAL 30 DAY) And  NOW() )";
 
         $stability=$this->input->post('stability');
 //$days_count=30*stability;
@@ -5435,7 +5435,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
 
         
-        $where_active .= "and login BETWEEN DATE_SUB(NOW(), INTERVAL 30 DAY) And  NOW()   OR corporate_cv_bank.js_experience='$exp_var' OR corporate_cv_bank.js_current_notice_period='$notice_period_var' OR corporate_cv_bank.js_top_education = '$education_var' OR corporate_cv_bank.js_current_ctc='$current_ctc_var' OR corporate_cv_bank.js_working_since = '$stability'";
+        $where_active .= "  and (corporate_cv_bank.js_experience='$exp_var' OR corporate_cv_bank.js_current_notice_period='$notice_period_var' OR corporate_cv_bank.js_top_education = '$education_var' OR corporate_cv_bank.js_current_ctc='$current_ctc_var' OR corporate_cv_bank.js_working_since = '$stability')";
 
         $where_active.= ' GROUP by cv_id';
 
