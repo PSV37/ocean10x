@@ -478,7 +478,7 @@
    </div>
    <span class="open_sidebar"  onclick="openNav()">&#9776; open</span>   
 </div>
-<div class="modal fade" id="myModal" role="dialog">
+<div class="modal fade" id="myModal" role="dialog" tabindex="-1">
    <div class="modal-dialog modal-sm">
       <div class="modal-content">
          <form method="post" action="<?php echo base_url(); ?>employer/rename_folder">
