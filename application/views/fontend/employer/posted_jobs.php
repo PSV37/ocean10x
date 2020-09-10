@@ -261,7 +261,10 @@
    .card div {border-radius:0px !important;}    
    .following-info{margin-bottom:10px;}
    .following-info2{margin-bottom:10px;}   
-   .following-info3{margin-bottom:10px; margin-top: -154px;}
+   .following-info3 {
+    margin-bottom: 10px;
+    margin-top: -107px;
+}
    .active-job label {
    transform-style: preserve-3d;
    display: block;
@@ -1026,7 +1029,7 @@
                <li class="right-title" style="width:100%;"> &emsp;<?php echo $v_companyjobs->experience; ?>(experience)</li>
                <div class="clear"></div>
             </div>
-          
+
             <div class="following-info">
                <li class="left-title"
                   >Job Roll</li>
@@ -1068,7 +1071,7 @@
                <div class="clear"></div>
             </div>
             <!-- <div id="skills"> -->
-               <br>
+               <br><br>
             <span>Skill sets</span>:
             <?php 
                $sk=$v_companyjobs->skills_required;
@@ -1166,7 +1169,7 @@
               
             </div>
             <div class="modal-footer">
-               <button type="submit" class="btn btn-save">Send</button>
+               <button type="submit" class="btn btn-save">Attach Test</button>
             </div>
          </form>
       </div>
