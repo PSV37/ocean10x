@@ -64,7 +64,7 @@
                         <?php echo 'option'.$ct_row['answer_id'] .': '. $ct_row['option'.$ct_row['answer_id']] ?>
                      </div>
                      <div class="btn-group">
-                        <a href=" <?php echo base_url('employer/recover_questionbank/' . $ct_row['ques_id']); ?>"><i class="fas fa-trash-restore icon_backg"></i></a>
+                        <a title="restore" href=" <?php echo base_url('employer/recover_questionbank/' . $ct_row['ques_id']); ?>" ><i class="fas fa-trash-restore icon_backg"></i></a>
                       
                      </div>
                   </div>
