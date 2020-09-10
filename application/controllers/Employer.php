@@ -5408,34 +5408,34 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $current_ctc_var = $this->input->post('current_ctc');
         //$stablity_var = $this->input->post('stability');
         $company_id = $this->session->userdata('company_profile_id');
+        $where_active = "corporate_cv_bank.company_id = '$company_id'";
 
         $stability=$this->input->post('stability');
 //$days_count=30*stability;
         if($stability==6){
-            $before_date = date('Y-m-d', strtotime("-".$stability." months"));
+            $before_date .= date('Y-m-d', strtotime("-".$stability." months"));
             $where_active = "corporate_cv_bank.js_working_since <= '".$before_date."'";
         }
         if($stability==12){
             $before_months=6;
             $after_date = date('Y-m-d', strtotime("-".$stability." months"));
             $before_date = date('Y-m-d', strtotime("-".$before_months." months"));
-            $where_active = "corporate_cv_bank.js_working_since <= '".$after_date."' and corporate_cv_bank.js_working_since >= '".$before_date."'";
+            $where_active .= "corporate_cv_bank.js_working_since <= '".$after_date."' and corporate_cv_bank.js_working_since >= '".$before_date."'";
         }           
         if($stability==24){
             $before_months=12;
             $after_date = date('Y-m-d', strtotime("-".$stability." months"));
             $before_date = date('Y-m-d', strtotime("-".$before_months." months"));
-            $where_active = "corporate_cv_bank.js_working_since <= '".$after_date."' and corporate_cv_bank.js_working_since >= '".$before_date."'";
+            $where_active .= "corporate_cv_bank.js_working_since <= '".$after_date."' and corporate_cv_bank.js_working_since >= '".$before_date."'";
         }
         if($stability==30){
             $before_date = date('Y-m-d', strtotime("-".$stability." months"));
-            $where_active = "corporate_cv_bank.js_working_since >= '".$before_date."'";
+            $where_active .= "corporate_cv_bank.js_working_since >= '".$before_date."'";
         }
 
 
-        $where_active = "corporate_cv_bank.company_id = '$company_id'"
-
-        $where_active = "and login BETWEEN DATE_SUB(NOW(), INTERVAL 30 DAY) And  NOW()   OR corporate_cv_bank.js_experience='$exp_var' OR corporate_cv_bank.js_current_notice_period='$notice_period_var' OR corporate_cv_bank.js_top_education = '$education_var' OR corporate_cv_bank.js_current_ctc='$current_ctc_var' OR corporate_cv_bank.js_working_since = '$stability'";
+        
+        $where_active .= "and login BETWEEN DATE_SUB(NOW(), INTERVAL 30 DAY) And  NOW()   OR corporate_cv_bank.js_experience='$exp_var' OR corporate_cv_bank.js_current_notice_period='$notice_period_var' OR corporate_cv_bank.js_top_education = '$education_var' OR corporate_cv_bank.js_current_ctc='$current_ctc_var' OR corporate_cv_bank.js_working_since = '$stability'";
 
         $where_active.= ' GROUP by cv_id';
 
