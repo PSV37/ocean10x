@@ -87,8 +87,8 @@ label {
                      <?php  $designation = $this->Master_model->getMaster('designation',$where=false);
                         $department = $this->Master_model->getMaster('department',$where=false); ?>
                      <li class="bullet">
-                        <a href="#" data-toggle="modal" data-target="#myModal25">skills</a>
-                        <div class="modal fade" id="myModal25" role="dialog">
+                        <a href="#" data-toggle="modal" data-keyboard="true" data-target="#myModal25">skills</a>
+                        <div class="modal fade" id="myModal25" tabindex='-1' role="dialog">
                            <div class="modal-dialog modal-md">
                               <div class="modal-content">
                                  <div class="modal-header">
