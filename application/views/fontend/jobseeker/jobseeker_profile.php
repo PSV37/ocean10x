@@ -87,8 +87,8 @@ label {
                      <?php  $designation = $this->Master_model->getMaster('designation',$where=false);
                         $department = $this->Master_model->getMaster('department',$where=false); ?>
                      <li class="bullet">
-                        <a href="#" data-toggle="modal" data-target="#myModal25">skills</a>
-                        <div class="modal fade" id="myModal25" role="dialog">
+                        <a href="#" data-toggle="modal" data-keyboard="true" data-target="#myModal25">skills</a>
+                        <div class="modal fade" id="myModal25" tabindex='-1' role="dialog">
                            <div class="modal-dialog modal-md">
                               <div class="modal-content">
                                  <div class="modal-header">
@@ -163,7 +163,7 @@ label {
                      <?php endif; ?>
                   </div>
                </div>
-               <div id="Updateskills" class="modal fade" role="dialog">
+               <div id="Updateskills" class="modal fade" tabindex='-1' role="dialog">
                <div class="modal-dialog modal-md">
                   <div class="modal-content">
                      <div class="modal-header">
@@ -1825,7 +1825,7 @@ label {
                         $department = $this->Master_model->getMaster('department',$where=false); ?>
                      <li class="bullet">
                         <a href="#" data-toggle="modal" data-target="#myModal5">Work Experience</a>
-                        <div class="modal fade" id="myModal5" role="dialog">
+                        <div class="modal fade" id="myModal5" tabindex='-1' role="dialog">
                            <div class="modal-dialog modal-md">
                               <div class="modal-content">
                                  <div class="modal-header">
@@ -2082,7 +2082,7 @@ label {
                         ?>
                      <li class="bullet">
                         <a href="#" data-toggle="modal" data-target="#myModal7">My Trannings</a>
-                        <div class="modal fade" id="myModal7" role="dialog">
+                        <div class="modal fade" id="myModal7" tabindex='-1' role="dialog">
                            <div class="modal-dialog modal-md">
                               <div class="modal-content">
                                  <div class="modal-header">
