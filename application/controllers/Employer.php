@@ -5549,9 +5549,9 @@ public function get_test_list()
    {
         $employer_id = $this->session->userdata('company_profile_id');
         $test_status = $this->input->post('test_status');
-        $where_all = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id' and test_status = ' $test_status'";
+        $where_all = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id' and test_status = '$test_status'";
         $oceanchamp_tests = $this->Master_model->getMaster('oceanchamp_tests', $where = $where_all, $join = FALSE, $order = 'desc', $field = 'oceanchamp_tests.test_id', $select = false, $limit = false, $start = false, $search = false);
-        print_r($this->db->last_query());
+        // print_r($this->db->last_query());
 
         if (!empty($oceanchamp_tests)) {
             $result.= '<option value="">Select Test</option>';

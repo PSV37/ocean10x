@@ -1026,6 +1026,7 @@
                <li class="right-title" style="width:100%;"> &emsp;<?php echo $v_companyjobs->experience; ?>(experience)</li>
                <div class="clear"></div>
             </div>
+          
             <div class="following-info">
                <li class="left-title"
                   >Job Roll</li>
@@ -1067,6 +1068,7 @@
                <div class="clear"></div>
             </div>
             <!-- <div id="skills"> -->
+               <br>
             <span>Skill sets</span>:
             <?php 
                $sk=$v_companyjobs->skills_required;
