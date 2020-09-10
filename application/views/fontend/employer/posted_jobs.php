@@ -941,38 +941,38 @@
    }
    }
    .modal-footer {
-    background: none;
-}
-.alert.alert-success.alert-dismissable {
-    /* margin-bottom: -17px; */
-    margin-left: 175px;
-    /* margin-top: 0px; */
-    /* background: black; */
-    height: 26px;
-    width: auto;
-    padding: 14px;
-}
-.alert.alert-success.text-center {
-    width: 100%;
-    height: 30px;
-    border-radius: 0;
-    text-align: center;
-    padding: 13px;
-    background: transparent;
-    background-color: #68dcd7;
-    font-weight: bold;
-}
-.alert.alert-warning.text-center {
-    width: 100%;
-    height: 30px;
-    border-radius: 0;
-    text-align: center;
-    padding: 13px;
-    background: transparent;
-    background-color: #f0ad4e;
-    font-weight: bold;
-}
-/*.ui-autocomplete-input {
+   background: none;
+   }
+   .alert.alert-success.alert-dismissable {
+   /* margin-bottom: -17px; */
+   margin-left: 175px;
+   /* margin-top: 0px; */
+   /* background: black; */
+   height: 26px;
+   width: auto;
+   padding: 14px;
+   }
+   .alert.alert-success.text-center {
+   width: 100%;
+   height: 30px;
+   border-radius: 0;
+   text-align: center;
+   padding: 13px;
+   background: transparent;
+   background-color: #68dcd7;
+   font-weight: bold;
+   }
+   .alert.alert-warning.text-center {
+   width: 100%;
+   height: 30px;
+   border-radius: 0;
+   text-align: center;
+   padding: 13px;
+   background: transparent;
+   background-color: #f0ad4e;
+   font-weight: bold;
+   }
+   /*.ui-autocomplete-input {
    border: none; 
    font-size: 14px;
    width: 300px;
@@ -990,28 +990,25 @@
    width: 0%;
    }
    .highlight_div {
-     border: 1px solid ;
-  padding: 10px;
-  box-shadow: 5px 5px #888888;
-}
-.active-job label:hover {
-    /* box-shadow: 0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06)!important; */
-}
-input#posted_job {
-    display: none;
-   
-}
+   border: 1px solid ;
+   padding: 10px;
+   box-shadow: 5px 5px #888888;
+   }
+   .active-job label:hover {
+   /* box-shadow: 0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06)!important; */
+   }
+   input#posted_job {
+   display: none;
+   }
 </style>
-
 <div class="container-fluid main-d">
 <div class="container">
 <div class="col-md-12">
 <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
 <!-- <div class="panel-body"></div> -->
-        
-
 <div class="col-md-6 active-job">
-   <div id="smsg"> <?php echo $this->session->flashdata('success'); ?></div><br><br>
+   <div id="smsg"> <?php echo $this->session->flashdata('success'); ?></div>
+   <br><br>
    <?php if (!empty($company_active_jobs)): foreach ($company_active_jobs as $v_companyjobs) : ?>
    <label class="checkbox_label">
       <div class="border-top1"></div>
@@ -1112,7 +1109,7 @@ input#posted_job {
                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1">
                   <li><a class="dropdown-item" href="#">View post job</a></li>
                   <li> <a class="dropdown-item" href="<?php echo base_url() ?>employer/update_job/<?php echo $v_companyjobs->job_post_id ?>">Edit job post</a></li>
-                  <li> <a class="dropdown-item" href="#">Edit test topic</a></li>
+                 <li ><a class="dropdown-item" href="#" id="attach_to_job" data-toggle="modal" data-target="#attach_test<?php echo $v_companyjobs->job_post_id ?>" >Attach Test</a></li>
                </div>
             </div>
          </div>
@@ -1125,6 +1122,54 @@ input#posted_job {
    </li>
    <?php endif; ?>
 </div>
+ <?php if (!empty($company_active_jobs)): foreach ($company_active_jobs as $v_companyjobs) : ?>
+   <div class="modal" id="attach_test<?php echo $v_companyjobs->job_post_id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+   <div class="modal-dialog" role="document">
+      <div class="modal-content">
+         <div class="modal-header" style="border-bottom:none;">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Attach Test To This Job</h5>
+         </div>
+         <form action="<?php echo base_url() ?>employer/attach_test" class="sendEmail" method="post" autocomplete="off">
+            <input type="hidden" name="job_post_id" id="job_post_id" value="<?php echo $v_companyjobs->job_post_id; ?>">
+            <div class="modal-body" style="padding:15px 40px;">
+               <input type="hidden" name="consultant" value="JobSeeker">  
+               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                 <div class="col-sm-10">
+                 <div class="form-check">
+                   <label class="form-check-label">
+                     <input class="form-check-input radio-inline" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                     Ocean Test Paper</label>
+                     <label class="form-check-label">
+                     <input class="form-check-input radio-inline" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                     Use My Q-Bank</label>
+                    
+                 </div>
+                 <!--  <label class="mdl-textfield__label" for="sample3">Active Job:</label> -->
+             <!--   <select class="form-control select2" name="job_id">
+                  <?php foreach ($company_active_jobs as $row) { ?>
+                   <option value="<?php echo $row->job_post_id ?>"><?php echo $row->job_title?></option>
+                 <?php } ?>
+               </select> -->
+               </div>
+              
+              
+             
+              
+            </div>
+            <div class="modal-footer">
+               <button type="submit" class="btn btn-save">Send</button>
+            </div>
+         </form>
+      </div>
+   </div>
+</div>
+    <?php endforeach; 
+      else : ?> 
+   <li>
+      <strong>There are no Active Job Posts to Display !</strong>
+   </li>
+   <?php endif; ?>
 <div class="col-md-3 ">
    <div class="last_section">
       <div class="pai_chart">
@@ -1137,7 +1182,7 @@ input#posted_job {
                      <em>Total Active Job Posts</em>
                      <span><?php echo sizeof($company_active_jobs); ?></span>
                      <!--<span>718</span> -->
-                  </li>    
+                  </li>
                   <li>
                      <em> Sent to Candidates</em>
                      <span id='total_forwarded'> </span>
@@ -1161,7 +1206,7 @@ input#posted_job {
                   <li>
                      <em>Interview Failed</em>
                      <span id='total_test_int_fail'></span>
-                  </li>     
+                  </li>
                   <li>
                      <em>Offer Accepted</em>
                      <span id='total_offer_accept'></span>
@@ -1170,7 +1215,6 @@ input#posted_job {
                      <em>Early Applications</em>
                      <span id='early_applications'></span>
                   </li>
-
                </ul>
             </section>
          </main>
@@ -1322,20 +1366,20 @@ input#posted_job {
 <?php
    endforeach;endif;
    ?>
-   <script>
-      $('.checkbox_label').click(function ()
+<script>
+   $('.checkbox_label').click(function ()
    {
-      var checkbox = $(this).find('input[type=checkbox]');
-      $('.posted_job').prop("checked",false);
-      
-      checkbox.prop("checked", !checkbox.prop("checked"));
-      var addclass = 'highlight_div';
-      $('.checkbox_label').removeClass(addclass);
-      $(this).addClass(addclass);
+   var checkbox = $(this).find('input[type=checkbox]');
+   $('.posted_job').prop("checked",false);
+   
+   checkbox.prop("checked", !checkbox.prop("checked"));
+   var addclass = 'highlight_div';
+   $('.checkbox_label').removeClass(addclass);
+   $(this).addClass(addclass);
    });
-
-   </script>
-   <script>
+   
+</script>
+<script>
    $(document).ready (function(){
      $("#smsg").fadeTo(2000, 500).slideUp(500, function(){
      $("#smsg").slideUp(500);
@@ -1343,7 +1387,6 @@ input#posted_job {
    });
 </script>
 <script>
-    
    $("#email").autocomplete({
              
              source: "<?php echo base_url();?>Employer/get_candidate_by_email",
@@ -1353,9 +1396,9 @@ input#posted_job {
     
             
            });
-
+   
 </script>
-   <script>
+<script>
    function sliceSize(dataNum, dataTotal) {
      return (dataNum / dataTotal) * 360;
    }
@@ -1545,58 +1588,57 @@ input#posted_job {
    }
 </script>
 <script>
-  function  get_report_data(id)
-  {
-       
-            // if($('#posted_job').is(":checked")){
-                console.log("Checkbox is checked.");
-
-                $.ajax({
-                 url:"<?php echo base_url();?>Employer/job_post_report",
-                 data: {id:id},
-                 type: 'post',
-                 success: function(response){
-                   var getarray = jQuery.parseJSON(response);
-                   console.log(getarray.Total_count_forwarded);
-                   var total_count = getarray.Total_count_forwarded;
-
-                   console.log(getarray.Total_count_applied);
-                   var total_count_applied = getarray.Total_count_applied;
-
-                   console.log(getarray.Total_count_test_given);
-                   var total_given_test = getarray.Total_count_test_given;
-
-                   var total_test_passed = getarray.Total_count_test_passed;
-                   var total_test_interview_passed = getarray.Total_count_inteviewed_passed;
-                   var total_test_interview_failed = getarray.Total_count_inteviewed_failed;
-
-                   var total_offer_accepted = getarray.Total_offer_accepted;
-
-                   var total_count_early_applied = getarray.Total_count_early_applied;
-
-                   $('#total_forwarded').html(total_count.length);
-                   $('#total_applied').html(total_count_applied.length);
-                   $('#total_test').html(total_given_test.length);
-
-                   $('#total_passed').html(total_test_passed.length);
-                   $('#total_test_int_pass').html(total_test_interview_passed.length);
-                   $('#total_test_int_fail').html(total_test_interview_failed.length);
-
-                   $('#total_offer_accept').html(total_offer_accepted.length);
-
-                   $('#early_applications').html(total_count_early_applied.length);
-
-                 }
-               });
-            // }
-
-
-            
-        }
-
-
+   function  get_report_data(id)
+   {
+        
+             // if($('#posted_job').is(":checked")){
+                 console.log("Checkbox is checked.");
    
-
-
+                 $.ajax({
+                  url:"<?php echo base_url();?>Employer/job_post_report",
+                  data: {id:id},
+                  type: 'post',
+                  success: function(response){
+                    var getarray = jQuery.parseJSON(response);
+                    console.log(getarray.Total_count_forwarded);
+                    var total_count = getarray.Total_count_forwarded;
+   
+                    console.log(getarray.Total_count_applied);
+                    var total_count_applied = getarray.Total_count_applied;
+   
+                    console.log(getarray.Total_count_test_given);
+                    var total_given_test = getarray.Total_count_test_given;
+   
+                    var total_test_passed = getarray.Total_count_test_passed;
+                    var total_test_interview_passed = getarray.Total_count_inteviewed_passed;
+                    var total_test_interview_failed = getarray.Total_count_inteviewed_failed;
+   
+                    var total_offer_accepted = getarray.Total_offer_accepted;
+   
+                    var total_count_early_applied = getarray.Total_count_early_applied;
+   
+                    $('#total_forwarded').html(total_count.length);
+                    $('#total_applied').html(total_count_applied.length);
+                    $('#total_test').html(total_given_test.length);
+   
+                    $('#total_passed').html(total_test_passed.length);
+                    $('#total_test_int_pass').html(total_test_interview_passed.length);
+                    $('#total_test_int_fail').html(total_test_interview_failed.length);
+   
+                    $('#total_offer_accept').html(total_offer_accepted.length);
+   
+                    $('#early_applications').html(total_count_early_applied.length);
+   
+                  }
+                });
+             // }
+   
+   
+             
+         }
+   
+   
+    
+   
+   
 </script>
-

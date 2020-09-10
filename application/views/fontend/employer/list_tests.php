@@ -1321,7 +1321,7 @@ span.select2-selection.select2-selection--single {
                </div>
                <input type="hidden" name="job_post_id" value="" id="auto-value">
               
-               </div>
+             
                <input type="hidden" name="forward_job_email" id="forward_job_email" value="<?php echo $cv_row['js_email']; ?>">
             </div>
             <div class="modal-footer">
