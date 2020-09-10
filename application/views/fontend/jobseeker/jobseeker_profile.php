@@ -2082,7 +2082,7 @@ label {
                         ?>
                      <li class="bullet">
                         <a href="#" data-toggle="modal" data-target="#myModal7">My Trannings</a>
-                        <div class="modal fade" id="myModal7" role="dialog">
+                        <div class="modal fade" id="myModal7" tabindex='-1' role="dialog">
                            <div class="modal-dialog modal-md">
                               <div class="modal-content">
                                  <div class="modal-header">
