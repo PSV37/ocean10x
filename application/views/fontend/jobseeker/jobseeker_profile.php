@@ -1825,7 +1825,7 @@ label {
                         $department = $this->Master_model->getMaster('department',$where=false); ?>
                      <li class="bullet">
                         <a href="#" data-toggle="modal" data-target="#myModal5">Work Experience</a>
-                        <div class="modal fade" id="myModal5" role="dialog">
+                        <div class="modal fade" id="myModal5" tabindex='-1' role="dialog">
                            <div class="modal-dialog modal-md">
                               <div class="modal-content">
                                  <div class="modal-header">
