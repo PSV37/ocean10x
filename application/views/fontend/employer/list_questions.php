@@ -1422,7 +1422,9 @@ span.select2-selection.select2-selection--single {
                 { echo 'in active'; }
                 }else{  echo 'in active'; } ?> " id="qbank">
                 
-                   <a id="qbottons" style="margin-top: -41px;" href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Add a Question</i></button></a><br>
+                   <a id="qbottons" style="margin-top: -41px;" href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Add a Question</i></button></a>
+                    <a href="#"><button class="btn btn-primary"><i class="fas fa-trash-alt" onclick="get_trash();"></i>Trash</button></a>
+                   <br>
               
                    <a id="qbottons" style="margin-top: -25px;" href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Bulk Upload Questions</i></button></a>
               
@@ -1452,6 +1454,7 @@ span.select2-selection.select2-selection--single {
                      <span>Select all</span>
                      </label>
                   </div>
+                  <div id="trash_append">
                   <?php $key = 1; if (!empty($questionbank)): foreach ($questionbank as $ct_row) : ?>
                   <div class="question-box">
                      <div class="border-top"></div>
@@ -1533,6 +1536,7 @@ span.select2-selection.select2-selection--single {
                   <?php
                      endif; ?>
                   <div class=""></div>
+               </div>
                </div>
             </div>
          </div>
@@ -2028,6 +2032,18 @@ $(document).keyup(function(e) {
          }
     }
 });
+function get_trash()
+{
+   $.ajax({
+                type:'POST',
+               url:'<?php echo base_url();?>Employer/trash_cv',
+               data:{type:'qbqnk'},
+               success:function(res){
+                   $('#trash_append').html(res);
+                   // $('#company_pincode').val('');
+               }
+            })
+}
 </script>
    <script>
   $(document).on('focus', '.select2-selection.select2-selection--single', function (e) {

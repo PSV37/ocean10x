@@ -934,6 +934,7 @@ button#sklbtn {
             <?php echo $this->session->flashdata('success'); ?></div>
             <div class="row">
                <div class="col-md-12">
+                 <!--  <a href="#"><button class="btn btn-primary"><i class="fas fa-plus" onclick="get_trash();"></i></button></a> -->
                   <button class="folder_popup"  data-toggle="modal" data-keyboard="true" data-target="#myModal_add" style="float: right;">Create&emsp;<i class="fas fa-folder-open"></i></button>
                </div>
             </div>
@@ -1717,6 +1718,18 @@ $('.range').val(0);
 //   $(this).slider( 'values', [ options.min, options.max ] );
 
 // });
+}
+function get_trash()
+{
+   $.ajax({
+                type:'POST',
+               url:'<?php echo base_url();?>Employer/trash_cv',
+               data:{type:'cv'},
+               success:function(res){
+                   $('#test_id_modal').html(res);
+                   // $('#company_pincode').val('');
+               }
+            })
 }
 </script>
 

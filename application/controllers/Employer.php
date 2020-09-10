@@ -5579,5 +5579,35 @@ public function get_test_list()
 
     }
 
+    public function trash_cv()
+    {
+        $type = $this->input->post('type');
+        if ($type == 'cv') {
+            $where_c = "company_id ='$company_id'";
+            // $where_c['company_id'] = $company_id;
+            $join = array('education_level' => 'education_level.education_level_id = corporate_cv_bank.js_top_education | left outer');
+            $data['cv_bank_data'] = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join , $order = 'desc', $field = 'cv_id', $select = false, $limit = false, $start = false, $search = false);
+             $data['company_active_jobs'] = $this->job_posting_model->get_company_activedeasline_jobs($company_id);
+            $this->load->view('fontend/employer/cv_bank', $data);
+        }
+        elseif ($type == 'qbqnk') {
+            $employer_id = $this->session->userdata('company_profile_id');
+        $where_cn = "status=1";
+        $data['skill_master'] = $this->Master_model->getMaster('skill_master', $where_cn);
+        //$where_opt= "options.status=1";
+        $data['options'] = $this->Master_model->getMaster('options');
+        $where_state = "topic.topic_status=1";
+        $data['topic'] = $this->Master_model->getMaster('topic', $where_state);
+        $where_subtopic = "subtopic.subtopic_status='1'";
+        $data['subtopic'] = $this->Master_model->getMaster('subtopic', $where_subtopic);
+        $where_lineitem = "lineitem.lineitem_status='1'";
+        $data['lineitem'] = $this->Master_model->getMaster('lineitem', $where_lineitem);
+        $where_all = "questionbank.ques_status='0' AND ques_created_by='$employer_id'";
+        $join_emp = array('skill_master' => 'skill_master.id=questionbank.technical_id |left outer', 'topic' => 'topic.topic_id=questionbank.topic_id |left outer', 'subtopic' => 'subtopic.subtopic_id=questionbank.subtopic_id |left outer', 'lineitem' => 'lineitem.lineitem_id=questionbank.lineitem_id |left outer', 'lineitemlevel' => 'lineitemlevel.lineitemlevel_id=questionbank.lineitemlevel_id |left outer', 'questionbank_answer' => 'questionbank_answer.question_id = questionbank.ques_id|LEFT OUTER');
+        $data['questionbank'] = $this->Master_model->getMaster('questionbank', $where_all, $join_emp, $order = 'desc', $field = 'ques_id', $select = false, $limit = false, $start = false, $search = false);
+         $this->load->view('fontend/employer/trash_questions', $data);
+        }
+    }
+
 }
 
