@@ -1111,7 +1111,7 @@ button#sklbtn {
                <?php endif; ?>
             </div>
          </div>
-         <div class="col-md-3 right_side">
+        
             <div class="row" style="text-align: justify;margin: 10 auto;width: fit-content;">
                <?php foreach ($cv_bank_data as $cv_row) :  ?>
                <div class="modal fade" tabindex='-1' id="copy_cv<?php echo $cv_row['cv_id']; ?>" role="dialog">
@@ -1448,7 +1448,8 @@ button#sklbtn {
                      </div>
                   </div>
                </div>
-            </div>
+           
+             <div class="col-md-3 right_side">
             <div class="pai_chart">
                <main>
                   <section>
@@ -1571,7 +1572,11 @@ button#sklbtn {
          </div>
       
       </div>
- 
+ </div>
+</div>
+</div>
+</div>
+
 
 <?php if (!empty($cv_bank_data)): foreach ($cv_bank_data as $cv_row) : ?>
 <div class="modal" id="rotateModal<?php echo $cv_row['cv_id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
