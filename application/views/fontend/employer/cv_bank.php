@@ -1651,7 +1651,22 @@ button#sklbtn {
 </div>
 
 
-
+<script>
+   
+$(document).keyup(function(e) {
+     if (e.keyCode == 27) { // escape key maps to keycode `27`
+      // alert('dd');
+      if ($('#test1').is(":checked")) 
+         {
+            $('#test1').click();
+         }
+         if ($('#test').is(":checked")) 
+         {
+            $('#test').click();
+         }
+    }
+});
+</script>
 
 <script>
 function myFunction(){
@@ -1746,34 +1761,6 @@ $('.range').val(0);
      });   
    });
 
-  var addclass = 'show';
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-if ($('#test1').is(":checked")) 
-{
-   $('#test1').click();
-}
-if ($('#test').is(":checked")) 
-{
-   $('#test').click();
-}
-  //  var atLeastOneIsChecked = $('#test1:checkbox:checked').length > 0;
-  // document.getElementById("myDropdown").classList.remove("show");
-  // document.getElementById("sizelist").classList.remove("show");
-}
-$(document).keyup(function(e) {
-     if (e.keyCode == 27) { // escape key maps to keycode `27`
-      // alert('dd');
-      if ($('#test1').is(":checked")) 
-         {
-            $('#test1').click();
-         }
-         if ($('#test').is(":checked")) 
-         {
-            $('#test').click();
-         }
-    }
-});
 </script>
 <script>
    document.getElementById("files").addEventListener("change", function(event) {
