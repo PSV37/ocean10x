@@ -1150,12 +1150,15 @@
                      </div>
                     
                  </div>
-                  <label class="mdl-textfield__label" for="sample3">Tests</label> 
+              </div>
+                  
+               </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <label class="mdl-textfield__label" for="sample3">Tests</label> 
                   <select class="form-control select2" name="test_id" id="test_id_modal">
                  
                </select>
-               </div>
-              
+            </div>
               
              
               
@@ -1377,7 +1380,7 @@
             $.ajax({
                 type:'POST',
                url:'<?php echo base_url();?>Employer/get_test_list',
-               data:{id:id},
+               data:{test_status:test_type},
                success:function(res){
                    $('#test_id_modal').html(res);
                    // $('#company_pincode').val('');
