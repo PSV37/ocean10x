@@ -482,7 +482,7 @@
    <div class="modal-dialog modal-sm">
       <div class="modal-content">
          <form method="post" action="<?php echo base_url(); ?>employer/rename_folder">
-            <div class="modal-header">
+            <div class="modal-header" onclick="myFunction(event)">
                <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
                <h4 class="modal-title">Rename folder</h4>
             </div>
@@ -506,6 +506,23 @@
       </div>
    </div>
 </div>
+
+<script>
+   
+$(document).keyup(function(e) {
+     if (e.keyCode == 27) { // escape key maps to keycode `27`
+      // alert('dd');
+      if ($('#test1').is(":checked")) 
+         {
+            $('#test1').click();
+         }
+         if ($('#test').is(":checked")) 
+         {
+            $('#test').click();
+         }
+    }
+});
+</script>
 <script>
    <?php if ($activemenu == 'internal_tracker') { ?>
     var somethingChanged = false;
