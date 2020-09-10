@@ -40,15 +40,15 @@
    border-radius: 30px;
    cursor:pointer;
    }
-   button#sklbtn {
-   background-color: #afe1de;
-   color: #6f6e6e;
-   border-radius: 20px;
-   border: none;
-   padding: 1px 10px;
-   margin-bottom: 7px;
-   font-size: 11px;
-   }
+  button#sklbtn {
+    background-color: #18c5bd;
+    color: #fdfdfd;
+    border-radius: 20px;
+    border: none;
+    padding: 1px 10px;
+    margin-bottom: 7px;
+    font-size: 11px;
+}
    .btn-default1:not(:checked) + span {
    padding: 4px 15px;
    border-radius: 30px;
