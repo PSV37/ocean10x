@@ -25,7 +25,7 @@
    font-size: 11px;
    }       
    .front .dropdown {   
-   top: -10px;   
+   top: 0px;   
    width: 63px;
    position: absolute;
    right:3px;
@@ -260,10 +260,12 @@
    }
    .card div {border-radius:0px !important;}    
    .following-info{margin-bottom:10px;}
-   .following-info2{margin-bottom:10px;}   
+   .following-info2{margin-bottom:10px;margin-left: 205px;
+    line-height: 24px;}   
    .following-info3 {
     margin-bottom: 10px;
     margin-top: -107px;
+        margin-right: -20px;
 }
    .active-job label {
    transform-style: preserve-3d;
