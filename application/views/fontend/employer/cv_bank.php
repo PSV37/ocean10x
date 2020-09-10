@@ -997,7 +997,7 @@ button#sklbtn {
           
                <div class="col-md-6">
                 
-                  <label style="float: right;">
+                  <label style="float: right;"></label>
                         <input type="checkbox" class="btn-default1 checkbox" name="check_all" id="checkAllchk" >
                         <span id="check_txt">Select all</span>
                 
@@ -1167,6 +1167,8 @@ button#sklbtn {
                     endforeach;  
                   ?>
                    <?php foreach ($cv_bank_data as $cv_row) :  ?>
+                   </div>
+
                <div class="modal fade" tabindex='-1' id="move_cv<?php echo $cv_row['cv_id']; ?>" role="dialog">
                   <div class="modal-dialog modal-sm">
                      <div class="modal-content">
@@ -1286,10 +1288,11 @@ button#sklbtn {
                               <button type="submit" class="btn btn-default">update</button>
                               <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                            </div>
-                        </form>
-                     </div>
+                        </div>
+                     </form>
                   </div>
                </div>
+            </div>
                <div class="modal fade" id="bulkupload" tabindex='-1' role="dialog">
                   <div class="modal-dialog modal-sm">
                      <div class="modal-content">
@@ -1568,10 +1571,7 @@ button#sklbtn {
          </div>
       
       </div>
-      </div>
-      </div>
-   </div>
-</div>
+ 
 
 <?php if (!empty($cv_bank_data)): foreach ($cv_bank_data as $cv_row) : ?>
 <div class="modal" id="rotateModal<?php echo $cv_row['cv_id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -1651,7 +1651,22 @@ button#sklbtn {
 </div>
 
 
-
+<script>
+   
+$(document).keyup(function(e) {
+     if (e.keyCode == 27) { // escape key maps to keycode `27`
+      // alert('dd');
+      if ($('#test1').is(":checked")) 
+         {
+            $('#test1').click();
+         }
+         if ($('#test').is(":checked")) 
+         {
+            $('#test').click();
+         }
+    }
+});
+</script>
 
 <script>
 function myFunction(){
@@ -1671,7 +1686,17 @@ $('.range').val(0);
     
    });
 
+// clivk.trigger("input");
 
+    // $(document).ready();
+    // $("#myForm").load(window.location.href + " #myForm" );
+//    $('.range-wrap').each(function(){
+
+//   var options = $(this).slider( 'option' );
+
+//   $(this).slider( 'values', [ options.min, options.max ] );
+
+// });
 }
 </script>
 
