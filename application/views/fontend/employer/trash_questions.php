@@ -79,3 +79,7 @@
                   <?php
                      endif; ?>
                   <div class=""></div>
+
+                  <div>
+                      <button id="submit" type="button" onclick="history.back()" class="save_question">Cancel</button>
+                  </div>
