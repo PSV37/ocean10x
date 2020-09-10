@@ -5435,7 +5435,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
 
 
-        $where_active = "login BETWEEN DATE_SUB(NOW(), INTERVAL 30 DAY) And  NOW() and corporate_cv_bank.company_id = '$company_id' and corporate_cv_bank.js_experience='$exp_var' and corporate_cv_bank.js_current_notice_period='$notice_period_var' and corporate_cv_bank.js_top_education = '$education_var' and corporate_cv_bank.js_current_ctc='$current_ctc_var' and corporate_cv_bank.js_working_since = '$stability'";
+        $where_active = "login BETWEEN DATE_SUB(NOW(), INTERVAL 30 DAY) And  NOW() and corporate_cv_bank.company_id = '$company_id' OR corporate_cv_bank.js_experience='$exp_var' OR corporate_cv_bank.js_current_notice_period='$notice_period_var' OR corporate_cv_bank.js_top_education = '$education_var' OR corporate_cv_bank.js_current_ctc='$current_ctc_var' OR corporate_cv_bank.js_working_since = '$stability'";
 
         $where_active.= ' GROUP by cv_id';
 
