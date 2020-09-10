@@ -2305,7 +2305,7 @@ public function randomly_create_oceantest()
         $data = array('company' => $company_name, 'action_taken_for' => $company_name, 'field_changed' => 'Deleted a Question.', 'Action' => 'Deleted a Question.', 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
         $result = $this->Master_model->master_insert($data, 'employer_audit_record');
         $this->Master_model->master_update($ques_status, 'questionbank', $where_del);
-         $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Question Deleted Successfully!</div>');
+         $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Question restored Successfully!</div>');
         redirect('employer/all_questions');
     }
     /*Add Employee*/

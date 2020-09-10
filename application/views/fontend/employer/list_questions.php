@@ -1423,7 +1423,7 @@ span.select2-selection.select2-selection--single {
                 }else{  echo 'in active'; } ?> " id="qbank">
                 
                    <a id="qbottons" style="margin-top: -41px;" href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Add a Question</i></button></a>
-                    <a href="#" onclick="get_trash();"><button class="btn btn-primary"><i class="fas fa-trash-alt" ></i>Trash</button></a>
+                    <a href="#" style="float: right;margin-right: 310px;margin-top:-40px;" onclick="get_trash();"><button class="btn btn-primary"><i class="fas fa-trash-alt" ></i>Trash</button></a>
                    <br>
               
                    <a id="qbottons" style="margin-top: -25px;" href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Bulk Upload Questions</i></button></a>
