@@ -997,10 +997,10 @@ button#sklbtn {
           
                <div class="col-md-6">
                 
-                  <label style="float: right;"></label>
+                  <label style="float: right;">
                         <input type="checkbox" class="btn-default1 checkbox" name="check_all" id="checkAllchk" >
                         <span id="check_txt">Select all</span>
-                
+                </label>
                </div>
             </div>
             <div class="box" >
