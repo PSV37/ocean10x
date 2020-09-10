@@ -1651,22 +1651,7 @@ button#sklbtn {
 </div>
 
 
-<script>
-   
-$(document).keyup(function(e) {
-     if (e.keyCode == 27) { // escape key maps to keycode `27`
-      // alert('dd');
-      if ($('#test1').is(":checked")) 
-         {
-            $('#test1').click();
-         }
-         if ($('#test').is(":checked")) 
-         {
-            $('#test').click();
-         }
-    }
-});
-</script>
+
 
 <script>
 function myFunction(){
