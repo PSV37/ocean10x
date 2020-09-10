@@ -2298,6 +2298,16 @@ public function randomly_create_oceantest()
          $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Question Deleted Successfully!</div>');
         redirect('employer/all_questions');
     }
+    public function recover_questionbank($id) {
+        $ques_status = array('ques_status' => 1);
+        $where_del['ques_id'] = $id;
+        $company_name = $this->session->userdata('company_name');
+        $data = array('company' => $company_name, 'action_taken_for' => $company_name, 'field_changed' => 'Deleted a Question.', 'Action' => 'Deleted a Question.', 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
+        $result = $this->Master_model->master_insert($data, 'employer_audit_record');
+        $this->Master_model->master_update($ques_status, 'questionbank', $where_del);
+         $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Question Deleted Successfully!</div>');
+        redirect('employer/all_questions');
+    }
     /*Add Employee*/
     public function addemployee() {
         $this->session->unset_userdata('activemenu');
