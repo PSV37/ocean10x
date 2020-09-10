@@ -934,7 +934,7 @@ button#sklbtn {
             <?php echo $this->session->flashdata('success'); ?></div>
             <div class="row">
                <div class="col-md-12">
-                  <button  class="btn btn-info btn-lg" data-toggle="modal" data-keyboard="true" data-target="#myModal_add" style="float: right;">Create&emsp;<i class="fas fa-folder-open"></i></button>
+                  <button class="folder_popup"  data-toggle="modal" data-keyboard="true" data-target="#myModal_add" style="float: right;">Create&emsp;<i class="fas fa-folder-open"></i></button>
                </div>
             </div>
             <div class="row">
