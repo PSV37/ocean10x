@@ -5413,29 +5413,29 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 //$days_count=30*stability;
         if($stability==6){
             $before_date = date('Y-m-d', strtotime("-".$stability." months"));
-            $where = "corporate_cv_bank.js_working_since <= '".$before_date."'";
+            $where_active = "corporate_cv_bank.js_working_since <= '".$before_date."'";
         }
         if($stability==12){
             $before_months=6;
             $after_date = date('Y-m-d', strtotime("-".$stability." months"));
             $before_date = date('Y-m-d', strtotime("-".$before_months." months"));
-            $where = "corporate_cv_bank.js_working_since <= '".$after_date."' and corporate_cv_bank.js_working_since >= '".$before_date."'";
+            $where_active = "corporate_cv_bank.js_working_since <= '".$after_date."' and corporate_cv_bank.js_working_since >= '".$before_date."'";
         }           
         if($stability==24){
             $before_months=12;
             $after_date = date('Y-m-d', strtotime("-".$stability." months"));
             $before_date = date('Y-m-d', strtotime("-".$before_months." months"));
-            $where = "corporate_cv_bank.js_working_since <= '".$after_date."' and corporate_cv_bank.js_working_since >= '".$before_date."'";
+            $where_active = "corporate_cv_bank.js_working_since <= '".$after_date."' and corporate_cv_bank.js_working_since >= '".$before_date."'";
         }
         if($stability==30){
             $before_date = date('Y-m-d', strtotime("-".$stability." months"));
-            $where = "corporate_cv_bank.js_working_since >= '".$before_date."'";
+            $where_active = "corporate_cv_bank.js_working_since >= '".$before_date."'";
         }
 
 
+        $where_active = "corporate_cv_bank.company_id = '$company_id'"
 
-
-        $where_active = "login BETWEEN DATE_SUB(NOW(), INTERVAL 30 DAY) And  NOW() and corporate_cv_bank.company_id = '$company_id' OR corporate_cv_bank.js_experience='$exp_var' OR corporate_cv_bank.js_current_notice_period='$notice_period_var' OR corporate_cv_bank.js_top_education = '$education_var' OR corporate_cv_bank.js_current_ctc='$current_ctc_var' OR corporate_cv_bank.js_working_since = '$stability'";
+        $where_active = "and login BETWEEN DATE_SUB(NOW(), INTERVAL 30 DAY) And  NOW()   OR corporate_cv_bank.js_experience='$exp_var' OR corporate_cv_bank.js_current_notice_period='$notice_period_var' OR corporate_cv_bank.js_top_education = '$education_var' OR corporate_cv_bank.js_current_ctc='$current_ctc_var' OR corporate_cv_bank.js_working_since = '$stability'";
 
         $where_active.= ' GROUP by cv_id';
 
@@ -5545,6 +5545,37 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         echo json_encode($data);
 
         }
+        public function get_test_list()
+        {
+            $employer_id = $this->session->userdata('company_profile_id');
+            $test_status = $this->input->post('test_status');
+            $where_all = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id' and test_status = ' $test_status'";
+        $oceanchamp_tests = $this->Master_model->getMaster('oceanchamp_tests', $where = $where_all, $join = FALSE, $order = 'desc', $field = 'oceanchamp_tests.test_id', $select = false, $limit = false, $start = false, $search = false);
+
+        if (!empty($oceanchamp_tests)) {
+            $result.= '<option value="">Select Test</option>';
+            foreach ($oceanchamp_tests as $key) {
+                $result.= '<option value="' . $key['test_id'] . '">' . $key['test_name'] . '</option>';
+            }
+        } else {
+            $result.= '<option value="0">Test not available</option>';
+        }
+        echo $result;
+
+        }
+
+    public function attach_test()
+    {
+        $job_post_id = $this->input->post('job_post_id');
+        $test_id = $this->input->post('test_id');
+        $test_data['test_for_job'] = $test_id;
+        
+        $where['job_post_id'] = $job_post_id;
+        $this->Master_model->master_update($test_data, 'job_posting', $where);
+         $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Test attached Successfully</div>');
+         redirect('employer/active_job');
+
+    }
 
 }
 

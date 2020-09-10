@@ -1135,22 +1135,25 @@
             <div class="modal-body" style="padding:15px 40px;">
                <input type="hidden" name="consultant" value="JobSeeker">  
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                 <div class="col-sm-10">
+                  <div class="row">
+                
                  <div class="form-check">
+                  <div class="col-md-6">
                    <label class="form-check-label">
-                     <input class="form-check-input radio-inline" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                     <input class="form-check-input radio-inline" type="radio" name="gridRadios" id="gridRadios1" value="option1" onclick="get_test_list('2');" >
                      Ocean Test Paper</label>
+                     </div>
+                     <div class="col-md-6">
                      <label class="form-check-label">
-                     <input class="form-check-input radio-inline" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                     <input class="form-check-input radio-inline" type="radio" name="gridRadios" id="gridRadios2" onclick="get_test_list('1');" value="option2">
                      Use My Q-Bank</label>
+                     </div>
                     
                  </div>
-                 <!--  <label class="mdl-textfield__label" for="sample3">Active Job:</label> -->
-             <!--   <select class="form-control select2" name="job_id">
-                  <?php foreach ($company_active_jobs as $row) { ?>
-                   <option value="<?php echo $row->job_post_id ?>"><?php echo $row->job_title?></option>
-                 <?php } ?>
-               </select> -->
+                  <label class="mdl-textfield__label" for="sample3">Tests</label> 
+                  <select class="form-control select2" name="test_id" id="test_id_modal">
+                 
+               </select>
                </div>
               
               
@@ -1366,6 +1369,23 @@
 <?php
    endforeach;endif;
    ?>
+   <script>
+      function get_test_list(test_type)
+      {
+         if (test_type) 
+         {
+            $.ajax({
+                type:'POST',
+               url:'<?php echo base_url();?>Employer/get_test_list',
+               data:{id:id},
+               success:function(res){
+                   $('#test_id_modal').html(res);
+                   // $('#company_pincode').val('');
+               }
+            })
+         }
+      }
+   </script>
 <script>
    $('.checkbox_label').click(function ()
    {
