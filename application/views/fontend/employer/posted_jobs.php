@@ -1577,7 +1577,7 @@ function get_trash()
    function sliceSize(dataNum, dataTotal) {
      return (dataNum / dataTotal) * 360;
    }
-   function addSlice(sliceSize, pieElement, offset, sliceID, color) {
+   function addSlice(sliceSize, pieElement, offset, sliceID, color,dataCount) {
       var val = $('#spanid'+dataCount).text();
 
       console.log(val);
@@ -1597,9 +1597,9 @@ function get_trash()
      var sliceID = "s"+dataCount+"-"+sliceCount;
      var maxSize = 179;
      if(sliceSize<=maxSize) {
-       addSlice(sliceSize, pieElement, offset, sliceID, color);
+       addSlice(sliceSize, pieElement, offset, sliceID, color,dataCount);
      } else {
-       addSlice(maxSize, pieElement, offset, sliceID, color);
+       addSlice(maxSize, pieElement, offset, sliceID, color,dataCount);
        iterateSlices(sliceSize-maxSize, pieElement, offset+maxSize, dataCount, sliceCount+1, color);
      }
    }
