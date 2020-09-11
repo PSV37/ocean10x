@@ -222,7 +222,7 @@ order by created_date asc limit 10");
         return $query;
     }
 
-    public function get_company_deactive_jobs($company_id)
+    public function get_company_deleted_jobs($company_id)
     {
         $this->db->select('*');
         $this->db->from('job_posting');

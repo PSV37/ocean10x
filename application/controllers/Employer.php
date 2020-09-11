@@ -5620,7 +5620,7 @@ public function get_test_list()
         }
         elseif ($type == 'jobs') {
             $employer_id = $this->session->userdata('company_profile_id');
-        $company_active_jobs = $this->job_posting_model->get_company_deactive_jobs($employer_id);
+        $company_active_jobs = $this->job_posting_model->get_company_deleted_jobs($employer_id);
         //$Job_Post_was_sent = $this->job_apply_model->job_post($company_id, $job_post_id); 
         $this->load->view('fontend/employer/posted_jobs_trash.php', compact('company_active_jobs', 'employer_id'));
         }
