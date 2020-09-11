@@ -2128,7 +2128,7 @@ function get_trash()
      var sliceID = "s"+dataCount+"-"+sliceCount;
      var maxSize = 179;
      if(sliceSize<=maxSize) {
-       addSlice(sliceSize, pieElement, offset, sliceID, color);
+       addSlice(sliceSize, pieElement, offset, sliceID, color,dataCount);
      } else {
        addSlice(maxSize, pieElement, offset, sliceID, color,dataCount  );
        iterateSlices(sliceSize-maxSize, pieElement, offset+maxSize, dataCount, sliceCount+1, color);
