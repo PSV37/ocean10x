@@ -1241,12 +1241,12 @@
                </div>
                <ul class="pieID legend">
                   <li>
-                     <em>Total Active Job Posts</em>
+                     <em id="spanid0">Total Active Job Posts</em>
                      <span><?php echo sizeof($company_active_jobs); ?></span>
                      <!--<span>718</span> -->
                   </li>
                   <li>
-                     <em> Sent to Candidates</em>
+                     <em id="spanid1"> Sent to Candidates</em>
                      <!--<span id='total_forwarded'> </span>-->
                      <span> 50 </span>
                   </li>
@@ -1578,7 +1578,11 @@ function get_trash()
      return (dataNum / dataTotal) * 360;
    }
    function addSlice(sliceSize, pieElement, offset, sliceID, color) {
-     $(pieElement).append("<div class='slice "+sliceID+"'><span></span></div>");
+      var val = $('#spanid'+dataCount).text();
+
+      console.log(val);
+
+     $(pieElement).append("<div class='slice "+sliceID+"'><spantitle='"+val+"'></span></div>");
      var offset = offset - 1;
      var sizeRotation = -179 + sliceSize;
      $("."+sliceID).css({
