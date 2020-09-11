@@ -1582,7 +1582,7 @@ function get_trash()
 
       console.log(val);
 
-     $(pieElement).append("<div class='slice "+sliceID+"'><spantitle='"+val+"'></span></div>");
+     $(pieElement).append("<div class='slice "+sliceID+"'><span title='"+val+"'></span></div>");
      var offset = offset - 1;
      var sizeRotation = -179 + sliceSize;
      $("."+sliceID).css({
