@@ -1271,17 +1271,17 @@
                      <span> 50 </span>
                   </li>
                   <li>
-                     <em id="spanid1">Interview Failed</em>
+                     <em id="spanid6">Interview Failed</em>
                      <!--<span id='total_test_int_fail'></span>-->
                      <span> 50 </span>
                   </li>
                   <li>
-                     <em id="spanid6">Offer Accepted</em>
+                     <em id="spanid7">Offer Accepted</em>
                      <!--<span id='total_offer_accept'></span>-->
                      <span> 50 </span>
                   </li>
                   <li>
-                     <em id="spanid7">Early Applications</em>
+                     <em id="spanid8">Early Applications</em>
                      <!--<span id='early_applications'></span>-->
                      <span> 50 </span>
                   </li>
