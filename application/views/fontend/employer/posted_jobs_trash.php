@@ -89,7 +89,7 @@
                <br>       
             <button class="detail-btn">details</button>
             <div class="btn-group">
-                        <a title="restore" href=" <?php echo base_url('employer/recover_job_post/' . $v_companyjobs->job_post_id)); ?>" ><i class="fas fa-trash-restore icon_backg"></i></a>
+                        <a title="restore" href=" <?php echo base_url('employer/recover_job_post/' . $v_companyjobs->job_post_id); ?>" ><i class="fas fa-trash-restore icon_backg"></i></a>
                        
                      </div>
 
