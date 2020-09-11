@@ -1517,6 +1517,62 @@ function get_trash()
            });
    
 </script>
+
+<script>
+   function  get_report_data(id)
+   {
+        
+             // if($('#posted_job').is(":checked")){
+                 console.log("Checkbox is checked.");
+   
+                 $.ajax({
+                  url:"<?php echo base_url();?>Employer/job_post_report",
+                  data: {id:id},
+                  type: 'post',
+                  success: function(response){
+                    var getarray = jQuery.parseJSON(response);
+                    console.log(getarray.Total_count_forwarded);
+                    var total_count = getarray.Total_count_forwarded;
+   
+                    console.log(getarray.Total_count_applied);
+                    var total_count_applied = getarray.Total_count_applied;
+   
+                    console.log(getarray.Total_count_test_given);
+                    var total_given_test = getarray.Total_count_test_given;
+   
+                    var total_test_passed = getarray.Total_count_test_passed;
+                    var total_test_interview_passed = getarray.Total_count_inteviewed_passed;
+                    var total_test_interview_failed = getarray.Total_count_inteviewed_failed;
+   
+                    var total_offer_accepted = getarray.Total_offer_accepted;
+   
+                    var total_count_early_applied = getarray.Total_count_early_applied;
+   
+                    $('#total_forwarded').html(total_count.length);
+                    $('#total_applied').html(total_count_applied.length);
+                    $('#total_test').html(total_given_test.length);
+   
+                    $('#total_passed').html(total_test_passed.length);
+                    $('#total_test_int_pass').html(total_test_interview_passed.length);
+                    $('#total_test_int_fail').html(total_test_interview_failed.length);
+   
+                    $('#total_offer_accept').html(total_offer_accepted.length);
+   
+                    $('#early_applications').html(total_count_early_applied.length);
+   
+                  }
+                });
+             // }
+   
+   
+      createPie(".pieID.legend", ".pieID.pie");
+   }
+   
+   
+    
+   
+   
+</script>
 <script>
    function sliceSize(dataNum, dataTotal) {
      return (dataNum / dataTotal) * 360;
@@ -1706,6 +1762,7 @@ function get_trash()
      }
    }
 </script>
+<!--
 <script>
    function  get_report_data(id)
    {
@@ -1760,4 +1817,4 @@ function get_trash()
     
    
    
-</script>
+</script> -->
