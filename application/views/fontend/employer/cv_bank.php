@@ -923,7 +923,13 @@ button#sklbtn {
     cursor: pointer;
 }
 
-
+.icon_backg {
+    background-color: #18c5bd;
+    padding: 12px;
+    border-radius: 34px;
+    color: #fff;
+    cursor: pointer;
+}
 </style>
 <div class="container-fluid main-d">
    <div class="container">
@@ -934,7 +940,7 @@ button#sklbtn {
             <?php echo $this->session->flashdata('success'); ?></div>
             <div class="row">
                <div class="col-md-12">
-                 <!--  <a href="#"><button class="btn btn-primary"><i class="fas fa-plus" onclick="get_trash();"></i></button></a> -->
+                  <a href="#"><button class="btn btn-primary"><i class="fas fa-plus" onclick="get_trash();"></i></button></a>
                   <button class="folder_popup"  data-toggle="modal" data-keyboard="true" data-target="#myModal_add" style="float: right;">Create&emsp;<i class="fas fa-folder-open"></i></button>
                </div>
             </div>
@@ -1079,7 +1085,11 @@ button#sklbtn {
             <lable class=""><button id="sklbtn"><?php echo  $skill_row;?></button></lable>
             <?php }
                 }   ?>
-                        
+                        <br>
+                          <div class="btn-group">
+                        <a href=" <?php echo base_url(); ?>employer/edit_cv/<?php echo base64_encode($cv_row['cv_id']); ?>"><i class="far fa-edit icon_backg"></i></a>
+                        <a href="<?php echo base_url(); ?>employer/delete_cv/<?php echo base64_encode($cv_row['cv_id']); ?>"><i class="fas fa-trash-alt icon_backg"></i></a>
+                     </div>
                         <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
                         </button>

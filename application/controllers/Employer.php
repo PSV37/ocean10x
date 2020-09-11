@@ -615,6 +615,27 @@ class Employer extends MY_Employer_Controller {
             echo "not found";
         }
     }
+    public function delete_cv($cv_id = NULL)
+    {
+        $cv = base64_decode($cv_id);
+        $del = array('js_status' => '1');
+        $where11['cv_id'] = $cv;
+                
+        $this->Master_model->master_update($del, 'corporate_cv_bank', $where11);
+         $this->session->set_flashdata('success', '<div class="alert alert-success text-center">CV moved to the trash Successfully!</div>');
+          redirect('employer/corporate_cv_bank');
+
+    }
+    public function recover_cv($cv_id) {
+        $cv_status = array('js_status' => 0);
+        $where11['cv_id'] = $cv_id;
+        $this->Master_model->master_update($cv_status, 'corporate_cv_bank', $where11);
+
+        $company_name = $this->session->userdata('company_name');
+        
+         $this->session->set_flashdata('success', '<div class="alert alert-success text-center">CV restored Successfully!</div>');
+        redirect('employer/corporate_cv_bank');
+    }
      public function recover_job_post($job_id = null) {
         if (!empty($job_id)) {
             $company_id = $this->session->userdata('company_profile_id');
@@ -5643,7 +5664,7 @@ public function get_test_list()
             $join = array('education_level' => 'education_level.education_level_id = corporate_cv_bank.js_top_education | left outer');
             $data['cv_bank_data'] = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join , $order = 'desc', $field = 'cv_id', $select = false, $limit = false, $start = false, $search = false);
              $data['company_active_jobs'] = $this->job_posting_model->get_company_activedeasline_jobs($company_id);
-            $this->load->view('fontend/employer/cv_bank', $data);
+            $this->load->view('fontend/employer/cv_trash', $data);
         }
         elseif ($type == 'qbqnk') {
             $employer_id = $this->session->userdata('company_profile_id');
