@@ -2109,11 +2109,11 @@ function get_trash()
    function sliceSize(dataNum, dataTotal) {
      return (dataNum / dataTotal) * 360;
    }
-   function addSlice(sliceSize, pieElement, offset, sliceID, color) {
-      var val = $('.cv').css('background-color') === color;
+   function addSlice(sliceSize, pieElement, offset, sliceID, color, dataCount) {
+      var val = $('.cv').css('border-color') === color;
 
       console.log(val);
-     $(pieElement).append("<div class='slice "+sliceID+"'><span id='"+pieElement+"'></span></div>");
+     $(pieElement).append("<div class='slice "+sliceID+"'><span id='"+dataCount+"'></span></div>");
      var offset = offset - 1;
      var sizeRotation = -179 + sliceSize;
      $("."+sliceID).css({
@@ -2130,7 +2130,7 @@ function get_trash()
      if(sliceSize<=maxSize) {
        addSlice(sliceSize, pieElement, offset, sliceID, color);
      } else {
-       addSlice(maxSize, pieElement, offset, sliceID, color);
+       addSlice(maxSize, pieElement, offset, sliceID, color,dataCount  );
        iterateSlices(sliceSize-maxSize, pieElement, offset+maxSize, dataCount, sliceCount+1, color);
      }
    }
