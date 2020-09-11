@@ -1123,19 +1123,23 @@ button#sklbtn {
                      <ul class="pieID legend">
                         <li class="cv">
                            <em id="0">Total cv</em>
-                           <span><?php echo sizeof($cv_bank_data); ?></span>
+                           <span>50</span>
+                          <!--  <span><?php echo sizeof($cv_bank_data); ?></span> -->
                         </li>
                         <li class="cv">
                            <em id="1">Active cv</em>
-                           <span id="active_cv"><?php echo sizeof($active_cv); ?></span>
+                           <span>50</span>
+                           <!-- <span id="active_cv"><?php echo sizeof($active_cv); ?></span> -->
                         </li>
                         <li class="cv">
                            <em id="2">Own cv's</em>
-                           <span id="own_cvs"><?php echo sizeof($own_cvs); ?></span>
+                           <span>50</span>
+                           <!-- <span id="own_cvs"><?php echo sizeof($own_cvs); ?></span> -->
                         </li>
                         <li class="cv">
                            <em id="3">Consultant cv's</em>
-                           <span>344</span>
+                           <span>50</span>
+                           <!-- <span>344</span> -->
                         </li>
                      </ul>
                   </section>
