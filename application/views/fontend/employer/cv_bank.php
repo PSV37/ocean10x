@@ -1149,7 +1149,7 @@ button#sklbtn {
                            <span> 50 </span>
                         </li>
                         <li class="cv">
-                           <em id="spanid0">Consultant cv's</em>
+                           <em id="spanid4">Consultant cv's</em>
                            <span>50</span>
                         </li>
                      </ul>
@@ -2126,9 +2126,10 @@ function get_trash()
      return (dataNum / dataTotal) * 360;
    }
    function addSlice(sliceSize, pieElement, offset, sliceID, color, dataCount) {
-      var val = $('#spanid'+dataCount).text();
+      var ids = 1 + dataCount;
+      var val = $('#spanid'+ids).text();
 
-      console.log(val);
+      console.log(ids);
      $(pieElement).append("<div class='slice "+sliceID+"'><span title='"+val+"'></span></div>");
      var offset = offset - 1;
      var sizeRotation = -179 + sliceSize;
