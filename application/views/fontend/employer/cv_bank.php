@@ -2110,7 +2110,7 @@ function get_trash()
      return (dataNum / dataTotal) * 360;
    }
    function addSlice(sliceSize, pieElement, offset, sliceID, color) {
-     $(pieElement).append("<div class='slice "+sliceID+"'><span></span></div>");
+     $(pieElement).append("<div class='slice "+sliceID+"'><span id='"+pieElement+"'></span></div>");
      var offset = offset - 1;
      var sizeRotation = -179 + sliceSize;
      $("."+sliceID).css({
