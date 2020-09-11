@@ -1020,6 +1020,12 @@
       <input type="checkbox" id='posted_job' class="posted_job" onchange="get_report_data(<?php echo $v_companyjobs->job_post_id ?>)" />
       <div class="card">
          <div class="front">
+
+            <div class="btn-group">
+                        <a href=" <?php echo base_url('employer/job_post/' . $ct_row['ques_id']); ?>"><i class="far fa-edit icon_backg"></i></a>
+                        
+                     </div>
+
             <img src="<?php echo base_url() ?>upload/<?php echo $this->company_profile_model->company_logoby_id($company_profile_id);?>" style="height:50px; width:50px;border-radius:5px;float:left;border:solid 1px #eae9e9b8;margin-right:15px;" />
             <div class="job-info">
                <p class="job_title"><?php echo $v_companyjobs->job_title; ?></p>
