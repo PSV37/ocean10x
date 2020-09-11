@@ -1447,7 +1447,8 @@
                url:'<?php echo base_url();?>Employer/get_test_details',
                data:{test_id:test_id},
                success:function(res){
-                   $('#total_questions').html(res[0].total_questions);
+                  console.log(res[0].total_questions);
+                   $('#total_questions').text(res[0].total_questions);
                    // $('#company_pincode').val('');
                }
             })
