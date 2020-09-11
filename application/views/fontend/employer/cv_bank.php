@@ -2129,7 +2129,7 @@ function get_trash()
       var val = $('#spanid'+dataCount).text();
 
       console.log(val);
-     $(pieElement).append("<div class='slice "+sliceID+"'><span title='"+val+"'></span></div>");
+     $(pieElement).append("<div class='slice "+sliceID+"'><span tooltip title='"+val+"'></span></div>");
      var offset = offset - 1;
      var sizeRotation = -179 + sliceSize;
      $("."+sliceID).css({
