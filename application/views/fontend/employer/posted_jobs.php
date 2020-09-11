@@ -1185,6 +1185,7 @@
                  
                </select>
             </div>
+            <br><br>
             <div class="row">
               <div class="col-md-4">
                <label>Total Questions :</label>
@@ -1446,7 +1447,7 @@
                url:'<?php echo base_url();?>Employer/get_test_details',
                data:{test_id:test_id},
                success:function(res){
-                   $('#total_questions').html(res.total_questions);
+                   $('#total_questions').html(res[0].total_questions);
                    // $('#company_pincode').val('');
                }
             })
