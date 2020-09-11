@@ -1005,6 +1005,13 @@
    input#posted_job {
    display: none;
    }
+   .icon_backg {
+    background-color: #dad9d9;
+    padding: 12px;
+    border-radius: 34px;
+    color: #000;
+    cursor: pointer;
+}
 </style>
 <div class="container-fluid main-d">
 <div class="container">
@@ -1021,10 +1028,7 @@
       <div class="card">
          <div class="front">
 
-            <div class="btn-group">
-                        <a href=" <?php echo base_url('employer/job_post/' . $ct_row['ques_id']); ?>"><i class="far fa-edit icon_backg"></i></a>
-                        
-                     </div>
+          
 
             <img src="<?php echo base_url() ?>upload/<?php echo $this->company_profile_model->company_logoby_id($company_profile_id);?>" style="height:50px; width:50px;border-radius:5px;float:left;border:solid 1px #eae9e9b8;margin-right:15px;" />
             <div class="job-info">
@@ -1106,6 +1110,10 @@
             <!--  <div class="clear"></div>
                </div> -->         
             <button class="detail-btn">details</button>
+              <div class="btn-group">
+                        <a href=" <?php echo base_url() ?>employer/update_job/<?php echo $v_companyjobs->job_post_id ?>"><i class="far fa-edit icon_backg"></i></a>
+                        
+                     </div>
             <?php  if ($v_companyjobs->job_deadline > date('Y-m-d')){
                // echo '<button class="btn btn-success btn-xs">Live <i class="fa fa-check-circle" aria-hidden="true"></i></button>';
                echo '<span class="active-span">Active</span>';
