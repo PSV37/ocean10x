@@ -89,8 +89,8 @@
                <br>       
             <button class="detail-btn">details</button>
             <div class="btn-group">
-                        <a href=" <?php echo base_url() ?>employer/update_job/<?php echo $v_companyjobs->job_post_id ?>"><i class="far fa-edit icon_backg"></i></a>
-                        <a href="<?php echo base_url('employer/delete_job/' . $v_companyjobs->job_post_id); ?>"><i class="fas fa-trash-alt icon_backg"></i></a>
+                        <a title="restore" href=" <?php echo base_url('employer/recover_job_post/' . $ct_row['ques_id']); ?>" ><i class="fas fa-trash-restore icon_backg"></i></a>
+                       
                      </div>
 
             <?php  if ($v_companyjobs->job_deadline > date('Y-m-d')){
@@ -101,7 +101,7 @@
                // echo'<button class="btn btn-danger btn-xs">Expired <i class="fa fa-times" aria-hidden="true"></i></button> ';
                echo '<span class="pasive-span">Expired</span>';
                } ?>
-            <div class="dropdown">
+            <!-- <div class="dropdown">
                <a href="#" data-toggle="modal" data-target="#rotateModal<?php echo $v_companyjobs->job_post_id; ?>"> <i class="fas fa-share"></i></a>
                <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                <i class="fas fa-ellipsis-h"></i>
@@ -111,7 +111,7 @@
                   <li> <a class="dropdown-item" href="<?php echo base_url() ?>employer/update_job/<?php echo $v_companyjobs->job_post_id ?>">Edit job post</a></li>
                  <li ><a class="dropdown-item" href="#" id="attach_to_job" data-toggle="modal" data-target="#attach_test<?php echo $v_companyjobs->job_post_id ?>" >Attach Test</a></li>
                </div>
-            </div>
+            </div> -->
          </div>
       </div>
    </label>
@@ -121,3 +121,6 @@
       <strong>There are no Active Job Posts to Display !</strong>
    </li>
    <?php endif; ?>
+ <div>
+                      <button id="submit" type="button" onclick="history.back()" class="save_question">Cancel</button>
+                  </div>

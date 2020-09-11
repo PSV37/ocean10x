@@ -593,6 +593,48 @@ class Employer extends MY_Employer_Controller {
             echo "not found";
         }
     }
+     public function deactivate_job($job_id = null) {
+        if (!empty($job_id)) {
+            $company_id = $this->session->userdata('company_profile_id');
+            if ($this->job_posting_model->check_jobid_and_post_id($job_id, $company_id) == true) {
+               $del = array('job_status' => '2');
+                $where11['job_post_id'] = $job_id;
+                
+                $this->Master_model->master_update($del, 'job_posting', $where11);
+                $whereres = "job_post_id='$job_id'";
+                $old_job_details = $this->Master_model->get_master_row('job_posting', $select = FALSE, $whereres);
+                $company_name = $this->session->userdata('company_name');
+                $data = array('company' => $company_name, 'action_taken_for' => $company_name, 'field_changed' => 'Deleted Job', 'Action' => 'Deleted ' . $old_job_details['job_title'] . ' Job .', 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
+                $result = $this->Master_model->master_insert($data, 'employer_audit_record');
+                redirect_back();
+            } else {
+                echo "error";
+            }
+        } else {
+            echo "not found";
+        }
+    }
+     public function recover_job_post($job_id = null) {
+        if (!empty($job_id)) {
+            $company_id = $this->session->userdata('company_profile_id');
+            if ($this->job_posting_model->check_jobid_and_post_id($job_id, $company_id) == true) {
+               $del = array('job_status' => '1');
+                $where11['job_post_id'] = $job_id;
+                
+                $this->Master_model->master_update($del, 'job_posting', $where11);
+                $whereres = "job_post_id='$job_id'";
+                $old_job_details = $this->Master_model->get_master_row('job_posting', $select = FALSE, $whereres);
+                $company_name = $this->session->userdata('company_name');
+                $data = array('company' => $company_name, 'action_taken_for' => $company_name, 'field_changed' => 'Deleted Job', 'Action' => 'Deleted ' . $old_job_details['job_title'] . ' Job .', 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
+                $result = $this->Master_model->master_insert($data, 'employer_audit_record');
+                redirect_back();
+            } else {
+                echo "error";
+            }
+        } else {
+            echo "not found";
+        }
+    }
     public function update_job($job_id = null) {
         if (!empty($job_id)) {
             $company_id = $this->session->userdata('company_profile_id');
