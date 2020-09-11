@@ -1025,7 +1025,9 @@
 <!-- <div class="panel-body"></div> -->
 <div class="col-md-6 active-job">
    <div id="smsg"> <?php echo $this->session->flashdata('success'); ?></div>
+    <a href="#" style="float: right;margin-right: 310px;margin-top:-40px;" onclick="get_trash();"><button class="btn btn-primary"><i class="fas fa-trash-alt" ></i> Trash</button></a>
    <br><br>
+   <div id="job_trash">
    <?php if (!empty($company_active_jobs)): foreach ($company_active_jobs as $v_companyjobs) : ?>
    <label class="checkbox_label">
       <div class="border-top1"></div>
@@ -1113,12 +1115,14 @@
             <?php $i++; }
                }    ?>
             <!--  <div class="clear"></div>
-               </div> -->         
+               </div> -->  
+               <br>       
             <button class="detail-btn">details</button>
-              <div class="btn-group">
+            <div class="btn-group">
                         <a href=" <?php echo base_url() ?>employer/update_job/<?php echo $v_companyjobs->job_post_id ?>"><i class="far fa-edit icon_backg"></i></a>
-                        
+                        <a href="<?php echo base_url('employer/delete_job/' . $v_companyjobs->job_post_id); ?>"><i class="fas fa-trash-alt icon_backg"></i></a>
                      </div>
+
             <?php  if ($v_companyjobs->job_deadline > date('Y-m-d')){
                // echo '<button class="btn btn-success btn-xs">Live <i class="fa fa-check-circle" aria-hidden="true"></i></button>';
                echo '<span class="active-span">Active</span>';
@@ -1147,6 +1151,7 @@
       <strong>There are no Active Job Posts to Display !</strong>
    </li>
    <?php endif; ?>
+</div>
 </div>
  <?php if (!empty($company_active_jobs)): foreach ($company_active_jobs as $v_companyjobs) : ?>
    <div class="modal" id="attach_test<?php echo $v_companyjobs->job_post_id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -1424,6 +1429,18 @@
    endforeach;endif;
    ?>
    <script>
+function get_trash()
+{
+   $.ajax({
+          type:'POST',
+         url:'<?php echo base_url();?>Employer/trash_cv',
+         data:{type:'jobs'},
+         success:function(res){
+             $('#job_trash').html(res);
+             // $('#company_pincode').val('');
+         }
+    })
+}
       function get_test_list(test_type,job_id)
       {
          if (test_type) 
