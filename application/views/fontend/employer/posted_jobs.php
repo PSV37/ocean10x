@@ -1247,35 +1247,43 @@
                   </li>
                   <li>
                      <em> Sent to Candidates</em>
-                     <span id='total_forwarded'> </span>
+                     <!--<span id='total_forwarded'> </span>-->
+                     <span> 50 </span>
                   </li>
                   <li>
                      <em>Applications Rcvd</em>
-                     <span id='total_applied'> </span>
+                     <!--<span id='total_applied'> </span>-->
+                     <span> 50 </span>
                   </li>
                   <li>
                      <em>Test Attempted</em> 
-                     <span id='total_test'> </span>
+                     <!--<span id='total_test'> </span>-->
+                     <span> 50 </span>
                   </li>
                   <li>
                      <em>Test Passed</em>
-                     <span id='total_passed'></span>
+                     <!--<span id='total_passed'></span>-->
+                     <span> 50 </span>
                   </li>
                   <li>
                      <em>Interview Passed</em> 
-                     <span id='total_test_int_pass'></span>
+                     <!--<span id='total_test_int_pass'></span>-->
+                     <span> 50 </span>
                   </li>
                   <li>
                      <em>Interview Failed</em>
-                     <span id='total_test_int_fail'></span>
+                     <!--<span id='total_test_int_fail'></span>-->
+                     <span> 50 </span>
                   </li>
                   <li>
                      <em>Offer Accepted</em>
-                     <span id='total_offer_accept'></span>
+                     <!--<span id='total_offer_accept'></span>-->
+                     <span> 50 </span>
                   </li>
                   <li>
                      <em>Early Applications</em>
-                     <span id='early_applications'></span>
+                     <!--<span id='early_applications'></span>-->
+                     <span> 50 </span>
                   </li>
                </ul>
             </section>
