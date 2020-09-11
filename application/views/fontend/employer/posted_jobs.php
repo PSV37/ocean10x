@@ -1246,7 +1246,7 @@
                      <!--<span>718</span> -->
                   </li>
                   <li>
-                     <em id="spanid1"> Sent to Candidates</em>
+                     <em id="spanid1">Sent to Candidates</em>
                      <!--<span id='total_forwarded'> </span>-->
                      <span> 50 </span>
                   </li>
