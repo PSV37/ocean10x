@@ -107,3 +107,7 @@
                   <strong>There is no record for display</strong>
                </li>
                <?php endif; ?>
+<br><br>
+                <div>
+                      <button id="submit" type="button" onclick="history.back()" class="save_question">Cancel</button>
+                  </div>
