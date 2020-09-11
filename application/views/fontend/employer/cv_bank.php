@@ -1013,7 +1013,7 @@ button#sklbtn {
                 </label>
                </div>
             </div>
-            <div class="box" >
+            <div class="box" id="trash_box" >
                <?php $key = 1; if (!empty($cv_bank_data)): foreach ($cv_bank_data as $cv_row) : 
                   $on_ocean = $cv_row['ocean_candidate'];
                         if($on_ocean == 'Yes')
@@ -1741,7 +1741,7 @@ function get_trash()
                url:'<?php echo base_url();?>Employer/trash_cv',
                data:{type:'cv'},
                success:function(res){
-                   $('#test_id_modal').html(res);
+                   $('#trash_box').html(res);
                    // $('#company_pincode').val('');
                }
             })

@@ -3519,7 +3519,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $this->session->set_userdata($data);
             // $where_c['cv_folder_id'] = $fid;
             // $where_c['status'] = 1;
-            $where_c = "cv_folder_id = '$fid' and status = '1' group by cv_folder_relation.cv_id";
+            $where_c = "cv_folder_id = '$fid' and status = '1' group by cv_folder_relation.cv_id and js_status = '0'";
             $join_cond = array('corporate_cv_bank' => 'corporate_cv_bank.cv_id = cv_folder_relation.cv_id|Left outer');
             $data['cv_bank_data'] = $this->Master_model->getMaster('cv_folder_relation', $where_c, $join_cond, $order = 'desc', $field = 'relation_id', $select = false, $limit = false, $start = false, $search = false);
             $data['fid']=$fid;
@@ -3530,11 +3530,12 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $sort_val = $this->input->post('sort_val');
             if (isset($sort_val) && !empty($sort_val)) {
                 $where_c['company_id'] = $company_id;
+                $where_c['js_status'] = '0';
                 $data['cv_bank_data'] = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join = false, $order = 'desc', $field = $sort_val, $select = false, $limit = false, $start = false, $search = false);
                 $this->load->view('fontend/employer/cv_bank', $data);
             }
         } else {
-            $where_c = "corporate_cv_bank.cv_id NOT IN (select cv_id from cv_folder_relation) and company_id ='$company_id'";
+            $where_c = "corporate_cv_bank.cv_id NOT IN (select cv_id from cv_folder_relation) and company_id ='$company_id' and js_status = '0'";
             // $where_c['company_id'] = $company_id;
             $join = array('education_level' => 'education_level.education_level_id = corporate_cv_bank.js_top_education | left outer');
             $data['cv_bank_data'] = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join , $order = 'desc', $field = 'cv_id', $select = false, $limit = false, $start = false, $search = false);
@@ -5659,11 +5660,11 @@ public function get_test_list()
     {
         $type = $this->input->post('type');
         if ($type == 'cv') {
-            $where_c = "company_id ='$company_id'";
+            $where_c = "company_id ='$company_id' and js_status = '1'";
             // $where_c['company_id'] = $company_id;
             $join = array('education_level' => 'education_level.education_level_id = corporate_cv_bank.js_top_education | left outer');
             $data['cv_bank_data'] = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join , $order = 'desc', $field = 'cv_id', $select = false, $limit = false, $start = false, $search = false);
-             $data['company_active_jobs'] = $this->job_posting_model->get_company_activedeasline_jobs($company_id);
+             $data['company_active_jobs'] = $this->job_posting_model->get_company_active_jobs($company_id);
             $this->load->view('fontend/employer/cv_trash', $data);
         }
         elseif ($type == 'qbqnk') {
