@@ -606,6 +606,7 @@ class Employer extends MY_Employer_Controller {
                 $company_name = $this->session->userdata('company_name');
                 $data = array('company' => $company_name, 'action_taken_for' => $company_name, 'field_changed' => 'Deleted Job', 'Action' => 'Deleted ' . $old_job_details['job_title'] . ' Job .', 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
                 $result = $this->Master_model->master_insert($data, 'employer_audit_record');
+                $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Job Post has been moved to Trash !</div>');
                 redirect_back();
             } else {
                 echo "error";
