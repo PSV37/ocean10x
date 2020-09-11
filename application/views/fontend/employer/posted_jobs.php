@@ -1022,7 +1022,7 @@
          <div class="front">
 
             <div class="btn-group">
-                        <a href=" <?php echo base_url('employer/job_post/' . $ct_row['ques_id']); ?>"><i class="far fa-edit icon_backg"></i></a>
+                        <a href=" <?php echo base_url('employer/job_post/' . $ct_row['job_id']); ?>"><i class="far fa-edit icon_backg"></i></a>
                         
                      </div>
 
