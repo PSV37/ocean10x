@@ -74,7 +74,7 @@
                 }   ?>
                         <br>
                            <div class="btn-group">
-                        <a title="restore" href=" <?php echo base_url('employer/recover_cv/' . $$cv_row['cv_id']); ?>" ><i class="fas fa-trash-restore icon_backg"></i></a>
+                        <a title="restore" href=" <?php echo base_url('employer/recover_cv/' .$cv_row['cv_id']); ?>" ><i class="fas fa-trash-restore icon_backg"></i></a>
                       
                      </div>
                         <!-- <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

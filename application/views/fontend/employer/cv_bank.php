@@ -943,7 +943,7 @@ button#sklbtn {
             <?php echo $this->session->flashdata('success'); ?></div>
             <div class="row">
                <div class="col-md-12">
-                 <a href="#" style="float: right;margin-right: 34px;margin-top: 2px;background-color: #18c5bd;/* width: 52px; */" onclick="get_trash();"><button class="btn btn-primary" style="background-color: #18c5bd;width: 70px;border: none;"><i class="fas fa-trash-alt" ></i> Trash</button></a>
+                 <a href="#" style="float: right;margin-right: 34px;/* margin-top: 2px; */background-color: #18c5bd;/* width: 52px; *//* max-height: 21px; */" onclick="get_trash();"><button class="btn btn-primary" style="background-color: #18c5bd;width: 64px;border: none;margin-top: 0px;margin-left: 2px;"><i class="fas fa-trash-alt" aria-hidden="true"></i> Trash</button></a>
                   <button class="folder_popup"  data-toggle="modal" data-keyboard="true" data-target="#myModal_add" style="float: right;">Create&emsp;<i class="fas fa-folder-open"></i></button>
                </div>
             </div>

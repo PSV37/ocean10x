@@ -627,11 +627,10 @@ class Employer extends MY_Employer_Controller {
 
     }
     public function recover_cv($cv_id) {
-        $cv_status = array('js_status' => 0);
+        $cv_status = array('js_status' => '0');
         $where11['cv_id'] = $cv_id;
         $this->Master_model->master_update($cv_status, 'corporate_cv_bank', $where11);
 
-        $company_name = $this->session->userdata('company_name');
         
          $this->session->set_flashdata('success', '<div class="alert alert-success text-center">CV restored Successfully!</div>');
         redirect('employer/corporate_cv_bank');
