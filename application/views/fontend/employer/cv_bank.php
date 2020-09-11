@@ -1137,7 +1137,7 @@ button#sklbtn {
                         </li>
                         <li class="cv">
                            <em id="3">Consultant cv's</em>
-                           <span>344</span>
+                           <span>50</span>
                         </li>
                      </ul>
                   </section>
