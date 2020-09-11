@@ -5660,6 +5660,7 @@ public function get_test_list()
     {
         $type = $this->input->post('type');
         if ($type == 'cv') {
+             $company_id = $this->session->userdata('company_profile_id');
             $where_c = "company_id ='$company_id' and js_status = '1'";
             // $where_c['company_id'] = $company_id;
             $join = array('education_level' => 'education_level.education_level_id = corporate_cv_bank.js_top_education | left outer');
