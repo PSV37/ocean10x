@@ -1135,21 +1135,21 @@ button#sklbtn {
                      </div>
                      <ul class="pieID legend">
                         <li class="cv">
-                           <em id="spanid0">Total cv</em>
+                           <em id="spanid1">Total cv</em>
                            <span><?php echo sizeof($cv_bank_data); ?></span>
                         </li>
                         <li class="cv">
-                           <em id="spanid1">Active cv</em>
+                           <em id="spanid2">Active cv</em>
                            <!--<span id="active_cv"><?php echo sizeof($active_cv); ?></span>-->
                            <span> 50 </span>
                         </li>
                         <li class="cv">
-                           <em id="spanid2">Own cv's</em>
+                           <em id="spanid3">Own cv's</em>
                            <!--<span id="own_cvs"><?php echo sizeof($own_cvs); ?></span>-->
                            <span> 50 </span>
                         </li>
                         <li class="cv">
-                           <em id="spanid3">Consultant cv's</em>
+                           <em id="spanid4">Consultant cv's</em>
                            <span>50</span>
                         </li>
                      </ul>
@@ -2126,10 +2126,10 @@ function get_trash()
      return (dataNum / dataTotal) * 360;
    }
    function addSlice(sliceSize, pieElement, offset, sliceID, color, dataCount) {
-      console.log($('#spanid0').text());
-      var val = $('#spanid'+dataCount).text();
+      var ids = 1 + dataCount;
+      var val = $('#spanid'+ids).text();
 
-      console.log(dataCount);
+      console.log(val);
      $(pieElement).append("<div class='slice "+sliceID+"'><span title='"+val+"'></span></div>");
      var offset = offset - 1;
      var sizeRotation = -179 + sliceSize;
