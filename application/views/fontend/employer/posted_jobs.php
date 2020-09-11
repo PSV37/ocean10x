@@ -1565,8 +1565,8 @@ function get_trash()
              // }
    
    
-             createPie(".pieID.legend", ".pieID.pie");
-         }
+      createPie(".pieID.legend", ".pieID.pie");
+   }
    
    
     
