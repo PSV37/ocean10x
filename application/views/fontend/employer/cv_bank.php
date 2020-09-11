@@ -2126,6 +2126,7 @@ function get_trash()
      return (dataNum / dataTotal) * 360;
    }
    function addSlice(sliceSize, pieElement, offset, sliceID, color, dataCount) {
+      console.log($('#spanid0').text());
       var val = $('#spanid'+dataCount).text();
 
       console.log(val);
