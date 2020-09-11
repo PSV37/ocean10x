@@ -1451,8 +1451,8 @@
                 console.log(obj[0]['type']);
                 
                 $('#test_type'+job_id).html(obj[0]['type']);
-                $('#total_questions'+job_id).html(obj[0]['total_questions'+job_id]);
-                $('#total_duration'+job_id).html(obj[0]['test_duration'+job_id]);
+                $('#total_questions'+job_id).html(obj[0]['total_questions']);
+                $('#total_duration'+job_id).html(obj[0]['test_duration']);
                 $('#level'+job_id).html(obj[0]['level']);
                 $('#topics'+job_id).html(obj[0]['topics']);
                    // $('#company_pincode').val('');
