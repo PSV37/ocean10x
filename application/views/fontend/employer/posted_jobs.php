@@ -1600,7 +1600,7 @@ function get_trash()
        addSlice(sliceSize, pieElement, offset, sliceID, color,dataCount);
      } else {
        addSlice(maxSize, pieElement, offset, sliceID, color,dataCount);
-       iterateSlices(sliceSize-maxSize, pieElement, offset+maxSize, dataCount, sliceCount+1, color);
+       iterateSlices(sliceSize-maxSize, pieElement, offset+maxSize, dataCount, sliceCount, color);
      }
    }
    function createPie(dataElement, pieElement) {
