@@ -1005,11 +1005,11 @@
    input#posted_job {
    display: none;
    }
-   .icon_backg {
-    background-color: #dad9d9;
+  .icon_backg {
+    background-color: #18c5bd;
     padding: 12px;
     border-radius: 34px;
-    color: #000;
+    color: #fff;
     cursor: pointer;
 }
 </style>
