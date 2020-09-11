@@ -1251,37 +1251,37 @@
                      <span> 50 </span>
                   </li>
                   <li>
-                     <em>Applications Rcvd</em>
+                     <em id="spanid2">Applications Rcvd</em>
                      <!--<span id='total_applied'> </span>-->
                      <span> 50 </span>
                   </li>
                   <li>
-                     <em>Test Attempted</em> 
+                     <em id="spanid3">Test Attempted</em> 
                      <!--<span id='total_test'> </span>-->
                      <span> 50 </span>
                   </li>
                   <li>
-                     <em>Test Passed</em>
+                     <em id="spanid4">Test Passed</em>
                      <!--<span id='total_passed'></span>-->
                      <span> 50 </span>
                   </li>
                   <li>
-                     <em>Interview Passed</em> 
+                     <em id="spanid5">Interview Passed</em> 
                      <!--<span id='total_test_int_pass'></span>-->
                      <span> 50 </span>
                   </li>
                   <li>
-                     <em>Interview Failed</em>
+                     <em id="spanid1">Interview Failed</em>
                      <!--<span id='total_test_int_fail'></span>-->
                      <span> 50 </span>
                   </li>
                   <li>
-                     <em>Offer Accepted</em>
+                     <em id="spanid6">Offer Accepted</em>
                      <!--<span id='total_offer_accept'></span>-->
                      <span> 50 </span>
                   </li>
                   <li>
-                     <em>Early Applications</em>
+                     <em id="spanid7">Early Applications</em>
                      <!--<span id='early_applications'></span>-->
                      <span> 50 </span>
                   </li>
