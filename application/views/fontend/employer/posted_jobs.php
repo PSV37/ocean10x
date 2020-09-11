@@ -1166,12 +1166,12 @@
                  <div class="form-check">
                   <div class="col-md-6">
                    <label class="form-check-label">
-                     <input class="form-check-input radio-inline" type="radio" name="gridRadios" id="gridRadios1" value="option1" onclick="get_test_list('2');" >
+                     <input class="form-check-input radio-inline" type="radio" name="gridRadios" id="gridRadios1" value="option1" onclick="get_test_list('2',<?php echo $v_companyjobs->job_post_id; ?>);" >
                      Ocean Test Paper</label>
                      </div>
                      <div class="col-md-6">
                      <label class="form-check-label">
-                     <input class="form-check-input radio-inline" type="radio" name="gridRadios" id="gridRadios2" onclick="get_test_list('1');" value="option2">
+                     <input class="form-check-input radio-inline" type="radio" name="gridRadios" id="gridRadios2" onclick="get_test_list('1',<?php echo $v_companyjobs->job_post_id; ?>);" value="option2">
                      Use My Q-Bank</label>
                      </div>
                     
@@ -1181,7 +1181,7 @@
                </div>
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
               <label class="mdl-textfield__label" for="sample3">Tests</label> 
-                  <select class="form-control select2" name="test_id" id="test_id_modal" onchange="get_test_details();">
+                  <select class="form-control select2" name="test_id" id="test_id_modal<?php echo $v_companyjobs->job_post_id; ?>" onchange="get_test_details(<?php echo $v_companyjobs->job_post_id; ?>);">
                  
                </select>
             </div>
@@ -1189,25 +1189,25 @@
             <div class="row">
               <div class="col-md-4">
                <label>Total Questions :</label>
-              <span id="total_questions"></span>
+              <span id="total_questions<?php echo $v_companyjobs->job_post_id; ?>"></span>
               </div>
                 <div class="col-md-4">
                <label>Total Duration :</label>
-              <span id="total_duration"></span>
+              <span id="total_duration<?php echo $v_companyjobs->job_post_id; ?>"></span>
               </div>
                <div class="col-md-4">
                <label>Topics:</label>
-              <span id="topics"></span>
+              <span id="topics<?php echo $v_companyjobs->job_post_id; ?>"></span>
               </div>
             </div>
             <div class="row">
               <div class="col-md-4">
                <label>Test Type :</label>
-              <span id="test_type"></span>
+              <span id="test_type<?php echo $v_companyjobs->job_post_id; ?>"></span>
               </div>
                 <div class="col-md-4">
                <label>Test Level :</label>
-              <span id="level"></span>
+              <span id="level<?php echo $v_companyjobs->job_post_id; ?>"></span>
               </div>
               
             </div>
@@ -1424,7 +1424,7 @@
    endforeach;endif;
    ?>
    <script>
-      function get_test_list(test_type)
+      function get_test_list(test_type,job_id)
       {
          if (test_type) 
          {
@@ -1433,22 +1433,28 @@
                url:'<?php echo base_url();?>Employer/get_test_list',
                data:{test_status:test_type},
                success:function(res){
-                   $('#test_id_modal').html(res);
+                   $('#test_id_modal'+job_id).html(res);
                    // $('#company_pincode').val('');
                }
             })
          }
       }
-      function get_test_details()
+      function get_test_details(job_id)
       {
          var test_id = $('#test_id_modal').val();
          $.ajax({
                 type:'POST',
                url:'<?php echo base_url();?>Employer/get_test_details',
                data:{test_id:test_id},
-               success:function(res){
-                  console.log(res[0].total_questions);
-                   $('#total_questions').text(res[0].total_questions);
+               success:function(data){
+                var obj = jQuery.parseJSON(data);
+                console.log(obj[0]['type']);
+                
+                $('#test_type'+job_id).html(obj[0]['type']);
+                $('#total_questions'+job_id).html(obj[0]['total_questions'+job_id]);
+                $('#total_duration'+job_id).html(obj[0]['test_duration'+job_id]);
+                $('#level'+job_id).html(obj[0]['level']);
+                $('#topics'+job_id).html(obj[0]['topics']);
                    // $('#company_pincode').val('');
                }
             })
