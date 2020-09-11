@@ -1012,6 +1012,11 @@
     color: #fff;
     cursor: pointer;
 }
+.btn-group {
+    float: right;
+    margin-top: 3px;
+    margin-right: 10px;
+}
 </style>
 <div class="container-fluid main-d">
 <div class="container">
