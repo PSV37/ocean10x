@@ -1441,7 +1441,7 @@
       }
       function get_test_details(job_id)
       {
-         var test_id = $('#test_id_modal').val();
+         var test_id = $('#test_id_modal'+job_id).val();
          $.ajax({
                 type:'POST',
                url:'<?php echo base_url();?>Employer/get_test_details',
