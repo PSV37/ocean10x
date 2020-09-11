@@ -1137,15 +1137,17 @@ button#sklbtn {
                         </li>
                         <li class="cv">
                            <em id="1">Active cv</em>
-                           <span id="active_cv"><?php echo sizeof($active_cv); ?></span>
+                           <!--<span id="active_cv"><?php echo sizeof($active_cv); ?></span>-->
+                           <span> 50 </span>
                         </li>
                         <li class="cv">
                            <em id="2">Own cv's</em>
-                           <span id="own_cvs"><?php echo sizeof($own_cvs); ?></span>
+                           <!--<span id="own_cvs"><?php echo sizeof($own_cvs); ?></span>-->
+                           <span> 50 </span>
                         </li>
                         <li class="cv">
                            <em id="3">Consultant cv's</em>
-                           <span>344</span>
+                           <span>50</span>
                         </li>
                      </ul>
                   </section>
@@ -2108,7 +2110,7 @@ function get_trash()
                  }
            });
       // $('#active_cv').html(value);
-      // alert(value);
+      // alert(value);pieID
       createPie(".pieID.legend", ".pieID.pie");
    }
    
