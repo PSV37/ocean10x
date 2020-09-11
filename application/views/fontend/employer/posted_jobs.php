@@ -1181,11 +1181,35 @@
                </div>
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
               <label class="mdl-textfield__label" for="sample3">Tests</label> 
-                  <select class="form-control select2" name="test_id" id="test_id_modal">
+                  <select class="form-control select2" name="test_id" id="test_id_modal" onchange="get_test_details();">
                  
                </select>
             </div>
+            <div class="row">
+              <div class="col-md-4">
+               <label>Total Questions :</label>
+              <span id="total_questions"></span>
+              </div>
+                <div class="col-md-4">
+               <label>Total Duration :</label>
+              <span id="total_duration"></span>
+              </div>
+               <div class="col-md-4">
+               <label>Topics:</label>
+              <span id="topics"></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+               <label>Test Type :</label>
+              <span id="test_type"></span>
+              </div>
+                <div class="col-md-4">
+               <label>Test Level :</label>
+              <span id="level"></span>
+              </div>
               
+            </div>
              
               
             </div>
@@ -1413,6 +1437,19 @@
                }
             })
          }
+      }
+      function get_test_details()
+      {
+         var test_id = $('#test_id_modal').val();
+         $.ajax({
+                type:'POST',
+               url:'<?php echo base_url();?>Employer/get_test_details',
+               data:{test_id:test_id},
+               success:function(res){
+                   $('#total_questions').html(res.total_questions);
+                   // $('#company_pincode').val('');
+               }
+            })
       }
    </script>
 <script>
