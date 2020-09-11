@@ -201,7 +201,7 @@
     <span class="caret" tabindex="-1"></span>
     <p tabindex="-1" class="profile-accoutnt-p"  ><?php echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?></p>    
     </a>
-    <ul class="dropdown-menu" tabindex="-1">
+    <ul class="dropdown-menu">
       <li><a href="<?php echo base_url(); ?>job_seeker/seeker_info"><i class="fas fa-user"></i>Profile</a> </li>
       <li><a href="<?php echo base_url(); ?>job_seeker/change_password"><i class="fas fa-lock"></i>Change Password</a></li>
       <li ><a href="#" class="btn-logoff" data-toggle="modal" data-target="#modal_logoff"><i class="fas fa-power-off"></i>Logout</a></li>
