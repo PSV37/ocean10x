@@ -5346,7 +5346,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     {
         $job_info['benefits'] = $this->input->post('benefits');
         $where = "job_post_id = '$job_id'";
-        $job_details = $this->Master_model->get_master_row('job_posting', $select = FALSE, $where, $join = FALSE)
+        $job_details = $this->Master_model->get_master_row('job_posting', $select = FALSE, $where, $join = FALSE);
               
                 $job_info['edu'] = $job_details->job_edu;
                 $where_int = "education_level_id='$ed'";
