@@ -62,9 +62,10 @@
   width:310px;
   }
   .icon-info {
-  margin-left:60px;
-  margin-bottom:10px;
-  }
+    margin-left: 60px;
+    margin-bottom: 60px;
+    width: fit-content;
+}
   li.left-icon-title{
   list-style-type: none;
   float: left;
@@ -230,9 +231,9 @@
                 <li class="left-icon-title"><i class="fa fa-envelope"></i></li>
                 <li class="right-icon-title"> &emsp;<?php echo $cv_bank_data['js_email']; ?></li>
                 <li class="left-icon-title"><i class="fa fa-phone"></i></li>
-                <li class="right-icon-title" style="width:100%;font-size:14px;"> &emsp;<?php echo $cv_bank_data['js_mobile']; ?></li>
-                 <!-- <li class="left-icon-title"><i class="fas fa-briefcase"></i></li>
-                <li class="right-icon-title" style="width:100%;font-size:14px;"> &emsp;<?php echo $cv_bank_data['js_experience']; ?> years</li> -->
+                <li class="right-icon-title"> &emsp;<?php echo $cv_bank_data['js_mobile']; ?></li>
+                 <li class="left-icon-title"><i class="fas fa-briefcase"></i></li>
+                <li class="right-icon-title"> &emsp;<?php echo $cv_bank_data['js_experience']; ?> years</li>
                 <div class="clear"></div>
               </div>
               <div class="following-info">
