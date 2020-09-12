@@ -1097,7 +1097,7 @@
             <!--  <div class="clear"></div>
                </div> -->  
                <br>       
-            <button class="detail-btn">details</button>
+            <a href=" <?php echo base_url() ?>employer/preview_job_post/<?php echo $v_companyjobs->job_post_id ?>"><button class="detail-btn">details</button></a>
             <div class="btn-group">
                         <a href=" <?php echo base_url() ?>employer/update_job/<?php echo $v_companyjobs->job_post_id ?>"><i class="far fa-edit icon_backg"></i></a>
                         <a href="<?php echo base_url('employer/deactivate_job/' . $v_companyjobs->job_post_id); ?>"><i class="fas fa-trash-alt icon_backg"></i></a>
