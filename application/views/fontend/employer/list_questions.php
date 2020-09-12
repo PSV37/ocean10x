@@ -1514,7 +1514,8 @@
                 </div>
                 <div class="btn-group">
                   <a href=" <?php echo base_url('employer/edit_questionbank/' . $ct_row['ques_id']); ?>"><i class="far fa-edit icon_backg"></i></a>
-                  <a href="<?php echo base_url('employer/delete_questionbank/' . $ct_row['ques_id']); ?>"><i class="fas fa-trash-alt icon_backg"></i></a>
+
+                  <a data-toggle="modal" data-target="#delete" onchange="confirm_delete($ct_row['ques_id']);" href="#"><i class="fas fa-trash-alt icon_backg"></i></a>
                 </div>
               </div>
               <?php
@@ -2013,13 +2014,36 @@
 </div>
 <?php
   endforeach;endif;?>
+  <div class="modal fade" id="delete" tabindex='-1' role="dialog">
+    <div class="modal-dialog">
+       <form method="post" id="del_modal" action="" > 
+      
+      <div class="modal-content">
+        <div class="modal-header">
+         
+          <h4 class="modal-title">Are you sure want to Delete This ?</h4>
+        </div>
+       
+        <div class="modal-footer">
+         <button type="submit" class="btn btn-default" > Ok </button>
+          <button type="button" class="btn btn-default1 active_modal" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
 <script>
   $(document).ready (function(){
     $("#smsg").fadeTo(2000, 500).slideUp(500, function(){
     $("#smsg").slideUp(500);
     });   
   });
-  
+  function confirm_delete(id)
+  {
+    var newUrl = '<?php echo base_url(); ?>employer/delete_questionbank/'+id;
+    $('#del_modal').attr("action", newUrl);
+    $('#delete').modal("show");
+  }
   window.onclick = function(event) {
   if ($('#test1').is(":checked")) 
   {
