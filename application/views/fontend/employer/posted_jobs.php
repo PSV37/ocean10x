@@ -1032,11 +1032,11 @@
             <div class="following-info">
                <li class="left-title"
                   >Job Roll</li>
-               <li class="right-title">&nbsp;: <?php echo $v_companyjobs->job_role_title; ?></li>
+               <li class="right-title">&nbsp;: <?php echo $v_companyjobs['job_role_title']; ?></li>
                <li class="left-title">Engagement</li>
-               <li class="right-title">&nbsp;: <?php echo $v_companyjobs->job_nature_name; ?></li>
+               <li class="right-title">&nbsp;: <?php echo $v_companyjobs['job_nature_name']; ?></li>
                <li class="left-title">Domain</li>
-               <li class="right-title">&nbsp;:<?php echo $v_companyjobs->job_category_name; ?></li>
+               <li class="right-title">&nbsp;:<?php echo $v_companyjobs['job_category_name']; ?></li>
                <!--  <li class="left-title">Role Type </li><li class="right-title">&nbsp;:</li> -->
                <li class="left-title">Dummy1</li>
                <li class="right-title">&nbsp;:</li>
@@ -1045,13 +1045,13 @@
             </div>
             <div class="following-info2">
                <li class="left-title">Education</li>
-               <li class="right-title">&nbsp;: <?php echo $v_companyjobs->education_level_name; ?></li>
+               <li class="right-title">&nbsp;: <?php echo $v_companyjobs['education_level_name']; ?></li>
                <li class="left-title">experience</li>
-               <li class="right-title">&nbsp;:<?php echo $v_companyjobs->experience; ?></li>
+               <li class="right-title">&nbsp;:<?php echo $v_companyjobs['experience']; ?></li>
                <li class="left-title">CTC</li>
-               <li class="right-title">&nbsp;:<?php echo $v_companyjobs->salary_range; ?></li>
+               <li class="right-title">&nbsp;:<?php echo $v_companyjobs['salary_range']; ?></li>
                <li class="left-title">Vacancies</li>
-               <li class="right-title">&nbsp;: <?php echo $v_companyjobs->no_jobs; ?></li>
+               <li class="right-title">&nbsp;: <?php echo $v_companyjobs['no_jobs']; ?></li>
                <!-- <li class="left-title">Specialization</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->education_specialization; ?></li> -->
                <!--  <li class="left-title">Joining ETA</li><li class="right-title">&nbsp;:30 days</li> -->
                <!--  <li class="left-title">Benifits</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->benefits; ?> </li> -->
@@ -1060,20 +1060,20 @@
             </div>
             <div class="following-info3">
                <li class="left-title">JD attached&nbsp;<i class="fas fa-link"></i></li>
-               <li class="right-title">&nbsp;: <?php if (isset($v_companyjobs->jd_file) && !empty($v_companyjobs->jd_file)) { echo "Yes"; ?>  <a style="margin-left: 15px" href="<?php echo base_url() ?>upload/job_description/<?php echo $v_companyjobs->jd_file; ?>" download><i class="fa fa-download" aria-hidden="true"></i></a> <?php } else { echo "No";} ?></li>
+               <li class="right-title">&nbsp;: <?php if (isset($v_companyjobs['jd_file']) && !empty($v_companyjobs['jd_file'])) { echo "Yes"; ?>  <a style="margin-left: 15px" href="<?php echo base_url() ?>upload/job_description/<?php echo $v_companyjobs['jd_file']; ?>" download><i class="fa fa-download" aria-hidden="true"></i></a> <?php } else { echo "No";} ?></li>
                <li class="left-title">Ocean Test</li>
-               <li class="right-title">&nbsp;:<?php echo $v_companyjobs->is_test_required; ?></li>
+               <li class="right-title">&nbsp;:<?php echo $v_companyjobs['is_test_required']; ?></li>
                <li class="left-title">Published on</li>
-               <li class="right-title">&nbsp;:<?php if(!is_null($v_companyjobs->created_at)) { echo date('M j Y',strtotime($v_companyjobs->created_at)); } ?></li>
+               <li class="right-title">&nbsp;:<?php if(!is_null($v_companyjobs['created_at'])) { echo date('M j Y',strtotime($v_companyjobs['created_at'])); } ?></li>
                <li class="left-title">Job expiry</li>
-               <li class="right-title">&nbsp;:<?php if(!is_null($v_companyjobs->job_deadline)) { echo date('M j Y',strtotime($v_companyjobs->job_deadline)); } ?></li>
+               <li class="right-title">&nbsp;:<?php if(!is_null($v_companyjobs['job_deadline'])) { echo date('M j Y',strtotime($v_companyjobs['job_deadline'])); } ?></li>
                <div class="clear"></div>
             </div>
             <!-- <div id="skills"> -->
                <br><br>
             <span>Skill sets</span>:
             <?php 
-               $sk=$v_companyjobs->skills_required;
+               $sk=$v_companyjobs['skills_required'];
                if (isset($sk) && !empty($sk)) {
                   $where_sk= "id IN (".$sk.") AND status=1";
                 $select_sk = "skill_name ,id";
@@ -1086,7 +1086,7 @@
             <br>
             <span>Benefits</span>:
             <?php 
-               $benefits=explode(',', $v_companyjobs->benefits);
+               $benefits=explode(',', $v_companyjobs['benefits']);
                
                 if(!empty($benefits)){ 
                   $i=0;
@@ -1097,13 +1097,13 @@
             <!--  <div class="clear"></div>
                </div> -->  
                <br>       
-            <a href=" <?php echo base_url() ?>employer/preview_job_post/<?php echo $v_companyjobs->job_post_id ?>"><button class="detail-btn">details</button></a>
+            <a href=" <?php echo base_url() ?>employer/preview_job_post/<?php echo $v_companyjobs['job_post_id'] ?>"><button class="detail-btn">details</button></a>
             <div class="btn-group">
-                        <a href=" <?php echo base_url() ?>employer/update_job/<?php echo $v_companyjobs->job_post_id ?>"><i class="far fa-edit icon_backg"></i></a>
-                        <a href="<?php echo base_url('employer/deactivate_job/' . $v_companyjobs->job_post_id); ?>"><i class="fas fa-trash-alt icon_backg"></i></a>
+                        <a href=" <?php echo base_url() ?>employer/update_job/<?php echo $v_companyjobs['job_post_id'] ?>"><i class="far fa-edit icon_backg"></i></a>
+                        <a href="<?php echo base_url('employer/deactivate_job/' . $v_companyjobs['job_post_id']); ?>"><i class="fas fa-trash-alt icon_backg"></i></a>
                      </div>
 
-            <?php  if ($v_companyjobs->job_deadline > date('Y-m-d')){
+            <?php  if ($v_companyjobs['job_deadline'] > date('Y-m-d')){
                // echo '<button class="btn btn-success btn-xs">Live <i class="fa fa-check-circle" aria-hidden="true"></i></button>';
                echo '<span class="active-span">Active</span>';
                }
@@ -1112,14 +1112,14 @@
                echo '<span class="pasive-span">Expired</span>';
                } ?>
             <div class="dropdown">
-               <a href="#" data-toggle="modal" data-target="#rotateModal<?php echo $v_companyjobs->job_post_id; ?>"> <i class="fas fa-share"></i></a>
+               <a href="#" data-toggle="modal" data-target="#rotateModal<?php echo $v_companyjobs['job_post_id']; ?>"> <i class="fas fa-share"></i></a>
                <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                <i class="fas fa-ellipsis-h"></i>
                </button>
                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1">
                   <li><a class="dropdown-item" href="#">View post job</a></li>
-                  <li> <a class="dropdown-item" href="<?php echo base_url() ?>employer/update_job/<?php echo $v_companyjobs->job_post_id ?>">Edit job post</a></li>
-                 <li ><a class="dropdown-item" href="#" id="attach_to_job" data-toggle="modal" data-target="#attach_test<?php echo $v_companyjobs->job_post_id ?>" >Attach Test</a></li>
+                  <li> <a class="dropdown-item" href="<?php echo base_url() ?>employer/update_job/<?php echo $v_companyjobs['job_post_id'] ?>">Edit job post</a></li>
+                 <li ><a class="dropdown-item" href="#" id="attach_to_job" data-toggle="modal" data-target="#attach_test<?php echo $v_companyjobs['job_post_id'] ?>" >Attach Test</a></li>
                </div>
             </div>
          </div>
@@ -1140,7 +1140,9 @@
                
           </div>
 </div>
- <?php if (!empty($company_active_jobs)): foreach ($company_active_jobs as $v_companyjobs) : ?>
+ <?php
+  $company_active_jobs = $this->job_posting_model->get_company_active_jobs($employer_id);
+  if (!empty($company_active_jobs)): foreach ($company_active_jobs as $v_companyjobs) : ?>
    <div class="modal" id="attach_test<?php echo $v_companyjobs->job_post_id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
    <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -1376,7 +1378,9 @@
 <!-- <div class=" text-center">
    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#rotateModal">Rotate Modal</button>
    </div> -->
-<?php if (!empty($company_active_jobs)): foreach ($company_active_jobs as $v_companyjobs) : ?>
+<?php
+ $company_active_jobs = $this->job_posting_model->get_company_active_jobs($employer_id);
+ if (!empty($company_active_jobs)): foreach ($company_active_jobs as $v_companyjobs) : ?>
 <div class="modal" id="rotateModal<?php echo $v_companyjobs->job_post_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
    <input type="hidden" name="company_profile_id" id="company_profile_id" value="<?php echo $this->session->userdata('company_profile_id'); ?>">
    <div class="modal-dialog" role="document">
