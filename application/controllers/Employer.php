@@ -687,8 +687,9 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $data['activemenu'] = 'active_job';
         $this->session->set_userdata($data);
         $data['employer_id'] = $this->session->userdata('company_profile_id');
+        $employer_id = $data['employer_id'];
         // $company_active_jobs = $this->job_posting_model->get_company_active_jobs($employer_id);
-        $where = "job_status = '1' and company_profile_id = '$data['employer_id']'";
+        $where = "job_status = '1' and company_profile_id = '$employer_id'";
         $join = array('job_nature'=>'job_nature.job_nature_id=job_posting.job_nature',
             'job_category'=>'job_category.job_category_id=job_posting.job_category',
             'job_role'=>'job_role.id=job_posting.job_role',
