@@ -956,24 +956,8 @@ button#sklbtn {
                </div>
             </div>
             <div class="row">
-               <div class="col-md-6">
-                  <form class="navbar-form" role="search">
-                    
-                     <input type="text" id="myInput" class="form-control" placeholder="Search with Email or Name or Number" style="width: 100%">
-                    
-                  </form>
-                  <div class="clear"></div>
-               </div>
-               <div class="col-md-3">
-                
-                 
-               </div>
-               <div class="col-md-3">
-                  <a href="<?php echo base_url() ?>employer/add_new_cv<?php if(!empty($fid)){echo '?fid='.$fid;} ?>"><button class="btn btn-primary"><i class="fas fa-plus"></i> Add New CV</button></a>
-               </div>
-            </div>
-            <div class="row"  id="bulk">
-               <label class="dropdown bulkdropdown" style="float:left;">
+               <div class="col-md-4">
+                  <label class="dropdown bulkdropdown" style="float:left;">
 
                          <div class="dd-button"  onclick="myFunction(event)">
                            Bulk Action
@@ -990,7 +974,10 @@ button#sklbtn {
                            <li> <a href="#" id="frwd_btn" data-toggle="modal" data-keyboard="true" data-target="#bulkupload_folder">Folder Upload</a></li>
                         </ul>
                      </label>
-                      <form method="post" action="<?php echo base_url(); ?>employer/corporate_cv_bank">
+                  <div class="clear"></div>
+               </div>
+               <div class="col-md-4">
+                  <form method="post" action="<?php echo base_url(); ?>employer/corporate_cv_bank">
                      <label class="dropdown">
                         <div class="dd-button" onclick="myFunction2(event)">
                            Sort by
@@ -1006,8 +993,17 @@ button#sklbtn {
                      <input id="sizevalue" size="15" name="sort_val" type="hidden" />
                      <button type="submit" name="sort" class="hidden" id="sort_btn"></button>
                   </form>
-              
+                 
+               </div>
+               <div class="col-md-4">
+                  <a href="<?php echo base_url() ?>employer/add_new_cv<?php if(!empty($fid)){echo '?fid='.$fid;} ?>"><button class="btn btn-primary"><i class="fas fa-plus"></i> Add New CV</button></a>
+               </div>
             </div>
+           <!--  <div class="row"  id="bulk">
+               
+                    
+              
+            </div> -->
             <div class="row" id="bulk">
                <div class="col-md-6">
                  
