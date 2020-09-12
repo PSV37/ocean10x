@@ -264,11 +264,8 @@
               <div class="skils_benifit">
                 <li class="left-title_seperate">skills&nbsp;&nbsp; </li>
                 <li class="right-title_seperate">:
-                  <?php  $sk=explode(',',$cv_bank_data['js_skill_set']);
-                    if (isset($sk) && !empty($sk)) {
-                       $where_sk= "id IN (".$sk.") AND status=1";
-                     $select_sk = "skill_name ,id";
-                     $skills = $this->Master_model->getMaster('skill_master',$where_sk,$join = FALSE, $order = false, $field = false, $select_sk,$limit=10,$start=false, $search=false);
+                  <?php  $skills=explode(',',$cv_bank_data->js_skill_set);
+                    
                      if(!empty($skills)){ 
                              foreach($skills as $skill_row){
                               ?>
