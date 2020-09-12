@@ -1227,43 +1227,35 @@
                   </li>
                   <li>
                      <em id="spanid1">Sent to Candidates</em>
-                     <!--<span id='total_forwarded'> </span>-->
-                     <span> 50 </span>
+                     <span id='total_forwarded'> </span>
                   </li>
                   <li>
                      <em id="spanid2">Applications Rcvd</em>
-                     <!--<span id='total_applied'> </span>-->
-                     <span> 50 </span>
+                     <span id='total_applied'> </span>
                   </li>
                   <li>
                      <em id="spanid3">Test Attempted</em> 
-                     <!--<span id='total_test'> </span>-->
-                     <span> 50 </span>
+                     <span id='total_test'> </span>
                   </li>
                   <li>
                      <em id="spanid4">Test Passed</em>
-                     <!--<span id='total_passed'></span>-->
-                     <span> 50 </span>
+                     <span id='total_passed'></span>
                   </li>
                   <li>
                      <em id="spanid5">Interview Passed</em> 
-                     <!--<span id='total_test_int_pass'></span>-->
-                     <span> 50 </span>
+                     <span id='total_test_int_pass'></span>
                   </li>
                   <li>
                      <em id="spanid6">Interview Failed</em>
-                     <!--<span id='total_test_int_fail'></span>-->
-                     <span> 50 </span>
+                     <span id='total_test_int_fail'></span>
                   </li>
                   <li>
                      <em id="spanid7">Offer Accepted</em>
-                     <!--<span id='total_offer_accept'></span>-->
-                     <span> 50 </span>
+                     <span id='total_offer_accept'></span>
                   </li>
                   <li>
                      <em id="spanid8">Early Applications</em>
-                     <!--<span id='early_applications'></span>-->
-                     <span> 50 </span>
+                     <span id='early_applications'></span>
                   </li>
                </ul>
             </section>
@@ -1580,7 +1572,7 @@ function get_trash()
        addSlice(sliceSize, pieElement, offset, sliceID, color,dataCount);
      } else {
        addSlice(maxSize, pieElement, offset, sliceID, color,dataCount);
-       iterateSlices(sliceSize-maxSize, pieElement, offset+maxSize, dataCount, sliceCount, color);
+       iterateSlices(sliceSize-maxSize, pieElement, offset+maxSize, dataCount, sliceCount+1, color);
      }
    }
    function createPie(dataElement, pieElement) {
