@@ -1099,8 +1099,8 @@
                <br>       
             <a href=" <?php echo base_url() ?>employer/preview_job_post/<?php echo $v_companyjobs['job_post_id'] ?>"><button class="detail-btn">details</button></a>
             <div class="btn-group">
-                        <a href=" <?php echo base_url() ?>employer/update_job/<?php echo $v_companyjobs['job_post_id'] ?>"><i class="far fa-edit icon_backg"></i></a>
-                        <a href="<?php echo base_url('employer/deactivate_job/' . $v_companyjobs['job_post_id']); ?>"><i class="fas fa-trash-alt icon_backg"></i></a>
+                        <a title="Edit" href=" <?php echo base_url() ?>employer/update_job/<?php echo $v_companyjobs['job_post_id'] ?>"><i class="far fa-edit icon_backg"></i></a>
+                        <a title="Delete" href="<?php echo base_url('employer/deactivate_job/' . $v_companyjobs['job_post_id']); ?>"><i class="fas fa-trash-alt icon_backg"></i></a>
                      </div>
 
             <?php  if ($v_companyjobs['job_deadline'] > date('Y-m-d')){
@@ -1118,7 +1118,7 @@
                </button>
                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1">
                   <li><a class="dropdown-item" href="#">View post job</a></li>
-                  <li> <a class="dropdown-item" href="<?php echo base_url() ?>employer/update_job/<?php echo $v_companyjobs['job_post_id'] ?>">Edit job post</a></li>
+                  <!-- <li> <a class="dropdown-item" href="<?php echo base_url() ?>employer/update_job/<?php echo $v_companyjobs['job_post_id'] ?>">Edit job post</a></li> -->
                  <li ><a class="dropdown-item" href="#" id="attach_to_job" data-toggle="modal" data-target="#attach_test<?php echo $v_companyjobs['job_post_id'] ?>" >Attach Test</a></li>
                </div>
             </div>

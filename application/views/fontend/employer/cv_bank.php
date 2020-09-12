@@ -1104,9 +1104,9 @@ a.myclass {
                 }   ?>
                         <br>
                           <div class="btn-group">
-                           <a href="<?php echo base_url(); ?>employer/preview_cv/<?php echo base64_encode($cv_row['cv_id']); ?>"><i class="fa fa-info-circle icon_backg"></i></a>
-                        <a href=" <?php echo base_url(); ?>employer/edit_cv/<?php echo base64_encode($cv_row['cv_id']); ?>"><i class="far fa-edit icon_backg"></i></a>
-                        <a href="<?php echo base_url(); ?>employer/delete_cv/<?php echo base64_encode($cv_row['cv_id']); ?>"><i class="fas fa-trash-alt icon_backg"></i></a>
+                           <a title="view Details" href="<?php echo base_url(); ?>employer/preview_cv/<?php echo base64_encode($cv_row['cv_id']); ?>"><i class="fa fa-info-circle icon_backg"></i></a>
+                        <a  title="Edit" href=" <?php echo base_url(); ?>employer/edit_cv/<?php echo base64_encode($cv_row['cv_id']); ?>"><i class="far fa-edit icon_backg"></i></a>
+                        <a title="Delete"  href="<?php echo base_url(); ?>employer/delete_cv/<?php echo base64_encode($cv_row['cv_id']); ?>"><i class="fas fa-trash-alt icon_backg"></i></a>
                      </div>
                         <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
@@ -1123,7 +1123,7 @@ a.myclass {
                            <?php } ?>
                            <li><a onclick="get_copy_folders(<?php echo $cv_row['cv_id']; ?>);" class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-keyboard="true" data-target="#copy_cv<?php echo $cv_row['cv_id']; ?>"  href="#">Copy this CV</a></li>
                            <li><a class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-keyboard="true" data-target="#move_cv<?php echo $cv_row['cv_id']; ?>" href="#">Move this CV</a></li>
-                            <li><a href="<?php echo base_url(); ?>employer/edit_cv/<?php echo base64_encode($cv_row['cv_id']); ?>" >Edit CV</a></li>
+                            <!-- <li><a href="<?php echo base_url(); ?>employer/edit_cv/<?php echo base64_encode($cv_row['cv_id']); ?>" >Edit CV</a></li> -->
                              <li><a href="<?php echo base_url(); ?>employer/getocean_profile/<?php echo base64_encode($cv_row['js_email']); ?>" >Get Ocean Profile</a></li>
                         </div>
                      </div>

@@ -227,9 +227,11 @@
                 <p class="job_title"><?php echo $cv_bank_data['js_name']; ?></p>
               </div>
               <div class="icon-info">
-                <li class="left-icon-title"><i class="fas fa-map-marker-alt"></i></li>
+                <li class="left-icon-title"><i class="fa fa-envelope"></i></li>
                 <li class="right-icon-title"> &emsp;<?php echo $cv_bank_data['js_email']; ?></li>
-                <li class="left-icon-title"><i class="fas fa-briefcase"></i></li>
+                <li class="left-icon-title"><i class="fa fa-mobile"></i></li>
+                <li class="right-title" style="width:100%;font-size:14px;"> &emsp;<?php echo $cv_bank_data['js_mobile']; ?> years</li>
+                 <li class="left-icon-title"><i class="fas fa-briefcase"></i></li>
                 <li class="right-title" style="width:100%;font-size:14px;"> &emsp;<?php echo $cv_bank_data['js_experience']; ?> years</li>
                 <div class="clear"></div>
               </div>
