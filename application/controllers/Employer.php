@@ -3400,9 +3400,27 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $config['attributes'] = array('class' => 'myclass');
             $config['page_query_string'] = TRUE;
             $config['num_links'] = 2;
-            $config['use_page_numbers'] = TRUE;
+            // $config['use_page_numbers'] = TRUE;
             $config['query_string_segment'] = 'page';
             // $config['first_url'] = base_url() . 'index.php/store/items_details?merch_cat=' . $merch_cat . '&page=1';
+            $config['full_tag_open'] = '<div class="pagination">';
+        $config['full_tag_close'] = '</div>';
+        $config['first_link'] = '<button>First Page</button>';
+        $config['first_tag_open'] = '<span class="firstlink">';
+        $config['first_tag_close'] = '</span>';
+        $config['last_link'] = '<button style="">Last Page</button>';
+        $config['last_tag_open'] = '<span class="lastlink">';
+        $config['last_tag_close'] = '</span>';
+        $config['next_link'] = '<span style="margin-left:8px;"><button style="color:#FFF; background:#008000;">Next Page</button></span>';
+        $config['next_tag_open'] = '<span class="nextlink">';
+        $config['next_tag_close'] = '</span>';
+        $config['prev_link'] = '<button style="color:#FFF; background:#0000FF;">Prev Page</button>';
+        $config['prev_tag_open'] = '<span class="prevlink">';
+        $config['prev_tag_close'] = '</span>';
+        $config['cur_tag_open'] = '<span style="margin-left:8px;">';
+        $config['cur_tag_close'] = '</span>';
+        $config['num_tag_open'] = '<span style="margin-left:8px;">';
+        $config['num_tag_close'] = '</span>';
             $offset = 0;
             $page = $this->input->get('page');
             if ($page) {
