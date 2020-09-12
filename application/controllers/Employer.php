@@ -3400,6 +3400,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $config['per_page'] = 5;
             $config['uri_segment'] = 3;
             $config['full_tag_open'] = '<div class="pagination">';
+            $config['query_string_segment'] = 'page';
             $config['full_tag_close'] = '</div>';
             $config['first_link'] = '<button>First Page</button>';
             $config['first_tag_open'] = '<span class="firstlink">';
@@ -3417,8 +3418,13 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $config['cur_tag_close'] = '</span>';
             $config['num_tag_open'] = '<span style="margin-left:8px;">';
             $config['num_tag_close'] = '</span>';
+            $offset = 0;
+            $page = $this->input->get('page');
+            if ($page) {
+                $offset = ($page - 1) * $config['per_page'];
+            }
             $this->pagination->initialize($config);
-            $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+            // $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
             $this->pagination->initialize($config);
             $data["links"] = $this->pagination->create_links();
             $where_c = "corporate_cv_bank.cv_id NOT IN (select cv_id from cv_folder_relation) and company_id ='$company_id' and js_status = '0'";

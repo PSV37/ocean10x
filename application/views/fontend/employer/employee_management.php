@@ -289,8 +289,8 @@ input.select2-search__field {
             </div>
           </div>
            <div class="container-fluid">
-             <div class="col-md-10"></div>
-            <div class="col-md-2">
+             <div class="col-md-6"></div>
+            <div class="col-md-6">
             <span><?php echo $links; ?></span>   
             </div>
                
