@@ -1310,7 +1310,7 @@
                </div>
             </div>
             <div class="panel-body">
-               <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter education" />
+               <input type="text" class="form-control" id="dev-table-filter" onchange="get_report_data();" data-action="filter" data-filters="#dev-table" placeholder="Filter education" />
                <div class="location_fil">
                   <div class="alert">
                      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
@@ -1341,7 +1341,7 @@
             <div class="panel-heading">
                <h3 class="panel-title">Mandatory</h3>
                <div class="pull-right">
-                  <span class="clickable filter" data-toggle="tooltip"  data-container="body">
+                  <span class="clickable filter" data-toggle="tooltip" onchange="get_report_data();" data-container="body">
                   <i class="glyphicon glyphicon-filter"></i>
                   </span>
                </div>
@@ -1368,9 +1368,9 @@
       <div class="experience">
          <form class="exp_level">
             <label for="range1">Experience</label>
-            <input id="range1" type="range" name="range1" min="1" max="10" step="0.1" value="5">
+            <input id="range1" type="range" name="range1" min="1" max="10" onchange="get_report_data();" step="0.1" value="5">
             <label for="range3">Availability</label>
-            <input id="range3" type="range" name="range3" min="0" max="100" step="1" value="50">
+            <input id="range3" type="range" name="range3" min="0" max="100" onchange="get_report_data();" step="1" value="50">
          </form>
       </div>
    </div>
