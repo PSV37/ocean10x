@@ -1054,7 +1054,7 @@ button#sklbtn {
                         <div class="job-info">
                            <div class="a" style="display: inline-flex;">
                               <li class="right-title" style="font-size:19px;margin-top:-4px;"  ><a href="<?php echo base_url(); ?>employer/edit_cv/<?php echo base64_encode($cv_row['cv_id']); ?>" style="color: black;cursor: pointer;" ><?php echo $cv_row['js_name']; ?></a></li>
-                              <li class="right-title" style="font-size: 15px;margin-top:-4px;font-weight: 600;margin-left: -106px;width: fit-content;"><?php echo $cv_row['js_email']; ?></li>
+                              <li class="right-title" style="font-size: 15px;font-weight: 600;margin-left: -106px;width: fit-content;"><?php echo $cv_row['js_email']; ?></li>
                            </div>
                         </div>
                         <div class="following-info">

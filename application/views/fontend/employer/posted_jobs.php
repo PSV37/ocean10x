@@ -341,16 +341,16 @@
    clip: rect(0px, 200px, 200px, 100px);
    }
    .legend {
-   margin-left:8px !important;
-   list-style-type: none;
-   padding: 0;
-   margin: 0;
-   background: #FFF;
-   padding: 15px;
-   font-size: 13px;
-   box-shadow: 1px 1px 0 #DDD,
-   2px 2px 0 #BBB;
-   }
+      margin-left: -10px !important;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background: #FFF;
+    padding: 0px;
+    font-size: 13px;
+    box-shadow: 1px 1px 0 #DDD, 2px 2px 0 #BBB;
+    width: 190px;
+}
    .last_section{border:solid 1px #e8e4e4;margin-top: 77px;padding:0px 10px;}
    .panel-title {
    font-size: 13px;
@@ -366,6 +366,7 @@
    margin-bottom: 0.7em;
    padding-left: 0.5em;
    border-left: 1.25em solid black;
+   width: 185px;
    }
    .legend em {
    font-style: normal;
@@ -674,17 +675,7 @@
    border-radius: 50%;
    clip: rect(0px, 200px, 200px, 100px);
    }
-   .legend {
-   margin-left:8px !important;
-   list-style-type: none;
-   padding: 0;
-   margin: 0;
-   background: #FFF;
-   padding: 15px;
-   font-size: 13px;
-   box-shadow: 1px 1px 0 #DDD,
-   2px 2px 0 #BBB;
-   }
+   
    .last_section{border:solid 1px #e8e4e4;margin-top: 77px;padding:0px 10px;}
    .panel-title {
    font-size: 13px;
@@ -694,19 +685,8 @@
    i.glyphicon.glyphicon-filter {
    color: #18c5bd;
    }
-   .legend li {
-   width: 110px;
-   height: 1.25em;
-   margin-bottom: 0.7em;
-   padding-left: 0.5em;
-   border-left: 1.25em solid black;
-   }
-   .legend em {
-   font-style: normal;
-   }
-   .legend span {
-   float: right;
-   }
+   
+   
    footer {
    position: fixed;
    bottom: 0;
@@ -1117,7 +1097,7 @@
             <!--  <div class="clear"></div>
                </div> -->  
                <br>       
-            <button class="detail-btn">details</button>
+            <a href=" <?php echo base_url() ?>employer/preview_job_post/<?php echo $v_companyjobs->job_post_id ?>"><button class="detail-btn">details</button></a>
             <div class="btn-group">
                         <a href=" <?php echo base_url() ?>employer/update_job/<?php echo $v_companyjobs->job_post_id ?>"><i class="far fa-edit icon_backg"></i></a>
                         <a href="<?php echo base_url('employer/deactivate_job/' . $v_companyjobs->job_post_id); ?>"><i class="fas fa-trash-alt icon_backg"></i></a>

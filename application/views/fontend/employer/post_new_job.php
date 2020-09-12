@@ -571,6 +571,7 @@
                <div class="btn-bottom_3">
                   <!-- <div class="button" id="prev">&larr; Previous</div> -->
                   <!-- <div class="button" id="next">Next &rarr;</div> -->
+                  <button id="submit" type="button" onclick="history.back()" class="button">Cancel</button>
                   <button  class="button" type="submit" name="preview">preview</button>
                   <button  type="submit" class="button"><?php if(!empty($job_info->job_post_id)){echo 'Update Job Post';} else{
                      echo "Post Job";
