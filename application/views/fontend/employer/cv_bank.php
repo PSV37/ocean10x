@@ -933,6 +933,10 @@ button#sklbtn {
 .btn-group {
     float: right;
 }
+form.navbar-form {
+    margin-top: 0px;
+    padding: 0;
+}
 </style>
 <div class="container-fluid main-d">
    <div class="container">
@@ -952,7 +956,7 @@ button#sklbtn {
                </div>
                <div class="col-md-6">
                  <a href="#" style="float: right;margin-right: 34px;/* margin-top: 2px; */background-color: #18c5bd;/* width: 52px; *//* max-height: 21px; */" onclick="get_trash();"><button class="btn btn-primary" style="background-color: #18c5bd;width: 64px;border: none;margin-top: 0px;margin-left: 2px;"><i class="fas fa-trash-alt" aria-hidden="true"></i> Trash</button></a>
-                  <button class="folder_popup"  data-toggle="modal" data-keyboard="true" data-target="#myModal_add" style="float: right;">Create&emsp;<i class="fas fa-folder-open"></i></button>
+                  <button class="folder_popup"  data-toggle="modal" data-keyboard="true" data-target="#myModal_add" style="float: right;margin-right: 20px;">Create&emsp;<i class="fas fa-folder-open"></i></button>
                </div>
             </div>
             <div class="row">
@@ -1128,6 +1132,13 @@ button#sklbtn {
                </li>
                <?php endif; ?>
             </div>
+            <div class="container-fluid">
+             <div class="col-md-10"></div>
+            <div class="col-md-2">
+            <span><?php echo $links; ?></span>   
+            </div>
+               
+          </div>
          </div>
         
            
