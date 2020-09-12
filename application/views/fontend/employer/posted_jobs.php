@@ -1132,6 +1132,13 @@
    </li>
    <?php endif; ?>
 </div>
+ <div class="container-fluid">
+             <div class="col-md-6"></div>
+            <div class="col-md-6">
+            <span><?php echo $links; ?></span>   
+            </div>
+               
+          </div>
 </div>
  <?php if (!empty($company_active_jobs)): foreach ($company_active_jobs as $v_companyjobs) : ?>
    <div class="modal" id="attach_test<?php echo $v_companyjobs->job_post_id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
