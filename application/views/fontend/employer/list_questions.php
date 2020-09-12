@@ -151,7 +151,7 @@
   }
   #qbottons
   {
-  margin-right: 202px;
+  margin-right: 195px;
   float: right;
   }
   i.fa.fa-plus {
@@ -1429,7 +1429,7 @@
                   <div class="clear"></div>
                </div>
               <div class="col-md-3">
-               <a href="#"  onclick="get_trash();"><button class="btn btn-primary"><i class="fas fa-trash-alt" ></i> Trash</button></a>
+               <a href="#"  onclick="get_trash();"><button style="    margin-left: 60px;" class="btn btn-primary"><i class="fas fa-trash-alt" ></i> Trash</button></a>
               </div>
                <div class="col-md-3">
               
