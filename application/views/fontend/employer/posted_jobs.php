@@ -1295,7 +1295,7 @@
             <div class="panel-heading">
                <h3 class="panel-title">Education</h3>
                <div class="pull-right">
-                  <span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
+                  <span class="clickable filter" data-toggle="tooltip"  data-container="body">
                   <i class="glyphicon glyphicon-filter"></i>
                   </span>
                </div>
@@ -1324,7 +1324,7 @@
             <div class="panel-heading">
                <h3 class="panel-title">Mandatory</h3>
                <div class="pull-right">
-                  <span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
+                  <span class="clickable filter" data-toggle="tooltip"  data-container="body">
                   <i class="glyphicon glyphicon-filter"></i>
                   </span>
                </div>
