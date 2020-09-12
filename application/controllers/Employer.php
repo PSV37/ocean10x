@@ -5529,7 +5529,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $join = array('education_level' => 'education_level.education_level_id = corporate_cv_bank.js_top_education | left outer');
             $data['cv_bank_data'] = $this->Master_model->get_master_row('corporate_cv_bank', $select = FALSE, $where = $where_cv, $join);
             //$data['cv_info'] = $this->Master_model->getMaster('corporate_cv_bank',$where=false);
-            $this->load->view('fontend/employer/add_cv', $data);
+            $this->load->view('fontend/employer/preview_cv', $data);
         }
     }
 }
