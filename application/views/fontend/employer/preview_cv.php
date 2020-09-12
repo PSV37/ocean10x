@@ -98,11 +98,11 @@
   }
   .following-info {
   float: left;
-  line-height:24px;
+  line-height:30px;
   }
   .following-info2 {
   margin-left:256px;
-  line-height:24px;
+  line-height:30px;
   }
   .active-span{
   position: absolute;
@@ -114,11 +114,12 @@
   color: #fff;
   font-size: 11px;
   }
-  .following-info3 {
-  float: right;
-  margin-top: -46px;
-  line-height:24px;
-  }
+ 
+ .following-info3 {
+    float: right;
+    margin-top: -90px;
+    line-height: 30px;
+}
   .skils_benifit {
   margin-top: 25px;
   list-style-type: none;
@@ -267,8 +268,9 @@
                 <li class="right-title">&nbsp;: <?php echo $cv_bank_data['current_org']; ?></li>
                 <div class="clear"></div>
               </div>
+              <br>
               <div class="skils_benifit">
-                <li class="left-title_seperate">skills&nbsp;&nbsp; </li>
+                <li class="left-title_seperate"><b>skills</b>&nbsp;&nbsp; </li>
                 <li class="right-title_seperate">:
                   <?php  $skills=explode(',',$cv_bank_data['js_skill_set']);
                     
