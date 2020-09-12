@@ -978,6 +978,12 @@
   background-color: #f0ad4e;
   font-weight: bold;
   }
+  a.myclass {
+    font-weight: 600;
+    /* float: right; */
+    margin-right: 7px;
+    /* width: 35px; */
+}
 </style>
 <!---header-->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/questionbank.css">
@@ -1522,6 +1528,13 @@
               <?php
                 endif; ?>
               <div class=""></div>
+              <div class="container-fluid">
+             <div class="col-md-6"></div>
+            <div class="col-md-6">
+            <span><?php echo $links; ?></span>   
+            </div>
+               
+          </div>
             </div>
           </div>
         </div>

@@ -938,9 +938,10 @@ form.navbar-form {
     padding: 0;
 }
 a.myclass {
-    font-size: 20px;
+    font-weight: 600;
     /* float: right; */
-    margin-right: 10px;
+    margin-right: 7px;
+    /* width: 35px; */
 }
 </style>
 <div class="container-fluid main-d">
