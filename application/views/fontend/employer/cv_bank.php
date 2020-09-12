@@ -1104,6 +1104,7 @@ a.myclass {
                 }   ?>
                         <br>
                           <div class="btn-group">
+                           <a href="<?php echo base_url(); ?>employer/preview_cv/<?php echo base64_encode($cv_row['cv_id']); ?>"><i class="fas fa-info-square icon_backg"></i></a>
                         <a href=" <?php echo base_url(); ?>employer/edit_cv/<?php echo base64_encode($cv_row['cv_id']); ?>"><i class="far fa-edit icon_backg"></i></a>
                         <a href="<?php echo base_url(); ?>employer/delete_cv/<?php echo base64_encode($cv_row['cv_id']); ?>"><i class="fas fa-trash-alt icon_backg"></i></a>
                      </div>
