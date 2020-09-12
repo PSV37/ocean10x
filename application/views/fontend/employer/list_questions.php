@@ -2016,7 +2016,7 @@
   endforeach;endif;?>
   <div class="modal fade" id="delete" tabindex='-1' role="dialog">
     <div class="modal-dialog">
-       <form method="post" id="del_modal" action=""> 
+       <form method="post" id="del_modal"> 
       
       <div class="modal-content">
         <div class="modal-header">
