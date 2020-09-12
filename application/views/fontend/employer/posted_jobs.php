@@ -997,6 +997,12 @@
     margin-top: 3px;
     margin-right: 10px;
 }
+a.myclass {
+    font-weight: 600;
+    /* float: right; */
+    margin-right: 7px;
+    /* width: 35px; */
+}
 </style>
 <div class="container-fluid main-d">
 <div class="container">
