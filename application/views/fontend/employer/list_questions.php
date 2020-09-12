@@ -1419,8 +1419,22 @@
              if($submenu == 'qbank') 
              { echo 'in active'; }
              }else{  echo 'in active'; } ?> " id="qbank">
-            <a id="qbottons" style="margin-top: -41px;" href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Add a Question</i></button></a>
-            <a href="#" style="float: right;margin-right: 310px;margin-top:-40px;" onclick="get_trash();"><button class="btn btn-primary"><i class="fas fa-trash-alt" ></i> Trash</button></a>
+             <div class="row">
+               <div class="col-md-4">
+                  <form class="navbar-form" role="search">
+                    
+                     <input type="text" id="myInput" class="form-control" placeholder="Search with Email or Name or Number" style="width: 100%">
+                    
+                  </form>
+                  <div class="clear"></div>
+               </div>
+              <div class="col-md-4">
+                <a id="qbottons" style="margin-top: -41px;" href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Add a Question</i></button></a>
+              </div>
+               <div class="col-md-4">
+              <a href="#" style="float: right;margin-right: 310px;margin-top:-40px;" onclick="get_trash();"><button class="btn btn-primary"><i class="fas fa-trash-alt" ></i> Trash</button></a>
+            </div>
+          </div>
             <br>
             <a id="qbottons" style="margin-top: -25px;" href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Bulk Upload Questions</i></button></a>
             <div class="select-option">
@@ -2032,12 +2046,43 @@
       </form>
     </div>
   </div>
+  <script>
+   $(document).ready(function(){
+   
+    $('#myInput').keyup(function(){
+    
+     // Search text
+     var text1 = $(this).val();
+    var text = text1.toUpperCase();
+   
+     $('.content').hide();
+   
+     // Search and show
+     $('.content:contains("'+text+'")').show();
+    
+    });
+   
+   });
+   $.expr[":"].contains = $.expr.createPseudo(function(arg) {
+   return function( elem ) {
+   return $(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
+   };
+   });
+   
+   
+</script>
 <script>
   $(document).ready (function(){
     $("#smsg").fadeTo(2000, 500).slideUp(500, function(){
     $("#smsg").slideUp(500);
     });   
   });
+  $('#myInput').focus(function(){
+   $(this).data('placeholder',$(this).attr('placeholder'))
+        .attr('placeholder','');
+   }).blur(function(){
+   $(this).attr('placeholder',$(this).data('placeholder'));
+   });
   function confirm_delete(id)
   {
     var newUrl = '<?php echo base_url(); ?>employer/delete_questionbank/'+id;
