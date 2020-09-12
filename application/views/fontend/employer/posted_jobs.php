@@ -1025,7 +1025,7 @@
                <li class="left-icon-title"><i class="fas fa-map-marker-alt"></i></li>
                <li class="right-icon-title"> &emsp;<?php echo $v_companyjobs->city_id; ?></li>
                <li class="left-icon-title"><i class="fas fa-briefcase"></i></li>
-               <li class="right-title" style="width:100%;"> &emsp;<?php echo $v_companyjobs->experience; ?>(experience)</li>
+               <li class="right-title" style="width:100%;"> &emsp;<?php echo $v_companyjobs['experience']; ?>(experience)</li>
                <div class="clear"></div>
             </div>
 
