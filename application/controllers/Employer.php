@@ -5367,7 +5367,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $ed = $job_details['job_edu'];
                 $where_int = "education_level_id='$ed'";
                 $job_info['education'] = $this->Master_model->get_master_row('education_level', $select = FALSE, $where_int, $join = FALSE);
-                $job_info['benefits'] = explode(',', $job_details['benefits']);
+                $job_info['benefits'] = $job_details['benefits'];
                 $job_role = $job_details['job_role'];
                 $job_info['jobrole'] = $job_role;
                 $where_role = "id='$job_role'";
@@ -5381,17 +5381,14 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $job_deadline = strtolower($this->input->post('job_deadline'));
                 $job_post_id = $this->input->post('job_post_id');
                 $job_info = array(
-                    'company_profile_id'=> $employer_id, 
-                    'job_title'=>$job_details['job_title'], 
-                    'job_slugs' => $job_details['job_slugs'], 
-                    'job_desc' => $job_details['job_desc'], 
-                    'job_category' => $job_details['job_category'], 
-                   
-                    'experience' => $job_details['experience'], 
-                    
-                    'no_jobs' => $job_details['no_jobs'], 
-                    
-                    'job_role' => $this->input->post('job_role'), //new added field
+                'company_profile_id'=> $employer_id, 
+                'job_title'=>$job_details['job_title'], 
+                'job_slugs' =>$job_details['job_slugs'], 
+                'job_desc' => $job_details['job_desc'], 
+                'job_category'=>$job_details['job_category'], 
+                'experience'=>$job_details['experience'], 
+                'no_jobs'=>$job_details['no_jobs'], 
+                'job_role' => $this->input->post('job_role'), //new added field
                 'skills_required' => $job_details['skills_required'], //new added field
                 'salary_range' => $job_details['salary_range'], 
                 "job_deadline" => date('d-m-Y', strtotime($job_details['job_deadline'])), "job_status" => '1', 
