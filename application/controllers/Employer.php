@@ -245,9 +245,25 @@ class Employer extends MY_Employer_Controller {
                     # code...
                     
                 }
-                $job_info = array('company_profile_id' => $employer_id, 'job_title' => $this->input->post('job_title'), 'job_slugs' => $this->slug->create_uri($this->input->post('job_title')), 'job_desc' => $this->input->post('job_desc'), 'job_category' => $this->input->post('job_category'), 'education' => $this->input->post('education'), 'benefits' => implode(',', $this->input->post('benefits')), 'experience' => $experience, 'city_id' => $this->input->post('city_id'), 'job_nature' => $this->input->post('job_nature'), 'job_edu' => $this->input->post('job_edu'), 'no_jobs' => $this->input->post('no_jobs'), 'preffered_certificates' => $this->input->post('preffered_certificates'), 'job_role' => $this->input->post('job_role'), //new added field
+                $job_info = array(
+                    'company_profile_id'=> $employer_id, 
+                    'job_title'=>$this->input->post('job_title'), 
+                    'job_slugs' => $this->slug->create_uri($this->input->post('job_title')), 
+                    'job_desc' => $this->input->post('job_desc'), 
+                    'job_category' => $this->input->post('job_category'), 
+                    'education' => $this->input->post('education'), 
+                    'benefits' => implode(',', $this->input->post('benefits')), 
+                    'experience' => $experience, 
+                    'city_id' => $this->input->post('city_id'), 
+                    'job_nature' => $this->input->post('job_nature'), 
+                    'job_edu' => $this->input->post('job_edu'), 
+                    'no_jobs' => $this->input->post('no_jobs'), 
+                    'preffered_certificates' => $this->input->post('preffered_certificates'), 
+                    'job_role' => $this->input->post('job_role'), //new added field
                 'skills_required' => implode(',', $all_skills), //new added field
-                'salary_range' => $salary_range, "job_deadline" => date('Y-m-d', strtotime($this->input->post('job_deadline'))), "job_status" => '1', 'is_test_required' => $this->input->post('job_test_requirment'));
+                'salary_range' => $salary_range, 
+                "job_deadline" => date('Y-m-d', strtotime($this->input->post('job_deadline'))), "job_status" => '1', 
+                'is_test_required' => $this->input->post('job_test_requirment'));
                 if (isset($job_desc_file) && !empty($job_desc_file)) {
                     $job_info['jd_file'] = $job_desc_file;
                 } elseif (empty($this->input->post('jd_session'))) {
@@ -5352,14 +5368,34 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $where_int = "education_level_id='$ed'";
                 $job_info['education'] = $this->Master_model->get_master_row('education_level', $select = FALSE, $where_int, $join = FALSE);
                 $job_info['benefits'] = explode(',', $job_details['benefits']);
-                // $job_role = $this->input->post('job_role');
-                // $job_info['jobrole'] = $job_role;
-                // $where_role = "id='$job_role'";
-                // $job_info['job_role'] = $this->Master_model->get_master_row('job_role', $select = FALSE, $where_role, $join = FALSE);
-                // $job_nature = $this->input->post('job_nature');
-                // $job_info['jobnature'] = $job_nature;
-                // $where_int = "job_nature_id='$job_nature'";
-                // $job_info['job_nature'] = $this->Master_model->get_master_row('job_nature', $select = FALSE, $where_int, $join = FALSE);
+                $job_role = $job_details['job_role'];
+                $job_info['jobrole'] = $job_role;
+                $where_role = "id='$job_role'";
+                $job_info['job_role'] = $this->Master_model->get_master_row('job_role', $select = FALSE, $where_role, $join = FALSE);
+                $job_nature = $job_details['job_nature'];
+                $job_info['jobnature'] = $job_nature;
+                $where_int = "job_nature_id='$job_nature'";
+                $job_info['job_nature'] = $this->Master_model->get_master_row('job_nature', $select = FALSE, $where_int, $join = FALSE);
+                 
+                $employer_id = $this->session->userdata('company_profile_id');
+                $job_deadline = strtolower($this->input->post('job_deadline'));
+                $job_post_id = $this->input->post('job_post_id');
+                $job_info = array(
+                    'company_profile_id'=> $employer_id, 
+                    'job_title'=>$job_details['job_title'], 
+                    'job_slugs' => $job_details['job_slugs'], 
+                    'job_desc' => $job_details['job_desc'], 
+                    'job_category' => $job_details['job_category'], 
+                   
+                    'experience' => $job_details['experience'], 
+                    
+                    'no_jobs' => $job_details['no_jobs'], 
+                    
+                    'job_role' => $this->input->post('job_role'), //new added field
+                'skills_required' => $job_details['skills_required'];, //new added field
+                'salary_range' => $job_details['salary_range'];, 
+                "job_deadline" => date('d-m-Y', strtotime($job_details['job_deadline'])), "job_status" => '1', 
+                'is_test_required' => $job_details['is_test_required']);
                  $this->load->view('fontend/employer/job_preview', $job_info);
     }
 }
