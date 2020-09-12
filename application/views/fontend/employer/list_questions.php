@@ -1515,7 +1515,7 @@
                 <div class="btn-group">
                   <a href=" <?php echo base_url('employer/edit_questionbank/' . $ct_row['ques_id']); ?>"><i class="far fa-edit icon_backg"></i></a>
 
-                  <a data-toggle="modal" data-target="#delete" onchange="confirm_delete($ct_row['ques_id']);" href="#"><i class="fas fa-trash-alt icon_backg"></i></a>
+                  <a data-toggle="modal" data-target="#delete" onchange="confirm_delete(<?php echo $ct_row['ques_id']; ?>);" href="#"><i class="fas fa-trash-alt icon_backg"></i></a>
                 </div>
               </div>
               <?php
