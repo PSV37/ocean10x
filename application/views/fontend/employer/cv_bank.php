@@ -1155,17 +1155,15 @@ form.navbar-form {
                         </li>
                         <li class="cv">
                            <em id="spanid1">Active cv</em>
-                           <!--<span id="active_cv"><?php echo sizeof($active_cv); ?></span>-->
-                           <span> 50 </span>
+                           <span id="active_cv"><?php echo sizeof($active_cv); ?></span>
                         </li>
                         <li class="cv">
                            <em id="spanid2">Own cv's</em>
-                           <!--<span id="own_cvs"><?php echo sizeof($own_cvs); ?></span>-->
-                           <span> 50 </span>
+                           <span id="own_cvs"><?php echo sizeof($own_cvs); ?></span>
                         </li>
                         <li class="cv">
                            <em id="spanid3">Consultant cv's</em>
-                           <span>50</span>
+                           <span>60</span>
                         </li>
                      </ul>
                   </section>
