@@ -34,7 +34,7 @@
       <option value="other">None </option>
     </select>
   </td>
-  <td ><input  type="text" name="org"  value="<?php echo $job_row->current_org; ?>" readonly maxlength='3' ></td>
+  <td ><input id="org" type="text" name="org"  value="<?php echo $job_row->current_org; ?>" readonly maxlength='3' ></td>
   <!--  <input id="edu" type="text" name="edu" value="<?php echo $job_row->education_level_name; ?>" ></td> -->
   <td>
     <select name="status" style="min-width: 200px; border: none;" id="status" class="form-control select2" data-style="btn-default" data-live-search="true"  >

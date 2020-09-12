@@ -668,6 +668,7 @@
                   ctc: $tr.find("#ctc").val(),
                   exp: $tr.find("#exp").val(),
                   notice: $tr.find("#notice").val(),
+                  org: $tr.find("#org").val(),
                   edu: $tr.find("#edu").val(),
                   status: $tr.find("#status").val(),
                   action: $tr.find("#action").val(),

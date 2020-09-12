@@ -4802,6 +4802,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $update_external['salary'] = $row->ctc;
             $update_external['work_exp'] = $row->exp;
             $update_external['notice_period'] = $row->notice;
+            $update_external['current_org'] = $row->org;
             $update_external['education'] = $row->edu;
             $update_external['updated_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
             $update_external['tracking_status'] = $row->status;
