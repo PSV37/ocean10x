@@ -5364,18 +5364,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $where = "job_post_id = '$job_id'";
         $job_details = $this->Master_model->get_master_row('job_posting', $select = FALSE, $where, $join = FALSE);
               
-                $ed = $job_details['job_edu'];
-                $where_int = "education_level_id='$ed'";
-            $job_info['education'] = $this->Master_model->get_master_row('education_level', $select = FALSE, $where_int, $join = FALSE);
-           
-                $job_role = $job_details['job_role'];
-            $job_info['jobrole'] = $job_role;
-                $where_role = "id='$job_role'";
-            $job_info['job_role'] = $this->Master_model->get_master_row('job_role', $select = FALSE, $where_role, $join = FALSE);
-                $job_nature = $job_details['job_nature'];
-            $job_info['jobnature'] = $job_nature;
-                $where_int = "job_nature_id='$job_nature'";
-            $job_info['job_nature'] = $this->Master_model->get_master_row('job_nature', $select = FALSE, $where_int, $join = FALSE);
+              
                  
                 $employer_id = $this->session->userdata('company_profile_id');
               
@@ -5393,6 +5382,18 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 "job_deadline" => date('d-m-Y', strtotime($job_details['job_deadline'])), "job_status" => '1', 
                 'is_test_required' => $job_details['is_test_required']);
                  $job_info['benefits'] = explode(',', $job_details['benefits']);
+                   $ed = $job_details['job_edu'];
+                $where_int = "education_level_id='$ed'";
+            $job_info['education'] = $this->Master_model->get_master_row('education_level', $select = FALSE, $where_int, $join = FALSE);
+           
+            $job_role = $job_details['job_role'];
+            $job_info['jobrole'] = $job_role;
+                $where_role = "id='$job_role'";
+            $job_info['job_role'] = $this->Master_model->get_master_row('job_role', $select = FALSE, $where_role, $join = FALSE);
+                $job_nature = $job_details['job_nature'];
+            $job_info['jobnature'] = $job_nature;
+                $where_int = "job_nature_id='$job_nature'";
+            $job_info['job_nature'] = $this->Master_model->get_master_row('job_nature', $select = FALSE, $where_int, $join = FALSE);
                  $job_info['preview'] = 'true';
                  $this->load->view('fontend/employer/job_preview', $job_info);
     }
