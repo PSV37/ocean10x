@@ -5367,7 +5367,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $ed = $job_details['job_edu'];
                 $where_int = "education_level_id='$ed'";
                 $job_info['education'] = $this->Master_model->get_master_row('education_level', $select = FALSE, $where_int, $join = FALSE);
-                $job_info['benefits'] = $job_details['benefits'];
+                $job_info['benefits'] = explode(',', $job_details['benefits']);
                 $job_role = $job_details['job_role'];
                 $job_info['jobrole'] = $job_role;
                 $where_role = "id='$job_role'";
