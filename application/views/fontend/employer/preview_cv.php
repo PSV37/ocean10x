@@ -296,7 +296,7 @@
               </div> -->
               <input type="hidden" name="job_id" value="<?php echo $job_id; ?>">
               <div class="preview_btns">
-                <button type="button" class="back_btn">Back</button>
+                <button type="button" onclick="history.back()"  class="back_btn">Back</button>
                <!--  <button type="submit" name="edit" class="edit_btn">Edit</button>
                 <?php if (isset($preview)) {
                     # code...
