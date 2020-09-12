@@ -1011,7 +1011,7 @@
    <?php if (!empty($company_active_jobs)): foreach ($company_active_jobs as $v_companyjobs) : ?>
    <label class="checkbox_label">
       <div class="border-top1"></div>
-      <input type="checkbox" id='posted_job' class="posted_job" onchange="get_report_data(<?php echo $v_companyjobs->job_post_id ?>)" />
+      <input type="checkbox" id='posted_job' class="posted_job" onchange="get_report_data(<?php echo $v_companyjobs['job_post_id'] ?>)" />
       <div class="card">
          <div class="front">
 
@@ -1019,11 +1019,11 @@
 
             <img src="<?php echo base_url() ?>upload/<?php echo $this->company_profile_model->company_logoby_id($company_profile_id);?>" style="height:50px; width:50px;border-radius:5px;float:left;border:solid 1px #eae9e9b8;margin-right:15px;" />
             <div class="job-info">
-               <p class="job_title"><?php echo $v_companyjobs->job_title; ?></p>
+               <p class="job_title"><?php echo $v_companyjobs['job_title']; ?></p>
             </div>
             <div class="icon-info">
                <li class="left-icon-title"><i class="fas fa-map-marker-alt"></i></li>
-               <li class="right-icon-title"> &emsp;<?php echo $v_companyjobs->city_id; ?></li>
+               <li class="right-icon-title"> &emsp;<?php echo $v_companyjobs['city_id']; ?></li>
                <li class="left-icon-title"><i class="fas fa-briefcase"></i></li>
                <li class="right-title" style="width:100%;"> &emsp;<?php echo $v_companyjobs['experience']; ?>(experience)</li>
                <div class="clear"></div>
