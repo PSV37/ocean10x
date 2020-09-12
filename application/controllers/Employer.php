@@ -5393,6 +5393,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 "job_deadline" => date('d-m-Y', strtotime($job_details['job_deadline'])), "job_status" => '1', 
                 'is_test_required' => $job_details['is_test_required']);
                  $job_info['benefits'] = explode(',', $job_details['benefits']);
+                 $job_info['preview'] = 'true';
                  $this->load->view('fontend/employer/job_preview', $job_info);
     }
 }
