@@ -3394,30 +3394,15 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $join = array('education_level' => 'education_level.education_level_id = corporate_cv_bank.js_top_education | left outer');
             $cv_bank_data = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join, $order = 'desc', $field = 'cv_id', $select = false, $limit = false, $start = false, $search = false);
             $data['company_active_jobs'] = $this->job_posting_model->get_company_activedeasline_jobs($company_id);
-            $config = array();
-            $config["base_url"] = base_url('employer/corporate_cv_bank');
-            $config["total_rows"] = count($cv_bank_data);
+            $config['base_url'] = base_url() . 'emloyer/corporate_cv_bank';
+            $config['total_rows'] = sizeof($cv_bank_data);
             $config['per_page'] = 5;
-            $config['uri_segment'] = 3;
-            $config['full_tag_open'] = '<div class="pagination">';
+            $config['attributes'] = array('class' => 'myclass');
+            $config['page_query_string'] = TRUE;
+            $config['num_links'] = 2;
+            $config['use_page_numbers'] = TRUE;
             $config['query_string_segment'] = 'page';
-            $config['full_tag_close'] = '</div>';
-            $config['first_link'] = '<button>First Page</button>';
-            $config['first_tag_open'] = '<span class="firstlink">';
-            $config['first_tag_close'] = '</span>';
-            $config['last_link'] = '<button style="">Last Page</button>';
-            $config['last_tag_open'] = '<span class="lastlink">';
-            $config['last_tag_close'] = '</span>';
-            $config['next_link'] = '<span style="margin-left:8px;"><button style="color:#FFF; background:#008000;">Next Page</button></span>';
-            $config['next_tag_open'] = '<span class="nextlink">';
-            $config['next_tag_close'] = '</span>';
-            $config['prev_link'] = '<button style="color:#FFF; background:#0000FF;">Prev Page</button>';
-            $config['prev_tag_open'] = '<span class="prevlink">';
-            $config['prev_tag_close'] = '</span>';
-            $config['cur_tag_open'] = '<span style="margin-left:8px;">';
-            $config['cur_tag_close'] = '</span>';
-            $config['num_tag_open'] = '<span style="margin-left:8px;">';
-            $config['num_tag_close'] = '</span>';
+            // $config['first_url'] = base_url() . 'index.php/store/items_details?merch_cat=' . $merch_cat . '&page=1';
             $offset = 0;
             $page = $this->input->get('page');
             if ($page) {
@@ -3425,7 +3410,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             }
             $this->pagination->initialize($config);
             // $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-            $this->pagination->initialize($config);
+           
             $data["links"] = $this->pagination->create_links();
             $where_c = "corporate_cv_bank.cv_id NOT IN (select cv_id from cv_folder_relation) and company_id ='$company_id' and js_status = '0'";
             // $where_c['company_id'] = $company_id;
