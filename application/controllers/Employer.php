@@ -5348,10 +5348,10 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $where = "job_post_id = '$job_id'";
         $job_details = $this->Master_model->get_master_row('job_posting', $select = FALSE, $where, $join = FALSE);
               
-                $job_info['edu'] = $job_details['job_edu'];
+                $ed = $job_details['job_edu'];
                 $where_int = "education_level_id='$ed'";
                 $job_info['education'] = $this->Master_model->get_master_row('education_level', $select = FALSE, $where_int, $join = FALSE);
-                  $job_info['benefits'] = $job_details['benefits'];
+                $job_info['benefits'] = explode(',', $job_details['benefits']);
                 // $job_role = $this->input->post('job_role');
                 // $job_info['jobrole'] = $job_role;
                 // $where_role = "id='$job_role'";
