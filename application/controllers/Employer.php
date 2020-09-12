@@ -5392,8 +5392,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     'no_jobs' => $job_details['no_jobs'], 
                     
                     'job_role' => $this->input->post('job_role'), //new added field
-                'skills_required' => $job_details['skills_required'];, //new added field
-                'salary_range' => $job_details['salary_range'];, 
+                'skills_required' => $job_details['skills_required'], //new added field
+                'salary_range' => $job_details['salary_range'], 
                 "job_deadline" => date('d-m-Y', strtotime($job_details['job_deadline'])), "job_status" => '1', 
                 'is_test_required' => $job_details['is_test_required']);
                  $this->load->view('fontend/employer/job_preview', $job_info);
