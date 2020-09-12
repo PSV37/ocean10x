@@ -271,7 +271,7 @@
                               ?>
                   <label>
                   <input type="checkbox" value="4" class="btn-default1" checked="" name="benefits[]">
-                  <span><?php echo $skill_row['skill_name']; ?></span>
+                  <span><?php echo $skill_row; ?></span>
                   </label>
                   <?php } }?>
                 </li>
