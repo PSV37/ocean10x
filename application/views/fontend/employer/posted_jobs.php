@@ -1360,8 +1360,10 @@
          <form class="exp_level">
             <label for="range1">Experience</label>
             <input id="range1" type="range" name="range1" min="1" max="10" step="0.1" value="5">
+            <output class="bubble "></output>
             <label for="range3">Availability</label>
             <input id="range3" type="range" name="range3" min="0" max="100" step="1" value="50">
+            <output class="bubble "></output>
          </form>
       </div>
    </div>
