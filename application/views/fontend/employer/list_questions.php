@@ -2042,6 +2042,7 @@
   {
     var newUrl = '<?php echo base_url(); ?>employer/delete_questionbank/'+id;
     console.log(newUrl);
+    console.log(id);
     $('#del_modal').prop('action',newUrl);
     $('#delete').modal("show");
   }
