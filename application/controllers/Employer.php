@@ -5515,10 +5515,10 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                  $this->load->view('fontend/employer/job_preview', $job_info);
     }
 
-    public function preview_cv($cv_id = NULL)
+    public function preview_cv($id = NULL)
     {
-        if (isset($cv_id)) {
-         
+        if (isset($id)) {
+          $cv_id = base64_decode($id);
             $data['industry_master'] = $this->Master_model->getMaster('job_category', $where = false);
             $data['department'] = $this->Master_model->getMaster('department', $where = false);
             $data['job_role'] = $this->Master_model->getMaster('job_role', $where = false);
@@ -5529,7 +5529,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $join = array('education_level' => 'education_level.education_level_id = corporate_cv_bank.js_top_education | left outer');
             $data['cv_bank_data'] = $this->Master_model->get_master_row('corporate_cv_bank', $select = FALSE, $where = $where_cv, $join);
             //$data['cv_info'] = $this->Master_model->getMaster('corporate_cv_bank',$where=false);
-            $this->load->view('fontend/employer/preview_cv', $data);
+            $this->load->view('fontend/employer/add_cv', $data);
         }
     }
 }
