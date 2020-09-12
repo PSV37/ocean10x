@@ -1298,6 +1298,9 @@
                   <span class="clickable filter" data-toggle="tooltip"  data-container="body">
                   <i class="glyphicon glyphicon-filter"></i>
                   </span>
+                  <?php  $edu_value =  set_value('js_top_education'); foreach($education_level as $education){?>
+                  <option value="<?php echo $education['education_level_id']; ?>"<?php if($edu_value==$education['education_level_id']){ echo "selected"; }elseif($job_info->job_edu==$education['education_level_id']){ echo "selected"; }?>><?php echo $education['education_level_name']; ?></option>
+                  <?php } ?>
                </div>
             </div>
             <div class="panel-body">
