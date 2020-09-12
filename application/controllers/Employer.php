@@ -686,10 +686,50 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $this->session->unset_userdata('activemenu');
         $data['activemenu'] = 'active_job';
         $this->session->set_userdata($data);
-        $employer_id = $this->session->userdata('company_profile_id');
-        $company_active_jobs = $this->job_posting_model->get_company_active_jobs($employer_id);
-        //$Job_Post_was_sent = $this->job_apply_model->job_post($company_id, $job_post_id);
-        $this->load->view('fontend/employer/posted_jobs.php', compact('company_active_jobs', 'employer_id'));
+        $data['employer_id'] = $this->session->userdata('company_profile_id');
+        $employer_id = $data['employer_id'];
+        // $company_active_jobs = $this->job_posting_model->get_company_active_jobs($employer_id);
+        $where = "job_status = '1' and company_profile_id = '$employer_id'";
+        $join = array('job_nature'=>'job_nature.job_nature_id=job_posting.job_nature',
+            'job_category'=>'job_category.job_category_id=job_posting.job_category',
+            'job_role'=>'job_role.id=job_posting.job_role',
+            'education_level'=>'education_level.education_level_id=job_posting.job_edu');
+        $jobs = $this->Master_model->getMaster('job_posting', $where , $join , $order = 'desc', $field = 'job_post_id', $select = false,$limit=false,$start=false, $search=false);
+        $config['base_url'] = base_url() . 'employer/active_job';
+            $config['total_rows'] = sizeof($jobs);
+            $config['per_page'] = 5;
+            $config['attributes'] = array('class' => 'myclass');
+            $config['page_query_string'] = TRUE;
+            $config['num_links'] = 2;
+            // $config['use_page_numbers'] = TRUE;
+            $config['query_string_segment'] = 'page';
+           
+            $config['full_tag_open'] = '<div class="pagination">';
+            $config['full_tag_close'] = '</div>';
+            $config['first_link'] = '<button>First Page</button>';
+            $config['first_tag_open'] = '<span class="firstlink">';
+            $config['first_tag_close'] = '</span>';
+            $config['last_link'] = '<button style="color:#FFF;background: #18c5bd;border: none;">Last Page</button>';
+            $config['last_tag_open'] = '<span class="lastlink">';
+            $config['last_tag_close'] = '</span>';
+            $config['next_link'] = '<span style="margin-left:8px;"><button style="color:#FFF;background: #18c5bd;border: none;">Next Page</button></span>';
+            $config['next_tag_open'] = '<span class="nextlink">';
+            $config['next_tag_close'] = '</span>';
+            $config['prev_link'] = '<button style="color:#FFF;background: #18c5bd;border: none;">Prev Page</button>';
+            $config['prev_tag_open'] = '<span class="prevlink">';
+            $config['prev_tag_close'] = '</span>';
+            $config['cur_tag_open'] = '<span style="margin-left:8px;">';
+            $config['cur_tag_close'] = '</span>';
+            $config['num_tag_open'] = '<span style="margin-left:8px;">';
+            $config['num_tag_close'] = '</span>';
+            $offset = 0;
+            $page = $this->input->get('page');
+            if ($page) {
+                $offset = ($page - 1) * $config['per_page'];
+            }
+            $this->pagination->initialize($config);
+        $data['company_active_jobs'] = $this->Master_model->getMaster('job_posting', $where , $join , $order = 'desc', $field = 'job_post_id', $select = false,$limit=$config['per_page'],$start=$page, $search=false);
+        $this->load->view('fontend/employer/posted_jobs', $data);
     }
     public function pending_job() {
         $this->session->unset_userdata('submenu');
@@ -5473,6 +5513,24 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $job_info['job_nature'] = $this->Master_model->get_master_row('job_nature', $select = FALSE, $where_int, $join = FALSE);
                  $job_info['preview'] = 'true';
                  $this->load->view('fontend/employer/job_preview', $job_info);
+    }
+
+    public function preview_cv($id = NULL)
+    {
+        if (isset($id)) {
+          $cv_id = base64_decode($id);
+            $data['industry_master'] = $this->Master_model->getMaster('job_category', $where = false);
+            $data['department'] = $this->Master_model->getMaster('department', $where = false);
+            $data['job_role'] = $this->Master_model->getMaster('job_role', $where = false);
+            $data['education_level'] = $this->Master_model->getMaster('education_level', $where = false);
+            $data['certificates'] = $this->Master_model->getMaster('certification_master', $where = false);
+            $data['skills'] = $this->Master_model->getMaster('skill_master', $where = false);
+            $where_cv = "corporate_cv_bank.cv_id = '$cv_id'";
+            $join = array('education_level' => 'education_level.education_level_id = corporate_cv_bank.js_top_education | left outer');
+            $data['cv_bank_data'] = $this->Master_model->get_master_row('corporate_cv_bank', $select = FALSE, $where = $where_cv, $join);
+            //$data['cv_info'] = $this->Master_model->getMaster('corporate_cv_bank',$where=false);
+            $this->load->view('fontend/employer/preview_cv', $data);
+        }
     }
 }
 ?>

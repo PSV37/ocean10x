@@ -151,7 +151,7 @@
   }
   #qbottons
   {
-  margin-right: 202px;
+  margin-right: 195px;
   float: right;
   }
   i.fa.fa-plus {
@@ -1419,8 +1419,23 @@
              if($submenu == 'qbank') 
              { echo 'in active'; }
              }else{  echo 'in active'; } ?> " id="qbank">
-            <a id="qbottons" style="margin-top: -41px;" href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Add a Question</i></button></a>
-            <a href="#" style="float: right;margin-right: 310px;margin-top:-40px;" onclick="get_trash();"><button class="btn btn-primary"><i class="fas fa-trash-alt" ></i> Trash</button></a>
+             <div class="row">
+               <div class="col-md-6">
+                  <form class="navbar-form" role="search">
+                    
+                     <input type="text" id="myInput" class="form-control" placeholder="Search " style="width: 100%">
+                    
+                  </form>
+                  <div class="clear"></div>
+               </div>
+              <div class="col-md-3">
+               <a href="#"  onclick="get_trash();"><button style="    margin-left: 60px;" class="btn btn-primary"><i class="fas fa-trash-alt" ></i> Trash</button></a>
+              </div>
+               <div class="col-md-3">
+              
+               <a id="qbottons" href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Add a Question</i></button></a>
+            </div>
+          </div>
             <br>
             <a id="qbottons" style="margin-top: -25px;" href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Bulk Upload Questions</i></button></a>
             <div class="select-option">
@@ -1447,7 +1462,7 @@
             </div>
             <div id="trash_append">
               <?php $key = 1; if (!empty($questionbank)): foreach ($questionbank as $ct_row) : ?>
-              <div class="question-box">
+              <div class="question-box content">
                 <div class="border-top"></div>
                 <div class="panel-heading">
                   <img src="https://blog.oxiane.com/wp-content/uploads/2017/04/java-logo-oracle.png" class="logo-subject" />
@@ -1514,7 +1529,8 @@
                 </div>
                 <div class="btn-group">
                   <a href=" <?php echo base_url('employer/edit_questionbank/' . $ct_row['ques_id']); ?>"><i class="far fa-edit icon_backg"></i></a>
-                  <a href="<?php echo base_url('employer/delete_questionbank/' . $ct_row['ques_id']); ?>"><i class="fas fa-trash-alt icon_backg"></i></a>
+
+                  <a  onclick="confirm_delete(<?php echo $ct_row['ques_id']; ?>);" href="#"><i class="fas fa-trash-alt icon_backg"></i></a>
                 </div>
               </div>
               <?php
@@ -2013,13 +2029,69 @@
 </div>
 <?php
   endforeach;endif;?>
+  <div class="modal fade" id="delete" tabindex='-1' role="dialog">
+    <div class="modal-dialog">
+       <form method="post" id="del_modal" action=""> 
+      
+      <div class="modal-content">
+        <div class="modal-header">
+         
+          <h4 class="modal-title">Are you sure want to Delete This ?</h4>
+        </div>
+       
+        <div class="modal-footer">
+         <button type="submit" class="btn btn-default" > Ok </button>
+          <button type="button" class="btn btn-default1 active_modal" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+  <script>
+   $(document).ready(function(){
+   
+    $('#myInput').keyup(function(){
+    
+     // Search text
+     var text1 = $(this).val();
+    var text = text1.toUpperCase();
+   
+     $('.content').hide();
+   
+     // Search and show
+     $('.content:contains("'+text+'")').show();
+    
+    });
+   
+   });
+   $.expr[":"].contains = $.expr.createPseudo(function(arg) {
+   return function( elem ) {
+   return $(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
+   };
+   });
+   
+   
+</script>
 <script>
   $(document).ready (function(){
     $("#smsg").fadeTo(2000, 500).slideUp(500, function(){
     $("#smsg").slideUp(500);
     });   
   });
-  
+  $('#myInput').focus(function(){
+   $(this).data('placeholder',$(this).attr('placeholder'))
+        .attr('placeholder','');
+   }).blur(function(){
+   $(this).attr('placeholder',$(this).data('placeholder'));
+   });
+  function confirm_delete(id)
+  {
+    var newUrl = '<?php echo base_url(); ?>employer/delete_questionbank/'+id;
+    console.log(newUrl);
+    console.log(id);
+    $('#del_modal').prop('action',newUrl);
+    $('#delete').modal("show");
+  }
   window.onclick = function(event) {
   if ($('#test1').is(":checked")) 
   {
