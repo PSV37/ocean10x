@@ -685,19 +685,8 @@
    i.glyphicon.glyphicon-filter {
    color: #18c5bd;
    }
-   .legend li {
-   width: 110px;
-   height: 1.25em;
-   margin-bottom: 0.7em;
-   padding-left: 0.5em;
-   border-left: 1.25em solid black;
-   }
-   .legend em {
-   font-style: normal;
-   }
-   .legend span {
-   float: right;
-   }
+   
+   
    footer {
    position: fixed;
    bottom: 0;
