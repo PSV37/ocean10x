@@ -264,7 +264,7 @@
               <div class="skils_benifit">
                 <li class="left-title_seperate">skills&nbsp;&nbsp; </li>
                 <li class="right-title_seperate">:
-                  <?php  $skills=explode(',',$cv_bank_data->js_skill_set);
+                  <?php  $skills=explode(',',$cv_bank_data['js_skill_set']);
                     
                      if(!empty($skills)){ 
                              foreach($skills as $skill_row){
