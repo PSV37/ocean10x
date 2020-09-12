@@ -2041,6 +2041,7 @@
   function confirm_delete(id)
   {
     var newUrl = '<?php echo base_url(); ?>employer/delete_questionbank/'+id;
+    console.log(newUrl);
     $('#del_modal').prop('action',newUrl);
     $('#delete').modal("show");
   }
