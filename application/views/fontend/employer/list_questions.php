@@ -2016,7 +2016,7 @@
   endforeach;endif;?>
   <div class="modal fade" id="delete" tabindex='-1' role="dialog">
     <div class="modal-dialog">
-       <form method="post" id="del_modal" action="" > 
+       <form method="post" id="del_modal" action=""> 
       
       <div class="modal-content">
         <div class="modal-header">
@@ -2041,7 +2041,7 @@
   function confirm_delete(id)
   {
     var newUrl = '<?php echo base_url(); ?>employer/delete_questionbank/'+id;
-    $('#del_modal').attr("action", newUrl);
+    $('#del_modal').attr('action',newUrl);
     $('#delete').modal("show");
   }
   window.onclick = function(event) {
