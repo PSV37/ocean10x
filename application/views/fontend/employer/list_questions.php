@@ -1424,7 +1424,7 @@
             <br>
             <a id="qbottons" style="margin-top: -25px;" href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Bulk Upload Questions</i></button></a>
             <div class="select-option">
-              <p style="FONT-SIZE: 12PX;COLOR: #0a5854;">Total No. Of Question:<?php echo sizeof($questionbank); ?></p>
+              <p style="FONT-SIZE: 12PX;COLOR: #0a5854;">Total No. Of Question:<?php echo $total_question; ?></p>
               <label class="dropdown">
                 <div class="dd-button" onclick="myFunction(event)">
                   Filter
