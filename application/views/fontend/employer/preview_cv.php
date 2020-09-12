@@ -52,7 +52,7 @@
   float: left;
   font-size: 12px;
   font-weight: 100;
-  width:105px;
+  width:fit-content;
   height:15px;
   }
   li.right-title {
@@ -237,6 +237,8 @@
                 <li class="right-title">&nbsp;:<?php echo $cv_bank_data['education_level_name']; ?></li>
                 <li class="left-title">Designation</li>
                 <li class="right-title">&nbsp;: <?php echo $cv_bank_data['js_current_designation']; ?></li>
+                 <li class="left-title">Current Location</li>
+                <li class="right-title">&nbsp;: <?php echo $cv_bank_data['js_current_work_location']; ?></li>
                 <div class="clear"></div>
               </div>
               <div class="following-info2">
@@ -244,6 +246,8 @@
                 <li class="right-title">&nbsp;:<?php echo $cv_bank_data['js_current_ctc']; ?></li>
                 <li class="left-title">Notice Period</li>
                 <li class="right-title">&nbsp;:<?php echo $cv_bank_data['js_current_notice_period']; ?></li>
+                <li class="left-title">Desired Location</li>
+                <li class="right-title">&nbsp;: <?php echo $cv_bank_data['js_desired_work_location']; ?></li>
                 <div class="clear"></div>
               </div>
               <div class="following-info3">
@@ -259,6 +263,8 @@
                 </li>
                 <li class="left-title">Expected CTC (LPA)</li>
                 <li class="right-title">&nbsp;: <?php echo $cv_bank_data['js_expected_salary']; ?></li>
+                 <li class="left-title">Current Organization</li>
+                <li class="right-title">&nbsp;: <?php echo $cv_bank_data['current_org']; ?></li>
                 <div class="clear"></div>
               </div>
               <div class="skils_benifit">
