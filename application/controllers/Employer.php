@@ -5549,7 +5549,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
            $result;
 
           foreach ($shared_list as $row) {
-            $where_job = "job_post_id = '$job_id' and company_profile_id ='$row'";
+            $comp_id = $row['company_profile_id'];
+            $where_job = "job_post_id = '$job_id' and company_profile_id ='$comp_id'";
             $job_data = $this->Master_model->get_master_row('job_posting', $select = FALSE, $where_job , $join = FALSE);
 
             if (!empty($job_data)) {
