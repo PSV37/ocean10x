@@ -1690,7 +1690,8 @@ a.myclass {
                      </div>
                   </div>
                </div>
-
+<?php
+  endforeach;endif;?>
   <div class="modal fade" id="delete" tabindex='-1' role="dialog">
     <div class="modal-dialog">
        <form method="post" id="del_modal" action=""> 
