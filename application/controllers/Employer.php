@@ -5550,7 +5550,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
               $result.= '<li>'.$row['company_name'].'</li>';
           }
            
-        echo json_encode($result);
+        echo $result;
     }
 }
 ?>
