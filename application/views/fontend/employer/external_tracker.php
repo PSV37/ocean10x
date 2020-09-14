@@ -426,6 +426,33 @@
   text-decoration: none;
   resize: none;
   }
+  .profile_img {
+    -webkit-align-items: center;
+    align-items: center;
+    background: coral;
+    color: white;
+    cursor: default;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+    -webkit-user-select: none;
+    border-radius: 50%;
+    height: 36px;
+    min-width: 36px;
+    width: 36px;
+}
+.shared_name {
+    font-weight: 500;
+    color: #202124;
+    letter-spacing: .01428571em;
+    font-family: Roboto,Arial,sans-serif;
+    font-size: 0.6rem;
+    line-height: 1.25rem;
+    
+    }
+
 </style>
 <div class="container-fluid main-d">
   <div class="container">
