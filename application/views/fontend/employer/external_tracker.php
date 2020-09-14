@@ -537,9 +537,11 @@
             <label class="mdl-textfield__label" for="sample3">E-mail:</label>
             <input onfocusout="myFunction();" type="email"  name="consultant_email"  id="email" placeholder="Enter comma seperated Emails"  id="subject" data-required="true" multiple style="display: inline-block;min-width: 100%;min-height: 12%;" required>
           </div>
+          <hr>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
-            <label class="mdl-textfield__label" for="sample3">Message:</label>
-            <textarea class="form-control" name="message" rows="5" id="comment" required></textarea>
+            <ul id="shared_list" ></ul>
+           <!--  <label class="mdl-textfield__label" for="sample3">Message:</label> -->
+            <!-- <textarea class="form-control" name="message" rows="5" id="comment" required></textarea> -->
           </div>
         </div>
         <div class="modal-footer">
@@ -662,9 +664,7 @@
                // dataType: "json",
               success: function(data)
               {
-                // alert(data);
-                // window.location.reload();
-                 // tracker_card(job_id);
+               $('#shared_list').html(data);
               }
         });
   console.log(result);
