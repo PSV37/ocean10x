@@ -62,10 +62,10 @@
   width:310px;
   }
   .icon-info {
-  margin-left: 60px;
-  margin-bottom: 60px;
-  width: fit-content;
-  }
+    margin-left: 60px;
+    margin-bottom: 60px;
+    width: fit-content;
+}
   li.left-icon-title{
   list-style-type: none;
   float: left;
@@ -115,11 +115,12 @@
   color: #fff;
   font-size: 11px;
   }
-  .following-info3 {
-  float: right;
-  margin-top: -90px;
-  line-height: 30px;
-  }
+ 
+ .following-info3 {
+    float: right;
+    margin-top: -90px;
+    line-height: 30px;
+}
   .skils_benifit {
   margin-top: 25px;
   list-style-type: none;
@@ -213,6 +214,12 @@
   p.right-title_detail {
   white-space: pre-wrap;
   }
+  section {
+  padding-bottom: 40px;
+}
+.card .card-header {
+  cursor: pointer;
+}
 </style>
 <div class="container-fluid main-d">
   <div class="container">
@@ -220,375 +227,175 @@
       <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
       <div class="col-md-9">
         <div class="card">
-          <!-- <div class="section lb"> -->
-            <!-- <div class="container"> -->
-              <!-- <div class="row"> -->
-              
-                <!-- <div class="content col-md-9"> -->
-                  <div class="job-header">
-                    <div class="contentbox">
-                      <!-- Header -->
-                      <center>
-                        <h4 style="color:#b6bc00;">Resume</h4>
-                      </center>
-                      <br/><br/>
-                      <header class="row cv-box">
-                        <div class="title col-md-9">
-                          <h3><?php echo $resume->full_name; ?> </h3>
-                          <h4> <?php echo $resume->resume_title; ?></h4>
-                          <div class="resumetxt">E-mail : <?php echo $resume->email; ?></div>
-                          <?php if(!empty($resume->present_address)): ?>                                             
-                          <div class="resumetxt">Address: <?php echo $resume->present_address; ?> </div>
-                          <?php endif; ?>       
-                          <!--Home Phone:-->
-                          <?php if(!empty($resume->mobile)): ?>
-                          <div class="resumetxt"> Mobile No: <?php echo $resume->mobile; ?> </div>
-                          <?php endif; ?> 
-                        </div>
-                        <div class="social col-md-3">
-                          <img src="<?php echo base_url() ?>upload/<?php if(!empty($job_seeker_photo->photo_path)) { echo $job_seeker_photo->photo_path;} else { echo "image-notfound.png";} ?>" alt="Photo" style="margin-top:-50px;">
-                        </div>
-                      </header>
-                      <div class="cvdisplay">
-                        <article class="row cv-box">
-                          <header class="col-md-3">
-                            <h5>Career Summery!</h5>
-                          </header>
-                          <div class="col-md-9 ">
-                            <p class="welcome"><?php echo $resume->js_career_sum; ?> <br>
-                          </div>
-                        </article>
-                      </div>
-                      <?php if(!empty($resume->field_sepicalization)): ?>
-                      <div class="cvdisplay">
-                        <article class="row cv-box">
-                          <header class="col-md-3">
-                            <h5>Field of Specialization</h5>
-                          </header>
-                          <div class="col-md-9 ">
-                            <p class="welcome"><?php echo $resume->field_sepicalization; ?> <br>
-                          </div>
-                        </article>
-                      </div>
-                      <?php endif; ?>
-                      <?php if(!empty($resume->skills)): ?>
-                      <div class="cvdisplay">
-                        <article class="row cv-box">
-                          <header class="col-md-3">
-                            <h5>Technical Skills</h5>
-                          </header>
-                          <div class="col-md-9 ">
-                            <p class="welcome"><?php echo $resume->skills; ?> <br>
-                          </div>
-                        </article>
-                      </div>
-                      <?php endif; ?>
-                      <!-- Work -->
-                      <div class="cvdisplay">
-                        <article class="row cv-box">
-                          <header class="col-md-3">
-                            <h5>Work Experience</h5>
-                          </header>
-                          <div class="col-md-9">
-                            <?php if (!empty($experinece_list)): foreach ($experinece_list as $v_experience) : ?>
-                            <div class="table-responsive">
-                              <table class="table">
-                                <tr>
-                                  <td width="30%"><span class="highlight_text">Company Name:</span></td>
-                                  <td><?php echo $v_experience->company_profile_id ;?></td>
-                                </tr>
-                                <tr>
-                                  <td><span class="highlight_text">Designation:</span></td>
-                                  <td><?php echo $v_experience->designation_name ;?></td>
-                                </tr>
-                                <tr>
-                                  <td><span class="highlight_text">Department:</span></td>
-                                  <td><?php echo $v_experience->department_name ;?></td>
-                                </tr>
-                                <tr>
-                                  <td><span class="highlight_text">Job Level:</span></td>
-                                  <td><?php echo $this->job_level_model->get_job_level_by_id($v_experience->job_level) ;?></td>
-                                </tr>
-                                <tr>
-                                  <td><span class="highlight_text">Duration:</span></td>
-                                  <td><?php $today=date("Y-m-d"); if($v_experience->end_date=="2017-08-30") {
-                                    echo date_calculate($v_experience->start_date,$today);
-                                    }else { echo date_calculate($v_experience->start_date,$v_experience->end_date); }?></td>
-                                </tr>
-                              </table>
-                            </div>
-                            <div class="myresumtxt">  
-                              <?php if(!empty($v_experience->achievement)): ?>
-                              <span class="highlight_text">Achievement:</span> <?php echo $v_experience->achievement ?>  <br>
-                              <?php endif; ?>
-                            </div>
-                            <div class="myresumtxt">          
-                              <?php if(!empty($v_experience->major_activity)): ?>
-                              <span class="highlight_text">Major Activity: </span><?php echo $v_experience->major_activity;?> <br>
-                              <?php endif; ?>
-                            </div>
-                            <div class="myresumtxt">  
-                              <?php if(!empty($v_experience->responsibilities)): ?>
-                              <span class="highlight_text">Job Responsibility: </span><?php echo $v_experience->responsibilities;?>  <br>
-                              <?php endif; ?>
-                            </div>
-                            <?php
-                              endforeach;
-                              ?>
-                            <?php else : ?> 
-                            <p>
-                              <strong>There is no record for display</strong>
-                            </p>
-                            <?php
-                              endif; ?>
-                          </div>
-                        </article>
-                      </div>
-                      <!-- Education -->
-                      <div class="cvdisplay">
-                        <article class="row cv-box">
-                          <header class="col-md-3">
-                            <h5>Education</h5>
-                          </header>
-                          <div class="col-md-9">
-                            <?php if (!empty($edcuaiton_list)): foreach ($edcuaiton_list as $v_education) : ?>
-                            <div class="table-responsive">
-                              <table class="table">
-                                <tr>
-                                  <td width="30%"><span class="highlight_text">Degree:</span></td>
-                                  <td><?php echo $v_education->education_level_name ; ?></td>
-                                </tr>
-                                <tr>
-                                  <td><span class="highlight_text">Specialization:</span></td>
-                                  <td><?php echo $v_education->education_specialization ; ?></td>
-                                </tr>
-                                <tr>
-                                  <td><span class="highlight_text">Institute Name/Board:</span></td>
-                                  <td><?php echo $v_education->js_institute_name ; ?></td>
-                                </tr>
-                                <tr>
-                                  <td><span class="highlight_text">Result:</span></td>
-                                  <td><?php echo $v_education->js_resut  ; ?></td>
-                                </tr>
-                                <tr>
-                                  <td><span class="highlight_text">Passing Year:</span></td>
-                                  <td><?php echo $v_education->passing_year ; ?>   </td>
-                                </tr>
-                              </table>
-                            </div>
-                            <?php
-                              endforeach;
-                              ?>
-                            <?php else : ?> 
-                            <p>
-                              <strong>There is no record for display</strong>
-                            </p>
-                            <?php
-                              endif; ?>
-                          </div>
-                        </article>
-                      </div>
-                      <!-- Traingin -->
-                      <div class="cvdisplay">
-                        <article class="row cv-box">
-                          <header class="col-md-3">
-                            <h5>Training </h5>
-                          </header>
-                          <div class="col-md-9">
-                            <?php if (!empty($training_list)): foreach ($training_list as $v_training) : ?>
-                            <div class="table-responsive">
-                              <table class="table">
-                                <tr>
-                                  <td width="30%"><span class="highlight_text">Training Title:</span></td>
-                                  <td><?php echo $v_training->training_title; ?></td>
-                                </tr>
-                                <tr>
-                                  <td width="30%"><span class="highlight_text">Training Topic:</span></td>
-                                  <td><?php echo $v_training->training_topic; ?></td>
-                                </tr>
-                                <tr>
-                                  <td width="30%"><span class="highlight_text">Institute:</span></td>
-                                  <td><?php echo $v_training->institute; ?></td>
-                                </tr>
-                                <tr>
-                                  <td width="30%"><span class="highlight_text">Country:</span></td>
-                                  <td><?php echo $v_training->country_name; ?></td>
-                                </tr>
-                                <tr>
-                                  <td width="30%"><span class="highlight_text">State:</span></td>
-                                  <td><?php echo $v_training->state_name; ?></td>
-                                </tr>
-                                <tr>
-                                  <td width="30%"><span class="highlight_text">City:</span></td>
-                                  <td><?php echo $v_training->city_name; ?></td>
-                                </tr>
-                                <tr>
-                                  <td width="30%"><span class="highlight_text">Duration:</span></td>
-                                  <td><?php echo $v_training->duration; ?></td>
-                                </tr>
-                                <tr>
-                                  <td width="30%"><span class="highlight_text">Year:</span></td>
-                                  <td><?php echo $v_training->training_year; ?></td>
-                                </tr>
-                              </table>
-                            </div>
-                            <?php
-                              endforeach;
-                              ?>
-                            <?php else : ?> 
-                            <p>
-                              <strong>There is no record for display</strong>
-                            </p>
-                            <?php
-                              endif; ?>                 
-                          </div>
-                        </article>
-                      </div>
-                      <?php if(!empty($resume->extracurricular)): ?>
-                      <div class="cvdisplay">
-                        <article class="row cv-box">
-                          <header class="col-md-3">
-                            <h5>Extra Curricular  Activities</h5>
-                          </header>
-                          <div class="col-md-9 ">
-                            <p class="welcome"><?php echo $resume->extracurricular; ?> <br>
-                          </div>
-                        </article>
-                      </div>
-                      <?php endif; ?>
-                      <!-- Personal Information -->
-                      <div class="cvdisplay">
-                        <article class="row cv-box">
-                          <header class="col-md-3">
-                            <h5>Personal Details </h5>
-                          </header>
-                          <div class="col-md-9">
-                            <div class="table-responsive">
-                              <table class="table">
-                                <tr>
-                                  <?php if(!empty($resume->father_name)): ?>
-                                  <td width="30%"><span class="highlight_text">Father Name:</span></td>
-                                  <td><?php echo $resume->father_name; ?></td>
-                                  <?php endif; ?>
-                                </tr>
-                                <tr>
-                                  <?php if(!empty($resume->mother_name)): ?>
-                                  <td width="30%"><span class="highlight_text">Mother Name:</span></td>
-                                  <td><?php echo $resume->mother_name; ?></td>
-                                  <?php endif; ?>
-                                </tr>
-                                <tr>
-                                  <?php if($resume->date_of_birth=="0000-00-00"): ?>
-                                  <?php else: ?> 
-                                  <td width="30%"><span class="highlight_text">Date of Birth:</span></td>
-                                  <td><?php echo date("F j Y", strtotime($resume->date_of_birth)); ?></td>
-                                  <?php endif; ?>
-                                </tr>
-                                <tr>
-                                  <?php if(!empty($resume->nationality)): ?>
-                                  <td width="30%"><span class="highlight_text">Nationality:</span></td>
-                                  <td><?php echo $resume->nationality; ?></td>
-                                  <?php endif; ?>
-                                </tr>
-                                <tr>
-                                  <?php if(!empty($resume->national_id)): ?>
-                                  <td width="30%"><span class="highlight_text">National ID:</span></td>
-                                  <td><?php echo $resume->national_id; ?></td>
-                                  <?php endif; ?>
-                                </tr>
-                                <tr>
-                                  <?php if(!empty($personal->present_address)): ?>
-                                  <td width="30%"><span class="highlight_text">Address:</span></td>
-                                  <td><?php echo $personal->presene_address; ?></td>
-                                  <?php endif; ?>
-                                </tr>
-                                <tr>
-                                  <?php if(!empty($js_personal_info->city_name)): ?>
-                                  <td width="30%"><span class="highlight_text">City:</span></td>
-                                  <td><?php echo $js_personal_info->city_name; ?></td>
-                                  <?php endif; ?>
-                                </tr>
-                                <tr>
-                                  <?php if(!empty($js_personal_info->state_name)): ?>
-                                  <td width="30%"><span class="highlight_text">State:</span></td>
-                                  <td><?php echo $js_personal_info->state_name; ?></td>
-                                  <?php endif; ?>
-                                </tr>
-                                <tr>
-                                  <?php if(!empty($js_personal_info->country_name)): ?>
-                                  <td width="30%"><span class="highlight_text">Country:</span></td>
-                                  <td><?php echo $js_personal_info->country_name; ?></td>
-                                  <?php endif; ?>
-                                </tr>
-                              </table>
-                            </div>
-                          </div>
-                        </article>
-                      </div>
-                      <!-- Referenace -->
-                      <div class="cvdisplay">
-                        <article class="row cv-box">
-                          <header class="col-md-3">
-                            <h5>Reference </h5>
-                          </header>
-                          <div class="col-md-9">
-                            <?php if (!empty($reference_list)): foreach ($reference_list as $v_reference) : ?>
-                            <div class="table-responsive">
-                              <table class="table">
-                                <tr>
-                                  <td width="30%"><span class="highlight_text">Name:</span></td>
-                                  <td><?php echo $v_reference->name; ?></td>
-                                </tr>
-                                <tr>
-                                  <td width="30%"><span class="highlight_text">Organization Name:</span></td>
-                                  <td><?php echo $v_reference->company_profile_id; ?></td>
-                                </tr>
-                                <tr>
-                                  <td width="30%"><span class="highlight_text">Designation:</span></td>
-                                  <td><?php echo $v_reference->designation_name; ?></td>
-                                </tr>
-                                <tr>
-                                  <td width="30%"><span class="highlight_text">Email:</span></td>
-                                  <td><?php echo $v_reference->email; ?></td>
-                                </tr>
-                                <tr>
-                                  <td width="30%"><span class="highlight_text">Mobile:</span></td>
-                                  <td><?php echo $v_reference->mobile; ?></td>
-                                </tr>
-                                <tr>
-                                  <td width="30%"><span class="highlight_text">Realtion:</span></td>
-                                  <td><?php echo $v_reference->relation; ?></td>
-                                </tr>
-                              </table>
-                            </div>
-                            <?php
-                              endforeach;
-                              ?>
-                            <?php else : ?> 
-                            <p>
-                              <strong>There is no record for display</strong>
-                            </p>
-                            <?php
-                              endif; ?>                 
-                          </div>
-                        </article>
-                      </div>
-                      <!-- <div class="row">
-                        <div class="col-md-5"><?php echo get_logo();?></div>
-                        </div>-->
-                    </div>
-                  </div>
-                  <!-- end post-padding -->
-                </div>
-                <!-- end col -->
+          <form action="<?php echo base_url() ?>employer/job_post" method="post">
+            <div class="front">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Rivian_company_logo.jpg" style="height:40px; width:40px;border-radius:5px;float:left" />
+              <div class="job-info">
+                <p class="job_title"><?php echo $cv_bank_data['js_name']; ?></p>
               </div>
-              <!-- end row -->  
+              <div class="icon-info">
+                <li class="left-icon-title"><i class="fa fa-envelope"></i></li>
+                <li class="right-icon-title"> &emsp;<?php echo $cv_bank_data['js_email']; ?></li>
+                <li class="left-icon-title"><i class="fa fa-phone"></i></li>
+                <li class="right-icon-title"> &emsp;<?php echo $cv_bank_data['js_mobile']; ?></li>
+                 <li class="left-icon-title"><i class="fas fa-briefcase"></i></li>
+                <li class="right-icon-title"> &emsp;<?php echo $cv_bank_data['js_experience']; ?> years</li>
+                <div class="clear"></div>
+              </div>
+              <div class="following-info">
+                <li class="left-title">Education</li>
+                <li class="right-title">&nbsp;:<?php echo $cv_bank_data['education_level_name']; ?></li>
+                <li class="left-title">Designation</li>
+                <li class="right-title">&nbsp;: <?php echo $cv_bank_data['js_current_designation']; ?></li>
+                 <li class="left-title">Current Location</li>
+                <li class="right-title">&nbsp;: <?php echo $cv_bank_data['js_current_work_location']; ?></li>
+                <div class="clear"></div>
+              </div>
+              <div class="following-info2">
+                <li class="left-title">Current CTC</li>
+                <li class="right-title">&nbsp;:<?php echo $cv_bank_data['js_current_ctc']; ?></li>
+                <li class="left-title">Notice Period</li>
+                <li class="right-title">&nbsp;:<?php echo $cv_bank_data['js_current_notice_period']; ?></li>
+                <li class="left-title">Desired Location</li>
+                <li class="right-title">&nbsp;: <?php echo $cv_bank_data['js_desired_work_location']; ?></li>
+                <div class="clear"></div>
+              </div>
+              <div class="following-info3">
+                <li class="left-title">Resume attached&nbsp;<i class="fas fa-link"></i></li>
+                <li class="right-title">
+                  &nbsp;: <?php if (isset($cv_bank_data['js_resume']) && !empty($cv_bank_data['js_resume'])) {
+                    echo "Yes"; ?>
+                  <!-- <a href="<?php echo base_url() ?>upload/job_description/<?php echo $jd_file; ?>" target="_blank"><i class="fa fa-file" aria-hidden="true"></i></a> -->
+                  <a style="margin-left: 15px" href="<?php echo base_url() ?>upload/Resumes/<?php echo $cv_bank_data['js_resume']; ?>" download><i class="fa fa-download" aria-hidden="true"></i></a>
+                  <?php   }else{
+                    echo "No";
+                    } ?> 
+                </li>
+                <li class="left-title">Expected CTC (LPA)</li>
+                <li class="right-title">&nbsp;: <?php echo $cv_bank_data['js_expected_salary']; ?></li>
+                 <li class="left-title">Current Organization</li>
+                <li class="right-title">&nbsp;: <?php echo $cv_bank_data['current_org']; ?></li>
+                <div class="clear"></div>
+              </div>
+              <br>
+              <div class="skils_benifit">
+                <li class="left-title_seperate"><b>skills</b>&nbsp;&nbsp; </li>
+                <li class="right-title_seperate">:
+                  <?php  $skills=explode(',',$cv_bank_data['js_skill_set']);
+                    
+                     if(!empty($skills)){ 
+                             foreach($skills as $skill_row){
+                              ?>
+                  <label>
+                  <input type="checkbox" value="4" class="btn-default1" checked="" name="benefits[]">
+                  <span><?php echo $skill_row; ?></span>
+                  </label>
+                  <?php } }?>
+                </li>
+              </div>
+              
+              <hr>
+              <!-- EXPERIENCE --------------------------------------------->
+    <section id="experience" class="container">
+      <h1>Experience</h1>
+      <div class="card">
+        <div class="card-header collapse show" data-toggle="collapse" data-target="#exp1">
+          <div class="row">
+            <h5 class="col-md-8 mb-0">Contract Web Developer</h5>
+            <em class="col-md-4 text-md-right">Apr 2012 - Current</em>
+          </div>
+        </div>
+        <div class="card-block collapse" id="exp1">
+          <h5>Ben Davis Digital - Dallas, TX</h5>
+          <p>
+            Leveraged agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
+          </p>
+          <p>
+            Brought to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.
+          </p>
+          <p>
+            Capitalized on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.
+          </p>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header" data-toggle="collapse" data-target="#exp2">
+          <div class="row">
+            <h5 class="col-md-8 mb-0">Senior Developer</h5>
+            <em class="col-md-4 text-md-right">Sep 2008 - Apr 2012</em>
+          </div>
+        </div>
+        <div class="card-block collapse" id="exp2">
+          <h5>Farstar - Frisco, TX</h5>
+          <p>
+            Leveraged agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
+          </p>
+          <p>
+            Brought to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.
+          </p>
+          <p>
+            Capitalized on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" data-toggle="collapse" data-target="#exp3">
+          <div class="row">
+            <h5 class="col-md-8 mb-0">Project Manager, CMS Team Lead</h5>
+            <em class="col-md-4 text-md-right">Jan 2005 - Sep 2008</em>
+          </div>
+        </div>
+        <div class="card-block collapse" id="exp3">
+          <h5>New Media Gateway - Dallas, TX</h5>
+          <p>
+            Leveraged agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
+          </p>
+          <p>
+            Brought to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.
+          </p>
+          <p>
+            Capitalized on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" data-toggle="collapse" data-target="#exp4">
+          <div class="row">
+            <h5 class="col-md-8 mb-0">Total Newb Developer</h5>
+            <em class="col-md-4 text-md-right">Jul 2000 - Jan 2005</em>
+          </div>
+        </div>
+        <div class="card-block collapse" id="exp4">
+          <h5>Various Companies - Midwest United States</h5>
+          <p>
+            Leveraged agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
+          </p>
+          <p>
+            Brought to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.
+          </p>
+          <p>
+            Capitalized on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.
+          </p>
+        </div>
+      </div>
+    </section>
+    
+              <input type="hidden" name="job_id" value="<?php echo $job_id; ?>">
+              <div class="preview_btns">
+                <button type="button" onclick="history.back()"  class="back_btn">Back</button>
+               <!--  <button type="submit" name="edit" class="edit_btn">Edit</button>
+                <?php if (isset($preview)) {
+                    # code...
+                }else{ ?>
+                     <button type="submit" class="Postjob_btn" name="post_preview">Post Job</button>
+               <?php } ?> -->
+               
+              </div>
             </div>
-            <!-- end container -->
-          <!-- </div> -->
-          <!-- end section -->
-        <!-- </div> -->
-      <!-- </div> -->
-    <!-- </div> -->
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
