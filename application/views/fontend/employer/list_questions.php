@@ -1565,7 +1565,7 @@
                 <ul class="pieID legend">
                   <li>
                     <em id="spanid0">Total No. Of Question</em>
-                    <span><?php echo sizeof($total_question); ?></span>
+                    <span><?php echo $total_question; ?></span>
                     <!--<span>718</span> -->
                   </li>
                   <!--<li>
