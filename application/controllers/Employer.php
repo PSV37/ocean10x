@@ -4215,7 +4215,23 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             // echo $this->db->last_query();
             // echo "<pre>";
             $latest = $result['0'];
-            $update_profile = array('js_name' => $latest['full_name'], 'js_mobile' => $latest['mobile_no'], 'js_current_designation' => $latest['job_role_title'], 'js_current_work_location' => $latest['address'], 'js_current_ctc' => $latest['js_career_salary'], 'js_current_notice_period' => $latest['notice_period'], 'js_experience' => $latest['js_career_exp'], 'js_last_salary_hike' => $latest['last_salary_hike'], 'js_top_education' => $latest['edu_high'], 'js_skill_set' => $latest['skills'], 'js_certifications' => $latest['training_title'], 'js_industry' => $latest['industry_name'], 'js_role' => $latest['job_role_title'], 'js_expected_salary' => $latest['js_career_salary'], 'js_desired_work_location' => $latest['job_area'], 'updated_on' => date('Y-m-d H:i:s'), 'updated_by' => $this->session->userdata('company_profile_id'));
+            $update_profile = array(
+                'js_name' => $latest['full_name'], 
+                'js_mobile' => $latest['mobile_no'], 
+                'js_current_designation' => $latest['job_role_title'], 
+                'js_current_work_location' => $latest['address'], 
+                'js_current_ctc' => $latest['js_career_salary'], 
+                'js_current_notice_period' => $latest['notice_period'], 
+                'js_experience' => $latest['js_career_exp'], 
+                'js_last_salary_hike' => $latest['last_salary_hike'], 
+                'js_top_education' => $latest['edu_high'], 
+                'js_skill_set' => $latest['skills'], 
+                'js_certifications' => $latest['training_title'], 
+                'js_industry' => $latest['industry_name'], 
+                'js_role' => $latest['job_role_title'], 
+                'js_expected_salary' => $latest['js_career_salary'], 
+                'js_desired_work_location' => $latest['job_area'], 
+                'updated_on' => date('Y-m-d H:i:s'), 'updated_by' => $this->session->userdata('company_profile_id'));
             $where11['js_email'] = $email_id;
             $this->Master_model->master_update($update_profile, 'corporate_cv_bank', $where11);
             // echo $this->db->last_query();die;
@@ -4230,7 +4246,22 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 // echo $this->db->last_query();
                 // echo "<pre>";
                 $latest = $result['0'];
-                $update_profile = array('js_name' => $latest['full_name'], 'js_mobile' => $latest['mobile_no'], 'js_current_designation' => $latest['job_role_title'], 'js_current_work_location' => $latest['address'], 'js_current_ctc' => $latest['js_career_salary'], 'js_current_notice_period' => $latest['notice_period'], 'js_experience' => $latest['js_career_exp'], 'js_last_salary_hike' => $latest['last_salary_hike'], 'js_top_education' => $latest['edu_high'], 'js_skill_set' => $latest['skills'], 'js_certifications' => $latest['training_title'], 'js_industry' => $latest['industry_name'], 'js_role' => $latest['job_role_title'], 'js_expected_salary' => $latest['js_career_salary'], 'js_desired_work_location' => $latest['job_area'], 'updated_on' => date('Y-m-d H:i:s'), 'updated_by' => $this->session->userdata('company_profile_id'));
+                $update_profile = array(
+                    'js_name' => $latest['full_name'], 
+                'js_mobile' => $latest['mobile_no'], 
+                'js_current_designation' => $latest['job_role_title'], 
+                'js_current_work_location' => $latest['address'], 
+                'js_current_ctc' => $latest['js_career_salary'], 
+                'js_current_notice_period' => $latest['notice_period'], 
+                'js_experience' => $latest['js_career_exp'], 
+                'js_last_salary_hike' => $latest['last_salary_hike'], 
+                'js_top_education' => $latest['edu_high'], 
+                'js_skill_set' => $latest['skills'], 'js_certifications' => $latest['training_title'], 
+                'js_industry' => $latest['industry_name'], 
+                'js_role' => $latest['job_role_title'], 
+                'js_expected_salary' => $latest['js_career_salary'], 
+                'js_desired_work_location' => $latest['job_area'], 
+                'updated_on' => date('Y-m-d H:i:s'), 'updated_by' => $this->session->userdata('company_profile_id'));
                 $where11['js_email'] = $email_id;
                 $this->Master_model->master_update($update_profile, 'corporate_cv_bank', $where11);
             }
