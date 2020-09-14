@@ -5570,8 +5570,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     '.$type.'
 
       <span class = "caret"></span>
-   </button>
-   
+   </button>';
+   if ($type == 'Editor') {
+      $result.= '
    <ul class = "dropdown-menu" role = "menu">
       <li><a href = "#">Viewer</a></li>
       <li><a href = "#">Commenter</a></li>
@@ -5584,6 +5585,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     </div>
     
 </li>';
+   }
+  
           }
            
         echo $result;
