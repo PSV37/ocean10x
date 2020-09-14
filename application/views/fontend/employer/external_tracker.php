@@ -662,7 +662,7 @@
                // dataType: "json",
               success: function(data)
               {
-                alert('Updated Successfully');
+                alert(data);
                 // window.location.reload();
                  tracker_card(job_id);
               }
