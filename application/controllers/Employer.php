@@ -5553,6 +5553,21 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     <div class="boqDrivesharedialogPermissionslistPermissionrowMain" data-hovercard-id="amishra@tele-kinetics.com" data-hovercard-owner-id="130">
         <div class="shared_name" aria-label="'.$row['company_name'].'">'.$row['company_name'].'</div>
         <div class="boqDrivesharedialogPermissionslistPermissionrowSecondary" aria-label="'.$row['company_email'].'.">'.$row['company_email'].'</div>
+        <div class = "btn-group">
+   <button type = "button" class = "btn btn-primary dropdown-toggle btn-sm" data-toggle = "dropdown">
+      Primary
+      <span class = "caret"></span>
+   </button>
+   
+   <ul class = "dropdown-menu" role = "menu">
+      <li><a href = "#">Action</a></li>
+      <li><a href = "#">Another action</a></li>
+      <li><a href = "#">Something else here</a></li>
+      
+      <li class = "divider"></li>
+      <li><a href = "#">Separated link</a></li>
+   </ul>
+</div>
     </div>
     
 </li>';

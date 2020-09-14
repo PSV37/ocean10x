@@ -443,7 +443,7 @@
     min-width: 36px;
     width: 36px;
     /* padding: 0px; */
-    margin-left: -45px;
+    margin-left: -50px;
     margin-right: 25px;
 }
 .shared_name {
@@ -567,7 +567,7 @@
         <div class="modal-body" style="padding:15px 40px;">
           <input type="hidden" name="tracking_id" id="tracking_id" value="">
           <input type="hidden" name="consultant" value="JobSeeker">  
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: 110%;margin-left: -18px;padding: 0px;">
             <label class="mdl-textfield__label" for="sample3">E-mail:</label>
             <input onfocusout="myFunction();" type="email"  name="consultant_email"  id="email" placeholder="Enter comma seperated Emails"  id="subject" data-required="true" multiple style="display: inline-block;min-width: 100%;min-height: 12%;" required>
           </div>
