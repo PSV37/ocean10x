@@ -5551,7 +5551,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
            $shared_list = $this->Master_model->get_master_row('tracker_consultant_mapping', $select = FALSE, $where, $join );
       
            if (!empty($shared_list)) {
-              array_push($shared_people, $shared_list['company_name']);
+              array_push($shared_people, $shared_list->company_name);
            }
          }
 
