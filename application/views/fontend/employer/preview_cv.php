@@ -223,7 +223,7 @@
           <!-- <div class="section lb"> -->
             <!-- <div class="container"> -->
               <!-- <div class="row"> -->
-               <!--  <?php $this->load->view('fontend/layout/seeker_left.php'); ?> -->
+              
                 <!-- <div class="content col-md-9"> -->
                   <div class="job-header">
                     <div class="contentbox">
