@@ -643,20 +643,20 @@
    var ary = [];
         $(function () {
             $('.table-borderless tr').each(function (a, b) {
-                var value = $('#tracking_id_val', b).val();
+                var tracking_id_val = $('#tracking_id_val', b).val();
                 
   
-                ary.push({value:value});
+                ary.push({tracking_id_val:tracking_id_val});
                
             });
             console.log(ary);
             var result = ary.map(function(val) {
-              return val.value;
+              return val.tracking_id_val;
             }).join(',');
             $.ajax({
               url: "<?php echo base_url();?>employer/get_shared_list",
               type: "POST",
-              data: {ary:ary},
+              data: {tracker_id:result},
               // contentType:false,
               // processData:false,
                // dataType: "json",
