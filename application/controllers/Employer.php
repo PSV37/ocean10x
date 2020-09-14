@@ -5547,7 +5547,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
            $shared_list = $this->Master_model->getMaster('tracker_consultant_mapping', $where , $join , $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
            $result='';
           foreach ($shared_list as $row) {
-              $result.= '<li value="">'.$row['company_name'].'</li>';
+              $result.= '<li>'.$row['company_name'].'</li>';
           }
            
         echo json_encode($result);
