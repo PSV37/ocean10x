@@ -5538,6 +5538,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     function get_shared_list()
     {
         $tracker_id = $this->input->post('tracker_id');
+        $job_id = $this->input->post('job_id');
  
         $array=array_map('intval', explode(',', $tracker_id));
         $array = implode("','",$array);
@@ -5548,6 +5549,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
            $result;
 
           foreach ($shared_list as $row) {
+            $where_job = "job_post_id = '$job_id' and company_profile_id ='$row'";
+            $job_data = $this->Master_model->get_master_row('job_posting', $select = FALSE, $where_job , $join = FALSE);
               $result.= '<li class="shared_li" role="menuitem" tabindex="-1" aria-selected="false">
     <div role="img" class="profile_img">A</div>
     <div class="boqDrivesharedialogPermissionslistPermissionrowMain" data-hovercard-id="amishra@tele-kinetics.com" data-hovercard-owner-id="130">
@@ -5555,17 +5558,23 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         <div class="boqDrivesharedialogPermissionslistPermissionrowSecondary" aria-label="'.$row['company_email'].'.">'.$row['company_email'].'</div>
         <div class = "btn-group">
    <button type = "button" class = "btn btn-primary dropdown-toggle btn-sm" data-toggle = "dropdown">
-      Primary
+     'if (!empty($job_data)) {
+         echo "Owner";
+     }
+     else
+        {
+            echo "Editor";
+            }'
       <span class = "caret"></span>
    </button>
    
    <ul class = "dropdown-menu" role = "menu">
-      <li><a href = "#">Action</a></li>
-      <li><a href = "#">Another action</a></li>
-      <li><a href = "#">Something else here</a></li>
+      <li><a href = "#">Viewer</a></li>
+      <li><a href = "#">Commenter</a></li>
+      <li><a href = "#">Editor</a></li>
       
       <li class = "divider"></li>
-      <li><a href = "#">Separated link</a></li>
+      <li><a href = "#">Remove</a></li>
    </ul>
 </div>
     </div>

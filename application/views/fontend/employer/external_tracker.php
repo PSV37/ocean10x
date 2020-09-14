@@ -446,6 +446,13 @@
     margin-left: -50px;
     margin-right: 25px;
 }
+.btn-group {
+    /* float: right; */
+    margin-left: 260px;
+    margin-top: -45px;
+    align-content: end;
+    /* color: black; */
+}
 .shared_name {
     font-weight: 500;
     color: #202124;
@@ -692,7 +699,7 @@
             $.ajax({
               url: "<?php echo base_url();?>employer/get_shared_list",
               type: "POST",
-              data: {tracker_id:result},
+              data: {tracker_id:result,job_id:job_id},
               // contentType:false,
               // processData:false,
                // dataType: "json",
