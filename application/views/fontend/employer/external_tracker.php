@@ -466,7 +466,17 @@
     line-height: 2;
     margin-top: 20px;
 }
-
+.btn-primary.active, .btn-primary:active, .open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #18c5bd;
+    /* border-color: #204d74; */
+}
+hr {
+    width: 110%;
+    margin-left: -15px;
+    margin-top: 0;
+    border-top: 1px solid black;
+}
 </style>
 <div class="container-fluid main-d">
   <div class="container">
@@ -574,7 +584,7 @@
         <div class="modal-body" style="padding:15px 40px;">
           <input type="hidden" name="tracking_id" id="tracking_id" value="">
           <input type="hidden" name="consultant" value="JobSeeker">  
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: 110%;margin-left: -18px;padding: 0px;">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"style="width: 108%;margin-left: -12px;padding: 0px;">
             <label class="mdl-textfield__label" for="sample3">E-mail:</label>
             <input onfocusout="myFunction();" type="email"  name="consultant_email"  id="email" placeholder="Enter comma seperated Emails"  id="subject" data-required="true" multiple style="display: inline-block;min-width: 100%;min-height: 12%;" required>
           </div>
