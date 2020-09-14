@@ -5551,6 +5551,14 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
           foreach ($shared_list as $row) {
             $where_job = "job_post_id = '$job_id' and company_profile_id ='$row'";
             $job_data = $this->Master_model->get_master_row('job_posting', $select = FALSE, $where_job , $join = FALSE);
+
+            if (!empty($job_data)) {
+                $type ="Owner";
+             }
+             else
+                {
+               $type = "Editor";
+            }
               $result.= '<li class="shared_li" role="menuitem" tabindex="-1" aria-selected="false">
     <div role="img" class="profile_img">A</div>
     <div class="boqDrivesharedialogPermissionslistPermissionrowMain" data-hovercard-id="amishra@tele-kinetics.com" data-hovercard-owner-id="130">
@@ -5558,13 +5566,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         <div class="boqDrivesharedialogPermissionslistPermissionrowSecondary" aria-label="'.$row['company_email'].'.">'.$row['company_email'].'</div>
         <div class = "btn-group">
    <button type = "button" class = "btn btn-primary dropdown-toggle btn-sm" data-toggle = "dropdown">
-     'if (!empty($job_data)) {
-         echo "Owner";
-     }
-     else
-        {
-            echo "Editor";
-            }'
+    '.$type.'
+
       <span class = "caret"></span>
    </button>
    
