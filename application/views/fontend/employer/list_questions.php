@@ -1564,10 +1564,15 @@
                 </div>
                 <ul class="pieID legend">
                   <li>
-                    <em id="spanid0">Total Active Job Posts</em>
-                    <span><?php echo sizeof($company_active_jobs); ?></span>
+                    <em id="spanid0">Total No. Of Question</em>
+                    <span><?php echo sizeof($total_question); ?></span>
                     <!--<span>718</span> -->
                   </li>
+                  <!--<li>
+                    <em id="spanid0">Total Active Job Posts</em>
+                    <span><?php echo sizeof($company_active_jobs); ?></span>
+                    
+                  </li>-->
                   <li>
                     <em id="spanid1">Sent to Candidates</em>
                     <!--<span id='total_forwarded'> </span>-->
@@ -1617,7 +1622,7 @@
               <div class="panel-heading">
                 <h3 class="panel-title">Location</h3>
                 <div class="pull-right">
-                  <span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
+                  <span class="clickable filter" data-toggle="tooltip"  data-container="body">
                   <i class="glyphicon glyphicon-filter"></i>
                   </span>
                 </div>
