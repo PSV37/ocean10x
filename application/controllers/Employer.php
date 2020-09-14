@@ -5534,6 +5534,12 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $this->load->view('fontend/employer/preview_cv', $data);
         }
     }
+
+    function get_shared_list()
+    {
+        $tracker_id = $this->input->post('tracker_id');
+        print_r($tracker_id);
+    }
 }
 ?>
 

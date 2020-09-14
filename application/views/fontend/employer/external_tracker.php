@@ -653,7 +653,20 @@
             var result = ary.map(function(val) {
               return val.value;
             }).join(',');
-  
+            $.ajax({
+              url: "<?php echo base_url();?>employer/get_shared_list",
+              type: "POST",
+              data: {ary:ary},
+              // contentType:false,
+              // processData:false,
+               // dataType: "json",
+              success: function(data)
+              {
+                alert('Updated Successfully');
+                // window.location.reload();
+                 tracker_card(job_id);
+              }
+        });
   console.log(result);
   $('#tracking_id').val(result);
   $('#rotateModal').modal('show');
