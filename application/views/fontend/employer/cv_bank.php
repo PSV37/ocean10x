@@ -1693,7 +1693,8 @@ a.myclass {
            
 
 <script>
-    $(document).ready (function(){
+
+     $(document).ready (function(){
      $("#smsg").fadeTo(2000, 500).slideUp(500, function(){
      $("#smsg").slideUp(500);
      });   
@@ -1723,15 +1724,17 @@ $(document).keyup(function(e) {
     }
 });
 
- function confirm_delete(id)
+function confirm_delete(id)
   {
-    var newUrl = '<?php echo base_url(); ?>employer/delete_questionbank/'+id;
+    var newUrl = '<?php echo base_url(); ?>employer/delete_cv/'+id;
     console.log(newUrl);
     console.log(id);
     $('#del_modal').prop('action',newUrl);
     $('#delete').modal("show");
   }
-  
+
+ 
+
 </script>
 
 <script>
