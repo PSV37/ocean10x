@@ -37,14 +37,17 @@
 
        .box:-moz-placeholder {
     color: white;
+    padding-left: 2px;
 
 }
 .box::-webkit-input-placeholder {
     color: white;
+    padding-left: 2px;
 }
 
 .box::-moz-placeholder {
     color: white;
+    padding-left: 2px;
 
 }     
 a.dropdown-toggle {
