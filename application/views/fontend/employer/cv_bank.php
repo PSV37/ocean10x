@@ -1690,7 +1690,26 @@ a.myclass {
                      </div>
                   </div>
                </div>
-           
+<?php
+  endforeach;endif;?>
+  <div class="modal fade" id="delete" tabindex='-1' role="dialog">
+    <div class="modal-dialog">
+       <form method="post" id="del_modal" action=""> 
+      
+      <div class="modal-content">
+        <div class="modal-header">
+         
+          <h4 class="modal-title">Are you sure want to Delete This ?</h4>
+        </div>
+       
+        <div class="modal-footer">
+         <button type="submit" class="btn btn-default" > Ok </button>
+          <button type="button" class="btn btn-default1 active_modal" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
 
 <script>
 
