@@ -307,12 +307,12 @@
             
               <!-- EXPERIENCE --------------------------------------------->
     <section id="experience" class="container">
-      <h1>Experience</h1>
+      <h3>Experience</h3>
       <?php  foreach ($js_details as $row) { ?>
       <div class="card" style="max-width: 68%;border: none;">
         <div class="card-header collapse show" data-toggle="collapse" data-target="#exp1">
           <div class="row" style="display: inline-flex;width: 100%">
-            <h5 class="col-md-8 mb-0"><?php echo $row['designation_name']; ?></h5>
+            <h5 class="col-md-8 mb-0"><b><?php echo $row['designation_name']; ?></b></h5>
             <em class="col-md-4 text-md-right" >Apr <?php echo $row['start_date']; ?> - <?php echo $row['end_date']; ?></em>
           </div>
         </div>
