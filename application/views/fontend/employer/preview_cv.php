@@ -220,6 +220,10 @@
 .card .card-header {
   cursor: pointer;
 }
+.card {
+    overflow: hidden;
+    margin-top: 60px;
+}
 </style>
 <div class="container-fluid main-d">
   <div class="container">
@@ -300,9 +304,9 @@
       <h1>Experience</h1>
       <div class="card">
         <div class="card-header collapse show" data-toggle="collapse" data-target="#exp1">
-          <div class="row">
+          <div class="row" style="display: inline-flex;width: 100%">
             <h5 class="col-md-8 mb-0">Contract Web Developer</h5>
-            <em class="col-md-4 text-md-right">Apr 2012 - Current</em>
+            <em class="col-md-4 text-md-right" style="   margin-right: 208px;">Apr 2012 - Current</em>
           </div>
         </div>
         <div class="card-block collapse" id="exp1">
@@ -321,9 +325,9 @@
       
       <div class="card">
         <div class="card-header" data-toggle="collapse" data-target="#exp2">
-          <div class="row">
+          <div class="row" style="display: inline-flex;width: 100%">
             <h5 class="col-md-8 mb-0">Senior Developer</h5>
-            <em class="col-md-4 text-md-right">Sep 2008 - Apr 2012</em>
+            <em class="col-md-4 text-md-right" style="   margin-right: 208px;">Sep 2008 - Apr 2012</em>
           </div>
         </div>
         <div class="card-block collapse" id="exp2">
@@ -339,46 +343,7 @@
           </p>
         </div>
       </div>
-      <div class="card">
-        <div class="card-header" data-toggle="collapse" data-target="#exp3">
-          <div class="row">
-            <h5 class="col-md-8 mb-0">Project Manager, CMS Team Lead</h5>
-            <em class="col-md-4 text-md-right">Jan 2005 - Sep 2008</em>
-          </div>
-        </div>
-        <div class="card-block collapse" id="exp3">
-          <h5>New Media Gateway - Dallas, TX</h5>
-          <p>
-            Leveraged agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
-          </p>
-          <p>
-            Brought to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.
-          </p>
-          <p>
-            Capitalized on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.
-          </p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-header" data-toggle="collapse" data-target="#exp4">
-          <div class="row">
-            <h5 class="col-md-8 mb-0">Total Newb Developer</h5>
-            <em class="col-md-4 text-md-right">Jul 2000 - Jan 2005</em>
-          </div>
-        </div>
-        <div class="card-block collapse" id="exp4">
-          <h5>Various Companies - Midwest United States</h5>
-          <p>
-            Leveraged agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
-          </p>
-          <p>
-            Brought to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.
-          </p>
-          <p>
-            Capitalized on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.
-          </p>
-        </div>
-      </div>
+      
     </section>
     
               <input type="hidden" name="job_id" value="<?php echo $job_id; ?>">
