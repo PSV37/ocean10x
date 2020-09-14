@@ -454,10 +454,11 @@
     font-size: 0.6rem;
     line-height: 1;
 }
-    .shared_li
-    {
-      display: flex;
-    }
+   .shared_li {
+    display: flex;
+    line-height: 2;
+    margin-top: 20px;
+}
 
 </style>
 <div class="container-fluid main-d">
