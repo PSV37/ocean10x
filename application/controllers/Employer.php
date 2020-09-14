@@ -5547,7 +5547,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
       
          if (!empty($row)) {
              $join = array('company_profile'=>'company_profile.company_profile_id = tracker_consultant_mapping.consultant_id ');
-            $where ="tracker_consultant_mapping.tracking_id = '$row' group_by tracker_consultant_mapping.consultant_id";
+            $where ="tracker_consultant_mapping.tracking_id = '$row' and group by tracker_consultant_mapping.consultant_id";
            $shared_list = $this->Master_model->get_master_row('tracker_consultant_mapping', $select = FALSE, $where, $join );
       
            if (!empty($shared_list)) {
