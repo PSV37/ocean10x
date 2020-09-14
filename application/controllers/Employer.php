@@ -5540,26 +5540,28 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $tracker_id = $this->input->post('tracker_id');
         // print_r($tracker_id);
 
-        $trackers = explode(',', $tracker_id);
+        $array=array_map('intval', explode(',', $tracker_id));
+        $array = implode("','",$array);
+        // $trackers = explode(',', $tracker_id);
       
-        $shared_people = array();
-        foreach($trackers as $row) {
+        // $shared_people = array();
+        // foreach($trackers as $row) {
       
-         if (!empty($row)) {
+         // if (!empty($row)) {
              $join = array('company_profile'=>'company_profile.company_profile_id = tracker_consultant_mapping.consultant_id ');
-            $where ="tracker_consultant_mapping.tracking_id = '$row'  group by tracker_consultant_mapping.consultant_id";
+            $where ="tracker_consultant_mapping.tracking_id IN ('".$array."')  group by tracker_consultant_mapping.consultant_id";
            $shared_list = $this->Master_model->get_master_row('tracker_consultant_mapping', $select = FALSE, $where, $join );
-        print_r($shared_list);
-           if (!empty($shared_list)) {
-              array_push($shared_people, $shared_list->company_name);
-           }
-         }
+        // print_r($shared_list);
+        //    if (!empty($shared_list)) {
+        //       array_push($shared_people, $shared_list->company_name);
+        //    }
+         
 
             
            
-        }
+        
 
-        return json_encode($shared_people);
+        return json_encode($shared_list);
     }
 }
 ?>
