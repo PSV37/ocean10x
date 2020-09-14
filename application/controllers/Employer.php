@@ -5543,9 +5543,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $trackers = explode(',', $tracker_id);
          print_r($trackers);
         $shared_people = array();
-        foreach ($trackers as $row) {
+        foreach($trackers as $row) {
          print_r($row);
-            
+
             $join = array('company_profile'=>'company_profile.company_profile_id = tracker_consultant_mapping.consultant_id ');
             $where ="tracker_consultant_mapping.tracking_id = '$row'";
            $shared_list = $this->Master_model->get_master_row('tracker_consultant_mapping', $select = FALSE, $where, $join );

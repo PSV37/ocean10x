@@ -662,9 +662,9 @@
                // dataType: "json",
               success: function(data)
               {
-                alert(data);
+                // alert(data);
                 // window.location.reload();
-                 tracker_card(job_id);
+                 // tracker_card(job_id);
               }
         });
   console.log(result);
