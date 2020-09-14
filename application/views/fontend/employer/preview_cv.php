@@ -302,7 +302,7 @@
               <!-- EXPERIENCE --------------------------------------------->
     <section id="experience" class="container">
       <h1>Experience</h1>
-      <div class="card">
+      <div class="card" style="max-width: 68%;border: none;">
         <div class="card-header collapse show" data-toggle="collapse" data-target="#exp1">
           <div class="row" style="display: inline-flex;width: 100%">
             <h5 class="col-md-8 mb-0">Contract Web Developer</h5>
@@ -323,7 +323,7 @@
         </div>
       </div>
       
-      <div class="card">
+      <div class="card" style="max-width: 68%;border: none;">
         <div class="card-header" data-toggle="collapse" data-target="#exp2">
           <div class="row" style="display: inline-flex;width: 100%">
             <h5 class="col-md-8 mb-0">Senior Developer</h5>
