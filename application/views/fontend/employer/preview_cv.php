@@ -299,52 +299,43 @@
               </div>
               
               <hr>
+
+              <?php if (isset($js_details) && !empty($js_details)) { ?>
+               
+           
+             
+            
               <!-- EXPERIENCE --------------------------------------------->
     <section id="experience" class="container">
       <h1>Experience</h1>
+      <?php  foreach ($js_details as $row) { ?>
       <div class="card" style="max-width: 68%;border: none;">
         <div class="card-header collapse show" data-toggle="collapse" data-target="#exp1">
           <div class="row" style="display: inline-flex;width: 100%">
-            <h5 class="col-md-8 mb-0">Contract Web Developer</h5>
-            <em class="col-md-4 text-md-right" >Apr 2012 - Current</em>
+            <h5 class="col-md-8 mb-0"><?php echo $row['designation_name']; ?></h5>
+            <em class="col-md-4 text-md-right" >Apr <?php echo $row['start_date']; ?> - <?php echo $row['end_date']; ?></em>
           </div>
         </div>
         <div class="card-block collapse" id="exp1">
-          <h5>Ben Davis Digital - Dallas, TX</h5>
+          <h5><b>Responsibilities</b></h5>
           <p>
-            Leveraged agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
+            <?php echo $row['responsibilities']; ?>
           </p>
+           <h5><b>Achievements</b></h5>
           <p>
-            Brought to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.
+            <?php echo $row['achievement']; ?>
           </p>
-          <p>
+         <!--  <p>
             Capitalized on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.
-          </p>
+          </p> -->
         </div>
       </div>
-      
-      <div class="card" style="max-width: 68%;border: none;">
-        <div class="card-header" data-toggle="collapse" data-target="#exp2">
-          <div class="row" style="display: inline-flex;width: 100%">
-            <h5 class="col-md-8 mb-0">Senior Developer</h5>
-            <em class="col-md-4 text-md-right">Sep 2008 - Apr 2012</em>
-          </div>
-        </div>
-        <div class="card-block collapse" id="exp2">
-          <h5>Farstar - Frisco, TX</h5>
-          <p>
-            Leveraged agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
-          </p>
-          <p>
-            Brought to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.
-          </p>
-          <p>
-            Capitalized on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.
-          </p>
-        </div>
-      </div>
+      <?php } ?>
+     
+        
       
     </section>
+   <?php } ?>
     
               <input type="hidden" name="job_id" value="<?php echo $job_id; ?>">
               <div class="preview_btns">

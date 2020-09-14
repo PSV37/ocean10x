@@ -5561,7 +5561,12 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $where_cv = "corporate_cv_bank.cv_id = '$cv_id'";
             $join = array('education_level' => 'education_level.education_level_id = corporate_cv_bank.js_top_education | left outer');
             $data['cv_bank_data'] = $this->Master_model->get_master_row('corporate_cv_bank', $select = FALSE, $where = $where_cv, $join);
-            //$data['cv_info'] = $this->Master_model->getMaster('corporate_cv_bank',$where=false);
+            $email = $data['cv_bank_data']['js_email'];
+            $where_js = "js_info.email = '$email'";
+            $join_ex = array('js_experience' => 'js_experience.job_seeker_id = js_info.job_seeker_id | left outer',
+                'designation' => 'designation.designation_id = js_experience.designation_id');
+            $data['js_details'] = $this->Master_model->getMaster('js_info', $where = $where_js, $join = $join_ex, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+
             $this->load->view('fontend/employer/preview_cv', $data);
         }
     }
