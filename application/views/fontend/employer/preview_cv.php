@@ -306,7 +306,7 @@
         <div class="card-header collapse show" data-toggle="collapse" data-target="#exp1">
           <div class="row" style="display: inline-flex;width: 100%">
             <h5 class="col-md-8 mb-0">Contract Web Developer</h5>
-            <em class="col-md-4 text-md-right" style="   margin-right: 208px;">Apr 2012 - Current</em>
+            <em class="col-md-4 text-md-right" >Apr 2012 - Current</em>
           </div>
         </div>
         <div class="card-block collapse" id="exp1">
@@ -327,7 +327,7 @@
         <div class="card-header" data-toggle="collapse" data-target="#exp2">
           <div class="row" style="display: inline-flex;width: 100%">
             <h5 class="col-md-8 mb-0">Senior Developer</h5>
-            <em class="col-md-4 text-md-right" style="   margin-right: 208px;">Sep 2008 - Apr 2012</em>
+            <em class="col-md-4 text-md-right">Sep 2008 - Apr 2012</em>
           </div>
         </div>
         <div class="card-block collapse" id="exp2">
