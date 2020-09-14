@@ -5548,7 +5548,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
            $result;
 
           foreach ($shared_list as $row) {
-              $result.= '<li class="" role="menuitem" tabindex="-1" aria-selected="false">
+              $result.= '<li class="shared_li" role="menuitem" tabindex="-1" aria-selected="false">
     <div role="img" class="profile_img">A</div>
     <div class="boqDrivesharedialogPermissionslistPermissionrowMain" data-hovercard-id="amishra@tele-kinetics.com" data-hovercard-owner-id="130">
         <div class="shared_name" aria-label="'.$row['company_name'].'">'.$row['company_name'].'</div>
