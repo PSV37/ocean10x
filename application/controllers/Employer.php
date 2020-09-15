@@ -5615,12 +5615,12 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
    if ($type == 'Editor') {
       $result.= '
    <ul id="option_list" class = "dropdown-menu" role = "menu">
-      <li onclick="get_aceess_val(view);"><a href = "#">Viewer</a></li>
-      <li onclick="get_aceess_val("comment");"><a href = "#">Commenter</a></li>
-      <li onclick="get_aceess_val("edit");"><a href = "#">Editor</a></li>
+      <li data-value="view"><a href = "#">Viewer</a></li>
+      <li data-value="comment"><a href = "#">Commenter</a></li>
+      <li data-value="edit"><a href = "#">Editor</a></li>
       
       <li class = "divider"></li>
-      <li onclick="get_aceess_val(remove)"><a href = "#">Remove</a></li>
+      <li data-value="remove"><a href = "#">Remove</a></li>
    </ul>
     <input id="accessvalue" size="15" name="access_value" type="text" />
 </div>

@@ -611,10 +611,11 @@ hr {
  
   // $("#option_list").on("click", "a", function(e){
   e.preventDefault();
-  alert(e);
+ 
   var $this = $(this).parent();
   $this.addClass("select").siblings().removeClass("select");
   $("#accessvalue").val($this.data("value"));
+   alert($this.data("value"));
   // $( "#sort_btn" ).click();
   // $( "#test" ).click();
   });
