@@ -848,10 +848,10 @@
   ul#select2-folder_id-y3-results {
   margin-top: 27px;
   }
-  /*span.select2-selection.select2-selection--single {
+  span.select2-selection.select2-selection--single {
   width: 330px;
   text-align: center;
-  }*/
+  }
   select#education_id {
   background-color: #18c5bd;
   border-radius: 4px;
