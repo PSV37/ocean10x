@@ -5635,7 +5635,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
       <li class = "divider"></li>
       <li data-value="Remove" data-one="'.$row['company_profile_id'].'"><a href = "#">Remove</a></li>
    </ul>
-    <input id="accessvalue'.$row['company_profile_id'].'" size="15" name="access_value[]" type="text" />
+    <input id="accessvalue'.$row['company_profile_id'].'" size="15" name="access_value[]" type="hidden" />
 </div>
     </div>
     
@@ -5643,7 +5643,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
    }
    else
    {
-     $result.= '<input id="accessvalue" size="15" name="access_value[]" value="owner" type="hidden" />';
+     $result.= '<input id="accessvalue" size="15" name="access_value[]" value="Owner" type="hidden" />';
    }
   
           }
