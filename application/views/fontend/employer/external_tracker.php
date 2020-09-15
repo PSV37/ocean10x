@@ -615,10 +615,10 @@ hr {
   var $this = $(this).parent();
   $this.addClass("select").siblings().removeClass("select");
   var done = $this.data("one");
-   alert(done);
+   // alert(done);
 
   $("#accessvalue"+done).val($this.data("value"));
-   alert($this.data("value"));
+   // alert($this.data("value"));
   // $( "#sort_btn" ).click();
   // $( "#test" ).click();
   });

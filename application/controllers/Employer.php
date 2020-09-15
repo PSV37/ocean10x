@@ -4541,9 +4541,16 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $consultant_email = $this->input->post('consultant_email');
         $company = $this->input->post('company');
         $access_value = $this->input->post('access_value');
-
-        // print_r($company);
-        // print_r($access_value);die;
+        $track = explode(',', $tracking_id);
+        for ($i=0; $i < sizeof($company) ; $i++) { 
+            $update_data['acess_given'] = $access_value[$i];
+            $where11['consultant_id'] = $company[$i];
+            $where11['tracking_id'] = $track[$i];
+            $this->Master_model->master_update($update_data, 'tracker_consultant_mapping', $where11);
+        }
+        print_r($company);
+        print_r($track);
+        print_r($access_value);die;
 
         $email = explode(',', $consultant_email);
         for ($i = 0;$i < sizeof($email);$i++) {
@@ -5622,11 +5629,11 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
       $result.= '
    <ul id="option_list" class = "dropdown-menu" role = "menu">
       <li data-value="view" data-one="'.$row['company_profile_id'].'"><a href = "#">Viewer</a></li>
-      <li data-value="comment"><a href = "#">Commenter</a></li>
-      <li data-value="edit"><a href = "#">Editor</a></li>
+      <li data-value="comment" data-one="'.$row['company_profile_id'].'"><a href = "#">Commenter</a></li>
+      <li data-value="edit" data-one="'.$row['company_profile_id'].'"><a href = "#">Editor</a></li>
       
       <li class = "divider"></li>
-      <li data-value="remove"><a href = "#">Remove</a></li>
+      <li data-value="remove" data-one="'.$row['company_profile_id'].'"><a href = "#">Remove</a></li>
    </ul>
     <input id="accessvalue'.$row['company_profile_id'].'" size="15" name="access_value[]" type="text" />
 </div>
