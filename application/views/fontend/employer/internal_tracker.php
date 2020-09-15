@@ -688,9 +688,7 @@ hr {
             var result = ary.map(function(val) {
               return val.tracking_id_val;
             }).join(',');
-            
-
-console.log(filtered);
+           
             $.ajax({
               url: "<?php echo base_url();?>employer/get_shared_list",
               type: "POST",
