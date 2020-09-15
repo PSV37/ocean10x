@@ -2069,7 +2069,7 @@
   
   function confirm_delete(id)
   {
-    var cv_id  = base64_encode(id);
+    var cv_id  = window.btoa(id);
   var newUrl = '<?php echo base_url(); ?>employer/delete_cv/'+cv_id;
   console.log(newUrl);
   console.log(id);
