@@ -688,11 +688,11 @@ hr {
             var result = ary.map(function(val) {
               return val.tracking_id_val;
             }).join(',');
-           
+
             $.ajax({
               url: "<?php echo base_url();?>employer/get_shared_list",
               type: "POST",
-              data: {tracker_id:result,job_id:job_id},
+              data: {tracker_id:result,job_id:job_id,type:'internal'},
               // contentType:false,
               // processData:false,
                // dataType: "json",

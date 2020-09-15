@@ -711,7 +711,7 @@ hr {
             $.ajax({
               url: "<?php echo base_url();?>employer/get_shared_list",
               type: "POST",
-              data: {tracker_id:result,job_id:job_id},
+              data: {tracker_id:result,job_id:job_id,type:'external'},
               // contentType:false,
               // processData:false,
                // dataType: "json",
