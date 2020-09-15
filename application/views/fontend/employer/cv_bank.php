@@ -848,10 +848,10 @@
   ul#select2-folder_id-y3-results {
   margin-top: 27px;
   }
-  span.select2-selection.select2-selection--single {
+  /*span.select2-selection.select2-selection--single {
   width: 330px;
   text-align: center;
-  }
+  }*/
   select#education_id {
   background-color: #18c5bd;
   border-radius: 4px;
@@ -1266,7 +1266,7 @@
           <input type="hidden" name="consultant" value="JobSeeker">  
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <label class="mdl-textfield__label" for="sample3">job Post:</label>
-            <select class="form-control select2" name="job_id">
+            <select class="form-control select2" name="job_post_id">
               <?php foreach ($company_active_jobs as $row) { ?>
               <option value="<?php echo $row->job_post_id ?>"><?php echo $row->job_title?></option>
               <?php } ?>
@@ -1314,9 +1314,11 @@
           <input type="hidden" name="consultant" value="JobSeeker">  
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <label class="mdl-textfield__label" for="sample3">job Post:</label>
-           <?php foreach ($company_active_jobs as $row) { ?>
+           <select class="form-control select2" name="job_post_id">
+              <?php foreach ($company_active_jobs as $row) { ?>
               <option value="<?php echo $row->job_post_id ?>"><?php echo $row->job_title?></option>
               <?php } ?>
+            </select>
           </div>
          <!--  <input type="hidden" name="job_post_id" value="" id="autocomplete2-value"> -->
           <!-- <input id="" type="text" name="code"> -->
