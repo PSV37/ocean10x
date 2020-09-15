@@ -5603,52 +5603,52 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $where ="tracker_consultant_mapping.tracking_id IN ('".$array."')  group by tracker_consultant_mapping.consultant_id";
            $shared_list = $this->Master_model->getMaster('tracker_consultant_mapping', $where , $join , $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
            $result;
-           print_r($this->db->last_query);die;
-          foreach ($shared_list as $row) {
-            $comp_id = $row['company_profile_id'];
-            $where_job = "job_post_id = '$job_id' and company_profile_id ='$comp_id'";
-            $job_data = $this->Master_model->get_master_row('job_posting', $select = FALSE, $where_job , $join = FALSE);
+           // print_r($this->db->last_query);die;
+//           foreach ($shared_list as $row) {
+//             $comp_id = $row['company_profile_id'];
+//             $where_job = "job_post_id = '$job_id' and company_profile_id ='$comp_id'";
+//             $job_data = $this->Master_model->get_master_row('job_posting', $select = FALSE, $where_job , $join = FALSE);
 
            
-                $type =$row['acess_given'];
+//                 $type =$row['acess_given'];
              
-            $profile_pic = $this->Company_profile_model->company_logoby_id($employer_id);
-              $result.= '<li class="shared_li" role="menuitem" tabindex="-1" aria-selected="false">
-    <div role="img" class="profile_img">A</div>
-    <div class="boqDrivesharedialogPermissionslistPermissionrowMain" data-hovercard-id="amishra@tele-kinetics.com" data-hovercard-owner-id="130">
-        <div class="shared_name" aria-label="'.$row['company_name'].'">'.$row['company_name'].'</div>
-        <div class="boqDrivesharedialogPermissionslistPermissionrowSecondary" aria-label="'.$row['company_email'].'.">'.$row['company_email'].'</div>
-        <input type="hidden" name="company[]" value="'.$row['company_profile_id'].'">
-        <div class = "btn-group">
-   <button type = "button" class = "btn btn-primary dropdown-toggle btn-sm" data-toggle = "dropdown">
-    '.$type.'
+//             $profile_pic = $this->Company_profile_model->company_logoby_id($employer_id);
+//               $result.= '<li class="shared_li" role="menuitem" tabindex="-1" aria-selected="false">
+//     <div role="img" class="profile_img">A</div>
+//     <div class="boqDrivesharedialogPermissionslistPermissionrowMain" data-hovercard-id="amishra@tele-kinetics.com" data-hovercard-owner-id="130">
+//         <div class="shared_name" aria-label="'.$row['company_name'].'">'.$row['company_name'].'</div>
+//         <div class="boqDrivesharedialogPermissionslistPermissionrowSecondary" aria-label="'.$row['company_email'].'.">'.$row['company_email'].'</div>
+//         <input type="hidden" name="company[]" value="'.$row['company_profile_id'].'">
+//         <div class = "btn-group">
+//    <button type = "button" class = "btn btn-primary dropdown-toggle btn-sm" data-toggle = "dropdown">
+//     '.$type.'
 
-      <span class = "caret"></span>
-   </button>';
-   if ($type != 'Owner') {
-      $result.= '
-   <ul id="option_list" class = "dropdown-menu" role = "menu">
-      <li data-value="Viewer" data-one="'.$row['company_profile_id'].'"><a href = "#">Viewer</a></li>
-      <li data-value="Commenter" data-one="'.$row['company_profile_id'].'"><a href = "#">Commenter</a></li>
-      <li data-value="Editor" data-one="'.$row['company_profile_id'].'"><a href = "#">Editor</a></li>
+//       <span class = "caret"></span>
+//    </button>';
+//    if ($type != 'Owner') {
+//       $result.= '
+//    <ul id="option_list" class = "dropdown-menu" role = "menu">
+//       <li data-value="Viewer" data-one="'.$row['company_profile_id'].'"><a href = "#">Viewer</a></li>
+//       <li data-value="Commenter" data-one="'.$row['company_profile_id'].'"><a href = "#">Commenter</a></li>
+//       <li data-value="Editor" data-one="'.$row['company_profile_id'].'"><a href = "#">Editor</a></li>
       
-      <li class = "divider"></li>
-      <li data-value="Remove" data-one="'.$row['company_profile_id'].'"><a href = "#">Remove</a></li>
-   </ul>
-    <input id="accessvalue'.$row['company_profile_id'].'" size="15" name="access_value[]" type="hidden" />
-</div>
-    </div>
+//       <li class = "divider"></li>
+//       <li data-value="Remove" data-one="'.$row['company_profile_id'].'"><a href = "#">Remove</a></li>
+//    </ul>
+//     <input id="accessvalue'.$row['company_profile_id'].'" size="15" name="access_value[]" type="hidden" />
+// </div>
+//     </div>
     
-</li>';
-   }
-   else
-   {
-     $result.= '<input id="accessvalue" size="15" name="access_value[]" value="Owner" type="hidden" />';
-   }
+// </li>';
+//    }
+//    else
+//    {
+//      $result.= '<input id="accessvalue" size="15" name="access_value[]" value="Owner" type="hidden" />';
+//    }
   
-          }
+//           }
            
-        echo $result;
+        echo $this->db->last_query;
     }
 }
 ?>

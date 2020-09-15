@@ -352,7 +352,7 @@ ul.select2-results__options {
             url:'<?php echo base_url();?>employer/gettopic',
             data:{id:id},
             success:function(res){
-                  // alert(res.length);
+                  alert(res.length);
                   if (res.length == 0) 
                   {
                     $('#topic_id').attr('disabled', true);
