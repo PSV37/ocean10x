@@ -936,7 +936,12 @@
    
    }, "Please choose only alphabets");
    
-   
+   $.validator.addMethod("greaterThan",
+    function (value, element, param) {
+          var $otherElement = $(param);
+          return parseInt(value, 10) > parseInt($otherElement.val(), 10);
+    });
+
    
    $.validator.addMethod("salrangefrom_regex", function(value, element) {
    
