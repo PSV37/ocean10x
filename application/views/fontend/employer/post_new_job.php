@@ -731,8 +731,8 @@
    'exp_to': {
                   
     minlength:1,
-          
-   // maxlength:10,
+
+      greaterThan: "#exp_from",
    
     required: true
    },
@@ -741,9 +741,7 @@
    'no_jobs': {
                   
     minlength:1,
-          
-   // maxlength:10,
-   
+    
     required: true
    },
    
@@ -754,7 +752,8 @@
    },
    
    'salrange_to': {
-   greaterThan: "#salrange_from",
+    greaterThan: "#salrange_from",
+
     required: true
    },
    
@@ -862,7 +861,9 @@
           
     minlength: "Please Enter 1 digit number!",
           
-    maxlength: "Maximum length 10 digits!"
+    maxlength: "Maximum length 10 digits!",
+
+     greaterThan : "second value of a range must be lesser than the first"
    },
    
    'no_jobs':{
@@ -896,7 +897,9 @@
           
     minlength: "Please Enter 1 digit number!",
           
-    maxlength: "Maximum length 10 digits!"
+    maxlength: "Maximum length 10 digits!",
+
+    greaterThan : "second value of a range must be lesser than the first"
    },
    
    'benefits[]':{
