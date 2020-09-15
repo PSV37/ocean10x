@@ -688,7 +688,7 @@ hr {
             var result = ary.map(function(val) {
               return val.tracking_id_val;
             }).join(',');
-            var filtered = result.filter(function (el) {
+            var filtered = ary.filter(function (el) {
   return el != null;
 });
 
