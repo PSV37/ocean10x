@@ -5598,7 +5598,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $tracker_id = $this->input->post('tracker_id');
         $job_id = $this->input->post('job_id');
  
-        $array=explode(',',$tracker_id));
+        $array=explode(',',$tracker_id);
         $filter=array_filter($array);
         $array = implode("','",$filter);
       
