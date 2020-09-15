@@ -1093,7 +1093,7 @@
                 <div class="btn-group">
                   <a title="view Details" href="<?php echo base_url(); ?>employer/preview_cv/<?php echo base64_encode($cv_row['cv_id']); ?>"><i class="fa fa-info-circle icon_backg"></i></a>
                   <a  title="Edit" href=" <?php echo base_url(); ?>employer/edit_cv/<?php echo base64_encode($cv_row['cv_id']); ?>"><i class="far fa-edit icon_backg"></i></a>
-                  <a title="Delete" onclick="confirm_delete(<?php echo base64_encode($cv_row['cv_id']) ?>);" href="#"><i class="fas fa-trash-alt icon_backg"></i></a>
+                  <a title="Delete" onclick="confirm_delete(<?php echo $cv_row['cv_id'] ?>);" href="#"><i class="fas fa-trash-alt icon_backg"></i></a>
                 </div>
                 <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
@@ -2069,7 +2069,8 @@
   
   function confirm_delete(id)
   {
-  var newUrl = '<?php echo base_url(); ?>employer/delete_cv/'+id;
+    var cv_id  = base64_encode(id);
+  var newUrl = '<?php echo base_url(); ?>employer/delete_cv/'+cv_id;
   console.log(newUrl);
   console.log(id);
   $('#del_modal').prop('action',newUrl);
