@@ -1069,9 +1069,10 @@ a.myclass {
                <li class="right-title">&nbsp;: <?php if (isset($v_companyjobs['jd_file']) && !empty($v_companyjobs['jd_file'])) { echo "Yes"; ?>  <a style="margin-left: 15px" href="<?php echo base_url() ?>upload/job_description/<?php echo $v_companyjobs['jd_file']; ?>" download><i class="fa fa-download" aria-hidden="true"></i></a> <?php } else { echo "No";} ?></li>
 
                <li class="left-title">Ocean Test</li>
-               <li class="right-title">&nbsp;:<?php echo $v_companyjobs['is_test_required']; ?><?php if ($v_companyjobs['is_test_required'] == 'Yes' && empty($v_companyjobs['test_for_job'])) { ?>
+               <li class="right-title">&nbsp;:<?php echo $v_companyjobs['is_test_required']; ?>
+               <?php if ($v_companyjobs['is_test_required'] == 'Yes' && empty($v_companyjobs['test_for_job'])) { ?>
                   <sup><span title="Marked yes but test is not attached" class="required">*</span></sup>
-               } ?></li>
+             <?php  } ?></li>
 
                <li class="left-title">Published on</li>
                <li class="right-title">&nbsp;:<?php if(!is_null($v_companyjobs['created_at'])) { echo date('M j Y',strtotime($v_companyjobs['created_at'])); } ?></li>
