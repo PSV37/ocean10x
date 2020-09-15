@@ -1004,7 +1004,7 @@ a.myclass {
     /* width: 35px; */
 }
 sup {
-    /* top: -.4em; */
+   top: -1px;
     font-size: 16px;
     color: red;
 }
