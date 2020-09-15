@@ -5615,13 +5615,13 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
              if ($type == 'external') {
                 $join = array('company_profile'=>'company_profile.company_profile_id = tracker_consultant_mapping.consultant_id ',
                     'external_tracker'=> 'external_tracker.id = tracker_consultant_mapping.tracking_id');
-                $where .= "AND external_tracker.job_post_id = '$job_id' and tracker_type = '$type'";
+                $where .= " AND external_tracker.job_post_id = '$job_id' and tracker_type = '$type'";
              }
              elseif($type == 'internal')
              {
                 $join = array('company_profile'=>'company_profile.company_profile_id = tracker_consultant_mapping.consultant_id ',
                     'forwarded_jobs_cv'=> 'forwarded_jobs_cv.id = tracker_consultant_mapping.tracking_id');
-                $where .= "AND forwarded_jobs_cv.job_post_id = '$job_id' and tracker_type = '$type'";
+                $where .= " AND forwarded_jobs_cv.job_post_id = '$job_id' and tracker_type = '$type'";
              }
             
            $shared_list = $this->Master_model->getMaster('tracker_consultant_mapping', $where , $join , $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
