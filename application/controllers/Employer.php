@@ -2914,7 +2914,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $topic_id = $this->input->post('id');
         $where['technical_id'] = $topic_id;
         $topics = $this->Master_model->getMaster('topic', $where);
-        $result = '';
+        $result;
         if (!empty($topics)) {
             $result.= '<option value="0">General</option>';
             foreach ($topics as $key) {

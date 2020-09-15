@@ -353,7 +353,7 @@ ul.select2-results__options {
             data:{id:id},
             success:function(res){
                   alert(res.length);
-                  if (res.length == 0) 
+                  if (res.length == 1) 
                   {
                     $('#topic_id').attr('disabled', true);
                     $('#subtopic_id').attr('disabled', true);
@@ -378,7 +378,7 @@ ul.select2-results__options {
                 url:'<?php echo base_url();?>employer/getsubtopic',
                 data:{id:id},
                 success:function(res){
-                  if (res.length == 0) 
+                  if (res.length == 1) 
                   {
                     
                     $('#subtopic_id').attr('disabled', true);
@@ -402,7 +402,7 @@ ul.select2-results__options {
                 url:'<?php echo base_url();?>employer/getlineitem',
                 data:{id:id},
                 success:function(res){
-                 if (res.length == 0) 
+                 if (res.length == 1) 
                   {
                    
                     $('#lineitem_id').attr('disabled', true);
@@ -425,7 +425,7 @@ ul.select2-results__options {
                 url:'<?php echo base_url();?>employer/getlineitemlevel',
                 data:{id:id},
                 success:function(res){
-                  if (res.length == 0) 
+                  if (res.length == 1) 
                   {
                     
                     $('#lineitemlevel_id').attr('disabled', true);
