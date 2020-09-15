@@ -455,7 +455,7 @@
                </div>
                <div class="col-md-3 col-sm-12"  style="    margin-right: 1;">
                   <div class="formrow test_div">
-                     <label class="control-label ">Test<span class="required">*</span></label>
+                     <label class="control-label ">Test</label>
                      <select name="test_for_job" id="test_for_job" class="form-control select2" data-style="btn-default" data-live-search="true" >
                        <?php  if (isset($oceanchamp_tests) && !empty($oceanchamp_tests)) {
                         foreach ($oceanchamp_tests as $row) { ?>
