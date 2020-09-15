@@ -4539,6 +4539,12 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $company_id = $this->session->userdata('company_profile_id');
         $tracking_id = $this->input->post('tracking_id');
         $consultant_email = $this->input->post('consultant_email');
+        $company = $this->input->post('company');
+        $access_value = $this->input->post('access_value');
+
+        print_r($company);
+        print_r($access_value);die;
+
         $email = explode(',', $consultant_email);
         for ($i = 0;$i < sizeof($email);$i++) {
             $where_cndn = "company_email='$email[$i]'";
@@ -5605,7 +5611,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     <div class="boqDrivesharedialogPermissionslistPermissionrowMain" data-hovercard-id="amishra@tele-kinetics.com" data-hovercard-owner-id="130">
         <div class="shared_name" aria-label="'.$row['company_name'].'">'.$row['company_name'].'</div>
         <div class="boqDrivesharedialogPermissionslistPermissionrowSecondary" aria-label="'.$row['company_email'].'.">'.$row['company_email'].'</div>
-        <input type="hidden" value="'.$row['company_profile_id'].'">
+        <input type="hidden" name="company[]" value="'.$row['company_profile_id'].'">
         <div class = "btn-group">
    <button type = "button" class = "btn btn-primary dropdown-toggle btn-sm" data-toggle = "dropdown">
     '.$type.'
@@ -5622,11 +5628,15 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
       <li class = "divider"></li>
       <li data-value="remove"><a href = "#">Remove</a></li>
    </ul>
-    <input id="accessvalue" size="15" name="access_value" type="text" />
+    <input id="accessvalue" size="15" name="access_value[]" type="text" />
 </div>
     </div>
     
 </li>';
+   }
+   else
+   {
+     $result.= '<input id="accessvalue" size="15" name="access_value[]" value="owner" type="text" />'
    }
   
           }
