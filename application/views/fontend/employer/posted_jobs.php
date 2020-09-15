@@ -1434,6 +1434,15 @@ a.myclass {
    endforeach;endif;
    ?>
    <script>
+      function confirm_delete(id)
+  {
+    var newUrl = '<?php echo base_url(); ?>employer/delete_cv/'+id;
+    console.log(newUrl);
+    console.log(id);
+    $('#del_modal').prop('action',newUrl);
+    $('#delete').modal("show");
+  }
+  
 function get_trash()
 {
    $.ajax({
