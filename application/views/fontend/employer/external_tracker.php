@@ -614,7 +614,8 @@ hr {
  
   var $this = $(this).parent();
   $this.addClass("select").siblings().removeClass("select");
-  $("#accessvalue").val($this.data("value"));
+  var done =$this.data("one");
+  $("#accessvalue"+done).val($this.data("value"));
    alert($this.data("value"));
   // $( "#sort_btn" ).click();
   // $( "#test" ).click();

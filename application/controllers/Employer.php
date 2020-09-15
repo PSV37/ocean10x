@@ -5621,14 +5621,14 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
    if ($type == 'Editor') {
       $result.= '
    <ul id="option_list" class = "dropdown-menu" role = "menu">
-      <li data-value="view"><a href = "#">Viewer</a></li>
+      <li data-value="view" data-one="'.$row['company_profile_id'].'"><a href = "#">Viewer</a></li>
       <li data-value="comment"><a href = "#">Commenter</a></li>
       <li data-value="edit"><a href = "#">Editor</a></li>
       
       <li class = "divider"></li>
       <li data-value="remove"><a href = "#">Remove</a></li>
    </ul>
-    <input id="accessvalue" size="15" name="access_value[]" type="text" />
+    <input id="accessvalue'.$row['company_profile_id'].'" size="15" name="access_value[]" type="text" />
 </div>
     </div>
     
