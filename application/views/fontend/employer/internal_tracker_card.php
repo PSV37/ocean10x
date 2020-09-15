@@ -48,6 +48,7 @@
   <td ><textarea class="email allowalphabates" id="comment" name="comment" value=""><?php echo $job_row->comments; ?></textarea></td>
   <td ><input type="text" class="email allowalphabates" id="reminder" name="comment" value="<?php echo $job_row->reminder; ?>" ></td>
   <td style="min-width: 150px;"><input type="checkbox" id="update" class="chkbx" checked name=""></td>
+  <input type="hidden" class="email allowalphabates" id="tracking_id_val" name="comment" value="<?php echo $job_row->id; ?>" >
 </tr>
 <?php } ?>
 <!-- </tbody> -->

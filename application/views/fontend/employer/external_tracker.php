@@ -389,6 +389,7 @@
   background-color: #18c5bd;
   border: none;
   border-radius: 30px;
+  width: 100px;
   }
   .box {
   margin-top: 40px;
@@ -526,7 +527,7 @@ hr {
             <span class="glyphicon glyphicon-floppy-save"></span> Save
             </button>
             <button style="float: right;" type="button" class="btn btn-default btn-sm share">
-            <span><i class="fas fa-share"></i></span> Share
+            <span><i class="fa fa-share-alt"></i></span> Share
             </button>
           </div>
         </div>
@@ -583,10 +584,10 @@ hr {
       <form action="<?php echo base_url() ?>employer/forword_external_tracker" class="sendEmail" method="post" autocomplete="off">
         <div class="modal-body" style="padding:15px 40px;">
           <input type="hidden" name="tracking_id" id="tracking_id" value="">
-          <input type="hidden" name="consultant" value="JobSeeker">  
+          <input type="hidden" name="tracker_type" value="external">  
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"style="width: 108%;margin-left: -12px;padding: 0px;">
             <label class="mdl-textfield__label" for="sample3">E-mail:</label>
-            <input onfocusout="myFunction();" type="email"  name="consultant_email"  id="email" placeholder="Enter comma seperated Emails"  id="subject" data-required="true" multiple style="display: inline-block;min-width: 100%;min-height: 12%;" required>
+            <input onfocusout="myFunction();" type="email"  name="consultant_email"  id="email" placeholder="Enter Email"  id="subject" data-required="true" multiple style="display: inline-block;min-width: 100%;height: 30px;" required>
           </div>
           <hr>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
@@ -603,6 +604,25 @@ hr {
   </div>
 </div>
 <script>
+  function get_aceess_val(val)
+  {
+    $("#accessvalue").val(val);
+  }
+   $(document).on("click", "#option_list a", function (e) {
+ 
+  // $("#option_list").on("click", "a", function(e){
+  e.preventDefault();
+ 
+  var $this = $(this).parent();
+  $this.addClass("select").siblings().removeClass("select");
+  var done = $this.data("one");
+   // alert(done);
+
+  $("#accessvalue"+done).val($this.data("value"));
+   // alert($this.data("value"));
+  // $( "#sort_btn" ).click();
+  // $( "#test" ).click();
+  });
   $(document).keyup(function(e) {
        if (e.keyCode == 27) { // escape key maps to keycode `27`
         // alert('dd');
@@ -624,25 +644,7 @@ hr {
    $('#rotateModal').modal('show');
   
   }
-  //  function myFunction() {
-  //   var x = document.getElementById("fname");
-  //   x.value = x.value.toUpperCase();
-  //   $.ajax({
-  //               url: "<?php echo base_url();?>employer/update_external",
-  //               type: "POST",
-  //               data: {data_arr:data_arr},
-  //               // contentType:false,
-  //               // processData:false,
-  //                // dataType: "json",
-  //               success: function(data)
-  //               {
-  //                 alert('Updated Successfully');
-  //                 // window.location.reload();
-  //                  tracker_card(job_id);
-  //               }
-  //         });
-  // }
-  
+ 
 </script>
 <script>
   $('.select2').select2();
@@ -709,7 +711,7 @@ hr {
             $.ajax({
               url: "<?php echo base_url();?>employer/get_shared_list",
               type: "POST",
-              data: {tracker_id:result,job_id:job_id},
+              data: {tracker_id:result,job_id:job_id,type:'external'},
               // contentType:false,
               // processData:false,
                // dataType: "json",

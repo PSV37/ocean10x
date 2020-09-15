@@ -2914,16 +2914,18 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $topic_id = $this->input->post('id');
         $where['technical_id'] = $topic_id;
         $topics = $this->Master_model->getMaster('topic', $where);
-        $result = '';
+        $result;
         if (!empty($topics)) {
             $result.= '<option value="0">General</option>';
             foreach ($topics as $key) {
                 $result.= '<option value="' . $key['topic_id'] . '">' . $key['topic_name'] . '</option>';
             }
-        } else {
-            // $result.= '<option value="">Topic not available</option>';
-            $result.= '';
-        }
+        } 
+
+            // else {
+        //     // $result.= '<option value="">Topic not available</option>';
+        //     $result.= '';
+        // }
         echo $result;
     }
     function getsubtopic() {
@@ -3454,6 +3456,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $join_cond = array('corporate_cv_bank' => 'corporate_cv_bank.cv_id = cv_folder_relation.cv_id|Left outer');
             $data['cv_bank_data'] = $this->Master_model->getMaster('cv_folder_relation', $where_c, $join_cond, $order = 'desc', $field = 'relation_id', $select = false, $limit = false, $start = false, $search = false);
             $data['fid'] = $fid;
+            $data['company_active_jobs'] = $this->job_posting_model->get_company_activedeasline_jobs($company_id);
             // print_r($this->db->last_query());die;
             $this->load->view('fontend/employer/cv_bank', $data);
         } elseif (isset($_POST['sort'])) {
@@ -3462,6 +3465,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $where_c['company_id'] = $company_id;
                 $where_c['js_status'] = '0';
                 $data['cv_bank_data'] = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join = false, $order = 'desc', $field = $sort_val, $select = false, $limit = false, $start = false, $search = false);
+                 $data['company_active_jobs'] = $this->job_posting_model->get_company_activedeasline_jobs($company_id);
                 $this->load->view('fontend/employer/cv_bank', $data);
             }
         } else {
@@ -3506,6 +3510,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             // $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
            
             $data["links"] = $this->pagination->create_links();
+             $data['company_active_jobs'] = $this->job_posting_model->get_company_activedeasline_jobs($company_id);
             $where_c = "corporate_cv_bank.cv_id NOT IN (select cv_id from cv_folder_relation) and company_id ='$company_id' and js_status = '0'";
             // $where_c['company_id'] = $company_id;
             $join = array('education_level' => 'education_level.education_level_id = corporate_cv_bank.js_top_education | left outer');
@@ -4215,7 +4220,23 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             // echo $this->db->last_query();
             // echo "<pre>";
             $latest = $result['0'];
-            $update_profile = array('js_name' => $latest['full_name'], 'js_mobile' => $latest['mobile_no'], 'js_current_designation' => $latest['job_role_title'], 'js_current_work_location' => $latest['address'], 'js_current_ctc' => $latest['js_career_salary'], 'js_current_notice_period' => $latest['notice_period'], 'js_experience' => $latest['js_career_exp'], 'js_last_salary_hike' => $latest['last_salary_hike'], 'js_top_education' => $latest['edu_high'], 'js_skill_set' => $latest['skills'], 'js_certifications' => $latest['training_title'], 'js_industry' => $latest['industry_name'], 'js_role' => $latest['job_role_title'], 'js_expected_salary' => $latest['js_career_salary'], 'js_desired_work_location' => $latest['job_area'], 'updated_on' => date('Y-m-d H:i:s'), 'updated_by' => $this->session->userdata('company_profile_id'));
+            $update_profile = array(
+                'js_name' => $latest['full_name'], 
+                'js_mobile' => $latest['mobile_no'], 
+                'js_current_designation' => $latest['job_role_title'], 
+                'js_current_work_location' => $latest['address'], 
+                'js_current_ctc' => $latest['js_career_salary'], 
+                'js_current_notice_period' => $latest['notice_period'], 
+                'js_experience' => $latest['js_career_exp'], 
+                'js_last_salary_hike' => $latest['last_salary_hike'], 
+                'js_top_education' => $latest['edu_high'], 
+                'js_skill_set' => $latest['skills'], 
+                'js_certifications' => $latest['training_title'], 
+                'js_industry' => $latest['industry_name'], 
+                'js_role' => $latest['job_role_title'], 
+                'js_expected_salary' => $latest['js_career_salary'], 
+                'js_desired_work_location' => $latest['job_area'], 
+                'updated_on' => date('Y-m-d H:i:s'), 'updated_by' => $this->session->userdata('company_profile_id'));
             $where11['js_email'] = $email_id;
             $this->Master_model->master_update($update_profile, 'corporate_cv_bank', $where11);
             // echo $this->db->last_query();die;
@@ -4230,7 +4251,22 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 // echo $this->db->last_query();
                 // echo "<pre>";
                 $latest = $result['0'];
-                $update_profile = array('js_name' => $latest['full_name'], 'js_mobile' => $latest['mobile_no'], 'js_current_designation' => $latest['job_role_title'], 'js_current_work_location' => $latest['address'], 'js_current_ctc' => $latest['js_career_salary'], 'js_current_notice_period' => $latest['notice_period'], 'js_experience' => $latest['js_career_exp'], 'js_last_salary_hike' => $latest['last_salary_hike'], 'js_top_education' => $latest['edu_high'], 'js_skill_set' => $latest['skills'], 'js_certifications' => $latest['training_title'], 'js_industry' => $latest['industry_name'], 'js_role' => $latest['job_role_title'], 'js_expected_salary' => $latest['js_career_salary'], 'js_desired_work_location' => $latest['job_area'], 'updated_on' => date('Y-m-d H:i:s'), 'updated_by' => $this->session->userdata('company_profile_id'));
+                $update_profile = array(
+                    'js_name' => $latest['full_name'], 
+                'js_mobile' => $latest['mobile_no'], 
+                'js_current_designation' => $latest['job_role_title'], 
+                'js_current_work_location' => $latest['address'], 
+                'js_current_ctc' => $latest['js_career_salary'], 
+                'js_current_notice_period' => $latest['notice_period'], 
+                'js_experience' => $latest['js_career_exp'], 
+                'js_last_salary_hike' => $latest['last_salary_hike'], 
+                'js_top_education' => $latest['edu_high'], 
+                'js_skill_set' => $latest['skills'], 'js_certifications' => $latest['training_title'], 
+                'js_industry' => $latest['industry_name'], 
+                'js_role' => $latest['job_role_title'], 
+                'js_expected_salary' => $latest['js_career_salary'], 
+                'js_desired_work_location' => $latest['job_area'], 
+                'updated_on' => date('Y-m-d H:i:s'), 'updated_by' => $this->session->userdata('company_profile_id'));
                 $where11['js_email'] = $email_id;
                 $this->Master_model->master_update($update_profile, 'corporate_cv_bank', $where11);
             }
@@ -4505,6 +4541,28 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $company_id = $this->session->userdata('company_profile_id');
         $tracking_id = $this->input->post('tracking_id');
         $consultant_email = $this->input->post('consultant_email');
+        $company = $this->input->post('company');
+        $access_value = $this->input->post('access_value');
+
+         $array=explode(',',$tracking_id);
+        $track=array_filter($array);
+       
+      
+       
+        for ($i=0; $i < sizeof($company) ; $i++) { 
+            for ($j=0; $j < sizeof($track) ; $j++) {
+
+             $update_data['acess_given'] = $access_value[$i];
+            $where11['consultant_id'] = $company[$i];
+            $where11['tracking_id'] = $track[$j];
+            $this->Master_model->master_update($update_data, 'tracker_consultant_mapping', $where11);
+        }
+           
+        }
+        // print_r($company);
+        // print_r($track);
+        // print_r($access_value);die;
+
         $email = explode(',', $consultant_email);
         for ($i = 0;$i < sizeof($email);$i++) {
             $where_cndn = "company_email='$email[$i]'";
@@ -4558,13 +4616,15 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 // echo $comp_id;
                 
             }
-            $tracking_ids = explode(',', $tracking_id);
+            $array=explode(',',$tracking_id);
+            $tracker_type = $this->input->post('tracker_type');
+            $tracking_ids = array_filter($array);
             foreach ($tracking_ids as $row) {
                 $whereres = "tracking_id='$row' and consultant_id = '$comp_id' ";
                 $tracking_data = $this->Master_model->get_master_row('
                         tracker_consultant_mapping', $select = FALSE, $whereres);
                 if (empty($tracking_data)) {
-                    $tracking_mapping = array('tracking_id' => $row, 'consultant_id' => $comp_id);
+                    $tracking_mapping = array('tracking_id' => $row, 'consultant_id' => $comp_id,'acess_given'=>'Editor','tracker_type'=> $tracker_type);
                     $map_id = $this->Master_model->master_insert($tracking_mapping, 'tracker_consultant_mapping');
                 }
             }
@@ -5530,7 +5590,12 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $where_cv = "corporate_cv_bank.cv_id = '$cv_id'";
             $join = array('education_level' => 'education_level.education_level_id = corporate_cv_bank.js_top_education | left outer');
             $data['cv_bank_data'] = $this->Master_model->get_master_row('corporate_cv_bank', $select = FALSE, $where = $where_cv, $join);
-            //$data['cv_info'] = $this->Master_model->getMaster('corporate_cv_bank',$where=false);
+            $email = $data['cv_bank_data']['js_email'];
+            $where_js = "js_info.email = '$email'";
+            $join_ex = array('js_experience' => 'js_experience.job_seeker_id = js_info.job_seeker_id | left outer',
+                'designation' => 'designation.designation_id = js_experience.designation_id');
+            $data['js_details'] = $this->Master_model->getMaster('js_info', $where = $where_js, $join = $join_ex, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+
             $this->load->view('fontend/employer/preview_cv', $data);
         }
     }
@@ -5539,56 +5604,75 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     {
         $tracker_id = $this->input->post('tracker_id');
         $job_id = $this->input->post('job_id');
+        $type = $this->input->post('type');
  
-        $array=array_map('intval', explode(',', $tracker_id));
-        $array = implode("','",$array);
+        $array=explode(',',$tracker_id);
+        $filter=array_filter($array);
+        $array = implode("','",$filter);
       
-             $join = array('company_profile'=>'company_profile.company_profile_id = tracker_consultant_mapping.consultant_id ');
-            $where ="tracker_consultant_mapping.tracking_id IN ('".$array."')  group by tracker_consultant_mapping.consultant_id";
+             // $join = array('company_profile'=>'company_profile.company_profile_id = tracker_consultant_mapping.consultant_id ');
+             $where ="tracker_consultant_mapping.tracking_id IN ('".$array."')  ";
+             if ($type == 'external') {
+                $join = array('company_profile'=>'company_profile.company_profile_id = tracker_consultant_mapping.consultant_id ',
+                    'external_tracker'=> 'external_tracker.id = tracker_consultant_mapping.tracking_id');
+                $where .= " AND external_tracker.job_post_id = '$job_id' and tracker_type = '$type'";
+             }
+             elseif($type == 'internal')
+             {
+                $join = array('company_profile'=>'company_profile.company_profile_id = tracker_consultant_mapping.consultant_id ',
+                    'forwarded_jobs_cv'=> 'forwarded_jobs_cv.id = tracker_consultant_mapping.tracking_id');
+                $where .= " AND forwarded_jobs_cv.job_post_id = '$job_id' and tracker_type = '$type'";
+             }
+            $where .=' group by tracker_consultant_mapping.consultant_id';
            $shared_list = $this->Master_model->getMaster('tracker_consultant_mapping', $where , $join , $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
            $result;
-
-          foreach ($shared_list as $row) {
+           // print_r($this->db->last_query);die;
+           if (!empty($shared_list)) {
+               foreach ($shared_list as $row) {
             $comp_id = $row['company_profile_id'];
             $where_job = "job_post_id = '$job_id' and company_profile_id ='$comp_id'";
             $job_data = $this->Master_model->get_master_row('job_posting', $select = FALSE, $where_job , $join = FALSE);
 
-            if (!empty($job_data)) {
-                $type ="Owner";
-             }
-             else
-                {
-               $type = "Editor";
-            }
+           
+                $type =$row['acess_given'];
+             
             $profile_pic = $this->Company_profile_model->company_logoby_id($employer_id);
               $result.= '<li class="shared_li" role="menuitem" tabindex="-1" aria-selected="false">
     <div role="img" class="profile_img">A</div>
     <div class="boqDrivesharedialogPermissionslistPermissionrowMain" data-hovercard-id="amishra@tele-kinetics.com" data-hovercard-owner-id="130">
         <div class="shared_name" aria-label="'.$row['company_name'].'">'.$row['company_name'].'</div>
         <div class="boqDrivesharedialogPermissionslistPermissionrowSecondary" aria-label="'.$row['company_email'].'.">'.$row['company_email'].'</div>
+        <input type="hidden" name="company[]" value="'.$row['company_profile_id'].'">
         <div class = "btn-group">
    <button type = "button" class = "btn btn-primary dropdown-toggle btn-sm" data-toggle = "dropdown">
     '.$type.'
 
       <span class = "caret"></span>
    </button>';
-   if ($type == 'Editor') {
+   if ($type != 'Owner') {
       $result.= '
-   <ul class = "dropdown-menu" role = "menu">
-      <li><a href = "#">Viewer</a></li>
-      <li><a href = "#">Commenter</a></li>
-      <li><a href = "#">Editor</a></li>
+   <ul id="option_list" class = "dropdown-menu" role = "menu">
+      <li data-value="Viewer" data-one="'.$row['company_profile_id'].'"><a href = "#">Viewer</a></li>
+      <li data-value="Commenter" data-one="'.$row['company_profile_id'].'"><a href = "#">Commenter</a></li>
+      <li data-value="Editor" data-one="'.$row['company_profile_id'].'"><a href = "#">Editor</a></li>
       
       <li class = "divider"></li>
-      <li><a href = "#">Remove</a></li>
+      <li data-value="Remove" data-one="'.$row['company_profile_id'].'"><a href = "#">Remove</a></li>
    </ul>
+    <input id="accessvalue'.$row['company_profile_id'].'" size="15" name="access_value[]" type="hidden" />
 </div>
     </div>
     
 </li>';
    }
+   else
+   {
+     $result.= '<input id="accessvalue" size="15" name="access_value[]" value="Owner" type="hidden" />';
+   }
   
           }
+           }
+          
            
         echo $result;
     }
