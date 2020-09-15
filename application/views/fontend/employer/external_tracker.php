@@ -603,7 +603,8 @@ hr {
   </div>
 </div>
 <script>
-  $("#option_list").on("click", "a", function(e){
+   $(document).on("click", "#option_list", function (e) {
+  // $("#option_list").on("click", "a", function(e){
   e.preventDefault();
   alert(e);
   var $this = $(this).parent();
@@ -611,7 +612,7 @@ hr {
   $("#accessvalue").val($this.data("value"));
   // $( "#sort_btn" ).click();
   // $( "#test" ).click();
-  })
+  });
   $(document).keyup(function(e) {
        if (e.keyCode == 27) { // escape key maps to keycode `27`
         // alert('dd');
@@ -633,25 +634,7 @@ hr {
    $('#rotateModal').modal('show');
   
   }
-  //  function myFunction() {
-  //   var x = document.getElementById("fname");
-  //   x.value = x.value.toUpperCase();
-  //   $.ajax({
-  //               url: "<?php echo base_url();?>employer/update_external",
-  //               type: "POST",
-  //               data: {data_arr:data_arr},
-  //               // contentType:false,
-  //               // processData:false,
-  //                // dataType: "json",
-  //               success: function(data)
-  //               {
-  //                 alert('Updated Successfully');
-  //                 // window.location.reload();
-  //                  tracker_card(job_id);
-  //               }
-  //         });
-  // }
-  
+ 
 </script>
 <script>
   $('.select2').select2();
