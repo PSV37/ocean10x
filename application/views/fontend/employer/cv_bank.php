@@ -1272,7 +1272,7 @@
               <?php } ?>
             </select>
           </div>
-         <!--  <input type="hidden" name="job_post_id" value="" id="auto-value"> -->
+          <!--  <input type="hidden" name="job_post_id" value="" id="auto-value"> -->
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
             <label class="mdl-textfield__label" for="sample3">Message:</label>
             <textarea class="form-control" name="message" rows="5" id="comment" value="" required>Dear Candidate,
@@ -1292,7 +1292,7 @@
         <div class="modal-footer">
           <button type="submit" <?php if (empty($company_active_jobs)) {
             echo "disabled";
-          } ?> class="btn btn-save">Send</button>
+            } ?> class="btn btn-save">Send</button>
         </div>
       </form>
     </div>
@@ -1314,13 +1314,13 @@
           <input type="hidden" name="consultant" value="JobSeeker">  
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <label class="mdl-textfield__label" for="sample3">job Post:</label>
-           <select class="form-control select2" name="job_post_id">
+            <select class="form-control select2" name="job_post_id">
               <?php foreach ($company_active_jobs as $row) { ?>
               <option value="<?php echo $row->job_post_id ?>"><?php echo $row->job_title?></option>
               <?php } ?>
             </select>
           </div>
-         <!--  <input type="hidden" name="job_post_id" value="" id="autocomplete2-value"> -->
+          <!--  <input type="hidden" name="job_post_id" value="" id="autocomplete2-value"> -->
           <!-- <input id="" type="text" name="code"> -->
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
             <label class="mdl-textfield__label" for="sample3">Message:</label>
@@ -1334,7 +1334,7 @@
         <div class="modal-footer">
           <button type="submit" <?php if (empty($company_active_jobs)) {
             echo "disabled";
-          } ?> class="btn btn-save">Send</button>
+            } ?> class="btn btn-save">Send</button>
         </div>
       </form>
     </div>
@@ -1671,7 +1671,6 @@
     </div>
   </div>
 </div>
-
 <div class="modal fade" id="delete" tabindex='-1' role="dialog">
   <div class="modal-dialog">
     <form method="post" id="del_modal" action="">

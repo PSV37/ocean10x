@@ -5605,6 +5605,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     <div class="boqDrivesharedialogPermissionslistPermissionrowMain" data-hovercard-id="amishra@tele-kinetics.com" data-hovercard-owner-id="130">
         <div class="shared_name" aria-label="'.$row['company_name'].'">'.$row['company_name'].'</div>
         <div class="boqDrivesharedialogPermissionslistPermissionrowSecondary" aria-label="'.$row['company_email'].'.">'.$row['company_email'].'</div>
+        <input type="hidden" value="'.$row['company_profile_id'].'">
         <div class = "btn-group">
    <button type = "button" class = "btn btn-primary dropdown-toggle btn-sm" data-toggle = "dropdown">
     '.$type.'
@@ -5613,14 +5614,15 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
    </button>';
    if ($type == 'Editor') {
       $result.= '
-   <ul class = "dropdown-menu" role = "menu">
-      <li><a href = "#">Viewer</a></li>
-      <li><a href = "#">Commenter</a></li>
-      <li><a href = "#">Editor</a></li>
+   <ul id="option_list" class = "dropdown-menu" role = "menu">
+      <li data-value="view"><a href = "#">Viewer</a></li>
+      <li data-value="comment"><a href = "#">Commenter</a></li>
+      <li data-value="edit"><a href = "#">Editor</a></li>
       
       <li class = "divider"></li>
-      <li><a href = "#">Remove</a></li>
+      <li data-value="remove"><a href = "#">Remove</a></li>
    </ul>
+    <input id="accessvalue" size="15" name="access_value" type="text" />
 </div>
     </div>
     

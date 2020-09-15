@@ -526,7 +526,7 @@ hr {
             <span class="glyphicon glyphicon-floppy-save"></span> Save
             </button>
             <button style="float: right;" type="button" class="btn btn-default btn-sm share">
-            <span><i class="fas fa-share"></i></span> Share
+            <span><i class="fa fa-share-alt"></i></span> Share
             </button>
           </div>
         </div>
@@ -586,7 +586,7 @@ hr {
           <input type="hidden" name="consultant" value="JobSeeker">  
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"style="width: 108%;margin-left: -12px;padding: 0px;">
             <label class="mdl-textfield__label" for="sample3">E-mail:</label>
-            <input onfocusout="myFunction();" type="email"  name="consultant_email"  id="email" placeholder="Enter comma seperated Emails"  id="subject" data-required="true" multiple style="display: inline-block;min-width: 100%;min-height: 12%;" required>
+            <input onfocusout="myFunction();" type="email"  name="consultant_email"  id="email" placeholder="Enter Email"  id="subject" data-required="true" multiple style="display: inline-block;min-width: 100%;height: 30px;" required>
           </div>
           <hr>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
@@ -603,6 +603,14 @@ hr {
   </div>
 </div>
 <script>
+  $("#option_list").on("click", "a", function(e){
+  e.preventDefault();
+  var $this = $(this).parent();
+  $this.addClass("select").siblings().removeClass("select");
+  $("#accessvalue").val($this.data("value"));
+  // $( "#sort_btn" ).click();
+  // $( "#test" ).click();
+  })
   $(document).keyup(function(e) {
        if (e.keyCode == 27) { // escape key maps to keycode `27`
         // alert('dd');
