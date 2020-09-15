@@ -4542,8 +4542,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $company = $this->input->post('company');
         $access_value = $this->input->post('access_value');
 
-        print_r($company);
-        print_r($access_value);die;
+        // print_r($company);
+        // print_r($access_value);die;
 
         $email = explode(',', $consultant_email);
         for ($i = 0;$i < sizeof($email);$i++) {
