@@ -264,7 +264,7 @@ class Employer extends MY_Employer_Controller {
                 'salary_range' => $salary_range, 
                 "job_deadline" => date('Y-m-d', strtotime($this->input->post('job_deadline'))), "job_status" => '1', 
                 'is_test_required' => $this->input->post('job_test_requirment'),
-               'test_for_job' => $this->input->post('test_for_job'),);
+               'test_for_job' => $this->input->post('test_for_job'));
                 if (isset($job_desc_file) && !empty($job_desc_file)) {
                     $job_info['jd_file'] = $job_desc_file;
                 } elseif (empty($this->input->post('jd_session'))) {
@@ -3466,6 +3466,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $where_c['company_id'] = $company_id;
                 $where_c['js_status'] = '0';
                 $data['cv_bank_data'] = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join = false, $order = 'desc', $field = $sort_val, $select = false, $limit = false, $start = false, $search = false);
+                print_r($this->db->last_query());die;
                  $data['company_active_jobs'] = $this->job_posting_model->get_company_activedeasline_jobs($company_id);
                 $this->load->view('fontend/employer/cv_bank', $data);
             }
