@@ -450,6 +450,57 @@
   background-color: #f0ad4e;
   font-weight: bold;
   }
+   .profile_img {
+    /* -webkit-align-items: center; */
+    align-items: center;
+    background: coral;
+    color: white;
+    cursor: default;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-around;
+    /* justify-content: space-around; */
+    -webkit-user-select: none;
+    border-radius: 50%;
+    height: 36px;
+    min-width: 36px;
+    width: 36px;
+    /* padding: 0px; */
+    margin-left: -50px;
+    margin-right: 25px;
+}
+.btn-group {
+    /* float: right; */
+    margin-left: 260px;
+    margin-top: -45px;
+    align-content: end;
+    /* color: black; */
+}
+.shared_name {
+    font-weight: 500;
+    color: #202124;
+    letter-spacing: .01428571em;
+    font-family: Roboto,Arial,sans-serif;
+    font-size: 0.6rem;
+    line-height: 1;
+}
+   .shared_li {
+    display: flex;
+    line-height: 2;
+    margin-top: 20px;
+}
+.btn-primary.active, .btn-primary:active, .open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #18c5bd;
+    /* border-color: #204d74; */
+}
+hr {
+    width: 110%;
+    margin-left: -15px;
+    margin-top: 0;
+    border-top: 1px solid black;
+}
 </style>
 <div class="container-fluid main-d">
   <div class="container">
