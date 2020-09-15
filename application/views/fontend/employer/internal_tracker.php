@@ -504,6 +504,9 @@
             <button style="float: right;" type="button" class="btn btn-default btn-sm save">
             <span class="glyphicon glyphicon-floppy-save"></span> Save
             </button>
+             <button style="float: right;" type="button" class="btn btn-default btn-sm share">
+            <span><i class="fa fa-share-alt"></i></span> Share
+            </button>
             <span style="float: right; margin-top: 20px;"> 
             <input  type="checkbox" name="check_all" id="checkAllchk">&nbsp; all
             <button type="button" id="frwd_btn" class="btn btn-primary">update external</button></span>
@@ -554,6 +557,36 @@
   </div>
 </div>
 </div>
+<div class="modal" id="rotateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <input type="hidden" name="company_profile_id" id="company_profile_id" value="<?php echo $this->session->userdata('company_profile_id'); ?>">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="border-bottom:none;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Forward This Job Post</h5>
+      </div>
+      <form action="<?php echo base_url() ?>employer/forword_external_tracker" class="sendEmail" method="post" autocomplete="off">
+        <div class="modal-body" style="padding:15px 40px;">
+          <input type="hidden" name="tracking_id" id="tracking_id" value="">
+          <input type="hidden" name="consultant" value="JobSeeker">  
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"style="width: 108%;margin-left: -12px;padding: 0px;">
+            <label class="mdl-textfield__label" for="sample3">E-mail:</label>
+            <input onfocusout="myFunction();" type="email"  name="consultant_email"  id="email" placeholder="Enter Email"  id="subject" data-required="true" multiple style="display: inline-block;min-width: 100%;height: 30px;" required>
+          </div>
+          <hr>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
+            <ul id="shared_list" ></ul>
+           <!--  <label class="mdl-textfield__label" for="sample3">Message:</label> -->
+            <!-- <textarea class="form-control" name="message" rows="5" id="comment" required></textarea> -->
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-save">Send</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 <script>
   $(document).ready (function(){
     $("#smsg").fadeTo(2000, 500).slideUp(500, function(){
@@ -587,7 +620,56 @@
         }
    }
   });
+  $(".share").click(function() {
+     var job_id = $('#job_select').val();
+  //    var id = $(".table table-borderless").closest("tr");
+  // alert (id); // Find the text
+   var ary = [];
+        $(function () {
+            $('.table-borderless tr').each(function (a, b) {
+                var tracking_id_val = $('#tracking_id_val', b).val();
+                
   
+                ary.push({tracking_id_val:tracking_id_val});
+               
+            });
+            console.log(ary);
+            var result = ary.map(function(val) {
+              return val.tracking_id_val;
+            }).join(',');
+            $.ajax({
+              url: "<?php echo base_url();?>employer/get_shared_list",
+              type: "POST",
+              data: {tracker_id:result,job_id:job_id},
+              // contentType:false,
+              // processData:false,
+               // dataType: "json",
+              success: function(data)
+              {
+               $('#shared_list').html(data);
+              }
+        });
+  console.log(result);
+  $('#tracking_id').val(result);
+  $('#rotateModal').modal('show');
+           
+        });
+  });
+  $(document).on("click", "#option_list a", function (e) {
+ 
+  // $("#option_list").on("click", "a", function(e){
+  e.preventDefault();
+ 
+  var $this = $(this).parent();
+  $this.addClass("select").siblings().removeClass("select");
+  var done = $this.data("one");
+   // alert(done);
+
+  $("#accessvalue"+done).val($this.data("value"));
+   // alert($this.data("value"));
+  // $( "#sort_btn" ).click();
+  // $( "#test" ).click();
+  });
   $("#sizelist").on("click", "a", function(e){
   e.preventDefault();
   var $this = $(this).parent();
