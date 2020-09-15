@@ -4543,10 +4543,14 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $access_value = $this->input->post('access_value');
         $track = explode(',', $tracking_id);
         for ($i=0; $i < sizeof($company) ; $i++) { 
-            $update_data['acess_given'] = $access_value[$i];
+            for ($j=0; $j < sizeof($track) ; $j++) {
+
+             $update_data['acess_given'] = $access_value[$i];
             $where11['consultant_id'] = $company[$i];
-            $where11['tracking_id'] = $track[$i];
+            $where11['tracking_id'] = $track[$j];
             $this->Master_model->master_update($update_data, 'tracker_consultant_mapping', $where11);
+        }
+           
         }
         print_r($company);
         print_r($track);
