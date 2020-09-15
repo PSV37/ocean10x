@@ -4617,14 +4617,14 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 
             }
             $array=explode(',',$tracking_id);
-       
+            $tracker_type = $this->input->post('tracker_type');
             $tracking_ids = array_filter($array);
             foreach ($tracking_ids as $row) {
                 $whereres = "tracking_id='$row' and consultant_id = '$comp_id' ";
                 $tracking_data = $this->Master_model->get_master_row('
                         tracker_consultant_mapping', $select = FALSE, $whereres);
                 if (empty($tracking_data)) {
-                    $tracking_mapping = array('tracking_id' => $row, 'consultant_id' => $comp_id,'acess_given'=>'edit');
+                    $tracking_mapping = array('tracking_id' => $row, 'consultant_id' => $comp_id,'acess_given'=>'edit','tracker_type'=$tracker_type);
                     $map_id = $this->Master_model->master_insert($tracking_mapping, 'tracker_consultant_mapping');
                 }
             }
@@ -5615,13 +5615,13 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
              if ($type == 'external') {
                 $join = array('company_profile'=>'company_profile.company_profile_id = tracker_consultant_mapping.consultant_id ',
                     'external_tracker'=> 'external_tracker.id = tracker_consultant_mapping.tracking_id');
-                $where .= "external_tracker.job_post_id = '$job_id'";
+                $where .= "external_tracker.job_post_id = '$job_id' and tracker_type = '$type'";
              }
              elseif($type == 'internal')
              {
                 $join = array('company_profile'=>'company_profile.company_profile_id = tracker_consultant_mapping.consultant_id ',
                     'forwarded_jobs_cv'=> 'forwarded_jobs_cv.id = tracker_consultant_mapping.tracking_id');
-                $where .= "forwarded_jobs_cv.job_post_id = '$job_id'";
+                $where .= "forwarded_jobs_cv.job_post_id = '$job_id' and tracker_type = '$type'";
              }
             
            $shared_list = $this->Master_model->getMaster('tracker_consultant_mapping', $where , $join , $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
