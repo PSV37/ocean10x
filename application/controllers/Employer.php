@@ -4552,9 +4552,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         }
            
         }
-        print_r($company);
-        print_r($track);
-        print_r($access_value);die;
+        // print_r($company);
+        // print_r($track);
+        // print_r($access_value);die;
 
         $email = explode(',', $consultant_email);
         for ($i = 0;$i < sizeof($email);$i++) {
@@ -4615,7 +4615,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $tracking_data = $this->Master_model->get_master_row('
                         tracker_consultant_mapping', $select = FALSE, $whereres);
                 if (empty($tracking_data)) {
-                    $tracking_mapping = array('tracking_id' => $row, 'consultant_id' => $comp_id);
+                    $tracking_mapping = array('tracking_id' => $row, 'consultant_id' => $comp_id,'acess_given'=>'edit');
                     $map_id = $this->Master_model->master_insert($tracking_mapping, 'tracker_consultant_mapping');
                 }
             }
@@ -5609,13 +5609,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $where_job = "job_post_id = '$job_id' and company_profile_id ='$comp_id'";
             $job_data = $this->Master_model->get_master_row('job_posting', $select = FALSE, $where_job , $join = FALSE);
 
-            if (!empty($job_data)) {
-                $type ="Owner";
-             }
-             else
-                {
-               $type = "Editor";
-            }
+           
+                $type =$row['acess_given'];
+             
             $profile_pic = $this->Company_profile_model->company_logoby_id($employer_id);
               $result.= '<li class="shared_li" role="menuitem" tabindex="-1" aria-selected="false">
     <div role="img" class="profile_img">A</div>
@@ -5632,12 +5628,12 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
    if ($type == 'Editor') {
       $result.= '
    <ul id="option_list" class = "dropdown-menu" role = "menu">
-      <li data-value="view" data-one="'.$row['company_profile_id'].'"><a href = "#">Viewer</a></li>
-      <li data-value="comment" data-one="'.$row['company_profile_id'].'"><a href = "#">Commenter</a></li>
-      <li data-value="edit" data-one="'.$row['company_profile_id'].'"><a href = "#">Editor</a></li>
+      <li data-value="Viewer" data-one="'.$row['company_profile_id'].'"><a href = "#">Viewer</a></li>
+      <li data-value="Commenter" data-one="'.$row['company_profile_id'].'"><a href = "#">Commenter</a></li>
+      <li data-value="Editor" data-one="'.$row['company_profile_id'].'"><a href = "#">Editor</a></li>
       
       <li class = "divider"></li>
-      <li data-value="remove" data-one="'.$row['company_profile_id'].'"><a href = "#">Remove</a></li>
+      <li data-value="Remove" data-one="'.$row['company_profile_id'].'"><a href = "#">Remove</a></li>
    </ul>
     <input id="accessvalue'.$row['company_profile_id'].'" size="15" name="access_value[]" type="text" />
 </div>
@@ -5647,7 +5643,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
    }
    else
    {
-     $result.= '<input id="accessvalue" size="15" name="access_value[]" value="owner" type="text" />';
+     $result.= '<input id="accessvalue" size="15" name="access_value[]" value="owner" type="hidden" />';
    }
   
           }
