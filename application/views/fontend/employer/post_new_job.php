@@ -863,7 +863,7 @@
           
     maxlength: "Maximum length 10 digits!",
 
-     greaterThan : "second value of a range must be lesser than the first"
+     greaterThan : "second value of a range must be greater than the first"
    },
    
    'no_jobs':{
@@ -899,7 +899,7 @@
           
     maxlength: "Maximum length 10 digits!",
 
-    greaterThan : "second value of a range must be lesser than the first"
+    greaterThan : "second value of a range must be greater than the first"
    },
    
    'benefits[]':{
