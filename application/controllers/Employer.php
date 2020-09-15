@@ -5614,13 +5614,13 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
              $where ="tracker_consultant_mapping.tracking_id IN ('".$array."')  group by tracker_consultant_mapping.consultant_id";
              if ($type == 'external') {
                 $join = array('company_profile'=>'company_profile.company_profile_id = tracker_consultant_mapping.consultant_id ',
-                    'external_tracker'=> 'external_tracker.id = tracker_consultant_mapping.tracker_id');
+                    'external_tracker'=> 'external_tracker.id = tracker_consultant_mapping.tracking_id');
                 $where .= "external_tracker.job_post_id = '$job_id'";
              }
              elseif($type == 'internal')
              {
                 $join = array('company_profile'=>'company_profile.company_profile_id = tracker_consultant_mapping.consultant_id ',
-                    'forwarded_jobs_cv'=> 'forwarded_jobs_cv.id = tracker_consultant_mapping.tracker_id');
+                    'forwarded_jobs_cv'=> 'forwarded_jobs_cv.id = tracker_consultant_mapping.tracking_id');
                 $where .= "forwarded_jobs_cv.job_post_id = '$job_id'";
              }
             
