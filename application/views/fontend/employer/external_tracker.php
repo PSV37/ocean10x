@@ -389,6 +389,7 @@
   background-color: #18c5bd;
   border: none;
   border-radius: 30px;
+  width: 100px;
   }
   .box {
   margin-top: 40px;
