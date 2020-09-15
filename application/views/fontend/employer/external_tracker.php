@@ -607,7 +607,7 @@ hr {
   {
     $("#accessvalue").val(val);
   }
-   $(document).on("click", "#option_list", function (e) {
+   $(document).on("click", "#option_list a", function (e) {
  
   // $("#option_list").on("click", "a", function(e){
   e.preventDefault();
