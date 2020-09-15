@@ -1266,9 +1266,13 @@
           <input type="hidden" name="consultant" value="JobSeeker">  
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <label class="mdl-textfield__label" for="sample3">job Post:</label>
-            <input type="text"  name="job_title"  id="job_title" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required>
+            <select class="form-control select2" name="job_id">
+              <?php foreach ($company_active_jobs as $row) { ?>
+              <option value="<?php echo $row->job_post_id ?>"><?php echo $row->job_title?></option>
+              <?php } ?>
+            </select>
           </div>
-          <input type="hidden" name="job_post_id" value="" id="auto-value">
+         <!--  <input type="hidden" name="job_post_id" value="" id="auto-value"> -->
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
             <label class="mdl-textfield__label" for="sample3">Message:</label>
             <textarea class="form-control" name="message" rows="5" id="comment" value="" required>Dear Candidate,
@@ -1286,7 +1290,9 @@
           <input type="hidden" name="forward_job_email" id="forward_job_email" value="<?php echo $cv_row['js_email']; ?>">
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-save">Send</button>
+          <button type="submit" <?php if (empty($company_active_jobs)) {
+            echo "disabled";
+          } ?> class="btn btn-save">Send</button>
         </div>
       </form>
     </div>
@@ -1308,9 +1314,11 @@
           <input type="hidden" name="consultant" value="JobSeeker">  
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <label class="mdl-textfield__label" for="sample3">job Post:</label>
-            <input type="text"  name="job_titles"  id="job_titles" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required>
+           <?php foreach ($company_active_jobs as $row) { ?>
+              <option value="<?php echo $row->job_post_id ?>"><?php echo $row->job_title?></option>
+              <?php } ?>
           </div>
-          <input type="hidden" name="job_post_id" value="" id="autocomplete2-value">
+         <!--  <input type="hidden" name="job_post_id" value="" id="autocomplete2-value"> -->
           <!-- <input id="" type="text" name="code"> -->
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
             <label class="mdl-textfield__label" for="sample3">Message:</label>
@@ -1322,7 +1330,9 @@
           <input type="hidden" name="forward_job_emails" id="forward_job_emails" value="">
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-save">Send</button>
+          <button type="submit" <?php if (empty($company_active_jobs)) {
+            echo "disabled";
+          } ?> class="btn btn-save">Send</button>
         </div>
       </form>
     </div>
