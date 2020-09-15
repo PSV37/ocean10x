@@ -5598,8 +5598,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $tracker_id = $this->input->post('tracker_id');
         $job_id = $this->input->post('job_id');
  
-        $array=array_map('intval', explode(',', $tracker_id));
-        $array = implode("','",$array);
+        $array=explode(',',$tracker_id));
+        $filter=array_filter($array);
+        $array = implode("','",$filter);
       
              $join = array('company_profile'=>'company_profile.company_profile_id = tracker_consultant_mapping.consultant_id ');
             $where ="tracker_consultant_mapping.tracking_id IN ('".$array."')  group by tracker_consultant_mapping.consultant_id";
