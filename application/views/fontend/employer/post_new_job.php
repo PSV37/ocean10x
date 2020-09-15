@@ -754,7 +754,7 @@
    },
    
    'salrange_to': {
-   greaterThan: "#salrange_from"
+   greaterThan: "#salrange_from",
     required: true
    },
    
