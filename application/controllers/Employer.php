@@ -5625,7 +5625,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
       <span class = "caret"></span>
    </button>';
-   if ($type == 'Editor') {
+   if ($type != 'Owner') {
       $result.= '
    <ul id="option_list" class = "dropdown-menu" role = "menu">
       <li data-value="Viewer" data-one="'.$row['company_profile_id'].'"><a href = "#">Viewer</a></li>
