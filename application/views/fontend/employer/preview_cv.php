@@ -317,6 +317,10 @@
           </div>
         </div>
         <div class="card-block collapse" id="exp1">
+           <h5><b>Organization</b></h5>
+          <p>
+            <?php echo $row['company_profile_id']; ?>
+          </p>
           <h5><b>Responsibilities</b></h5>
           <p>
             <?php echo $row['responsibilities']; ?>
