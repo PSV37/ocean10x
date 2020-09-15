@@ -5627,7 +5627,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
            $shared_list = $this->Master_model->getMaster('tracker_consultant_mapping', $where , $join , $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
            $result;
            // print_r($this->db->last_query);die;
-          foreach ($shared_list as $row) {
+           if (!empty($shared_list)) {
+               foreach ($shared_list as $row) {
             $comp_id = $row['company_profile_id'];
             $where_job = "job_post_id = '$job_id' and company_profile_id ='$comp_id'";
             $job_data = $this->Master_model->get_master_row('job_posting', $select = FALSE, $where_job , $join = FALSE);
@@ -5670,6 +5671,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
    }
   
           }
+           }
+          
            
         echo $result;
     }
