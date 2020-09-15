@@ -442,8 +442,8 @@ ul.select2-results__options {
        }
 </script>
 
-<script src="<?php echo base_url(); ?>assets/js/jquery-3.3.1.js" type="text/javascript"></script>
-<script src="<?php echo base_url(); ?>assets/js/bootstrap.js" type="text/javascript"></script>
+<!-- <script src="<?php echo base_url(); ?>assets/js/jquery-3.3.1.js" type="text/javascript"></script>
+<script src="<?php echo base_url(); ?>assets/js/bootstrap.js" type="text/javascript"></script> -->
 
 
 <script src="<?php echo base_url(); ?>asset/src/jquery.tokeninput.js"></script>
