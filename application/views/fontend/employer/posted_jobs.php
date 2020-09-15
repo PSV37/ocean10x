@@ -1003,6 +1003,11 @@ a.myclass {
     margin-right: 7px;
     /* width: 35px; */
 }
+sup {
+    /* top: -.4em; */
+    font-size: 16px;
+    color: red;
+}
 </style>
 <div class="container-fluid main-d">
 <div class="container">
