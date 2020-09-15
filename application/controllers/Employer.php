@@ -2920,10 +2920,12 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             foreach ($topics as $key) {
                 $result.= '<option value="' . $key['topic_id'] . '">' . $key['topic_name'] . '</option>';
             }
-        } else {
-            // $result.= '<option value="">Topic not available</option>';
-            $result.= '';
-        }
+        } 
+
+            // else {
+        //     // $result.= '<option value="">Topic not available</option>';
+        //     $result.= '';
+        // }
         echo $result;
     }
     function getsubtopic() {
@@ -5648,7 +5650,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
   
 //           }
            
-        echo $this->db->last_query;
+        echo $this->db->last_query();
     }
 }
 ?>
