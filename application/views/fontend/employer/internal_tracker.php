@@ -390,9 +390,9 @@
   border: none;
   border-radius: 30px;
   }
-  .box {
+  /*.box {
   margin-top: 40px;
-  }
+  }*/
   li.right-title {
   list-style: none;
   }
@@ -502,12 +502,15 @@ hr {
     border-top: 1px solid black;
 }
 .icon_backg {
-  background-color: #18c5bd;
-  padding: 12px;
-  border-radius: 34px;
-  color: #fff;
-  cursor: pointer;
-  }
+    background-color: #18c5bd;
+    padding: 12px;
+    border-radius: 34px;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 25px;
+    /* margin-bottom: -83px; */
+    margin-left: 20px;
+}
 </style>
 <div class="container-fluid main-d">
   <div class="container">

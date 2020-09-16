@@ -478,6 +478,16 @@ hr {
     margin-top: 0;
     border-top: 1px solid black;
 }
+.icon_backg {
+    background-color: #18c5bd;
+    padding: 12px;
+    border-radius: 34px;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 25px;
+    /* margin-bottom: -83px; */
+    margin-left: 20px;
+}
 </style>
 <div class="container-fluid main-d">
   <div class="container">
@@ -523,12 +533,12 @@ hr {
         </div>
         <div class="row">
           <div col-md-12>
-            <button style="float: right;" type="button" class="btn btn-default btn-sm save">
-            <span class="glyphicon glyphicon-floppy-save"></span> Save
-            </button>
-            <button style="float: right;" type="button" class="btn btn-default btn-sm share">
-            <span><i class="fa fa-share-alt"></i></span> Share
-            </button>
+           <!--  <button style="float: right;" type="button" class="btn btn-default btn-sm save"> -->
+            <span class="glyphicon glyphicon-floppy-save save icon_backg"></span> Save
+            <!-- </button> -->
+           <!--  <button style="float: right;" type="button" class="btn btn-default btn-sm share"> -->
+            <span><i class="fa fa-share-alt icon_backg share"></i></span> Share
+            <!-- </button> -->
           </div>
         </div>
         <div class="box" >
