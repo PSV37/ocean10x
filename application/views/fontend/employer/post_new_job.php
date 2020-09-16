@@ -432,7 +432,7 @@
                
                <div class="col-md-3 col-sm-12">
                   <div class="formrow salrange" >
-                     <label class="control-label " style="margin-left:-162px;">Salary Range (INR)<span class="required"> *</span> </label>
+                     <label class="control-label " style="margin-left:-162px;"><span id="sal_text">Salary Range (INR)</span><span class="required"> *</span> </label>
                      <div class="col-md-3 formrow" style="width:100px;margin-left:-14px;margin-top:37px;">
                         <?php $sal=explode('-', $job_info->salary_range);  ?>
                         <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" id="salrange_from" name="salrange_from"  value="<?php echo $sal[0]; ?><?php echo set_value('salrange_from'); ?>">
@@ -594,10 +594,13 @@
 
 
 <script> 
-   function change_text(type)
+   function change_text()
    {
       type = $('#job_nature').val();
-      alert(type);
+     if (type != 5) 
+     {
+      $('#sal_text').text('Hourly Rate');
+     }
    }
    function set_test()
    {
