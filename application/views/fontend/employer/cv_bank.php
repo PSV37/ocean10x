@@ -942,6 +942,14 @@
   margin-right: 5px;
   /* width: 35px; */
   }
+  button.btn.btn-primary.trash {
+    background-color: #18c5bd;
+    width: 85px;
+    /* border: none; */
+    margin-top: 0px;
+    margin-left: 2px;
+    /* border-radius: 128px; */
+}
 </style>
 <div class="container-fluid main-d">
   <div class="container">
@@ -954,12 +962,13 @@
         <div class="row">
           <div class="col-md-6">
             <form class="navbar-form" role="search">
-              <input type="text" id="myInput" class="form-control" placeholder=" Email / Name / Contact" style="width: 100%"><span class="fa fa-search form-control-feedback"></span>
+              <input type="text" id="myInput" class="form-control" placeholder=" Email / Name / Contact" style="width: 100%"><span class="fa fa-search form-control-feedback"style="margin-right: 17px;
+    margin-top: 10px;"></span>
             </form>
             <div class="clear"></div>
           </div>
           <div class="col-md-6">
-            <a href="#" style="float: right;margin-right: 34px;/* margin-top: 2px; */background-color: #18c5bd;/* width: 52px; *//* max-height: 21px; */" onclick="get_trash();"><button class="btn btn-primary trash" ><i class="fas fa-trash-alt" aria-hidden="true"></i> Trash <?php if (!empty($cv_trash_data)) {
+            <a href="#" style="float: right;margin-right: 34px;background-color: #18c5bd;border-radius: 30px;" onclick="get_trash();"><button class="btn btn-primary trash" ><i class="fas fa-trash-alt" aria-hidden="true"></i> Trash <?php if (!empty($cv_trash_data)) {
               echo "(".sizeof($cv_trash_data).")";
             } ?></button></a>
             <button class="folder_popup"  data-toggle="modal" data-keyboard="true" data-target="#myModal_add" style="float: right;margin-right: 20px;"><i class="fas fa-folder-open"></i> New Folder </button>
