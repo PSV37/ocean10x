@@ -84,8 +84,8 @@ input#company_name {
          <div class="content col-md-8 col-md-offset-2">
             <div class="userccount">
                <!--<h5 align="center">Join the Ocean to hunt the best Professional !</h5>-->
-               <h5 align="center">Join The Ocean !
-Collaborate - Professionals | Partners | Customers !</h5>
+               <h5 align="center">Join The Ocean !</h5>
+               <h5 align="center">Collaborate - Professionals | Partners | Customers !</h5>
 
                <hr>
                <div class="formpanel">
