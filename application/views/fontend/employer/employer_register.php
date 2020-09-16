@@ -187,6 +187,7 @@ input#company_name {
                         </div>
                         <!-- end row -->
                      </div>
+                     <!--
                      <div class="formrow">
                         <div class="row">
                            <div class="col-md-12 col-sm-12 company_address">
@@ -195,7 +196,7 @@ input#company_name {
                               <?php echo form_error('company_address'); ?>
                            </div>
                         </div>
-                        <!-- end row -->
+                        
                      </div>
 
                      <div class="formrow">
@@ -205,7 +206,7 @@ input#company_name {
                               <input type="file" name="company_logo"  class="form-control" />
                            </div>
                         </div>
-                     </div>
+                     </div>-->
                      <div class="formrow">
                         <div class="captchacode">Captcha is cause sensitive</div>
                         <div class="row">
