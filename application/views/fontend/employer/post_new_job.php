@@ -596,7 +596,7 @@
 <script> 
    function change_text(type)
    {
-      type = $('#job_nature').text;
+      type = $('#job_nature').val();
       alert(type);
    }
    function set_test()
