@@ -601,6 +601,10 @@
      {
       $('#sal_text').text('Hourly Rate');
      }
+     else
+     {
+       $('#sal_text').text('Salary Range');
+     }
    }
    function set_test()
    {
