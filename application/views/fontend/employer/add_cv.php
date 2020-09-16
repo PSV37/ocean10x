@@ -260,7 +260,7 @@ input.capital {
                            $fmt = new NumberFormatter( $locale."@currency=$currency", NumberFormatter::CURRENCY );
                            $symbol = $fmt->getSymbol(NumberFormatter::CURRENCY_SYMBOL);
                            header("Content-Type: text/html; charset=UTF-8;");
-                              echo $symbol;
+                              echo $symbol echo $symbol;
                         } ?>)</label>
                         <!--<label for="exampleInputEmail1">Current CTC <?php if (isset($currency) && !empty($currency)) {
                           $locale='en-US'; //browser or user locale
