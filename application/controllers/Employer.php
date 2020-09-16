@@ -3466,7 +3466,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             if (isset($sort_val) && !empty($sort_val)) {
                 // $where_c['company_id'] = $company_id;
                 // $where_c['js_status'] = '0';
-                if (isset($fid) $$ !empty($fid)) {
+                if (isset($fid) && !empty($fid)) {
                    $where_c = "cv_folder_id = '$fid' and status = '1' group by cv_folder_relation.cv_id and js_status = '0'";
                    $data['fid'] = $fid;
                 }
