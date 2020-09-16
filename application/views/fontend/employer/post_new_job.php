@@ -372,7 +372,7 @@
                <div class="col-md-3 col-sm-12" >
                   <div class="formrow job_nature">
                      <label class="control-label ">Engagement Model<span class="required"> * </span> </label>
-                     <select name="job_nature" class="form-control select2" data-style="btn-default" data-live-search="true" >
+                     <select name="job_nature" id="job_nature" class="form-control select2" data-style="btn-default" data-live-search="true" onchange="change_text();" >
                         <option value=""></option>
                         <?php 
                            $job_nature_value =  set_value('job_nature');
@@ -594,6 +594,11 @@
 
 
 <script> 
+   function change_text(type)
+   {
+      type = $('#job_nature').text;
+      alert(type);
+   }
    function set_test()
    {
       var oceantest = $('#job_test_requirment').val();
