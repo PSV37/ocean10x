@@ -3447,7 +3447,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $this->load->model('Pincode_model');
         $data['active_cv'] = $this->Pincode_model->getactive_cvs($company_id);
         $data['education_level'] = $this->Master_model->getMaster('education_level', $where = false);
-        if (isset($fid) && !empty($fid)) {
+        $sort_val = $this->input->post('sort_val');
+        if (isset($fid) && !empty($fid) && empty($sort_val)) {
             $this->session->unset_userdata('activesubmenu');
             $data['activesubmenu'] = $fid;
             $this->session->set_userdata($data);
@@ -3465,7 +3466,15 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             if (isset($sort_val) && !empty($sort_val)) {
                 // $where_c['company_id'] = $company_id;
                 // $where_c['js_status'] = '0';
-                $where_c = "company_id = '$company_id' and js_status = '0'";
+                if (isset($fid) $$ !empty($fid)) {
+                   $where_c = "cv_folder_id = '$fid' and status = '1' group by cv_folder_relation.cv_id and js_status = '0'";
+                   $data['fid'] = $fid;
+                }
+                else
+                {
+                     $where_c = "corporate_cv_bank.cv_id NOT IN (select cv_id from cv_folder_relation) and company_id ='$company_id' and js_status = '0'";
+                }
+                
                 $data['cv_bank_data'] = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join = false, $order = 'desc', $field = $sort_val, $select = false, $limit = false, $start = false, $search = false);
                 // print_r($this->db->last_query());die;
                  $data['company_active_jobs'] = $this->job_posting_model->get_company_activedeasline_jobs($company_id);
