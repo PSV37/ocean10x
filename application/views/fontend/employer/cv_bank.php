@@ -954,13 +954,15 @@
         <div class="row">
           <div class="col-md-6">
             <form class="navbar-form" role="search">
-              <input type="text" id="myInput" class="form-control" placeholder="Search with Email or Name or Number" style="width: 100%">
+              <input type="text" id="myInput" class="form-control" placeholder=" Email / Name / Contact" style="width: 100%"><span class="fa fa-search form-control-feedback"></span>
             </form>
             <div class="clear"></div>
           </div>
           <div class="col-md-6">
-            <a href="#" style="float: right;margin-right: 34px;/* margin-top: 2px; */background-color: #18c5bd;/* width: 52px; *//* max-height: 21px; */" onclick="get_trash();"><button class="btn btn-primary" style="background-color: #18c5bd;width: 64px;border: none;margin-top: 0px;margin-left: 2px;"><i class="fas fa-trash-alt" aria-hidden="true"></i> Trash</button></a>
-            <button class="folder_popup"  data-toggle="modal" data-keyboard="true" data-target="#myModal_add" style="float: right;margin-right: 20px;">Create&emsp;<i class="fas fa-folder-open"></i></button>
+            <a href="#" style="float: right;margin-right: 34px;/* margin-top: 2px; */background-color: #18c5bd;/* width: 52px; *//* max-height: 21px; */" onclick="get_trash();"><button class="btn btn-primary trash" ><i class="fas fa-trash-alt" aria-hidden="true"></i> Trash <?php if (!empty($cv_trash_data)) {
+              echo "(".sizeof($cv_trash_data).")";
+            } ?></button></a>
+            <button class="folder_popup"  data-toggle="modal" data-keyboard="true" data-target="#myModal_add" style="float: right;margin-right: 20px;"><i class="fas fa-folder-open"></i> New Folder </button>
           </div>
         </div>
         <div class="row">
@@ -1000,7 +1002,7 @@
             </form>
           </div>
           <div class="col-md-4">
-            <a href="<?php echo base_url() ?>employer/add_new_cv<?php if(!empty($fid)){echo '?fid='.$fid;} ?>"><button class="btn btn-primary"><i class="fas fa-plus"></i> Add New CV</button></a>
+            <a href="<?php echo base_url() ?>employer/add_new_cv<?php if(!empty($fid)){echo '?fid='.$fid;} ?>"><button class="btn btn-primary"><i class="fas fa-plus"></i> New CV</button></a>
           </div>
         </div>
         <!--  <div class="row"  id="bulk">

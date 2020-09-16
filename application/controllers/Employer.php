@@ -3460,7 +3460,10 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
              // print_r($this->db->last_query());die;
             $data['fid'] = $fid;
             $data['company_active_jobs'] = $this->job_posting_model->get_company_activedeasline_jobs($company_id);
-           
+            $where_trash = "company_id ='$company_id' and js_status = '1'";
+            // $where_c['company_id'] = $company_id;
+            $join = array('education_level' => 'education_level.education_level_id = corporate_cv_bank.js_top_education | left outer');
+            $data['cv_trash_data'] = $this->Master_model->getMaster('corporate_cv_bank', $where_trash, $join, $order = 'desc', $field = 'cv_id', $select = false, $limit = false, $start = false, $search = false);
             $this->load->view('fontend/employer/cv_bank', $data);
         } elseif (isset($_POST['sort']) || !empty($sort_val)) {
             $sort_val = $this->input->post('sort_val');
@@ -3517,7 +3520,11 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             // $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
            $data['sort'] =  $sort_val;
             $data["links"] = $this->pagination->create_links();
-                 $data['company_active_jobs'] = $this->job_posting_model->get_company_activedeasline_jobs($company_id);
+            $data['company_active_jobs'] = $this->job_posting_model->get_company_activedeasline_jobs($company_id);
+                 $where_trash = "company_id ='$company_id' and js_status = '1'";
+            // $where_c['company_id'] = $company_id;
+            $join = array('education_level' => 'education_level.education_level_id = corporate_cv_bank.js_top_education | left outer');
+            $data['cv_trash_data'] = $this->Master_model->getMaster('corporate_cv_bank', $where_trash, $join, $order = 'desc', $field = 'cv_id', $select = false, $limit = false, $start = false, $search = false);
                 $this->load->view('fontend/employer/cv_bank', $data);
             }
         } else {
@@ -3567,7 +3574,10 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             // $where_c['company_id'] = $company_id;
             $join = array('education_level' => 'education_level.education_level_id = corporate_cv_bank.js_top_education | left outer');
             $data['cv_bank_data'] = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join, $order = 'desc', $field = 'cv_id', $select = false, $config["per_page"], $page, $search = false);
-        
+            $where_trash = "company_id ='$company_id' and js_status = '1'";
+            // $where_c['company_id'] = $company_id;
+            $join = array('education_level' => 'education_level.education_level_id = corporate_cv_bank.js_top_education | left outer');
+            $data['cv_trash_data'] = $this->Master_model->getMaster('corporate_cv_bank', $where_trash, $join, $order = 'desc', $field = 'cv_id', $select = false, $limit = false, $start = false, $search = false);
        
             $this->load->view('fontend/employer/cv_bank', $data);
         }
