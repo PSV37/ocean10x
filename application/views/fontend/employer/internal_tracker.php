@@ -1,6 +1,6 @@
 <?php $this->load->view('fontend/layout/employer_new_header.php');?>
 <style>
-  .cv_bank{margin-top:65px;
+  .cv_bank{margin-top:45px;
   }
   button.saerch_btn {
   background-color: #18c5bd;
@@ -501,6 +501,13 @@ hr {
     margin-top: 0;
     border-top: 1px solid black;
 }
+.icon_backg {
+  background-color: #18c5bd;
+  padding: 12px;
+  border-radius: 34px;
+  color: #fff;
+  cursor: pointer;
+  }
 </style>
 <div class="container-fluid main-d">
   <div class="container">
@@ -552,13 +559,13 @@ hr {
         </div>
         <div class="row">
           <div col-md-12>
-            <button style="float: right;" type="button" class="btn btn-default btn-sm save">
-            <span class="glyphicon glyphicon-floppy-save"></span> Save
+            <button  type="button" class="btn btn-default btn-sm save">
+            <span class="glyphicon glyphicon-floppy-save icon_backg"></span>
             </button>
-             <button style="float: right;" type="button" class="btn btn-default btn-sm share">
-            <span><i class="fa fa-share-alt"></i></span> Share
+             <button style="" type="button" class="btn btn-default btn-sm share">
+            <span><i class="fa fa-share-alt icon_backg"></i></span>
             </button>
-            <span style="float: right; margin-top: 20px;"> 
+            <span style="margin-top: 20px;"> 
             <input  type="checkbox" name="check_all" id="checkAllchk">&nbsp; all
             <button type="button" id="frwd_btn" class="btn btn-primary">update external</button></span>
             <!--  <label style="float: right;margin-top: 17px;" class="btn btn-default">
