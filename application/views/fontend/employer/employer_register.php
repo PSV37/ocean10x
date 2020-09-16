@@ -83,7 +83,10 @@ input#company_name {
       <div class="row">
          <div class="content col-md-8 col-md-offset-2">
             <div class="userccount">
-               <h5 align="center">Join the Ocean to hunt the best Professional !</h5>
+               <!--<h5 align="center">Join the Ocean to hunt the best Professional !</h5>-->
+               <h5 align="center">Join The Ocean !</h5>
+               <h5 align="center">Collaborate - Professionals | Partners | Customers !</h5>
+
                <hr>
                <div class="formpanel">
                   <form id="EmpRegistation" action="<?php echo base_url(); ?>employer_register/create" method="post" enctype="multipart/form-data" class="submit-form" onSubmit = "return checkPassword(this)" >
@@ -140,7 +143,8 @@ input#company_name {
                         <div class="row">
                            <div class="col-md-6 col-sm-12 company_category">
                               <select  name="company_category" id="company_category" class="form-control services select2">
-                                 <option value="">Select Company Type</option>
+                                 <!--<option value="">Select Company Type</option>-->
+                                 <option value="">Business Domain</option>
                                  <?php foreach($job_category as $dept){ ?>
                                  <option value="<?php echo $dept['job_category_id']; ?>"><?php echo $dept['job_category_name']; ?></option>
                                  <?php } ?>
@@ -183,6 +187,7 @@ input#company_name {
                         </div>
                         <!-- end row -->
                      </div>
+                     <!--
                      <div class="formrow">
                         <div class="row">
                            <div class="col-md-12 col-sm-12 company_address">
@@ -191,7 +196,7 @@ input#company_name {
                               <?php echo form_error('company_address'); ?>
                            </div>
                         </div>
-                        <!-- end row -->
+                        
                      </div>
 
                      <div class="formrow">
@@ -201,7 +206,7 @@ input#company_name {
                               <input type="file" name="company_logo"  class="form-control" />
                            </div>
                         </div>
-                     </div>
+                     </div>-->
                      <div class="formrow">
                         <div class="captchacode">Captcha is cause sensitive</div>
                         <div class="row">
@@ -219,7 +224,8 @@ input#company_name {
                      <div class="formrow">
                         <div class="row">
                            <div class="col-md-6 col-sm-12 ">
-                              <input type="checkbox" value="" checked="" style="width: 25px !important;height: 15px !important;" > <a href="<?php echo base_url().'terms' ?>" target="_blank" required>  I agree to the Terms and Conditions</a>
+                              <input type="checkbox" value="" checked="" style="width: 25px !important;height: 15px !important;" > <a href="<?php echo base_url().'terms' ?>" target="_blank" required>   I / We Agree to the Terms & Conditions</a>
+                              <!--<a href="<?php echo base_url().'terms' ?>" target="_blank" required>  I agree to the Terms and Conditions</a>-->
                            </div>
                         </div>
                      </div>
