@@ -3512,7 +3512,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             if ($page) {
                 $offset = ($page - 1) * $config['per_page'];
             }
-              $data['cv_bank_data'] = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join = false, $order = 'desc', $field = $sort_val, $select = false, $limit = $config['per_page'], $start = $page, $search = false);
+              $data['cv_bank_data'] = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join = $join_cond, $order = 'desc', $field = $sort_val, $select = false, $limit = $config['per_page'], $start = $page, $search = false);
             $this->pagination->initialize($config);
             // $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
            $data['sort'] =  $sort_val;
