@@ -994,7 +994,8 @@
                   <li data-value="js_top_education"><a href="#">Education</a></li>
                 </ul>
               </label>
-              <input id="sizevalue" size="15" name="sort_val" type="hidden" />
+              <input id="sizevalue" value="<?php if(isset($sort))
+              {echo $sort; } ?>" size="15" name="sort_val" type="hidden" />
               <button type="submit" name="sort" class="hidden" id="sort_btn"></button>
             </form>
           </div>

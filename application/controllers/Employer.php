@@ -3461,7 +3461,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $data['company_active_jobs'] = $this->job_posting_model->get_company_activedeasline_jobs($company_id);
             // print_r($this->db->last_query());die;
             $this->load->view('fontend/employer/cv_bank', $data);
-        } elseif (isset($_POST['sort'])) {
+        } elseif (isset($_POST['sort']) || !empty($sort_val)) {
             $sort_val = $this->input->post('sort_val');
             if (isset($sort_val) && !empty($sort_val)) {
                 // $where_c['company_id'] = $company_id;
@@ -3469,15 +3469,17 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 if (isset($fid) && !empty($fid)) {
                    $where_c = "cv_folder_id = '$fid' and status = '1' group by cv_folder_relation.cv_id and js_status = '0'";
                    $data['fid'] = $fid;
+                    $config['base_url'] = base_url() . 'employer/corporate_cv_bank/'.$fid;
                 }
                 else
                 {
                      $where_c = "corporate_cv_bank.cv_id NOT IN (select cv_id from cv_folder_relation) and company_id ='$company_id' and js_status = '0'";
+                      $config['base_url'] = base_url() . 'employer/corporate_cv_bank';
                 }
                 $join_cond = array('cv_folder_relation' => 'cv_folder_relation.cv_id = corporate_cv_bank.cv_id|Left outer');
             $cv_bank_data = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join_cond , $order = 'desc', $field = $sort_val, $select = false, $limit = false, $start = false, $search = false);
                 // print_r($this->db->last_query());die;
-            $config['base_url'] = base_url() . 'employer/corporate_cv_bank';
+            // $config['base_url'] = base_url() . 'employer/corporate_cv_bank';
             $config['total_rows'] = sizeof($cv_bank_data);
             $config['per_page'] = 5;
             $config['attributes'] = array('class' => 'myclass');
@@ -3512,7 +3514,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
               $data['cv_bank_data'] = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join = false, $order = 'desc', $field = $sort_val, $select = false, $limit = $config['per_page'], $start = $page, $search = false);
             $this->pagination->initialize($config);
             // $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-           
+           $data['sort'] =  $sort_val;
             $data["links"] = $this->pagination->create_links();
                  $data['company_active_jobs'] = $this->job_posting_model->get_company_activedeasline_jobs($company_id);
                 $this->load->view('fontend/employer/cv_bank', $data);
