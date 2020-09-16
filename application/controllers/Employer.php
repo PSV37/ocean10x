@@ -3457,9 +3457,10 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $where_c = "cv_folder_id = '$fid' and status = '1' group by cv_folder_relation.cv_id and js_status = '0'";
             $join_cond = array('corporate_cv_bank' => 'corporate_cv_bank.cv_id = cv_folder_relation.cv_id|Left outer');
             $data['cv_bank_data'] = $this->Master_model->getMaster('cv_folder_relation', $where_c, $join_cond, $order = 'desc', $field = 'relation_id', $select = false, $limit = false, $start = false, $search = false);
+             print_r($this->db->last_query());die;
             $data['fid'] = $fid;
             $data['company_active_jobs'] = $this->job_posting_model->get_company_activedeasline_jobs($company_id);
-            print_r($this->db->last_query());die;
+           
             $this->load->view('fontend/employer/cv_bank', $data);
         } elseif (isset($_POST['sort']) || !empty($sort_val)) {
             $sort_val = $this->input->post('sort_val');
