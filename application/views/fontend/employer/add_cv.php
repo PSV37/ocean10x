@@ -254,14 +254,22 @@ input.capital {
                   <div class="col-md-4">
                      <div class="form-group">
                         <?php $currency = $this->session->userdata('currency') ?>
-                        <label for="exampleInputEmail1">Current CTC <?php if (isset($currency) && !empty($currency)) {
+                        <label for="exampleInputEmail1"> Yearly Salary (CTC - <?php if (isset($currency) && !empty($currency)) {
+                          $locale='en-US'; //browser or user locale
+                           // $currency='JPY';
+                           $fmt = new NumberFormatter( $locale."@currency=$currency", NumberFormatter::CURRENCY );
+                           $symbol = $fmt->getSymbol(NumberFormatter::CURRENCY_SYMBOL);
+                           header("Content-Type: text/html; charset=UTF-8;");
+                              echo $symbol$symbol;
+                        } ?>)</label>
+                        <!--<label for="exampleInputEmail1">Current CTC <?php if (isset($currency) && !empty($currency)) {
                           $locale='en-US'; //browser or user locale
                            // $currency='JPY';
                            $fmt = new NumberFormatter( $locale."@currency=$currency", NumberFormatter::CURRENCY );
                            $symbol = $fmt->getSymbol(NumberFormatter::CURRENCY_SYMBOL);
                            header("Content-Type: text/html; charset=UTF-8;");
                               echo $symbol;
-                        } ?></label>
+                        } ?></label>-->
                         <input type="text" name="current_ctc" id="current_ctc" class="form-control allownumericwithdecimal" maxlength="5" value="<?php $val=set_value('current_ctc'); if(isset($val) && !empty($val))
                         {
                            echo $val;
