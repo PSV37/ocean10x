@@ -534,10 +534,10 @@ hr {
         <div class="row">
           <div col-md-12>
            <!--  <button style="float: right;" type="button" class="btn btn-default btn-sm save"> -->
-            <span class="glyphicon glyphicon-floppy-save save icon_backg"></span> Save
+            <span title="save" class="glyphicon glyphicon-floppy-save save icon_backg"></span> 
             <!-- </button> -->
            <!--  <button style="float: right;" type="button" class="btn btn-default btn-sm share"> -->
-            <span><i class="fa fa-share-alt icon_backg share"></i></span> Share
+            <span title="share"><i class="fa fa-share-alt icon_backg share"></i></span> 
             <!-- </button> -->
           </div>
         </div>

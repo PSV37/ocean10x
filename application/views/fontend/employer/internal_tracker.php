@@ -563,10 +563,10 @@ hr {
         <div class="row">
           <div col-md-12>
             <!-- <button  type="button" class="btn btn-default btn-sm save"> -->
-            <span class="glyphicon glyphicon-floppy-save  save icon_backg"></span>
+            <span title="save" class="glyphicon glyphicon-floppy-save  save icon_backg"></span>
             <!-- </button> -->
              <!-- <button style="" type="button" class="btn btn-default btn-sm share"> -->
-            <span><i class="fa fa-share-alt icon_backg share"></i></span>
+            <span title="share"><i class="fa fa-share-alt icon_backg share"></i></span>
             <!-- </button> -->
             <span style="margin-top: 20px;"> 
             <input  type="checkbox" name="check_all" id="checkAllchk">&nbsp; all
