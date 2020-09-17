@@ -1523,7 +1523,7 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
       <form method="post" action="<?php echo base_url(); ?>employer/getocean_profile">
         <div class="modal-header">
           <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
-          <h4 class="modal-title">Update From Ocean</h4>
+          <center><h4 class="modal-title">Pull Updates from Ocean</h4></center>
         </div>
         <div class="modal-body">
           <input type="hidden" name="cv_email" id="cv_email" value="">
@@ -1532,7 +1532,7 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
             <div class="col-md-12">
               <div class="row">
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
-                  <label class="mdl-textfield__label"  for="sample3">No. of CVs:<span id="no_of_cvs_update"></span></label><br>
+                  <label class="mdl-textfield__label"  for="sample3">No. of CVs Selected:<span id="no_of_cvs_update"></span></label><br>
                 </div>
               </div>
             </div>
