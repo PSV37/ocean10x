@@ -1749,16 +1749,20 @@ Phone : 91919191
   $('#del_modal').prop('action',newUrl);
   $('#delete').modal("show");
   }
-  
-  function get_job_url()
-  {
-      var ddlFruits = document.getElementById("job__id");
-      var selectedText = ddlFruits.options[ddlFruits.selectedIndex].innerHTML;
-      var slug = $('#job__id').getAttribute('data-value');
-      console.log(slug);
-      var url = "<?php echo base_url() ?>job/show/"+slug;
-      $('#comment_msg').append(url);
-  }
+
+  $("#job__id").change(function () {
+     alert($(this).find(':selected').data("value"));
+     
+});
+  // function get_job_url()
+  // {
+  //     var ddlFruits = document.getElementById("job__id");
+  //     var selectedText = ddlFruits.options[ddlFruits.selectedIndex].innerHTML;
+  //     var slug = $('#job__id').getAttribute('data-value');
+  //     console.log(slug);
+  //     var url = "<?php echo base_url() ?>job/show/"+slug;
+  //     $('#comment_msg').append(url);
+  // }
   
   
 </script>
