@@ -1477,7 +1477,7 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
       <form method="post" action="<?php echo base_url(); ?>employer/copy_cvto_folder">
         <div class="modal-header">
           <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
-         <center><h4 class="modal-title"> Move CV</h4></center> 
+         <center><h4 class="modal-title"> Copy CV</h4></center> 
         </div>
         <div class="modal-body">
           <input type="hidden" name="cv_id" id="cv_id" value="">
@@ -1490,8 +1490,8 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
                   $employer_id = $this->session->userdata('company_profile_id');
                   $wheres  = "status='1' AND company_id='$employer_id' ";
                      $folders     = $this->Master_model->getMaster('cv_folder', $where = $wheres); ?>
-               <select class="form-control select2" name="folder_id" id="move_folder">
-                  <option data-value="CV_bank" value="0">CV Bank</option>
+              <select class="form-control select2" name="folder_id" id="copy_cv_folder">
+                    <option data-value="CV_bank" value="0">CV Bank</option>
                     <?php foreach ($folders as $row) { 
                       if($row['folder_name'] != $fname) { ?>
                     <option data-value="<?php echo $row['folder_name'] ?>" value="<?php echo $row['id'] ?>"><?php echo $row['folder_name'] ?></option>
@@ -1510,7 +1510,7 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
           <!--  <p>This is a small modal.</p> -->
         </div>
         <div class="modal-footer">
-          <button type="submit" id="mv_button" class="btn btn-default">Move</button>
+          <button type="submit" id="mv_button" class="btn btn-default" id="cpy_btn">Copy</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
         </div>
       </form>
