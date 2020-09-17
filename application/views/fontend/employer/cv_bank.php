@@ -1150,19 +1150,19 @@
               </div>
               <ul class="pieID legend">
                 <li class="cv">
-                  <em id="spanid0">Total cv</em>
+                  <em id="spanid0">Total CVs</em>
                   <span><?php echo sizeof($cv_bank_data); ?></span>
                 </li>
                 <li class="cv">
-                  <em id="spanid1">Active cv</em>
+                  <em id="spanid1">Active CVs</em>
                   <span id="active_cv"><?php echo sizeof($active_cv); ?></span>
                 </li>
                 <li class="cv">
-                  <em id="spanid2">Own cv's</em>
+                  <em id="spanid2">Own CVs</em>
                   <span id="own_cvs"><?php echo sizeof($own_cvs); ?></span>
                 </li>
                 <li class="cv">
-                  <em id="spanid3">Consultant cv's</em>
+                  <em id="spanid3">Consultant CVs</em>
                   <span>60</span>
                 </li>
               </ul>
@@ -1238,7 +1238,7 @@
             </select>
           </div>
           <div class="filter1">
-            <p style="font-size:18px;margin-top:15px;">Time Period in Current Job</p>
+            <p style="font-size:18px;margin-top:15px;">Duration at Current Job</p>
             <div class="range-wrap">
               <input type="range" class="range" id="stability_id" onchange="get_data();" min="0" max="30" step="6"  value="0">
               <output class="bubble "></output>
