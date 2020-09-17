@@ -1371,7 +1371,7 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
         <form method="post" action="<?php echo base_url(); ?>employer/copy_cvto_folder">
           <div class="modal-header">
             <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
-            <h4 class="modal-title">Copy CV to folder</h4>
+           <center><h4 class="modal-title">Copy CV</h4></center> 
           </div>
           <div class="modal-body">
             <input type="hidden" name="cv_id" value="<?php echo $cv_row['cv_id']; ?>">
@@ -1388,10 +1388,10 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
                     $employer_id = $this->session->userdata('company_profile_id');
                     $wheres  = "status='1' AND company_id='$employer_id' ";
                        $folders     = $this->Master_model->getMaster('cv_folder', $where = $wheres); ?>
-                  <select class="form-control select2" name="folder_id">
+                  <select class="form-control select2" name="folder_id" id="copy_cv_folder">
                     <option value="0">CV Bank</option>
                     <?php foreach ($folders as $row) { ?>
-                    <option value="<?php echo $row['id'] ?>"><?php echo $row['folder_name'] ?></option>
+                    <option data-value="<?php echo $row['folder_name'] ?>" value="<?php echo $row['id'] ?>"><?php echo $row['folder_name'] ?></option>
                     <? } ?>
                   </select>
                 </div>
@@ -1407,7 +1407,7 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
             <!--  <p>This is a small modal.</p> -->
           </div>
           <div class="modal-footer">
-            <button type="submit" class="btn btn-default">Copy</button>
+            <button type="submit" id="cpy_btn" class="btn btn-default">Copy</button>
             <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
           </div>
         </form>
@@ -1755,6 +1755,13 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
       var slug = $(this).find(':selected').data("value");
       var url = "<?php echo base_url() ?>job/show/"+slug;
       $('#comment_msg').append(url);
+
+});
+
+  $("#copy_cv_folder").change(function () {
+      var slug = $(this).find(':selected').data("value");
+      var url = "<?php echo base_url() ?>job/show/"+slug;
+      $('#cpy_btn').text('Copy - '+<?php echo $fname; ?>+' To '+slug);
 
 });
   // function get_job_url()

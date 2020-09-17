@@ -3469,10 +3469,12 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             // $where_c['cv_folder_id'] = $fid;
             // $where_c['status'] = 1;
             $where_c = "cv_folder_id = '$fid' and status = '1' and js_status = '0' group by cv_folder_relation.cv_id ";
-            $join_cond = array('corporate_cv_bank' => 'corporate_cv_bank.cv_id = cv_folder_relation.cv_id|Left outer');
+            $join_cond = array('corporate_cv_bank' => 'corporate_cv_bank.cv_id = cv_folder_relation.cv_id|Left outer',
+                'cv_folder' => 'cv_folder.id=cv_folder_relation.cv_folder_id');
             $data['cv_bank_data'] = $this->Master_model->getMaster('cv_folder_relation', $where_c, $join_cond, $order = 'desc', $field = 'relation_id', $select = false, $limit = false, $start = false, $search = false);
              // print_r($this->db->last_query());die;
             $data['fid'] = $fid;
+            $data['fname'] = $data['cv_bank_data'][0]['folder_name'];
             $data['company_active_jobs'] = $this->job_posting_model->get_company_activedeasline_jobs($company_id);
             $where_trash = "company_id ='$company_id' and js_status = '1'";
             // $where_c['company_id'] = $company_id;
