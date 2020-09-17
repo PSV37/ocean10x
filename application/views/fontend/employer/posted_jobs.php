@@ -1209,8 +1209,9 @@ span.right-side {
               </div>
                   
                </div>
+               <span id="msg<?php echo $v_companyjobs->job_post_id ?>"></span>
                <div id="test_div" style="display: none;">
-                  <span id="msg"></span>
+                  
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
               <label class="mdl-textfield__label" for="sample3">Tests</label> 
                   <select class="form-control select2" name="test_id" id="test_id_modal<?php echo $v_companyjobs->job_post_id; ?>" onchange="get_test_details(<?php echo $v_companyjobs->job_post_id; ?>);">
@@ -1505,7 +1506,7 @@ function get_trash()
                   }
                   else
                   {
-                     $('#msg').html('Tests not Available');
+                     $('#msg'+job_id).text('Tests not Available');
                      $('#test_div').hide();
                   }
                }
