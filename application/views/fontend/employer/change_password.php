@@ -64,6 +64,15 @@
             <div class="row">
                <div class="col-md-4">
                   <div class="form-group lineitem_id ">
+                     <label for="exampleInputEmail1">Username<span class="required">*</span></label>
+                     <input type="username" name="username" id="myInput1" class="form-control">
+                     <span toggle="#password-field" class="fa fa-eye-slash field-icon toggle-password1"></span>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-4">
+                  <div class="form-group lineitem_id ">
                      <label for="exampleInputEmail1">Current Password<span class="required">*</span></label>
                      <input type="password" name="oldpassword" id="myInput1" required class="form-control" placeholder="Type your current password">
                      <span toggle="#password-field" class="fa fa-eye-slash field-icon toggle-password1"></span>
