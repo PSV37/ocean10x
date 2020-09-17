@@ -1280,18 +1280,18 @@
             <label class="mdl-textfield__label" for="sample3">Select Job Post</label>
             <select class="form-control select2" name="job_post_id" onchange="get_job_url();" id="job__id">
               <?php foreach ($company_active_jobs as $row) { ?>
-              <option data-value="<?php echo $row->job_slug ?>" value="<?php echo $row->job_post_id ?>"><?php echo $row->job_title?></option>
+              <option data-value="<?php echo $row->job_slugs ?>" value="<?php echo $row->job_post_id ?>"><?php echo $row->job_title?></option>
               <?php } ?>
             </select>
           </div>
           <!--  <input type="hidden" name="job_post_id" value="" id="auto-value"> -->
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
             <label class="mdl-textfield__label" for="sample3">Message</label>
-            <textarea class="form-control" name="message" rows="5" id="comment" value="" required>Dear Candidate,
+            <textarea class="form-control" name="message" rows="5" id="comment_msg" value="" required>Dear Candidate,
 
 Your Profile matches a Vacancy that we have. Please check the details and apply for this Job, by clicking on the URL provided below.
   
-<span id="job_url"></span>
+
 
 We shall review your Application and move forward on the next steps. 
 
@@ -1750,8 +1750,9 @@ Best Regards,
       var ddlFruits = document.getElementById("job__id");
       var selectedText = ddlFruits.options[ddlFruits.selectedIndex].innerHTML;
       var slug = $('#job__id').attr('data-value');
+      console.log(slug);
       var url = "<?php echo base_url() ?>job/show/"+slug;
-      $('#job_url').text(url);
+      $('#comment_msg').append(url);
   }
   
   
