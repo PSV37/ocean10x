@@ -1298,6 +1298,11 @@ We shall review your Application and move forward on the next steps.
 If you want to update your coordinates / CV on Ocean, you can login to The Ocean → Visit Profile Section.
 
 Best Regards,
+
+<?php echo $this->session->userdata('company_name'); ?>
+
+Phone : 91919191
+
 </textarea>
           </div>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
@@ -1749,7 +1754,7 @@ Best Regards,
   {
       var ddlFruits = document.getElementById("job__id");
       var selectedText = ddlFruits.options[ddlFruits.selectedIndex].innerHTML;
-      var slug = $('#job__id').data('value');
+      var slug = $('#job__id').getAttribute('data-value');
       console.log(slug);
       var url = "<?php echo base_url() ?>job/show/"+slug;
       $('#comment_msg').append(url);
