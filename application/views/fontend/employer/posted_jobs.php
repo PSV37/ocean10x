@@ -1609,13 +1609,13 @@ function get_trash()
                     $('#total_offer_accept').html(total_offer_accepted.length);
    
                     $('#early_applications').html(total_count_early_applied.length);
-   
+       createPie(".pieID.legend", ".pieID.pie");
                   }
                 });
              // }
    
    
-      createPie(".pieID.legend", ".pieID.pie");
+     
    }
    
    
