@@ -538,7 +538,7 @@ input.capital {
                      </div>
                      <div class="col-md-6 col-sm-12">
                         <div class="formrow">
-                           <label class="control-label">Company Phone:</label><span class="required">*</span>
+                           <label class="control-label">Company Phone</label><span class="required">*</span>
                            <input type="tel"  name="company_phone"  class="allownumericwithdecimal form-control" maxlength="10" id="company_phone" value="<?php 
                               $val = set_value('company_phone'); if(!empty($val)){ echo $val; } elseif(!empty($company_info->company_phone)){ echo $company_info->company_phone; } ?>" onkeypress="phoneno();">   
                            <?php echo form_error('company_phone'); ?>        
