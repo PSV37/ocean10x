@@ -3682,8 +3682,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     $cv_data['updated_by'] = $company_id;
                     $where_del['cv_id'] = $update_cv_id;
                     $this->Master_model->master_update($cv_data, 'corporate_cv_bank', $where_del);
+                    $fid=$this->input->get('fid');
                     $this->session->set_flashdata('success', '<div class="alert alert-success text-center">CV Updated Successfully !</div>');
-                    redirect('employer/corporate_cv_bank');
+                    redirect('employer/corporate_cv_bank/'.$fid);
                 }
                 $email = $this->input->post('candidate_email');
                 $where_find = "js_email= '$email'";
