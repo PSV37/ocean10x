@@ -1390,9 +1390,10 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
                        $folders     = $this->Master_model->getMaster('cv_folder', $where = $wheres); ?>
                   <select class="form-control select2" name="folder_id" id="copy_cv_folder">
                     <option value="0">CV Bank</option>
-                    <?php foreach ($folders as $row) { ?>
+                    <?php foreach ($folders as $row) { 
+                      if($row['folder_name'] != $fname) { ?>
                     <option data-value="<?php echo $row['folder_name'] ?>" value="<?php echo $row['id'] ?>"><?php echo $row['folder_name'] ?></option>
-                    <? } ?>
+                    <? } } ?>
                   </select>
                 </div>
               </div>
