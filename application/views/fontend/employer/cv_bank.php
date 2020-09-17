@@ -950,14 +950,6 @@
     margin-left: 2px;
     /* border-radius: 128px; */
 }
-div#comment_msg {
-    width: 382px;
-    height: auto;
-    border: 1px solid #ccc;
-    padding: 5px;
-    background-color: white;
-}
-
 </style>
 <div class="container-fluid main-d">
   <div class="container">
@@ -1295,22 +1287,23 @@ div#comment_msg {
           <!--  <input type="hidden" name="job_post_id" value="" id="auto-value"> -->
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
             <label class="mdl-textfield__label" for="sample3">Message</label>
-            <div contenteditable="true" name="message"id="comment_msg" required>Dear Candidate,<br><br>
+            <textarea class="form-control" name="message" rows="5" id="comment_msg" value="" required>Dear Candidate,
 
-Your Profile matches a Vacancy that we have. Please check the details and apply for this Job, by clicking on the URL provided below.<br><br>
+Your Profile matches a Vacancy that we have. Please check the details and apply for this Job, by clicking on the URL provided below.
   
-<span id="msg_url"></span><br><br>
 
-We shall review your Application and move forward on the next steps. <br><br>
 
-If you want to update your coordinates / CV on Ocean, you can login to The Ocean → Visit Profile Section.<br><br>
+We shall review your Application and move forward on the next steps. 
 
-Best Regards,<br><br>
+If you want to update your coordinates / CV on Ocean, you can login to The Ocean → Visit Profile Section.
 
-<?php echo $this->session->userdata('company_name'); ?><br>
+Best Regards,
+
+<?php echo $this->session->userdata('company_name'); ?>
+
 Phone : <?php echo $this->session->userdata('phone'); ?>
 
-</div>
+</textarea>
           </div>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
             <label class="mdl-textfield__label" for="sample3">No. of Candidates (CVs) : 1</label><br>
@@ -1733,9 +1726,6 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
   $('#test').click();
   }
   }
-  $(document).ready(function() {
-        CKEDITOR.config.readOnly = true;
-    });
   $(document).keyup(function(e) {
   if (e.keyCode == 27) { // escape key maps to keycode `27`
    // alert('dd');
@@ -1763,7 +1753,7 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
   $("#job__id").change(function () {
       var slug = $(this).find(':selected').data("value");
       var url = "<?php echo base_url() ?>job/show/"+slug;
-      $('#msg_url').text(url);
+      $('#comment_msg').append(url);
 
 });
   // function get_job_url()
