@@ -1498,14 +1498,14 @@ function get_trash()
                data:{test_status:test_type},
                success:function(res){
                   alert(res.length);
-                  if (res.length > 0) 
+                  if (res.length > 1) 
                   {
                    $('#test_id_modal'+job_id).html(res);
                    $('#test_div').show();
                   }
                   else
                   {
-                     $('#msg').html('Tests not Added');
+                     $('#msg').html('Tests not Available');
                      $('#test_div').hide();
                   }
                }
