@@ -1378,7 +1378,8 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
             <div class="col-md-12" style="margin-top: 20px;">
               <div class="row">
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
-                  <span id="cv_folders_text<?php echo $cv_row['cv_id']; ?>"></span><span id="cv_folders<?php echo $cv_row['cv_id']; ?>"></span><br>
+                  <span id="cv_folders_text<?php echo $cv_row['cv_id']; ?>"></span><br>
+                  <span id="cv_folders<?php echo $cv_row['cv_id']; ?>"></span><br>
                 </div>
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                   <label class="mdl-textfield__label" for="sample3">Choose Folder</label>
@@ -1824,18 +1825,23 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
               data:{cv_id:cv_id,folder_id:folder_id},
                 success: function(data)
                 {
-                  $('#cv_folders_text'+cv_id).html('This CV is also available in ')
+                 
                  var obj = [];
                  const parsed = JSON.parse(data);
+                 if (parsed.length>0) 
+                 {
+                   $('#cv_folders_text'+cv_id).html('This CV is also available in ')
+
                     jQuery.each(parsed, function(index, item) {
                           obj[item.cv_folder_id] = item.folder_name;
                           var url = '<?php echo base_url(); ?>employer/corporate_cv_bank/'+item.cv_folder_id;
   
-                          $('#cv_folders'+cv_id).append(' <a href="'+url+'">'+item.folder_name+'</a>');
+                          $('#cv_folders'+cv_id).append(+index+'. <a href="'+url+'">'+item.folder_name+'</a><br>');
   
                       });
   
                     console.log(obj);
+                  }
                 }
           });
       }
