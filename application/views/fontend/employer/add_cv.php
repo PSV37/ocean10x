@@ -152,7 +152,8 @@ input.capital {
                   </div>
                   <div class="col-md-4">
                      <div class="form-group">
-                        <label for="exampleInputEmail1">Email Id <span class="required"> *</span></label>
+                        <label for="exampleInputEmail1">Email<span class="required"> *</span></label>
+                        <!--<label for="exampleInputEmail1">Email Id <span class="required"> *</span></label>-->
                         <input type="email" name="candidate_email" id="candidate_email" class="form-control ui-autocomplete-input" value="<?php $val=set_value('candidate_email'); if(isset($val) && !empty($val))
                         {
                            echo $val;
@@ -178,7 +179,8 @@ input.capital {
                <div class="col-md-12">
                   <div class="col-md-4">
                      <div class="form-group">
-                        <label for="exampleInputEmail1">Yrs of Experience</label>
+                        <label for="exampleInputEmail1">Experience (Yrs)</label>
+                        <!--<label for="exampleInputEmail1">Yrs of Experience</label>-->
                         <input type="text" name="candidate_experiance" id="candidate_experiance" value="<?php $val=set_value('candidate_experiance'); if(isset($val) && !empty($val))
                         {
                            echo $val;
@@ -190,7 +192,8 @@ input.capital {
                   </div>
                   <div class="col-md-4">
                      <div class="form-group">
-                        <label for="exampleInputEmail1">Notice Period at Current Job (Days)</label>
+                        <label for="exampleInputEmail1">Current Job Notice (Days)</label>
+                        <!--<label for="exampleInputEmail1">Notice Period at Current Job (Days)</label>-->
                         <input type="text" name="candidate_notice_period" id="candidate_notice_period " maxlength="3"  value="<?php $val=set_value('candidate_notice_period'); if(isset($val) && !empty($val))
                         {
                            echo $val;
@@ -202,7 +205,8 @@ input.capital {
                   </div>
                   <div class="col-md-4">
                      <div class="form-group">
-                        <label for="exampleInputEmail1">Job Type</label>
+                        <label for="exampleInputEmail1">Engagement</label>
+                        <!--<label for="exampleInputEmail1">Job Type</label>-->
                         <select id="job_type" name="job_type " class="form-control select2">
                           <option value=""></option>
                         <?php 
@@ -222,7 +226,8 @@ input.capital {
                <div class="col-md-12">
                   <div class="col-md-4">
                      <div class="form-group">
-                        <label for="exampleInputEmail1">Current Job Designation</label>
+                        <label for="exampleInputEmail1">Current Designation</label>
+                        <!--<label for="exampleInputEmail1">Current Job Designation</label>-->
                         <input type="text" name="current_job_desig" id="current_job_desig" class="form-control allowalphabates capital" value="<?php $val=set_value('current_job_desig'); if(isset($val) && !empty($val))
                         {
                            echo $val;
@@ -249,14 +254,22 @@ input.capital {
                   <div class="col-md-4">
                      <div class="form-group">
                         <?php $currency = $this->session->userdata('currency') ?>
-                        <label for="exampleInputEmail1">Current CTC <?php if (isset($currency) && !empty($currency)) {
+                        <label for="exampleInputEmail1"> Yearly Salary (CTC - <?php if (isset($currency) && !empty($currency)) {
+                          $locale='en-US'; //browser or user locale
+                           // $currency='JPY';
+                           $fmt = new NumberFormatter( $locale."@currency=$currency", NumberFormatter::CURRENCY );
+                           $symbol = $fmt->getSymbol(NumberFormatter::CURRENCY_SYMBOL);
+                           header("Content-Type: text/html; charset=UTF-8;");
+                              echo $symbol;echo $symbol;
+                        } ?>)</label>
+                        <!--<label for="exampleInputEmail1">Current CTC <?php if (isset($currency) && !empty($currency)) {
                           $locale='en-US'; //browser or user locale
                            // $currency='JPY';
                            $fmt = new NumberFormatter( $locale."@currency=$currency", NumberFormatter::CURRENCY );
                            $symbol = $fmt->getSymbol(NumberFormatter::CURRENCY_SYMBOL);
                            header("Content-Type: text/html; charset=UTF-8;");
                               echo $symbol;
-                        } ?></label>
+                        } ?></label>-->
                         <input type="text" name="current_ctc" id="current_ctc" class="form-control allownumericwithdecimal" maxlength="5" value="<?php $val=set_value('current_ctc'); if(isset($val) && !empty($val))
                         {
                            echo $val;
@@ -270,7 +283,8 @@ input.capital {
                <div class="col-md-12">
                   <div class="col-md-4">
                      <div class="form-group">
-                        <label for="exampleInputEmail1">Last Salary Hike</label>
+                        <label for="exampleInputEmail1">Last Salary Hike Date</label>
+                        <!--<label for="exampleInputEmail1">Last Salary Hike</label>-->
                         <input type="text" name="last_salary_hike" id="last_salary_hike" class="form-control datepicker" max="<?php echo date('Y-m-d'); ?>" value="<?php $val=set_value('last_salary_hike'); if(isset($val) && !empty($val))
                         {
                            echo date("d-m-Y", strtotime($val));
@@ -284,7 +298,8 @@ input.capital {
                   </div>
                    <div class="col-md-4">
                      <div class="form-group">
-                        <label for="exampleInputEmail1">Current Organization</label>
+                        <label for="exampleInputEmail1">Current Company</label>
+                        <!--<label for="exampleInputEmail1">Current Organization</label>-->
                         <input type="text" name="current_org" id="current_org" class="form-control allowalphabatesspace capital" value="<?php $val=set_value('current_org'); if(isset($val) && !empty($val))
                         {
                            echo $val;
@@ -334,7 +349,8 @@ input.capital {
                   </div>
                   <div class="col-md-4">
                      <div class="form-group">
-                        <label for="exampleInputEmail1">Industry</label>
+                        <label for="exampleInputEmail1">Domain</label>
+                        <!--<label for="exampleInputEmail1">Industry</label>-->
                        
                           <select name="candidate_industry" id="candidate_industry" class="form-control select2" data-role="limiter" data-style="btn-default" data-live-search="true" >
                         <option value=""></option>
@@ -359,7 +375,8 @@ input.capital {
                   </div>
                   <div class="col-md-4">
                      <div class="form-group">
-                        <label for="exampleInputEmail1">Role</label>
+                        <label for="exampleInputEmail1">Current Role</label>
+                        <!--<label for="exampleInputEmail1">Role</label>-->
                         <select id="candidate_role" name="candidate_role" class="form-control select2">
 
                            <option value=""></option>
