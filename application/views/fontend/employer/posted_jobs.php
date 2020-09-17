@@ -985,12 +985,14 @@
    input#posted_job {
    display: none;
    }
-  .icon_backg {
+ .icon_backg {
     background-color: #18c5bd;
     padding: 12px;
     border-radius: 34px;
     color: #fff;
     cursor: pointer;
+    float: right;
+    margin-right: 5px;
 }
 .btn-group {
     float: right;
