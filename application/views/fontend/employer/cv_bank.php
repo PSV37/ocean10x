@@ -1749,7 +1749,7 @@ Best Regards,
   {
       var ddlFruits = document.getElementById("job__id");
       var selectedText = ddlFruits.options[ddlFruits.selectedIndex].innerHTML;
-      var slug = $('#job__id').attr('data-value');
+      var slug = $('#job__id').data('value');
       console.log(slug);
       var url = "<?php echo base_url() ?>job/show/"+slug;
       $('#comment_msg').append(url);
