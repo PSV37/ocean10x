@@ -5537,7 +5537,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $where_test_attempt_mandatory = "job_posting.is_test_required='Yes' and job_posting.job_post_id = '$job_id'";
         $join_test = array('job_posting' => 'job_posting.job_post_id=job_apply.job_post_id', 'seeker_test_result' => 'seeker_test_result.test_id=job_posting.test_for_job');
         $data['Total_count_test_given'] = $this->Master_model->getMaster('job_apply', $where = $where_test_attempt_mandatory, $join = $join_test, $order = false, $field = false, $select = false, $limit = false, $start = false, $search = false);
-
+        print_r($this->db->last_query());
         $where_test_passed = "job_posting.is_test_required='Yes' and seeker_test_result.correct_status = 'Yes'and job_posting.job_post_id = '$job_id' ";
         $where_test_passed.= "HAVING count(*) > min_marks ";
         $join_test_passed = array('job_posting' => 'job_posting.job_post_id=job_apply.job_post_id | Left ', 'seeker_test_result' => 'seeker_test_result.test_id=job_posting.test_for_job | Left ', 'oceanchamp_tests' => 'oceanchamp_tests.test_id = seeker_test_result.test_id | Left');
@@ -5551,7 +5551,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $where_offer = "job_apply.job_post_id='$job_id' and (forwarded_jobs_cv.tracking_status=7 or external_tracker.tracking_status=7)";
         $join_test_passed = array('forwarded_jobs_cv' => 'forwarded_jobs_cv.job_post_id=job_apply.job_post_id | Left ', 'external_tracker' => 'external_tracker.job_post_id=job_apply.job_post_id | Left ');
         $data['Total_offer_accepted'] = $this->Master_model->getMaster('job_apply', $where = $where_offer, $join = $join_test_passed, $order = false, $field = false, $select = false, $limit = false, $start = false, $search = false);
-        
+
         $where_applied = "job_apply.job_post_id='$job_id' AND job_apply.apply_date BETWEEN job_posting.created_at AND DATE_ADD(job_posting.created_at, INTERVAL 7 DAY)";
         $join_test = array('job_posting' => 'job_posting.job_post_id=job_apply.job_post_id');
         $data['Total_count_early_applied'] = $this->Master_model->getMaster('job_apply', $where = $where_applied, $join = $join_test, $order = false, $field = false, $select = false, $limit = false, $start = false, $search = false);
