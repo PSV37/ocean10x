@@ -1008,6 +1008,11 @@ sup {
     font-size: 16px;
     color: red;
 }
+span.right-side {
+    display: table-cell;
+    padding-left: 10px;
+    padding-top: -32px;
+}
 </style>
 <div class="container-fluid main-d">
 <div class="container">
@@ -1085,9 +1090,10 @@ sup {
                <li class="right-title">&nbsp;:<?php if(!is_null($v_companyjobs['job_deadline'])) { echo date('M j Y',strtotime($v_companyjobs['job_deadline'])); } ?></li>
                <div class="clear"></div>
             </div>
-            <!-- <div id="skills"> -->
+            <div class="skl_bnft">
                <br><br>
             <span>Skill sets</span>:
+            <span class="right-side">
             <?php 
                $sk=$v_companyjobs['skills_required'];
                if (isset($sk) && !empty($sk)) {
@@ -1099,7 +1105,12 @@ sup {
             <lable class=""><button id="sklbtn"><?php echo  $skill_row['skill_name'];?></button></lable>
             <?php }
                } }   ?>
+            </span>
+               <div class="clear"></div>
+               </div> 
+            </div>
             <br>
+            <div class="skl_bnft">
             <span>Benefits</span>:
             <span class="right-side">
             <?php 
@@ -1112,8 +1123,9 @@ sup {
             <?php $i++; }
                }    ?>
             </span>
-            <!--  <div class="clear"></div>
-               </div> -->  
+             <div class="clear"></div>
+               </div>  
+            </div>
                <br>       
             <a title="details" href=" <?php echo base_url() ?>employer/preview_job_post/<?php echo $v_companyjobs['job_post_id'] ?>"><i class="fa fa-info-circle icon_backg"></i></a>
             <div class="btn-group">
