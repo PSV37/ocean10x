@@ -3924,7 +3924,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $where_cv = "corporate_cv_bank.cv_id = '$cv_id'";
             $join = array('education_level' => 'education_level.education_level_id = corporate_cv_bank.js_top_education | left outer');
             $data['cv_bank_data'] = $this->Master_model->get_master_row('corporate_cv_bank', $select = FALSE, $where = $where_cv, $join);
-            $data['fid']=$this->input->post('fid');
+            $data['fid']=$this->input->get('fid');
             //$data['cv_info'] = $this->Master_model->getMaster('corporate_cv_bank',$where=false);
             $this->load->view('fontend/employer/add_cv', $data);
         }
