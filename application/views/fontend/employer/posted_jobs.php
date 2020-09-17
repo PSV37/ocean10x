@@ -1013,6 +1013,9 @@ span.right-side {
     padding-left: 10px;
     padding-top: -32px;
 }
+.skl_bnft {
+    display: inline-flex;
+}
 </style>
 <div class="container-fluid main-d">
 <div class="container">
@@ -1090,8 +1093,9 @@ span.right-side {
                <li class="right-title">&nbsp;:<?php if(!is_null($v_companyjobs['job_deadline'])) { echo date('M j Y',strtotime($v_companyjobs['job_deadline'])); } ?></li>
                <div class="clear"></div>
             </div>
+             <br><br>
             <div class="skl_bnft">
-               <br><br>
+              
             <span>Skill sets</span>:
             <span class="right-side">
             <?php 
