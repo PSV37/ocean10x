@@ -1477,7 +1477,7 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
       <form method="post" action="<?php echo base_url(); ?>employer/copy_cvto_folder">
         <div class="modal-header">
           <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
-         <center><h4 class="modal-title"> Copy CV</h4></center> 
+         <center><h4 class="modal-title"> Copy CVs</h4></center> 
         </div>
         <div class="modal-body">
           <input type="hidden" name="cv_id" id="cv_id" value="">
@@ -2081,7 +2081,7 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
               {
               var elements = cvs_name.split(',').length;
             
-                 $('#no_of_cvs_move').html(elements);
+                 $('#no_of_cvs_move').html('No. of CVs:'+elements);
                  $('#cv_id').val(cvs_name);
                  setTimeout(function(){
                  $('#bulkcopy_cv').modal('show'); }, 500);
