@@ -1835,8 +1835,8 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
                     jQuery.each(parsed, function(index, item) {
                           obj[item.cv_folder_id] = item.folder_name;
                           var url = '<?php echo base_url(); ?>employer/corporate_cv_bank/'+item.cv_folder_id;
-  
-                          $('#cv_folders'+cv_id).append(+index+'. <a href="'+url+'">'+item.folder_name+'</a><br>');
+                          var j = index+1;
+                          $('#cv_folders'+cv_id).html(+j+'. <a href="'+url+'">'+item.folder_name+'</a><br>');
   
                       });
   
