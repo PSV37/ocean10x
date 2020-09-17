@@ -5534,7 +5534,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $where_applied = "job_apply.job_post_id='$job_id'";
         $data['Total_count_applied'] = $this->Master_model->getMaster('job_apply', $where = $where_applied, $join = FALSE, $order = false, $field = false, $select = false, $limit = false, $start = false, $search = false);
         //// $where_applied = "job_apply.apply_date <= apply_date(NOW(),INTERVAL 7 DAYS )') and job_posting.created_at <=created_at(NOW(),INTERVAL 7 DAYS )') job_apply.job_post_id='$job_id'";
-        $where_test_attempt_mandatory = "job_posting.is_test_required='Yes' and job_posting.job_post_id = '$job_id'";
+        $where_test_attempt_mandatory = "job_posting.is_test_required='Yes' and job_posting.job_post_id = '$job_id' group by job_apply.job_apply_id";
         $join_test = array('job_apply' => 'job_apply.job_post_id=job_posting.job_post_id', 'seeker_test_result' => 'seeker_test_result.test_id=job_posting.test_for_job');
         $data['Total_count_test_given'] = $this->Master_model->getMaster('job_posting', $where = $where_test_attempt_mandatory, $join = $join_test, $order = false, $field = false, $select = false, $limit = false, $start = false, $search = false);
         // print_r($this->db->last_query());
