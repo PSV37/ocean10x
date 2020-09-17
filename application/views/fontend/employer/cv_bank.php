@@ -1761,7 +1761,7 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
   $("#copy_cv_folder").change(function () {
       var slug = $(this).find(':selected').data("value");
       var url = "<?php echo base_url() ?>job/show/"+slug;
-      $('#cpy_btn').text('Copy - '+<?php echo $fname; ?>+' To '+slug);
+      $('#cpy_btn').text('Copy - '<?php echo $fname; ?>' To 'slug);
 
 });
   // function get_job_url()
