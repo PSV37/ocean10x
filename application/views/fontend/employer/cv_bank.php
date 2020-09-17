@@ -950,6 +950,14 @@
     margin-left: 2px;
     /* border-radius: 128px; */
 }
+div#comment_msg {
+    width: 382px;
+    height: auto;
+    border: 1px solid #ccc;
+    padding: 5px;
+    background-color: white;
+}
+
 </style>
 <div class="container-fluid main-d">
   <div class="container">
@@ -1277,27 +1285,35 @@
         <div class="modal-body" style="padding:15px 40px;">
           <input type="hidden" name="consultant" value="JobSeeker">  
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <label class="mdl-textfield__label" for="sample3">job Post:</label>
-            <select class="form-control select2" name="job_post_id">
+            <label class="mdl-textfield__label" for="sample3">Select Job Post</label>
+            <select class="form-control select2" name="job_post_id"  id="job__id">
               <?php foreach ($company_active_jobs as $row) { ?>
-              <option value="<?php echo $row->job_post_id ?>"><?php echo $row->job_title?></option>
+              <option data-value="<?php echo $row->job_slugs ?>" value="<?php echo $row->job_post_id ?>"><?php echo $row->job_title?></option>
               <?php } ?>
             </select>
           </div>
           <!--  <input type="hidden" name="job_post_id" value="" id="auto-value"> -->
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
-            <label class="mdl-textfield__label" for="sample3">Message:</label>
-            <textarea class="form-control" name="message" rows="5" id="comment" value="" required>Dear Candidate,
-            Greetings from (HRC/Corporate HR) Team !!
-            We have a job post on “Ocean” whose requirements can be met with a candidate of your skill sets. We would appreciate, if you could apply on this job post, by clicking on the URL provided below
-            ####job post url################
-            Your application will then be reviewed by the recruitment team, who will contact you regarding next steps should you clear the initial screening required for this position. Please be aware this may take a few days.
-            Should you wish to update your coordinates/CV on Ocean, you can login into Ocean and visit the Profile section, to carry out the necessary changes.
-            Best Regards,
-            HRC/Corporate HR Team</textarea>
+            <label class="mdl-textfield__label" for="sample3">Message</label>
+            <div contenteditable="true" name="message"id="comment_msg" required>Dear Candidate,<br><br>
+
+Your Profile matches a Vacancy that we have. Please check the details and apply for this Job, by clicking on the URL provided below.<br><br>
+  
+<span id="msg_url"></span><br><br>
+
+We shall review your Application and move forward on the next steps. <br><br>
+
+If you want to update your coordinates / CV on Ocean, you can login to The Ocean → Visit Profile Section.<br><br>
+
+Best Regards,<br><br>
+
+<?php echo $this->session->userdata('company_name'); ?><br>
+Phone : <?php echo $this->session->userdata('phone'); ?>
+
+</div>
           </div>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
-            <label class="mdl-textfield__label" for="sample3">Number of cvs: 1</label><br>
+            <label class="mdl-textfield__label" for="sample3">No. of Candidates (CVs) : 1</label><br>
           </div>
           <input type="hidden" name="forward_job_email" id="forward_job_email" value="<?php echo $cv_row['js_email']; ?>">
         </div>
@@ -1717,6 +1733,9 @@
   $('#test').click();
   }
   }
+  $(document).ready(function() {
+        CKEDITOR.config.readOnly = true;
+    });
   $(document).keyup(function(e) {
   if (e.keyCode == 27) { // escape key maps to keycode `27`
    // alert('dd');
@@ -1740,7 +1759,22 @@
   $('#del_modal').prop('action',newUrl);
   $('#delete').modal("show");
   }
-  
+
+  $("#job__id").change(function () {
+      var slug = $(this).find(':selected').data("value");
+      var url = "<?php echo base_url() ?>job/show/"+slug;
+      $('#msg_url').text(url);
+
+});
+  // function get_job_url()
+  // {
+  //     var ddlFruits = document.getElementById("job__id");
+  //     var selectedText = ddlFruits.options[ddlFruits.selectedIndex].innerHTML;
+  //     var slug = $('#job__id').getAttribute('data-value');
+  //     console.log(slug);
+  //     var url = "<?php echo base_url() ?>job/show/"+slug;
+  //     $('#comment_msg').append(url);
+  // }
   
   
 </script>
