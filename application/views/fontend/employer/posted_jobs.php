@@ -1497,6 +1497,7 @@ function get_trash()
                url:'<?php echo base_url();?>Employer/get_test_list',
                data:{test_status:test_type},
                success:function(res){
+                  alert(res.length);
                   if (res.length > 0) 
                   {
                    $('#test_id_modal'+job_id).html(res);
