@@ -2037,7 +2037,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         // $where = "technical_id = '$technical_id' and topic_id ='$topic_id' and subtopic_id ='$subtopic_id' and level ='$level' and ques_type ='$ques_type' ";
         $where = "technical_id = '$technical_id'  and level ='$level' and ques_type ='$ques_type' ";
         $questions = $this->Master_model->getMaster('questionbank', $where, $join = FALSE, $order = 'RANDOM', $field = 'ques_id', $select = false, $limit = 20, $start = false, $search = false);
-        print_r($this->db->last_query());
+        // print_r($this->db->last_query());
         $test_questions = array();
         foreach ($questions as $row) {
             array_push($test_questions, $row['ques_id']);
@@ -5559,15 +5559,17 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $test_status = $this->input->post('test_status');
         $where_all = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id' and test_status = '$test_status'";
         $oceanchamp_tests = $this->Master_model->getMaster('oceanchamp_tests', $where = $where_all, $join = FALSE, $order = 'desc', $field = 'oceanchamp_tests.test_id', $select = false, $limit = false, $start = false, $search = false);
+        $result;
         // print_r($this->db->last_query());
         if (!empty($oceanchamp_tests)) {
-            $result.= '<option value="">Select Test</option>';
+            // $result.= '<option value="">Select Test</option>';
             foreach ($oceanchamp_tests as $key) {
                 $result.= '<option value="' . $key['test_id'] . '">' . $key['test_name'] . '</option>';
             }
-        } else {
-            $result.= '<option value="0">Test not available</option>';
-        }
+        } 
+        // else {
+        //     $result.= '<option value="0">Test not available</option>';
+        // }
         echo $result;
     }
     public function attach_test() {
