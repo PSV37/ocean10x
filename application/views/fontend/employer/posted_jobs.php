@@ -1189,6 +1189,7 @@ sup {
               </div>
                   
                </div>
+               <div id="test_div" style="display: none;">
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
               <label class="mdl-textfield__label" for="sample3">Tests</label> 
                   <select class="form-control select2" name="test_id" id="test_id_modal<?php echo $v_companyjobs->job_post_id; ?>" onchange="get_test_details(<?php echo $v_companyjobs->job_post_id; ?>);">
@@ -1226,6 +1227,7 @@ sup {
             </div>
             <div class="modal-footer">
                <button type="submit" class="btn btn-save">Attach Test</button>
+            </div>
             </div>
          </form>
       </div>
@@ -1475,7 +1477,7 @@ function get_trash()
                data:{test_status:test_type},
                success:function(res){
                    $('#test_id_modal'+job_id).html(res);
-                   // $('#company_pincode').val('');
+                   $('#test_div').show();
                }
             })
          }
