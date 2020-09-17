@@ -1246,10 +1246,11 @@ span.right-side {
             </div>
              
               
-            </div>
+           
             <div class="modal-footer">
                <button type="submit" class="btn btn-save">Attach Test</button>
             </div>
+         </div>
             </div>
          </form>
       </div>
