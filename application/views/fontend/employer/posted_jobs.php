@@ -1124,8 +1124,8 @@ span.right-side {
                }    ?>
             </span>
              <div class="clear"></div>
-               </div>  
-            </div>
+            </div>  
+            
                <br>       
             <a title="details" href=" <?php echo base_url() ?>employer/preview_job_post/<?php echo $v_companyjobs['job_post_id'] ?>"><i class="fa fa-info-circle icon_backg"></i></a>
             <div class="btn-group">
