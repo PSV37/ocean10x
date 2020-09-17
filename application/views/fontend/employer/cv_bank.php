@@ -955,6 +955,7 @@ div#comment_msg {
     height: auto;
     border: 1px solid #ccc;
     padding: 5px;
+    background-color: white;
 }
 
 </style>
@@ -1294,7 +1295,7 @@ div#comment_msg {
           <!--  <input type="hidden" name="job_post_id" value="" id="auto-value"> -->
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
             <label class="mdl-textfield__label" for="sample3">Message</label>
-            <div name="message"id="comment_msg" required>Dear Candidate,<br><br>
+            <div contenteditable="true" name="message"id="comment_msg" required>Dear Candidate,<br><br>
 
 Your Profile matches a Vacancy that we have. Please check the details and apply for this Job, by clicking on the URL provided below.<br><br>
   
