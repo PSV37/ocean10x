@@ -309,7 +309,8 @@
               </div>
               <input type="hidden" name="job_id" value="<?php echo $job_id; ?>">
               <div class="preview_btns">
-                <button type="button" class="back_btn">Back</button>
+                  <a href="<?php echo base_url() ?>employer/active-job"> <button type="button" class="back_btn">Back</button></a>
+               
                 <button type="submit" name="edit" class="edit_btn">Edit</button>
                 <?php if (isset($preview)) {
                     # code...
