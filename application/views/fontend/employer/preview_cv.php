@@ -240,7 +240,7 @@
               <div class="icon-info">
                 <li class="left-icon-title"><i class="fa fa-envelope"></i></li>
                 <li class="right-icon-title"> &emsp;<?php echo $cv_bank_data['js_email']; ?></li>
-                <li class="left-icon-title"><i class="fa fa-phone"></i></li>
+                <li class="left-icon-title"><i class="fa fa-phone-alt"></i></li>
                 <li class="right-icon-title"> &emsp;<?php echo $cv_bank_data['js_mobile']; ?></li>
                  <li class="left-icon-title"><i class="fas fa-briefcase"></i></li>
                 <li class="right-icon-title"> &emsp;<?php echo $cv_bank_data['js_experience']; ?> years</li>
