@@ -997,7 +997,7 @@
 .btn-group {
     float: right;
     margin-top: 3px;
-    margin-right: 10px;
+    /*margin-right: 10px;*/
 }
 a.myclass {
     font-weight: 600;
