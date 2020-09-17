@@ -1294,7 +1294,7 @@ div#comment_msg {
           <!--  <input type="hidden" name="job_post_id" value="" id="auto-value"> -->
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
             <label class="mdl-textfield__label" for="sample3">Message</label>
-            <div contenteditable="true" name="message"id="comment_msg" required>Dear Candidate,<br><br>
+            <div name="message"id="comment_msg" required>Dear Candidate,<br><br>
 
 Your Profile matches a Vacancy that we have. Please check the details and apply for this Job, by clicking on the URL provided below.<br><br>
   
@@ -1732,6 +1732,9 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
   $('#test').click();
   }
   }
+  $(document).ready(function() {
+        CKEDITOR.config.readOnly = true;
+    });
   $(document).keyup(function(e) {
   if (e.keyCode == 27) { // escape key maps to keycode `27`
    // alert('dd');
