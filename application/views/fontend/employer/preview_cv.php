@@ -269,7 +269,7 @@
                 <li class="right-title">
                   &nbsp;: <?php if (isset($cv_bank_data['js_resume']) && !empty($cv_bank_data['js_resume'])) {
                     echo "Yes"; ?>
-                  <!-- <a href="<?php echo base_url() ?>upload/job_description/<?php echo $jd_file; ?>" target="_blank"><i class="fa fa-file" aria-hidden="true"></i></a> -->
+                   <a href="<?php echo base_url() ?>upload/job_description/<?php echo $jd_file; ?>" target="_blank"><i class="fa fa-file" aria-hidden="true"></i></a> 
                   <a style="margin-left: 15px" href="<?php echo base_url() ?>upload/Resumes/<?php echo $cv_bank_data['js_resume']; ?>" download><i class="fa fa-download" aria-hidden="true"></i></a>
                   <?php   }else{
                     echo "No";
