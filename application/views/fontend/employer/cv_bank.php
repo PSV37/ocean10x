@@ -1277,27 +1277,31 @@
         <div class="modal-body" style="padding:15px 40px;">
           <input type="hidden" name="consultant" value="JobSeeker">  
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <label class="mdl-textfield__label" for="sample3">job Post:</label>
-            <select class="form-control select2" name="job_post_id">
+            <label class="mdl-textfield__label" for="sample3">Select Job Post</label>
+            <select class="form-control select2" name="job_post_id" onchange="get_job_url();" id="job__id">
               <?php foreach ($company_active_jobs as $row) { ?>
-              <option value="<?php echo $row->job_post_id ?>"><?php echo $row->job_title?></option>
+              <option data-value="<?php echo $row->job_slug ?>" value="<?php echo $row->job_post_id ?>"><?php echo $row->job_title?></option>
               <?php } ?>
             </select>
           </div>
           <!--  <input type="hidden" name="job_post_id" value="" id="auto-value"> -->
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
-            <label class="mdl-textfield__label" for="sample3">Message:</label>
+            <label class="mdl-textfield__label" for="sample3">Message</label>
             <textarea class="form-control" name="message" rows="5" id="comment" value="" required>Dear Candidate,
-            Greetings from (HRC/Corporate HR) Team !!
-            We have a job post on “Ocean” whose requirements can be met with a candidate of your skill sets. We would appreciate, if you could apply on this job post, by clicking on the URL provided below
-            ####job post url################
-            Your application will then be reviewed by the recruitment team, who will contact you regarding next steps should you clear the initial screening required for this position. Please be aware this may take a few days.
-            Should you wish to update your coordinates/CV on Ocean, you can login into Ocean and visit the Profile section, to carry out the necessary changes.
-            Best Regards,
-            HRC/Corporate HR Team</textarea>
+
+Your Profile matches a Vacancy that we have. Please check the details and apply for this Job, by clicking on the URL provided below.
+  
+<span id="job_url"></span>
+
+We shall review your Application and move forward on the next steps. 
+
+If you want to update your coordinates / CV on Ocean, you can login to The Ocean → Visit Profile Section.
+
+Best Regards,
+</textarea>
           </div>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
-            <label class="mdl-textfield__label" for="sample3">Number of cvs: 1</label><br>
+            <label class="mdl-textfield__label" for="sample3">No. of Candidates (CVs) : 1</label><br>
           </div>
           <input type="hidden" name="forward_job_email" id="forward_job_email" value="<?php echo $cv_row['js_email']; ?>">
         </div>
@@ -1741,6 +1745,14 @@
   $('#delete').modal("show");
   }
   
+  function get_job_url()
+  {
+      var ddlFruits = document.getElementById("job__id");
+      var selectedText = ddlFruits.options[ddlFruits.selectedIndex].innerHTML;
+      var slug = $('#job__id').attr('data-value');
+      var url = "<?php echo base_url() ?>job/show/"+slug;
+      $('#job_url').text(url);
+  }
   
   
 </script>
