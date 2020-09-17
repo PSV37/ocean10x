@@ -950,6 +950,13 @@
     margin-left: 2px;
     /* border-radius: 128px; */
 }
+div.editable {
+    width: 382px;
+    height: 200px;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
 </style>
 <div class="container-fluid main-d">
   <div class="container">
@@ -1287,11 +1294,11 @@
           <!--  <input type="hidden" name="job_post_id" value="" id="auto-value"> -->
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
             <label class="mdl-textfield__label" for="sample3">Message</label>
-            <div contenteditable="true" class="form-control" name="message" rows="5" id="comment_msg" value="" required>Dear Candidate,
+            <div contenteditable="true" class="form-control" name="message" rows="5" id="comment_msg" value="" required>Dear Candidate,<br><br>
 
 Your Profile matches a Vacancy that we have. Please check the details and apply for this Job, by clicking on the URL provided below.
   
-<span id="url_msg"></span>
+
 
 We shall review your Application and move forward on the next steps. 
 
@@ -1303,7 +1310,7 @@ Best Regards,
 
 Phone : 91919191
 
-</div>
+</textarea>
           </div>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
             <label class="mdl-textfield__label" for="sample3">No. of Candidates (CVs) : 1</label><br>
@@ -1753,7 +1760,7 @@ Phone : 91919191
   $("#job__id").change(function () {
       var slug = $(this).find(':selected').data("value");
       var url = "<?php echo base_url() ?>job/show/"+slug;
-      $('#url_msg').append(url);
+      $('#comment_msg').append(url);
 
 });
   // function get_job_url()
