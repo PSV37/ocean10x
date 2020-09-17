@@ -1101,6 +1101,7 @@ sup {
                } }   ?>
             <br>
             <span>Benefits</span>:
+            <span class="right-side">
             <?php 
                $benefits=explode(',', $v_companyjobs['benefits']);
                
@@ -1110,6 +1111,7 @@ sup {
             <lable class=""><button id="sklbtn"><?php echo  $benefits[$i];?></button></lable>
             <?php $i++; }
                }    ?>
+            </span>
             <!--  <div class="clear"></div>
                </div> -->  
                <br>       
@@ -1190,6 +1192,7 @@ sup {
                   
                </div>
                <div id="test_div" style="display: none;">
+                  <span id="msg"></span>
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
               <label class="mdl-textfield__label" for="sample3">Tests</label> 
                   <select class="form-control select2" name="test_id" id="test_id_modal<?php echo $v_companyjobs->job_post_id; ?>" onchange="get_test_details(<?php echo $v_companyjobs->job_post_id; ?>);">
@@ -1476,8 +1479,16 @@ function get_trash()
                url:'<?php echo base_url();?>Employer/get_test_list',
                data:{test_status:test_type},
                success:function(res){
+                  if (res.length > 0) 
+                  {
                    $('#test_id_modal'+job_id).html(res);
                    $('#test_div').show();
+                  }
+                  else
+                  {
+                     $('#msg').html('Tests not Added');
+                     $('#test_div').hide();
+                  }
                }
             })
          }
