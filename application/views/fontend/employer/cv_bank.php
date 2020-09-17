@@ -984,7 +984,7 @@
               <ul id="myDropdown"  class="dd-menu">
                 <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="frwd_post();">Forward Job Post</a></li>
                 <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="copy_cvs();">Copy CVs</a></li>
-                <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="update_cvs();">Update From Ocean</a></li>
+                <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="update_cvs();">Sync with Ocean</a></li>
                 <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="download_cvs();">Download CVs</a></li>
                 <li> <a href="#" id="frwd_btn" data-toggle="modal" data-keyboard="true"  data-target="#bulkupload">Bulk Upload CVs</a></li>
                 <li> <a href="#" id="frwd_btn" data-toggle="modal" data-keyboard="true" data-target="#bulkupload_folder">Upload Folder & Contents</a></li>
