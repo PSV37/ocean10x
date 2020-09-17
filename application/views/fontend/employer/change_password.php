@@ -66,7 +66,7 @@
                   <div class="form-group lineitem_id ">
                      <label for="exampleInputEmail1">Username<span class="required">*</span></label>
                      <input type="username" name="username" id="myInput1" class="form-control">
-                     <span toggle="#password-field" class="fa fa-eye-slash field-icon toggle-password1"></span>
+                     <!--<span toggle="#password-field" class="fa fa-eye-slash field-icon toggle-password1"></span>-->
                   </div>
                </div>
             </div>
