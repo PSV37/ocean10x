@@ -982,12 +982,12 @@
               </div>
               <input type="checkbox" class="dd-input" id="test1">
               <ul id="myDropdown"  class="dd-menu">
-                <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="frwd_post();">Forward Job</a></li>
-                <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="copy_cvs();">Copy CV</a></li>
+                <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="frwd_post();">Forward Job Post</a></li>
+                <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="copy_cvs();">Copy CVs</a></li>
                 <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="update_cvs();">Update From Ocean</a></li>
-                <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="download_cvs();">Download CV</a></li>
-                <li> <a href="#" id="frwd_btn" data-toggle="modal" data-keyboard="true"  data-target="#bulkupload">Bulk Upload</a></li>
-                <li> <a href="#" id="frwd_btn" data-toggle="modal" data-keyboard="true" data-target="#bulkupload_folder">Folder Upload</a></li>
+                <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="download_cvs();">Download CVs</a></li>
+                <li> <a href="#" id="frwd_btn" data-toggle="modal" data-keyboard="true"  data-target="#bulkupload">Bulk Upload CVs</a></li>
+                <li> <a href="#" id="frwd_btn" data-toggle="modal" data-keyboard="true" data-target="#bulkupload_folder">Upload Folder & Contents</a></li>
               </ul>
             </label>
             <div class="clear"></div>
