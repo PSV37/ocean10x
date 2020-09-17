@@ -952,7 +952,7 @@
 }
 div#comment_msg {
     width: 382px;
-    height: 200px;
+    height: auto;
     border: 1px solid #ccc;
     padding: 5px;
 }
@@ -1306,10 +1306,10 @@ If you want to update your coordinates / CV on Ocean, you can login to The Ocean
 
 Best Regards,<br><br>
 
-<?php echo $this->session->userdata('company_name'); ?>
+<?php echo $this->session->userdata('company_name'); ?><br>
 Phone : <?php echo $this->session->userdata('phone'); ?>
 
-</textarea>
+</div>
           </div>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
             <label class="mdl-textfield__label" for="sample3">No. of Candidates (CVs) : 1</label><br>
