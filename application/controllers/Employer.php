@@ -3656,9 +3656,28 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                             redirect('employer/profile-setting');
                         }
                     }
-                    $cv_data = array('company_id' => $company_id, 'js_name' => $this->input->post('candidate_name'), 'js_email' => $this->input->post('candidate_email'), 'js_mobile' => $this->input->post('candidate_phone'), 'js_job_type' => $this->input->post('job_type'), 'js_current_designation' => $this->input->post('current_job_desig'), 'js_working_since' => date('Y-m-d', strtotime($this->input->post('working_current_since'))), 'js_current_ctc' => $this->input->post('current_ctc'), 'js_current_notice_period' => $this->input->post('candidate_notice_period'), 'js_experience' => $this->input->post('candidate_experiance'), 'js_last_salary_hike' => date('Y-m-d', strtotime($this->input->post('last_salary_hike'))), 'js_top_education' => $this->input->post('top_education'),
+                    $cv_data = array(
+                        'company_id' => $company_id, 
+                        'js_name' => $this->input->post('candidate_name'), 
+                        'js_email' => $this->input->post('candidate_email'), 
+                        'js_mobile' => $this->input->post('candidate_phone'), 
+                        'js_job_type' => $this->input->post('job_type'), 
+                        'js_current_designation' => $this->input->post('current_job_desig'), 
+                        'js_working_since' => date('Y-m-d', strtotime($this->input->post('working_current_since'))), 
+                        'js_current_ctc' => $this->input->post('current_ctc'), 
+                        'js_current_notice_period' => $this->input->post('candidate_notice_period'), 
+                        'js_experience' => $this->input->post('candidate_experiance'), 
+                        'js_last_salary_hike' => date('Y-m-d', strtotime($this->input->post('last_salary_hike'))), 
+                        'js_top_education' => $this->input->post('top_education'),
                     // 'js_edu_special'             => $this->input->post('education_specialization'),
-                    'js_skill_set' => implode(',', $this->input->post('candidate_skills')), 'js_certifications' => $this->input->post('candidate_certification'), 'js_industry' => $this->input->post('candidate_industry'), 'js_role' => $this->input->post('candidate_role'), 'js_expected_salary' => $this->input->post('candidate_expected_sal'), 'js_desired_work_location' => $this->input->post('desired_wrok_location'), 'current_org' => $this->input->post('current_org'), 'ocean_candidate' => $ocean_candidate, 'js_resume' => $cand_resume,);
+                    'js_skill_set' => implode(',', $this->input->post('candidate_skills')), 
+                    'js_certifications' => $this->input->post('candidate_certification'), 
+                    'js_industry' => $this->input->post('candidate_industry'), 
+                    'js_role' => $this->input->post('candidate_role'), 
+                    'js_expected_salary' => $this->input->post('candidate_expected_sal'), 
+                    'js_desired_work_location' => $this->input->post('desired_wrok_location'), 
+                    'current_org' => $this->input->post('current_org'), 
+                    'ocean_candidate' => $ocean_candidate, 'js_resume' => $cand_resume,);
                     $cv_data['updated_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
                     $cv_data['updated_by'] = $company_id;
                     $where_del['cv_id'] = $update_cv_id;
@@ -3711,8 +3730,10 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                             $apply = $this->Master_model->master_insert($apply_array, 'job_apply');
                             $frwd_array = array('cv_id' => $cv_id, 'company_id' => $company_id, 'job_post_id' => $job_post_id, 'apply_id' => $apply, 'status' => 1, 'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),);
                             $frwd = $this->Master_model->master_insert($frwd_array, 'forwarded_jobs_cv');
-                            $external_array = array('cv_id' => $cv_id, 'company_id' => $employer_id, 'job_post_id' => $job_post_id, 'apply_id' => $apply, 'status' => 1, 'company_id' => $company_id, 'name' => $this->input->post('
-                                        candidate_name'), 'email' => $this->input->post('candidate_email'), 'mobile' => $this->input->post('candidate_phone'), 'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),);
+                            $external_array = array('cv_id' => $cv_id, 'company_id' => $employer_id, 'job_post_id' => $job_post_id, 'apply_id' => $apply, 'status' => 1, 'company_id' => $company_id, 'name' => $this->input->post('candidate_name'), 
+                                'email' => $this->input->post('candidate_email'), 
+                                'mobile' => $this->input->post('candidate_phone'), 
+                                'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),);
                             $frwd = $this->Master_model->master_insert($external_array, 'external_tracker');
                         }
                         if ($apply) {
@@ -3903,6 +3924,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $where_cv = "corporate_cv_bank.cv_id = '$cv_id'";
             $join = array('education_level' => 'education_level.education_level_id = corporate_cv_bank.js_top_education | left outer');
             $data['cv_bank_data'] = $this->Master_model->get_master_row('corporate_cv_bank', $select = FALSE, $where = $where_cv, $join);
+            $data['fid']=$this->input->post('fid');
             //$data['cv_info'] = $this->Master_model->getMaster('corporate_cv_bank',$where=false);
             $this->load->view('fontend/employer/add_cv', $data);
         }
