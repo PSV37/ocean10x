@@ -1,4 +1,4 @@
-<!---header-->
+-header-->
 <?php 
    $company_profile_id = $this->session->userdata('company_profile_id');
    
@@ -259,13 +259,17 @@
    padding: 8px 21px -7px 0px;
    }
    .card div {border-radius:0px !important;}    
-   .following-info{margin-bottom:10px;}
+   .following-info{margin-bottom:10px;
+    float: left;
+    line-height: 30px;
+}
    .following-info2{margin-bottom:10px;margin-left: 205px;
     line-height: 24px;}   
    .following-info3 {
     margin-bottom: 10px;
-    margin-top: -107px;
-        margin-right: -20px;
+    margin-top: -134px;
+    margin-right: -33px;
+    line-height: 30px;
 }
    .active-job label {
    transform-style: preserve-3d;
@@ -1018,6 +1022,12 @@ span.right-side {
 .skl_bnft {
     display: inline-flex;
 }
+li.right-title {
+    list-style-type: none;
+    font-size: 12px;
+    font-weight: 100;
+    width: 202px;
+}
 </style>
 <div class="container-fluid main-d">
 <div class="container">
@@ -1043,6 +1053,8 @@ span.right-side {
                <p class="job_title"><?php echo $v_companyjobs['job_title']; ?></p>
             </div>
             <div class="icon-info">
+               <li class="left-icon-title"><i class="money-bill-alt"></i></li>
+               <li class="right-icon-title"> &emsp;<?php echo $v_companyjobs['salary_range']; ?></li>
                <li class="left-icon-title"><i class="fas fa-map-marker-alt"></i></li>
                <li class="right-icon-title"> &emsp;<?php echo $v_companyjobs['city_id']; ?></li>
                <li class="left-icon-title"><i class="fas fa-briefcase"></i></li>
@@ -1059,8 +1071,8 @@ span.right-side {
                <li class="left-title">Domain</li>
                <li class="right-title">&nbsp;:<?php echo $v_companyjobs['job_category_name']; ?></li>
                <!--  <li class="left-title">Role Type </li><li class="right-title">&nbsp;:</li> -->
-               <li class="left-title">Dummy1</li>
-               <li class="right-title">&nbsp;:</li>
+               <!-- <li class="left-title">Dummy1</li>
+               <li class="right-title">&nbsp;:</li> -->
                <!--  <li class="left-title">Dummy2</li><li class="right-title">&nbsp;:</li> -->
                <div class="clear"></div>
             </div>
@@ -1070,7 +1082,7 @@ span.right-side {
                <li class="left-title">experience</li>
                <li class="right-title">&nbsp;:<?php echo $v_companyjobs['experience']; ?></li>
                <li class="left-title">CTC</li>
-               <li class="right-title">&nbsp;:<?php echo $v_companyjobs['salary_range']; ?></li>
+               <!-- <li class="right-title">&nbsp;:<?php echo $v_companyjobs['salary_range']; ?></li> -->
                <li class="left-title">Vacancies</li>
                <li class="right-title">&nbsp;: <?php echo $v_companyjobs['no_jobs']; ?></li>
                <!-- <li class="left-title">Specialization</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->education_specialization; ?></li> -->
@@ -1095,7 +1107,7 @@ span.right-side {
                <li class="right-title">&nbsp;:<?php if(!is_null($v_companyjobs['job_deadline'])) { echo date('M j Y',strtotime($v_companyjobs['job_deadline'])); } ?></li>
                <div class="clear"></div>
             </div>
-             <br><br><br>
+             <br><br>
             <div class="skl_bnft">
               
             <span>Skill sets</span>:
@@ -1871,4 +1883,4 @@ function get_trash()
     
    
    
-</script> -->
+</script> 
