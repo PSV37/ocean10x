@@ -1173,6 +1173,23 @@
           <div class="filter1">
             <p style="font-size:18px;">Domain</p>
             <select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" tabindex="-98">
+              <option value=""></option>
+              <?php
+                    $value =  set_value('candidate_industry');
+                    if (!empty($value)) {
+                      echo $this->job_category_model->selected($value);
+                    }
+                     if (!empty($this->session->userdata('job_category'))) {
+                      echo $this->job_category_model->selected($this->session->userdata('job_category'));
+                    } else if(!empty($job_info->job_category)) {
+                       echo $this->job_category_model->selected($job_info->job_category);
+                       }
+                    
+                        else {
+                       echo $this->job_category_model->selected();
+                       }
+                       ?>
+<!--                       
               <optgroup label="Driver Groups">
                 <option>BEC</option>
                 <option>VMA</option>
@@ -1182,7 +1199,7 @@
                 <option>Fanny</option>
                 <option>Rudy</option>
                 <option>Ahmed</option>
-              </optgroup>
+              </optgroup>-->
             </select>
           </div>
           <div class="filter1">
