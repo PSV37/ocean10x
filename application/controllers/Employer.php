@@ -1139,7 +1139,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                         $message = 'hi'
                                 ;
                         $send = sendEmail_JobRequest($email[$i], $message, $subject);
-                        //echo $send;
+                        echo $send;die;
                         // echo $message;
                         $company_name = $this->session->userdata('company_name');
                         $data = array('company' => $company_name, 'action_taken_for' => $email[$i], 'field_changed' => 'Forwarded Job ', 'Action' => $company_name . ' Forwarded job for the position of ' . $require['job_title'], 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
