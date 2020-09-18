@@ -1069,7 +1069,7 @@ button.folder_popup {
                   }
                  
                  ?>
-          <label>
+          <label class="checkbox_label">
             <div class="check">
               <input type="checkbox" value="<?php echo $cv_row['js_email']; ?>" data-valuetwo="<?php echo $cv_row['cv_id'];  ?>" data-valueone="<?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ echo $cv_row['js_resume']; } ?>" class="chkbx" id="chkbx" />
             </div>
@@ -2031,16 +2031,17 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
   
            }
    });
-   $('.check').click(function ()
+   $('.checkbox_label').click(function ()
    {
    var checkbox = $(this).find('input[type=checkbox]');
    $('.chkbx').prop("checked",false);
    
    checkbox.prop("checked", !checkbox.prop("checked"));
    var addclass = 'highlight_div';
-   $('.check').removeClass(addclass);
+   $('.checkbox_label').removeClass(addclass);
    $(this).addClass(addclass);
    });
+   
    // $(document).on('click','#chkbx',function() {
    //         // $('.chkbx').prop("checked" , this.checked);
    //         if (this.checked == true) 
