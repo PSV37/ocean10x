@@ -1313,12 +1313,33 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
             <label class="mdl-textfield__label" for="sample3">No. of Candidates (CVs) : 1</label><br>
           </div>
-          <?php $i=1; if (!empty($jobs_data)) {
+          <div class="accordion" id="accordionExample">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h2 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Forwarded Jobs
+                </button>
+              </h2>
+            </div>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="card-body">
+                 <?php $i=1; if (!empty($jobs_data)) {
             # code...
            foreach ($jobs_data as $row) { ?>
            <p><?php echo $i; ?> Job Post Sent - <?php echo $row['job_title']; ?> - <?php echo date('d-m-Y H:i:s',strtotime($row['created_on'])) ; ?>
 
         <?php $i++;  } } ?>
+              </div>
+            </div>
+          </div>
+         <!--  <?php $i=1; if (!empty($jobs_data)) {
+            # code...
+           foreach ($jobs_data as $row) { ?>
+           <p><?php echo $i; ?> Job Post Sent - <?php echo $row['job_title']; ?> - <?php echo date('d-m-Y H:i:s',strtotime($row['created_on'])) ; ?>
+
+        <?php $i++;  } } ?> -->
           <input type="hidden" name="forward_job_email" id="forward_job_email" value="<?php echo $cv_row['js_email']; ?>">
         </div>
         <div class="modal-footer">
