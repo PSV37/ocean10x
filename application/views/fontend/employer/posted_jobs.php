@@ -1,4 +1,3 @@
--header-->
 <?php 
    $company_profile_id = $this->session->userdata('company_profile_id');
    
@@ -263,12 +262,12 @@
     float: left;
     line-height: 30px;
 }
-   .following-info2{margin-bottom:10px;margin-left: 205px;
-    line-height: 24px;}   
+   .following-info2{margin-bottom:10px;margin-left: 210px;
+    line-height: 30px;}   
    .following-info3 {
     margin-bottom: 10px;
-    margin-top: -134px;
-    margin-right: -33px;
+    margin-top: -100px;
+    margin-right: -35px;
     line-height: 30px;
 }
    .active-job label {
@@ -1028,6 +1027,20 @@ li.right-title {
     font-weight: 100;
     width: 202px;
 }
+button.btn.btn-primary.trash {
+    background-color: #18c5bd;
+    width: 85px;
+    border: none;
+    margin-top: 0px;
+    margin-left: 2px;
+    border-radius: 128px;
+        float: right;
+}
+.icon-info {
+    margin-left: 16px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
 </style>
 <div class="container-fluid main-d">
 <div class="container">
@@ -1036,7 +1049,7 @@ li.right-title {
 <!-- <div class="panel-body"></div> -->
 <div class="col-md-6 active-job">
    <div id="smsg"> <?php echo $this->session->flashdata('success'); ?></div>
-    <a href="#" style="float: right;margin-right: 34px;margin-top: 2px;background-color: #18c5bd;/* width: 52px; */" onclick="get_trash();"><button class="btn btn-primary" style="background-color: #18c5bd;width: 70px;border: none;"><i class="fas fa-trash-alt" ></i> Trash</button></a>
+    <a href="#" onclick="get_trash();"><button class="btn btn-primary trash" ><i class="fas fa-trash-alt" ></i> Trash</button></a>
    <br><br>
    <div id="job_trash">
    <?php if (!empty($company_active_jobs)): foreach ($company_active_jobs as $v_companyjobs) : ?>
@@ -1053,8 +1066,15 @@ li.right-title {
                <p class="job_title"><?php echo $v_companyjobs['job_title']; ?></p>
             </div>
             <div class="icon-info">
-               <li class="left-icon-title"><i class="money-bill-alt"></i></li>
-               <li class="right-icon-title"> &emsp;<?php echo $v_companyjobs['salary_range']; ?></li>
+               <li class="left-icon-title"><i class="far fa-money-bill-alt"></i></li>
+               <li class="right-icon-title"> &emsp;<?php echo $v_companyjobs['salary_range']; ?> (Yearly - <?php  $currency = $this->session->userdata('currency');  if (isset($currency) && !empty($currency)) {
+                  $locale='en-US'; //browser or user locale
+                   // $currency='JPY';
+                   $fmt = new NumberFormatter( $locale."@currency=$currency", NumberFormatter::CURRENCY );
+                   $symbol = $fmt->getSymbol(NumberFormatter::CURRENCY_SYMBOL);
+                   header("Content-Type: text/html; charset=UTF-8;");
+                      echo $symbol;echo $symbol;
+                  } ?>)  </li>
                <li class="left-icon-title"><i class="fas fa-map-marker-alt"></i></li>
                <li class="right-icon-title"> &emsp;<?php echo $v_companyjobs['city_id']; ?></li>
                <li class="left-icon-title"><i class="fas fa-briefcase"></i></li>
@@ -1065,44 +1085,41 @@ li.right-title {
             <div class="following-info">
                <li class="left-title"
                   >Job Role </li>
-               <li class="right-title">&nbsp;: <?php echo $v_companyjobs['job_role_title']; ?></li>
-               <li class="left-title">Engagement</li>
-               <li class="right-title">&nbsp;: <?php echo $v_companyjobs['job_nature_name']; ?></li>
+                  <li class="right-title">&nbsp;: <?php echo $v_companyjobs['job_role_title']; ?></li>
+                  <li class="left-title">Education</li>
+               <li class="right-title">&nbsp;: <?php echo $v_companyjobs['education_level_name']; ?></li>
+               
+               
                <li class="left-title">Domain</li>
                <li class="right-title">&nbsp;:<?php echo $v_companyjobs['job_category_name']; ?></li>
-               <!--  <li class="left-title">Role Type </li><li class="right-title">&nbsp;:</li> -->
-               <!-- <li class="left-title">Dummy1</li>
-               <li class="right-title">&nbsp;:</li> -->
-               <!--  <li class="left-title">Dummy2</li><li class="right-title">&nbsp;:</li> -->
+              
+              
                <div class="clear"></div>
             </div>
             <div class="following-info2">
-               <li class="left-title">Education</li>
-               <li class="right-title">&nbsp;: <?php echo $v_companyjobs['education_level_name']; ?></li>
-               <li class="left-title">experience</li>
-               <li class="right-title">&nbsp;:<?php echo $v_companyjobs['experience']; ?></li>
-               <li class="left-title">CTC</li>
-               <!-- <li class="right-title">&nbsp;:<?php echo $v_companyjobs['salary_range']; ?></li> -->
-               <li class="left-title">Vacancies</li>
+               
+             <li class="left-title">Vacancies</li>
                <li class="right-title">&nbsp;: <?php echo $v_companyjobs['no_jobs']; ?></li>
-               <!-- <li class="left-title">Specialization</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->education_specialization; ?></li> -->
-               <!--  <li class="left-title">Joining ETA</li><li class="right-title">&nbsp;:30 days</li> -->
-               <!--  <li class="left-title">Benifits</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->benefits; ?> </li> -->
-               <!--   <li class="left-title">Dummy3</li><li class="right-title">&nbsp;:value</li> -->
+               <li class="left-title">Engagement</li>
+               <li class="right-title">&nbsp;: <?php echo $v_companyjobs['job_nature_name']; ?></li>
+               
+              
+                <li class="left-title">Published on</li>
+               <li class="right-title">&nbsp;:<?php if(!is_null($v_companyjobs['created_at'])) { echo date('M j Y',strtotime($v_companyjobs['created_at'])); } ?></li>
                <div class="clear"></div>
             </div>
             <div class="following-info3">
-               <li class="left-title">JD attached&nbsp;<i class="fas fa-link"></i></li>
-               <li class="right-title">&nbsp;: <?php if (isset($v_companyjobs['jd_file']) && !empty($v_companyjobs['jd_file'])) { echo "Yes"; ?>  <a style="margin-left: 15px" href="<?php echo base_url() ?>upload/job_description/<?php echo $v_companyjobs['jd_file']; ?>" download><i class="fa fa-download" aria-hidden="true"></i></a> <?php } else { echo "No";} ?></li>
-
+               
+               
                <li class="left-title">Ocean Test</li>
                <li class="right-title">&nbsp;:<?php echo $v_companyjobs['is_test_required']; ?>
                <?php if ($v_companyjobs['is_test_required'] == 'Yes' && empty($v_companyjobs['test_for_job'])) { ?>
                   <sup><span title="Marked yes but test is not attached" class="required">*</span></sup>
              <?php  } ?></li>
+             <li class="left-title">JD attached&nbsp;<i class="fas fa-link"></i></li>
 
-               <li class="left-title">Published on</li>
-               <li class="right-title">&nbsp;:<?php if(!is_null($v_companyjobs['created_at'])) { echo date('M j Y',strtotime($v_companyjobs['created_at'])); } ?></li>
+               <li class="right-title">&nbsp;: <?php if (isset($v_companyjobs['jd_file']) && !empty($v_companyjobs['jd_file'])) { echo "Yes"; ?>  <a style="margin-left: 15px" href="<?php echo base_url() ?>upload/job_description/<?php echo $v_companyjobs['jd_file']; ?>" download><i class="fa fa-download" aria-hidden="true"></i></a> <?php } else { echo "No";} ?></li>
+              
                <li class="left-title">Job expiry</li>
                <li class="right-title">&nbsp;:<?php if(!is_null($v_companyjobs['job_deadline'])) { echo date('M j Y',strtotime($v_companyjobs['job_deadline'])); } ?></li>
                <div class="clear"></div>

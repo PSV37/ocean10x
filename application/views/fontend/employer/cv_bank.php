@@ -954,8 +954,23 @@
     /* border-radius: 128px; */
 }
 ul.select2-results__options {
-    margin-top: 15px;
+    margin-top: 30px;
 }
+button.folder_popup {
+    float: right;
+    margin-right: 20px;
+    background-color: #18c5bd;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    width: 120px;
+    height: 25px;
+}
+.highlight_div {
+   border: 1px solid ;
+   padding: 10px;
+   box-shadow: 5px 5px #e8e5e5;
+   }
 </style>
 <div class="container-fluid main-d">
   <div class="container">
@@ -1054,11 +1069,11 @@ ul.select2-results__options {
                   }
                  
                  ?>
-          <label>
+          <label class="checkbox_label">
             <div class="check">
-              <input type="checkbox" value="<?php echo $cv_row['js_email']; ?>" data-valuetwo="<?php echo $cv_row['cv_id'];  ?>" data-valueone="<?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ echo $cv_row['js_resume']; } ?>" class="chkbx" />
+              <input type="checkbox" value="<?php echo $cv_row['js_email']; ?>" data-valuetwo="<?php echo $cv_row['cv_id'];  ?>" data-valueone="<?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ echo $cv_row['js_resume']; } ?>" class="chkbx" id="chkbx" />
             </div>
-            <div class="card content">
+            <div class="card content hoverable">
               <div class="front">
                 <?php
                   if($on_ocean == 'Yes')
@@ -1077,9 +1092,7 @@ ul.select2-results__options {
                   </div>
                 </div>
                 <div class="following-info">
-                  <!-- <li class="left-title"
-                    >Email</li>
-                    <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span><?php echo $cv_row['js_email']; ?></li> -->
+                  
                   <li class="left-title">Current Sal</li>
                   <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span><?php echo $cv_row['js_current_ctc']; ?></li>
                   <li class="left-title">Phone</li>
@@ -1089,8 +1102,7 @@ ul.select2-results__options {
                   <div class="clear"></div>
                 </div>
                 <div class="following-info2">
-                  <!--  <li class="left-title">Current Org</li>
-                    <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span><?php echo $cv_row['current_org']; ?></li> -->
+                
                   <li class="left-title">Notice Period </li>
                   <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span><?php echo $cv_row['js_current_notice_period']; ?></li>
                   <li class="left-title">Work Exp</li>
@@ -1191,7 +1203,7 @@ ul.select2-results__options {
             <!--<select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" tabindex="-98">-->
               <select class="form-control select2 filtredu" id="domain" onchange="get_data();" tabindex="-98">
              <!--  <select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" tabindex="-98"> -->
-              <option value=""></option>
+              <!-- <option value=""></option> -->
               <?php
                     $value =  set_value('candidate_industry');
                     if (!empty($value)) {
@@ -2019,6 +2031,32 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
   
            }
    });
+   $('.checkbox_label').click(function ()
+   {
+   var checkbox = $(this).find('input[type=checkbox]');
+   $('.chkbx').prop("checked",false);
+   
+   checkbox.prop("checked", !checkbox.prop("checked"));
+   var addclass = 'highlight_div';
+   $('.checkbox_label').removeClass(addclass);
+   $(this).addClass(addclass);
+   });
+   
+   // $(document).on('click','#chkbx',function() {
+   //         // $('.chkbx').prop("checked" , this.checked);
+   //         if (this.checked == true) 
+   //         {
+   //            $(this).css('box-shadow','5px 5px #e8e5e5');
+   //             var addclass = 'highlight_div';
+   //             $('.card').removeClass(addclass);
+   //             $(this).addClass(addclass);
+   //         }
+   //         else
+   //         {
+   //             $(this).css('box-shadow','0px 0px #fff');
+  
+   //         }
+   // });
    $(document).on(' change','input[name="bulk_download"]',function() {
            $('.chkbx').prop("checked" , this.checked);
            $("input[name='bulk_forward']:checkbox").prop('checked',false);
