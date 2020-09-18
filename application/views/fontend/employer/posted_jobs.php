@@ -266,8 +266,8 @@
     line-height: 30px;}   
    .following-info3 {
     margin-bottom: 10px;
-    margin-top: -104px;
-    margin-right: -47px;
+    margin-top: -100px;
+    margin-right: -25px;
     line-height: 30px;
 }
    .active-job label {
