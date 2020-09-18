@@ -5503,6 +5503,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $this->load->view('fontend/employer/chatting_card.php', $data);
     }
     function get_active_cvs() {
+        $domain_var = $this->input->post('domain');
         $exp_var = $this->input->post('exp');
         $notice_period_var = $this->input->post('notice_period');
         $education_var = $this->input->post('education');
