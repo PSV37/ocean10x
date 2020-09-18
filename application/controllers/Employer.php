@@ -3586,7 +3586,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                    
                     $data["links"] = $this->pagination->create_links();
              $data['company_active_jobs'] = $this->job_posting_model->get_company_activedeasline_jobs($company_id);
-            $where_c = "corporate_cv_bank.cv_id NOT IN (select cv_id from cv_folder_relation) and company_id ='$company_id' and js_status = '0'";
+            $where_c = "corporate_cv_bank.cv_id NOT IN (select cv_id from cv_folder_relation) and corporate_cv_bank.company_id ='$company_id' and js_status = '0'";
             // $where_c['company_id'] = $company_id;
             $join = array('education_level' => 'education_level.education_level_id = corporate_cv_bank.js_top_education | left outer',
                 'forwarded_jobs_cv' => 'forwarded_jobs_cv.cv_id = corporate_cv_bank.cv_id | LEFT OUTER',
@@ -3595,7 +3595,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $where_trash = "company_id ='$company_id' and js_status = '1'";
             // $where_c['company_id'] = $company_id;
             $join = array('education_level' => 'education_level.education_level_id = corporate_cv_bank.js_top_education | left outer');
-            $data['cv_trash_data'] = $this->Master_model->getMaster('corporate_cv_bank', $where_trash, $join, $order = 'desc', $field = 'cv_id', $select = false, $limit = false, $start = false, $search = false);
+            $data['cv_trash_data'] = $this->Master_model->getMaster('corporate_cv_bank', $where_trash, $join, $order = 'desc', $field = 'corporate_cv_bank.cv_id', $select = false, $limit = false, $start = false, $search = false);
        
             $this->load->view('fontend/employer/cv_bank', $data);
         }
