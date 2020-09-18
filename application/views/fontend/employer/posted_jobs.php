@@ -1085,21 +1085,23 @@ button.btn.btn-primary.trash {
             <div class="following-info">
                <li class="left-title"
                   >Job Role </li>
+                  <li class="left-title">Education</li>
+               <li class="right-title">&nbsp;: <?php echo $v_companyjobs['education_level_name']; ?></li>
                <li class="right-title">&nbsp;: <?php echo $v_companyjobs['job_role_title']; ?></li>
-               <li class="left-title">Engagement</li>
-               <li class="right-title">&nbsp;: <?php echo $v_companyjobs['job_nature_name']; ?></li>
+               
+               <li class="left-title">Domain</li>
+               <li class="right-title">&nbsp;:<?php echo $v_companyjobs['job_category_name']; ?></li>
               
-               <li class="left-title">Vacancies</li>
-               <li class="right-title">&nbsp;: <?php echo $v_companyjobs['no_jobs']; ?></li>
               
                <div class="clear"></div>
             </div>
             <div class="following-info2">
-               <li class="left-title">Education</li>
-               <li class="right-title">&nbsp;: <?php echo $v_companyjobs['education_level_name']; ?></li>
-            
-               <li class="left-title">JD attached&nbsp;<i class="fas fa-link"></i></li>
-               <li class="right-title">&nbsp;: <?php if (isset($v_companyjobs['jd_file']) && !empty($v_companyjobs['jd_file'])) { echo "Yes"; ?>  <a style="margin-left: 15px" href="<?php echo base_url() ?>upload/job_description/<?php echo $v_companyjobs['jd_file']; ?>" download><i class="fa fa-download" aria-hidden="true"></i></a> <?php } else { echo "No";} ?></li>
+               
+             <li class="left-title">Vacancies</li>
+               <li class="right-title">&nbsp;: <?php echo $v_companyjobs['no_jobs']; ?></li>
+               <li class="left-title">Engagement</li>
+               <li class="right-title">&nbsp;: <?php echo $v_companyjobs['job_nature_name']; ?></li>
+               
               
                 <li class="left-title">Published on</li>
                <li class="right-title">&nbsp;:<?php if(!is_null($v_companyjobs['created_at'])) { echo date('M j Y',strtotime($v_companyjobs['created_at'])); } ?></li>
@@ -1107,14 +1109,15 @@ button.btn.btn-primary.trash {
             </div>
             <div class="following-info3">
                
-                <li class="left-title">Domain</li>
-               <li class="right-title">&nbsp;:<?php echo $v_companyjobs['job_category_name']; ?></li>
+               
                <li class="left-title">Ocean Test</li>
                <li class="right-title">&nbsp;:<?php echo $v_companyjobs['is_test_required']; ?>
                <?php if ($v_companyjobs['is_test_required'] == 'Yes' && empty($v_companyjobs['test_for_job'])) { ?>
                   <sup><span title="Marked yes but test is not attached" class="required">*</span></sup>
              <?php  } ?></li>
+             <li class="left-title">JD attached&nbsp;<i class="fas fa-link"></i></li>
 
+               <li class="right-title">&nbsp;: <?php if (isset($v_companyjobs['jd_file']) && !empty($v_companyjobs['jd_file'])) { echo "Yes"; ?>  <a style="margin-left: 15px" href="<?php echo base_url() ?>upload/job_description/<?php echo $v_companyjobs['jd_file']; ?>" download><i class="fa fa-download" aria-hidden="true"></i></a> <?php } else { echo "No";} ?></li>
               
                <li class="left-title">Job expiry</li>
                <li class="right-title">&nbsp;:<?php if(!is_null($v_companyjobs['job_deadline'])) { echo date('M j Y',strtotime($v_companyjobs['job_deadline'])); } ?></li>
