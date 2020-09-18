@@ -262,12 +262,12 @@
     float: left;
     line-height: 30px;
 }
-   .following-info2{margin-bottom:10px;margin-left: 200px;
+   .following-info2{margin-bottom:10px;margin-left: 210px;
     line-height: 30px;}   
    .following-info3 {
     margin-bottom: 10px;
     margin-top: -100px;
-    margin-right: -25px;
+    margin-right: -35px;
     line-height: 30px;
 }
    .active-job label {
