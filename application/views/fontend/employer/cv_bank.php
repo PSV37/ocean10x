@@ -1182,7 +1182,8 @@
         <div id="myForm">
           <div class="filter1">
             <p style="font-size:18px;">Domain</p>
-            <select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" tabindex="-98">
+            <!--<select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" tabindex="-98">-->
+              <select class="form-control filtredu"  multiple="" data-live-search="true" data-live-search-placeholder="Search" tabindex="-98">
               <option value=""></option>
               <?php
                     $value =  set_value('candidate_industry');
