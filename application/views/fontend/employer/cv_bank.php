@@ -954,7 +954,7 @@
     /* border-radius: 128px; */
 }
 ul.select2-results__options {
-    margin-top: 15px;
+    margin-top: 30px;
 }
 button.folder_popup {
     float: right;
@@ -1199,7 +1199,7 @@ button.folder_popup {
             <!--<select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" tabindex="-98">-->
               <select class="form-control select2 filtredu" id="domain" onchange="get_data();" tabindex="-98">
              <!--  <select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" tabindex="-98"> -->
-              <option value=""></option>
+              <!-- <option value=""></option> -->
               <?php
                     $value =  set_value('candidate_industry');
                     if (!empty($value)) {
