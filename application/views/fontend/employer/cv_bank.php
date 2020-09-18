@@ -1267,7 +1267,7 @@
 <?php if (!empty($cv_bank_data)): foreach ($cv_bank_data as $cv_row) :
   $cv_id =$cv_row['cv_id'];
   $where="forwarded_jobs_cv.cv_id ='$cv_id'";
-  $join('job_posting'=>'job_posting.job_post_id = forwarded_jobs_cv.job_post_id');
+  $join = array('job_posting'=>'job_posting.job_post_id = forwarded_jobs_cv.job_post_id');
   $jobs_data = $this->Master_model->getMaster('forwarded_jobs_cv', $where , $join, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false)
  ?>
 <div class="modal" id="rotateModal<?php echo $cv_row['cv_id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
