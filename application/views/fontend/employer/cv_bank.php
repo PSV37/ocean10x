@@ -1069,7 +1069,7 @@ button.folder_popup {
             <div class="check">
               <input type="checkbox" value="<?php echo $cv_row['js_email']; ?>" data-valuetwo="<?php echo $cv_row['cv_id'];  ?>" data-valueone="<?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ echo $cv_row['js_resume']; } ?>" class="chkbx" />
             </div>
-            <div class="card content">
+            <div class="card content hoverable">
               <div class="front">
                 <?php
                   if($on_ocean == 'Yes')
