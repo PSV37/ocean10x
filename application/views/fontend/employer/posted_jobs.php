@@ -1044,7 +1044,7 @@ button.btn.btn-primary.trash {
 <!-- <div class="panel-body"></div> -->
 <div class="col-md-6 active-job">
    <div id="smsg"> <?php echo $this->session->flashdata('success'); ?></div>
-    <a href="#"><button class="btn btn-primary trash" ><i class="fas fa-trash-alt" ></i> Trash</button></a>
+    <a href="#" onclick="get_trash();"><button class="btn btn-primary trash" ><i class="fas fa-trash-alt" ></i> Trash</button></a>
    <br><br>
    <div id="job_trash">
    <?php if (!empty($company_active_jobs)): foreach ($company_active_jobs as $v_companyjobs) : ?>
