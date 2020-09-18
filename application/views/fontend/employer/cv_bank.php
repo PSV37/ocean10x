@@ -1149,11 +1149,11 @@
               <ul class="pieID legend">
                 <li class="cv">
                   <em id="spanid0">Total CVs in CV Bank</em>
-                  <span><?php echo $Total_CVs_in_CVBank; ?></span>
+                  <span><?php echo sizeof($Total_CVs_in_CVBank); ?></span>
                 </li>
                 <li class="cv">
                   <em id="spanid1">Active CVs</em>
-                  <span id="active_cv"><?php echo $active_cv; ?></span>
+                  <span id="active_cv"><?php echo sizeof($active_cv); ?></span>
                 </li>
               </ul>
               <div class="pieID pie">
@@ -1165,7 +1165,7 @@
                 </li>
                 <li class="cv">
                   <em id="spanid1">Active CVs</em>
-                  <span id="active_cv"><?php echo $active_cv; ?></span>
+                  <span id="active_cv"><?php echo sizeof($active_cv); ?></span>
                 </li>
                 <li class="cv">
                   <em id="spanid2">Own CVs</em>

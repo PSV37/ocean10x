@@ -16,7 +16,7 @@ class Pincode_model extends MY_Model{
 
     public function gettotal_cvs($company_id){
     $sql = $this->db->query("SELECT count(*)  FROM corporate_cv_bank WHERE corporate_cv_bank.company_id='$company_id' GROUP by cv_id and js_status= '0'");
-    return $sql;
+    return $sql->result();
     }
 
 
