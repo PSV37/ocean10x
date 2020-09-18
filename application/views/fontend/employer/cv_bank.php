@@ -1155,10 +1155,10 @@
                   <em id="spanid1">Active CVs</em>
                   <span id="active_cv"><?php echo sizeof($active_cv); ?></span>
                 </li>
-              </ul>
+            
               <div class="pieID pie">
               </div>
-              <ul class="pieID legend">
+              <!-- <ul class="pieID legend"> -->
                 <li class="cv">
                   <em id="spanid0">Total CVs</em>
                   <span><?php echo $total_cvs; ?></span>
