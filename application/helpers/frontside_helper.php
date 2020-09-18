@@ -174,7 +174,7 @@ $success = mail($to, $subject, $message, implode("\r\n", $headers));
 if (!$success) {
     $errorMessage = error_get_last()['message'];
 }
-         return  $errorMessage;
+         return  $success;
            // exit;
             // return true;
     }
