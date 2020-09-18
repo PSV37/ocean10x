@@ -1085,9 +1085,10 @@ button.btn.btn-primary.trash {
             <div class="following-info">
                <li class="left-title"
                   >Job Role </li>
+                  <li class="right-title">&nbsp;: <?php echo $v_companyjobs['job_role_title']; ?></li>
                   <li class="left-title">Education</li>
                <li class="right-title">&nbsp;: <?php echo $v_companyjobs['education_level_name']; ?></li>
-               <li class="right-title">&nbsp;: <?php echo $v_companyjobs['job_role_title']; ?></li>
+               
                
                <li class="left-title">Domain</li>
                <li class="right-title">&nbsp;:<?php echo $v_companyjobs['job_category_name']; ?></li>
