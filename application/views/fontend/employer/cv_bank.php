@@ -2281,6 +2281,8 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
       "#21e5dc", 
       "#18c5bd", 
       "#11807b", 
+      "#92d6d3",
+      "#519693"
       
      
     ];
