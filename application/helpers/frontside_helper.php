@@ -125,7 +125,7 @@ function get_metas() {
 
 
             $ci->email->initialize($config);
-            $ci->email->from('info@consultnhire.com', 'ConsultnHire');
+            $ci->email->from('kmugdha410@gmail.com', 'ConsultnHire');
             $ci->email->to($to_email);
             $ci->email->reply_to('info@consultnhire.com', 'ConsultnHire');
             $ci->email->subject($subject);
