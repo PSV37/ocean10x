@@ -1052,7 +1052,7 @@ li.right-title {
                <p class="job_title"><?php echo $v_companyjobs['job_title']; ?></p>
             </div>
             <div class="icon-info">
-               <li class="left-icon-title"><i class="money-bill-alt"></i></li>
+               <li class="left-icon-title"><i class="far fa-money-bill-alt"></i></li>
                <li class="right-icon-title"> &emsp;<?php echo $v_companyjobs['salary_range']; ?></li>
                <li class="left-icon-title"><i class="fas fa-map-marker-alt"></i></li>
                <li class="right-icon-title"> &emsp;<?php echo $v_companyjobs['city_id']; ?></li>
