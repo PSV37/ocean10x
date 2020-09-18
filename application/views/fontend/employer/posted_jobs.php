@@ -1034,6 +1034,7 @@ button.btn.btn-primary.trash {
     margin-top: 0px;
     margin-left: 2px;
     border-radius: 128px;
+        float: right;
 }
 </style>
 <div class="container-fluid main-d">
