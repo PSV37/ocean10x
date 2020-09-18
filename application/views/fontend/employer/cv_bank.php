@@ -271,10 +271,13 @@
   vertical-align: top;
   }
   .pie {
-  height: 200px;
-  width: 200px;
-  position: relative;
-  }
+    height: 200px;
+    width: 200px;
+    position: relative;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: -15px;
+}
   .pie::before {
   content: "";
   display: block;
