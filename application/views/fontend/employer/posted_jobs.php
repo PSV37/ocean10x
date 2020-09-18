@@ -1052,7 +1052,7 @@ span.right-side {
 
             <div class="following-info">
                <li class="left-title"
-                  >Job Roll</li>
+                  >Job Role </li>
                <li class="right-title">&nbsp;: <?php echo $v_companyjobs['job_role_title']; ?></li>
                <li class="left-title">Engagement</li>
                <li class="right-title">&nbsp;: <?php echo $v_companyjobs['job_nature_name']; ?></li>
@@ -1095,7 +1095,7 @@ span.right-side {
                <li class="right-title">&nbsp;:<?php if(!is_null($v_companyjobs['job_deadline'])) { echo date('M j Y',strtotime($v_companyjobs['job_deadline'])); } ?></li>
                <div class="clear"></div>
             </div>
-             <br><br>
+             <br><br><br>
             <div class="skl_bnft">
               
             <span>Skill sets</span>:

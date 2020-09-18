@@ -235,14 +235,14 @@
               <div class="following-info">
                 <li class="left-title">Education Level</li>
                 <li class="right-title">&nbsp;:<?php echo $education['education_level_name']; ?></li>
-                <li class="left-title">Job Roll</li>
+                <li class="left-title">Job Role</li>
                 <li class="right-title">&nbsp;: <?php echo $job_role['job_role_title']; ?></li>
                 <div class="clear"></div>
               </div>
               <div class="following-info2">
                 <li class="left-title">Engagement Type</li>
                 <li class="right-title">&nbsp;:<?php echo $job_nature['job_nature_name']; ?></li>
-                <li class="left-title">Number Of Position</li>
+                <li class="left-title">No. of Positions</li>
                 <li class="right-title">&nbsp;:<?php echo $no_jobs; ?></li>
                 <div class="clear"></div>
               </div>
@@ -257,7 +257,14 @@
                     echo "No";
                     } ?> 
                 </li>
-                <li class="left-title">CTC (LPA)</li>
+                <li class="left-title">Yearly Salary (<?php if (isset($currency) && !empty($currency)) {
+                  $locale='en-US'; //browser or user locale
+                   // $currency='JPY';
+                   $fmt = new NumberFormatter( $locale."@currency=$currency", NumberFormatter::CURRENCY );
+                   $symbol = $fmt->getSymbol(NumberFormatter::CURRENCY_SYMBOL);
+                   header("Content-Type: text/html; charset=UTF-8;");
+                      echo $symbol;echo $symbol;
+                  } ?> Lakh)</li>
                 <li class="right-title">&nbsp;: <?php echo $salary_range; ?></li>
                 <div class="clear"></div>
               </div>
