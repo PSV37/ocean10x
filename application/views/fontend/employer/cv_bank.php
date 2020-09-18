@@ -966,7 +966,11 @@ button.folder_popup {
     width: 120px;
     height: 25px;
 }
-
+.highlight_div {
+   border: 1px solid ;
+   padding: 10px;
+   box-shadow: 5px 5px #e8e5e5;
+   }
 </style>
 <div class="container-fluid main-d">
   <div class="container">
@@ -2027,18 +2031,31 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
   
            }
    });
-   $(document).on('click','#chkbx',function() {
-           // $('.chkbx').prop("checked" , this.checked);
-           if (this.checked == true) 
-           {
-              $(this).css('box-shadow','5px 5px #e8e5e5');
-           }
-           else
-           {
-               $(this).css('box-shadow','0px 0px #fff');
-  
-           }
+   $('.check').click(function ()
+   {
+   var checkbox = $(this).find('input[type=checkbox]');
+   $('.chkbx').prop("checked",false);
+   
+   checkbox.prop("checked", !checkbox.prop("checked"));
+   var addclass = 'highlight_div';
+   $('.check').removeClass(addclass);
+   $(this).addClass(addclass);
    });
+   // $(document).on('click','#chkbx',function() {
+   //         // $('.chkbx').prop("checked" , this.checked);
+   //         if (this.checked == true) 
+   //         {
+   //            $(this).css('box-shadow','5px 5px #e8e5e5');
+   //             var addclass = 'highlight_div';
+   //             $('.card').removeClass(addclass);
+   //             $(this).addClass(addclass);
+   //         }
+   //         else
+   //         {
+   //             $(this).css('box-shadow','0px 0px #fff');
+  
+   //         }
+   // });
    $(document).on(' change','input[name="bulk_download"]',function() {
            $('.chkbx').prop("checked" , this.checked);
            $("input[name='bulk_forward']:checkbox").prop('checked',false);
