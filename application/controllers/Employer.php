@@ -1158,7 +1158,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                         }
                         $message.= '<br/><b>Job Description: </b> ' . $require['job_desc'] . '<br/><b>Job Benefits: </b> ' . $require['benefits'] . '<br/><b>Other Job Description: </b> ' . $require['education'] . '<br><br><a href="' . base_url() . 'job_forword_seeker/apply_forworded_job?apply_id=' . base64_encode($email[$i]) . '&job_id=' . base64_encode($apply) . '" class="btn btn-primary" value="Apply Now" align="center" target="_blank">Apply Now</a> <br><br><br><br><br>Good luck for Job search!<br> Team ConsultnHire!<br><small>Enjoy personalized job searching experience<br>Goa a Question? Check out how works and our support team are ready to help.<br><br>You have received this mail because your e-mail ID is registered with Consultnhire.com. This is a system-generated e-mail regarding your Consultnhire account preferences, please do not reply to this message. The jobs sent in this mail have been posted by the clients of Consultnhire.com. And we have enabled auto-login for your convenience, you are strongly advised not to forward this email to protect your account from unauthorized access. IEIL has taken all reasonable steps to ensure that the information in this mailer is authentic. Users are advised to research bonafides of advertisers independently. Please do not pay any money to anyone who promises to find you a job. IEIL shall not have any responsibility in this regard. We recommend that you visit our Terms & Conditions and the Security Advice for more comprehensive information.</small><br><br>© 2017 ConsultnHire. All Rights Reserved.</td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table></div>';
                         $send = sendEmail_JobRequest($email[$i], $message, $subject);
-                        //echo $send;
+                        // echo $send;die;
                         // echo $message;
                         $company_name = $this->session->userdata('company_name');
                         $data = array('company' => $company_name, 'action_taken_for' => $email[$i], 'field_changed' => 'Forwarded Job ', 'Action' => $company_name . ' Forwarded job for the position of ' . $require['job_title'], 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
@@ -3460,6 +3460,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $company_id = $this->session->userdata('company_profile_id');
         $this->load->model('Pincode_model');
         $data['active_cv'] = $this->Pincode_model->getactive_cvs($company_id);
+        $data['Total_CVs_in_CVBank'] = $this->Pincode_model->gettotal_cvs($company_id);
         $data['education_level'] = $this->Master_model->getMaster('education_level', $where = false);
         $sort_val = $this->input->post('sort_val');
         if (isset($fid) && !empty($fid) && empty($sort_val)) {
@@ -3468,10 +3469,12 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $this->session->set_userdata($data);
             // $where_c['cv_folder_id'] = $fid;
             // $where_c['status'] = 1;
-            $where_c = "cv_folder_id = '$fid' and status = '1' and js_status = '0' group by cv_folder_relation.cv_id ";
+            $where_c = "cv_folder_relation.cv_folder_id = '$fid' and cv_folder_relation.status = '1' and js_status = '0' group by cv_folder_relation.cv_id ";
             $join_cond = array('corporate_cv_bank' => 'corporate_cv_bank.cv_id = cv_folder_relation.cv_id|Left outer',
                 'cv_folder' => 'cv_folder.id=cv_folder_relation.cv_folder_id');
             $data['cv_bank_data'] = $this->Master_model->getMaster('cv_folder_relation', $where_c, $join_cond, $order = 'desc', $field = 'relation_id', $select = false, $limit = false, $start = false, $search = false);
+                $data['total_cvs']=sizeof($cv_bank_data);
+            
              // print_r($this->db->last_query());die;
             $data['fid'] = $fid;
             $data['fname'] = $data['cv_bank_data'][0]['folder_name'];
@@ -3500,6 +3503,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $cv_bank_data = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join_cond , $order = 'desc', $field = $sort_val, $select = false, $limit = false, $start = false, $search = false);
                 // print_r($this->db->last_query());die;
             // $config['base_url'] = base_url() . 'employer/corporate_cv_bank';
+                $data['total_cvs']=sizeof($cv_bank_data);
+
             $config['total_rows'] = sizeof($cv_bank_data);
             $config['per_page'] = 5;
             $config['attributes'] = array('class' => 'myclass');
@@ -3548,6 +3553,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             // $where_c['company_id'] = $company_id;
             $join = array('education_level' => 'education_level.education_level_id = corporate_cv_bank.js_top_education | left outer');
             $cv_bank_data = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join, $order = 'desc', $field = 'cv_id', $select = false, $limit = false, $start = false, $search = false);
+          
+                $data['total_cvs']=sizeof($cv_bank_data);
             $data['company_active_jobs'] = $this->job_posting_model->get_company_activedeasline_jobs($company_id);
                     $config['base_url'] = base_url() . 'employer/corporate_cv_bank';
                     $config['total_rows'] = sizeof($cv_bank_data);
@@ -3656,15 +3663,35 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                             redirect('employer/profile-setting');
                         }
                     }
-                    $cv_data = array('company_id' => $company_id, 'js_name' => $this->input->post('candidate_name'), 'js_email' => $this->input->post('candidate_email'), 'js_mobile' => $this->input->post('candidate_phone'), 'js_job_type' => $this->input->post('job_type'), 'js_current_designation' => $this->input->post('current_job_desig'), 'js_working_since' => date('Y-m-d', strtotime($this->input->post('working_current_since'))), 'js_current_ctc' => $this->input->post('current_ctc'), 'js_current_notice_period' => $this->input->post('candidate_notice_period'), 'js_experience' => $this->input->post('candidate_experiance'), 'js_last_salary_hike' => date('Y-m-d', strtotime($this->input->post('last_salary_hike'))), 'js_top_education' => $this->input->post('top_education'),
+                    $cv_data = array(
+                        'company_id' => $company_id, 
+                        'js_name' => $this->input->post('candidate_name'), 
+                        'js_email' => $this->input->post('candidate_email'), 
+                        'js_mobile' => $this->input->post('candidate_phone'), 
+                        'js_job_type' => $this->input->post('job_type'), 
+                        'js_current_designation' => $this->input->post('current_job_desig'), 
+                        'js_working_since' => date('Y-m-d', strtotime($this->input->post('working_current_since'))), 
+                        'js_current_ctc' => $this->input->post('current_ctc'), 
+                        'js_current_notice_period' => $this->input->post('candidate_notice_period'), 
+                        'js_experience' => $this->input->post('candidate_experiance'), 
+                        'js_last_salary_hike' => date('Y-m-d', strtotime($this->input->post('last_salary_hike'))), 
+                        'js_top_education' => $this->input->post('top_education'),
                     // 'js_edu_special'             => $this->input->post('education_specialization'),
-                    'js_skill_set' => implode(',', $this->input->post('candidate_skills')), 'js_certifications' => $this->input->post('candidate_certification'), 'js_industry' => $this->input->post('candidate_industry'), 'js_role' => $this->input->post('candidate_role'), 'js_expected_salary' => $this->input->post('candidate_expected_sal'), 'js_desired_work_location' => $this->input->post('desired_wrok_location'), 'current_org' => $this->input->post('current_org'), 'ocean_candidate' => $ocean_candidate, 'js_resume' => $cand_resume,);
+                    'js_skill_set' => implode(',', $this->input->post('candidate_skills')), 
+                    'js_certifications' => $this->input->post('candidate_certification'), 
+                    'js_industry' => $this->input->post('candidate_industry'), 
+                    'js_role' => $this->input->post('candidate_role'), 
+                    'js_expected_salary' => $this->input->post('candidate_expected_sal'), 
+                    'js_desired_work_location' => $this->input->post('desired_wrok_location'), 
+                    'current_org' => $this->input->post('current_org'), 
+                    'ocean_candidate' => $ocean_candidate, 'js_resume' => $cand_resume,);
                     $cv_data['updated_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
                     $cv_data['updated_by'] = $company_id;
                     $where_del['cv_id'] = $update_cv_id;
                     $this->Master_model->master_update($cv_data, 'corporate_cv_bank', $where_del);
+                    $fid=$this->input->get('fid');
                     $this->session->set_flashdata('success', '<div class="alert alert-success text-center">CV Updated Successfully !</div>');
-                    redirect('employer/corporate_cv_bank');
+                    redirect('employer/corporate_cv_bank/'.$fid);
                 }
                 $email = $this->input->post('candidate_email');
                 $where_find = "js_email= '$email'";
@@ -3711,8 +3738,10 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                             $apply = $this->Master_model->master_insert($apply_array, 'job_apply');
                             $frwd_array = array('cv_id' => $cv_id, 'company_id' => $company_id, 'job_post_id' => $job_post_id, 'apply_id' => $apply, 'status' => 1, 'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),);
                             $frwd = $this->Master_model->master_insert($frwd_array, 'forwarded_jobs_cv');
-                            $external_array = array('cv_id' => $cv_id, 'company_id' => $employer_id, 'job_post_id' => $job_post_id, 'apply_id' => $apply, 'status' => 1, 'company_id' => $company_id, 'name' => $this->input->post('
-                                        candidate_name'), 'email' => $this->input->post('candidate_email'), 'mobile' => $this->input->post('candidate_phone'), 'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),);
+                            $external_array = array('cv_id' => $cv_id, 'company_id' => $employer_id, 'job_post_id' => $job_post_id, 'apply_id' => $apply, 'status' => 1, 'company_id' => $company_id, 'name' => $this->input->post('candidate_name'), 
+                                'email' => $this->input->post('candidate_email'), 
+                                'mobile' => $this->input->post('candidate_phone'), 
+                                'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),);
                             $frwd = $this->Master_model->master_insert($external_array, 'external_tracker');
                         }
                         if ($apply) {
@@ -3903,6 +3932,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $where_cv = "corporate_cv_bank.cv_id = '$cv_id'";
             $join = array('education_level' => 'education_level.education_level_id = corporate_cv_bank.js_top_education | left outer');
             $data['cv_bank_data'] = $this->Master_model->get_master_row('corporate_cv_bank', $select = FALSE, $where = $where_cv, $join);
+            $data['fid']=$this->input->get('fid');
             //$data['cv_info'] = $this->Master_model->getMaster('corporate_cv_bank',$where=false);
             $this->load->view('fontend/employer/add_cv', $data);
         }
@@ -4293,11 +4323,18 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $where1 = "js_info.email = '$email_id' ";
             // AND js_experience.end_date IS NULL
             $join = array("js_career_info" => "js_career_info.job_seeker_id=js_info.job_seeker_id | LEFT OUTER", "js_experience" => "js_experience.job_seeker_id=js_info.job_seeker_id | LEFT OUTER", "job_role" => "job_role.id=js_experience.designation_id | LEFT OUTER", "job_seeker_skills" => "job_seeker_skills.job_seeker_id=js_info.job_seeker_id | LEFT OUTER", "js_education" => "js_education.job_seeker_id=js_info.job_seeker_id | LEFT OUTER", "js_training" => "js_training.job_seeker_id=js_info.job_seeker_id | LEFT OUTER", "industry_master" => "industry_master.id=js_career_info.industry_id | LEFT OUTER");
-            $select = "js_career_info.notice_period,js_career_info.serving_notice_period,js_career_info.immediate_join,js_career_info.desired_industry,js_career_info.job_area,js_career_info.js_career_salary,js_career_info.avaliable,js_career_info.skills,js_career_info.job_role,js_career_info.industry_id,js_career_info.last_salary_hike,js_info.full_name,js_info.mobile_no,js_info.job_seeker_id,job_role.job_role_title,js_experience.company_profile_id,js_experience.js_career_salary,js_experience.designation_id,js_experience.start_date,js_experience.address,min(js_education.education_level_id) as edu_high,job_seeker_skills.skills,js_career_info.js_career_exp,js_training.training_title,industry_master.industry_name";
+            $select = "js_career_info.notice_period,js_career_info.serving_notice_period,js_career_info.immediate_join,js_career_info.desired_industry,js_career_info.job_area,js_career_info.js_career_salary,js_career_info.avaliable,js_career_info.skills,js_career_info.job_role,js_career_info.industry_id,js_career_info.last_salary_hike,js_info.full_name,js_info.mobile_no,js_info.job_seeker_id,job_role.job_role_title,js_experience.company_profile_id,js_experience.js_career_salary,js_experience.designation_id,js_experience.start_date,js_experience.address,min(js_education.education_level_id) as edu_high,job_seeker_skills.skills,js_career_info.js_career_exp,js_training.training_title,industry_master.industry_name,js_info.update_at";
             $result = $this->Master_model->getMaster('js_info', $where1, $join, $order = false, $field = false, $select, $limit = false, $start = false, $search = false);
+            $where_c = "corporate_cv_bank.js_email = '$email_id'  and js_status = '0'";
+            // $where_c['company_id'] = $company_id;
+            $join = array('education_level' => 'education_level.education_level_id = corporate_cv_bank.js_top_education | left outer');
+            $cv_bank_data = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join, $order = 'desc', $field = 'cv_id', $select = false, $limit = false, $start = false, $search = false);
             // echo $this->db->last_query();
             // echo "<pre>";
             $latest = $result['0'];
+            if ($latest['update_at'] > $cv_bank_data[0]['updated_on'] ) {
+                # code...
+          
             $update_profile = array(
                 'js_name' => $latest['full_name'], 
                 'js_mobile' => $latest['mobile_no'], 
@@ -4317,6 +4354,14 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 'updated_on' => date('Y-m-d H:i:s'), 'updated_by' => $this->session->userdata('company_profile_id'));
             $where11['js_email'] = $email_id;
             $this->Master_model->master_update($update_profile, 'corporate_cv_bank', $where11);
+             $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Profile Updated successfully with the latest ocean profile...!</div>');
+                redirect('employer/corporate_cv_bank');
+              }
+              else
+              {
+                 $this->session->set_flashdata('success', '<div class="alert alert-success text-center"> CV is already updated with latest data from Ocean.</div>');
+                redirect('employer/corporate_cv_bank');
+              }
             // echo $this->db->last_query();die;
             
         } elseif (isset($emails) && !empty($emails)) {
@@ -4348,9 +4393,11 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $where11['js_email'] = $email_id;
                 $this->Master_model->master_update($update_profile, 'corporate_cv_bank', $where11);
             }
-        }
-        $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Profile Updated successfully with the latest ocean profile...!</div>');
-        redirect('employer/corporate_cv_bank');
+            $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Profile Updated successfully with the latest ocean profile...!</div>');
+                redirect('employer/corporate_cv_bank');
+              }
+        
+       
     }
     public function get_profile() {
         $email_id = $this->input->post('email');

@@ -1066,7 +1066,7 @@
                 <?php } ?>
                 <div class="job-info">
                   <div class="a" style="display: inline-flex;">
-                    <li class="right-title" style="font-size:19px;margin-top:-4px;"  ><a href="<?php echo base_url(); ?>employer/edit_cv/<?php echo base64_encode($cv_row['cv_id']); ?>" style="color: black;cursor: pointer;" ><?php echo $cv_row['js_name']; ?></a></li>
+                    <li class="right-title" style="font-size:19px;margin-top:-4px;"  ><a href="<?php echo base_url(); ?>employer/edit_cv/<?php echo base64_encode($cv_row['cv_id']); ?>?fid=<?php echo $fid; ?>" style="color: black;cursor: pointer;" ><?php echo $cv_row['js_name']; ?></a></li>
                     <li class="right-title" style="font-size: 15px;font-weight: 600;margin-left: -106px;width: fit-content;"><?php echo $cv_row['js_email']; ?></li>
                   </div>
                 </div>
@@ -1104,7 +1104,7 @@
                 <br>
                 <div class="btn-group">
                   <a title="view Details" href="<?php echo base_url(); ?>employer/preview_cv/<?php echo base64_encode($cv_row['cv_id']); ?>"><i class="fa fa-info-circle icon_backg"></i></a>
-                  <a  title="Edit" href=" <?php echo base_url(); ?>employer/edit_cv/<?php echo base64_encode($cv_row['cv_id']); ?>"><i class="far fa-edit icon_backg"></i></a>
+                  <a  title="Edit" href=" <?php echo base_url(); ?>employer/edit_cv/<?php echo base64_encode($cv_row['cv_id']); ?>?fid=<?php echo $fid; ?>"><i class="far fa-edit icon_backg"></i></a>
                   <a title="Delete" onclick="confirm_delete(<?php echo $cv_row['cv_id'] ?>);" href="#"><i class="fas fa-trash-alt icon_backg"></i></a>
                 </div>
                 <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -1146,12 +1146,22 @@
         <div class="pai_chart">
           <main>
             <section>
+              <ul class="pieID legend">
+                <li class="cv">
+                  <em id="spanid0">Total CVs in CV Bank</em>
+                  <span><?php echo sizeof($Total_CVs_in_CVBank); ?></span>
+                </li>
+                <li class="cv">
+                  <em id="spanid1">Active CVs</em>
+                  <span id="active_cv"><?php echo sizeof($active_cv); ?></span>
+                </li>
+              </ul>
               <div class="pieID pie">
               </div>
               <ul class="pieID legend">
                 <li class="cv">
                   <em id="spanid0">Total CVs</em>
-                  <span><?php echo sizeof($cv_bank_data); ?></span>
+                  <span><?php echo $total_cvs; ?></span>
                 </li>
                 <li class="cv">
                   <em id="spanid1">Active CVs</em>
@@ -1281,7 +1291,12 @@
     </div>
   </div>
 </div>
-<?php if (!empty($cv_bank_data)): foreach ($cv_bank_data as $cv_row) : ?>
+<?php if (!empty($cv_bank_data)): foreach ($cv_bank_data as $cv_row) :
+  $cv_id =$cv_row['cv_id'];
+  $where="forwarded_jobs_cv.cv_id ='$cv_id'";
+  $join = array('job_posting'=>'job_posting.job_post_id = forwarded_jobs_cv.job_post_id');
+  $jobs_data = $this->Master_model->getMaster('forwarded_jobs_cv', $where , $join, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false)
+ ?>
 <div class="modal" id="rotateModal<?php echo $cv_row['cv_id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <input type="hidden" name="cv_id" id="cv_id" value="<?php $cv_row['cv_id']; ?>">
   <div class="modal-dialog" role="document">
@@ -1325,6 +1340,12 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
             <label class="mdl-textfield__label" for="sample3">No. of Candidates (CVs) : 1</label><br>
           </div>
+          <?php $i=1; if (!empty($jobs_data)) {
+            # code...
+           foreach ($jobs_data as $row) { ?>
+           <p><?php echo $i; ?> Job Post Sent - <?php echo $row['job_title']; ?> - <?php echo date('d-m-Y H:i:s',strtotime($row['created_on'])) ; ?>
+
+        <?php $i++;  } } ?>
           <input type="hidden" name="forward_job_email" id="forward_job_email" value="<?php echo $cv_row['js_email']; ?>">
         </div>
         <div class="modal-footer">
@@ -1366,7 +1387,7 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
             <textarea class="form-control" name="message" rows="5" id="comment" required></textarea>
           </div>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
-            <label class="mdl-textfield__label" for="sample3">Number of cvs:<span id="no_of_cvs"></span></label><br>
+            <label class="mdl-textfield__label" for="sample3">No. of CVs:<span id="no_of_cvs"></span></label><br>
           </div>
           <input type="hidden" name="forward_job_emails" id="forward_job_emails" value="">
 
@@ -1406,10 +1427,11 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
                     $wheres  = "status='1' AND company_id='$employer_id' ";
                        $folders     = $this->Master_model->getMaster('cv_folder', $where = $wheres); ?>
                   <select class="form-control select2" name="folder_id" id="copy_cv_folder">
-                    <option value="0">CV Bank</option>
-                    <?php foreach ($folders as $row) { ?>
+                    <option data-value="CV_bank" value="0">CV Bank</option>
+                    <?php foreach ($folders as $row) { 
+                      if($row['folder_name'] != $fname) { ?>
                     <option data-value="<?php echo $row['folder_name'] ?>" value="<?php echo $row['id'] ?>"><?php echo $row['folder_name'] ?></option>
-                    <? } ?>
+                    <? } } ?>
                   </select>
                 </div>
               </div>
@@ -1417,7 +1439,7 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
             <div class="col-md-12">
               <div class="row">
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
-                  <label class="mdl-textfield__label" for="sample3">Number of cvs: 1</label><br>
+                  <label class="mdl-textfield__label" for="sample3">No. of CVs: 1</label><br>
                 </div>
               </div>
             </div>
@@ -1443,7 +1465,7 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
       <form method="post" action="<?php echo base_url(); ?>employer/move_cvto_folder">
         <div class="modal-header">
           <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
-          <h4 class="modal-title">move CV to folder</h4>
+          <center><h4 class="modal-title"> Move CV</h4></center>
         </div>
         <div class="modal-body">
           <input type="hidden" name="cv_id" value="<?php echo $cv_row['cv_id']; ?>">
@@ -1456,26 +1478,27 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
                   $employer_id = $this->session->userdata('company_profile_id');
                   $wheres  = "status='1' AND company_id='$employer_id' ";
                      $folders     = $this->Master_model->getMaster('cv_folder', $where = $wheres); ?>
-                <select class="form-control select2" name="folder_id">
-                  <option value="0">CV Bank</option>
-                  <?php foreach ($folders as $row) { ?>
-                  <option value="<?php echo $row['id'] ?>"><?php echo $row['folder_name'] ?></option>
-                  <? } ?>
-                </select>
+                <select class="form-control select2" name="folder_id" id="move_folder">
+                  <option data-value="CV_bank" value="0">CV Bank</option>
+                    <?php foreach ($folders as $row) { 
+                      if($row['folder_name'] != $fname) { ?>
+                    <option data-value="<?php echo $row['folder_name'] ?>" value="<?php echo $row['id'] ?>"><?php echo $row['folder_name'] ?></option>
+                    <? } } ?>
+                  </select>
               </div>
             </div>
           </div>
           <div class="col-md-12">
             <div class="row">
               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
-                <label class="mdl-textfield__label" for="sample3">Number of cvs: 1</label><br>
+                <label class="mdl-textfield__label" for="sample3">No. of CVs: 1</label><br>
               </div>
             </div>
           </div>
           <!--  <p>This is a small modal.</p> -->
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-default">Move</button>
+          <button type="submit" id="mv_button" class="btn btn-default">Move</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
         </div>
       </form>
@@ -1492,7 +1515,7 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
       <form method="post" action="<?php echo base_url(); ?>employer/copy_cvto_folder">
         <div class="modal-header">
           <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
-          <h4 class="modal-title">Move CV to folder</h4>
+         <center><h4 class="modal-title"> Copy CVs</h4></center> 
         </div>
         <div class="modal-body">
           <input type="hidden" name="cv_id" id="cv_id" value="">
@@ -1505,26 +1528,27 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
                   $employer_id = $this->session->userdata('company_profile_id');
                   $wheres  = "status='1' AND company_id='$employer_id' ";
                      $folders     = $this->Master_model->getMaster('cv_folder', $where = $wheres); ?>
-                <select class="form-control select2" name="folder_id">
-                  <option value="0">CV Bank</option>
-                  <?php foreach ($folders as $row) { ?>
-                  <option value="<?php echo $row['id'] ?>"><?php echo $row['folder_name'] ?></option>
-                  <? } ?>
-                </select>
+              <select class="form-control select2" name="folder_id" id="copy_cv_folder">
+                    <option data-value="CV_bank" value="0">CV Bank</option>
+                    <?php foreach ($folders as $row) { 
+                      if($row['folder_name'] != $fname) { ?>
+                    <option data-value="<?php echo $row['folder_name'] ?>" value="<?php echo $row['id'] ?>"><?php echo $row['folder_name'] ?></option>
+                    <? } } ?>
+                  </select>
               </div>
             </div>
           </div>
           <div class="col-md-12">
             <div class="row">
               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
-                <label class="mdl-textfield__label" id="no_of_cvs_move" for="sample3">Number of cvs: 1</label><br>
+                <label class="mdl-textfield__label" id="no_of_cvs_move" for="sample3">No. of CVs: 1</label><br>
               </div>
             </div>
           </div>
           <!--  <p>This is a small modal.</p> -->
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-default">Add</button>
+          <button type="submit" id="mv_button" class="btn btn-default" id="cpy_btn">Copy</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
         </div>
       </form>
@@ -1537,7 +1561,7 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
       <form method="post" action="<?php echo base_url(); ?>employer/getocean_profile">
         <div class="modal-header">
           <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
-          <h4 class="modal-title">Update From Ocean</h4>
+          <center><h4 class="modal-title">Pull Updates from Ocean</h4></center>
         </div>
         <div class="modal-body">
           <input type="hidden" name="cv_email" id="cv_email" value="">
@@ -1546,7 +1570,7 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
             <div class="col-md-12">
               <div class="row">
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
-                  <label class="mdl-textfield__label"  for="sample3">Number of cvs:<span id="no_of_cvs_update"></span></label><br>
+                  <label class="mdl-textfield__label"  for="sample3">No. of CVs Selected:<span id="no_of_cvs_update"></span></label><br>
                 </div>
               </div>
             </div>
@@ -1777,8 +1801,14 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
 
   $("#copy_cv_folder").change(function () {
       var slug = $(this).find(':selected').data("value");
-      var url = "<?php echo base_url() ?>job/show/"+slug;
-      $('#cpy_btn').text('Copy - '+<?php echo $fname; ?>+' To '+slug);
+    
+      $('#cpy_btn').text('Copy - <?php echo $fname; ?> To '+slug);
+
+});
+   $("#move_folder").change(function () {
+      var slug = $(this).find(':selected').data("value");
+   
+      $('#mv_button').text('Move - <?php echo $fname; ?> To '+slug);
 
 });
   // function get_job_url()
@@ -2089,7 +2119,7 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
               {
               var elements = cvs_name.split(',').length;
             
-                 $('#no_of_cvs_move').html(elements);
+                 $('#no_of_cvs_move').html('No. of CVs:'+elements);
                  $('#cv_id').val(cvs_name);
                  setTimeout(function(){
                  $('#bulkcopy_cv').modal('show'); }, 500);
