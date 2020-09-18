@@ -967,10 +967,11 @@ button.folder_popup {
     height: 25px;
 }
 .highlight_div {
-   border: 1px solid ;
-   padding: 10px;
-   box-shadow: 5px 5px #e8e5e5;
-   }
+    /* border: 1px solid; */
+    padding: 5px;
+    box-shadow: 5px 5px #e8e5e5;
+    border-radius: 25px;
+}
 </style>
 <div class="container-fluid main-d">
   <div class="container">
