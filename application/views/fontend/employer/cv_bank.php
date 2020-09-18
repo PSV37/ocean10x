@@ -852,7 +852,7 @@
   margin-top: 27px;
   }
   span.select2-selection.select2-selection--single {
-  width: 330px;
+  /*width: 330px;*/
   text-align: center;
   }
   select#education_id {
