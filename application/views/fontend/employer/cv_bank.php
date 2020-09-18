@@ -1314,26 +1314,27 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
             <label class="mdl-textfield__label" for="sample3">No. of Candidates (CVs) : 1</label><br>
           </div>
           <div class="accordion" id="accordionExample">
-          <p>
-          <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Show List</a>
-          
-        </p>
+          <div>
+            <div class="card-header" id="headingOne">
+              <h2 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Forwarded Jobs
+                </button>
+              </h2>
+            </div>
 
-            <div class="row">
-              <div class="col">
-                <div class="collapse multi-collapse" id="multiCollapseExample1">
-                  <div class="card card-body">
-                     <?php $i=1; if (!empty($jobs_data)) {
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="card-body">
+                 <?php $i=1; if (!empty($jobs_data)) {
             # code...
            foreach ($jobs_data as $row) { ?>
-           <p><?php echo $i; ?> Job Post Sent - <?php echo $row['job_title']; ?> - <?php echo date('d-m-Y H:i:s',strtotime($row['created_on'])) ; ?></p>
+           <p><?php echo $i; ?> Job Post Sent - <?php echo $row['job_title']; ?> - <?php echo date('d-m-Y H:i:s',strtotime($row['created_on'])) ; ?>
 
-        <?php $i++;  } } ?>
-                  </div>
-                </div>
+        <?php $i++;  } } ?></p>
               </div>
+            </div>
           </div>
-         
+        
           <input type="hidden" name="forward_job_email" id="forward_job_email" value="<?php echo $cv_row['js_email']; ?>">
         </div>
         <div class="modal-footer">
