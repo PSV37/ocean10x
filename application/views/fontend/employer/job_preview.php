@@ -276,7 +276,7 @@
                 <div class="clear"></div>
               </div>
               <div class="skils_benifit">
-                <li class="left-title_seperate">skills&nbsp;&nbsp; </li>
+                <li class="left-title_seperate"style="margin-top: 3px;font-weight: 600;">skills&nbsp;&nbsp; </li>
                 <li class="right-title_seperate">:
                   <?php  $sk=$skills_required;
                     if (isset($sk) && !empty($sk)) {
@@ -294,7 +294,7 @@
                 </li>
               </div>
               <div class="skils_benifit">
-                <li class="left-title_seperate">Benefits</li>
+                <li class="left-title_seperate"style="margin-top: 3px;font-weight: 600;">Benefits</li>
                 <li class="right-title_seperate">
                   &nbsp;:
                   <?php
