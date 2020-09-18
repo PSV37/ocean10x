@@ -264,7 +264,7 @@
                     echo "No";
                     } ?> 
                 </li>
-                <li class="left-title">Yearly Salary (<?php if (isset($currency) && !empty($currency)) {
+                <li class="left-title">Yearly Salary (<?php  $currency = $this->session->userdata('currency'); if (isset($currency) && !empty($currency)) {
                   $locale='en-US'; //browser or user locale
                    // $currency='JPY';
                    $fmt = new NumberFormatter( $locale."@currency=$currency", NumberFormatter::CURRENCY );

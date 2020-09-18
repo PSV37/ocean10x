@@ -1036,6 +1036,11 @@ button.btn.btn-primary.trash {
     border-radius: 128px;
         float: right;
 }
+.icon-info {
+    margin-left: 16px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
 </style>
 <div class="container-fluid main-d">
 <div class="container">
@@ -1062,7 +1067,14 @@ button.btn.btn-primary.trash {
             </div>
             <div class="icon-info">
                <li class="left-icon-title"><i class="far fa-money-bill-alt"></i></li>
-               <li class="right-icon-title"> &emsp;<?php echo $v_companyjobs['salary_range']; ?></li>
+               <li class="right-icon-title"> &emsp;<?php echo $v_companyjobs['salary_range']; ?> (Yearly - <?php  $currency = $this->session->userdata('currency');  if (isset($currency) && !empty($currency)) {
+                  $locale='en-US'; //browser or user locale
+                   // $currency='JPY';
+                   $fmt = new NumberFormatter( $locale."@currency=$currency", NumberFormatter::CURRENCY );
+                   $symbol = $fmt->getSymbol(NumberFormatter::CURRENCY_SYMBOL);
+                   header("Content-Type: text/html; charset=UTF-8;");
+                      echo $symbol;echo $symbol;
+                  } ?>)  </li>
                <li class="left-icon-title"><i class="fas fa-map-marker-alt"></i></li>
                <li class="right-icon-title"> &emsp;<?php echo $v_companyjobs['city_id']; ?></li>
                <li class="left-icon-title"><i class="fas fa-briefcase"></i></li>
@@ -1078,27 +1090,19 @@ button.btn.btn-primary.trash {
                <li class="right-title">&nbsp;: <?php echo $v_companyjobs['job_nature_name']; ?></li>
                <li class="left-title">Domain</li>
                <li class="right-title">&nbsp;:<?php echo $v_companyjobs['job_category_name']; ?></li>
-               <!--  <li class="left-title">Role Type </li><li class="right-title">&nbsp;:</li> -->
-               <!-- <li class="left-title">Dummy1</li>
-               <li class="right-title">&nbsp;:</li> -->
-               <!--  <li class="left-title">Dummy2</li><li class="right-title">&nbsp;:</li> -->
+              
                <div class="clear"></div>
             </div>
             <div class="following-info2">
                <li class="left-title">Education</li>
                <li class="right-title">&nbsp;: <?php echo $v_companyjobs['education_level_name']; ?></li>
-              <!--  <li class="left-title">experience</li>
-               <li class="right-title">&nbsp;:<?php echo $v_companyjobs['experience']; ?></li> -->
+            
                <li class="left-title">JD attached&nbsp;<i class="fas fa-link"></i></li>
                <li class="right-title">&nbsp;: <?php if (isset($v_companyjobs['jd_file']) && !empty($v_companyjobs['jd_file'])) { echo "Yes"; ?>  <a style="margin-left: 15px" href="<?php echo base_url() ?>upload/job_description/<?php echo $v_companyjobs['jd_file']; ?>" download><i class="fa fa-download" aria-hidden="true"></i></a> <?php } else { echo "No";} ?></li>
-               <!-- <li class="left-title">CTC</li> -->
-               <!-- <li class="right-title">&nbsp;:<?php echo $v_companyjobs['salary_range']; ?></li> -->
+              
                <li class="left-title">Vacancies</li>
                <li class="right-title">&nbsp;: <?php echo $v_companyjobs['no_jobs']; ?></li>
-               <!-- <li class="left-title">Specialization</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->education_specialization; ?></li> -->
-               <!--  <li class="left-title">Joining ETA</li><li class="right-title">&nbsp;:30 days</li> -->
-               <!--  <li class="left-title">Benifits</li><li class="right-title">&nbsp;:<?php echo $v_companyjobs->benefits; ?> </li> -->
-               <!--   <li class="left-title">Dummy3</li><li class="right-title">&nbsp;:value</li> -->
+               
                <div class="clear"></div>
             </div>
             <div class="following-info3">
