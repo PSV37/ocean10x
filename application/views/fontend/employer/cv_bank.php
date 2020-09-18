@@ -1265,7 +1265,10 @@
   </div>
 </div>
 <?php if (!empty($cv_bank_data)): foreach ($cv_bank_data as $cv_row) :
-  // s$jobs_data = $this->Maste
+  $cv_id =$cv_row['cv_id'];
+  $where="forwarded_jobs_cv.cv_id ='$cv_id'";
+  $join('job_posting'=>'job_posting.job_post_id = forwarded_jobs_cv.job_post_id');
+  $jobs_data = $this->Master_model->getMaster('forwarded_jobs_cv', $where , $join, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false)
  ?>
 <div class="modal" id="rotateModal<?php echo $cv_row['cv_id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <input type="hidden" name="cv_id" id="cv_id" value="<?php $cv_row['cv_id']; ?>">
@@ -1310,6 +1313,12 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
             <label class="mdl-textfield__label" for="sample3">No. of Candidates (CVs) : 1</label><br>
           </div>
+          <?php $i==1; if (!empty($jobs_data)) {
+            # code...
+           foreach ($jobs_data as $row) { ?>
+           <p><?php echo $i; ?> Job Post Sent - <?php echo $row['job_title']; ?> - <?php echo date('M j Y',strtotime($row['job_title'])) ; ?>
+
+        <?php  } } ?>
           <input type="hidden" name="forward_job_email" id="forward_job_email" value="<?php echo $cv_row['js_email']; ?>">
         </div>
         <div class="modal-footer">
