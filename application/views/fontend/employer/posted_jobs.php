@@ -1027,6 +1027,14 @@ li.right-title {
     font-weight: 100;
     width: 202px;
 }
+button.btn.btn-primary.trash {
+    background-color: #18c5bd;
+    width: 85px;
+    border: none;
+    margin-top: 0px;
+    margin-left: 2px;
+    border-radius: 128px;
+}
 </style>
 <div class="container-fluid main-d">
 <div class="container">

@@ -956,6 +956,17 @@
 ul.select2-results__options {
     margin-top: 15px;
 }
+button.folder_popup {
+    float: right;
+    margin-right: 20px;
+    background-color: #18c5bd;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    width: 120px;
+    height: 25px;
+}
+
 </style>
 <div class="container-fluid main-d">
   <div class="container">
