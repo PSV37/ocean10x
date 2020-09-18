@@ -1067,7 +1067,7 @@ button.folder_popup {
                  ?>
           <label>
             <div class="check">
-              <input type="checkbox" value="<?php echo $cv_row['js_email']; ?>" data-valuetwo="<?php echo $cv_row['cv_id'];  ?>" data-valueone="<?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ echo $cv_row['js_resume']; } ?>" class="chkbx" />
+              <input type="checkbox" value="<?php echo $cv_row['js_email']; ?>" data-valuetwo="<?php echo $cv_row['cv_id'];  ?>" data-valueone="<?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ echo $cv_row['js_resume']; } ?>" class="chkbx" id="chkbx" />
             </div>
             <div class="card content hoverable">
               <div class="front">
@@ -2024,6 +2024,18 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
            else
            {
               $('#check_txt').text('Select All');
+  
+           }
+   });
+   $(document).on('click','#chkbx',function() {
+           // $('.chkbx').prop("checked" , this.checked);
+           if (this.checked == true) 
+           {
+              $(this).css('box-shadow','5px 5px #e8e5e5');
+           }
+           else
+           {
+               $(this).css('box-shadow','0px 0px #fff');
   
            }
    });
