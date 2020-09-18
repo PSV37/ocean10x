@@ -3460,6 +3460,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $company_id = $this->session->userdata('company_profile_id');
         $this->load->model('Pincode_model');
         $data['active_cv'] = $this->Pincode_model->getactive_cvs($company_id);
+        $data['Total_CVs_in_CVBank'] = $this->Pincode_model->getactive_cvs($company_id);
         $data['education_level'] = $this->Master_model->getMaster('education_level', $where = false);
         $sort_val = $this->input->post('sort_val');
         if (isset($fid) && !empty($fid) && empty($sort_val)) {
@@ -3472,6 +3473,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $join_cond = array('corporate_cv_bank' => 'corporate_cv_bank.cv_id = cv_folder_relation.cv_id|Left outer',
                 'cv_folder' => 'cv_folder.id=cv_folder_relation.cv_folder_id');
             $data['cv_bank_data'] = $this->Master_model->getMaster('cv_folder_relation', $where_c, $join_cond, $order = 'desc', $field = 'relation_id', $select = false, $limit = false, $start = false, $search = false);
+                $data['total_cvs']=sizeof($cv_bank_data);
+            
              // print_r($this->db->last_query());die;
             $data['fid'] = $fid;
             $data['fname'] = $data['cv_bank_data'][0]['folder_name'];
@@ -3500,6 +3503,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $cv_bank_data = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join_cond , $order = 'desc', $field = $sort_val, $select = false, $limit = false, $start = false, $search = false);
                 // print_r($this->db->last_query());die;
             // $config['base_url'] = base_url() . 'employer/corporate_cv_bank';
+                $data['total_cvs']=sizeof($cv_bank_data);
+
             $config['total_rows'] = sizeof($cv_bank_data);
             $config['per_page'] = 5;
             $config['attributes'] = array('class' => 'myclass');
@@ -3548,6 +3553,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             // $where_c['company_id'] = $company_id;
             $join = array('education_level' => 'education_level.education_level_id = corporate_cv_bank.js_top_education | left outer');
             $cv_bank_data = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join, $order = 'desc', $field = 'cv_id', $select = false, $limit = false, $start = false, $search = false);
+          
+                $data['total_cvs']=sizeof($cv_bank_data);
             $data['company_active_jobs'] = $this->job_posting_model->get_company_activedeasline_jobs($company_id);
                     $config['base_url'] = base_url() . 'employer/corporate_cv_bank';
                     $config['total_rows'] = sizeof($cv_bank_data);
