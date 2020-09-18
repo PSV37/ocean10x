@@ -3588,7 +3588,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
              $data['company_active_jobs'] = $this->job_posting_model->get_company_activedeasline_jobs($company_id);
             $where_c = "corporate_cv_bank.cv_id NOT IN (select cv_id from cv_folder_relation) and company_id ='$company_id' and js_status = '0'";
             // $where_c['company_id'] = $company_id;
-            $join = array('education_level' => 'education_level.education_level_id = corporate_cv_bank.js_top_education | left outer');
+            $join = array('education_level' => 'education_level.education_level_id = corporate_cv_bank.js_top_education | left outer',
+                'forwarded_jobs_cv' => 'forwarded_jobs_cv.cv_id = corporate_cv_bank.cv_id | LEFT OUTER',
+                'job_posting','job_posting.job_post_id = forwarded_jobs_cv.job_post_id | LEFT OUTER');
             $data['cv_bank_data'] = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join, $order = 'desc', $field = 'cv_id', $select = false, $config["per_page"], $page, $search = false);
             $where_trash = "company_id ='$company_id' and js_status = '1'";
             // $where_c['company_id'] = $company_id;

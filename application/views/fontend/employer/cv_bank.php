@@ -1264,7 +1264,9 @@
     </div>
   </div>
 </div>
-<?php if (!empty($cv_bank_data)): foreach ($cv_bank_data as $cv_row) : ?>
+<?php if (!empty($cv_bank_data)): foreach ($cv_bank_data as $cv_row) :
+  // s$jobs_data = $this->Maste
+ ?>
 <div class="modal" id="rotateModal<?php echo $cv_row['cv_id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <input type="hidden" name="cv_id" id="cv_id" value="<?php $cv_row['cv_id']; ?>">
   <div class="modal-dialog" role="document">
