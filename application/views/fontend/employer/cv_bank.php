@@ -1186,7 +1186,8 @@
           <div class="filter1">
             <p style="font-size:18px;">Domain</p>
             <!--<select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" tabindex="-98">-->
-              <select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" tabindex="-98">
+              <select class="form-control select2 filtredu" id="domain" onchange="get_data();" tabindex="-98">
+             <!--  <select class="selectpicker"  multiple="" data-live-search="true" data-live-search-placeholder="Search" tabindex="-98"> -->
               <option value=""></option>
               <?php
                     $value =  set_value('candidate_industry');
@@ -1251,7 +1252,7 @@
           </div>
           <div class="filter1">
             <p style="font-size:18px;margin-top:15px;">Education</p>
-            <select class="form-control filtredu" id="education_id" onchange="get_data();" tabindex="-98">
+            <select class="form-control filtredu select2" id="education_id" onchange="get_data();" tabindex="-98">
               <!-- <option value=""> </option> -->
               <?php  $edu_value =  set_value('js_top_education'); foreach($education_level as $education){?>
               <option value="<?php echo $education['education_level_id']; ?>"<?php if($edu_value==$education['education_level_id']){ echo "selected"; }elseif($job_info->job_edu==$education['education_level_id']){ echo "selected"; }?>><?php echo $education['education_level_name']; ?></option>
@@ -1755,6 +1756,9 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
     </form>
   </div>
 </div>
+<script>
+   $('.select2').select2();
+</script>
 <script>
   $(document).ready (function(){
   $("#smsg").fadeTo(2000, 500).slideUp(500, function(){
