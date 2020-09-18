@@ -212,6 +212,13 @@
   p.right-title_detail {
   white-space: pre-wrap;
   }
+  label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-size: 11px;
+}
 </style>
 <div class="container-fluid main-d">
   <div class="container">
@@ -287,7 +294,7 @@
                 </li>
               </div>
               <div class="skils_benifit">
-                <li class="left-title_seperate">Benefit</li>
+                <li class="left-title_seperate">Benefits</li>
                 <li class="right-title_seperate">
                   &nbsp;:
                   <?php
