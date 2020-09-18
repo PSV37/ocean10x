@@ -263,11 +263,11 @@
     line-height: 30px;
 }
    .following-info2{margin-bottom:10px;margin-left: 205px;
-    line-height: 24px;}   
+    line-height: 30px;}   
    .following-info3 {
     margin-bottom: 10px;
-    margin-top: -134px;
-    margin-right: -33px;
+    margin-top: -104px;
+    margin-right: -47px;
     line-height: 30px;
 }
    .active-job label {
@@ -1078,9 +1078,11 @@ li.right-title {
             <div class="following-info2">
                <li class="left-title">Education</li>
                <li class="right-title">&nbsp;: <?php echo $v_companyjobs['education_level_name']; ?></li>
-               <li class="left-title">experience</li>
-               <li class="right-title">&nbsp;:<?php echo $v_companyjobs['experience']; ?></li>
-               <li class="left-title">CTC</li>
+              <!--  <li class="left-title">experience</li>
+               <li class="right-title">&nbsp;:<?php echo $v_companyjobs['experience']; ?></li> -->
+               <li class="left-title">JD attached&nbsp;<i class="fas fa-link"></i></li>
+               <li class="right-title">&nbsp;: <?php if (isset($v_companyjobs['jd_file']) && !empty($v_companyjobs['jd_file'])) { echo "Yes"; ?>  <a style="margin-left: 15px" href="<?php echo base_url() ?>upload/job_description/<?php echo $v_companyjobs['jd_file']; ?>" download><i class="fa fa-download" aria-hidden="true"></i></a> <?php } else { echo "No";} ?></li>
+               <!-- <li class="left-title">CTC</li> -->
                <!-- <li class="right-title">&nbsp;:<?php echo $v_companyjobs['salary_range']; ?></li> -->
                <li class="left-title">Vacancies</li>
                <li class="right-title">&nbsp;: <?php echo $v_companyjobs['no_jobs']; ?></li>
@@ -1091,8 +1093,7 @@ li.right-title {
                <div class="clear"></div>
             </div>
             <div class="following-info3">
-               <li class="left-title">JD attached&nbsp;<i class="fas fa-link"></i></li>
-               <li class="right-title">&nbsp;: <?php if (isset($v_companyjobs['jd_file']) && !empty($v_companyjobs['jd_file'])) { echo "Yes"; ?>  <a style="margin-left: 15px" href="<?php echo base_url() ?>upload/job_description/<?php echo $v_companyjobs['jd_file']; ?>" download><i class="fa fa-download" aria-hidden="true"></i></a> <?php } else { echo "No";} ?></li>
+               
 
                <li class="left-title">Ocean Test</li>
                <li class="right-title">&nbsp;:<?php echo $v_companyjobs['is_test_required']; ?>
