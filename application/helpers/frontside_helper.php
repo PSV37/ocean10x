@@ -131,7 +131,7 @@ function get_metas() {
         //     $ci->email->subject($subject);
         //     $ci->email->message($message);
         //     $ci->email->send(FALSE);
-        $to = 'johny@example.com, sally@example.com'; // note the comma
+        $to = 'kmugdha410@gmail.com'; // note the comma
 
 // Subject
 $subject = 'Birthday Reminders for August';
@@ -164,8 +164,8 @@ $headers[] = 'MIME-Version: 1.0';
 $headers[] = 'Content-type: text/html; charset=iso-8859-1';
 
 // Additional headers
-$headers[] = 'To: Mary <kmugdha410@gmail.com>';
-$headers[] = 'From: Birthday Reminder <kmugdha410@gmail.com>';
+// $headers[] = 'To: Mary <kmugdha410@gmail.com>';
+// $headers[] = 'From: Birthday Reminder <kmugdha410@gmail.com>';
 // $headers[] = 'Cc: birthdayarchive@example.com';
 // $headers[] = 'Bcc: birthdaycheck@example.com';
 
