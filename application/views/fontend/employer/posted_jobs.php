@@ -262,7 +262,7 @@
     float: left;
     line-height: 30px;
 }
-   .following-info2{margin-bottom:10px;margin-left: 205px;
+   .following-info2{margin-bottom:10px;margin-left: 215px;
     line-height: 30px;}   
    .following-info3 {
     margin-bottom: 10px;
