@@ -131,9 +131,9 @@ function get_metas() {
             $ci->email->subject($subject);
             $ci->email->message($message);
             $ci->email->send(FALSE);
-          //  $ci->email->print_debugger(array('headers'));
+          return $ci->email->print_debugger(array('headers'));
           //  exit;
-            return true;
+            // return true;
     }
 
     // to fetch exam result by job seeker ids
