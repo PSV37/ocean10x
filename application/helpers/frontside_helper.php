@@ -118,7 +118,7 @@ function get_metas() {
             $config['smtp_user'] = "notification@yourdomain.com"; 
             $config['smtp_pass'] = "Romesh-shil1995";*/
             
-            $config['protocol'] = "mail";
+            $config['protocol'] = "smtp";
             $config['charset'] = "utf-8";
             $config['mailtype'] = "html";
             $config['newline'] = "\r\n";
