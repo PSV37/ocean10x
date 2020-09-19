@@ -1093,6 +1093,25 @@ button.folder_popup {
                   <div class="a" style="display: inline-flex;">
                     <li class="right-title" style="font-size:19px;margin-top:-4px;"  ><a href="<?php echo base_url(); ?>employer/edit_cv/<?php echo base64_encode($cv_row['cv_id']); ?>?fid=<?php echo $fid; ?>" style="color: black;cursor: pointer;" ><?php echo $cv_row['js_name']; ?></a></li>
                     <li class="right-title" style="font-size: 15px;font-weight: 600;margin-left: -106px;width: fit-content;"><?php echo $cv_row['js_email']; ?></li>
+                    <?php  
+                    $cv_id =$cv_row['cv_id'];
+                    $where="forwarded_jobs_cv.cv_id ='$cv_id'";
+                    $join = array('job_posting'=>'job_posting.job_post_id = forwarded_jobs_cv.job_post_id');
+                    $jobs_data = $this->Master_model->getMaster('forwarded_jobs_cv', $where , $join, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false) 
+                      if (!empty($jobs_data)) { ?>
+                       <span data-toggle="collapse" data-target="#collapseEx" aria-expanded="false" aria-controls="collapseEx" style="color: red;" class="required"> * </span>
+                       <div class="collapse" id="collapseEx">
+  <div class="card-body">
+  <?php $i=1; if (!empty($jobs_data)) {
+            # code...
+           foreach ($jobs_data as $row) { ?>
+           <p><?php echo $i; ?>.  <?php echo $row['job_title']; ?> - Job Post sent on <?php echo date('d-m-y H:i',strtotime($row['created_on'])) ; ?>
+
+        <?php $i++;  } } ?>
+  </div>
+</div>
+                     <?php  }
+                    ?>
                   </div>
                 </div>
                 <div class="following-info">
@@ -1319,7 +1338,7 @@ button.folder_popup {
   $cv_id =$cv_row['cv_id'];
   $where="forwarded_jobs_cv.cv_id ='$cv_id'";
   $join = array('job_posting'=>'job_posting.job_post_id = forwarded_jobs_cv.job_post_id');
-  $jobs_data = $this->Master_model->getMaster('forwarded_jobs_cv', $where , $join, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false)
+  $jobs_data = $this->Master_model->getMaster('forwarded_jobs_cv', $where , $join, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
  ?>
 <div class="modal" id="rotateModal<?php echo $cv_row['cv_id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <input type="hidden" name="cv_id" id="cv_id" value="<?php $cv_row['cv_id']; ?>">
