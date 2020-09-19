@@ -2035,12 +2035,21 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
    $('.checkbox_label').click(function ()
    {
    var checkbox = $(this).find('input[type=checkbox]');
-   $('.chkbx').prop("checked",false);
+     var addclass = 'highlight_div';
+   if (this.checked == true) 
+  {
+    
+     $('.checkbox_label').removeClass(addclass);
+     $(this).addClass(addclass);
+  }
+  else
+  {
+    $('.checkbox_label').removeClass(addclass);
+  }
+   // $('.chkbx').prop("checked",false);
    
-   checkbox.prop("checked", !checkbox.prop("checked"));
-   var addclass = 'highlight_div';
-   $('.checkbox_label').removeClass(addclass);
-   $(this).addClass(addclass);
+   // checkbox.prop("checked", !checkbox.prop("checked"));
+   
    });
    
    // $(document).on('click','#chkbx',function() {
