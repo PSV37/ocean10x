@@ -1116,7 +1116,10 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                         $cv_array = array('company_id' => $employer_id, 'js_name' => $can_data[0]['full_name'], 'js_email' => $can_data[0]['email'], 'js_mobile' => $can_data[0]['mobile_no'], 'created_on' => date('Y-m-d'), 'created_by' => $employer_id);
                         $add_cv = $this->Master_model->master_insert($cv_array, 'corporate_cv_bank');
                     }
-                    $apply_array = array('job_seeker_id' => $seeker_id, 'company_id' => $employer_id, 'job_post_id' => $job_post_id, 'forword_job_status' => 1, 'updated_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),
+                     $where_apply_job = "job_apply.job_seeker_id='$seeker_id' and company_id='$employer_id'and job_post_id = '$job_post_id'";
+                    $apply_data = $this->Master_model->getMaster('job_apply', $where_apply_job);
+                    if (empty($apply_data)) {
+                        $apply_array = array('job_seeker_id' => $seeker_id, 'company_id' => $employer_id, 'job_post_id' => $job_post_id, 'forword_job_status' => 1, 'updated_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),
                     // 'mandatory_parameters' => implode(',', $mandatory)
                     );
                     $apply = $this->Master_model->master_insert($apply_array, 'job_apply');
@@ -1163,6 +1166,9 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                         $company_name = $this->session->userdata('company_name');
                         $data = array('company' => $company_name, 'action_taken_for' => $email[$i], 'field_changed' => 'Forwarded Job ', 'Action' => $company_name . ' Forwarded job for the position of ' . $require['job_title'], 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
                     }
+                    }
+                    
+                    
                     // else{
                     //     redirect('employer/active_job');
                     // }
