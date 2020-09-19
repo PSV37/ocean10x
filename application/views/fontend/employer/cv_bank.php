@@ -2389,6 +2389,7 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
   createPie(".pieID.legend", ".pieID.pie");
   
 </script> -->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script>
   function createPie()
   {
