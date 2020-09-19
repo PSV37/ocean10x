@@ -236,7 +236,7 @@
                 <li class="left-icon-title"><i class="fas fa-map-marker-alt"></i></li>
                 <li class="right-icon-title"> &emsp;<?php echo $city_id; ?></li>
                 <li class="left-icon-title"><i class="fas fa-briefcase"></i></li>
-                <li class="right-title" style="width:100%;font-size:14px;"> &emsp;<?php echo $experience; ?> years(Desired Experience)</li>
+                <li class="right-title" style="width:100%;font-size:14px;"> &emsp;<?php echo $experience; ?> Years (Desired Experience)</li>
                 <div class="clear"></div>
               </div>
               <div class="following-info">

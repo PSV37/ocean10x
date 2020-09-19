@@ -1105,7 +1105,7 @@ button.btn.btn-primary.trash {
                
               
                 <li class="left-title">Published on</li>
-               <li class="right-title">&nbsp;:<?php if(!is_null($v_companyjobs['created_at'])) { echo date('M j Y',strtotime($v_companyjobs['created_at'])); } ?></li>
+               <li class="right-title">&nbsp;:<?php if(!is_null($v_companyjobs['created_at'])) { echo date('j M Y',strtotime($v_companyjobs['created_at'])); } ?></li>
                <div class="clear"></div>
             </div>
             <div class="following-info3">
@@ -1121,7 +1121,7 @@ button.btn.btn-primary.trash {
                <li class="right-title">&nbsp;: <?php if (isset($v_companyjobs['jd_file']) && !empty($v_companyjobs['jd_file'])) { echo "Yes"; ?>  <a style="margin-left: 15px" href="<?php echo base_url() ?>upload/job_description/<?php echo $v_companyjobs['jd_file']; ?>" download><i class="fa fa-download" aria-hidden="true"></i></a> <?php } else { echo "No";} ?></li>
               
                <li class="left-title">Job expiry</li>
-               <li class="right-title">&nbsp;:<?php if(!is_null($v_companyjobs['job_deadline'])) { echo date('M j Y',strtotime($v_companyjobs['job_deadline'])); } ?></li>
+               <li class="right-title">&nbsp;:<?php if(!is_null($v_companyjobs['job_deadline'])) { echo date('j M Y',strtotime($v_companyjobs['job_deadline'])); } ?></li>
                <div class="clear"></div>
             </div>
              <br><br>
