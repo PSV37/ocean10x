@@ -1131,17 +1131,17 @@ button.folder_popup {
                     $join = array('job_posting'=>'job_posting.job_post_id = forwarded_jobs_cv.job_post_id');
                     $jobs_data = $this->Master_model->getMaster('forwarded_jobs_cv', $where , $join, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false); 
                       if (!empty($jobs_data)) { ?>
-                       <span data-toggle="collapse" data-target="#collapseEx" aria-expanded="false" aria-controls="collapseEx" style="color: red;" class="required"> * </span>
-                       <div class="collapse" id="collapseEx">
-  <div class="card-body">
-  <?php $i=1; if (!empty($jobs_data)) {
-            # code...
-           foreach ($jobs_data as $row) { ?>
-           <p><?php echo $i; ?>.  <?php echo $row['job_title']; ?> - Job Post sent on <?php echo date('d-m-y H:i',strtotime($row['created_on'])) ; ?>
+                       <span data-toggle="collapse" data-target="#collapseEx<?php echo $cv_row['cv_id']?>" aria-expanded="false" aria-controls="collapseEx" style="color: red;" class="required"> * </span>
+                       <div class="collapse" id="collapseEx<?php echo $cv_row['cv_id']?>">
+                      <div class="card-body">
+                      <?php $i=1; if (!empty($jobs_data)) {
+                                # code...
+                               foreach ($jobs_data as $row) { ?>
+                               <p><?php echo $i; ?>.  <?php echo $row['job_title']; ?> - Job Post sent on <?php echo date('d-m-y H:i',strtotime($row['created_on'])) ; ?>
 
-        <?php $i++;  } } ?>
-  </div>
-</div>
+                            <?php $i++;  } } ?>
+                      </div>
+                      </div>
                      <?php  }
                     ?>
                 <div class="btn-group">
