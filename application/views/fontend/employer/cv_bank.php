@@ -1167,11 +1167,11 @@ button.folder_popup {
             <section>
               <ul class="pieID legend">
                 <li class="cv">
-                  <em id="spanid0">Total CVs in CV Bank</em>
+                  <em id="spanid1">Total CVs in CV Bank</em>
                   <span><?php echo sizeof($Total_CVs_in_CVBank); ?></span>
                 </li>
                 <li class="cv">
-                  <em id="spanid1">Active CVs</em>
+                  <em id="spanid2">Active CVs</em>
                   <span id="active_cv"><?php echo sizeof($active_cv); ?></span>
                 </li>
             
@@ -1179,19 +1179,19 @@ button.folder_popup {
               </div>
               <!-- <ul class="pieID legend"> -->
                 <li class="cv">
-                  <em id="spanid0">Total CVs</em>
+                  <em id="spanid3">Total CVs</em>
                   <span><?php echo $total_cvs; ?></span>
                 </li>
                 <li class="cv">
-                  <em id="spanid1">Active CVs</em>
+                  <em id="spanid4">Active CVs</em>
                   <span id="active_cv"><?php echo sizeof($active_cv); ?></span>
                 </li>
                 <li class="cv">
-                  <em id="spanid2">Own CVs</em>
+                  <em id="spanid5">Own CVs</em>
                   <span id="own_cvs"><?php echo sizeof($own_cvs); ?></span>
                 </li>
                 <li class="cv">
-                  <em id="spanid3">Consultant CVs</em>
+                  <em id="spanid6">Consultant CVs</em>
                   <span>60</span>
                 </li>
               </ul>
