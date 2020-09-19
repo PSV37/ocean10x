@@ -5694,7 +5694,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 'job_category'=>$job_details['job_category'], 
                 'experience'=>$job_details['experience'], 
                 'no_jobs'=>$job_details['no_jobs'], 
-                'job_role' => $this->input->post('job_role'), //new added field
+                'job_role' => $job_details['job_role'], //new added field
+                'city_id' => $job_details['city_id'], //new added field
                 'skills_required' => $job_details['skills_required'], //new added field
                 'salary_range' => $job_details['salary_range'], 
                 "job_deadline" => date('d-m-Y', strtotime($job_details['job_deadline'])), "job_status" => '1', 
@@ -5712,6 +5713,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $job_info['jobnature'] = $job_nature;
                 $where_int = "job_nature_id='$job_nature'";
             $job_info['job_nature'] = $this->Master_model->get_master_row('job_nature', $select = FALSE, $where_int, $join = FALSE);
+            $job_info['job_id'] = $job_id;
                  $job_info['preview'] = 'true';
                  $this->load->view('fontend/employer/job_preview', $job_info);
     }
