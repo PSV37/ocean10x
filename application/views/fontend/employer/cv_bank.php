@@ -2259,7 +2259,7 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
 <script>
   function get_data()
   {
-    
+     var domain_value = $('#domain').val();
      var value = $('#exp_id').val();
      var notice_period_value = $('#notice_period_id').val();
      var education_value = $('#education_id').val();
@@ -2268,7 +2268,7 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
       $.ajax({
               url: "<?php echo base_url();?>employer/get_active_cvs",
               type: "POST",
-              data:{exp:value,notice_period:notice_period_value,education:education_value,current_ctc:current_ctc_value,stablity:sta_value},
+              data:{domain:domain_value,exp:value,notice_period:notice_period_value,education:education_value,current_ctc:current_ctc_value,stablity:sta_value},
                 success: function(data)
                 {
                     var getarray = jQuery.parseJSON(data);
