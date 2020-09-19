@@ -2346,6 +2346,7 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
     for(var i=0; i<listData.length; i++) {
       listTotal += listData[i];
     }
+    
     var offset = 0;
     var color = [
      

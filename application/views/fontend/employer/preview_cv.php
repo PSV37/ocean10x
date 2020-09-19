@@ -224,6 +224,14 @@
     overflow: hidden;
     margin-top: 60px;
 }
+button.btn.btn-primary {
+  /*float: right;*/
+  background-color: #18c5bd;
+  border: none;
+  border-radius: 35px;
+  margin-top: 13px;
+  font-size: 12px;
+  }
 </style>
 <div class="container-fluid main-d">
   <div class="container">
@@ -339,8 +347,25 @@
         
       
     </section>
-   <?php } ?>
-    
+   <?php } 
+   $cv_id =$cv_bank_data['cv_id'];
+  $where="forwarded_jobs_cv.cv_id ='$cv_id'";
+  $join = array('job_posting'=>'job_posting.job_post_id = forwarded_jobs_cv.job_post_id');
+  $jobs_data = $this->Master_model->getMaster('forwarded_jobs_cv', $where , $join, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false); ?>
+    <button  class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Forwarded Jobs list
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card-body">
+  <?php $i=1; if (!empty($jobs_data)) {
+            # code...
+           foreach ($jobs_data as $row) { ?>
+           <p><?php echo $i; ?><?php echo $row['job_title']; ?> - Job Post sent on <?php echo date('d-m-y H:i',strtotime($row['created_on'])) ; ?>
+
+        <?php $i++;  } } ?>
+  </div>
+</div>
               <input type="hidden" name="job_id" value="<?php echo $job_id; ?>">
               <div class="preview_btns">
                 <button type="button" onclick="history.back()"  class="back_btn">Back</button>
