@@ -1165,7 +1165,7 @@ button.folder_popup {
         </div>
       </div>
       <div class="col-md-3 right_side">
-        <div class="pai_chart">
+        <div class="pie-chart">
           <main>
             <section>
               <ul class="pieID legend">
@@ -2309,63 +2309,112 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
   
 </script>
 <script>
-  function sliceSize(dataNum, dataTotal) {
-    return (dataNum / dataTotal) * 360;
-  }
-  function addSlice(sliceSize, pieElement, offset, sliceID, color, dataCount) {
-     var val = $('#spanid'+dataCount).text();
+  // function sliceSize(dataNum, dataTotal) {
+  //   return (dataNum / dataTotal) * 360;
+  // }
+  // function addSlice(sliceSize, pieElement, offset, sliceID, color, dataCount) {
+  //    var val = $('#spanid'+dataCount).text();
   
-     console.log(val);
-    $(pieElement).append("<div class='slice "+sliceID+"'><span tooltip title='"+val+"'></span></div>");
-    var offset = offset - 1;
-    var sizeRotation = -179 + sliceSize;
-    $("."+sliceID).css({
-      "transform": "rotate("+offset+"deg) translate3d(0,0,0)"
-    });
-    $("."+sliceID+" span").css({
-      "transform"       : "rotate("+sizeRotation+"deg) translate3d(0,0,0)",
-      "background-color": color
-    });
-  }
-  function iterateSlices(sliceSize, pieElement, offset, dataCount, sliceCount, color) {
-    var sliceID = "s"+dataCount+"-"+sliceCount;
-    var maxSize = 179;
-    if(sliceSize<=maxSize) {
-      addSlice(sliceSize, pieElement, offset, sliceID, color,dataCount);
-    } else {
-      addSlice(maxSize, pieElement, offset, sliceID, color,dataCount  );
-      iterateSlices(sliceSize-maxSize, pieElement, offset+maxSize, dataCount, sliceCount+1, color);
-    }
-  }
-  function createPie(dataElement, pieElement) {
-    var listData = [];
-    $(dataElement+" span").each(function() {
-      listData.push(Number($(this).html()));
-    });
-    var listTotal = 0;
-    for(var i=0; i<listData.length; i++) {
-      listTotal += listData[i];
-    }
-    var offset = 0;
-    var color = [
+  //    console.log(val);
+  //   $(pieElement).append("<div class='slice "+sliceID+"'><span tooltip title='"+val+"'></span></div>");
+  //   var offset = offset - 1;
+  //   var sizeRotation = -179 + sliceSize;
+  //   $("."+sliceID).css({
+  //     "transform": "rotate("+offset+"deg) translate3d(0,0,0)"
+  //   });
+  //   $("."+sliceID+" span").css({
+  //     "transform"       : "rotate("+sizeRotation+"deg) translate3d(0,0,0)",
+  //     "background-color": color
+  //   });
+  // }
+  // function iterateSlices(sliceSize, pieElement, offset, dataCount, sliceCount, color) {
+  //   var sliceID = "s"+dataCount+"-"+sliceCount;
+  //   var maxSize = 179;
+  //   if(sliceSize<=maxSize) {
+  //     addSlice(sliceSize, pieElement, offset, sliceID, color,dataCount);
+  //   } else {
+  //     addSlice(maxSize, pieElement, offset, sliceID, color,dataCount  );
+  //     iterateSlices(sliceSize-maxSize, pieElement, offset+maxSize, dataCount, sliceCount+1, color);
+  //   }
+  // }
+  // function createPie(dataElement, pieElement) {
+  //   var listData = [];
+  //   $(dataElement+" span").each(function() {
+  //     listData.push(Number($(this).html()));
+  //   });
+  //   var listTotal = 0;
+  //   for(var i=0; i<listData.length; i++) {
+  //     listTotal += listData[i];
+  //   }
+  //   var offset = 0;
+  //   var color = [
      
-      "#15dfb0", 
-      "#21e5dc", 
-      "#18c5bd", 
-      "#11807b", 
-      "#92d6d3",
-      "#519693"
+  //     "#15dfb0", 
+  //     "#21e5dc", 
+  //     "#18c5bd", 
+  //     "#11807b", 
+  //     "#92d6d3",
+  //     "#519693"
       
      
-    ];
-    for(var i=0; i<listData.length; i++) {
-      var size = sliceSize(listData[i], listTotal);
-      iterateSlices(size, pieElement, offset, i, 0, color[i]);
-      $(dataElement+" li:nth-child("+(i+1)+")").css("border-color", color[i]);
-      offset += size;
+  //   ];
+  //   for(var i=0; i<listData.length; i++) {
+  //     var size = sliceSize(listData[i], listTotal);
+  //     iterateSlices(size, pieElement, offset, i, 0, color[i]);
+  //     $(dataElement+" li:nth-child("+(i+1)+")").css("border-color", color[i]);
+  //     offset += size;
+  //   }
+  // }
+  // createPie(".pieID.legend", ".pieID.pie");
+  google.load("visualization", "1", {packages:["corechart"]});
+google.setOnLoadCallback(drawCharts);
+function drawCharts() {
+  
+
+  // BEGIN PIE CHART
+  
+  // pie chart data
+  var pieData = google.visualization.arrayToDataTable([
+    ['Country', 'Page Hits'],
+    ['USA',      7242],
+    ['Canada',   4563],
+    ['Mexico',   1345],
+    ['Sweden',    946],
+    ['Germany',  2150]
+  ]);
+  // pie chart options
+  var pieOptions = {
+    backgroundColor: 'transparent',
+    pieHole: 0.4,
+    colors: [ "cornflowerblue", 
+              "olivedrab", 
+              "orange", 
+              "tomato", 
+              "crimson", 
+              "purple", 
+              "turquoise", 
+              "forestgreen", 
+              "navy", 
+              "gray"],
+    pieSliceText: 'value',
+    tooltip: {
+      text: 'percentage'
+    },
+    fontName: 'Open Sans',
+    chartArea: {
+      width: '100%',
+      height: '94%'
+    },
+    legend: {
+      textStyle: {
+        fontSize: 13
+      }
     }
-  }
-  createPie(".pieID.legend", ".pieID.pie");
+  };
+  // draw pie chart
+  var pieChart = new google.visualization.PieChart(document.getElementById('pie-chart'));
+  pieChart.draw(pieData, pieOptions);
+}
   
 </script>
 <script>
