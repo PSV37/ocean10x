@@ -1019,7 +1019,7 @@ button.folder_popup {
           </div>
           <div class="col-md-4">
             <form method="post" action="<?php echo base_url(); ?>employer/corporate_cv_bank/<?php if(!empty($fid)){ echo $fid;} ?>">
-              <label class="dropdown">
+              <label class="dropdown" style="float:left;">
                 <div class="dd-button" onclick="myFunction2(event)">
                   Sort by
                 </div>
