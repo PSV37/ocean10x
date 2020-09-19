@@ -2329,7 +2329,7 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
   
   
 </script>
-<!-- <script>
+<script>
   function sliceSize(dataNum, dataTotal) {
     return (dataNum / dataTotal) * 360;
   }
@@ -2389,8 +2389,8 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
   }
   createPie(".pieID.legend", ".pieID.pie");
   
-</script> -->
-<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+</script>
+<!-- <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script>
   function createPie()
   {
@@ -2443,7 +2443,7 @@ function drawCharts() {
   pieChart.draw(pieData, pieOptions);
 }
   }
-</script>
+</script> -->
 <script>
   /**
   *   I don't recommend using this plugin on large tables, I just wrote it to make the demo useable. It will work fine for smaller tables 
