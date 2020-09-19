@@ -58,9 +58,9 @@
     endforeach;  
   ?>     
 <?php else : ?> 
-<li colspan="3">
-  <strong>There is no record for display</strong>
-</li>
+<tr>
+  <th colspan="13">There is no record for display</th>
+</tr>
 <?php endif; ?>
 <!-- </div>
   xcccc-->
