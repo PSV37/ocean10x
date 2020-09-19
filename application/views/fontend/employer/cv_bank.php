@@ -1375,7 +1375,7 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
   <?php $i=1; if (!empty($jobs_data)) {
             # code...
            foreach ($jobs_data as $row) { ?>
-           <p><?php echo $i; ?> .<?php echo $row['job_title']; ?> - Job Post sent on <?php echo date('d-m-y H:i',strtotime($row['created_on'])) ; ?>
+           <p><?php echo $i; ?>.  <?php echo $row['job_title']; ?> - Job Post sent on <?php echo date('d-m-y H:i',strtotime($row['created_on'])) ; ?>
 
         <?php $i++;  } } ?>
   </div>
