@@ -688,7 +688,7 @@
   .input-group-btn:last-child>.btn{background-color:#18c5bd;
   color:#fff;}
   button.btn.btn-primary {
-  float: right;
+  /*float: right;*/
   background-color: #18c5bd;
   border: none;
   border-radius: 35px;
@@ -1363,7 +1363,7 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
           </div>
           <p>
   
-  <button style="float: left;" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  <button  class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
     Forwarded Jobs list
   </button>
 </p>
