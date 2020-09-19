@@ -2043,7 +2043,7 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
     $('.content:contains("'+text+'")').show();
    
    });
-  
+  createPie();
   });
   $.expr[":"].contains = $.expr.createPseudo(function(arg) {
   return function( elem ) {
@@ -2322,7 +2322,8 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
           });
      // $('#active_cv').html(value);
      // alert(value);pieID
-     createPie(".pieID.legend", ".pieID.pie");
+     // createPie(".pieID.legend", ".pieID.pie");
+     createPie();
   }
   
   
