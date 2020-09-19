@@ -325,10 +325,10 @@
               <div class="preview_btns">
                   <a href="<?php echo base_url() ?>employer/active-job"> <button type="button" class="back_btn">Back</button></a>
                
-                <button type="submit" name="edit" class="edit_btn">Edit</button>
-                <?php if (isset($preview)) {
-                    # code...
-                }else{ ?>
+               
+                <?php if (isset($preview)) { ?>
+                    <a href=" <?php echo base_url() ?>employer/update_job/<?php echo $job_id; ?>"><button type="submit" name="edit" class="edit_btn">Edit</button></a>
+               <?php }else{ ?>
                      <button type="submit" class="Postjob_btn" name="post_preview">Post Job</button>
                <?php } ?>
                
