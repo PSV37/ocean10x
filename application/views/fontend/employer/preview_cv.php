@@ -231,6 +231,7 @@ button.btn.btn-primary {
   border-radius: 35px;
   margin-top: 13px;
   font-size: 12px;
+  font-weight: 600;
   }
 </style>
 <div class="container-fluid main-d">
@@ -308,14 +309,12 @@ button.btn.btn-primary {
               
               <hr>
 
-              <?php if (isset($js_details) && !empty($js_details)) { ?>
-               
-           
-             
-            
-              <!-- EXPERIENCE --------------------------------------------->
+    <?php if (isset($js_details) && !empty($js_details)) { ?>
+        
+        <!-- EXPERIENCE --------------------------------------------->
+        <h3>Experience</h3>
     <section id="experience" class="container">
-      <h3>Experience</h3>
+     
       <?php  foreach ($js_details as $row) { ?>
       <div class="card" style="max-width: 68%;border: none;">
         <div class="card-header collapse show" data-toggle="collapse" data-target="#exp1">
@@ -348,6 +347,10 @@ button.btn.btn-primary {
       
     </section>
    <?php } 
+   else
+   { ?>
+    <p>There is no Experience Details Available to display.. </p>
+ <?php  }
    $cv_id =$cv_bank_data['cv_id'];
   $where="forwarded_jobs_cv.cv_id ='$cv_id'";
   $join = array('job_posting'=>'job_posting.job_post_id = forwarded_jobs_cv.job_post_id');
