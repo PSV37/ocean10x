@@ -2358,10 +2358,10 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
       
      
     ];
-    for(var i=1; i<=listData.length; i++) {
+    for(var i=0; i<listData.length; i++) {
       var size = sliceSize(listData[i], listTotal);
       iterateSlices(size, pieElement, offset, i, 0, color[i]);
-      $(dataElement+" li:nth-child("+(i)+")").css("border-color", color[i-1]);
+      $(dataElement+" li:nth-child("+(i+1)+")").css("border-color", color[i]);
       offset += size;
     }
   }
