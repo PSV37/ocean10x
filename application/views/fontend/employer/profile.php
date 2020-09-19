@@ -299,7 +299,7 @@ input.capital {
                   <div class="row f-3">
                      <div class="col-md-6 col-sm-12">
                         <div class="formrow">
-                           <label class="control-label">Country Code</label>
+                           <label class="control-label">Country Code</label>&nbsp;<i title="Logout & Login again for Currency Changes to take effect ! " class="fa fa-info-circle" aria-hidden="true"></i>
                            <select id="country" name="country_code" class="form-control select2"  aria-hidden="true">
                               <option>IN - India (+91)</option>
                               <option value="AD - Andorra (+376)">AD - Andorra (+376)</option>

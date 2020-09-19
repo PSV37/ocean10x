@@ -1185,7 +1185,7 @@ button.folder_popup {
         </div>
       </div>
       <div class="col-md-3 right_side">
-        <div class="pai_chart">
+        <div class="pai_chart" id="pie-chart">
           <main>
             <section>
               <ul class="pieID legend">
@@ -2043,7 +2043,7 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
     $('.content:contains("'+text+'")').show();
    
    });
-  
+  createPie();
   });
   $.expr[":"].contains = $.expr.createPseudo(function(arg) {
   return function( elem ) {
@@ -2322,7 +2322,8 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
           });
      // $('#active_cv').html(value);
      // alert(value);pieID
-     createPie(".pieID.legend", ".pieID.pie");
+     // createPie(".pieID.legend", ".pieID.pie");
+     createPie();
   }
   
   
@@ -2389,6 +2390,60 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
   createPie(".pieID.legend", ".pieID.pie");
   
 </script>
+<!-- <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script>
+  function createPie()
+  {
+    google.load("visualization", "1", {packages:["corechart"]});
+google.setOnLoadCallback(drawCharts);
+function drawCharts() {
+  
+  // BEGIN PIE CHART
+  
+  // pie chart data
+  var pieData = google.visualization.arrayToDataTable([
+    ['Country', 'Page Hits'],
+    ['USA',      7242],
+    ['Canada',   4563],
+    ['Mexico',   1345],
+    ['Sweden',    946],
+    ['Germany',  2150]
+  ]);
+  // pie chart options
+  var pieOptions = {
+    backgroundColor: 'transparent',
+    pieHole: 0.4,
+    colors: [ "cornflowerblue", 
+              "olivedrab", 
+              "orange", 
+              "tomato", 
+              "crimson", 
+              "purple", 
+              "turquoise", 
+              "forestgreen", 
+              "navy", 
+              "gray"],
+    pieSliceText: 'value',
+    tooltip: {
+      text: 'percentage'
+    },
+    fontName: 'Open Sans',
+    chartArea: {
+      width: '100%',
+      height: '94%'
+    },
+    legend: {
+      textStyle: {
+        fontSize: 13
+      }
+    }
+  };
+  // draw pie chart
+  var pieChart = new google.visualization.PieChart(document.getElementById('pie-chart'));
+  pieChart.draw(pieData, pieOptions);
+}
+  }
+</script> -->
 <script>
   /**
   *   I don't recommend using this plugin on large tables, I just wrote it to make the demo useable. It will work fine for smaller tables 
