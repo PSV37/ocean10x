@@ -972,6 +972,9 @@ button.folder_popup {
     box-shadow: 5px 5px #e8e5e5;
     border-radius: 25px;
 }
+ul#sizelist {
+    margin-left: 19px;
+}
 </style>
 <div class="container-fluid main-d">
   <div class="container">
@@ -1116,7 +1119,7 @@ button.folder_popup {
                   <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span><?php echo $cv_row['js_current_designation']; ?></li>
                   <div class="clear"></div>
                 </div>
-                <br>
+                
                 <span>Skill Set</span> <?php
                   $skills = explode(',', $cv_row['js_skill_set']) ;
                   if(!empty($cv_row['js_skill_set'])){ 
@@ -1131,7 +1134,7 @@ button.folder_popup {
                     $join = array('job_posting'=>'job_posting.job_post_id = forwarded_jobs_cv.job_post_id');
                     $jobs_data = $this->Master_model->getMaster('forwarded_jobs_cv', $where , $join, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false); 
                       if (!empty($jobs_data)) { ?>
-                       <span data-toggle="collapse" data-target="#collapseEx<?php echo $cv_row['cv_id']?>" aria-expanded="false" aria-controls="collapseEx" style="color: red;" class="required"> * </span>
+                       <span data-toggle="collapse" data-target="#collapseEx<?php echo $cv_row['cv_id']?>" aria-expanded="false" aria-controls="collapseEx" style="color: red;    font-size: 25px;" class="required"> * </span>
                        <div class="collapse" id="collapseEx<?php echo $cv_row['cv_id']?>">
                       <div class="card-body">
                       <?php $i=1; if (!empty($jobs_data)) {
