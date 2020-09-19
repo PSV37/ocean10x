@@ -1363,16 +1363,16 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
           </div>
           <p>
   
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-    Button with data-target
+  <button style="float: left;" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Forwarded Jobs list
   </button>
 </p>
 <div class="collapse" id="collapseExample">
-  <div class="card card-body">
+  <div class="card-body">
   <?php $i=1; if (!empty($jobs_data)) {
             # code...
            foreach ($jobs_data as $row) { ?>
-           <p><?php echo $i; ?> Job Post Sent - <?php echo $row['job_title']; ?> - <?php echo date('d-m-Y H:i:s',strtotime($row['created_on'])) ; ?>
+           <p><?php echo $i; ?><?php echo $row['job_title']; ?> - Job Post sent on <?php echo date('d-m-y H:i',strtotime($row['created_on'])) ; ?>
 
         <?php $i++;  } } ?>
   </div>
