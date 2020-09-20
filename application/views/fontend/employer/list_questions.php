@@ -1423,7 +1423,7 @@
                <div class="col-md-6">
                   <form class="navbar-form" role="search">
                     
-                     <input type="text" id="myInput" class="form-control" placeholder="Search " style="width: 100%">
+                     <input type="text" id="myInput" class="form-control" placeholder="Subject | Topic | Answer Time" style="width: 100%">
                     
                   </form>
                   <div class="clear"></div>
