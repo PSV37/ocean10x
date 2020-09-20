@@ -77,7 +77,7 @@
                                  </li>
                                  <li>
                                     <a href="#tab_default_2" data-toggle="tab">
-                                    Profetional</a>
+                                    Professional</a>
                                  </li>
                               </ul>
                               <div class="tab-content">
