@@ -5771,15 +5771,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $where .=' group by tracker_consultant_mapping.consultant_id';
            $shared_list = $this->Master_model->getMaster('tracker_consultant_mapping', $where , $join , $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
 
-           $result ='<li class="shared_li" role="menuitem" tabindex="-1" aria-selected="false">
-    <div role="img" class="profile_img">A</div>
-    <div class="boqDrivesharedialogPermissionslistPermissionrowMain" data-hovercard-id="amishra@tele-kinetics.com" data-hovercard-owner-id="130">
-        <div class="shared_name" aria-label="'.$company_name.'">'.$company_name.'</div>
-        <div class="boqDrivesharedialogPermissionslistPermissionrowSecondary" aria-label="'.$company_email.'.">'.$company_email.'</div>
-        <input type="hidden" name="company[]" value="'.$employer_id.'">
-        
-  '
-   ;
+           $result;
   
 
            // print_r($this->db->last_query);die;
@@ -5823,10 +5815,25 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
    }
    else
    {
+
      $result.= '<input id="accessvalue" size="15" name="access_value[]" value="Owner" type="hidden" />';
    }
   
-          }
+    }
+}
+           else
+           {
+             $result.= '<li class="shared_li" role="menuitem" tabindex="-1" aria-selected="false">
+    <div role="img" class="profile_img">A</div>
+    <div class="boqDrivesharedialogPermissionslistPermissionrowMain" data-hovercard-id="amishra@tele-kinetics.com" data-hovercard-owner-id="130">
+        <div class="shared_name" aria-label="'.$row['company_name'].'">'.$row['company_name'].'</div>
+        <div class="boqDrivesharedialogPermissionslistPermissionrowSecondary" aria-label="'.$row['company_email'].'.">'.$row['company_email'].'</div>
+        <input type="hidden" name="company[]" value="'.$row['company_profile_id'].'">
+        <div class = "btn-group">
+   <button type = "button" class = "btn btn-primary Owner
+
+      <span class = "caret"></span>
+   </button>';
            }
           
            
