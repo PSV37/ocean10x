@@ -1075,7 +1075,7 @@
                   <div class="row">
                     <div class="col-md-4">
                       <div class="form-group subtopic_id">
-                        <label for="exampleInputEmail1">Sub Topic<span class="required">*</span></label>
+                        <label for="exampleInputEmail1">Sub Topic <span class="required">*</span></label>
                         <select id="subtopic_id" name="subtopic_id" class="form-control select2" onchange="get_questuions();" >
                         </select> <?php echo form_error('subtopic_id'); ?>   
                       </div>
@@ -1094,7 +1094,7 @@
                   </div>
                   <div class="box-body">
                     <div class="box" >
-                      <p ><b style="float: left;margin-right: 80px">Total Time Duration:<span id="total_time"></span></b> <b style="float: right;margin-right: 80px" >Total Questions:<span id="total_questions"></span></b></p>
+                      <p ><b style="float: left;margin-right: 80px">Total Time Duration <span id="total_time"></span></b> <b style="float: right;margin-right: 80px" >Total Questions:<span id="total_questions"></span></b></p>
                       <div class="card content">
                         <!-- <div class="front"> -->
                         <div class="following-info">
@@ -1240,7 +1240,7 @@
                     </div>
                     <div class="col-md-4">
                       <div class="form-group technical_id">                                       
-                        <label for="exampleInputEmail1">Duration(min)<span class="required">*</span></label>
+                        <label for="exampleInputEmail1">Duration (min) <span class="required">*</span></label>
                         <input type="Number" max="60" min="1" class="form-control" maxlength="2" id="time" name="test_duration">
                       </div>
                     </div>
@@ -1273,14 +1273,14 @@
                     </div>
                     <div class="col-md-4">
                       <div class="form-group subtopic_id">
-                        <label for="exampleInputEmail1">Sub Topic<span class="required">*</span></label>
+                        <label for="exampleInputEmail1">Sub Topic <span class="required">*</span></label>
                         <select id="subtopic_id_ocean" name="subtopic_id" class="form-control select2" >
                         </select> <?php echo form_error('subtopic_id'); ?>   
                       </div>
                     </div>
                     <div class="col-md-4">
                       <div class="form-group level">
-                        <label for="exampleInputEmail1">Level<span class="required">*</span></label>
+                        <label for="exampleInputEmail1">Level <span class="required">*</span></label>
                         <select name="level" onchange="get_questuions();" id="level" class="form-control select2">
                           <option value="Expert"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Expert')echo "selected";?>>Expert</option>
                           <option value="Medium"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Medium')echo "selected";?>>Medium</option>
@@ -1293,7 +1293,7 @@
                   <div class="row">
                     <div class="col-md-4">
                       <div class="form-group ques_type">
-                        <label for="exampleInputEmail1">Question Type<span class="required">*</span></label>
+                        <label for="exampleInputEmail1">Question Type <span class="required">*</span></label>
                         <select name="ques_type" id="ques_type" class="form-control select2" type="text" onchange="get_questuions();">
                           <option value="MCQ"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='MCQ')echo "selected";?>>MCQ</option>
                           <option value="Subjective"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Subjective')echo "selected";?>>Subjective</option>
