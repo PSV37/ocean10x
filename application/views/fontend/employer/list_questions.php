@@ -1433,7 +1433,7 @@
               </div>
                <div class="col-md-3">
               
-               <a id="qbottons" href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Add a Question</i></button></a>
+               <a id="qbottons" href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Add Question</i></button></a>
             </div>
           </div>
             <br>
