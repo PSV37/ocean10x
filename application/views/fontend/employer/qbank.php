@@ -4,6 +4,11 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/oceanchamp_exp.css">
 
 <style>
+   .required
+   {
+   color: red;
+   }
+   
    .employ_tab {
    margin-top: 55px;
    border: solid 1px #cecbcb;
