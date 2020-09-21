@@ -379,8 +379,8 @@ order by created_date asc limit 10");
         $this->db->where('DATE_FORMAT(external_tracker.created_on,"%y-%m-%d")',$date);
       
         
-        $this->db->join('education_level','education_level.education_level_id=external_tracker.education','left');
-        $this->db->join('tracker_status_master','tracker_status_master.status_id=external_tracker.tracking_status','left');
+        $this->db->join('education_level','education_level.education_level_id=external_tracker.education','LEFT OUTER');
+        $this->db->join('tracker_status_master','tracker_status_master.status_id=external_tracker.tracking_status','LEFT OUTER');
         $this->db->order_by('external_tracker.id','desc');
         // $this->db->group_by('job_apply.job_seeker_id');
        
@@ -399,9 +399,9 @@ order by created_date asc limit 10");
         $this->db->where('DATE_FORMAT(external_tracker.created_on,"%y-%m-%d")',$date);
          $this->db->where('tracker_consultant_mapping.consultant_id', $employer_id);
       
-         $this->db->join('external_tracker','external_tracker.id=tracker_consultant_mapping.tracking_id','left');
-        $this->db->join('education_level','education_level.education_level_id=external_tracker.education','left');
-        $this->db->join('tracker_status_master','tracker_status_master.status_id=external_tracker.tracking_status','left');
+         $this->db->join('external_tracker','external_tracker.id=tracker_consultant_mapping.tracking_id','LEFT OUTER');
+        $this->db->join('education_level','education_level.education_level_id=external_tracker.education','LEFT OUTER');
+        $this->db->join('tracker_status_master','tracker_status_master.status_id=external_tracker.tracking_status','LEFT OUTER');
         $this->db->order_by('external_tracker.id','desc');
         // $this->db->group_by('job_apply.job_seeker_id');
        

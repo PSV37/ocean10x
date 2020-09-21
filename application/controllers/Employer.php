@@ -4678,6 +4678,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
          $array=explode(',',$tracking_id);
         $track=array_filter($array);
+         $job_post_id = $this->input->post('job_post_id');
        
       
        
@@ -4751,6 +4752,18 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $array=explode(',',$tracking_id);
             $tracker_type = $this->input->post('tracker_type');
             $tracking_ids = array_filter($array);
+            if (empty($tracking_ids)) {
+                 $external_array = array(
+                        // 'cv_id' => $cv_data[0]['cv_id'], 
+                        'company_id' => $company_id, 
+                        'job_post_id' => $job_post_id, 
+                        // 'apply_id' => $apply, 
+                        'status' => 1, 
+                      
+                        
+                        'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),);
+                        $tracking_ids = $this->Master_model->master_insert($external_array, 'external_tracker');
+            }
             foreach ($tracking_ids as $row) {
                 $whereres = "tracking_id='$row' and consultant_id = '$comp_id' ";
                 $tracking_data = $this->Master_model->get_master_row('

@@ -630,7 +630,7 @@ hr {
         <div class="modal-body" style="padding:15px 40px;">
           <input type="hidden" name="tracking_id" id="tracking_id" value="">
           <input type="hidden" name="tracker_type" value="internal">  
-           <input type="hidden" name="job_post_id" id="job_post_id" value="internal"> 
+           <input type="hidden" name="job_post_id" id="job_post_id" value=""> 
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"style="width: 108%;margin-left: -12px;padding: 0px;">
             <label class="mdl-textfield__label" for="sample3">E-mail:</label>
             <input onfocusout="myFunction();" type="email"  name="consultant_email"  id="email" placeholder="Enter Email"  id="subject" data-required="true" multiple style="display: inline-block;min-width: 100%;height: 30px;" required>
