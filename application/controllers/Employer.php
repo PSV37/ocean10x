@@ -5776,12 +5776,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         <div class="shared_name" aria-label="'.$company_name.'">'.$company_name.'</div>
         <div class="boqDrivesharedialogPermissionslistPermissionrowSecondary" aria-label="'.$company_email.'.">'.$company_email.'</div>
         <input type="hidden" name="company[]" value="'.$employer_id.'">
-        <div class = "btn-group">
-   <button type = "button" class = "btn btn-primary dropdown-toggle btn-sm" data-toggle = "dropdown">
-    
-
-      <span class = "caret"></span>
-   </button>';
+        
+  '
+   ;
   
 
            // print_r($this->db->last_query);die;
