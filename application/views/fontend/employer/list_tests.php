@@ -946,7 +946,7 @@
               </div>
               <div class="col-md-4">
                 <div class="form-group technical_id">                                       
-                  <label for="exampleInputEmail1">Duration<span class="required">*</span></label>
+                  <label for="exampleInputEmail1">Duration <span class="required">*</span></label>
                   <input type="Number" max="60" min="1" class="form-control" id="time" name="test_duration">
                 </div>
               </div>
@@ -979,14 +979,14 @@
               </div>
               <div class="col-md-4">
                 <div class="form-group subtopic_id">
-                  <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
+                  <label for="exampleInputEmail1">Sub Topic <span class="required">*</span></label>
                   <select id="subtopic_id_ocean" name="subtopic_id" class="form-control select2" >
                   </select> <?php echo form_error('subtopic_id'); ?>   
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group level">
-                  <label for="exampleInputEmail1">Level<span class="required">*</span></label>
+                  <label for="exampleInputEmail1">Level <span class="required">*</span></label>
                   <select name="level" onchange="get_questuions();" id="level" class="form-control select2">
                     <option value="Expert"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Expert')echo "selected";?>>Expert</option>
                     <option value="Medium"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Medium')echo "selected";?>>Medium</option>
