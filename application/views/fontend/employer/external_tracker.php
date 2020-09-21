@@ -652,6 +652,9 @@ hr {
   function get_value(tracking_id)
   {
    $('#tracking_id').val(tracking_id);
+
+  
+
    $('#rotateModal').modal('show');
   
   }
@@ -733,6 +736,8 @@ hr {
         });
   console.log(result);
   $('#tracking_id').val(result);
+  $('#job_post_id').val(job_id);
+
   $('#rotateModal').modal('show');
            
         });
