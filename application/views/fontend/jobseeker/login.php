@@ -211,7 +211,7 @@
          
 
 
-           ?>
+      
             <div class="user-box">
                <input type="text" name="email" required>
                <label>Username</label>
