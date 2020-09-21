@@ -289,7 +289,7 @@ h4:after {
 <div class="login-box">
   <?php echo $this->session->flashdata('verify_msg'); ?>
            <?php echo $this->session->flashdata('invalid'); ?>
-  <h4>Employer - Forgot Password</h4>
+  <h4>Candidate - Forgot Password</h4>
  <form class="submit-form customform forgotform" action="<?php echo base_url() ?>register/forgot_pass" method="post">
    <div class="user-box">
       <input type="text" name="email"  required>
