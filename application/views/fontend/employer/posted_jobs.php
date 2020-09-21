@@ -1124,7 +1124,7 @@ button.btn.btn-primary.trash {
                <li class="right-title">&nbsp;:<?php if(!is_null($v_companyjobs['job_deadline'])) { echo date('j M Y',strtotime($v_companyjobs['job_deadline'])); } ?></li>
                <div class="clear"></div>
             </div>
-             <br><br>
+             <br>
             <div class="skl_bnft">
               
             <span>Skill sets</span>:
