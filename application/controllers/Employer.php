@@ -5743,6 +5743,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
     function get_shared_list()
     {
+        $employer_id =$this->session->userdata('company_profile_id');
+        $company_name = $this->session->userdata('company_name');
+        $company_email = $this->session->userdata('email');
         $tracker_id = $this->input->post('tracker_id');
         $job_id = $this->input->post('job_id');
         $type = $this->input->post('type');
@@ -5766,7 +5769,33 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
              }
             $where .=' group by tracker_consultant_mapping.consultant_id';
            $shared_list = $this->Master_model->getMaster('tracker_consultant_mapping', $where , $join , $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
-           $result;
+           $result ='<li class="shared_li" role="menuitem" tabindex="-1" aria-selected="false">
+    <div role="img" class="profile_img">A</div>
+    <div class="boqDrivesharedialogPermissionslistPermissionrowMain" data-hovercard-id="amishra@tele-kinetics.com" data-hovercard-owner-id="130">
+        <div class="shared_name" aria-label="'.$company_name.'">'.$company_name.'</div>
+        <div class="boqDrivesharedialogPermissionslistPermissionrowSecondary" aria-label="'.$company_email.'.">'.$company_email.'</div>
+        <input type="hidden" name="company[]" value="'.$employer_id.'">
+        <div class = "btn-group">
+   <button type = "button" class = "btn btn-primary dropdown-toggle btn-sm" data-toggle = "dropdown">
+    '.$type.'
+
+      <span class = "caret"></span>
+   </button>';
+   if ($type != 'Owner') {
+      $result.= '
+   <ul id="option_list" class = "dropdown-menu" role = "menu">
+      <li data-value="Viewer" data-one="'.$row['company_profile_id'].'"><a href = "#">Viewer</a></li>
+      <li data-value="Commenter" data-one="'.$row['company_profile_id'].'"><a href = "#">Commenter</a></li>
+      <li data-value="Editor" data-one="'.$row['company_profile_id'].'"><a href = "#">Editor</a></li>
+      
+      <li class = "divider"></li>
+      <li data-value="Remove" data-one="'.$row['company_profile_id'].'"><a href = "#">Remove</a></li>
+   </ul>
+    <input id="accessvalue'.$row['company_profile_id'].'" size="15" name="access_value[]" type="hidden" />
+</div>
+    </div>
+    
+</li>';
            // print_r($this->db->last_query);die;
            if (!empty($shared_list)) {
                foreach ($shared_list as $row) {
