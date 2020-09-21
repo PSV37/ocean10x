@@ -2251,7 +2251,8 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                     $where_update_sub_answer['ques_id'] = $q_id;
                     $this->Master_model->master_update($ans_update, 'questionbank', $where_update_sub_answer);
                 }
-                $this->session->set_flashdata('success', '<div class="alert alert-success text-center">New Question Added Successfully!</div>');
+                //$this->session->set_flashdata('success', '<div class="alert alert-success text-center">New Question Added Successfully!</div>');
+                $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Question added to Corp Q-Bank Successfully !!</div>');
                 redirect('employer/all_questions');
             } else {
                 $state_dt['ques_updated_date'] = date('Y-m-d H:i:s');
