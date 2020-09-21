@@ -60,7 +60,7 @@
   ?>     
 <?php else : ?> 
 <tr>
-  <th colspan="13">There is no record for display</th>>
+  <th colspan="13">There is no record for display</th>
 </tr>
 <?php endif; ?>
 <!-- </div>
