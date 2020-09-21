@@ -70,9 +70,9 @@ ul.select2-results__options {
             </div>
             <div class="col-md-4">
               <div class="form-group subtopic_id">
-                <label for="exampleInputEmail1">Subtopic <span class="required">*</span></label>
+                <label for="exampleInputEmail1">Sub Topic <span class="required">*</span></label>
                 <select id="subtopic_id" name="subtopic_id" class="form-control select2" onchange="getLineitem(this.value)">
-                  <option value="0">General Subtopic</option> 
+                  <option value="0">General Sub Topic</option> 
 
                 </select> <?php echo form_error('subtopic_id'); ?>   
               </div>
