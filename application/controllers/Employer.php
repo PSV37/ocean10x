@@ -5795,7 +5795,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 </div>
     </div>
     
-</li>'};
+</li>';
+}
            // print_r($this->db->last_query);die;
            if (!empty($shared_list)) {
                foreach ($shared_list as $row) {
