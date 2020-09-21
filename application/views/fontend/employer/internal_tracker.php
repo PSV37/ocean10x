@@ -626,10 +626,11 @@ hr {
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Forward This Job Post</h5>
       </div>
-      <form action="<?php echo base_url() ?>employer/forword_external_tracker" class="sendEmail" method="post" autocomplete="off">
+      <form action="<?php echo base_url() ?>employer/forword_internal_tracker" class="sendEmail" method="post" autocomplete="off">
         <div class="modal-body" style="padding:15px 40px;">
           <input type="hidden" name="tracking_id" id="tracking_id" value="">
           <input type="hidden" name="tracker_type" value="internal">  
+           <input type="hidden" name="job_post_id" id="job_post_id" value="internal"> 
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"style="width: 108%;margin-left: -12px;padding: 0px;">
             <label class="mdl-textfield__label" for="sample3">E-mail:</label>
             <input onfocusout="myFunction();" type="email"  name="consultant_email"  id="email" placeholder="Enter Email"  id="subject" data-required="true" multiple style="display: inline-block;min-width: 100%;height: 30px;" required>
@@ -713,6 +714,7 @@ hr {
         });
   console.log(result);
   $('#tracking_id').val(result);
+  $('#job_post_id').val(job_id);
   $('#rotateModal').modal('show');
            
         });

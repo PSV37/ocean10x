@@ -4763,6 +4763,107 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         }
         redirect('employer/external_tracker');
     }
+     public function forword_internal_tracker() {
+        $company_id = $this->session->userdata('company_profile_id');
+        $tracking_id = $this->input->post('tracking_id');
+        
+        $consultant_email = $this->input->post('consultant_email');
+        $company = $this->input->post('company');
+        $access_value = $this->input->post('access_value');
+
+         $array=explode(',',$tracking_id);
+        $track=array_filter($array);
+      $job_post_id = $this->input->post('job_post_id');
+       
+        for ($i=0; $i < sizeof($company) ; $i++) { 
+            for ($j=0; $j < sizeof($track) ; $j++) {
+
+             $update_data['acess_given'] = $access_value[$i];
+            $where11['consultant_id'] = $company[$i];
+            $where11['tracking_id'] = $track[$j];
+            $update_data['tracker_type'] = 'internal';
+            $this->Master_model->master_update($update_data, 'tracker_consultant_mapping', $where11);
+        }
+           
+        }
+        // print_r($company);
+        // print_r($track);
+        // print_r($access_value);die;
+
+        $email = explode(',', $consultant_email);
+        for ($i = 0;$i < sizeof($email);$i++) {
+            $where_cndn = "company_email='$email[$i]'";
+            $consultant_data = $this->Master_model->getMaster('company_profile', $where_cndn);
+            if ($consultant_data) {
+                $comp_id = $consultant_data[0]['company_profile_id'];
+
+                
+                $email_name = explode('@', $email[$i]);
+                $subject = 'Job | Urgent requirement for ' . $require['job_title'];
+                $message = '
+                                <style>
+                                    .btn-primary{
+                                        width: 232px;
+                                        color: #fff;
+                                        text-align: center;
+                                        margin: 0 0 0 5%;
+                                        background-color: #6495ED;
+                                        padding: 5px;
+                                        text-decoration: none;
+                                    }
+                                
+                                </style>
+                            <div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
+                            <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
+                            <a href="#"><img src="' . base_url() . 'upload/' . $require['company_logo'] . '" style="height: 50px;"> </a>
+                            <br><br>Hi ' . $email_name[0] . '<br>' . $this->session->userdata("company_name") . '</b></em> <br/>Foarwarded You the tracking sheet<br/><b></b> please login to your account to explore more..<br> <a href="https://www.consultnhire.com/employer_login"><button>Login</button></a> ';
+                $send = sendEmail_JobRequest($email[$i], $message, $subject);
+            } else {
+                $randomNumber = rand(1000, 9999);
+                $new_JS_array = array('company_email' => $email[$i], 'token' => md5($email[$i]), 'create_at' => date('Y-m-d H:i:s'), 'comp_type' => "HR Consultant", 'company_password' => md5($randomNumber),);
+                $comp_id = $this->Master_model->master_insert($new_JS_array, 'company_profile');
+                $email_name = explode('@', $email[$i]);
+                $subject = 'Job | Urgent requirement for ' . $require['job_title'];
+                $message = '
+                                <style>
+                                    .btn-primary{
+                                        width: 232px;
+                                        color: #fff;
+                                        text-align: center;
+                                        margin: 0 0 0 5%;
+                                        background-color: #6495ED;
+                                        padding: 5px;
+                                        text-decoration: none;
+                                    }
+                                
+                                </style>
+                            <div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
+                            <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
+                            <a href="#"><img src="' . base_url() . 'upload/' . $require['company_logo'] . '" style="height: 50px;"> </a>
+                            <br><br>Hi ' . $email_name[0] . '<br>' . $this->session->userdata("company_name") . '</b></em> <br/>Foarwarded You the tracking sheet<br/><b></b> please login to your account to explore more.. <br><b>Your username:</b>' . $email[$i] . '<br><b>Your password:</b>' . $randomNumber . '</b><br><a href="https://www.consultnhire.com/employer_login"><button>Login</button></a> ';
+                $send = sendEmail_JobRequest($email[$i], $message, $subject);
+                // echo $comp_id;
+                
+            }
+            $array=explode(',',$tracking_id);
+            $tracker_type = $this->input->post('tracker_type');
+            $tracking_ids = array_filter($array);
+             if (empty($tracking_ids)) {
+                     $frwd_array = array( 'company_id' =>  $company_id, 'job_post_id' => $job_post_id, 'apply_id' => $apply, 'status' => 1, 'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),);
+                        $tracking_ids = $this->Master_model->master_insert($frwd_array, 'forwarded_jobs_cv');
+                }
+            foreach ($tracking_ids as $row) {
+                $whereres = "tracking_id='$row' and consultant_id = '$comp_id' ";
+                $tracking_data = $this->Master_model->get_master_row('
+                        tracker_consultant_mapping', $select = FALSE, $whereres);
+                if (empty($tracking_data)) {
+                    $tracking_mapping = array('tracking_id' => $row, 'consultant_id' => $comp_id,'acess_given'=>'Editor','tracker_type'=> $tracker_type);
+                    $map_id = $this->Master_model->master_insert($tracking_mapping, 'tracker_consultant_mapping');
+                }
+            }
+        }
+        redirect('employer/internal_tracker');
+    }
     function create_zip() {
         $zip = new ZipArchive();
         $filename = "upload/Resumes/test.zip";
