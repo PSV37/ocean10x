@@ -1071,14 +1071,14 @@
                   <div class="row">
                     <div class="col-md-4">
                       <div class="form-group subtopic_id">
-                        <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
+                        <label for="exampleInputEmail1">Sub Topic<span class="required">*</span></label>
                         <select id="subtopic_id" name="subtopic_id" class="form-control select2" onchange="get_questuions();" >
                         </select> <?php echo form_error('subtopic_id'); ?>   
                       </div>
                     </div>
                     <div class="col-md-4">
                       <div class="form-group level">
-                        <label for="exampleInputEmail1">Level<span class="required">*</span></label>
+                        <label for="exampleInputEmail1">Level <span class="required">*</span></label>
                         <select name="level_data" onchange="get_questuions();" id="level" class="form-control select2">
                           <option value="Expert"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Expert')echo "selected";?>>Expert</option>
                           <option value="Medium"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Medium')echo "selected";?>>Medium</option>
