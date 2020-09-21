@@ -358,10 +358,10 @@ order by created_date asc limit 10");
         $this->db->from('forwarded_jobs_cv');
         $this->db->where('forwarded_jobs_cv.job_post_id', $job_id);
         $this->db->where('DATE_FORMAT(forwarded_jobs_cv.created_on,"%y-%m-%d")',$date);
-        $this->db->join('corporate_cv_bank','corporate_cv_bank.cv_id=forwarded_jobs_cv.cv_id');
+        $this->db->join('corporate_cv_bank','corporate_cv_bank.cv_id=forwarded_jobs_cv.cv_id','LEFT OUTER');
         
-        $this->db->join('education_level','education_level.education_level_id=corporate_cv_bank.js_top_education','left');
-        $this->db->join('tracker_status_master','tracker_status_master.status_id=forwarded_jobs_cv.tracking_status','left');
+        $this->db->join('education_level','education_level.education_level_id=corporate_cv_bank.js_top_education','LEFT OUTER');
+        $this->db->join('tracker_status_master','tracker_status_master.status_id=forwarded_jobs_cv.tracking_status','LEFT OUTER');
         $this->db->order_by('forwarded_jobs_cv.id','desc');
         // $this->db->group_by('job_apply.job_seeker_id');
        
