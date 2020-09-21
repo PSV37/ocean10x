@@ -3,6 +3,10 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/questionbank.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/oceanchamp_exp.css">
 <style>
+  .required
+   {
+   color: red;
+   }
   .dropdown {
   display: inline-block;
   position: relative;
@@ -1269,7 +1273,7 @@
                     </div>
                     <div class="col-md-4">
                       <div class="form-group subtopic_id">
-                        <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
+                        <label for="exampleInputEmail1">Sub Topic<span class="required">*</span></label>
                         <select id="subtopic_id_ocean" name="subtopic_id" class="form-control select2" >
                         </select> <?php echo form_error('subtopic_id'); ?>   
                       </div>
