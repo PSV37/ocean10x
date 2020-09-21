@@ -5774,12 +5774,18 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
            $result ='<li class="shared_li" role="menuitem" tabindex="-1" aria-selected="false">
     <div role="img" class="profile_img">A</div>
     <div class="boqDrivesharedialogPermissionslistPermissionrowMain" data-hovercard-id="amishra@tele-kinetics.com" data-hovercard-owner-id="130">
-        <div class="shared_name" aria-label="'.$company_name.'">'.$company_name.' (you)  </div>
+        <div class="shared_name" aria-label="'.$company_name.'">'.$company_name.' (you)</div>
         <div class="boqDrivesharedialogPermissionslistPermissionrowSecondary" aria-label="'.$company_email.'.">'.$company_email.'</div>
         <input type="hidden" name="company[]" value="'.$employer_id.'">
-        
-  '
+        <div class = "btn-group">
+   <button type = "button" class = "btn btn-primary dropdown-toggle btn-sm" data-toggle = "dropdown">
+    Owner
+
+      <span class = "caret"></span>
+   </button></div>'
    ;
+        
+ 
   
 
            // print_r($this->db->last_query);die;
