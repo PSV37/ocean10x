@@ -70,7 +70,7 @@ ul.select2-results__options {
             </div>
             <div class="col-md-4">
               <div class="form-group subtopic_id">
-                <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
+                <label for="exampleInputEmail1">Subtopic <span class="required">*</span></label>
                 <select id="subtopic_id" name="subtopic_id" class="form-control select2" onchange="getLineitem(this.value)">
                   <option value="0">General Subtopic</option> 
 
@@ -81,7 +81,7 @@ ul.select2-results__options {
           <div class="row">
             <div class="col-md-4">
               <div class="form-group lineitem_id ">
-                <label for="exampleInputEmail1">Line Item(Level 1)<span class="required">*</span></label>
+                <label for="exampleInputEmail1">Line Item (Level 1) <span class="required">*</span></label>
                 <select id="lineitem_id" name="lineitem_id" class="form-control select2" onchange="getLineitemlevel(this.value)">
                   <option value="0">General</option> 
 
@@ -90,7 +90,7 @@ ul.select2-results__options {
             </div>
             <div class="col-md-4">
               <div class="form-group lineitemlevel_id">
-                  <label for="exampleInputEmail1">Line Item(Level 2)<span class="required">*</span></label>
+                  <label for="exampleInputEmail1">Line Item (Level 2) <span class="required">*</span></label>
                   <select id="lineitemlevel_id" name="lineitemlevel_id" class="form-control select2">
                   <option value="0">General</option> 
                     
@@ -99,7 +99,7 @@ ul.select2-results__options {
             </div>
             <div class="col-md-4">
               <div class="form-group level">
-                <label for="exampleInputEmail1">Level<span class="required">*</span></label>
+                <label for="exampleInputEmail1">Level <span class="required">*</span></label>
                   <select name="level" class="form-control select2">                                     
                     <option value="Expert"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Expert')echo "selected";?>>Expert</option>
                     <option value="Medium"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Medium')echo "selected";?>>Medium</option>
@@ -111,7 +111,7 @@ ul.select2-results__options {
           <div class="row">
             <div class="col-md-4">
               <div class="form-group ques_type">
-                <label for="exampleInputEmail1">Question Type<span class="required">*</span></label>
+                <label for="exampleInputEmail1">Question Type <span class="required">*</span></label>
                 <select name="ques_type" class="form-control select2" type="text">
                   <option value="MCQ"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='MCQ')echo "selected";?>>MCQ</option>
                     <option value="Subjective"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Subjective')echo "selected";?>>Subjective</option>
@@ -121,7 +121,7 @@ ul.select2-results__options {
             </div>
              <div class="col-md-4">
               <div class="form-group">
-                <label for="exampleInputEmail1">Time For the question (sec)<span class="required">*</span></label>
+                <label for="exampleInputEmail1">Time to Answer (sec) <span class="required">*</span></label>
                 <input type="number" max="60" min="1" value="<?php if (!empty($edit_questionbank_info)) echo $row['time_for_question'];?>" class="form-control" maxlength="2" name="time" id="time">
               </div>
             </div>
@@ -167,7 +167,7 @@ ul.select2-results__options {
                       <div class="checkbox">
                         <label>
                           <input type="checkbox" value="1" class="btn-default1 checkbox"  name="correct_answer[]" <?php if ($row['answer_id'] == 1): echo "checked"; endif ?>>
-                          <span>option1</span>
+                          <span>Option 1</span>
                         </label>
                       </div>
                     </li>
@@ -176,7 +176,7 @@ ul.select2-results__options {
                         <label>
                           <input type="checkbox" value="3" class="btn-default1 checkbox"  name="correct_answer[]"
                           <?php if ($row['answer_id'] == 3): echo "checked"; endif ?>>
-                          <span>option3</span>
+                          <span>Option 3</span>
                         </label>
                       </div>
                     </li>
@@ -187,7 +187,7 @@ ul.select2-results__options {
                         <label>
                           <input type="checkbox" value="2" class="btn-default1 checkbox"   name="correct_answer[]"
                           <?php if ($row['answer_id'] == 2): echo "checked"; endif ?>>
-                          <span>option2</span>
+                          <span>Option 2</span>
                         </label>
                       </div>
                     </li>
@@ -196,7 +196,7 @@ ul.select2-results__options {
                         <label>
                         <input type="checkbox" value="4" class="btn-default1 checkbox"  name="correct_answer[]"
                         <?php if ($row['answer_id'] == 4): echo "checked"; endif ?>>
-                        <span>option4</span>
+                        <span>Option 4</span>
                         </label>
                       </div>
                     </li>
@@ -211,7 +211,8 @@ ul.select2-results__options {
         <!-- <div class="col-md-4"></div> -->
           <div class="col-md-6" style="text-align:right;">
             <button id="submit" type="button" onclick="history.back()" class="save_question">Cancel</button>
-            <button id="submit" type="Submit" class="save_question">Save question</button>
+            <button id="submit" type="Submit" class="save_question">Save Question</button>
+            <button id="submit" type="Submit" class="save_question">Submit</button>
           </div>
       </div>
     </div>
