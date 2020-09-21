@@ -4849,7 +4849,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $tracker_type = $this->input->post('tracker_type');
             $tracking_ids = array_filter($array);
              if (empty($tracking_ids)) {
-                     $frwd_array = array( 'company_id' =>  $company_id, 'job_post_id' => $job_post_id, 'apply_id' => $apply, 'status' => 1, 'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),);
+                     $frwd_array = array( 'company_id' =>  $company_id, 'job_post_id' => $job_post_id,  'status' => 1, 'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),);
                         $tracking_ids = $this->Master_model->master_insert($frwd_array, 'forwarded_jobs_cv');
                 }
             foreach ($tracking_ids as $row) {
