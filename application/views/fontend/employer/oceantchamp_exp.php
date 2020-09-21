@@ -128,7 +128,7 @@
                      <div id="topic"></div>
                      </div>
                      <div class="row" style="text-align:center;">
-                     <button class="take_test" type="submit" >Take a test</button>
+                     <button class="take_test" type="submit" >Take a Test</button>
                      </div>
                      </div>
                      </div>
