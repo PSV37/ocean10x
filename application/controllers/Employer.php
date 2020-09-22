@@ -264,7 +264,8 @@ class Employer extends MY_Employer_Controller {
                 'salary_range' => $salary_range, 
                 "job_deadline" => date('Y-m-d', strtotime($this->input->post('job_deadline'))), "job_status" => '1', 
                 'is_test_required' => $this->input->post('job_test_requirment'),
-               'test_for_job' => $this->input->post('test_for_job'));
+               'test_for_job' => $this->input->post('test_for_job'),
+               'created_at'      => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),);
                 if (isset($job_desc_file) && !empty($job_desc_file)) {
                     $job_info['jd_file'] = $job_desc_file;
                 } elseif (empty($this->input->post('jd_session'))) {
@@ -454,7 +455,7 @@ class Employer extends MY_Employer_Controller {
                 "job_deadline" => date('Y-m-d', strtotime($this->input->post('job_deadline'))),
                 //                   'preferred_age'      => $this->input->post('preferred_age_from'),
                 'test_for_job' => $this->input->post('test_for_job'),
-                // 'working_hours'      => $this->input->post('working_hours'),
+                'created_at'      => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),
                 'is_test_required' => $this->input->post('job_test_requirment'));
                 if (isset($job_desc_file) && !empty($job_desc_file)) {
                     $job_info['jd_file'] = $job_desc_file;
