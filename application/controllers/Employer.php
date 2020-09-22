@@ -264,7 +264,8 @@ class Employer extends MY_Employer_Controller {
                 'salary_range' => $salary_range, 
                 "job_deadline" => date('Y-m-d', strtotime($this->input->post('job_deadline'))), "job_status" => '1', 
                 'is_test_required' => $this->input->post('job_test_requirment'),
-               'test_for_job' => $this->input->post('test_for_job'));
+               'test_for_job' => $this->input->post('test_for_job'),
+               'created_at'      => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),);
                 if (isset($job_desc_file) && !empty($job_desc_file)) {
                     $job_info['jd_file'] = $job_desc_file;
                 } elseif (empty($this->input->post('jd_session'))) {
@@ -435,12 +436,26 @@ class Employer extends MY_Employer_Controller {
                         }
                     }
                 }
-                $job_info = array('company_profile_id' => $employer_id, 'job_title' => $this->input->post('job_title'), 'job_slugs' => $this->slug->create_uri($this->input->post('job_title')), 'job_desc' => $this->input->post('job_desc'), 'job_category' => $this->input->post('job_category'), 'education' => $this->input->post('education'), 'benefits' => implode(',', $this->input->post('benefits')), 'experience' => $experience, 'city_id' => $this->input->post('city_id'), 'job_nature' => $this->input->post('job_nature'), 'job_edu' => $this->input->post('job_edu'), 'no_jobs' => $this->input->post('no_jobs'), 'preffered_certificates' => $this->input->post('preffered_certificates'), 'job_role' => $this->input->post('job_role'), //new added field
+                $job_info = array('company_profile_id' => $employer_id, 
+                    'job_title' => $this->input->post('job_title'), 
+                    'job_slugs' => $this->slug->create_uri($this->input->post('job_title')), 
+                    'job_desc' => $this->input->post('job_desc'), 
+                    'job_category' => $this->input->post('job_category'), 
+                    'education' => $this->input->post('education'), 
+                    'benefits' => implode(',', $this->input->post('benefits')), 
+                    'experience' => $experience, 
+                    'city_id' => $this->input->post('city_id'), 
+                    'job_nature' => $this->input->post('job_nature'), 
+                    'job_edu' => $this->input->post('job_edu'), 
+                    'no_jobs' => $this->input->post('no_jobs'), 
+                    'preffered_certificates' => $this->input->post('preffered_certificates'), 
+                    'job_role' => $this->input->post('job_role'), //new added field
                 'skills_required' => implode(',', $skills), //new added field
-                'salary_range' => $salary_range, "job_deadline" => date('Y-m-d', strtotime(str_replace('/', '-', $this->input->post('job_deadline')))),
+                'salary_range' => $salary_range, 
+                "job_deadline" => date('Y-m-d', strtotime($this->input->post('job_deadline'))),
                 //                   'preferred_age'      => $this->input->post('preferred_age_from'),
                 'test_for_job' => $this->input->post('test_for_job'),
-                // 'working_hours'      => $this->input->post('working_hours'),
+                'created_at'      => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),
                 'is_test_required' => $this->input->post('job_test_requirment'));
                 if (isset($job_desc_file) && !empty($job_desc_file)) {
                     $job_info['jd_file'] = $job_desc_file;
@@ -695,7 +710,8 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             'job_category'=>'job_category.job_category_id=job_posting.job_category',
             'job_role'=>'job_role.id=job_posting.job_role',
             'education_level'=>'education_level.education_level_id=job_posting.job_edu');
-        $jobs = $this->Master_model->getMaster('job_posting', $where , $join , $order = 'desc', $field = 'job_post_id', $select = false,$limit=false,$start=false, $search=false);
+        $select = "job_posting.*,job_nature.*,job_category.*,job_role.*,education_level.*,job_posting.created_at as posting_date";
+        $jobs = $this->Master_model->getMaster('job_posting', $where , $join , $order = 'desc', $field = 'job_post_id', $select ,$limit=false,$start=false, $search=false);
         $config['base_url'] = base_url() . 'employer/active_job';
             $config['total_rows'] = sizeof($jobs);
             $config['per_page'] = 5;
@@ -730,7 +746,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             }
             $this->pagination->initialize($config);
              $data["links"] = $this->pagination->create_links();
-        $data['company_active_jobs'] = $this->Master_model->getMaster('job_posting', $where , $join , $order = 'desc', $field = 'job_post_id', $select = false,$limit=$config['per_page'],$start=$page, $search=false);
+        $data['company_active_jobs'] = $this->Master_model->getMaster('job_posting', $where , $join , $order = 'desc', $field = 'job_post_id', $select,$limit=$config['per_page'],$start=$page, $search=false);
         $this->load->view('fontend/employer/posted_jobs', $data);
     }
     public function pending_job() {

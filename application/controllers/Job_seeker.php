@@ -144,7 +144,7 @@ class Job_seeker extends MY_Seeker_Controller
                 'job_seeker_id'     => $jobseeker_id,
                 // 'father_name'       => $this->input->post('father_name'),
                 // 'mother_name'       => $this->input->post('mother_name'),
-                "date_of_birth"     => date('Y-m-d', strtotime(str_replace('/', '-', $this->input->post('date_of_birth')))),
+                "date_of_birth"     => date('Y-m-d', strtotime($this->input->post('date_of_birth'))),
                 'dob_visiblity'       => $this->input->post('dobmake_public'),
                // 'national_id'       => $this->input->post('national_id'),
 				'country_code'      => $this->input->post('country_code'),
