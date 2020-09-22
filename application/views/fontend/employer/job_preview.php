@@ -330,7 +330,7 @@
                     <a href=" <?php echo base_url() ?>employer/update_job/<?php echo $job_id; ?>"><button type="button" name="edit" class="edit_btn">Edit</button></a>
                <?php }else{ ?>
                      <button type="submit" class="Postjob_btn" name="post_preview">Post Job</button>
-                     <button type="submit" class="edit_btn" name="edit">Post Job</button>
+                     <button type="submit" class="edit_btn" name="edit">Edit</button>
                <?php } ?>
                
               </div>
