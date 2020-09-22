@@ -3496,7 +3496,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $join_cond = array('corporate_cv_bank' => 'corporate_cv_bank.cv_id = cv_folder_relation.cv_id|Left outer',
                 'cv_folder' => 'cv_folder.id=cv_folder_relation.cv_folder_id');
             $data['cv_bank_data'] = $this->Master_model->getMaster('cv_folder_relation', $where_c, $join_cond, $order = 'desc', $field = 'relation_id', $select = false, $limit = false, $start = false, $search = false);
-            $data['total_cvs']=sizeof($cv_bank_data);
+            $data['total_cvs']=sizeof($data['cv_bank_data']);
             $data['active_cv'] = $this->Pincode_model->getactive_folder_cvs($company_id,$fid);
              // print_r($this->db->last_query());die;
             $data['fid'] = $fid;
