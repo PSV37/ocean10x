@@ -1086,7 +1086,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             redirect('employer/active_job');
         }
     }
-    public function forward_posted_job() {
+    public function forward_posted_job($fid=NULL) {
         $employer_id = $this->session->userdata('company_profile_id');
         if ($_POST) {
             if (!empty($this->input->post('forward_job_emails'))) {
@@ -1191,10 +1191,10 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                     
                 }
                 $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Job Forwarded Successfully</div>');
-                redirect('employer/corporate_cv_bank');
+                redirect('employer/corporate_cv_bank/'.$fid);
             } else {
                 $this->session->set_flashdata('success', '<div class="alert alert-warning text-center">Please Select Appropriate Job Post..</div>');
-                redirect('employer/corporate_cv_bank');
+                redirect('employer/corporate_cv_bank/'.$fid);
             }
         }
         redirect('employer/corporate_cv_bank');
@@ -3482,7 +3482,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $this->session->set_userdata($data);
         $company_id = $this->session->userdata('company_profile_id');
         $this->load->model('Pincode_model');
-        $data['active_cv'] = $this->Pincode_model->getactive_cvs($company_id);
+        $data['active_cv_total'] = $this->Pincode_model->getactive_cvs($company_id);
         $data['Total_CVs_in_CVBank'] = $this->Pincode_model->gettotal_cvs($company_id);
         $data['education_level'] = $this->Master_model->getMaster('education_level', $where = false);
         $sort_val = $this->input->post('sort_val');
@@ -3496,8 +3496,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $join_cond = array('corporate_cv_bank' => 'corporate_cv_bank.cv_id = cv_folder_relation.cv_id|Left outer',
                 'cv_folder' => 'cv_folder.id=cv_folder_relation.cv_folder_id');
             $data['cv_bank_data'] = $this->Master_model->getMaster('cv_folder_relation', $where_c, $join_cond, $order = 'desc', $field = 'relation_id', $select = false, $limit = false, $start = false, $search = false);
-                $data['total_cvs']=sizeof($cv_bank_data);
-            
+            $data['total_cvs']=sizeof($data['cv_bank_data']);
+            $data['active_cv'] = $this->Pincode_model->getactive_folder_cvs($company_id,$fid);
              // print_r($this->db->last_query());die;
             $data['fid'] = $fid;
             $data['fname'] = $data['cv_bank_data'][0]['folder_name'];
@@ -3508,6 +3508,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $data['cv_trash_data'] = $this->Master_model->getMaster('corporate_cv_bank', $where_trash, $join, $order = 'desc', $field = 'cv_id', $select = false, $limit = false, $start = false, $search = false);
             $this->load->view('fontend/employer/cv_bank', $data);
         } elseif (isset($_POST['sort']) || !empty($sort_val)) {
+            $this->session->unset_userdata('activesubmenu');
+            $data['activesubmenu'] = $fid;
+            $this->session->set_userdata($data);
             $sort_val = $this->input->post('sort_val');
             if (isset($sort_val) && !empty($sort_val)) {
                 // $where_c['company_id'] = $company_id;
@@ -3526,7 +3529,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $cv_bank_data = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join_cond , $order = 'desc', $field = $sort_val, $select = false, $limit = false, $start = false, $search = false);
                 // print_r($this->db->last_query());die;
             // $config['base_url'] = base_url() . 'employer/corporate_cv_bank';
-                $data['total_cvs']=sizeof($cv_bank_data);
+             $data['total_cvs']=sizeof($cv_bank_data);
+            $data['active_cv'] = $this->Pincode_model->getactive_folder_cvs($company_id,$fid);
+               
 
             $config['total_rows'] = sizeof($cv_bank_data);
             $config['per_page'] = 5;
@@ -3578,6 +3583,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $cv_bank_data = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join, $order = 'desc', $field = 'cv_id', $select = false, $limit = false, $start = false, $search = false);
           
                 $data['total_cvs']=sizeof($cv_bank_data);
+                  $data['active_cv'] = $this->Pincode_model->getactive_cvs($company_id);
             $data['company_active_jobs'] = $this->job_posting_model->get_company_activedeasline_jobs($company_id);
                     $config['base_url'] = base_url() . 'employer/corporate_cv_bank';
                     $config['total_rows'] = sizeof($cv_bank_data);
@@ -3965,8 +3971,12 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             // $this->load->model('Consultant_autocomplete_model');
             $result = $this->Job_seeker_experience_model->autocomplete_candidate($_GET['term']);
             if (count($result) > 0) {
-                foreach ($result as $row) $arr_result[] = $row->email;
-                echo json_encode($arr_result);
+                foreach ($result as $row) 
+                    {
+                        $arr_result[] = $row->email;
+                    }
+             echo json_encode($arr_result);
+               
             }
         }
     }
@@ -4323,6 +4333,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     function get_access_data() {
         $u_id = $this->input->post('id');
         $where['user_role_id'] = $u_id;
+
         // $lineitemlevels = $this->Master_model->getMaster('employee_access',$where);
         $exists = $this->Master_model->get_master_row('employee_access', $select = FALSE, $where, $join = FALSE);
         $result = '';
@@ -4340,6 +4351,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         echo $result;
     }
     public function getocean_profile($email = NULL) {
+        $fid = $this->input->get('fid');
         $emails = $this->input->post('cv_email');
         if (isset($email) && !empty($email)) {
             $email_id = base64_decode($email);
@@ -4378,12 +4390,13 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $where11['js_email'] = $email_id;
             $this->Master_model->master_update($update_profile, 'corporate_cv_bank', $where11);
              $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Profile Updated successfully with the latest ocean profile...!</div>');
-                redirect('employer/corporate_cv_bank');
+                redirect('employer/corporate_cv_bank/'.$fid);
               }
               else
               {
+
                  $this->session->set_flashdata('success', '<div class="alert alert-success text-center"> CV is already updated with latest data from Ocean.</div>');
-                redirect('employer/corporate_cv_bank');
+                redirect('employer/corporate_cv_bank/'.$fid);
               }
             // echo $this->db->last_query();die;
             
@@ -4416,8 +4429,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $where11['js_email'] = $email_id;
                 $this->Master_model->master_update($update_profile, 'corporate_cv_bank', $where11);
             }
+            $fid = $this->input->get('fid');
             $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Profile Updated successfully with the latest ocean profile...!</div>');
-                redirect('employer/corporate_cv_bank');
+                redirect('employer/corporate_cv_bank/'.$fid);
               }
         
        

@@ -186,15 +186,15 @@
   transition:0.8s; 
   }   
   .following-info {
-  float:left;
-  line-height:30px;
-  margin-top:0px;
-  margin-left:18px;
-  }
+    float: left;
+    line-height: 30px;
+    margin-top: 7px;
+    margin-left: 40px;
+}
   .following-info2 {
   margin-left:309px;
   line-height:30px;
-  margin-top:0px;
+  margin-top:7px;
   margin-bottom:15px;
   }
   .active-span{
@@ -975,6 +975,23 @@ button.folder_popup {
 ul#sizelist {
     margin-left: 19px;
 }
+.email_top {
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: -261px;
+    width: fit-content;
+    margin-top: 25px;
+    color: blue;
+}
+span.right-side {
+    display: table-cell;
+    padding-left: 10px;
+    padding-top: -32px;
+}
+.skl_bnft {
+    display: inline-flex;
+    margin-left: 39px;
+}
 </style>
 <div class="container-fluid main-d">
   <div class="container">
@@ -1094,8 +1111,8 @@ ul#sizelist {
                 <?php } ?>
                 <div class="job-info">
                   <div class="a" style="display: inline-flex;">
-                    <li class="right-title" style="font-size:19px;margin-top:-4px;"  ><a href="<?php echo base_url(); ?>employer/edit_cv/<?php echo base64_encode($cv_row['cv_id']); ?>?fid=<?php echo $fid; ?>" style="color: black;cursor: pointer;" ><?php echo $cv_row['js_name']; ?></a></li>
-                    <li class="right-title" style="font-size: 15px;font-weight: 600;margin-left: -106px;width: fit-content;"><?php echo $cv_row['js_email']; ?></li>
+                    <li class="right-title" style="font-size:19px;margin-top:-4px;"  ><a href="<?php echo base_url(); ?>employer/preview_cv/<?php echo base64_encode($cv_row['cv_id']); ?>" style="color: black;cursor: pointer;" ><?php echo $cv_row['js_name']; ?></a></li><br>
+                    <li class="right-title email_top" ><?php echo $cv_row['js_email']; ?></li>
                     
                   </div>
                 </div>
@@ -1119,14 +1136,18 @@ ul#sizelist {
                   <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span><?php echo $cv_row['js_current_designation']; ?></li>
                   <div class="clear"></div>
                 </div>
-                
-                <span>Skill Set</span> <?php
+                 <div class="skl_bnft">
+                <span style="width: 100px;">Skill Set</span> 
+                 <span class="right-side">
+                <?php
                   $skills = explode(',', $cv_row['js_skill_set']) ;
                   if(!empty($cv_row['js_skill_set'])){ 
                   foreach($skills as $skill_row){ ?>
                 <lable class=""><button id="sklbtn"><?php echo  $skill_row;?></button></lable>
                 <?php }
                   }   ?>
+                </span>
+                </div>
                 <br>
                 <?php  
                     $cv_id =$cv_row['cv_id'];
@@ -1134,7 +1155,7 @@ ul#sizelist {
                     $join = array('job_posting'=>'job_posting.job_post_id = forwarded_jobs_cv.job_post_id');
                     $jobs_data = $this->Master_model->getMaster('forwarded_jobs_cv', $where , $join, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false); 
                       if (!empty($jobs_data)) { ?>
-                       <span data-toggle="collapse" data-target="#collapseEx<?php echo $cv_row['cv_id']?>" aria-expanded="false" aria-controls="collapseEx" style="color: red;    font-size: 25px;" title="Click to see the Jobs Forwarded" class="required"> * </span>
+                       <span data-toggle="collapse" data-target="#collapseEx<?php echo $cv_row['cv_id']?>" aria-expanded="false" aria-controls="collapseEx" style="color: red;font-size: 25px;margin-left: 38px;" title="Click to see the Jobs Forwarded" class="required"> * </span>
                        <div class="collapse" id="collapseEx<?php echo $cv_row['cv_id']?>">
                       <div class="card-body">
                       <?php $i=1; if (!empty($jobs_data)) {
@@ -1165,7 +1186,7 @@ ul#sizelist {
                   <li><a onclick="get_copy_folders(<?php echo $cv_row['cv_id']; ?>);" class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-keyboard="true" data-target="#copy_cv<?php echo $cv_row['cv_id']; ?>"  href="#">Copy this CV</a></li>
                   <li><a class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-keyboard="true" data-target="#move_cv<?php echo $cv_row['cv_id']; ?>" href="#">Move this CV</a></li>
                   <!-- <li><a href="<?php echo base_url(); ?>employer/edit_cv/<?php echo base64_encode($cv_row['cv_id']); ?>" >Edit CV</a></li> -->
-                  <li><a href="<?php echo base_url(); ?>employer/getocean_profile/<?php echo base64_encode($cv_row['js_email']); ?>" >Sync with Ocean Profile</a></li>
+                  <li><a href="<?php echo base_url(); ?>employer/getocean_profile/<?php echo base64_encode($cv_row['js_email']); ?><?php if(!empty($fid)){echo '?fid=';echo $fid;} ?>" >Sync with Ocean Profile</a></li>
                 </div>
               </div>
             </div>
@@ -1198,7 +1219,7 @@ ul#sizelist {
                 </li>
                 <li class="cv">
                   <em id="spanid2">Active CVs</em>
-                  <span id="active_cv"><?php echo sizeof($active_cv); ?></span>
+                  <span id="active_cv"><?php echo sizeof($active_cv_total); ?></span>
                 </li>
             
               <div class="pieID pie">
@@ -1352,7 +1373,7 @@ ul#sizelist {
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Forward This Job Post</h5>
       </div>
-      <form action="<?php echo base_url() ?>employer/forward_posted_job" class="sendEmail" method="post" autocomplete="off">
+      <form action="<?php echo base_url() ?>employer/forward_posted_job/<?php if(!empty($fid)){echo $fid;} ?>" class="sendEmail" method="post" autocomplete="off">
         <div class="modal-body" style="padding:15px 40px;">
           <input type="hidden" name="consultant" value="JobSeeker">  
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -1656,7 +1677,10 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
             <div class="row">
               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                 <!-- <label class="mdl-textfield__label" for="sample3">Folder Name:</label> -->
-                <small>To Import CV's Download CSV Format <a href="<?php echo base_url(); ?>cv_bank_excel/bulk_upload_format.csv"  target="_blank" download><strong>Click here To Download</strong></a></small>
+                <small>To Import CV's Download CSV Format 
+                  <a href="<?php echo base_url(); ?>cv_bank_excel/bulk_upload_format.csv" download="bulk_upload_format.csv">
+                
+                    <strong>Click here To Download</strong></a></small>
               </div>
             </div>
           </div>
@@ -1707,7 +1731,10 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
             <div class="row">
               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                 <!-- <label class="mdl-textfield__label" for="sample3">Folder Name:</label> -->
-                <small>To Import CV's Download CSV Format <a href="<?php echo base_url(); ?>cv_bank_excel/bulk_upload_cv_format.csv" download><strong>Click here To Download</strong></a></small>
+                 <small>To Import CV's Download CSV Format 
+                  <a href="<?php echo base_url(); ?>cv_bank_excel/bulk_upload_format.csv" download="bulk_upload_format.csv">
+                
+                    <strong>Click here To Download</strong></a></small>
               </div>
             </div>
           </div>

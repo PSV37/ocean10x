@@ -100,7 +100,7 @@ class Job_seeker_experience_model extends MY_Model
     function autocomplete_candidate($title){
         $this->db->like('email', $title , 'both');
         $this->db->order_by('email', 'ASC');
-        $this->db->WHERE('js_status', '1');
+        // $this->db->WHERE('js_status', '1');
         // $this->db->limit(10);
         return $this->db->get('js_info')->result();
     }
