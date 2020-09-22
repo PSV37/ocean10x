@@ -3971,8 +3971,12 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             // $this->load->model('Consultant_autocomplete_model');
             $result = $this->Job_seeker_experience_model->autocomplete_candidate($_GET['term']);
             if (count($result) > 0) {
-                foreach ($result as $row) $arr_result[] = $row->email;
-                echo json_encode($arr_result);
+                foreach ($result as $row) 
+                    {
+                        $arr_result[] = $row->email;
+                    }
+             echo json_encode($arr_result);
+               
             }
         }
     }
