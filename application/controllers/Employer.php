@@ -710,7 +710,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             'job_category'=>'job_category.job_category_id=job_posting.job_category',
             'job_role'=>'job_role.id=job_posting.job_role',
             'education_level'=>'education_level.education_level_id=job_posting.job_edu');
-        $select = "job_posting.*,job_nature.*,job_category.*,job_role.*,education_level.*,job_posting.created_at as posting_date"
+        $select = "job_posting.*,job_nature.*,job_category.*,job_role.*,education_level.*,job_posting.created_at as posting_date";
         $jobs = $this->Master_model->getMaster('job_posting', $where , $join , $order = 'desc', $field = 'job_post_id', $select ,$limit=false,$start=false, $search=false);
         $config['base_url'] = base_url() . 'employer/active_job';
             $config['total_rows'] = sizeof($jobs);
