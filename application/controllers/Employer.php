@@ -3531,7 +3531,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             // $config['base_url'] = base_url() . 'employer/corporate_cv_bank';
              $data['total_cvs']=sizeof($cv_bank_data);
             $data['active_cv'] = $this->Pincode_model->getactive_folder_cvs($company_id,$fid);
-                $data['total_cvs']=sizeof($cv_bank_data);
+               
 
             $config['total_rows'] = sizeof($cv_bank_data);
             $config['per_page'] = 5;
@@ -3583,6 +3583,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $cv_bank_data = $this->Master_model->getMaster('corporate_cv_bank', $where_c, $join, $order = 'desc', $field = 'cv_id', $select = false, $limit = false, $start = false, $search = false);
           
                 $data['total_cvs']=sizeof($cv_bank_data);
+                  $data['active_cv'] = $this->Pincode_model->getactive_folder_cvs($company_id,'0');
             $data['company_active_jobs'] = $this->job_posting_model->get_company_activedeasline_jobs($company_id);
                     $config['base_url'] = base_url() . 'employer/corporate_cv_bank';
                     $config['total_rows'] = sizeof($cv_bank_data);
