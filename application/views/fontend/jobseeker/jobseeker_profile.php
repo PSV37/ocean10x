@@ -903,7 +903,10 @@
                     <div class="form-group">
                       <label class="control-label col-sm-3" for="email">Primary Phone No:</label>
                       <div class="col-sm-9">
-                        
+                        <div class="col-md-12">
+                          <div class="col-md-6">
+                            
+                         
                           <select id="country" name="country_code" class="form-control department select2" tabindex="-1" aria-hidden="true">
                             <!-- <option value="">Select</option> -->
                             <option><?php echo $js_personal_info->country_code?></option>
@@ -1138,13 +1141,14 @@
                             <option value="ZM - Zambia (+260)">ZM - Zambia (+260)</option>
                             <option value="ZW - Zimbabwe (+263)">ZW - Zimbabwe (+263)</option>
                           </select>
-                       
+                       </div>
                        <!--  <label class="control-label col-sm-3" for="email"></label> -->
-                        <!-- <div class="col-sm-5"> -->
+                        <div class="col-md-6">
                           <input name="mobile" type="text"  class="form-control allowphonenumber" required maxlength="10" id="number" value="<?php if (!empty($js_personal_info->mobile)) {
                             echo $js_personal_info->mobile;}
                             ?>">&nbsp;<span id="errmsg"></span>
-                        <!-- </div> -->
+                        </div>
+                      </div>
                       </div>
                     </div>
                     <div class="form-group">
