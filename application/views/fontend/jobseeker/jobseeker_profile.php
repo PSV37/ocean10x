@@ -94,7 +94,7 @@
                     <div class="modal-content">
                       <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Skiils</h4>
+                        <h4 class="modal-title">Skills</h4>
                       </div>
                       <div class="modal-body">
                         <form id="Updateskill-info" class="form-horizontal allowalphabates" action="<?php echo base_url('job_seeker/update_skills');?>" method="post" style="padding: 30px;">
@@ -218,7 +218,7 @@
               <li class="bullet">
                 <a href="#" value='1' id="ed" <?php if (isset($education_data) && empty($education_data)) { ?> style="color: red;"
                   <?php  } ?> data-toggle="modal" data-target="#myModal">Ph.d / Doctorate</a>
-                <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal fade" id="myModal" tabindex='-1' role="dialog">
                   <div class="modal-dialog modal-md">
                     <div class="modal-content">
                       <div class="modal-header">
