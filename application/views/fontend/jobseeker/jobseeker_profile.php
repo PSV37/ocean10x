@@ -755,12 +755,9 @@
                 <li class="right-icon-title"> &emsp; <strong>: <?php echo $js_personal_info->country_code.'- '.$js_personal_info->mobile; ?></strong></li> -->
                   </div><br>
                    <div class="row">
-                  <div class="col-md-4">
+                  <div class="col-md-6">
                     <ul class="jobinfolist">
-                      <li>
-                        <h4>First Name | Last name</h4>
-                        <strong>: <?php echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?></strong>
-                      </li>
+                     
                       <li>
                         <h4>Date of Birth</h4>
                         <strong>: <?php if($js_personal_info->date_of_birth=="0000-00-00") {
@@ -780,36 +777,28 @@
                         <h4>Alternate phone no</h4>
                         <strong>: <?php echo $js_personal_info->alternatecountry_code.'- '.$js_personal_info->alternatemobile; ?></strong>
                       </li>
-                   
-                     
-                     
-                    </ul>
-                  </div>
-                  <div class="col-md-4">
-                    <ul class="jobinfolist">
-
-
-                      <li>
-                        <h4>Marital Status</h4>
-                        <strong>: <?php if(!empty($js_personal_info->marital_status))
-                          echo $js_personal_info->marital_status; ?></strong>
-                      </li>
-                      
-                      <li>
-                        <h4>Website</h4>
-                        <strong>: <?php if(!empty($js_personal_info->website))
-                          echo $js_personal_info->website; ?></strong>
-                      </li>
-                      <li>
+                       <li>
                         <h4>My Tagline</h4>
                         <strong>: <?php if(!empty($js_personal_info->resume_title))
                           echo $js_personal_info->resume_title; ?></strong>
                       </li>
-                       
+                    <li>
+                        <h4>Website</h4>
+                        <strong>: <?php if(!empty($js_personal_info->website))
+                          echo $js_personal_info->website; ?></strong>
+                      </li>
+                     
+                     
                     </ul>
                   </div>
-                  <div class="col-md-4">
+                 
+                  <div class="col-md-6">
                     <ul class="jobinfolist">
+                        <li>
+                        <h4>Marital Status</h4>
+                        <strong>: <?php if(!empty($js_personal_info->marital_status))
+                          echo $js_personal_info->marital_status; ?></strong>
+                      </li>
                     <li>
                         <h4>Work premit for USA</h4>
                         <strong>: <?php if(!empty($js_personal_info->work_permit_usa))
@@ -824,8 +813,8 @@
                   </div>
                 </div><br>
 
-                      <h4>Address</h4>
-                        <strong>: <?php echo $js_personal_info->present_address; ?><?php echo $js_personal_info->city_name; ?><?php echo $js_personal_info->state_name; ?> <?php echo $js_personal_info->country_name; ?></strong>
+                      <h4>Address:</h4>
+                        <strong><?php echo $js_personal_info->present_address; ?> , <?php echo $js_personal_info->city_name; ?> , <?php echo $js_personal_info->state_name; ?> , <?php echo $js_personal_info->country_name; ?></strong>
                     
                 <div class="row">
                   <div class="col-md-6">
@@ -875,7 +864,7 @@
                 </div>
                 <div class="modal-body">
                   <form id="js" class="form-horizontal " action="<?php echo base_url('job_seeker/update_personalinfo');?>" method="post" style="padding: 30px;">
-                    <input type="hidden"  name="js_experience_id" value="286">
+                   <input type="hidden" value="<?php echo $js_personal_info->job_personal_info_id; ?>" name="js_personal_info_id">
                     <div class="form-group">
                       <label class="control-label col-sm-3" for="email">Name:</label>
                       <div class="col-sm-9">
