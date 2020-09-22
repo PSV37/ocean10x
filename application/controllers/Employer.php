@@ -1086,7 +1086,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             redirect('employer/active_job');
         }
     }
-    public function forward_posted_job() {
+    public function forward_posted_job($fid=NULL) {
         $employer_id = $this->session->userdata('company_profile_id');
         if ($_POST) {
             if (!empty($this->input->post('forward_job_emails'))) {
@@ -1191,10 +1191,10 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                     
                 }
                 $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Job Forwarded Successfully</div>');
-                redirect('employer/corporate_cv_bank');
+                redirect('employer/corporate_cv_bank'.$fid);
             } else {
                 $this->session->set_flashdata('success', '<div class="alert alert-warning text-center">Please Select Appropriate Job Post..</div>');
-                redirect('employer/corporate_cv_bank');
+                redirect('employer/corporate_cv_bank'.$fid);
             }
         }
         redirect('employer/corporate_cv_bank');

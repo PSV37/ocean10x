@@ -975,13 +975,13 @@ button.folder_popup {
 ul#sizelist {
     margin-left: 19px;
 }
-.email_top
-{
-  font-size: 14px;
+.email_top {
+    font-size: 14px;
     font-weight: 600;
-    margin-left: -224px;
+    margin-left: -261px;
     width: fit-content;
     margin-top: 25px;
+    color: blue;
 }
 </style>
 <div class="container-fluid main-d">
@@ -1360,7 +1360,7 @@ ul#sizelist {
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Forward This Job Post</h5>
       </div>
-      <form action="<?php echo base_url() ?>employer/forward_posted_job" class="sendEmail" method="post" autocomplete="off">
+      <form action="<?php echo base_url() ?>employer/forward_posted_job<?php if(!empty($fid)){echo $fid;} ?>" class="sendEmail" method="post" autocomplete="off">
         <div class="modal-body" style="padding:15px 40px;">
           <input type="hidden" name="consultant" value="JobSeeker">  
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
