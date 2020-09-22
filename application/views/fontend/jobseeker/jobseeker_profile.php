@@ -866,13 +866,13 @@
                   <form id="js" class="form-horizontal " action="<?php echo base_url('job_seeker/update_personalinfo');?>" method="post" style="padding: 30px;">
                    <input type="hidden" value="<?php echo $js_personal_info->job_personal_info_id; ?>" name="js_personal_info_id">
                     <div class="form-group">
-                      <label class="control-label col-sm-3" for="email">Name:</label>
+                      <label class="control-label col-sm-3" for="email">Name</label>
                       <div class="col-sm-9">
                         <input type="text" class="form-control allowalphabates" id="edit_company_profile_id"  name="full_name" value="<?php echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?>"  >
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="control-label col-sm-3" for="email">Date of Birth:<span class="required">*</span></label>
+                      <label class="control-label col-sm-3" for="email">Date of Birth <span class="required">*</span></label>
                       <div class="col-sm-9">
                         <input type="text" class="form-control" name="dob" id="dob" placeholder="DD-MM-YYYY">
                         <input type="checkbox" required name="dobmake_public" value="No"<?php if($js_personal_info->dob_visiblity=='No') {echo 'checked'; }else{}?>  > Birthday not visible to my network
@@ -1389,7 +1389,7 @@
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="control-label col-sm-3" for="email">Country<span class="required">*</span></label>
+                      <label class="control-label col-sm-3" for="email">Country <span class="required">*</span></label>
                       <div class="col-sm-9">
                         <select name="country_id" class="form-control" onchange="getStates(this.value)" required="">
                           <option value="">Select Country</option>
@@ -1400,7 +1400,7 @@
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="control-label col-sm-3" for="email">State:<span class="required">*</span></label>
+                      <label class="control-label col-sm-3" for="email">State <span class="required">*</span></label>
                       <div class="col-sm-9">
                         <select name="state_id" class="form-control" onchange="getCitys(this.value)">
                           <option value="">Select State</option>
@@ -1411,7 +1411,7 @@
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="control-label col-sm-3" for="email">City:<span class="required">*</span></label>
+                      <label class="control-label col-sm-3" for="email">City <span class="required">*</span></label>
                       <div class="col-sm-9">
                         <select name="city_id" id="city_id" class="form-control" onchange="getStates(this.value)">
                           <option value="">Select City</option>
@@ -1422,7 +1422,7 @@
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="control-label col-sm-3" for="email">Pincode:<span class="required">*</span></label>
+                      <label class="control-label col-sm-3" for="email">Pincode <span class="required">*</span></label>
                       <div class="col-sm-9">
                         <input type="text" name="pincode" id="seeker_pincode" class="form-control allownumericwithoutdecimal" maxlength="6"  value="<?php
                           if (!empty($js_personal_info->pincode)) {
@@ -1432,7 +1432,7 @@
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="control-label col-sm-3" for="email">My Tagline:</label>
+                      <label class="control-label col-sm-3" for="email">My Tagline</label>
                       <div class="col-sm-9">
                         <input id="resDate_1" class=" form-control"  name="tagline" placeholder="Enter Your Tagline" value="<?php 
                           if (!empty($js_personal_info->resume_title)) {
@@ -1457,7 +1457,7 @@
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="control-label col-sm-3" for="email">Work Permit for USA:</label>
+                      <label class="control-label col-sm-3" for="email">Work Permit for USA</label>
                       <div class="col-sm-9">
                         <select class="form-control" name="work_permit_usa" id="work_permit_usa">
                           <option value="">Select Work Permit</option>
