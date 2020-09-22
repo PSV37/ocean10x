@@ -3508,6 +3508,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $data['cv_trash_data'] = $this->Master_model->getMaster('corporate_cv_bank', $where_trash, $join, $order = 'desc', $field = 'cv_id', $select = false, $limit = false, $start = false, $search = false);
             $this->load->view('fontend/employer/cv_bank', $data);
         } elseif (isset($_POST['sort']) || !empty($sort_val)) {
+            $this->session->unset_userdata('activesubmenu');
+            $data['activesubmenu'] = $fid;
+            $this->session->set_userdata($data);
             $sort_val = $this->input->post('sort_val');
             if (isset($sort_val) && !empty($sort_val)) {
                 // $where_c['company_id'] = $company_id;
