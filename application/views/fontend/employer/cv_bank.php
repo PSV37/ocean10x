@@ -1136,7 +1136,7 @@ span.right-side {
                   <div class="clear"></div>
                 </div>
                  <div class="skl_bnft">
-                <span>Skill Set</span> 
+                <span style="width: 100px;">Skill Set</span> 
                  <span class="right-side">
                 <?php
                   $skills = explode(',', $cv_row['js_skill_set']) ;
