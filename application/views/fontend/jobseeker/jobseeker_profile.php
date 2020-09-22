@@ -879,7 +879,7 @@
               </form>
             </div>
           </div>
-          <div class="modal fade" id="myModal50" role="dialog">
+          <div class="modal fade" tabindex='-1' id="myModal50" role="dialog">
             <div class="modal-dialog modal-md">
               <div class="modal-content">
                 <div class="modal-header">
