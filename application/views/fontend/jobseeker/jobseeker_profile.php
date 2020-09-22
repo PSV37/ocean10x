@@ -316,7 +316,7 @@
               <li class="bullet">
                 <a href="#" data-toggle="modal" <?php if (isset($education_data2) && empty($education_data2)) { ?> style="color: red;"
                   <?php  } ?>  data-target="#myModal1">Masters / Post-Graduation</a>
-                <div class="modal fade" id="myModal1" role="dialog">
+                <div class="modal fade" id="myModal1" tabindex='-1' role="dialog">
                   <div class="modal-dialog modal-md">
                     <div class="modal-content">
                       <div class="modal-header">
