@@ -432,7 +432,7 @@
               <li class="bullet">
                 <a href="#" data-toggle="modal" <?php if (isset($education_data3) && empty($education_data3)) { ?> style="color: red;"
                   <?php  } ?> data-target="#myModal2">Graduation / Diploma</a>
-                <div class="modal fade" id="myModal2" role="dialog">
+                <div class="modal fade" tabindex='-1' id="myModal2" role="dialog">
                   <div class="modal-dialog modal-md">
                     <div class="modal-content">
                       <div class="modal-header">
@@ -545,7 +545,7 @@
               <li class="bullet">
                 <a href="#" data-toggle="modal" <?php if (isset($education_data4) && empty($education_data4)) { ?> style="color: red;"
                   <?php  } ?> data-target="#myModal3">12th</a>
-                <div class="modal fade" id="myModal3" role="dialog">
+                <div class="modal fade" tabindex='-1' id="myModal3" role="dialog">
                   <div class="modal-dialog modal-md">
                     <div class="modal-content">
                       <div class="modal-header">
@@ -643,7 +643,7 @@
               <li class="bullet">
                 <a href="#" data-toggle="modal" <?php if (isset($education_data5) && empty($education_data5)) { ?> style="color: red;"
                   <?php  } ?> data-target="#myModal4">10th</a>
-                <div class="modal fade" id="myModal4" role="dialog">
+                <div class="modal fade" tabindex='-1' id="myModal4" role="dialog">
                   <div class="modal-dialog modal-md">
                     <div class="modal-content">
                       <div class="modal-header">
