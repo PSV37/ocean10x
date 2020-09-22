@@ -96,9 +96,9 @@
                     <div class="col-md-6 col-sm-12">
                       <label>Password</label><span class="required">*</span>
 
-                      <input type="Password" id="password" name="password" class="form-control" placeholder="Password" minlength="8" maxlength="20" required value="<?php echo set_value('password'); ?>" onkeyup="validatePassword(this.value);"> 
+                      <input title="Password must contain one uppercase,one lowercase,one numeric,one special character and  minimum 8 characters" type="Password" id="password" name="password" class="form-control" placeholder="Password" minlength="8" maxlength="20" required value="<?php echo set_value('password'); ?>" onkeyup="validatePassword(this.value);"> 
                        <span toggle="#password-field" class="fa fa-eye-slash field-icon toggle-password"></span>
-                               <span toggle="#password-field"><i class="fa fa-info-circle" title="Password must contain one uppercase,one lowercase,one numeric,one special character and  minimum 8 characters"></i></span>
+                               <!-- <span toggle="#password-field"><i class="fa fa-info-circle" ></i></span> -->
 
                       <?php echo form_error('password'); ?>
                     </div>
@@ -358,16 +358,3 @@ $(document).ready(function() {
             }
         </script>
  <?php $this->load->view("fontend/layout/footer.php"); ?>
-
-<script type="text/javascript">
-  $(".toggle-password").click(function() {
-
-  $(this).toggleClass("fa-eye fa-eye-slash");
-  var input = $($(this).attr("toggle"));
-  if (input.attr("type") == "password") {
-    input.attr("type", "text");
-  } else {
-    input.attr("type", "password");
-  }
-});
-</script>
