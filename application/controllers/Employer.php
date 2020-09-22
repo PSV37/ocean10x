@@ -4323,6 +4323,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     function get_access_data() {
         $u_id = $this->input->post('id');
         $where['user_role_id'] = $u_id;
+          $fid = $this->input->get('fid');
         // $lineitemlevels = $this->Master_model->getMaster('employee_access',$where);
         $exists = $this->Master_model->get_master_row('employee_access', $select = FALSE, $where, $join = FALSE);
         $result = '';
@@ -4378,12 +4379,13 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $where11['js_email'] = $email_id;
             $this->Master_model->master_update($update_profile, 'corporate_cv_bank', $where11);
              $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Profile Updated successfully with the latest ocean profile...!</div>');
-                redirect('employer/corporate_cv_bank');
+                redirect('employer/corporate_cv_bank'.$fid);
               }
               else
               {
+
                  $this->session->set_flashdata('success', '<div class="alert alert-success text-center"> CV is already updated with latest data from Ocean.</div>');
-                redirect('employer/corporate_cv_bank');
+                redirect('employer/corporate_cv_bank'.$fid);
               }
             // echo $this->db->last_query();die;
             

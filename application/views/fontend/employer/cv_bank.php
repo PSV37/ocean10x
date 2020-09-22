@@ -1186,7 +1186,7 @@ span.right-side {
                   <li><a onclick="get_copy_folders(<?php echo $cv_row['cv_id']; ?>);" class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-keyboard="true" data-target="#copy_cv<?php echo $cv_row['cv_id']; ?>"  href="#">Copy this CV</a></li>
                   <li><a class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-keyboard="true" data-target="#move_cv<?php echo $cv_row['cv_id']; ?>" href="#">Move this CV</a></li>
                   <!-- <li><a href="<?php echo base_url(); ?>employer/edit_cv/<?php echo base64_encode($cv_row['cv_id']); ?>" >Edit CV</a></li> -->
-                  <li><a href="<?php echo base_url(); ?>employer/getocean_profile<?php if(!empty($fid)){echo '?fid=';echo $fid;} ?>/<?php echo base64_encode($cv_row['js_email']); ?>" >Sync with Ocean Profile</a></li>
+                  <li><a href="<?php echo base_url(); ?>employer/getocean_profile/<?php echo base64_encode($cv_row['js_email']); ?><?php if(!empty($fid)){echo '?fid=';echo $fid;} ?>" >Sync with Ocean Profile</a></li>
                 </div>
               </div>
             </div>
