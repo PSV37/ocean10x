@@ -264,7 +264,7 @@
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
                               <label class="control-label" for="email">Specialization <span class="required">*</span></label>
-                              <select name="specialization_id" id="specialization_id" class="form-control  department select2">
+                              <select name="specialization_id" id="specialization_id" class="form-control department select2">
                                 <option value="">Select</option>
                                 <?php foreach($phdspecial as $edu_special){?>
                                 <option value="<?php echo $edu_special['id']; ?>"<?php if(!empty($education_data)) if($education_data[0]->specialization_id==$edu_special['id']) echo "selected";?>><?php echo $edu_special['education_specialization']; ?></option>
@@ -678,7 +678,8 @@
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
                               <label class="control-label" for="email">Education <span class="required">*</span></label>
-                              <select name="education_level_id" id="education_level_id" class="form-control department select2" required="">
+                              <select name="education_level_id" id="board_id" class="form-control department select2" required="">
+                              <!--<select name="education_level_id" id="education_level_id" class="form-control department select2" required="">-->
                                 <option value="">Select</option>
                                 <option value="5">10th</option>
                               </select>
@@ -689,7 +690,8 @@
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
                               <label class="control-label" for="pwd">Year of Completion <span class="required">*</span></label>
-                              <select name="js_year_of_passing" id="ddlYear" class="form-control department select2" required="">
+                              <select name="js_year_of_passing" id="board_id" class="form-control department select2" required="">
+                              <!--<select name="js_year_of_passing" id="ddlYear" class="form-control department select2" required="">-->
                                 <option value="">Select Completion Year</option>
                                 <?php
                                   $currently_selected = date('Y'); 
@@ -2099,19 +2101,19 @@
                             </div>
                           </div>
                           <div class="form-group">
-                            <label class="control-label col-sm-3" for="email">Training Topic:</label>
+                            <label class="control-label col-sm-3" for="email">Training Topic</label>
                             <div class="col-sm-9">
                               <input type="text" name="training_topic" class="form-control allowalphabates" id="training_topic" placeholder="Training Topic" value="CCNA">
                             </div>
                           </div>
                           <div class="form-group">
-                            <label class="control-label col-sm-3" for="email">Institute:</label>
+                            <label class="control-label col-sm-3" for="email">Institute</label>
                             <div class="col-sm-9">
                               <input type="text" name="institute" class="form-control allowalphabates" id="institute" placeholder="Institiute Name" value="CCNA">
                             </div>
                           </div>
                           <div class="form-group">
-                            <label class="control-label col-sm-3" for="email">Country:</label>
+                            <label class="control-label col-sm-3" for="email">Country</label>
                             <div class="col-sm-9">
                               <select name="country_id" id="country_id" class="form-control department select2" onchange="getStates(this.value)">
                                 <option value="">Select Country</option>
@@ -2122,7 +2124,7 @@
                             </div>
                           </div>
                           <div class="form-group">
-                            <label class="control-label col-sm-3" for="email">State:</label>
+                            <label class="control-label col-sm-3" for="email">State</label>
                             <div class="col-sm-9">
                               <select name="state_id" id="state_id" class="form-control department select2" onchange="getCitys(this.value)">
                                 <option value="">Select Country First</option>
@@ -2133,7 +2135,7 @@
                             </div>
                           </div>
                           <div class="form-group">
-                            <label class="control-label col-sm-3" for="email">City:</label>
+                            <label class="control-label col-sm-3" for="email">City</label>
                             <div class="col-sm-9">
                               <select name="city_id" id="city_id" class="form-control department select2">
                                 <option value="">Select State First</option>
@@ -2144,13 +2146,13 @@
                             </div>
                           </div>
                           <div class="form-group">
-                            <label class="control-label col-sm-3" for="pwd">Duration:</label>
+                            <label class="control-label col-sm-3" for="pwd">Duration</label>
                             <div class="col-sm-9">
                               <input name="duration" type="text" class="form-control allownumericwithdecimal" id="duration" placeholder=" 1 years 2 month" value="">
                             </div>
                           </div>
                           <div class="form-group">
-                            <label class="control-label col-sm-3" for="pwd">Training Years:</label>
+                            <label class="control-label col-sm-3" for="pwd">Training Years</label>
                             <div class="col-sm-9">
                               <select name="training_year" id="training_year" class="form-control department select2">
                                 <option value="">Select</option>
