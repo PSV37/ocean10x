@@ -4323,7 +4323,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     function get_access_data() {
         $u_id = $this->input->post('id');
         $where['user_role_id'] = $u_id;
-          $fid = $this->input->get('fid');
+
         // $lineitemlevels = $this->Master_model->getMaster('employee_access',$where);
         $exists = $this->Master_model->get_master_row('employee_access', $select = FALSE, $where, $join = FALSE);
         $result = '';
@@ -4341,6 +4341,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         echo $result;
     }
     public function getocean_profile($email = NULL) {
+        $fid = $this->input->get('fid');
         $emails = $this->input->post('cv_email');
         if (isset($email) && !empty($email)) {
             $email_id = base64_decode($email);
