@@ -73,8 +73,8 @@ class Register extends CI_Controller
                 {
                     // all Ready Account Message
                     $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Your Email Or Account Already exists! Please Login!</div>');
-                    echo "string";die;
-                    redirect('register/index');
+                    // echo "string";die;
+                    redirect('register');
                 } else 
                 {
                
@@ -122,6 +122,12 @@ class Register extends CI_Controller
                     }
                 }
 
+             }
+             else
+             {
+                 $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Your Email Or Account Already exists! Please Login!</div>');
+                    // echo "string";die;
+                    redirect('register');
              }
            
             
