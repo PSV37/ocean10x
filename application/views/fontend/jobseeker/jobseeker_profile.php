@@ -3647,10 +3647,10 @@
 <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
 <script>
   $('.select2').select2();
-  $("#dept_id").select2( {
-    placeholder: "Select Department",
-    allowClear: true
-    } );
+  // $("#dept_id").select2( {
+  //   placeholder: "Select Department",
+  //   allowClear: true
+  //   } );
 </script>
 <script>
   $(".allowphonenumber").on("keypress keyup blur",function (event) {
