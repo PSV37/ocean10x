@@ -8,6 +8,7 @@
   .required
   {
     color: red;
+    margin-left: 10px;
   }
    .field-icon {
   float: right;
@@ -91,36 +92,13 @@
 
                 <div class="formrow">
                   <div class="row">
-                    <!-- <div class="col-md-6 col-sm-12">
-                      <input type="text" name="mobile" value="<?php echo isset($this->session->userdata['reg_jobseeker']['mobile_no'])?$this->session->userdata['reg_jobseeker']['mobile_no']:''; ?>" class="form-control" placeholder="Mobile Number" autocomplete="off">
-                    </div> -->
-
-                    <!-- <div class="col-md-6 col-sm-12">
-                      <?php $str_m="";
-                        if((isset($this->session->userdata['reg_jobseeker']['gender'])) && $this->session->userdata['reg_jobseeker']['gender']=='1'){
-
-                        $str_m="selected";
-                        $str_f="";
-                        }
-                        if((isset($this->session->userdata['reg_jobseeker']['gender'])) && $this->session->userdata['reg_jobseeker']['gender']=='2'){
-                        $str_m="";
-                        $str_f="selected";
-                        } 
-                      ?> -->
-                      <!-- <select name="gender" class="form-control" id="gender">
-                        <option value="">Select One</option>
-                        <option value="1" <?php echo $str_m ; ?>>Male</option>
-                        <option value="2" <?php echo $str_f ; ?>>Female</option>
-                      </select> -->
-                       <!-- <label>Gender</label> &nbsp;&nbsp;
-                      <input type="radio" name="gender" value="1" <?php echo $str_m ; ?>> Male &nbsp;
-                      <input type="radio" name="gender" value="2" <?php echo $str_f ; ?>> Female
-                    </div> -->
+                  
                     <div class="col-md-6 col-sm-12">
                       <label>Password</label><span class="required">*</span>
 
                       <input type="Password" id="password" name="password" class="form-control" placeholder="Password" minlength="8" maxlength="20" required value="<?php echo set_value('password'); ?>" onkeyup="validatePassword(this.value);"> 
-                      <span toggle="#password-field" class="fa fa-lg fa-eye-slash field-icon toggle-password"></span>
+                       <span toggle="#password-field" class="fa fa-eye-slash field-icon toggle-password"></span>
+                               <span toggle="#password-field"><i class="fa fa-info-circle" title="Password must contain one uppercase,one lowercase,one numeric,one special character and  minimum 8 characters"></i></span>
 
                       <?php echo form_error('password'); ?>
                     </div>
@@ -315,19 +293,19 @@ $(document).ready(function() {
          });
         });
 </script>
- <script type="text/javascript">
-  $(".toggle-password").click(function() {
-
-  $(this).toggleClass("fa-eye fa-eye-slash");
-  var x = document.getElementById("password");
-    if (x.type === "password") {
-      x.type = "text";
-    } else {
-      x.type = "password";
-    }
-  
-});
-
+ <script>
+   $(".toggle-password").click(function() {
+   
+   $(this).toggleClass("fa-eye fa-eye-slash");
+   var x = document.getElementById("myInput");
+     if (x.type === "password") {
+       x.type = "text";
+     } else {
+       x.type = "password";
+     }
+   
+   });
+   
 </script>
 
 
