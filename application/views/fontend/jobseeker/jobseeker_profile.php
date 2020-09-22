@@ -895,7 +895,7 @@
                     <div class="form-group">
                       <label class="control-label col-sm-3" for="email">Date of Birth:<span class="required">*</span></label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" name="dob" id="dob" value="<?php echo date('Y-m-d', strtotime($js_personal_info->date_of_birth))) ;?>" placeholder="DD-MM-YYYY">
+                        <input type="text" class="form-control" name="dob" id="dob" value="<?php echo date('Y-m-d', strtotime($js_personal_info->date_of_birth));?>" placeholder="DD-MM-YYYY">
                         <input type="checkbox" required name="dobmake_public" value="No"<?php if($js_personal_info->dob_visiblity=='No') {echo 'checked'; }else{}?>  > Birthday not visible to my network
                       </div>
                     </div>
