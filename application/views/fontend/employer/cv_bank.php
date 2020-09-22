@@ -1219,7 +1219,7 @@ span.right-side {
                 </li>
                 <li class="cv">
                   <em id="spanid2">Active CVs</em>
-                  <span id="active_cv"><?php echo sizeof($active_cv); ?></span>
+                  <span id="active_cv"><?php echo sizeof($active_cv_total); ?></span>
                 </li>
             
               <div class="pieID pie">

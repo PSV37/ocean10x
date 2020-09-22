@@ -3482,7 +3482,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $this->session->set_userdata($data);
         $company_id = $this->session->userdata('company_profile_id');
         $this->load->model('Pincode_model');
-        $data['active_cv'] = $this->Pincode_model->getactive_cvs($company_id);
+        $data['active_cv_total'] = $this->Pincode_model->getactive_cvs($company_id);
         $data['Total_CVs_in_CVBank'] = $this->Pincode_model->gettotal_cvs($company_id);
         $data['education_level'] = $this->Master_model->getMaster('education_level', $where = false);
         $sort_val = $this->input->post('sort_val');
