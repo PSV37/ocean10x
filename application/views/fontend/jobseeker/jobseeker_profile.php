@@ -809,6 +809,7 @@
                     </ul>
                   </div>
                   <div class="col-md-4">
+                    <ul class="jobinfolist">
                     <li>
                         <h4>Work premit for USA</h4>
                         <strong>: <?php if(!empty($js_personal_info->work_permit_usa))
@@ -819,6 +820,7 @@
                         <strong>: <?php if(!empty($js_personal_info->work_permit_countries))
                           echo $js_personal_info->work_permit_countries; ?></strong>
                       </li>
+                    </ul>
                   </div>
                 </div><br>
 
