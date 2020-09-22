@@ -755,7 +755,7 @@
                 <li class="right-icon-title"> &emsp; <strong>: <?php echo $js_personal_info->country_code.'- '.$js_personal_info->mobile; ?></strong></li> -->
                   </div><br>
                    <div class="row">
-                  <div class="col-md-4">
+                  <div class="col-md-6">
                     <ul class="jobinfolist">
                      
                       <li>
@@ -777,6 +777,11 @@
                         <h4>Alternate phone no</h4>
                         <strong>: <?php echo $js_personal_info->alternatecountry_code.'- '.$js_personal_info->alternatemobile; ?></strong>
                       </li>
+                       <li>
+                        <h4>My Tagline</h4>
+                        <strong>: <?php if(!empty($js_personal_info->resume_title))
+                          echo $js_personal_info->resume_title; ?></strong>
+                      </li>
                     <li>
                         <h4>Website</h4>
                         <strong>: <?php if(!empty($js_personal_info->website))
@@ -786,27 +791,14 @@
                      
                     </ul>
                   </div>
-                  <div class="col-md-4">
+                 
+                  <div class="col-md-6">
                     <ul class="jobinfolist">
-
-
-                      <li>
+                        <li>
                         <h4>Marital Status</h4>
                         <strong>: <?php if(!empty($js_personal_info->marital_status))
                           echo $js_personal_info->marital_status; ?></strong>
                       </li>
-                      
-                     
-                      <li>
-                        <h4>My Tagline</h4>
-                        <strong>: <?php if(!empty($js_personal_info->resume_title))
-                          echo $js_personal_info->resume_title; ?></strong>
-                      </li>
-                       
-                    </ul>
-                  </div>
-                  <div class="col-md-4">
-                    <ul class="jobinfolist">
                     <li>
                         <h4>Work premit for USA</h4>
                         <strong>: <?php if(!empty($js_personal_info->work_permit_usa))
@@ -821,8 +813,8 @@
                   </div>
                 </div><br>
 
-                      <h4>Address</h4>
-                        <strong>: <?php echo $js_personal_info->present_address; ?><?php echo $js_personal_info->city_name; ?><?php echo $js_personal_info->state_name; ?> <?php echo $js_personal_info->country_name; ?></strong>
+                      <h4>Address:</h4>
+                        <strong><?php echo $js_personal_info->present_address; ?> , <?php echo $js_personal_info->city_name; ?> , <?php echo $js_personal_info->state_name; ?> , <?php echo $js_personal_info->country_name; ?></strong>
                     
                 <div class="row">
                   <div class="col-md-6">
