@@ -746,14 +746,16 @@
                   <span class="edit"><a href="#" data-toggle="modal" data-target="#myModal50">Edit</a></span> 
                 </div>
                
-                  <div  class="icon-info">
-                     <li class="left-icon-title"><i class="fa fa-envelope"></i></li>
-                <li class="right-icon-title"> &emsp;<?php echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?></li>
+                <div  class="icon-info">
                 <li class="left-icon-title"><i class="fa fa-envelope"></i></li>
                 <li class="right-icon-title"> &emsp;<?php echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?></li>
+               <li class="left-icon-title"><i class="fa fa-phone-alt"></i></li>
+                <li class="right-icon-title"> &emsp; <strong>: <?php echo $js_personal_info->country_code.'- '.$js_personal_info->mobile; ?></strong></li>
+                <!-- <li class="left-icon-title"><i class="fa fa-envelope"></i></li>
+                <li class="right-icon-title"> &emsp; <strong>: <?php echo $js_personal_info->country_code.'- '.$js_personal_info->mobile; ?></strong></li> -->
                   </div><br>
                    <div class="row">
-                  <div class="col-md-6">
+                  <div class="col-md-4">
                     <ul class="jobinfolist">
                       <li>
                         <h4>First Name | Last name</h4>
@@ -764,7 +766,7 @@
                         <strong>: <?php if($js_personal_info->date_of_birth=="0000-00-00") {
                           echo "";
                           } else {
-                              echo date('j M Y',strtotime($js_personal_info->date_of_birth)); 
+                              echo date('d-m-Y',strtotime($js_personal_info->date_of_birth)); 
                               if($js_personal_info->dob_visiblity=="Yes") {
                                 echo "  (Birthday not visible to my network)";
                               }else{
@@ -773,53 +775,26 @@
                           }
                           ?></strong>
                       </li>
-                      <li>
-                        <h4>Primary phone no</h4>
-                        <strong>: <?php echo $js_personal_info->country_code.'- '.$js_personal_info->mobile; ?></strong>
-                      </li>
+                    
                       <li>
                         <h4>Alternate phone no</h4>
                         <strong>: <?php echo $js_personal_info->alternatecountry_code.'- '.$js_personal_info->alternatemobile; ?></strong>
                       </li>
-                      <li>
-                        <h4>Present Address</h4>
-                        <strong>: <?php echo $js_personal_info->present_address; ?></strong>
-                      </li>
-                      <li>
-                        <h4>Address</h4>
-                        <strong>: <?php echo $js_personal_info->present_address; ?></strong>
-                      </li>
-                      <li>
-                        <h4>City</h4>
-                        <strong>: <?php echo $js_personal_info->city_name; ?></strong>
-                      </li>
+                   
+                     
+                     
                     </ul>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-4">
                     <ul class="jobinfolist">
-                      <li>
-                        <h4>State</h4>
-                        <strong>: <?php echo $js_personal_info->state_name; ?></strong>
-                      </li>
-                      <li>
-                        <h4>Country</h4>
-                        <strong>: <?php echo $js_personal_info->country_name; ?></strong>
-                      </li>
+
+
                       <li>
                         <h4>Marital Status</h4>
                         <strong>: <?php if(!empty($js_personal_info->marital_status))
                           echo $js_personal_info->marital_status; ?></strong>
                       </li>
-                      <li>
-                        <h4>Work premit for USA</h4>
-                        <strong>: <?php if(!empty($js_personal_info->work_permit_usa))
-                          echo $js_personal_info->work_permit_usa; ?></strong>
-                      </li>
-                      <li>
-                        <h4>Work premit for Other Country</h4>
-                        <strong>: <?php if(!empty($js_personal_info->work_permit_countries))
-                          echo $js_personal_info->work_permit_countries; ?></strong>
-                      </li>
+                      
                       <li>
                         <h4>Website</h4>
                         <strong>: <?php if(!empty($js_personal_info->website))
@@ -830,9 +805,26 @@
                         <strong>: <?php if(!empty($js_personal_info->resume_title))
                           echo $js_personal_info->resume_title; ?></strong>
                       </li>
+                       
                     </ul>
                   </div>
-                </div>
+                  <div class="col-md-4">
+                    <li>
+                        <h4>Work premit for USA</h4>
+                        <strong>: <?php if(!empty($js_personal_info->work_permit_usa))
+                          echo $js_personal_info->work_permit_usa; ?></strong>
+                      </li>
+                      <li>
+                        <h4>Work premit for Other Country</h4>
+                        <strong>: <?php if(!empty($js_personal_info->work_permit_countries))
+                          echo $js_personal_info->work_permit_countries; ?></strong>
+                      </li>
+                  </div>
+                </div><br>
+
+                      <h4>Address</h4>
+                        <strong>: <?php echo $js_personal_info->present_address; ?><?php echo $js_personal_info->city_name; ?><?php echo $js_personal_info->state_name; ?> <?php echo $js_personal_info->country_name; ?></strong>
+                    
                 <div class="row">
                   <div class="col-md-6">
                     <div class="uplode-resume">
