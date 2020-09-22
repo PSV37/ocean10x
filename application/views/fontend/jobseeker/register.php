@@ -54,8 +54,8 @@
               <form id="submit" action="" method="post" class="submit-form">
 
                 <div class="formrow">
-                  <div class="row">
-                    <div class="col-md-6 col-sm-12">
+                  <div class="row profession">
+                    <div class="col-md-6 col-sm-12 ">
                        <?php $str_fr="";
                         if((isset($this->session->userdata['reg_jobseeker']['gender'])) && $this->session->userdata['reg_jobseeker']['profession']=='1'){
 
@@ -68,7 +68,7 @@
                         } 
                       ?>
                      <label>I am a</label> &nbsp;&nbsp;
-                      <input type="radio" name="profession" required value="Fresher" <?php echo $str_fr ; ?>> Fresher &nbsp;
+                      <input type="radio" name="profession"  value="Fresher" <?php echo $str_fr ; ?>> Fresher &nbsp;
                       <input type="radio" name="profession" value="Professional" <?php echo $str_pro ; ?>> Professional<span class="required">*</span>
                     </div>
                     
@@ -218,8 +218,8 @@ $(document).ready(function() {
                else if (element.attr("name") == "email"  ) 
                  error.insertAfter(".email");
 
-               else if (element.attr("name") == "company_email"  ) 
-                 error.insertAfter(".company_email");
+               else if (element.attr("name") == "profession"  ) 
+                 error.insertAfter(".profession");
 
                else if (element.attr("name") == "password" ) 
                  error.insertAfter(".password");
@@ -247,7 +247,9 @@ $(document).ready(function() {
                  
                },
              
-              
+              profession:{
+                required: true,
+              },
    
    
                captcha: {
