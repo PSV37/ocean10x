@@ -678,7 +678,7 @@
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
                               <label class="control-label" for="email">Education <span class="required">*</span></label>
-                              <select name="education_level_id" id="board_id" class="form-control department select2" required="">
+                              <select name="education_level_id" id="education_id" class="form-control department select2" required="">
                               <!--<select name="education_level_id" id="education_level_id" class="form-control department select2" required="">-->
                                 <option value="">Select</option>
                                 <option value="5">10th</option>
@@ -690,7 +690,7 @@
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
                               <label class="control-label" for="pwd">Year of Completion <span class="required">*</span></label>
-                              <select name="js_year_of_passing" id="board_id" class="form-control department select2" required="">
+                              <select name="js_year_of_passing" id="year_id" class="form-control department select2" required="">
                               <!--<select name="js_year_of_passing" id="ddlYear" class="form-control department select2" required="">-->
                                 <option value="">Select Completion Year</option>
                                 <?php
