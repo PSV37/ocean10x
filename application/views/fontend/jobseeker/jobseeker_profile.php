@@ -895,16 +895,16 @@
                     <div class="form-group">
                       <label class="control-label col-sm-3" for="email">Date of Birth:<span class="required">*</span></label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" name="dob" id="dob" value="<?php echo date('Y-m-d', strtotime($js_personal_info->date_of_birth));?>" placeholder="DD-MM-YYYY">
+                        <input type="text" class="form-control" name="dob" id="dob" value="<?php echo date('d-m-Y', strtotime($js_personal_info->date_of_birth));?>" placeholder="DD-MM-YYYY">
                         <input type="checkbox" required name="dobmake_public" value="No"<?php if($js_personal_info->dob_visiblity=='No') {echo 'checked'; }else{}?>  > Birthday not visible to my network
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="control-label col-sm-3" for="email">Country Code:</label>
+                      <label class="control-label col-sm-3" for="email">Primary Phone No:</label>
                       <div class="col-sm-9">
                         <div class="col-sm-3">
                           <select id="country" name="country_code" class="form-control department select2" tabindex="-1" aria-hidden="true">
-                            <option value="">Select</option>
+                            <!-- <option value="">Select</option> -->
                             <option><?php echo $js_personal_info->country_code?></option>
                             <option value="AD - Andorra (+376)">AD - Andorra (+376)</option>
                             <option value="AE - United Arab Emirates (+971)">AE - United Arab Emirates (+971)</option>
@@ -1138,7 +1138,7 @@
                             <option value="ZW - Zimbabwe (+263)">ZW - Zimbabwe (+263)</option>
                           </select>
                         </div>
-                        <label class="control-label col-sm-3" for="email">Primary Phone No:</label>
+                       <!--  <label class="control-label col-sm-3" for="email"></label> -->
                         <div class="col-sm-6">
                           <input name="mobile" type="text"  class="form-control allowphonenumber" required maxlength="10" id="number" value="<?php if (!empty($js_personal_info->mobile)) {
                             echo $js_personal_info->mobile;}
@@ -1147,7 +1147,7 @@
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="control-label col-sm-3" for="email">Country Code:</label>
+                      <label class="control-label col-sm-3" for="email">Alternate Phone No:</label>
                       <div class="col-sm-9">
                         <div class="col-sm-3">
                           <select id="country" name="alternatecountry_code" class="form-control department select2" >
@@ -1384,7 +1384,7 @@
                             <option value="ZW - Zimbabwe (+263)">ZW - Zimbabwe (+263)</option>
                           </select>
                         </div>
-                        <label class="control-label col-sm-3" for="email">Alternate Phone No:</label>
+                        <!-- <label class="control-label col-sm-3" for="email"></label> -->
                         <div class="col-sm-6">
                           <input name="alternatemobile" type="text"  class="form-control allowphonenumber" required maxlength="10" id="number" value="<?php if (!empty($js_personal_info->mobile)) {
                             echo $js_personal_info->mobile;}
