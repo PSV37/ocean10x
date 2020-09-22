@@ -160,7 +160,7 @@ class Job_seeker extends MY_Seeker_Controller
 				// 'state1_id'         => $this->input->post('state1_id'),
 				// 'city1_id'          => $this->input->post('city1_id'),
 				// 'pincode1'          => $this->input->post('pincode1'),
-                'update_at' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),
+                // 'update_at' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),
                 'resume_title'              => addslashes($this->input->post('tagline')),
                 'marital_status'            => $this->input->post('matrial_status'),
                 'work_permit_usa'           => $this->input->post('work_permit_usa'),
