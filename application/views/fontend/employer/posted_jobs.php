@@ -1105,7 +1105,7 @@ button.btn.btn-primary.trash {
                
               
                 <li class="left-title">Published on</li>
-               <li class="right-title">&nbsp;:<?php if(!is_null($v_companyjobs['created_at'])) { echo date('j M Y',strtotime($v_companyjobs['created_at'])); } ?></li>
+               <li class="right-title">&nbsp;:<?php if(!is_null($v_companyjobs['posting_date'])) { echo date('j M Y',strtotime($v_companyjobs['posting_date'])); } ?></li>
                <div class="clear"></div>
             </div>
             <div class="following-info3">
