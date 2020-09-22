@@ -1629,7 +1629,7 @@
                           <div class="form-group">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
-                              <label class="control-label" for="email">Education<span class="required">*</span></label>
+                              <label class="control-label" for="email">Education <span class="required">*</span></label>
                               <select name="education_level_id" id="education_level_id" class="form-control department select2">
                                 <option value="">Select</option>
                                 <option value="4">12th</option>
@@ -1640,7 +1640,7 @@
                           <div class="form-group">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
-                              <label class="control-label" for="pwd">Year of Completion<span class="required">*</span></label>
+                              <label class="control-label" for="pwd">Year of Completion <span class="required">*</span></label>
                               <select name="js_year_of_passing" id="ddlYear" class="form-control department select2" required="">
                                 <option value="">Select Completion Year</option>
                                 <?php
@@ -1658,7 +1658,7 @@
                           <div class="form-group">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
-                              <label class="control-label" for="email">Board<span class="required">*</span></label>
+                              <label class="control-label" for="email">Board <span class="required">*</span></label>
                               <select name="board_id" id="board_id" class="form-control">
                                 <option value="">Select Board</option>
                                 <!-- <option value="1">CBSE</option>
@@ -1676,7 +1676,7 @@
                           <div class="form-group">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
-                              <label class="control-label" for="email">School Medium<span class="required">*</span></label>
+                              <label class="control-label" for="email">School Medium <span class="required">*</span></label>
                               <select name="schoolmedium_id" id="schoolmedium_id" class="form-control">
                                 <?php foreach($schoolmedium as $medium){?>
                                 <option value="<?php echo $medium['schoolmedium_id']; ?>"<?php if(!empty($education_data4)) if($education_data4[0]->schoolmedium_id==$medium['schoolmedium_id']) echo "selected";?>><?php echo $medium['school_medium']; ?></option>
@@ -1688,7 +1688,7 @@
                           <div class="form-group">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
-                              <label class="control-label" for="email">Total Score<span class="required">*</span></label>
+                              <label class="control-label" for="email">Total Score <span class="required">*</span></label>
                               <input type="text" name="totalmarks_id" id="totalmarks_id" class="form-control" value="<?php if(!empty($education_data4)) echo $education_data4[0]->totalmarks_id; ?>" placeholder="Enter Total Score" onkeypress="javascript:return isNumber(event)">
                             </div>
                             <div class="col-sm-1"></div>
