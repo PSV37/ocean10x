@@ -186,15 +186,15 @@
   transition:0.8s; 
   }   
   .following-info {
-  float:left;
-  line-height:30px;
-  margin-top:0px;
-  margin-left:18px;
-  }
+    float: left;
+    line-height: 30px;
+    margin-top: 7px;
+    margin-left: 40px;
+}
   .following-info2 {
   margin-left:309px;
   line-height:30px;
-  margin-top:0px;
+  margin-top:7px;
   margin-bottom:15px;
   }
   .active-span{
