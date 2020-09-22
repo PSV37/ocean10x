@@ -983,6 +983,14 @@ ul#sizelist {
     margin-top: 25px;
     color: blue;
 }
+span.right-side {
+    display: table-cell;
+    padding-left: 10px;
+    padding-top: -32px;
+}
+.skl_bnft {
+    display: inline-flex;
+}
 </style>
 <div class="container-fluid main-d">
   <div class="container">
@@ -1127,14 +1135,18 @@ ul#sizelist {
                   <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span><?php echo $cv_row['js_current_designation']; ?></li>
                   <div class="clear"></div>
                 </div>
-                
-                <span>Skill Set</span> <?php
+                 <div class="skl_bnft">
+                <span>Skill Set</span> 
+                 <span class="right-side">
+                <?php
                   $skills = explode(',', $cv_row['js_skill_set']) ;
                   if(!empty($cv_row['js_skill_set'])){ 
                   foreach($skills as $skill_row){ ?>
                 <lable class=""><button id="sklbtn"><?php echo  $skill_row;?></button></lable>
                 <?php }
                   }   ?>
+                </span>
+                </div>
                 <br>
                 <?php  
                     $cv_id =$cv_row['cv_id'];
@@ -1360,7 +1372,7 @@ ul#sizelist {
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Forward This Job Post</h5>
       </div>
-      <form action="<?php echo base_url() ?>employer/forward_posted_job<?php if(!empty($fid)){echo $fid;} ?>" class="sendEmail" method="post" autocomplete="off">
+      <form action="<?php echo base_url() ?>employer/forward_posted_job/<?php if(!empty($fid)){echo $fid;} ?>" class="sendEmail" method="post" autocomplete="off">
         <div class="modal-body" style="padding:15px 40px;">
           <input type="hidden" name="consultant" value="JobSeeker">  
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
