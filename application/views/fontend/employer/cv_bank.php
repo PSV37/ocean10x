@@ -1656,7 +1656,7 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
             <div class="row">
               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                 <!-- <label class="mdl-textfield__label" for="sample3">Folder Name:</label> -->
-                <small>To Import CV's Download CSV Format <a href="<?php echo base_url(); ?>cv_bank_excel/bulk_upload_cv_format.csv" download><strong>Click here To Download</strong></a></small>
+                <small>To Import CV's Download CSV Format <a href="<?php echo base_url(); ?>cv_bank_excel/files/Cv.csv" download><strong>Click here To Download</strong></a></small>
               </div>
             </div>
           </div>
