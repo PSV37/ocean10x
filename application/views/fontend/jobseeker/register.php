@@ -77,14 +77,14 @@
 
                 <div class="formrow">
                   <div class="row">
-                    <div class="col-md-6 col-sm-12">
+                    <div class="col-md-6 col-sm-12 full_name">
                       <label>Name</label><span class="required">*</span>
-                      <input type="text" name="full_name" value="<?php echo set_value('full_name'); ?>" class="form-control name-valid" placeholder="Full Name" autocomplete="off" required>
+                      <input type="text" name="full_name" value="<?php echo set_value('full_name'); ?>" class="form-control name-valid" placeholder="Full Name" autocomplete="off" >
                     </div>
 
-                    <div class="col-md-6 col-sm-12">
+                    <div class="col-md-6 col-sm-12 email">
                      <label>Email</label><span class="required">*</span>
-                      <input type="email" name="email" value="<?php echo set_value('email'); ?>" class="form-control" placeholder="Email" autocomplete="off" required><?php echo form_error('email'); ?>
+                      <input type="email" name="email" value="<?php echo set_value('email'); ?>" class="form-control" placeholder="Email" autocomplete="off" ><?php echo form_error('email'); ?>
                     </div>
 
                   </div><!-- end row -->
@@ -93,10 +93,10 @@
                 <div class="formrow">
                   <div class="row">
                   
-                    <div class="col-md-6 col-sm-12">
+                    <div class="col-md-6 col-sm-12 password">
                       <label>Password</label><span class="required">*</span>
 
-                      <input title="Password must contain one uppercase,one lowercase,one numeric,one special character and  minimum 8 characters" type="Password" id="password" name="password" class="form-control" placeholder="Password" minlength="8" maxlength="20" required value="<?php echo set_value('password'); ?>" onkeyup="validatePassword(this.value);"> 
+                      <input title="Password must contain one uppercase,one lowercase,one numeric,one special character and  minimum 8 characters" type="Password" id="password" name="password" class="form-control" placeholder="Password" minlength="8" maxlength="20"  value="<?php echo set_value('password'); ?>" onkeyup="validatePassword(this.value);"> 
                        <span toggle="#password-field" class="fa fa-eye-slash field-icon toggle-password"></span>
                                <!-- <span toggle="#password-field"><i class="fa fa-info-circle" ></i></span> -->
 
@@ -122,7 +122,7 @@
                     <div class="row">
 
                       <div class="col-md-6 col-sm-12">
-                        <input id="inputchapcha" type="text" name="captcha" value="" class="form-control" autocomplete="off" required>
+                        <input id="inputchapcha" type="text" name="captcha" value="" class="form-control" autocomplete="off" >
                       </div>
 
                       <div class="col-md-5 col-sm-5">
@@ -136,7 +136,7 @@
                 <div class="formrow">
                   <div class="row">
                     <div class="col-md-6 col-sm-12">
-                      <input type="checkbox" value="" checked="" > <a  href="<?php echo base_url().'terms' ?>" target="_blank" required>  I agree to the Terms and Conditions</a>
+                      <input type="checkbox" value="" checked="" > <a  href="<?php echo base_url().'terms' ?>" target="_blank" >  I agree to the Terms and Conditions</a>
                     </div>
                   </div>
                 </div>
@@ -192,92 +192,11 @@
 
         });
 
-        // function validateCaptcha(){
-        //     var sessionCaptcha = '<?php echo $this->session->userdata('captchaCode'); ?>';
-        //     $( "#submit" ).validate({
-
-        //         rules: {
-        //             full_name: "required",
-
-        //             profession: "required",
-                    
-                 // gender: {
-                 //        required: true,
-                 //    },
-                    // password: {
-                    //     required: true,
-                    //     minlength: 8,
-                    //     pattern: '/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/'
-                    // },
-                    // confirm_password: {
-                    //     required: true,
-                    //     minlength: 6,
-                    //     equalTo: "#password"
-                    // },
-                    // email: {
-                    //     required: true,
-                    //     email: true
-                    // }, 
-                    // mobile: {
-                    //     required: true,
-                    // }, 
-                //     profession: {
-                //         required: true,
-                //     }, 
-
-
-                //     captcha: {
-                //         required: true,
-                //         equalTo: "#sessionCaptcha1",
-                //     }  
-                // },
-                // messages: {
-                //     full_name: "Please enter your name",
-                //     profession:"Please provide your profession ",
-                //     gender: "Please select your Gender",
-                   
-                    // password: {
-                    //     required: "Please provide a password",
-                    //     minlength: "Your password must be at least 8 characters long",
-                    //     pattern:"should contain"
-                    // },
-                    // confirm_password: {
-                    //     required: "Please provide a password",
-                    //     minlength: "Your password must be at least 6 characters long",
-                    //     equalTo: "Please enter the same password as above"
-                    // },
-                    // profession: "Please tell us about yourself",
-                    // email: "Please enter a valid email address",
-                    // mobile: "Please enter  mobile number",
-                //     captcha:{
-                //         required:"Captcha is required!",
-                //         equalTo: "Captcha doesn't match!",
-                //     }
-                // },
-                // errorElement: "em",
-                // errorPlacement: function ( error, element ) {
-                    // Add the `help-block` class to the error element
-        //             error.addClass( "help-block" );
-
-        //             if ( element.prop( "type" ) === "checkbox" ) {
-        //                 error.insertAfter( element.parent( "label" ) );
-        //             } else {
-        //                 error.insertAfter( element );
-        //             }
-        //         },
-        //         highlight: function ( element, errorClass, validClass ) {
-        //             $( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
-        //         },
-        //         unhighlight: function (element, errorClass, validClass) {
-        //             $( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
-        //         }
-        //     } );
-        // }
-
-
+  
 
   </script>
-  
+
+</script>  
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
@@ -291,13 +210,88 @@ $(document).ready(function() {
           e.preventDefault();
           return false;
          });
+          $( "#submit" ).validate( {
+            errorPlacement: function(error, element) {
+
+             if (element.attr("name") == "full_name" )
+                 error.insertAfter(".full_name ");
+               else if (element.attr("name") == "email"  ) 
+                 error.insertAfter(".email");
+
+               else if (element.attr("name") == "company_email"  ) 
+                 error.insertAfter(".company_email");
+
+               else if (element.attr("name") == "password" ) 
+                 error.insertAfter(".password");
+
+            
+            
+         else
+       error.insertAfter(element);
+    
+   
+       },
+           rules: {
+   
+           full_name: {
+                   required: true,
+               },
+           email: {
+                   required: true,
+                     email: true
+                  
+               },
+           password: {
+                   required: true,
+                   newpassword_regex: true
+                 
+               },
+             
+              
+   
+   
+               captcha: {
+                   required:true,
+                   equalTo: "#sessionCaptcha1",
+               }  
+           },
+         
+         messages: { 
+          full_name: {
+                    required: "This field is mandatory!",
+                 
+           },
+           email: {
+                    required: "This field is mandatory!",
+                  
+           },
+           password: {
+                    required: "This field is mandatory!",
+                   minlength: "Your password must be at least 8 characters long",
+                   newpassword_regex: "Please Enter Minimum eight characters,  at least one uppercase letter, one lowercase letter, one number and one special character:"
+           },
+            captcha:{
+                   required:"This field is mandatory!",
+                   equalTo: "Captcha doesn't match!",
+               },
+               
+              
+
+
+         },
+           
+       }); 
+      
+   
+   
+   
         });
 </script>
  <script>
    $(".toggle-password").click(function() {
    
    $(this).toggleClass("fa-eye fa-eye-slash");
-   var x = document.getElementById("myInput");
+   var x = document.getElementById("password");
      if (x.type === "password") {
        x.type = "text";
      } else {
@@ -307,7 +301,13 @@ $(document).ready(function() {
    });
    
 </script>
-
+<script>
+   $.validator.addMethod("newpassword_regex", function(value, element) {
+   
+   return this.optional(element) || /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(value);
+   
+   }, "Please Enter Minimum eight characters,  at least one uppercase letter, one lowercase letter, one number and one special character:");
+</script>
 
 <script>
   function validatePassword(password) {
