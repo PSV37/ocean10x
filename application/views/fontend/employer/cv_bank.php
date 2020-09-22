@@ -990,6 +990,7 @@ span.right-side {
 }
 .skl_bnft {
     display: inline-flex;
+    margin-left: 39px;
 }
 </style>
 <div class="container-fluid main-d">
@@ -1110,7 +1111,7 @@ span.right-side {
                 <?php } ?>
                 <div class="job-info">
                   <div class="a" style="display: inline-flex;">
-                    <li class="right-title" style="font-size:19px;margin-top:-4px;"  ><a href="<?php echo base_url(); ?>employer/edit_cv/<?php echo base64_encode($cv_row['cv_id']); ?>?fid=<?php echo $fid; ?>" style="color: black;cursor: pointer;" ><?php echo $cv_row['js_name']; ?></a></li><br>
+                    <li class="right-title" style="font-size:19px;margin-top:-4px;"  ><a href="<?php echo base_url(); ?>employer/preview_cv/<?php echo base64_encode($cv_row['cv_id']); ?>" style="color: black;cursor: pointer;" ><?php echo $cv_row['js_name']; ?></a></li><br>
                     <li class="right-title email_top" ><?php echo $cv_row['js_email']; ?></li>
                     
                   </div>
@@ -1154,7 +1155,7 @@ span.right-side {
                     $join = array('job_posting'=>'job_posting.job_post_id = forwarded_jobs_cv.job_post_id');
                     $jobs_data = $this->Master_model->getMaster('forwarded_jobs_cv', $where , $join, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false); 
                       if (!empty($jobs_data)) { ?>
-                       <span data-toggle="collapse" data-target="#collapseEx<?php echo $cv_row['cv_id']?>" aria-expanded="false" aria-controls="collapseEx" style="color: red;    font-size: 25px;" title="Click to see the Jobs Forwarded" class="required"> * </span>
+                       <span data-toggle="collapse" data-target="#collapseEx<?php echo $cv_row['cv_id']?>" aria-expanded="false" aria-controls="collapseEx" style="color: red;font-size: 25px;margin-left: 38px;" title="Click to see the Jobs Forwarded" class="required"> * </span>
                        <div class="collapse" id="collapseEx<?php echo $cv_row['cv_id']?>">
                       <div class="card-body">
                       <?php $i=1; if (!empty($jobs_data)) {
@@ -1185,7 +1186,7 @@ span.right-side {
                   <li><a onclick="get_copy_folders(<?php echo $cv_row['cv_id']; ?>);" class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-keyboard="true" data-target="#copy_cv<?php echo $cv_row['cv_id']; ?>"  href="#">Copy this CV</a></li>
                   <li><a class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-keyboard="true" data-target="#move_cv<?php echo $cv_row['cv_id']; ?>" href="#">Move this CV</a></li>
                   <!-- <li><a href="<?php echo base_url(); ?>employer/edit_cv/<?php echo base64_encode($cv_row['cv_id']); ?>" >Edit CV</a></li> -->
-                  <li><a href="<?php echo base_url(); ?>employer/getocean_profile/<?php echo base64_encode($cv_row['js_email']); ?>" >Sync with Ocean Profile</a></li>
+                  <li><a href="<?php echo base_url(); ?>employer/getocean_profile/<?php echo base64_encode($cv_row['js_email']); ?><?php if(!empty($fid)){echo '/?fid=' $fid;} ?>" >Sync with Ocean Profile</a></li>
                 </div>
               </div>
             </div>

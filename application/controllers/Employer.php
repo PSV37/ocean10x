@@ -4416,8 +4416,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $where11['js_email'] = $email_id;
                 $this->Master_model->master_update($update_profile, 'corporate_cv_bank', $where11);
             }
+            $fid = $this->input->get('fid');
             $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Profile Updated successfully with the latest ocean profile...!</div>');
-                redirect('employer/corporate_cv_bank');
+                redirect('employer/corporate_cv_bank/'.$fid);
               }
         
        
