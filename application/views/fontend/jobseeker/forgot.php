@@ -287,7 +287,7 @@ h4:after {
 
 
 <div class="login-box">
-  <?php echo $this->session->flashdata('verify_msg'); ?>
+  <?php echo $this->session->flashdata('msg'); ?>
            <?php echo $this->session->flashdata('invalid'); ?>
   <h4>Candidate - Forgot Password</h4>
  <form class="submit-form customform forgotform" action="<?php echo base_url() ?>register/forgot_pass" method="post">
