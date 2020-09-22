@@ -211,26 +211,26 @@ $(document).ready(function() {
           return false;
          });
           $( "#submit" ).validate( {
-            errorPlacement: function(error, element) {
+       //      errorPlacement: function(error, element) {
 
-             if (element.attr("name") == "full_name" )
-                 error.insertAfter(".full_name ");
-               else if (element.attr("name") == "email"  ) 
-                 error.insertAfter(".email");
+       //       if (element.attr("name") == "full_name" )
+       //           error.insertAfter(".full_name ");
+       //         else if (element.attr("name") == "email"  ) 
+       //           error.insertAfter(".email");
 
-               else if (element.attr("name") == "profession"  ) 
-                 error.insertAfter(".profession");
+       //         else if (element.attr("name") == "profession"  ) 
+       //           error.insertAfter(".profession");
 
-               else if (element.attr("name") == "password" ) 
-                 error.insertAfter(".password");
+       //         else if (element.attr("name") == "password" ) 
+       //           error.insertAfter(".password");
 
             
             
-         else
-       error.insertAfter(element);
+       //   else
+       // error.insertAfter(element);
     
    
-       },
+       // },
            rules: {
    
            full_name: {
