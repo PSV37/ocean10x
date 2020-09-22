@@ -1156,7 +1156,7 @@
                       <div class="col-sm-9">
                         <div class="col-md-12">
                           <div class="col-md-6">
-                          <select id="country" name="alternatecountry_code" class="form-control department select2" >
+                          <select id="alt_country" name="alternatecountry_code" class="form-control department select2" >
                             <option><?php echo $js_personal_info->alternatecountry_code?></option>
                             <option value="AD - Andorra (+376)">AD - Andorra (+376)</option>
                             <option value="AE - United Arab Emirates (+971)">AE - United Arab Emirates (+971)</option>
