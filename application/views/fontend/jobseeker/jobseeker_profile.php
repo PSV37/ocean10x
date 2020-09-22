@@ -751,7 +751,7 @@
                 <li class="right-icon-title"> &emsp;<?php echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?></li>
                 <li class="left-icon-title"><i class="fa fa-envelope"></i></li>
                 <li class="right-icon-title"> &emsp;<?php echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?></li>
-                  </div>
+                  </div><br>
                    <div class="row">
                   <div class="col-md-6">
                     <ul class="jobinfolist">
