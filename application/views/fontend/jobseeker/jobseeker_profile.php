@@ -902,7 +902,7 @@
                     <div class="form-group">
                       <label class="control-label col-sm-3" for="email">Primary Phone No:</label>
                       <div class="col-sm-9">
-                        <div class="col-sm-3">
+                        <div class="col-sm-4">
                           <select id="country" name="country_code" class="form-control department select2" tabindex="-1" aria-hidden="true">
                             <!-- <option value="">Select</option> -->
                             <option><?php echo $js_personal_info->country_code?></option>
@@ -1139,7 +1139,7 @@
                           </select>
                         </div>
                        <!--  <label class="control-label col-sm-3" for="email"></label> -->
-                        <div class="col-sm-6">
+                        <div class="col-sm-5">
                           <input name="mobile" type="text"  class="form-control allowphonenumber" required maxlength="10" id="number" value="<?php if (!empty($js_personal_info->mobile)) {
                             echo $js_personal_info->mobile;}
                             ?>">&nbsp;<span id="errmsg"></span>
@@ -1151,7 +1151,7 @@
                       <div class="col-sm-9">
                         <div class="col-sm-3">
                           <select id="country" name="alternatecountry_code" class="form-control department select2" >
-                            <option><?php echo $js_personal_info->country_code?></option>
+                            <option><?php echo $js_personal_info->alternatecountry_code?></option>
                             <option value="AD - Andorra (+376)">AD - Andorra (+376)</option>
                             <option value="AE - United Arab Emirates (+971)">AE - United Arab Emirates (+971)</option>
                             <option value="AF - Afghanistan (+93)">AF - Afghanistan (+93)</option>
@@ -1386,7 +1386,7 @@
                         </div>
                         <!-- <label class="control-label col-sm-3" for="email"></label> -->
                         <div class="col-sm-6">
-                          <input name="alternatemobile" type="text"  class="form-control allowphonenumber" required maxlength="10" id="number" value="<?php if (!empty($js_personal_info->mobile)) {
+                          <input name="alternatemobile" type="text"  class="form-control allowphonenumber" required maxlength="10" id="number" value="<?php if (!empty($js_personal_info->alternatemobile)) {
                             echo $js_personal_info->mobile;}
                             ?>">&nbsp;<span id="errmsg"></span>
                         </div>
