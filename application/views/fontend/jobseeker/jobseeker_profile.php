@@ -1149,7 +1149,7 @@
                     <div class="form-group">
                       <label class="control-label col-sm-3" for="email">Alternate Phone No:</label>
                       <div class="col-sm-9">
-                        <div class="col-sm-3">
+                        <div class="col-sm-4">
                           <select id="country" name="alternatecountry_code" class="form-control department select2" >
                             <option><?php echo $js_personal_info->alternatecountry_code?></option>
                             <option value="AD - Andorra (+376)">AD - Andorra (+376)</option>
@@ -1385,7 +1385,7 @@
                           </select>
                         </div>
                         <!-- <label class="control-label col-sm-3" for="email"></label> -->
-                        <div class="col-sm-6">
+                        <div class="col-sm-5">
                           <input name="alternatemobile" type="text"  class="form-control allowphonenumber" required maxlength="10" id="number" value="<?php if (!empty($js_personal_info->alternatemobile)) {
                             echo $js_personal_info->mobile;}
                             ?>">&nbsp;<span id="errmsg"></span>
