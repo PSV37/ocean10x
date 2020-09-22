@@ -838,6 +838,7 @@
 
                       <h4>Address:</h4>
                         <strong><?php echo $js_personal_info->present_address; ?> , <?php echo $js_personal_info->city_name; ?> , <?php echo $js_personal_info->state_name; ?> , <?php echo $js_personal_info->country_name; ?></strong>
+                        <br>
                     
                 <div class="row">
                   <div class="col-md-6">
@@ -904,7 +905,10 @@
                     <div class="form-group">
                       <label class="control-label col-sm-3" for="email">Primary Phone No:</label>
                       <div class="col-sm-9">
-                        <div class="col-sm-4">
+                        <div class="col-md-12">
+                          <div class="col-md-6">
+                            
+                         
                           <select id="country" name="country_code" class="form-control department select2" tabindex="-1" aria-hidden="true">
                             <!-- <option value="">Select</option> -->
                             <option><?php echo $js_personal_info->country_code?></option>
@@ -1139,20 +1143,22 @@
                             <option value="ZM - Zambia (+260)">ZM - Zambia (+260)</option>
                             <option value="ZW - Zimbabwe (+263)">ZW - Zimbabwe (+263)</option>
                           </select>
-                        </div>
+                       </div>
                        <!--  <label class="control-label col-sm-3" for="email"></label> -->
-                        <div class="col-sm-5">
+                        <div class="col-md-6">
                           <input name="mobile" type="text"  class="form-control allowphonenumber" required maxlength="10" id="number" value="<?php if (!empty($js_personal_info->mobile)) {
                             echo $js_personal_info->mobile;}
                             ?>">&nbsp;<span id="errmsg"></span>
                         </div>
                       </div>
+                      </div>
                     </div>
                     <div class="form-group">
                       <label class="control-label col-sm-3" for="email">Alternate Phone No:</label>
                       <div class="col-sm-9">
-                        <div class="col-sm-3">
-                          <select id="country" name="alternatecountry_code" class="form-control department select2" >
+                        <div class="col-md-12">
+                          <div class="col-md-6">
+                          <select id="alt_country" name="alternatecountry_code" class="form-control department select2" >
                             <option><?php echo $js_personal_info->alternatecountry_code?></option>
                             <option value="AD - Andorra (+376)">AD - Andorra (+376)</option>
                             <option value="AE - United Arab Emirates (+971)">AE - United Arab Emirates (+971)</option>
@@ -1387,11 +1393,12 @@
                           </select>
                         </div>
                         <!-- <label class="control-label col-sm-3" for="email"></label> -->
-                        <div class="col-sm-6">
+                        <div class="col-md-6">
                           <input name="alternatemobile" type="text"  class="form-control allowphonenumber" required maxlength="10" id="number" value="<?php if (!empty($js_personal_info->alternatemobile)) {
                             echo $js_personal_info->mobile;}
                             ?>">&nbsp;<span id="errmsg"></span>
                         </div>
+                      </div>
                       </div>
                     </div>
                     <!--<div class="form-group">
@@ -3632,7 +3639,7 @@
   
 </script>
 <script>
-  $('.select2').select2();
+  
 </script>
 <script src="<?php echo base_url(); ?>asset/src/jquery.tokeninput.js"></script>
 <script src="<?php echo base_url() ?>asset/js/jquery-ui.js"></script>
@@ -3641,10 +3648,11 @@
 <script src="<?php echo base_url() ?>asset/js/search.js"></script>
 <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
 <script>
-  $("#dept_id").select2( {
-    placeholder: "Select Department",
-    allowClear: true
-    } );
+  $('.select2').select2();
+  // $("#dept_id").select2( {
+  //   placeholder: "Select Department",
+  //   allowClear: true
+  //   } );
 </script>
 <script>
   $(".allowphonenumber").on("keypress keyup blur",function (event) {
