@@ -252,7 +252,7 @@
                           <div class="form-group">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
-                              <label class="control-label" for="email">Education<span class="required">*</span></label>
+                              <label class="control-label" for="email">Education <span class="required">*</span></label>
                               <select name="education_level_id" id="education_level_id" class="form-control department select2" >
                                 <option value="">Select</option>
                                 <option value="1">Ph.D / Doctorate</option>
@@ -263,7 +263,7 @@
                           <div class="form-group">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
-                              <label class="control-label" for="email">Specialization<span class="required">*</span></label>
+                              <label class="control-label" for="email">Specialization <span class="required">*</span></label>
                               <select name="specialization_id" id="specialization_id" class="form-control  department select2">
                                 <option value="">Select</option>
                                 <?php foreach($phdspecial as $edu_special){?>
@@ -277,7 +277,7 @@
                           <div class="form-group">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
-                              <label class="control-label" for="email">University / Name of Institution<span class="required">*</span></label>
+                              <label class="control-label" for="email">University / Name of Institution <span class="required">*</span></label>
                               <input type="text" name="js_institute_name" class="form-control allowalphabates" id="js_institute_name" placeholder="Enter Institute Name" required value="<?php if(!empty($education_data)) echo $education_data[0]->js_institute_name; ?>">
                             </div>
                             <div class="col-sm-1"></div>
@@ -285,7 +285,7 @@
                           <div class="form-group">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
-                              <label class="control-label" for="email">Course Type<span class="required">*</span></label>
+                              <label class="control-label" for="email">Course Type <span class="required">*</span></label>
                               <?php foreach($course as $courses){?>
                               <input type="radio" name="education_type_id" required id="education_type_id" value="<?php echo $courses['education_type_id']; ?>"<?php if(!empty($education_data)) if($education_data[0]->education_type_id==$courses['education_type_id']) echo "checked";?> style="margin: 0 1px;"> <?php echo $courses['education_type']; ?>
                               <?php } ?>                    
@@ -295,7 +295,7 @@
                           <div class="form-group">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
-                              <label class="control-label" for="pwd">Year of Completion<span class="required">*</span></label>
+                              <label class="control-label" for="pwd">Year of Completion <span class="required">*</span></label>
                               <select name="js_year_of_passing" id="ddlYear" class="form-control" required="">
                                 <?php
                                   $currently_selected = date('Y'); 
@@ -312,7 +312,7 @@
                           <div class="form-group">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
-                              <label class="control-label" for="email">Score<span class="required">*</span></label>
+                              <label class="control-label" for="email">Score <span class="required">*</span></label>
                               <input type="text" name="js_resut" class="form-control allownumericwithoutdecimal" placeholder="Enter Score" value="<?php if(!empty($education_data)) echo $education_data[0]->js_resut; ?>" onkeypress="javascript:return isNumber1(event)" required>
                             </div>
                             <div class="col-sm-1"></div>
@@ -351,7 +351,7 @@
                             <div class="form-group">
                               <div class="col-sm-1"></div>
                               <div class="col-sm-10">
-                                <label class="control-label" for="email">Education<span class="required">*</span></label>
+                                <label class="control-label" for="email">Education <span class="required">*</span></label>
                                 <select name="education_level_id" id="education_level_id" class="form-control department select2" >
                                   <option value="">Select</option>
                                   <option value="2">Masters/Post-Graduation</option>
@@ -362,7 +362,7 @@
                             <div class="form-group">
                               <div class="col-sm-1"></div>
                               <div class="col-sm-10">
-                                <label class="control-label" for="email">Specialization<span class="required">*</span></label>
+                                <label class="control-label" for="email">Specialization <span class="required">*</span></label>
                                 <select name="specialization_id" id="specialization_id" class="form-control department select2" >
                                   <option value="">Select</option>
                                   <option value="">Select One</option>
@@ -376,7 +376,7 @@
                             <div class="form-group">
                               <div class="col-sm-1"></div>
                               <div class="col-sm-10">
-                                <label class="control-label" for="email">University / Name of Institution<span class="required">*</span></label>
+                                <label class="control-label" for="email">University / Name of Institution <span class="required">*</span></label>
                                 <input type="text" name="js_institute_name" class="form-control allowalphabates" id="js_institute_name" placeholder="Enter Institute Name"  value="<?php if(!empty($education_data)) echo $education_data2[0]->js_institute_name; ?>">
                               </div>
                               <div class="col-sm-1"></div>
@@ -384,7 +384,7 @@
                             <div class="form-group">
                               <div class="col-sm-1"></div>
                               <div class="col-sm-10">
-                                <label class="control-label" for="email">Course Type<span class="required">*</span></label>
+                                <label class="control-label" for="email">Course Type <span class="required">*</span></label>
                                 <?php foreach($course as $courses){?>
                                 <input type="radio" name="education_type_id" required id="education_type_id" value="<?php echo $courses['education_type_id']; ?>"<?php if(!empty($education_data2)) if($education_data2[0]->education_type_id==$courses['education_type_id']) ;?> style="margin: 0 1px;"> <?php echo $courses['education_type']; ?>
                                 <?php } ?>                   
@@ -394,7 +394,7 @@
                             <div class="form-group">
                               <div class="col-sm-1"></div>
                               <div class="col-sm-10">
-                                <label class="control-label" for="pwd">Year of Completion<span class="required">*</span></label>
+                                <label class="control-label" for="pwd">Year of Completion <span class="required">*</span></label>
                                 <select name="js_year_of_passing" id="ddlYear" class="form-control department select2" required="">
                                   <option value="">Select Completion Year</option>
                                   <?php
@@ -427,7 +427,7 @@
                             <div class="form-group">
                               <div class="col-sm-1"></div>
                               <div class="col-sm-10">
-                                <label class="control-label" for="email">Score<span class="required">*</span></label>
+                                <label class="control-label" for="email">Score <span class="required">*</span></label>
                                 <input type="text" name="js_resut" class="form-control allownumericwithoutdecimal" placeholder="Enter Score" value="<?php if(!empty($education_data2)) echo $education_data2[0]->js_resut; ?>" onkeypress="javascript:return isNumber1(event)" required>
                               </div>
                               <div class="col-sm-1"></div>
@@ -466,7 +466,7 @@
                           <div class="form-group">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
-                              <label class="control-label" for="email">Education<span class="required">*</span></label>
+                              <label class="control-label" for="email">Education <span class="required">*</span></label>
                               <select name="education_level_id" id="education_level_id" class="form-control department select2" required="">
                                 <option value="">Select</option>
                                 <option value="3">Graduation/Diploma</option>
@@ -477,7 +477,7 @@
                           <div class="form-group">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
-                              <label class="control-label" for="email">Specialization<span class="required">*</span></label>
+                              <label class="control-label" for="email">Specialization <span class="required">*</span></label>
                               <select name="specialization_id" id="specialization_id" class="form-control department select2">
                                 <option value="">Select</option>
                                 <?php foreach($gddspecial as $edu_special){?>
@@ -490,7 +490,7 @@
                           <div class="form-group">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
-                              <label class="control-label" for="email">University&emsp;/&emsp;Name of Institution<span class="required">*</span></label>
+                              <label class="control-label" for="email">University&emsp;/&emsp;Name of Institution <span class="required">*</span></label>
                               <input type="text" name="js_institute_name" class="form-control allowalphabates" id="js_institute_name" placeholder="Enter Institute Name" required value="<?php if(!empty($education_data3)) echo $education_data3[0]->js_institute_name; ?>">
                             </div>
                             <div class="col-sm-1"></div>
@@ -498,7 +498,7 @@
                           <div class="form-group">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
-                              <label class="control-label" for="email">Course Type<span class="required">*</span></label>
+                              <label class="control-label" for="email">Course Type <span class="required">*</span></label>
                               <?php foreach($course as $courses){?>
                               <input type="radio" name="education_type_id" required id="education_type_id" value="<?php echo $courses['education_type_id']; ?>"<?php if(!empty($education_data3)) if($education_data3[0]->education_type_id==$courses['education_type_id']) echo "checked";?> style="margin: 0 1px;"> <?php echo $courses['education_type']; ?>
                               <?php } ?>                    
@@ -508,7 +508,7 @@
                           <div class="form-group">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
-                              <label class="control-label" for="pwd">Year of Completion<span class="required">*</span></label>
+                              <label class="control-label" for="pwd">Year of Completion <span class="required">*</span></label>
                               <select name="js_year_of_passing" id="ddlYear" class="form-control department select2" required="">
                                 <option value="">Select Completion Year</option>
                                 <?php
@@ -541,7 +541,7 @@
                           <div class="form-group">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
-                              <label class="control-label" for="email">Score<span class="required">*</span></label>
+                              <label class="control-label" for="email">Score <span class="required">*</span></label>
                               <input type="text" name="js_resut" class="form-control allownumericwithoutdecimal" placeholder="Enter Score" value="<?php if(!empty($education_data3)) echo $education_data3[0]->js_resut; ?>" onkeypress="javascript:return isNumber1(event)" required>
                             </div>
                             <div class="col-sm-1"></div>
@@ -579,7 +579,7 @@
                           <div class="form-group">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
-                              <label class="control-label" for="email">Education<span class="required">*</span></label>
+                              <label class="control-label" for="email">Education <span class="required">*</span></label>
                               <select name="education_level_id" id="education_level_id" class="form-control department select2" >
                                 <option value="">Select</option>
                                 <option value="4">12th</option>
@@ -590,7 +590,7 @@
                           <div class="form-group">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
-                              <label class="control-label" for="pwd">Year of Completion<span class="required">*</span></label>
+                              <label class="control-label" for="pwd">Year of Completion <span class="required">*</span></label>
                               <select name="js_year_of_passing" id="ddlYear" class="form-control department select2" required="">
                                 <option value="">Select Completion Year</option>
                                 <?php
@@ -608,7 +608,7 @@
                           <div class="form-group">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
-                              <label class="control-label" for="email">Board<span class="required">*</span></label>
+                              <label class="control-label" for="email">Board <span class="required">*</span></label>
                               <select name="board_id" id="board_id" class="form-control">
                                 <option value="">Select Board</option>
                                 <!-- <option value="1">CBSE</option>
@@ -626,7 +626,7 @@
                           <div class="form-group">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
-                              <label class="control-label" for="email">School Medium<span class="required">*</span></label>
+                              <label class="control-label" for="email">School Medium <span class="required">*</span></label>
                               <select name="schoolmedium_id" id="schoolmedium_id" class="form-control department select2">
                                 <option value="">Select</option>
                                 <?php foreach($schoolmedium as $medium){?>
@@ -639,7 +639,7 @@
                           <div class="form-group">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
-                              <label class="control-label" for="email">Total Score<span class="required">*</span></label>
+                              <label class="control-label" for="email">Total Score <span class="required">*</span></label>
                               <input type="text" name="totalmarks_id" id="totalmarks_id" class="form-control allownumericwithoutdecimal" value="<?php if(!empty($education_data4)) echo $education_data4[0]->totalmarks_id; ?>" placeholder="Enter Total Score" onkeypress="javascript:return isNumber(event)">
                             </div>
                             <div class="col-sm-1"></div>
@@ -677,7 +677,7 @@
                           <div class="form-group">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
-                              <label class="control-label" for="email">Education<span class="required">*</span></label>
+                              <label class="control-label" for="email">Education <span class="required">*</span></label>
                               <select name="education_level_id" id="education_level_id" class="form-control department select2" required="">
                                 <option value="">Select</option>
                                 <option value="5">10th</option>
@@ -688,7 +688,7 @@
                           <div class="form-group">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
-                              <label class="control-label" for="pwd">Year of Completion<span class="required">*</span></label>
+                              <label class="control-label" for="pwd">Year of Completion <span class="required">*</span></label>
                               <select name="js_year_of_passing" id="ddlYear" class="form-control department select2" required="">
                                 <option value="">Select Completion Year</option>
                                 <?php
@@ -706,7 +706,7 @@
                           <div class="form-group">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
-                              <label class="control-label" for="email">Board<span class="required">*</span></label>
+                              <label class="control-label" for="email">Board <span class="required">*</span></label>
                               <select name="board_id" id="board_id" class="form-control department select2">
                                 <option value="">Select Board</option>
                                 <?php foreach($schoolboard as $boards){?>
@@ -719,7 +719,7 @@
                           <div class="form-group">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
-                              <label class="control-label" for="email">School Medium<span class="required">*</span></label>
+                              <label class="control-label" for="email">School Medium <span class="required">*</span></label>
                               <select name="schoolmedium_id" id="schoolmedium_id" class="form-control department select2">
                                 <option value="">Select Medium</option>
                                 <?php foreach($schoolmedium as $medium){?>
@@ -732,7 +732,7 @@
                           <div class="form-group">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
-                              <label class="control-label" for="email">Total Score<span class="required">*</span></label>
+                              <label class="control-label" for="email">Total Score <span class="required">*</span></label>
                               <input type="text" name="totalmarks_id" id="totalmarks_id" class="form-control allownumericwithoutdecimal" value="<?php if(!empty($education_data5)) echo $education_data5[0]->totalmarks_id; ?>" placeholder="Enter Total Score" onkeypress="javascript:return isNumber(event)">
                             </div>
                             <div class="col-sm-1"></div>
@@ -887,13 +887,13 @@
                   <form id="js" class="form-horizontal " action="<?php echo base_url('job_seeker/update_personalinfo');?>" method="post" style="padding: 30px;">
                    <input type="hidden" value="<?php echo $js_personal_info->job_personal_info_id; ?>" name="js_personal_info_id">
                     <div class="form-group">
-                      <label class="control-label col-sm-3" for="email">Name:</label>
+                      <label class="control-label col-sm-3" for="email">Name</label>
                       <div class="col-sm-9">
                         <input type="text" class="form-control allowalphabates" id="edit_company_profile_id"  name="full_name" value="<?php echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?>"  >
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="control-label col-sm-3" for="email">Date of Birth:<span class="required">*</span></label>
+                      <label class="control-label col-sm-3" for="email">Date of Birth <span class="required">*</span></label>
                       <div class="col-sm-9">
                         <input type="text" class="form-control" name="dob" id="dob" value="<?php echo date('d-m-Y', strtotime($js_personal_info->date_of_birth));?>" placeholder="DD-MM-YYYY">
                         <input type="checkbox" required name="dobmake_public" value="No"<?php if($js_personal_info->dob_visiblity=='No') {echo 'checked'; }else{}?>  > Birthday not visible to my network
@@ -1410,7 +1410,7 @@
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="control-label col-sm-3" for="email">Country<span class="required">*</span></label>
+                      <label class="control-label col-sm-3" for="email">Country <span class="required">*</span></label>
                       <div class="col-sm-9">
                         <select name="country_id" class="form-control" onchange="getStates(this.value)" required="">
                           <option value="">Select Country</option>
@@ -1421,7 +1421,7 @@
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="control-label col-sm-3" for="email">State:<span class="required">*</span></label>
+                      <label class="control-label col-sm-3" for="email">State <span class="required">*</span></label>
                       <div class="col-sm-9">
                         <select name="state_id" class="form-control" onchange="getCitys(this.value)">
                           <option value="">Select State</option>
@@ -1432,7 +1432,7 @@
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="control-label col-sm-3" for="email">City:<span class="required">*</span></label>
+                      <label class="control-label col-sm-3" for="email">City <span class="required">*</span></label>
                       <div class="col-sm-9">
                         <select name="city_id" id="city_id" class="form-control" onchange="getStates(this.value)">
                           <option value="">Select City</option>
@@ -1443,7 +1443,7 @@
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="control-label col-sm-3" for="email">Pincode:<span class="required">*</span></label>
+                      <label class="control-label col-sm-3" for="email">Pincode <span class="required">*</span></label>
                       <div class="col-sm-9">
                         <input type="text" name="pincode" id="seeker_pincode" class="form-control allownumericwithoutdecimal" maxlength="6"  value="<?php
                           if (!empty($js_personal_info->pincode)) {
@@ -1453,7 +1453,7 @@
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="control-label col-sm-3" for="email">My Tagline:</label>
+                      <label class="control-label col-sm-3" for="email">My Tagline</label>
                       <div class="col-sm-9">
                         <input id="resDate_1" class=" form-control"  name="tagline" placeholder="Enter Your Tagline" value="<?php 
                           if (!empty($js_personal_info->resume_title)) {
@@ -1478,7 +1478,7 @@
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="control-label col-sm-3" for="email">Work Permit for USA:</label>
+                      <label class="control-label col-sm-3" for="email">Work Permit for USA</label>
                       <div class="col-sm-9">
                         <select class="form-control" name="work_permit_usa" id="work_permit_usa">
                           <option value="">Select Work Permit</option>
