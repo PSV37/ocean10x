@@ -746,8 +746,10 @@
                   <span class="edit"><a href="#" data-toggle="modal" data-target="#myModal50">Edit</a></span> 
                 </div>
                 <div class="row">
-                  <div  class="col-md-4">
+                  <div  class="icon-info">
                      <li class="left-icon-title"><i class="fa fa-envelope"></i></li>
+                <li class="right-icon-title"> &emsp;<?php echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?></li>
+                <li class="left-icon-title"><i class="fa fa-envelope"></i></li>
                 <li class="right-icon-title"> &emsp;<?php echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?></li>
                   </div>
                   <div class="col-md-6">
