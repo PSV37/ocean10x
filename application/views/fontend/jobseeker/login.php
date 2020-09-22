@@ -206,7 +206,7 @@
          <h3>Candidate Login</h3>
          <form class="submit-form customform loginform" action="<?php echo base_url() ?>register/check_login" method="post">
 
-             <?php echo $this->session->flashdata('invalid'); ?>
+             <?php echo $this->session->flashdata('msg'); ?>
            
          
 
