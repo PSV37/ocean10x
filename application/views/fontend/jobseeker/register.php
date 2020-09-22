@@ -53,8 +53,8 @@
                     
               <form id="submit" action="" method="post" class="submit-form">
 
-                <div class="formrow">
-                  <div class="row profession">
+                <div class="formrow profession">
+                  <div class="row ">
                     <div class="col-md-6 col-sm-12 ">
                        <?php $str_fr="";
                         if((isset($this->session->userdata['reg_jobseeker']['gender'])) && $this->session->userdata['reg_jobseeker']['profession']=='1'){
@@ -211,26 +211,18 @@ $(document).ready(function() {
           return false;
          });
           $( "#submit" ).validate( {
-       //      errorPlacement: function(error, element) {
+            errorPlacement: function(error, element) {
 
-       //       if (element.attr("name") == "full_name" )
-       //           error.insertAfter(".full_name ");
-       //         else if (element.attr("name") == "email"  ) 
-       //           error.insertAfter(".email");
 
-       //         else if (element.attr("name") == "profession"  ) 
-       //           error.insertAfter(".profession");
+              if (element.attr("name") == "profession"  ) 
+                 error.insertAfter(".profession");
 
-       //         else if (element.attr("name") == "password" ) 
-       //           error.insertAfter(".password");
-
-            
-            
-       //   else
-       // error.insertAfter(element);
+             
+         else
+       error.insertAfter(element);
     
    
-       // },
+       },
            rules: {
    
            full_name: {
@@ -243,7 +235,7 @@ $(document).ready(function() {
                },
            password: {
                    required: true,
-                   newpassword_regex: true
+                   // newpassword_regex: true
                  
                },
              
