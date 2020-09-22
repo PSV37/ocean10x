@@ -54,6 +54,27 @@
   margin-right: 20px;
   font-weight:100;
   }
+  .icon-info {
+    margin-left: 40px;
+    margin-bottom: 20px;
+}
+.jobinfolist li h4 {
+    font-size: 12px;
+    display: inline-block;
+    font-weight: 700;
+    width: 40%;
+    float: left;
+}
+.jobinfolist li strong {
+    color: #747575;
+    font-weight: 400;
+    font-size: 13px;
+    float: left;
+    width: 54%;
+    line-height: 18px;
+    margin-top: 7px;
+    /* margin-left: 179px; */
+}
 </style>
 <!---header end--->
 <div class="container-fluid">
@@ -874,7 +895,7 @@
                     <div class="form-group">
                       <label class="control-label col-sm-3" for="email">Date of Birth:<span class="required">*</span></label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" name="dob" id="dob" placeholder="DD-MM-YYYY">
+                        <input type="text" class="form-control" name="dob" id="dob" value="<?php echo date('Y-m-d', strtotime($js_personal_info->date_of_birth))) ;?>" placeholder="DD-MM-YYYY">
                         <input type="checkbox" required name="dobmake_public" value="No"<?php if($js_personal_info->dob_visiblity=='No') {echo 'checked'; }else{}?>  > Birthday not visible to my network
                       </div>
                     </div>
