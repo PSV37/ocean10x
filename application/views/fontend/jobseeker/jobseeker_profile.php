@@ -1154,7 +1154,8 @@
                     <div class="form-group">
                       <label class="control-label col-sm-3" for="email">Alternate Phone No:</label>
                       <div class="col-sm-9">
-                        <div class="col-sm-4">
+                        <div class="col-md-12">
+                          <div class="col-md-6">
                           <select id="country" name="alternatecountry_code" class="form-control department select2" >
                             <option><?php echo $js_personal_info->alternatecountry_code?></option>
                             <option value="AD - Andorra (+376)">AD - Andorra (+376)</option>
@@ -1390,11 +1391,12 @@
                           </select>
                         </div>
                         <!-- <label class="control-label col-sm-3" for="email"></label> -->
-                        <div class="col-sm-5">
+                        <div class="col-md-6">
                           <input name="alternatemobile" type="text"  class="form-control allowphonenumber" required maxlength="10" id="number" value="<?php if (!empty($js_personal_info->alternatemobile)) {
                             echo $js_personal_info->mobile;}
                             ?>">&nbsp;<span id="errmsg"></span>
                         </div>
+                      </div>
                       </div>
                     </div>
                     <!--<div class="form-group">
@@ -3635,7 +3637,7 @@
   
 </script>
 <script>
-  $('.select2').select2();
+  
 </script>
 <script src="<?php echo base_url(); ?>asset/src/jquery.tokeninput.js"></script>
 <script src="<?php echo base_url() ?>asset/js/jquery-ui.js"></script>
@@ -3644,6 +3646,7 @@
 <script src="<?php echo base_url() ?>asset/js/search.js"></script>
 <script src="<?php echo base_url() ?>asset/js/select2.min.js"></script>
 <script>
+  $('.select2').select2();
   $("#dept_id").select2( {
     placeholder: "Select Department",
     allowClear: true
