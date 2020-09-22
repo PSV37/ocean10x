@@ -43,6 +43,17 @@
   label {
   font-weight: 100;
   }
+  li.left-icon-title{
+  list-style-type: none;
+  float: left;
+  }
+  .left-icon-title i{color:#18c5bd;}
+  li.right-icon-title {
+  list-style-type: none;
+  float: left;
+  margin-right: 20px;
+  font-weight:100;
+  }
 </style>
 <!---header end--->
 <div class="container-fluid">
@@ -721,20 +732,27 @@
           <div id="home" class="tab-pane fade in active">
             <div class="header-p-img" style="position:relative;">
               <img src="https://www.sassm.in/education/images/blog-header.jpg" style="width:100%; height:140px;position:relative;margin-bottom:140px;">
-              <!-- </div></div></div> -->
+             
               <?php  $job_seeker_photo = $this->Job_seeker_photo_model->photo_by_seeker($jobseeker_id); ?>
-              <!--  <form class="avatar-form" id ="update_photo" action="<?php echo base_url('Job_seeker/save_photo');?>/<?php if(!empty($job_seeker_photo->js_photo_id)){echo $job_seeker_photo->js_photo_id;} ?>" enctype="multipart/form-data" method="post"> -->
+            
               <form id="profile-info" enctype="multipart/form-data" class="form-horizontal" action="<?php echo base_url('job_seeker/save_profile_details');?>" method="post" style="padding: 30px;"  >
                 <div class="text-center" style="position:absolute;top:50px;left:-50px;">
                   <img src="<?php echo base_url() ?>upload/<?php if(!empty($job_seeker_photo->photo_path)) { echo $job_seeker_photo->photo_path;} else { echo "image-notfound.png";} ?>" class="avatar img-circle img-thumbnail" alt="avatar">
                   <h6>Upload a different photo...</h6>
                   <input type="file" class="text-center center-block file-upload" name="js_photo">
                 </div>
-                <!-- </form> -->
+             
                 <div class="row">
                   <span class="edit"><a href="#" data-toggle="modal" data-target="#myModal50">Edit</a></span> 
                 </div>
-                <div class="row">
+               
+                  <div  class="icon-info">
+                     <li class="left-icon-title"><i class="fa fa-envelope"></i></li>
+                <li class="right-icon-title"> &emsp;<?php echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?></li>
+                <li class="left-icon-title"><i class="fa fa-envelope"></i></li>
+                <li class="right-icon-title"> &emsp;<?php echo $this->Job_seeker_model->jobseeker_name($job_seeker); ?></li>
+                  </div><br>
+                   <div class="row">
                   <div class="col-md-6">
                     <ul class="jobinfolist">
                       <li>

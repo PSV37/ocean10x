@@ -72,7 +72,8 @@ class Register extends CI_Controller
                 if ($exist_email) 
                 {
                     // all Ready Account Message
-                    $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Your Email Or Account Already exists! Please Login!</div>');
+                    $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Your Email Or Account Already exists ! Please Login !</div>');
+                    // echo "string";die;
                     redirect('register');
                 } else 
                 {
@@ -121,6 +122,12 @@ class Register extends CI_Controller
                     }
                 }
 
+             }
+             else
+             {
+                 $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Your Email Or Account Already exists ! Please Login !</div>');
+                    // echo "string";die;
+                    redirect('register');
              }
            
             
@@ -253,10 +260,10 @@ class Register extends CI_Controller
             $data['job_seeker_id'] = $result->job_seeker_id;
             $data['user_name']     = $result->full_name;
             $this->session->set_userdata($data);
-             $this->session->set_flashdata('invalid', '<div class="alert alert-success text-center">Please check your Email Inbox or Spam folder for the password change secure link !</div>');
+             $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Please check your Email Inbox or Spam folder for the password change secure link !</div>');
              redirect('register/jobseeker_login');
         } else {
-            $this->session->set_flashdata('invalid', '<div class="alert alert-danger text-center">Sorry! Invalid email address provided!</div>');
+            $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Sorry! Invalid email address provided!</div>');
             redirect('register/forgot_pass');
         }
     }
