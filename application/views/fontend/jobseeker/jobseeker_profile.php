@@ -253,7 +253,7 @@
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
                               <label class="control-label" for="email">Education <span class="required">*</span></label>
-                              <select name="education_level_id" id="education_level_id" class="form-control department select2" >
+                              <select name="education_level_id" id="education_id" class="form-control department select2" >
                                 <option value="">Select</option>
                                 <option value="1">Ph.D / Doctorate</option>
                               </select>
