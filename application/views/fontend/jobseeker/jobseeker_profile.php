@@ -1667,7 +1667,7 @@
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
                               <label class="control-label" for="email">Board <span class="required">*</span></label>
-                              <select name="board_id" id="bd_id" class="form-control">
+                              <select name="board_id" id="bd" class="form-control">
                                 <option value="">Select Board</option>
                                 <!-- <option value="1">CBSE</option>
                                   <option value="2">CISCE(ICSE/ISC)</option>
