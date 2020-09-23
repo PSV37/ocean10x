@@ -641,8 +641,8 @@ hr {
             
           </div>
           <div style="/* float: right; */margin-left: 304px;margin-top: -35px;" class = "btn-group">
-   <button type = "button" id="btn_val" class = "btn btn-primary dropdown-toggle btn-sm" data-toggle = "dropdown" value="Editor">
-  Editor
+   <button type = "button" id="btn_val" class = "btn btn-primary dropdown-toggle btn-sm" data-toggle = "dropdown" value="Viewer">
+  Viewer
       <span class = "caret"></span>
    </button>
   
