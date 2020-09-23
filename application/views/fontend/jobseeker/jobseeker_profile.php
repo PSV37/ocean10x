@@ -458,7 +458,8 @@
                     <div class="modal-content">
                       <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Graduation / Diploma</h4>
+                        <h4 class="modal-title">Graduation</h4>
+                        <h4 class="modal-title">Diploma</h4>
                       </div>
                       <div class="modal-body education_frm">
                         <form id="Graduation" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post">
@@ -1734,7 +1735,7 @@
                           <div class="form-group">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
-                              <label class="control-label" for="email">Education<span class="required">*</span></label>
+                              <label class="control-label" for="email">Education <span class="required">*</span></label>
                               <select name="education_level_id" id="edt" class="form-control department select2">
                                 <option value="">Select</option>
                                 <option value="5">10th</option>
@@ -1745,7 +1746,7 @@
                           <div class="form-group">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
-                              <label class="control-label" for="pwd">Year of Completion<span class="required">*</span></label>
+                              <label class="control-label" for="pwd">Year of Completion <span class="required">*</span></label>
                               <select name="js_year_of_passing" id="d_y_id" class="form-control department select2" required="">
                                 <option value="">Select Completion Year</option>
                                 <?php
@@ -1763,7 +1764,7 @@
                           <div class="form-group">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
-                              <label class="control-label" for="email">Board<span class="required">*</span></label>
+                              <label class="control-label" for="email">Board <span class="required">*</span></label>
                               <select name="board_id" id="board_id" class="form-control">
                                 <option value="">Select Board</option>
                                 <?php foreach($schoolboard as $boards){?>
