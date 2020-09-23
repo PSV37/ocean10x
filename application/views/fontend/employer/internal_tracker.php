@@ -640,8 +640,13 @@ hr {
             
           </div>
           <div class = "btn-group">
+   <button type = "button" class = "btn btn-primary dropdown-toggle btn-sm" data-toggle = "dropdown">
+    <!-- Editor -->
+
+      <span class = "caret"></span>
+   </button>
   
-            <ul id="option_list" class = "dropdown-menu" role = "menu">
+      <ul id="option_list" class = "dropdown-menu" role = "menu">
       <li data-value="Viewer" data-one=""><a href = "#">Viewer</a></li>
       <li data-value="Commenter" data-one=""><a href = "#">Commenter</a></li>
       <li data-value="Editor" data-one=""><a href = "#">Editor</a></li>
