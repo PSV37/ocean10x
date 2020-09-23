@@ -1,5 +1,9 @@
 <?php $this->load->view('fontend/layout/employer_new_header.php');?>
 <style>
+  .required
+  {
+  color: red;
+  }
   .cv_bank{margin-top:65px;
   }
   button.saerch_btn {
