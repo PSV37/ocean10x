@@ -389,6 +389,7 @@
   background-color: #18c5bd;
   border: none;
   border-radius: 30px;
+  width: 100px;
   }
   /*.box {
   margin-top: 40px;
@@ -639,7 +640,7 @@ hr {
             <input onchange ="show_text();" type="email"  name="consultant_email"  id="email" placeholder="Enter Email"  id="subject" data-required="true" multiple style="display: inline-block;min-width: 75%;height: 30px;" required>
             
           </div>
-          <div style="float: right;" class = "btn-group">
+          <div style="/* float: right; */margin-left: 304px;margin-top: -35px;" class = "btn-group">
    <button type = "button" id="btn_val" class = "btn btn-primary dropdown-toggle btn-sm" data-toggle = "dropdown" value="Editor">
   Editor
       <span class = "caret"></span>
