@@ -855,11 +855,11 @@ hr {
   function remove(id)
   {
     var job_id = $('#job_select').val();
-    var add_tracking_id = $('#add_tracking_id').val();
+    var tracking_id = $('#tracking_id').val();
      $.ajax({
               url: "<?php echo base_url();?>employer/remove_from_share",
               type: "POST",
-              data: {company_id:id,job_id:job_id,type:'internal',add_tracking_id:add_tracking_id},
+              data: {company_id:id,job_id:job_id,type:'internal',tracking_id:tracking_id},
               // contentType:false,
               // processData:false,
                // dataType: "json",
