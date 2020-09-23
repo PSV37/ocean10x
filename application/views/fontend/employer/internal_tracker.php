@@ -641,19 +641,12 @@ hr {
           </div>
           <div class = "btn-group">
    <button type = "button" class = "btn btn-primary dropdown-toggle btn-sm" data-toggle = "dropdown">
-    <!-- Editor -->
+    Editor
 
       <span class = "caret"></span>
    </button>
   
-      <ul id="option_list" class = "dropdown-menu" role = "menu">
-      <li data-value="Viewer" data-one=""><a href = "#">Viewer</a></li>
-      <li data-value="Commenter" data-one=""><a href = "#">Commenter</a></li>
-      <li data-value="Editor" data-one=""><a href = "#">Editor</a></li>
-      
-      <li class = "divider"></li>
-      <li data-value="Remove" data-one=""><a href = "#">Remove</a></li>
-   </ul>
+     
     <input id="accessvalue" size="15" name="access_value[]" type="hidden" />
 </div>
     
