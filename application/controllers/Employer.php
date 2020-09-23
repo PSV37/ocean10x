@@ -6000,7 +6000,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
       <li data-value="Editor" data-one="'.$row['company_profile_id'].'"><a href = "#">Editor</a></li>
       
       <li class = "divider"></li>
-      <li data-value="Remove" onclick="remove('.$row['mapping_id'].')" data-one="'.$row['company_profile_id'].'"><a href = "#">Remove</a></li>
+      <li data-value="Remove" onclick="remove('.$row['company_profile_id'].')" data-one="'.$row['company_profile_id'].'"><a href = "#">Remove</a></li>
    </ul>
     <input id="accessvalue'.$row['company_profile_id'].'" size="15" name="access_value[]" type="hidden" />
 </div>
@@ -6022,19 +6022,22 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
     function remove_from_share()
     {
-        $mapping_id = $this->input->post('mapping_id');
+        $company_id = $this->input->post('company_id');
         $job_id = $this->input->post('job_id');
         $type = $this->input->post('type');
+        $add_tracking_id = $this->input->post('add_tracking_id');
+         $array=explode(',',$add_tracking_id);
+        $track=array_filter($array);
+         $array = implode("','",$track);
+      
+             // $join = array('company_profile'=>'company_profile.company_profile_id = tracker_consultant_mapping.consultant_id ');
+            
 
-        if ($type == 'internal') {
-            $where="mapping_id = '$mapping_id' ";
+        
+            $where="company_id = '$company_id' and  tracker_consultant_mapping.tracking_id IN ('".$array."') ";
+            $this->mast
             $this->Master_model->master_delete('tracker_consultant_mapping', $where);
-        }
-        elseif($type=='external')
-        {
-             $where="mapping_id = '$mapping_id' ";
-            $this->Master_model->master_delete('tracker_consultant_mapping', $where);
-        }
+       
         echo true;
     }
 }

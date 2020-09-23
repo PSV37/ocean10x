@@ -681,6 +681,7 @@ hr {
       </div>
       <form action="<?php echo base_url() ?>employer/forward_posted_job" class="sendEmail" method="post" autocomplete="off">
         <div class="modal-body" style="padding:15px 40px;">
+           <input type="hidden" name="add_tracking_id" id="add_tracking_id" value="">
           <input type="hidden" name="cand_cv_id" id="cand_cv_id" value="">
           <input type="hidden" name="tracker_type" value="internal">  
            <input type="hidden" name="job_post_id" id="add_job_id" value=""> 
@@ -802,10 +803,22 @@ hr {
   });
   $(".add").click(function() {
      var job_id = $('#job_select').val();
- 
-            
+  var ary = [];
+        $(function () {
+            $('.table-borderless tr').each(function (a, b) {
+                var tracking_id_val = $('#tracking_id_val', b).val();
+                
+  
+                ary.push({tracking_id_val:tracking_id_val});
+               
+            });
+            console.log(ary);
+            var result = ary.map(function(val) {
+              return val.tracking_id_val;
+            }).join(',');
+             });
   // console.log(result);
-  // $('#tracking_id').val(result);
+  $('#add_tracking_id').val(result);
   $('#add_job_id').val(job_id);
   $('#addModal').modal('show');
            
@@ -842,10 +855,11 @@ hr {
   function remove(id)
   {
     var job_id = $('#job_select').val();
+    var add_tracking_id = $('#add_tracking_id').val();
      $.ajax({
               url: "<?php echo base_url();?>employer/remove_from_share",
               type: "POST",
-              data: {mapping_id:id,job_id:job_id,type:'internal'},
+              data: {company_id:id,job_id:job_id,type:'internal',add_tracking_id:add_tracking_id},
               // contentType:false,
               // processData:false,
                // dataType: "json",
