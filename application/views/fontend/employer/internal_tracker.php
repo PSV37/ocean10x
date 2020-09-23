@@ -660,14 +660,14 @@ hr {
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Add Existing candidate to tracker</h5>
       </div>
-      <form action="<?php echo base_url() ?>employer/forword_internal_tracker" class="sendEmail" method="post" autocomplete="off">
+      <form action="<?php echo base_url() ?>employer/forward_posted_job" class="sendEmail" method="post" autocomplete="off">
         <div class="modal-body" style="padding:15px 40px;">
           <input type="hidden" name="cand_cv_id" id="cand_cv_id" value="">
           <input type="hidden" name="tracker_type" value="internal">  
-           <input type="hidden" name="add_job_id" id="add_job_id" value=""> 
+           <input type="hidden" name="job_post_id" id="add_job_id" value=""> 
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"style="width: 108%;margin-left: -12px;padding: 0px;">
             <label class="mdl-textfield__label" for="sample3">E-mail:</label>
-            <input onfocusout="myFunction();" type="email"  name="cand_email"  id="cand_email" placeholder="Enter Email"  id="subject" data-required="true" multiple style="display: inline-block;min-width: 100%;height: 30px;" required>
+            <input onfocusout="myFunction();" type="email"  name="forward_job_email"  id="cand_email" placeholder="Enter Email"  id="subject" data-required="true" multiple style="display: inline-block;min-width: 100%;height: 30px;" required>
           </div>
           <hr>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
