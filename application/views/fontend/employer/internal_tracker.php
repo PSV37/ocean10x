@@ -641,7 +641,7 @@ hr {
           </div>
           <div style="float: right;" class = "btn-group">
    <button type = "button" id="btn_val" class = "btn btn-primary dropdown-toggle btn-sm" data-toggle = "dropdown" value="Editor">
-  
+  Editor
       <span class = "caret"></span>
    </button>
   
@@ -822,7 +822,7 @@ hr {
 
   $("#accessvalue"+done).val($this.data("value"));
    // alert($this.data("value"));
-  $("#btn_val").val($this.data("value"));
+  $("#btn_val").text($this.data("value"));
   // $( "#test" ).click();
   });
   $("#sizelist").on("click", "a", function(e){
