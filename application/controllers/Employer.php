@@ -1190,8 +1190,16 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                     // }
                     
                 }
+                $tracker_type =$this->input->post('tracker_type');
+                if (!empty($tracker_type)) {
+                   $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Job Forwarded Successfully</div>');
+                redirect('employer/internal_tracker');
+                }
+                else
+                {
                 $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Job Forwarded Successfully</div>');
                 redirect('employer/corporate_cv_bank/'.$fid);
+                }
             } else {
                 $this->session->set_flashdata('success', '<div class="alert alert-warning text-center">Please Select Appropriate Job Post..</div>');
                 redirect('employer/corporate_cv_bank/'.$fid);
