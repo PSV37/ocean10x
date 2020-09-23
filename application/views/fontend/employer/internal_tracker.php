@@ -780,7 +780,7 @@ hr {
      var job_id = $('#job_select').val();
  
             
-  console.log(result);
+  // console.log(result);
   $('#tracking_id').val(result);
   $('#add_job_id').val(job_id);
   $('#addModal').modal('show');
