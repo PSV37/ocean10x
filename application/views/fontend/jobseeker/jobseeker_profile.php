@@ -580,7 +580,7 @@
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
                               <label class="control-label" for="email">Education <span class="required">*</span></label>
-                              <select name="education_level_id" id="education_level_id" class="form-control department select2" >
+                              <select name="education_level_id" id="edu_lev_id" class="form-control department select2" >
                                 <option value="">Select</option>
                                 <option value="4">12th</option>
                               </select>
@@ -591,7 +591,7 @@
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
                               <label class="control-label" for="pwd">Year of Completion <span class="required">*</span></label>
-                              <select name="js_year_of_passing" id="ddlYear" class="form-control department select2" required="">
+                              <select name="js_year_of_passing" id="ddlyr" class="form-control department select2" required="">
                                 <option value="">Select Completion Year</option>
                                 <?php
                                   $currently_selected = date('Y'); 
@@ -609,7 +609,7 @@
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
                               <label class="control-label" for="email">Board <span class="required">*</span></label>
-                              <select name="board_id" id="board_id" class="form-control">
+                              <select name="board_id" id="brd_id" class="form-control">
                                 <option value="">Select Board</option>
                                 <!-- <option value="1">CBSE</option>
                                   <option value="2">CISCE(ICSE/ISC)</option>
@@ -627,7 +627,7 @@
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
                               <label class="control-label" for="email">School Medium <span class="required">*</span></label>
-                              <select name="schoolmedium_id" id="schoolmedium_id" class="form-control department select2">
+                              <select name="schoolmedium_id" id="schmed_id" class="form-control department select2">
                                 <option value="">Select</option>
                                 <?php foreach($schoolmedium as $medium){?>
                                 <option value="<?php echo $medium['schoolmedium_id']; ?>"<?php if(!empty($education_data4)) if($education_data4[0]->schoolmedium_id==$medium['schoolmedium_id']) echo "selected";?>><?php echo $medium['school_medium']; ?></option>
