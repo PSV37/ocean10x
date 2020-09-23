@@ -252,11 +252,12 @@
                 <li class="right-icon-title"> &emsp;<?php echo $cv_bank_data['js_mobile']; ?></li>
                 <li class="left-icon-title"><i class="fas fa-briefcase"></i></li>
                 <li class="right-icon-title"> &emsp;<?php echo $cv_bank_data['js_experience']; ?> years</li>
-                <li class="left-title">current Location</li>
-                  <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span> <?php echo $cv_row['js_current_work_location']; ?></li>
+
                 <div class="clear"></div>
               </div>
               <div class="following-info">
+                 <li class="left-title">current Location</li>
+                  <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span> <?php echo $cv_row['js_current_work_location']; ?></li>
                 <li class="left-title">Education</li>
                 <li class="right-title">&nbsp;:<?php echo $cv_bank_data['education_level_name']; ?></li>
                 <li class="left-title">Designation</li>
