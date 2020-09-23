@@ -305,6 +305,16 @@
             </div>
             <div class="col-md-4">
               <div class="form-group">
+                <label for="exampleInputEmail1">Current Location</label>
+                <input type="text" name="current_work_location" id="current_work_location" class="form-control">       <?php echo form_error('current_work_location'); ?>
+               
+                
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="col-md-4">
+              <div class="form-group">
                 <label for="exampleInputEmail1">Top Education</label>
                 <!-- <input type="text" name="top_education" id="top_education" class="form-control">       <?php echo form_error('top_education'); ?> -->
                 <select name="top_education" id="top_education" class="form-control select2" data-style="btn-default" data-live-search="true" >
@@ -318,8 +328,6 @@
                 <?php echo form_error('top_education'); ?>      
               </div>
             </div>
-          </div>
-          <div class="col-md-12">
             <div class="col-md-4">
               <div class="form-group">
                 <label for="exampleInputEmail1">Certifications</label>
@@ -356,6 +364,9 @@
                 <?php echo form_error('candidate_industry'); ?>
               </div>
             </div>
+            
+          </div>
+          <div class="col-md-12">
             <div class="col-md-4">
               <div class="form-group">
                 <label for="exampleInputEmail1">Current Role</label>
@@ -371,8 +382,6 @@
                 <?php echo form_error('candidate_role'); ?>
               </div>
             </div>
-          </div>
-          <div class="col-md-12">
             <div class="col-md-4">
               <div class="form-group">
                 <label for="exampleInputEmail1">Expected Salary(CTC - <?php if (isset($currency) && !empty($currency)) {
@@ -402,6 +411,17 @@
                   elseif(isset($cv_bank_data) && !empty($cv_bank_data)){
                      echo $cv_bank_data['js_desired_work_location'];
                   } ?>"> <?php echo form_error('desired_wrok_location'); ?>
+              </div>
+            </div>
+            
+          </div>
+          <div class="col-md-12">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="exampleInputEmail1">
+                  SkypeId
+                </label>
+                <input type="text" name="skypid" id="skypid" class="form-control" style="display: inline-block;">   <?php echo form_error('skypid'); ?>
               </div>
             </div>
             <div class="col-md-4">
@@ -577,11 +597,7 @@
   },
   
   
-  'current_work_location':{
-  
-  current_work_location_regex: true
  
-  },
   
   
   'current_ctc':{
@@ -674,9 +690,6 @@
   
   },
   
-  'current_work_location':{
-  
-  },
   
   'working_current_since':{
   
