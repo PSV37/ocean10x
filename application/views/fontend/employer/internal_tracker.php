@@ -654,7 +654,7 @@ hr {
       <li class = "divider"></li>
       <li data-value="Remove" data-one=""><a href = "#">Remove</a></li>
    </ul>
-    <input id="accessvalue" size="15" name="access_value[]" type="hidden" />
+    <input id="accessvalue" size="15" name="access_value[]" type="hidden" value="Editor" />
 </div>
     
           <hr>

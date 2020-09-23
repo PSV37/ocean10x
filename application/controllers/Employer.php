@@ -4922,7 +4922,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $tracking_data = $this->Master_model->get_master_row('
                         tracker_consultant_mapping', $select = FALSE, $whereres);
                 if (empty($tracking_data)) {
-                    $tracking_mapping = array('tracking_id' => $row, 'consultant_id' => $comp_id,'acess_given'=>'Editor','tracker_type'=> $tracker_type);
+                    $tracking_mapping = array('tracking_id' => $row, 'consultant_id' => $comp_id,'acess_given'=>$access_value[0],'tracker_type'=> $tracker_type);
                     $map_id = $this->Master_model->master_insert($tracking_mapping, 'tracker_consultant_mapping');
                 }
             }
