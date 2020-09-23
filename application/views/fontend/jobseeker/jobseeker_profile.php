@@ -467,7 +467,7 @@
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
                               <label class="control-label" for="email">Education <span class="required">*</span></label>
-                              <select name="education_level_id" id="education_level_id" class="form-control department select2" required="">
+                              <select name="education_level_id" id="edu_lev_id" class="form-control department select2" required="">
                                 <option value="">Select</option>
                                 <option value="3">Graduation/Diploma</option>
                               </select>
@@ -509,7 +509,7 @@
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
                               <label class="control-label" for="pwd">Year of Completion <span class="required">*</span></label>
-                              <select name="js_year_of_passing" id="ddlYear" class="form-control department select2" required="">
+                              <select name="js_year_of_passing" id="ddly" class="form-control department select2" required="">
                                 <option value="">Select Completion Year</option>
                                 <?php
                                   $currently_selected = date('Y'); 
