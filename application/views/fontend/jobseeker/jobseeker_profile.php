@@ -458,8 +458,7 @@
                     <div class="modal-content">
                       <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Graduation</h4>
-                        <h4 class="modal-title">Diploma</h4>
+                        <h4 class="modal-title">Graduation / Diploma</h4>
                       </div>
                       <div class="modal-body education_frm">
                         <form id="Graduation" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post">
@@ -470,7 +469,8 @@
                               <label class="control-label" for="email">Education <span class="required">*</span></label>
                               <select name="education_level_id" id="edu_lev_id" class="form-control department select2" required="">
                                 <option value="">Select</option>
-                                <option value="3">Graduation/Diploma</option>
+                                <option value="3">Graduation</option>
+                                <option value="3">Diploma</option>
                               </select>
                             </div>
                             <div class="col-sm-1"></div>
