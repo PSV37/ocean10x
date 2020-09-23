@@ -569,7 +569,7 @@ hr {
              <!-- <button style="" type="button" class="btn btn-default btn-sm share"> -->
             <span title="share"><i class="fa fa-share-alt icon_backg share"></i></span>
 
-            <span title="share"><i class="fa fa-plus icon_backg add"></i></span>
+            <span title="add Existing"><i class="fa fa-plus icon_backg add"></i></span>
             <!-- </button> -->
             <span style="margin-top: 20px;"> 
             <input  type="checkbox" name="check_all" id="checkAllchk">&nbsp; all
