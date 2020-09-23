@@ -117,7 +117,7 @@
   }
   .following-info3 {
   float: right;
-  margin-top: -90px;
+  margin-top: -123px;
   line-height: 30px;
   }
   .skils_benifit {
