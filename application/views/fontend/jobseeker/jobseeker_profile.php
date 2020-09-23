@@ -352,7 +352,7 @@
                               <div class="col-sm-1"></div>
                               <div class="col-sm-10">
                                 <label class="control-label" for="email">Education <span class="required">*</span></label>
-                                <select name="education_level_id" id="education_level_id" class="form-control department select2" >
+                                <select name="education_level_id" id="educ_id" class="form-control department select2" >
                                   <option value="">Select</option>
                                   <option value="2">Masters/Post-Graduation</option>
                                 </select>
@@ -363,7 +363,7 @@
                               <div class="col-sm-1"></div>
                               <div class="col-sm-10">
                                 <label class="control-label" for="email">Specialization <span class="required">*</span></label>
-                                <select name="specialization_id" id="specialization_id" class="form-control department select2" >
+                                <select name="specialization_id" id="spec_id" class="form-control department select2" >
                                   <option value="">Select</option>
                                   <option value="">Select One</option>
                                   <?php foreach($pgdspecial as $edu_special){?>
@@ -395,7 +395,7 @@
                               <div class="col-sm-1"></div>
                               <div class="col-sm-10">
                                 <label class="control-label" for="pwd">Year of Completion <span class="required">*</span></label>
-                                <select name="js_year_of_passing" id="ddlYear" class="form-control department select2" required="">
+                                <select name="js_year_of_passing" id="ddl_id" class="form-control department select2" required="">
                                   <option value="">Select Completion Year</option>
                                   <?php
                                     $currently_selected = date('Y'); 
