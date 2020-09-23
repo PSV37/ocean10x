@@ -6035,7 +6035,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
         
             $where="company_id = '$company_id' and  tracker_consultant_mapping.tracking_id IN ('".$array."') ";
-            $this->mast
+           
             $this->Master_model->master_delete('tracker_consultant_mapping', $where);
        
         echo true;
