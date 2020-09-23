@@ -573,7 +573,7 @@ hr {
             <!-- </button> -->
             <span style="margin-top: 20px;"> 
             <input  type="checkbox" name="check_all" id="checkAllchk">&nbsp; all
-            <button type="button" id="frwd_btn" class="btn btn-primary">update external</button></span>
+            <button style="width: 125px;" type="button" id="frwd_btn" class="btn btn-primary">update external</button></span>
             <!--  <label style="float: right;margin-top: 17px;" class="btn btn-default">
               check all
               <input type="checkbox" name="check_all" id="jevattend_id" value="1">
@@ -845,7 +845,7 @@ hr {
      $.ajax({
               url: "<?php echo base_url();?>employer/remove_from_share",
               type: "POST",
-              data: {company_id:id,job_id:job_id,type:'internal'},
+              data: {mapping_id:id,job_id:job_id,type:'internal'},
               // contentType:false,
               // processData:false,
                // dataType: "json",
