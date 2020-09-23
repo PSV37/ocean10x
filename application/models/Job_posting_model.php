@@ -943,7 +943,7 @@ public function get_all_company_by_banksbook()
         $this->db->order_by('js_email', 'ASC');
          $this->db->where('corporate_cv_bank.company_id', $employer_id);
 
-        return $this->db->get('job_posting')->result();
+        return $this->db->get('corporate_cv_bank')->result();
     }
 
     function search_connection($title){
