@@ -548,9 +548,9 @@ hr {
               <table class="table table-borderless" id="myTable">
                 <thead>
                   <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Mobile</th>
+                    <th scope="col">Name <span class="required">*</span></th>
+                    <th scope="col">Email <span class="required">*</span></th>
+                    <th scope="col">Mobile <span class="required">*</span></th>
                     <th scope="col">Sal</th>
                     <th scope="col">Work Exp</th>
                     <th scope="col">Notice (days)</th>
