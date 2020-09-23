@@ -252,6 +252,8 @@
                 <li class="right-icon-title"> &emsp;<?php echo $cv_bank_data['js_mobile']; ?></li>
                 <li class="left-icon-title"><i class="fas fa-briefcase"></i></li>
                 <li class="right-icon-title"> &emsp;<?php echo $cv_bank_data['js_experience']; ?> years</li>
+                <li class="left-title">current Location</li>
+                  <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span> <?php echo $cv_row['js_current_work_location']; ?></li>
                 <div class="clear"></div>
               </div>
               <div class="following-info">
@@ -270,10 +272,7 @@
                 <li class="right-title">&nbsp;:<?php echo $cv_bank_data['js_current_notice_period']; ?></li>
                 <li class="left-title">Desired Location</li>
                 <li class="right-title">&nbsp;: <?php echo $cv_bank_data['js_desired_work_location']; ?></li>
-                <div class="clear"></div>
-              </div>
-              <div class="following-info3">
-                <li class="left-title">Resume attached&nbsp;<i class="fas fa-link"></i></li>
+                 <li class="left-title">Resume attached&nbsp;<i class="fas fa-link"></i></li>
                 <li class="right-title">
                   &nbsp;: <?php if (isset($cv_bank_data['js_resume']) && !empty($cv_bank_data['js_resume'])) {
                     echo "Yes"; ?>
@@ -283,6 +282,13 @@
                     echo "No";
                     } ?> 
                 </li>
+                 
+                <div class="clear"></div>
+              </div>
+              <div class="following-info3">
+                 <li class="left-title">SkypeID</li>
+                 <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span><?php echo $cv_bank_data['skypeid']; ?></li>
+               
                 <li class="left-title">Expected CTC (LPA)</li>
                 <li class="right-title">&nbsp;: <?php echo $cv_bank_data['js_expected_salary']; ?></li>
                 <li class="left-title">Current Organization</li>

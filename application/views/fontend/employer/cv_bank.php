@@ -1124,6 +1124,8 @@ span.right-side {
                   <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span><?php echo $cv_row['js_mobile']; ?></li>
                   <li class="left-title">Education</li>
                   <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span> <?php echo $cv_row['education_level_name']; ?></li>
+                   <li class="left-title">current Location</li>
+                  <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span> <?php echo $cv_row['js_current_work_location']; ?></li>
                   <div class="clear"></div>
                 </div>
                 <div class="following-info2">
@@ -1134,6 +1136,8 @@ span.right-side {
                   <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span> <?php echo $cv_row['js_experience']; ?></li>
                   <li class="left-title">Designation</li>
                   <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span><?php echo $cv_row['js_current_designation']; ?></li>
+                  <li class="left-title">SkypeID</li>
+                  <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span><?php echo $cv_row['skypeid']; ?></li>
                   <div class="clear"></div>
                 </div>
                  <div class="skl_bnft">
