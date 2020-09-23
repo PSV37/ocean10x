@@ -3060,6 +3060,20 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             }
         }
     }
+
+    function search_candidate() {
+        $employer_id = $this->session->userdata('company_profile_id');
+        if (isset($_GET['term'])) {
+            $result = $this->job_posting_model->search_candidate($_GET['term'], $employer_id);
+            if (count($result) > 0) {
+                $i = 0;
+                foreach ($result as $row) $arr_result[$i]['label'] = $row->js_email;
+                $arr_result[$i]['value'] = $row->cv_id;
+                $i++;
+                echo json_encode($arr_result);
+            }
+        }
+    }
     function search_people() {
         $employer_id = $this->session->userdata('company_profile_id');
         if (isset($_GET['term'])) {
