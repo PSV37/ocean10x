@@ -640,9 +640,8 @@ hr {
             
           </div>
           <div style="float: right;" class = "btn-group">
-   <button type = "button" class = "btn btn-primary dropdown-toggle btn-sm" data-toggle = "dropdown">
-    Editor
-
+   <button type = "button" id="btn_val" class = "btn btn-primary dropdown-toggle btn-sm" data-toggle = "dropdown" value="Editor">
+  
       <span class = "caret"></span>
    </button>
   
@@ -823,7 +822,7 @@ hr {
 
   $("#accessvalue"+done).val($this.data("value"));
    // alert($this.data("value"));
-  // $( "#sort_btn" ).click();
+  $("#btn_val").val($this.data("value"));
   // $( "#test" ).click();
   });
   $("#sizelist").on("click", "a", function(e){
@@ -1050,7 +1049,7 @@ hr {
 <script>
    $("#email").autocomplete({
              
-             source: "<?php echo base_url();?>Employer/get_candidate_by_email",
+             source: "<?php echo base_url();?>Employer/get_company_by_email",
              minLength: 2,
               // append: "#rotateModal",
             

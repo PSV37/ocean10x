@@ -4002,6 +4002,20 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             }
         }
     }
+     function get_company_by_email() {
+        if (isset($_GET['term'])) {
+            // $this->load->model('Consultant_autocomplete_model');
+            $result = $this->Job_seeker_experience_model->autocomplete_employer($_GET['term']);
+            if (count($result) > 0) {
+                foreach ($result as $row) 
+                    {
+                        $arr_result[] = $row->company_email;
+                    }
+             echo json_encode($arr_result);
+               
+            }
+        }
+    }
     // desired career
     function get_candidate_info_by_email() {
         $email_id = $this->input->post('email');

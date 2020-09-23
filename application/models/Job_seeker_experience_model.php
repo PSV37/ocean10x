@@ -105,6 +105,14 @@ class Job_seeker_experience_model extends MY_Model
         return $this->db->get('js_info')->result();
     }
 
+    function autocomplete_employer($title){
+        $this->db->like('company_email', $title , 'both');
+        $this->db->order_by('company_email', 'ASC');
+        // $this->db->WHERE('js_status', '1');
+        // $this->db->limit(10);
+        return $this->db->get('company_profile')->result();
+    }
+
     function search_jobs($title){
         $this->db->like('job_title', $title , 'both');
         $this->db->order_by('job_title', 'ASC');
