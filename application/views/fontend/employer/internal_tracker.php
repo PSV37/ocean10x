@@ -636,17 +636,24 @@ hr {
            <input type="hidden" name="job_post_id" id="job_post_id" value=""> 
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"style="width: 108%;margin-left: -12px;padding: 0px;">
             <label class="mdl-textfield__label" for="sample3">E-mail:</label>
-            <input onchange ="show_text();" type="email"  name="consultant_email"  id="email" placeholder="Enter Email"  id="subject" data-required="true" multiple style="display: inline-block;min-width: 100%;height: 30px;" required>
+            <input onchange ="show_text();" type="email"  name="consultant_email"  id="email" placeholder="Enter Email"  id="subject" data-required="true" multiple style="display: inline-block;min-width: 75%;height: 30px;" required>
             
           </div>
-          <div class = "btn-group">
+          <div style="float: right;" class = "btn-group">
    <button type = "button" class = "btn btn-primary dropdown-toggle btn-sm" data-toggle = "dropdown">
     Editor
 
       <span class = "caret"></span>
    </button>
   
-     
+      <ul id="option_list" class = "dropdown-menu" role = "menu">
+      <li data-value="Viewer" data-one=""><a href = "#">Viewer</a></li>
+      <li data-value="Commenter" data-one=""><a href = "#">Commenter</a></li>
+      <li data-value="Editor" data-one=""><a href = "#">Editor</a></li>
+      
+      <li class = "divider"></li>
+      <li data-value="Remove" data-one=""><a href = "#">Remove</a></li>
+   </ul>
     <input id="accessvalue" size="15" name="access_value[]" type="hidden" />
 </div>
     
