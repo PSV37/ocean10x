@@ -651,8 +651,8 @@ hr {
       <li data-value="Commenter" data-one=""><a href = "#">Commenter</a></li>
       <li data-value="Editor" data-one=""><a href = "#">Editor</a></li>
       
-      <li class = "divider"></li>
-      <li data-value="Remove" data-one=""><a href = "#">Remove</a></li>
+      <!-- <li class = "divider"></li> -->
+     <!--  <li  data-value="Remove" data-one=""><a href = "#">Remove</a></li> -->
    </ul>
     <input id="accessvalue" size="15" name="access_value[]" type="hidden" value="Editor" />
 </div>
@@ -823,7 +823,11 @@ hr {
 
   $("#accessvalue"+done).val($this.data("value"));
    // alert($this.data("value"));
-  $("#btn_val").text($this.data("value"));
+   if (done=='') 
+   {
+    $("#btn_val").text($this.data("value"));
+
+   }
   // $( "#test" ).click();
   });
   $("#sizelist").on("click", "a", function(e){
