@@ -5999,7 +5999,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
       <li data-value="Editor" data-one="'.$row['company_profile_id'].'"><a href = "#">Editor</a></li>
       
       <li class = "divider"></li>
-      <li data-value="Remove" data-one="'.$row['company_profile_id'].'"><a href = "#">Remove</a></li>
+      <li data-value="Remove" onclick="remove('.$row['company_profile_id'].')" data-one="'.$row['company_profile_id'].'"><a href = "#">Remove</a></li>
    </ul>
     <input id="accessvalue'.$row['company_profile_id'].'" size="15" name="access_value[]" type="hidden" />
 </div>
@@ -6017,6 +6017,24 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
           
            
         echo $result;
+    }
+
+    function remove_from_share()
+    {
+        $company_id = $this->input->post('company_id');
+        $job_id = $this->input->post('job_id');
+        $type = $this->input->post('type');
+
+        if ($type == 'internal') {
+            $where="company_id = '$company_id' and job_post_id = '$job_id'";
+            $this->Master_model->master_delete('forwarded_jobs_cv', $where);
+        }
+        elseif($type=='external')
+        {
+             $where="company_id = '$company_id' and job_post_id = '$job_id'";
+            $this->Master_model->master_delete('external_tracker', $where);
+        }
+        echo true;
     }
 }
 ?>

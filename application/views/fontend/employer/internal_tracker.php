@@ -838,6 +838,24 @@ hr {
   $( "#sort_btn" ).click();
   $( "#test" ).click();
   })
+
+  function remove(id)
+  {
+    var job_id = $('#job_select').val();
+     $.ajax({
+              url: "<?php echo base_url();?>employer/remove_from_share",
+              type: "POST",
+              data: {company_id:id,job_id:job_id,type:'internal'},
+              // contentType:false,
+              // processData:false,
+               // dataType: "json",
+              success: function(data)
+              {
+               // $('#shared_list').html(data);
+                $(".share").click();
+              }
+        });
+  }
 </script>
 <script>
   $(document).on(' change','input[name="check_all"]',function() {
