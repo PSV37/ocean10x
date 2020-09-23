@@ -256,7 +256,7 @@
                 <div class="clear"></div>
               </div>
               <div class="following-info">
-                 <li class="left-title">current Location</li>
+                 <li class="left-title">Current Location</li>
                   <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span> <?php echo $cv_row['js_current_work_location']; ?></li>
                 <li class="left-title">Education</li>
                 <li class="right-title">&nbsp;:<?php echo $cv_bank_data['education_level_name']; ?></li>
@@ -289,7 +289,8 @@
               <div class="following-info3">
                  <li class="left-title">SkypeID</li>
                  <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span><?php echo $cv_bank_data['skypeid']; ?></li>
-               
+               <li class="left-title">Last Hike</li>
+                  <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span> <?php echo $cv_row['js_last_salary_hike']; ?></li>
                 <li class="left-title">Expected CTC (LPA)</li>
                 <li class="right-title">&nbsp;: <?php echo $cv_bank_data['js_expected_salary']; ?></li>
                 <li class="left-title">Current Organization</li>
