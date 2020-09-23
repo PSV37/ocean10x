@@ -1190,8 +1190,16 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                     // }
                     
                 }
-                $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Job Forwarded Successfully</div>');
+                $tracker_type =$this->input->post('tracker_type');
+                if (!empty($tracker_type)) {
+                   $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Job Forwarded Successfully</div>');
+                redirect('employer/internal_tracker');
+                }
+                else
+                {
+                $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Candidate added to this tracker and Job Forwarded Successfully !</div>');
                 redirect('employer/corporate_cv_bank/'.$fid);
+                }
             } else {
                 $this->session->set_flashdata('success', '<div class="alert alert-warning text-center">Please Select Appropriate Job Post..</div>');
                 redirect('employer/corporate_cv_bank/'.$fid);
@@ -3055,6 +3063,20 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $i = 0;
                 foreach ($result as $row) $arr_result[$i]['label'] = $row->job_title;
                 $arr_result[$i]['value'] = $row->job_post_id;
+                $i++;
+                echo json_encode($arr_result);
+            }
+        }
+    }
+
+    function search_candidate() {
+        $employer_id = $this->session->userdata('company_profile_id');
+        if (isset($_GET['term'])) {
+            $result = $this->job_posting_model->search_candidate($_GET['term'], $employer_id);
+            if (count($result) > 0) {
+                $i = 0;
+                foreach ($result as $row) $arr_result[$i]['label'] = $row->js_email;
+                $arr_result[$i]['value'] = $row->cv_id;
                 $i++;
                 echo json_encode($arr_result);
             }

@@ -478,11 +478,11 @@
     /* color: black; */
 }
 .shared_name {
-    font-weight: 500;
+    font-weight: 600;
     color: #202124;
     letter-spacing: .01428571em;
     font-family: Roboto,Arial,sans-serif;
-    font-size: 0.6rem;
+    font-size: 15px;
     line-height: 1;
 }
    .shared_li {
@@ -567,6 +567,8 @@ hr {
             <!-- </button> -->
              <!-- <button style="" type="button" class="btn btn-default btn-sm share"> -->
             <span title="share"><i class="fa fa-share-alt icon_backg share"></i></span>
+
+            <span title="share"><i class="fa fa-plus icon_backg add"></i></span>
             <!-- </button> -->
             <span style="margin-top: 20px;"> 
             <input  type="checkbox" name="check_all" id="checkAllchk">&nbsp; all
@@ -618,13 +620,14 @@ hr {
   </div>
 </div>
 </div>
+
 <div class="modal" id="rotateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <input type="hidden" name="company_profile_id" id="company_profile_id" value="<?php echo $this->session->userdata('company_profile_id'); ?>">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header" style="border-bottom:none;">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Forward This Job Post</h5>
+        <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Share This Tracker</h5>
       </div>
       <form action="<?php echo base_url() ?>employer/forword_internal_tracker" class="sendEmail" method="post" autocomplete="off">
         <div class="modal-body" style="padding:15px 40px;">
@@ -633,11 +636,56 @@ hr {
            <input type="hidden" name="job_post_id" id="job_post_id" value=""> 
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"style="width: 108%;margin-left: -12px;padding: 0px;">
             <label class="mdl-textfield__label" for="sample3">E-mail:</label>
-            <input onfocusout="myFunction();" type="email"  name="consultant_email"  id="email" placeholder="Enter Email"  id="subject" data-required="true" multiple style="display: inline-block;min-width: 100%;height: 30px;" required>
+            <input onchange ="show_text();" type="email"  name="consultant_email"  id="email" placeholder="Enter Email"  id="subject" data-required="true" multiple style="display: inline-block;min-width: 100%;height: 30px;" required>
+            
           </div>
+          <div class = "btn-group">
+  
+            <ul id="option_list" class = "dropdown-menu" role = "menu">
+      <li data-value="Viewer" data-one=""><a href = "#">Viewer</a></li>
+      <li data-value="Commenter" data-one=""><a href = "#">Commenter</a></li>
+      <li data-value="Editor" data-one=""><a href = "#">Editor</a></li>
+      
+      <li class = "divider"></li>
+      <li data-value="Remove" data-one=""><a href = "#">Remove</a></li>
+   </ul>
+    <input id="accessvalue" size="15" name="access_value[]" type="hidden" />
+</div>
+    
           <hr>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
             <ul id="shared_list" ></ul>
+           <!--  <label class="mdl-textfield__label" for="sample3">Message:</label> -->
+            <textarea style="display: none" class="form-control" name="message" rows="5" id="comment_area" required></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-save">Send</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="modal" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <input type="hidden" name="company_profile_id" id="company_profile_id" value="<?php echo $this->session->userdata('company_profile_id'); ?>">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="border-bottom:none;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Add Existing candidate to tracker</h5>
+      </div>
+      <form action="<?php echo base_url() ?>employer/forward_posted_job" class="sendEmail" method="post" autocomplete="off">
+        <div class="modal-body" style="padding:15px 40px;">
+          <input type="hidden" name="cand_cv_id" id="cand_cv_id" value="">
+          <input type="hidden" name="tracker_type" value="internal">  
+           <input type="hidden" name="job_post_id" id="add_job_id" value=""> 
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"style="width: 108%;margin-left: -12px;padding: 0px;">
+            <label class="mdl-textfield__label" for="sample3">E-mail:</label>
+            <input onfocusout="myFunction();" type="email"  name="forward_job_email"  id="cand_email" placeholder="Enter Email"  id="subject" data-required="true" multiple style="display: inline-block;min-width: 100%;height: 30px;" required>
+          </div>
+          <hr>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
+            <!-- <ul id="shared_list" ></ul> -->
            <!--  <label class="mdl-textfield__label" for="sample3">Message:</label> -->
             <!-- <textarea class="form-control" name="message" rows="5" id="comment" required></textarea> -->
           </div>
@@ -650,6 +698,34 @@ hr {
   </div>
 </div>
 <script>
+  function show_text()
+  {
+    $('#shared_list').hide();
+    $('#comment_area').show();
+  }
+   $("#cand_email").autocomplete({
+            
+            source: "<?php echo base_url();?>Employer/search_candidate",
+            minLength: 2,
+             // append: "#rotateModal",
+             focus: function(event, ui) {
+              // prevent autocomplete from updating the textbox
+              event.preventDefault();
+              // manually update the textbox
+              // alert(source);
+              $(this).val(ui.item.label);
+           },
+           select: function(event, ui) {
+              // prevent autocomplete from updating the textbox
+              event.preventDefault();
+              // manually update the textbox and hidden field
+              $(this).val(ui.item.label);
+              $("#cand_cv_id").val(ui.item.value);
+           }
+   
+           
+          });
+  
   $(document).ready (function(){
     $("#smsg").fadeTo(2000, 500).slideUp(500, function(){
     $("#smsg").slideUp(500);
@@ -718,6 +794,17 @@ hr {
   $('#rotateModal').modal('show');
            
         });
+  });
+  $(".add").click(function() {
+     var job_id = $('#job_select').val();
+ 
+            
+  // console.log(result);
+  // $('#tracking_id').val(result);
+  $('#add_job_id').val(job_id);
+  $('#addModal').modal('show');
+           
+       
   });
   $(document).on("click", "#option_list a", function (e) {
  
@@ -954,6 +1041,18 @@ hr {
     placeholder: "Select Department",
     allowClear: true
     } );
+</script>
+<script>
+   $("#email").autocomplete({
+             
+             source: "<?php echo base_url();?>Employer/get_candidate_by_email",
+             minLength: 2,
+              // append: "#rotateModal",
+            
+    
+            
+           });
+   
 </script>
 <script>
   $(document).ready(function()
