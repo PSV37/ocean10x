@@ -264,7 +264,7 @@
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
                               <label class="control-label" for="email">Specialization <span class="required">*</span></label>
-                              <select name="specialization_id" id="specialization_id" class="form-control department select2">
+                              <select name="specialization_id" id="specialize_id" class="form-control department select2">
                                 <option value="">Select</option>
                                 <?php foreach($phdspecial as $edu_special){?>
                                 <option value="<?php echo $edu_special['id']; ?>"<?php if(!empty($education_data)) if($education_data[0]->specialization_id==$edu_special['id']) echo "selected";?>><?php echo $edu_special['education_specialization']; ?></option>
@@ -296,7 +296,7 @@
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
                               <label class="control-label" for="pwd">Year of Completion <span class="required">*</span></label>
-                              <select name="js_year_of_passing" id="ddlYear" class="form-control" required="">
+                              <select name="js_year_of_passing" id="ddlYear_id" class="form-control" required="">
                                 <?php
                                   $currently_selected = date('Y'); 
                                   $earliest_year = 1940; 
@@ -681,8 +681,7 @@
                               <select name="education_level_id" id="education_id" class="form-control department select2" required="">
                               <!--<select name="education_level_id" id="education_level_id" class="form-control department select2" required="">-->
                                 <option value="">Select</option>
-                                <option value="5">10th</option>
-                              </select>
+                                <option value="5">10th</option>  
                             </div>
                             <div class="col-sm-1"></div>
                           </div>
