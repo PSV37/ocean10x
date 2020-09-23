@@ -538,7 +538,7 @@ input.capital {
                      </div>
                      <div class="col-md-6 col-sm-12">
                         <div class="formrow">
-                           <label class="control-label">Company Phone</label><span class="required">*</span>
+                           <label class="control-label">Company Phone </label><span class="required">*</span>
                            <input type="tel"  name="company_phone"  class="allownumericwithdecimal form-control" maxlength="10" id="company_phone" value="<?php 
                               $val = set_value('company_phone'); if(!empty($val)){ echo $val; } elseif(!empty($company_info->company_phone)){ echo $company_info->company_phone; } ?>" onkeypress="phoneno();">   
                            <?php echo form_error('company_phone'); ?>        
@@ -548,7 +548,7 @@ input.capital {
                   <div class="row f-4">
                      <div class="col-md-6 col-sm-12">
                         <div class="formrow">
-                           <label class="control-label">Company Services</label><span class="required">*</span>
+                           <label class="control-label">Company Services </label><span class="required">*</span>
                            <select name="company_category"  class="form-control select2" data-style="btn-default" data-live-search="true" aria-hidden="true">
                               <option value="">Select Services</option>
                               <?php $value =  set_value('company_category');   if (!empty($value)) {
@@ -566,7 +566,7 @@ input.capital {
                      </div>
                      <div class="col-md-6 col-sm-12">
                         <div class="formrow">
-                           <label class="control-label">Company Contact Name<span class="required">*</span></label>  
+                           <label class="control-label">Company Contact Name <span class="required">*</span></label>  
                            <input type="text" name="contact_name" class="form-control capital" id="contact_name" placeholder="Contact Name" value="<?php $val = set_value('contact_name'); if(!empty($val)){ echo $val; } elseif(!empty($company_info->contact_name)){ echo $company_info->contact_name; } ?>">
                            <?php echo form_error('contact_name'); ?>        
                         </div>
@@ -575,7 +575,7 @@ input.capital {
                   <div class="row f-9">
                      <div class="col-md-3 col-sm-4">
                         <div class="formrow">
-                           <label class="control-label ">Company Country<span class="required">*</span></label>
+                           <label class="control-label ">Company Country <span class="required">*</span></label>
                            <select name="country_id" id="country_id" class="form-control select2" onchange="getStates(this.value)" aria-hidden="true">
                               <?php 
                                  $val =   set_value('country_id'); 
@@ -599,7 +599,7 @@ input.capital {
                      </div>
                      <div class="col-md-3 col-sm-4">
                         <div class="formrow">
-                           <label class="control-label ">Company City<span class="required">*</span></label>
+                           <label class="control-label ">Company City <span class="required">*</span></label>
                            <select name="city_id" id="city_id" class="form-control select2">
                               <option value="">Select City</option>
                            </select>
@@ -608,7 +608,7 @@ input.capital {
                      </div>
                      <div class="col-md-3 col-sm-6">
                         <div class="formrow">
-                           <label class="control-label">Pincode<span class="required">*</span></label>
+                           <label class="control-label">Pincode <span class="required">*</span></label>
                            <input type="text" name="company_pincode" id="company_pincode" class="form-control ui-autocomplete-input" value="<?php 
                               $val = set_value('company_pincode'); if(!empty($val)){ echo $val; } elseif(!empty($company_info->company_pincode)){ echo $company_info->company_pincode; } ?>">  
                            <?php echo form_error('company_pincode'); ?>                      
@@ -618,7 +618,7 @@ input.capital {
                   <div class="row f-7">
                      <div class="col-md-12 col-sm-12">
                         <div class="formrow">
-                           <label class="control-label">Office Address<span class="required">*</span></label>
+                           <label class="control-label">Office Address <span class="required">*</span></label>
                            <textarea name="company_address1" class="form-control ckeditor" placeholder="Company Address"><?php $val = set_value('company_address1'); if(!empty($val)){ echo $val; } elseif(!empty($company_info->company_address)){ echo $company_info->company_address; } ?></textarea>
                            <?php echo form_error('company_address1'); ?>        
                         </div>

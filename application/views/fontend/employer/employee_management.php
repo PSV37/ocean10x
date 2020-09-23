@@ -306,19 +306,19 @@ input.select2-search__field {
                 <div class="row">
            	      <div class="col-md-3">
                     <div class="form-group">                                       
-                     <label for="exampleInputEmail1">Employee ID<span class="required">*</span></label>
+                     <label for="exampleInputEmail1">Employee ID <span class="required">*</span></label>
                       <input type="text" min="1" name="emp_no" id="emp_no" class="form-control allownumericwithoutdecimal" value="<?php  $val = set_value('emp_no'); if(!empty($val)){ echo $val; } else{ echo $result['emp_no'];} ?>" ><?php echo form_error('emp_no'); ?>                    
                     </div>
                   </div>
                   <div class="col-md-3">
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Employee Name<span class="required">*</span></label>
+                      <label for="exampleInputEmail1">Employee Name <span class="required">*</span></label>
                       <input type="text" name="emp_name" id="emp_name" class="form-control allowalphabates" value="<?php  $val = set_value('emp_name'); if(!empty($val)){ echo $val; } else {echo $result['emp_name'];} ?>" ><?php echo form_error('emp_name'); ?>                      
                     </div>
                   </div>
                   <div class="col-md-3">
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Department<span class="required">*</span></label>
+                      <label for="exampleInputEmail1">Department <span class="required">*</span></label>
                       <select name="dept_id" id="dept_id" class="form-control department select2"  aria-hidden="true">
                         <option value="">Select</option>
                         
@@ -330,7 +330,7 @@ input.select2-search__field {
                   </div> 
                   <div class="col-md-3">
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Contact No.<span class="required">*</span></label>
+                      <label for="exampleInputEmail1">Contact No. <span class="required">*</span></label>
                       <input type="tel" name="mobile" id="mobile" class="form-control allowphonenumber" value="<?php  $val = set_value('company_email'); if(!empty($val)){ echo $val; } else{ echo $result['mobile'];} ?>" onkeypress="phoneno()" maxlength="10" >     <?php echo form_error('mobile'); ?>                  
                     </div>
                   </div>        
@@ -338,19 +338,19 @@ input.select2-search__field {
                 <div class="row">
            	      <div class="col-md-3">
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Email-Id<span class="required">*</span></label>
+                      <label for="exampleInputEmail1">Email-Id <span class="required">*</span></label>
                       <input type="email" name="email" id="email" class="form-control" value="<?php  $val = set_value('company_email'); if(!empty($val)){ echo $val; } else{ echo $result['email'];} ?>" ><?php echo form_error('email'); ?>
                     </div>
                   </div>
                   <div class="col-md-3">
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Password<span class="required">*</span></label>
+                      <label for="exampleInputEmail1">Password <span class="required">*</span></label>
                       <input type="Password" name="Password" id="Password" maxlength="15" class="form-control" value="<?php  $val = set_value('company_email'); if(!empty($val)){ echo $val; } else { echo $result['Password'];} ?>"  ><?php echo form_error('Password'); ?>                     
                     </div>
                   </div>
                   <div class="col-md-3">
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Designation<span class="required">*</span></label>
+                      <label for="exampleInputEmail1">Designation <span class="required">*</span></label>
                       <select class="form-control department select2" name="user_role" id="user_role" onchange="getuseraccess(this.value);" >
                         <option value="">Select</option>
                         
@@ -363,7 +363,7 @@ input.select2-search__field {
                   </div>  
                   <div class="col-md-3">
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Give Acces To User<span class="required">*</span></label>
+                      <label for="exampleInputEmail1">Give Acces To User <span class="required">*</span></label>
                      
                       <select class="selectpicker form-control" multiple data-live-search="true" name="user_acc[]" id="user_accc" required>
                             </select>
@@ -401,7 +401,7 @@ input.select2-search__field {
                 </div>  
                  <div class="col-md-3">
                     <div class="form-group">
-                      <label for="exampleInputEmail1" required="">Pincode<span class="required">*</span></label>
+                      <label for="exampleInputEmail1" required="">Pincode <span class="required">*</span></label>
                       <input type="text"  name="pincode" id="pincode" class="form-control allownumericwithoutdecimal" autocomplete="off" value="<?php  $val = set_value('company_email'); if(!empty($val)){ echo $val; } else {echo $result['pincode'];} ?>"><?php echo form_error('pincode'); ?>             
                     </div>
                   </div>    
