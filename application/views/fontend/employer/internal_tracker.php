@@ -781,7 +781,7 @@ hr {
  
             
   // console.log(result);
-  $('#tracking_id').val(result);
+  // $('#tracking_id').val(result);
   $('#add_job_id').val(job_id);
   $('#addModal').modal('show');
            
