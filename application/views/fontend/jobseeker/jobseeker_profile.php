@@ -296,7 +296,7 @@
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
                               <label class="control-label" for="pwd">Year of Completion <span class="required">*</span></label>
-                              <select name="js_year_of_passing" id="y_id" class="form-control" required="">
+                              <select name="js_year_of_passing" id="ddl_id" class="form-control" required="">
                                 <?php
                                   $currently_selected = date('Y'); 
                                   $earliest_year = 1940; 
