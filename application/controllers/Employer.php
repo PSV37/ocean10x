@@ -5986,7 +5986,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         <div class="boqDrivesharedialogPermissionslistPermissionrowSecondary" aria-label="'.$row['company_email'].'.">'.$row['company_email'].'</div>
         <input type="hidden" name="company[]" value="'.$row['company_profile_id'].'">
         <div class = "btn-group">
-   <button type = "button" class = "btn btn-primary dropdown-toggle btn-sm" data-toggle = "dropdown">
+   <button type = "button" id="btn_val'.$row['company_profile_id'].'" class = "btn btn-primary dropdown-toggle btn-sm" data-toggle = "dropdown">
     '.$type.'
 
       <span class = "caret"></span>

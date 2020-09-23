@@ -823,11 +823,11 @@ hr {
 
   $("#accessvalue"+done).val($this.data("value"));
    // alert($this.data("value"));
-   if (done=='') 
-   {
-    $("#btn_val").text($this.data("value"));
+   // if (done=='') 
+   // {
+    $("#btn_val"+done).text($this.data("value"));
 
-   }
+   // }
   // $( "#test" ).click();
   });
   $("#sizelist").on("click", "a", function(e){
