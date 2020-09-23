@@ -5984,6 +5984,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     <div class="boqDrivesharedialogPermissionslistPermissionrowMain" data-hovercard-id="amishra@tele-kinetics.com" data-hovercard-owner-id="130">
         <div class="shared_name" aria-label="'.$row['company_name'].'">'.$row['company_name'].'</div>
         <div class="boqDrivesharedialogPermissionslistPermissionrowSecondary" aria-label="'.$row['company_email'].'.">'.$row['company_email'].'</div>
+
         <input type="hidden" name="company[]" value="'.$row['company_profile_id'].'">
         <div class = "btn-group">
    <button type = "button" id="btn_val'.$row['company_profile_id'].'" class = "btn btn-primary dropdown-toggle btn-sm" data-toggle = "dropdown">
@@ -5999,7 +6000,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
       <li data-value="Editor" data-one="'.$row['company_profile_id'].'"><a href = "#">Editor</a></li>
       
       <li class = "divider"></li>
-      <li data-value="Remove" onclick="remove('.$row['company_profile_id'].')" data-one="'.$row['company_profile_id'].'"><a href = "#">Remove</a></li>
+      <li data-value="Remove" onclick="remove('.$row['company_profile_id'].')" data-one="'.$row['mapping_id'].'"><a href = "#">Remove</a></li>
    </ul>
     <input id="accessvalue'.$row['company_profile_id'].'" size="15" name="access_value[]" type="hidden" />
 </div>
@@ -6026,13 +6027,13 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $type = $this->input->post('type');
 
         if ($type == 'internal') {
-            $where="company_id = '$company_id' and job_post_id = '$job_id'";
-            $this->Master_model->master_delete('forwarded_jobs_cv', $where);
+            $where="mapping_id = '$company_id' ";
+            $this->Master_model->master_delete('tracker_consultant_mapping', $where);
         }
         elseif($type=='external')
         {
-             $where="company_id = '$company_id' and job_post_id = '$job_id'";
-            $this->Master_model->master_delete('external_tracker', $where);
+             $where="mapping_id = '$company_id' ";
+            $this->Master_model->master_delete('tracker_consultant_mapping', $where);
         }
         echo true;
     }
