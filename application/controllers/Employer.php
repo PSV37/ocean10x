@@ -6025,8 +6025,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $company_id = $this->input->post('company_id');
         $job_id = $this->input->post('job_id');
         $type = $this->input->post('type');
-        $add_tracking_id = $this->input->post('add_tracking_id');
-         $array=explode(',',$add_tracking_id);
+        $tracking_id = $this->input->post('tracking_id');
+         $array=explode(',',$tracking_id);
         $track=array_filter($array);
          $array = implode("','",$track);
       
