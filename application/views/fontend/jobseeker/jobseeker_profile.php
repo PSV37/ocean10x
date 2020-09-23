@@ -1735,7 +1735,7 @@
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
                               <label class="control-label" for="email">Education<span class="required">*</span></label>
-                              <select name="education_level_id" id="educ_lvl_id" class="form-control department select2">
+                              <select name="education_level_id" id="e_id" class="form-control department select2">
                                 <option value="">Select</option>
                                 <option value="5">10th</option>
                               </select>
