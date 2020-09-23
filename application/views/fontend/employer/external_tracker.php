@@ -1,5 +1,9 @@
 <?php $this->load->view('fontend/layout/employer_new_header.php');?>
 <style>
+  .required
+  {
+  color: red;
+  }
   .cv_bank{margin-top:65px;
   }
   button.saerch_btn {
@@ -548,9 +552,9 @@ hr {
               <table class="table table-borderless" id="myTable">
                 <thead>
                   <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Mobile</th>
+                    <th scope="col">Name <span class="required">*</span></th>
+                    <th scope="col">Email <span class="required">*</span></th>
+                    <th scope="col">Mobile <span class="required">*</span></th>
                     <th scope="col">Sal</th>
                     <th scope="col">Work Exp</th>
                     <th scope="col">Notice (days)</th>
