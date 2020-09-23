@@ -636,13 +636,26 @@ hr {
            <input type="hidden" name="job_post_id" id="job_post_id" value=""> 
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"style="width: 108%;margin-left: -12px;padding: 0px;">
             <label class="mdl-textfield__label" for="sample3">E-mail:</label>
-            <input onfocusout="myFunction();" type="email"  name="consultant_email"  id="email" placeholder="Enter Email"  id="subject" data-required="true" multiple style="display: inline-block;min-width: 100%;height: 30px;" required>
+            <input onchange ="show_text();" type="email"  name="consultant_email"  id="email" placeholder="Enter Email"  id="subject" data-required="true" multiple style="display: inline-block;min-width: 100%;height: 30px;" required>
+            <div class = "btn-group">
+  
+            <ul id="option_list" class = "dropdown-menu" role = "menu">
+      <li data-value="Viewer" data-one=""><a href = "#">Viewer</a></li>
+      <li data-value="Commenter" data-one=""><a href = "#">Commenter</a></li>
+      <li data-value="Editor" data-one=""><a href = "#">Editor</a></li>
+      
+      <li class = "divider"></li>
+      <li data-value="Remove" data-one=""><a href = "#">Remove</a></li>
+   </ul>
+    <input id="accessvalue" size="15" name="access_value[]" type="hidden" />
+</div>
+    
           </div>
           <hr>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
             <ul id="shared_list" ></ul>
            <!--  <label class="mdl-textfield__label" for="sample3">Message:</label> -->
-            <!-- <textarea class="form-control" name="message" rows="5" id="comment" required></textarea> -->
+            <textarea style="display: none" class="form-control" name="message" rows="5" id="comment_area" required></textarea>
           </div>
         </div>
         <div class="modal-footer">
@@ -671,7 +684,7 @@ hr {
           </div>
           <hr>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
-            <ul id="shared_list" ></ul>
+            <!-- <ul id="shared_list" ></ul> -->
            <!--  <label class="mdl-textfield__label" for="sample3">Message:</label> -->
             <!-- <textarea class="form-control" name="message" rows="5" id="comment" required></textarea> -->
           </div>
@@ -684,6 +697,11 @@ hr {
   </div>
 </div>
 <script>
+  function show_text()
+  {
+    $('#shared_list').hide();
+    $('#comment_area').show();
+  }
    $("#cand_email").autocomplete({
             
             source: "<?php echo base_url();?>Employer/search_candidate",
