@@ -4050,7 +4050,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             'js_desired_work_location'=> $cv_data['desired_wrok_location'], 
             'current_org' => $cv_data['current_org'], 
             'ocean_candidate' => $cv_data['ocean_candidate'], 
-            'js_resume' => $cv_data['cand_resume'],
+            'js_resume' => $cv_data['cand_resume'],);
             $cv_data_insert['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
             $cv_data_insert['created_by'] = $company_id;
             // $update_cv_id = ['cv_id'];
