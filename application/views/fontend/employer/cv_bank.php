@@ -1163,8 +1163,7 @@ span.right-side {
                        <div class="collapse" id="collapseEx<?php echo $cv_row['cv_id']?>">
                       <div class="card-body">
                       <?php $i=1; if (!empty($jobs_data)) {
-                                # code...
-                               foreach ($jobs_data as $row) { ?>
+                            foreach ($jobs_data as $row) { ?>
                                <p><?php echo $i; ?>.  <?php echo $row['job_title']; ?> - Job Post sent on <?php echo date('d-m-y H:i',strtotime($row['created_on'])) ; ?>
 
                             <?php $i++;  } } ?>
@@ -1172,6 +1171,13 @@ span.right-side {
                       </div>
                      <?php  }
                     ?>
+                    <?php if ($cv_row['forwarded_cv'] == 1 ) { 
+                      $comp_id = $cv_row['created_by'];
+                      $where_comp="company_profile.company_profile_id = '$comp_id'";
+                        $comp_data = $this->Master_model->get_master_row('company_profile', $select = FALSE, $where = $where_comp, $join = FALSE);
+                      ?>
+                      <span data-toggle="collapse" data-target="#collapseEx<?php echo $cv_row['cv_id']?>" aria-expanded="false" aria-controls="collapseEx" style="color: red;font-size: 25px;margin-left: 38px;" title="<?php echo $comp_data['company name'] ?> has Forwarded this CV " class="required"> # </span>
+                   <? } ?>
                 <div class="btn-group">
                   <a title="view Details" href="<?php echo base_url(); ?>employer/preview_cv/<?php echo base64_encode($cv_row['cv_id']); ?>"><i class="fa fa-info-circle icon_backg"></i></a>
                   <a  title="Edit" href=" <?php echo base_url(); ?>employer/edit_cv/<?php echo base64_encode($cv_row['cv_id']); ?>?fid=<?php echo $fid; ?>"><i class="far fa-edit icon_backg"></i></a>
