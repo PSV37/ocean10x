@@ -3862,7 +3862,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     'js_current_designation' => $this->input->post('current_job_desig'), 
                     'js_working_since' => date('Y-m-d', strtotime($this->input->post('working_current_since'))), 
                     'js_current_ctc' => $this->input->post('current_ctc'), 
-                    'js_proposed_interview_date' => $this->input->post('proposed_interview_date'),
+                    'js_proposed_interview_date' => date('Y-m-d', strtotime($this->input->post('js_proposed_interview_date'))),
                     'js_current_notice_period' => $this->input->post('candidate_notice_period'), 
                     'js_experience' => $this->input->post('candidate_experiance'), 
                     'js_last_salary_hike' => date('Y-m-d', strtotime($this->input->post('last_salary_hike'))), 
