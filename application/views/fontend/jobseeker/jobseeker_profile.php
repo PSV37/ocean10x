@@ -277,7 +277,7 @@
                           <div class="form-group">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
-                              <label class="control-label" for="email">University / Name of Institution <span class="required">*</span></label>
+                              <label class="control-label" for="email">University / Institution <span class="required">*</span></label>
                               <input type="text" name="js_institute_name" class="form-control allowalphabates" id="js_institute_name" placeholder="Enter Institute Name" required value="<?php if(!empty($education_data)) echo $education_data[0]->js_institute_name; ?>">
                             </div>
                             <div class="col-sm-1"></div>
@@ -376,7 +376,7 @@
                             <div class="form-group">
                               <div class="col-sm-1"></div>
                               <div class="col-sm-10">
-                                <label class="control-label" for="email">University / Name of Institution <span class="required">*</span></label>
+                                <label class="control-label" for="email">University / Institution <span class="required">*</span></label>
                                 <input type="text" name="js_institute_name" class="form-control allowalphabates" id="js_institute_name" placeholder="Enter Institute Name"  value="<?php if(!empty($education_data)) echo $education_data2[0]->js_institute_name; ?>">
                               </div>
                               <div class="col-sm-1"></div>
@@ -491,7 +491,7 @@
                           <div class="form-group">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
-                              <label class="control-label" for="email">University&emsp;/&emsp;Name of Institution <span class="required">*</span></label>
+                              <label class="control-label" for="email">University / Institution <span class="required">*</span></label>
                               <input type="text" name="js_institute_name" class="form-control allowalphabates" id="js_institute_name" placeholder="Enter Institute Name" required value="<?php if(!empty($education_data3)) echo $education_data3[0]->js_institute_name; ?>">
                             </div>
                             <div class="col-sm-1"></div>
