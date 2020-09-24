@@ -4027,7 +4027,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $cv_id = $this->input->post('cv_id');
         $where = "corporate_cv_bank.cv_id ='$cv_id'";
         $cv_data=$this->Master_model->get_master_row('corporate_cv_bank', $select = FALSE, $where, $join = FALSE);
-        $cv_data = array(
+        $cv_data_insert = array(
             'company_id'=> $comp_id, 
             'js_name' => $cv_data['candidate_name'], 
             'js_email' => $cv_data['candidate_email'], 
@@ -4049,10 +4049,10 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             'js_expected_salary' => $cv_data['candidate_expected_sal'], 
             'js_desired_work_location'=> $cv_data['desired_wrok_location'], 
             'current_org' => $cv_data['current_org'], 
-            'ocean_candidate' => $ocean_candidate, 
-            'js_resume' => $cand_resume,);
-            $cv_data['created_on'] = date('Y-m-d H:i:s'];
-            $cv_data['created_by'] = $company_id;
+            'ocean_candidate' => $cv_data['ocean_candidate'], 
+            'js_resume' => $cv_data['cand_resume'],
+            $cv_data_insert['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
+            $cv_data_insert['created_by'] = $company_id;
             // $update_cv_id = ['cv_id'];
             $cv_id = $this->Master_model->master_insert($cv_data, 'corporate_cv_bank');
     }
