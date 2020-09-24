@@ -582,7 +582,7 @@
                             <div class="col-sm-10">
                               <label class="control-label" for="email">Education <span class="required">*</span></label>
                               <select name="education_level_id" id="edu_lev_id" class="form-control department select2" >
-                                <option value="">Select</option>
+                                <!-- <option value="">Select</option> -->
                                 <option value="4">12th</option>
                               </select>
                             </div>
@@ -681,8 +681,9 @@
                               <label class="control-label" for="email">Education <span class="required">*</span></label>
                               <select name="education_level_id" id="education_id" class="form-control department select2" required="">
                               <!--<select name="education_level_id" id="education_level_id" class="form-control department select2" required="">-->
-                                <option value="">Select</option>
-                                <option value="5">10th</option>  
+                               <!--  <option value="">Select</option> -->
+                                <option value="5">10th</option> 
+                                </select> 
                             </div>
                             <div class="col-sm-1"></div>
                           </div>
@@ -1737,7 +1738,7 @@
                             <div class="col-sm-10">
                               <label class="control-label" for="email">Education <span class="required">*</span></label>
                               <select name="education_level_id" id="edt" class="form-control department select2">
-                                <option value="">Select</option>
+                                <!-- <option value="">Select</option> -->
                                 <option value="5">10th</option>
                               </select>
                             </div>

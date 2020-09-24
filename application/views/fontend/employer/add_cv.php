@@ -557,16 +557,19 @@
    
    $("#my_date_picker").datepicker({ dateFormat: 'dd-mm-yy',maxDate: '0', changeMonth: true,
    changeYear: true,
-   yearRange: "2000:2020" });
+   yearRange: '2000:' + new Date().getFullYear().toString() });
    $("#last_salary_hike").datepicker(
     { dateFormat: 'dd-mm-yy',maxDate: '0', changeMonth: true,
    changeYear: true,
    yearRange: '2000:' + new Date().getFullYear().toString() });
-
+var oneYearFromNow = new Date();
+oneYearFromNow.setFullYear(oneYearFromNow.getFullYear() + 1);
     $("#interview_picker").datepicker(
-    { dateFormat: 'dd-mm-yy',maxDate: '0', changeMonth: true,
+    { 
+
+      dateFormat: 'dd-mm-yy',minDate: '0', changeMonth: true,
    changeYear: true,
-   yearRange: "2020:2021" });
+   yearRange: new Date().getFullYear().toString():oneYearFromNow });
    });
   
   $("#js").validate (  

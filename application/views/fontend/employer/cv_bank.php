@@ -141,7 +141,7 @@
   float: left;
   font-size: 12px;
   font-weight: 100;
-  width:100px;
+  width:120px;
   height:15px;
   }
   li.right-title {
