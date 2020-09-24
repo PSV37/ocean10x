@@ -75,6 +75,15 @@
     margin-top: 7px;
     /* margin-left: 179px; */
 }
+button#sklbtn {
+  background-color: #18c5bd;
+  color: #ffffff;
+  border-radius: 20px;
+  border: none;
+  padding: 1px 10px;
+  margin-bottom: 7px;
+  font-size: 11px;
+  }
 </style>
 <!---header end--->
 <div class="container-fluid">
@@ -161,19 +170,13 @@
               <div class="invi-div">
                 <div class="info-invitation">
                   <span style="float: right;font-size:12px;cursor: pointer;"> <a href="#" data-toggle="modal" data-target="#Updateskills" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> </span>
-                  <p>Skills: <?php  
-                    if(!empty($js_skills)){
-                      $skill="";
-                      for($i=0;$i<sizeof($js_skills);$i++){
-                        if($i==0){
-                        $skill=$skill.$js_skills[$i]['skills'];
-                        }else{
-                          $skill=$skill.','.$js_skills[$i]['skills'];
-                        }
-                      }
-                      echo $skill;
-                    }
-                    ?></p>
+                  <p>Skills: 
+                   
+                    <?php  foreach($js_skills as $skill_row){ ?>
+                <lable class=""><button id="sklbtn"><?php echo  $skill_row['skills'];?></button></lable>
+                <?php }?>
+                      
+                    </p>
                   <!-- <button class="apply-invi">Apply Now</button> -->
                 </div>
                 <div class="clear"></div>
@@ -201,7 +204,8 @@
                           value="<?php  
                             if(!empty($js_skills)){
                               $skill="";
-                              for($i=0;$i<sizeof($js_skills);$i++){
+                              for($i=0;$i<sizeof($js_skills);$i++)
+                              {
                                 if($i==0){
                                 $skill=$skill.$js_skills[$i]['skills'];
                                 }else{
@@ -296,7 +300,7 @@
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
                               <label class="control-label" for="pwd">Year of Completion <span class="required">*</span></label>
-                              <select name="js_year_of_passing" id="comp" class="form-control" required="">
+                              <select name="js_year_of_passing" id="comp" class="form-control select2" required="">
                                 <?php
                                   $currently_selected = date('Y'); 
                                   $earliest_year = 1940; 

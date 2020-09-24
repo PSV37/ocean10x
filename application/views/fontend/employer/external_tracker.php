@@ -652,10 +652,29 @@ hr {
    // alert(done);
 
   $("#accessvalue"+done).val($this.data("value"));
+   $("#btn_val"+done).text($this.data("value"));
    // alert($this.data("value"));
   // $( "#sort_btn" ).click();
   // $( "#test" ).click();
   });
+   function remove(id)
+  {
+    var job_id = $('#job_select').val();
+    var tracking_id = $('#tracking_id').val();
+     $.ajax({
+              url: "<?php echo base_url();?>employer/remove_from_share",
+              type: "POST",
+              data: {company_id:id,job_id:job_id,type:'external',tracking_id:tracking_id},
+              // contentType:false,
+              // processData:false,
+               // dataType: "json",
+              success: function(data)
+              {
+               // $('#shared_list').html(data);
+                $(".share").click();
+              }
+        });
+  }
   $(document).keyup(function(e) {
        if (e.keyCode == 27) { // escape key maps to keycode `27`
         // alert('dd');
