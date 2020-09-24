@@ -1598,6 +1598,7 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
         </div>
         <div class="modal-body">
           <input type="hidden" name="cv_id" value="<?php echo $cv_row['cv_id']; ?>">
+           <input type="hidden" name="folder_id" value="<?php echo $fid; ?>">
           <div class="col-md-12" style="margin-top: 20px;">
             <div class="row">
              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"style="width: 108%;margin-left: -12px;padding: 0px;">

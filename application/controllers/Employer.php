@@ -4029,32 +4029,35 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $cv_data=$this->Master_model->get_master_row('corporate_cv_bank', $select = FALSE, $where, $join = FALSE);
         $cv_data_insert = array(
             'company_id'=> $comp_id, 
-            'js_name' => $cv_data['candidate_name'], 
-            'js_email' => $cv_data['candidate_email'], 
-            'js_mobile' => $cv_data['candidate_phone'], 
-            'js_job_type' => $cv_data['job_type'], 
-            'js_current_designation' => $cv_data['current_job_desig'], 
-            'js_working_since' => $cv_data['working_current_since'], 
-            'js_current_ctc' => $cv_data['current_ctc'], 
-            'js_current_notice_period' => $cv_data['candidate_notice_period'], 
-            'js_experience' => $cv_data['candidate_experiance'], 
-            'js_last_salary_hike' => $cv_data['last_salary_hike'], 
-            'js_top_education' => $cv_data['top_education'],
-            'js_skype_id' => $cv_data['skypid'],
-            'js_current_work_location' => $cv_data['current_work_location'],
-            'js_skill_set' =>  $cv_data['candidate_skills'], 
-            'js_certifications' => $cv_data['candidate_certification'], 
-            'js_industry' => $cv_data['candidate_industry'], 
-            'js_role' => $cv_data['candidate_role'], 
-            'js_expected_salary' => $cv_data['candidate_expected_sal'], 
-            'js_desired_work_location'=> $cv_data['desired_wrok_location'], 
+            'js_name' => $cv_data['js_name'], 
+            'js_email' => $cv_data['js_email'], 
+            'js_mobile' => $cv_data['js_mobile'], 
+            'js_job_type' => $cv_data['js_job_type'], 
+            'js_current_designation' => $cv_data['js_current_designation'], 
+            'js_working_since' => $cv_data['js_working_since'], 
+            'js_current_ctc' => $cv_data['js_current_ctc'], 
+            'js_current_notice_period' => $cv_data['js_current_notice_period'], 
+            'js_experience' => $cv_data['js_experience'], 
+            'js_last_salary_hike' => $cv_data['js_last_salary_hike'], 
+            'js_top_education' => $cv_data['js_top_education'],
+            'js_skype_id' => $cv_data['js_skype_id'],
+            'js_current_work_location' => $cv_data['js_current_work_location'],
+            'js_skill_set' =>  $cv_data['js_skill_set'], 
+            'js_certifications' => $cv_data['js_certifications'], 
+            'js_industry' => $cv_data['js_industry'], 
+            'js_role' => $cv_data['js_role'], 
+            'js_expected_salary' => $cv_data['js_expected_salary'], 
+            'js_desired_work_location'=> $cv_data['js_desired_work_location'], 
             'current_org' => $cv_data['current_org'], 
             'ocean_candidate' => $cv_data['ocean_candidate'], 
-            'js_resume' => $cv_data['cand_resume'],);
+            'js_resume' => $cv_data['js_resume'],);
             $cv_data_insert['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
             $cv_data_insert['created_by'] = $company_id;
             // $update_cv_id = ['cv_id'];
-            $cv_id = $this->Master_model->master_insert($cv_data, 'corporate_cv_bank');
+            $cv_id = $this->Master_model->master_insert($cv_data_insert, 'corporate_cv_bank');
+             $this->session->set_flashdata('success', '<div class="alert alert-success text-center">CV Forwarded Successfully !</div>');
+                $fid= $this->input->post('folder_id');
+                redirect('employer/corporate_cv_bank/' .$fid);
     }
     function get_candidate_by_email() {
         if (isset($_GET['term'])) {
