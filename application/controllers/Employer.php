@@ -4492,7 +4492,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 'js_desired_work_location' => $latest['job_area'], 
                 'updated_on' => date('Y-m-d H:i:s'), 'updated_by' => $this->session->userdata('company_profile_id'));
             $where11['js_email'] = $email_id;
-            $where11['company_id'] = $this->session->userdata('company_profile_id'));
+            $where11['company_id'] = $this->session->userdata('company_profile_id');
             $this->Master_model->master_update($update_profile, 'corporate_cv_bank', $where11);
              $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Profile Updated successfully with the latest ocean profile...!</div>');
                 redirect('employer/corporate_cv_bank/'.$fid);
@@ -4532,7 +4532,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 'js_desired_work_location' => $latest['job_area'], 
                 'updated_on' => date('Y-m-d H:i:s'), 'updated_by' => $this->session->userdata('company_profile_id'));
                 $where11['js_email'] = $email_id;
-                 $where11['company_id'] = $this->session->userdata('company_profile_id'));
+                 $where11['company_id'] = $this->session->userdata('company_profile_id');
                 $this->Master_model->master_update($update_profile, 'corporate_cv_bank', $where11);
             }
             $fid = $this->input->get('fid');
