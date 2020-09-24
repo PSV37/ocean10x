@@ -572,7 +572,7 @@
                     <div class="modal-content">
                       <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">12th</h4>
+                        <h4 class="modal-title">12th Standard</h4>
                       </div>
                       <div class="modal-body education_frm">
                         <form id="twelfth" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post">
@@ -664,13 +664,13 @@
                 ?>
               <li class="bullet">
                 <a href="#" data-toggle="modal" <?php if (isset($education_data5) && empty($education_data5)) { ?> style="color: red;"
-                  <?php  } ?> data-target="#myModal4">10th</a>
+                  <?php  } ?> data-target="#myModal4">10th Standard</a>
                 <div class="modal fade" tabindex='-1' id="myModal4" role="dialog">
                   <div class="modal-dialog modal-md">
                     <div class="modal-content">
                       <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">10th</h4>
+                        <h4 class="modal-title">10th Standard</h4>
                       </div>
                       <div class="modal-body education_frm">
                         <form id="tenth" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post">
