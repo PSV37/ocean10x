@@ -691,7 +691,7 @@
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
                               <label class="control-label" for="pwd">Year of Completion <span class="required">*</span></label>
-                              <select name="js_year_of_passing" id="year_id" class="form-control department select2" required="">
+                              <select name="js_year_of_passing" id="year_id1" class="form-control department select2" required="">
                               <!--<select name="js_year_of_passing" id="ddlYear" class="form-control department select2" required="">-->
                               <option value="">Select Completion Year</option>
                                 <?php
@@ -729,6 +729,15 @@
                                 <option value="<?php echo $medium['schoolmedium_id']; ?>"<?php if(!empty($education_data5)) if($education_data5[0]->schoolmedium_id==$medium['schoolmedium_id']) echo "selected";?>><?php echo $medium['school_medium']; ?></option>
                                 <?php } ?>
                               </select>
+                            </div>
+                            <div class="col-sm-1"></div>
+                          </div>
+                           <div class="form-group">
+                            <div class="col-sm-1"></div>
+                            <div class="col-sm-10">
+                              <label class="control-label" for="email">School Name<span class="required">*</span></label>
+                              
+                              <input type="text" name="tschool_name">
                             </div>
                             <div class="col-sm-1"></div>
                           </div>
@@ -1785,6 +1794,15 @@
                                 <option value="<?php echo $medium['schoolmedium_id']; ?>"<?php if(!empty($education_data5)) if($education_data5[0]->schoolmedium_id==$medium['schoolmedium_id']) echo "selected";?>><?php echo $medium['school_medium']; ?></option>
                                 <?php } ?>
                               </select>
+                            </div>
+                            <div class="col-sm-1"></div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-sm-1"></div>
+                            <div class="col-sm-10">
+                              <label class="control-label" for="email">School Name<span class="required">*</span></label>
+                              
+                              <input type="text" name="tschool_name">
                             </div>
                             <div class="col-sm-1"></div>
                           </div>
