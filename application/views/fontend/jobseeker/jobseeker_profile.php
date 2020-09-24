@@ -566,7 +566,7 @@
                 ?>
               <li class="bullet">
                 <a href="#" data-toggle="modal" <?php if (isset($education_data4) && empty($education_data4)) { ?> style="color: red;"
-                  <?php  } ?> data-target="#myModal3">12th</a>
+                  <?php  } ?> data-target="#myModal3">12th Standard</a>
                 <div class="modal fade" tabindex='-1' id="myModal3" role="dialog">
                   <div class="modal-dialog modal-md">
                     <div class="modal-content">
