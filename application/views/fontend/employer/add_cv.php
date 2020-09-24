@@ -426,6 +426,19 @@
             </div>
             <div class="col-md-4">
               <div class="form-group">
+                <label for="exampleInputEmail1">Proposed Interview Date</label>
+                <input type="text" id="my_date_picker" name="proposed_interview_date" style="display: inline-block;" class="form-control datepicker "   value="<?php $val=set_value('proposed_interview_date'); if(isset($val) && !empty($val))
+                  {
+                     echo date("d-m-Y", strtotime($val));
+                  }
+                  elseif(isset($cv_bank_data) && !empty($cv_bank_data['js_proposed_interview_date'])){
+                     echo date("d-m-Y", strtotime($cv_bank_data['js_proposed_interview_date']));
+                  } ?>">  
+                <!--  <input type="text" name="proposed_interview_date" id="proposed_interview_date" class="form-control datepicker">  <?php echo form_error('proposed_interview_date'); ?>    -->
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
                 <label for="exampleInputEmail1">Upload Resume</label>
                 <input type="file" name="candidate_resume" id="candidate_resume" class="form-control" style="display: inline-block;">   <?php echo form_error('candidate_resume'); ?>
               </div>
