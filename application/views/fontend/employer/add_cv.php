@@ -562,14 +562,14 @@
     { dateFormat: 'dd-mm-yy',maxDate: '0', changeMonth: true,
    changeYear: true,
    yearRange: '2000:' + new Date().getFullYear().toString() });
-var oneYearFromNow = new Date();
+var oneYearFromNow = new Date().getFullYear() +1.toString();
 
     $("#interview_picker").datepicker(
     { 
 
       dateFormat: 'dd-mm-yy',minDate: '0', changeMonth: true,
    changeYear: true,
-   yearRange: new Date().getFullYear().toString()+':'+oneYearFromNow.setFullYear(oneYearFromNow.getFullYear() + 1) });
+   yearRange: new Date().getFullYear().toString()+':'+oneYearFromNow });
   });
   
   $("#js").validate (  
