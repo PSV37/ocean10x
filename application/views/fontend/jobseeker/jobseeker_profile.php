@@ -640,6 +640,15 @@
                           <div class="form-group">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
+                              <label class="control-label" for="email">School Name<span class="required">*</span></label>
+                              
+                              <input type="text" name="js_institute_name">
+                            </div>
+                            <div class="col-sm-1"></div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-sm-1"></div>
+                            <div class="col-sm-10">
                               <label class="control-label" for="email">Total Score <span class="required">*</span></label>
                               <input type="text" name="totalmarks_id" id="totalmarks_id" class="form-control allownumericwithoutdecimal" value="<?php if(!empty($education_data4)) echo $education_data4[0]->totalmarks_id; ?>" placeholder="Enter Total Score" onkeypress="javascript:return isNumber(event)">
                             </div>
@@ -737,7 +746,7 @@
                             <div class="col-sm-10">
                               <label class="control-label" for="email">School Name<span class="required">*</span></label>
                               
-                              <input type="text" name="tschool_name">
+                              <input type="text" name="js_institute_name">
                             </div>
                             <div class="col-sm-1"></div>
                           </div>
@@ -1707,6 +1716,15 @@
                           <div class="form-group">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
+                              <label class="control-label" for="email">School Name<span class="required">*</span></label>
+                              
+                              <input type="text" name="js_institute_name">
+                            </div>
+                            <div class="col-sm-1"></div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-sm-1"></div>
+                            <div class="col-sm-10">
                               <label class="control-label" for="email">Total Score <span class="required">*</span></label>
                               <input type="text" name="totalmarks_id" id="totalmarks_id" class="form-control" value="<?php if(!empty($education_data4)) echo $education_data4[0]->totalmarks_id; ?>" placeholder="Enter Total Score" onkeypress="javascript:return isNumber(event)">
                             </div>
@@ -1802,7 +1820,7 @@
                             <div class="col-sm-10">
                               <label class="control-label" for="email">School Name<span class="required">*</span></label>
                               
-                              <input type="text" name="tschool_name">
+                              <input type="text" name="js_institute_name">
                             </div>
                             <div class="col-sm-1"></div>
                           </div>
