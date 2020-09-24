@@ -692,7 +692,7 @@
                               <label class="control-label" for="pwd">Year of Completion <span class="required">*</span></label>
                               <select name="js_year_of_passing" id="year_id" class="form-control department select2" required="">
                               <!--<select name="js_year_of_passing" id="ddlYear" class="form-control department select2" required="">-->
-                                <option value="">Select Completion Year</option>
+                              <option value="">Select Completion Year</option>
                                 <?php
                                   $currently_selected = date('Y'); 
                                   $earliest_year = 1940; 
