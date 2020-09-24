@@ -593,7 +593,7 @@
                             <div class="col-sm-10">
                               <label class="control-label" for="pwd">Year of Completion <span class="required">*</span></label>
                               <select name="js_year_of_passing" id="ddlyr" class="form-control department select2" required="">
-                                <option value="">Select Completion Year</option>
+                               <!--  <option value="">Select Completion Year</option> -->
                                 <?php
                                   $currently_selected = date('Y'); 
                                   $earliest_year = 1940; 
@@ -609,9 +609,9 @@
                           <div class="form-group">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
-                              <label class="control-label" for="email">Board <span class="required">*</span></label>
+                              <label class="control-label select2" for="email">Board <span class="required">*</span></label>
                               <select name="board_id" id="brd_id" class="form-control">
-                                <option value="">Select Board</option>
+                                <!-- <option value="">Select Board</option> -->
                                 <!-- <option value="1">CBSE</option>
                                   <option value="2">CISCE(ICSE/ISC)</option>
                                   <option value="3">Diploma</option>
@@ -693,7 +693,7 @@
                               <label class="control-label" for="pwd">Year of Completion <span class="required">*</span></label>
                               <select name="js_year_of_passing" id="year_id1" class="form-control department select2" required="">
                               <!--<select name="js_year_of_passing" id="ddlYear" class="form-control department select2" required="">-->
-                              <option value="">Select Completion Year</option>
+                             <!--  <option value="">Select Completion Year</option> -->
                                 <?php
                                   $currently_selected = date('Y'); 
                                   $earliest_year = 1940; 
@@ -711,7 +711,7 @@
                             <div class="col-sm-10">
                               <label class="control-label" for="email">Board <span class="required">*</span></label>
                               <select name="board_id" id="board_id" class="form-control department select2">
-                                <option value="">Select Board</option>
+                                <!-- <option value="">Select Board</option> -->
                                 <?php foreach($schoolboard as $boards){?>
                                 <option value="<?php echo $boards['schoolboard_id']; ?>"<?php if(!empty($education_data5)) if($education_data5[0]->board_id==$boards['schoolboard_id']) echo "selected";?>><?php echo $boards['schoolboard_name']; ?></option>
                                 <?php } ?>
@@ -724,7 +724,7 @@
                             <div class="col-sm-10">
                               <label class="control-label" for="email">School Medium <span class="required">*</span></label>
                               <select name="schoolmedium_id" id="schoolmedium_id" class="form-control department select2">
-                                <option value="">Select Medium</option>
+                               <!--  <option value="">Select Medium</option> -->
                                 <?php foreach($schoolmedium as $medium){?>
                                 <option value="<?php echo $medium['schoolmedium_id']; ?>"<?php if(!empty($education_data5)) if($education_data5[0]->schoolmedium_id==$medium['schoolmedium_id']) echo "selected";?>><?php echo $medium['school_medium']; ?></option>
                                 <?php } ?>
@@ -1661,7 +1661,7 @@
                             <div class="col-sm-10">
                               <label class="control-label" for="pwd">Year of Completion <span class="required">*</span></label>
                               <select name="js_year_of_passing" id="ddlYear" class="form-control department select2" required="">
-                                <option value="">Select Completion Year</option>
+                               <!--  <option value="">Select Completion Year</option> -->
                                 <?php
                                   $currently_selected = date('Y'); 
                                   $earliest_year = 1940; 
@@ -1679,7 +1679,7 @@
                             <div class="col-sm-10">
                               <label class="control-label" for="email">Board <span class="required">*</span></label>
                               <select name="board_id" id="bd" class="form-control">
-                                <option value="">Select Board</option>
+                               <!--  <option value="">Select Board</option> -->
                                 <!-- <option value="1">CBSE</option>
                                   <option value="2">CISCE(ICSE/ISC)</option>
                                   <option value="3">Diploma</option>
@@ -1758,7 +1758,7 @@
                             <div class="col-sm-10">
                               <label class="control-label" for="pwd">Year of Completion <span class="required">*</span></label>
                               <select name="js_year_of_passing" id="year_id" class="form-control department select2" required="">
-                                <option value="">Select Completion Year</option>
+                               <!--  <option value="">Select Completion Year</option> -->
                                 <?php
                                   $currently_selected = date('Y'); 
                                   $earliest_year = 1940; 
@@ -1776,7 +1776,7 @@
                             <div class="col-sm-10">
                               <label class="control-label" for="email">Board <span class="required">*</span></label>
                               <select name="board_id" id="board_id" class="form-control">
-                                <option value="">Select Board</option>
+                                <!-- <option value="">Select Board</option> -->
                                 <?php foreach($schoolboard as $boards){?>
                                 <option value="<?php echo $boards['schoolboard_id']; ?>"<?php if(!empty($education_data5)) if($education_data5[0]->board_id==$boards['schoolboard_id']) echo "selected";?>><?php echo $boards['schoolboard_name']; ?></option>
                                 <?php } ?>

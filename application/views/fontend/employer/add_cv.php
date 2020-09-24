@@ -569,7 +569,7 @@ oneYearFromNow.setFullYear(oneYearFromNow.getFullYear() + 1);
 
       dateFormat: 'dd-mm-yy',minDate: '0', changeMonth: true,
    changeYear: true,
-   yearRange: new Date().getFullYear().toString()':'oneYearFromNow });
+   yearRange: new Date().getFullYear().toString()+':'+oneYearFromNow });
  
   
   $("#js").validate (  
