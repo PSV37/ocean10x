@@ -593,22 +593,40 @@ hr {
     <div class="modal-content">
       <div class="modal-header" style="border-bottom:none;">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Forward This Job Post</h5>
+        <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Share This Tracker</h5>
       </div>
       <form action="<?php echo base_url() ?>employer/forword_external_tracker" class="sendEmail" method="post" autocomplete="off">
         <div class="modal-body" style="padding:15px 40px;">
           <input type="hidden" name="tracking_id" id="tracking_id" value="">
           <input type="hidden" name="tracker_type" value="external">  
-          <input type="hidden" name="job_post_id" id="job_post_id" value="">
+           <input type="hidden" name="job_post_id" id="job_post_id" value=""> 
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"style="width: 108%;margin-left: -12px;padding: 0px;">
             <label class="mdl-textfield__label" for="sample3">E-mail:</label>
-            <input onfocusout="myFunction();" type="email"  name="consultant_email"  id="email" placeholder="Enter Email"  id="subject" data-required="true" multiple style="display: inline-block;min-width: 100%;height: 30px;" required>
+            <input onchange ="show_text();" type="email"  name="consultant_email"  id="email" placeholder="Enter Email"  id="subject" data-required="true" multiple style="display: inline-block;min-width: 75%;height: 30px;" required>
+            
           </div>
+          <div style="/* float: right; */margin-left: 304px;margin-top: -35px;" class = "btn-group">
+   <button type = "button" id="btn_val" class = "btn btn-primary dropdown-toggle btn-sm" data-toggle = "dropdown" value="Viewer">
+  Viewer
+      <span class = "caret"></span>
+   </button>
+  
+      <ul id="option_list" class = "dropdown-menu" role = "menu">
+      <li data-value="Viewer" data-one=""><a href = "#">Viewer</a></li>
+      <li data-value="Commenter" data-one=""><a href = "#">Commenter</a></li>
+      <li data-value="Editor" data-one=""><a href = "#">Editor</a></li>
+      
+      <!-- <li class = "divider"></li> -->
+     <!--  <li  data-value="Remove" data-one=""><a href = "#">Remove</a></li> -->
+   </ul>
+    <input id="accessvalue" size="15" name="access_value[]" type="hidden" value="Editor" />
+</div>
+    
           <hr>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
             <ul id="shared_list" ></ul>
            <!--  <label class="mdl-textfield__label" for="sample3">Message:</label> -->
-            <!-- <textarea class="form-control" name="message" rows="5" id="comment" required></textarea> -->
+            <textarea  class="form-control" name="message" rows="5" id="comment_area" required></textarea>
           </div>
         </div>
         <div class="modal-footer">
@@ -880,4 +898,16 @@ hr {
            }
        });
   
+</script>
+<script>
+   $("#email").autocomplete({
+             
+             source: "<?php echo base_url();?>Employer/get_company_by_email",
+             minLength: 2,
+              // append: "#rotateModal",
+            
+    
+            
+           });
+   
 </script>
