@@ -1176,7 +1176,7 @@ span.right-side {
                       $where_comp="company_profile.company_profile_id = '$comp_id'";
                         $comp_data = $this->Master_model->get_master_row('company_profile', $select = FALSE, $where = $where_comp, $join = FALSE);
                       ?>
-                      <span data-toggle="collapse" data-target="#collapseEx<?php echo $cv_row['cv_id']?>" aria-expanded="false" aria-controls="collapseEx" style="color: red;font-size: 25px;margin-left: 38px;" title="<?php echo $comp_data['company_name']; ?> has Forwarded this CV " class="required"> # </span>
+                      <span data-toggle="collapse" data-target="#collapseEx<?php echo $cv_row['cv_id']?>" aria-expanded="false" aria-controls="collapseEx"  style="color: red;font-size: 22px;margin-left: 5px;/* margin-top: 55px; */" title="<?php echo $comp_data['company_name']; ?> has Forwarded this CV " class="required"> # </span>
                    <? } ?>
                 <div class="btn-group">
                   <a title="view Details" href="<?php echo base_url(); ?>employer/preview_cv/<?php echo base64_encode($cv_row['cv_id']); ?>"><i class="fa fa-info-circle icon_backg"></i></a>
