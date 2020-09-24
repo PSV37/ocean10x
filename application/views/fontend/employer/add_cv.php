@@ -563,13 +563,13 @@
    changeYear: true,
    yearRange: '2000:' + new Date().getFullYear().toString() });
 var oneYearFromNow = new Date();
-oneYearFromNow.setFullYear(oneYearFromNow.getFullYear() + 1);
+
     $("#interview_picker").datepicker(
     { 
 
       dateFormat: 'dd-mm-yy',minDate: '0', changeMonth: true,
    changeYear: true,
-   yearRange: new Date().getFullYear().toString()+':'+oneYearFromNow });
+   yearRange: new Date().getFullYear().toString()+':'+oneYearFromNow.setFullYear(oneYearFromNow.getFullYear() + 1) });
   });
   
   $("#js").validate (  
