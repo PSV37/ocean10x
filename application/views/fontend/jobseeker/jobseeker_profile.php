@@ -82,7 +82,7 @@ button#sklbtn {
   border: none;
   padding: 1px 10px;
   margin-bottom: 7px;
-  font-size: 11px;
+  font-size: 13px;
   }
 </style>
 <!---header end--->
@@ -170,7 +170,7 @@ button#sklbtn {
               <div class="invi-div">
                 <div class="info-invitation">
                   <span style="float: right;font-size:12px;cursor: pointer;"> <a href="#" data-toggle="modal" data-target="#Updateskills" class="btn pull-right bg-navy btn-xs" title="Edit" data-toggle="tooltip" data-placement="top"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> </span>
-                  <p>Skills: 
+                  <p><strong>Skills: </strong>
                    
                     <?php  foreach($js_skills as $skill_row){ ?>
                 <lable class=""><button id="sklbtn"><?php echo  $skill_row['skills'];?></button></lable>
