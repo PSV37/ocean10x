@@ -277,7 +277,7 @@
                           <div class="form-group">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
-                              <label class="control-label" for="email">University / Name of Institution <span class="required">*</span></label>
+                              <label class="control-label" for="email">University / Institution <span class="required">*</span></label>
                               <input type="text" name="js_institute_name" class="form-control allowalphabates" id="js_institute_name" placeholder="Enter Institute Name" required value="<?php if(!empty($education_data)) echo $education_data[0]->js_institute_name; ?>">
                             </div>
                             <div class="col-sm-1"></div>
@@ -376,7 +376,7 @@
                             <div class="form-group">
                               <div class="col-sm-1"></div>
                               <div class="col-sm-10">
-                                <label class="control-label" for="email">University / Name of Institution <span class="required">*</span></label>
+                                <label class="control-label" for="email">University / Institution <span class="required">*</span></label>
                                 <input type="text" name="js_institute_name" class="form-control allowalphabates" id="js_institute_name" placeholder="Enter Institute Name"  value="<?php if(!empty($education_data)) echo $education_data2[0]->js_institute_name; ?>">
                               </div>
                               <div class="col-sm-1"></div>
@@ -491,7 +491,7 @@
                           <div class="form-group">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
-                              <label class="control-label" for="email">University&emsp;/&emsp;Name of Institution <span class="required">*</span></label>
+                              <label class="control-label" for="email">University / Institution <span class="required">*</span></label>
                               <input type="text" name="js_institute_name" class="form-control allowalphabates" id="js_institute_name" placeholder="Enter Institute Name" required value="<?php if(!empty($education_data3)) echo $education_data3[0]->js_institute_name; ?>">
                             </div>
                             <div class="col-sm-1"></div>
@@ -566,13 +566,13 @@
                 ?>
               <li class="bullet">
                 <a href="#" data-toggle="modal" <?php if (isset($education_data4) && empty($education_data4)) { ?> style="color: red;"
-                  <?php  } ?> data-target="#myModal3">12th</a>
+                  <?php  } ?> data-target="#myModal3">12th Standard</a>
                 <div class="modal fade" tabindex='-1' id="myModal3" role="dialog">
                   <div class="modal-dialog modal-md">
                     <div class="modal-content">
                       <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">12th</h4>
+                        <h4 class="modal-title">12th Standard</h4>
                       </div>
                       <div class="modal-body education_frm">
                         <form id="twelfth" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post">
@@ -664,13 +664,13 @@
                 ?>
               <li class="bullet">
                 <a href="#" data-toggle="modal" <?php if (isset($education_data5) && empty($education_data5)) { ?> style="color: red;"
-                  <?php  } ?> data-target="#myModal4">10th</a>
+                  <?php  } ?> data-target="#myModal4">10th Standard</a>
                 <div class="modal fade" tabindex='-1' id="myModal4" role="dialog">
                   <div class="modal-dialog modal-md">
                     <div class="modal-content">
                       <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">10th</h4>
+                        <h4 class="modal-title">10th Standard</h4>
                       </div>
                       <div class="modal-body education_frm">
                         <form id="tenth" class="form-horizontal" action="<?php echo base_url('job_seeker/update_education');?>" method="post">
