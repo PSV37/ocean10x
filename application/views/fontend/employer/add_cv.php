@@ -427,7 +427,7 @@
             <div class="col-md-4">
               <div class="form-group">
                 <label for="exampleInputEmail1">Proposed Interview Date</label>
-                <input type="text" id="my_date_picker" name="proposed_interview_date" style="display: inline-block;" class="form-control datepicker "   value="<?php $val=set_value('proposed_interview_date'); if(isset($val) && !empty($val))
+                <input type="text" id="interview_picker" name="proposed_interview_date" style="display: inline-block;" class="form-control datepicker "   value="<?php $val=set_value('proposed_interview_date'); if(isset($val) && !empty($val))
                   {
                      echo date("d-m-Y", strtotime($val));
                   }
@@ -559,6 +559,11 @@
    changeYear: true,
    yearRange: "2000:2020" });
    $("#last_salary_hike").datepicker(
+    { dateFormat: 'dd-mm-yy',maxDate: '0', changeMonth: true,
+   changeYear: true,
+   yearRange: "2000:2020" });
+   });
+    $("#interview_picker").datepicker(
     { dateFormat: 'dd-mm-yy',maxDate: '0', changeMonth: true,
    changeYear: true,
    yearRange: "2000:2020" });
