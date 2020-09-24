@@ -1747,21 +1747,6 @@
                             <div class="col-sm-1"></div>
                             <div class="col-sm-10">
                               <label class="control-label" for="pwd">Year of Completion <span class="required">*</span></label>
-                              <select name="js_year_of_passing" id="ddlyr" class="form-control department select2" required="">
-                                <option value="">Select Completion Year</option>
-                                <?php
-                                  $currently_selected = date('Y'); 
-                                  $earliest_year = 1940; 
-                                  $latest_year = date('Y'); 
-                                  foreach ( range( $latest_year, $earliest_year ) as $i ) {
-                                  ?>
-                                <option value="<?php echo $i; ?>"<?php if(!empty($education_data4)) if($education_data4[0]->js_year_of_passing==$i) echo "selected";?>><?php echo $i; ?></option>
-                                <?php } ?>
-                              </select>
-                            </div>
-
-                            <!--  <div class="col-sm-10">
-                              <label class="control-label" for="pwd">Year of Completion <span class="required">*</span></label>
                               <select name="js_year_of_passing" id="year_id" class="form-control department select2" required="">
                                 <option value="">Select Completion Year</option>
                                 <?php
@@ -1773,7 +1758,7 @@
                                 <option value="<?php echo $i; ?>"<?php if(!empty($education_data5)) if($education_data5[0]->js_year_of_passing==$i) echo "selected";?>><?php echo $i; ?></option>
                                 <?php } ?>
                               </select>
-                            </div>-->
+                            </div>
                             <div class="col-sm-1"></div>
                           </div>
                           <div class="form-group">
