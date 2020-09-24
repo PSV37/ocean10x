@@ -341,7 +341,7 @@ if ($company_profile_id != null) {
                 <li class="right-title_seperate">
                   &nbsp;:
                   <?php
-                    // print_r($benefits);
+                    $benefits = explode(',', $singlejob->benefits);
                     foreach ($singlejob->benefits as $row) { ?>
                   <label>
                   <input type="checkbox" value="4" class="btn-default1" checked="" name="benefits[]">
