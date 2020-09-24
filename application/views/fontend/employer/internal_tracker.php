@@ -661,7 +661,7 @@ hr {
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
             <ul id="shared_list" ></ul>
            <!--  <label class="mdl-textfield__label" for="sample3">Message:</label> -->
-            <textarea style="display: none" class="form-control" name="message" rows="5" id="comment_area" required></textarea>
+            <textarea  class="form-control" name="message" rows="5" id="comment_area" required></textarea>
           </div>
         </div>
         <div class="modal-footer">

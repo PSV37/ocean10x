@@ -141,7 +141,7 @@
   float: left;
   font-size: 12px;
   font-weight: 100;
-  width:86px;
+  width:100px;
   height:15px;
   }
   li.right-title {
@@ -1189,7 +1189,7 @@ span.right-side {
                   <?php } ?>
                   <li><a onclick="get_copy_folders(<?php echo $cv_row['cv_id']; ?>);" class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-keyboard="true" data-target="#copy_cv<?php echo $cv_row['cv_id']; ?>"  href="#">Copy this CV</a></li>
                   <li><a class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-keyboard="true" data-target="#move_cv<?php echo $cv_row['cv_id']; ?>" href="#">Move this CV</a></li>
-                  <!-- <li><a href="<?php echo base_url(); ?>employer/edit_cv/<?php echo base64_encode($cv_row['cv_id']); ?>" >Edit CV</a></li> -->
+                  <li><a href="#" class="dropdown-item" href="#"  data-toggle="modal" data-keyboard="true" data-target="#forward_cv<?php echo $cv_row['cv_id']; ?>" >Forward This CV</a></li>
                   <li><a href="<?php echo base_url(); ?>employer/getocean_profile/<?php echo base64_encode($cv_row['js_email']); ?><?php if(!empty($fid)){echo '?fid=';echo $fid;} ?>" >Sync with Ocean Profile</a></li>
                 </div>
               </div>
@@ -1588,6 +1588,42 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
     </div>
   </div>
 </div>
+<div class="modal fade" tabindex='-1' id="forward_cv<?php echo $cv_row['cv_id']; ?>" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <form method="post" action="<?php echo base_url(); ?>employer/forward_cv">
+        <div class="modal-header">
+          <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+          <center><h4 class="modal-title">Forward This CV</h4></center>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" name="cv_id" value="<?php echo $cv_row['cv_id']; ?>">
+          <div class="col-md-12" style="margin-top: 20px;">
+            <div class="row">
+             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"style="width: 108%;margin-left: -12px;padding: 0px;">
+            <label class="mdl-textfield__label" for="sample3">E-mail:</label>
+            <input onchange ="show_text();" type="email"  name="consultant_email"  id="email" placeholder="Enter Email"  id="subject" data-required="true" multiple style="display: inline-block;min-width: 100%;height: 30px;" required>
+            
+          </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="row">
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
+                <label class="mdl-textfield__label" for="sample3">No. of CVs: 1</label><br>
+              </div>
+            </div>
+          </div>
+          <!--  <p>This is a small modal.</p> -->
+        </div>
+        <div class="modal-footer">
+          <button type="submit" id="mv_button" class="btn btn-default">Forward</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 <?php
   $key++;
     endforeach;  
@@ -1840,6 +1876,18 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
     </form>
   </div>
 </div>
+<script>
+   $("#email").autocomplete({
+             
+             source: "<?php echo base_url();?>Employer/get_company_by_email",
+             minLength: 2,
+              // append: "#rotateModal",
+            
+    
+            
+           });
+   
+</script>
 <script>
    $('.select2').select2();
 </script>
