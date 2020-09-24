@@ -562,7 +562,7 @@
     { dateFormat: 'dd-mm-yy',maxDate: '0', changeMonth: true,
    changeYear: true,
    yearRange: '2000:' + new Date().getFullYear().toString() });
-   });
+
     $("#interview_picker").datepicker(
     { dateFormat: 'dd-mm-yy',maxDate: '0', changeMonth: true,
    changeYear: true,
