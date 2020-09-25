@@ -291,15 +291,15 @@ if ($company_profile_id != null) {
               </div>
               <div class="following-info2">
                 <li class="left-title">Engagement Type</li>
-                <li class="right-title">&nbsp;: <?php echo $singlejob->job_nature_name; ?></li>
+                <li class="right-title">&nbsp; : <?php echo $singlejob->job_nature_name; ?></li>
                 <li class="left-title">No. of Positions</li>
-                <li class="right-title">&nbsp;:<?php echo $singlejob->no_jobs; ?></li>
+                <li class="right-title">&nbsp; :<?php echo $singlejob->no_jobs; ?></li>
                 <div class="clear"></div>
               </div>
               <div class="following-info3">
-                <li class="left-title">JD attached&nbsp;<i class="fas fa-link"></i></li>
+                <li class="left-title">JD attached &nbsp;<i class="fas fa-link"></i></li>
                 <li class="right-title">
-                  &nbsp;: <?php if (isset($singlejob->jd_file) && !empty($singlejob->jd_file)) {
+                  &nbsp; : <?php if (isset($singlejob->jd_file) && !empty($singlejob->jd_file)) {
                     echo "Yes"; ?>
                   <!-- <a href="<?php echo base_url() ?>upload/job_description/<?php echo $jd_file; ?>" target="_blank"><i class="fa fa-file" aria-hidden="true"></i></a> -->
                   <a style="margin-left: 15px" href="<?php echo base_url() ?>upload/job_description/<?php echo $singlejob->jd_file; ?>" download><i class="fa fa-download" aria-hidden="true"></i></a>
@@ -315,11 +315,11 @@ if ($company_profile_id != null) {
                    header("Content-Type: text/html; charset=UTF-8;");
                       echo $symbol;echo $symbol;
                   } ?> Lakh)</li>
-                <li class="right-title">&nbsp;: <?php echo $singlejob->salary_range; ?></li>
+                <li class="right-title">&nbsp; : <?php echo $singlejob->salary_range; ?></li>
                 <div class="clear"></div>
               </div>
               <div class="skils_benifit">
-                <li class="left-title_seperate"style="margin-top: 3px;font-weight: 600;">skills&nbsp;&nbsp; </li>
+                <li class="left-title_seperate"style="margin-top: 3px;font-weight: 600;">skills &nbsp;&nbsp; </li>
                 <li class="right-title_seperate">: 
                   <?php  $sk=$singlejob->skills_required;
                     if (isset($sk) && !empty($sk)) {
@@ -339,7 +339,7 @@ if ($company_profile_id != null) {
               <div class="skils_benifit">
                 <li class="left-title_seperate"style="margin-top: 3px;font-weight: 600;">Benefits</li>
                 <li class="right-title_seperate">
-                  &nbsp;: 
+                   &nbsp;: 
                   <?php
                     $benefits = explode(',', $singlejob->benefits);
                     foreach ($benefits as $row) { ?>
