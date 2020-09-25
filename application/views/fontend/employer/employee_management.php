@@ -384,7 +384,7 @@ input.select2-search__field {
                 <div class="col-md-3">
                   <div class="formrow">
                     <label class="control-label">City: <span class="required">*</span></label>
-                     <input type="text" name="city" class="form-control" id="city" placeholder="City" >
+                     <input type="text" name="city" class="form-control" id="city" placeholder="City" title="select city from the list" >
                      <input type="hidden" value="" class="form-control"  name="city_id" id="city_id">
                    <!--  <select  name="city_id" id="city_id" class="form-control select2" required>
                       <option value="">Select City</option>
@@ -395,20 +395,25 @@ input.select2-search__field {
                 <div class="col-md-3">
                   <div class="formrow state_id">
                     <label class="control-label">State: <span class="required">*</span></label>
-                    <select  name="state_id" id="state_id" class="form-control select2" required>
+                    <input type="text" name="state" id="state" class="form-control" value="">
+                             <input type="hidden" name="state_id" id="state_id" class="form-control" value="">
+                             <input type="text" name="country" id="country" class="form-control" value="">
+                              <input type="hidden" name="country_id" id="country_id" class="form-control" value="">
+                   <!--  <select  name="state_id" id="state_id" class="form-control select2" required>
                          <option value="">Select State</option>
-                      </select>
+                      </select> -->
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="formrow country_id">
                     <label class="control-label">Country: <span class="required">*</span></label>
-                   <select   name="country_id" id="country_id" class="form-control select2"  required>
+
+                   <!-- <select   name="country_id" id="country_id" class="form-control select2"  required>
                            <option value="">Select Country</option>
                           <?php foreach($country as $key){?>
                           <option value="<?php echo $key['country_id']; ?>"<?php if($result['country_id']==$key['country_id']){ echo "selected"; } elseif ($key['country_name']=='India') {echo "selected";}?>><?php echo $key['country_name']; ?></option>
                           <?php } ?>
-                        </select>
+                        </select> -->
                   </div>
                  </div>
                  <div class="col-md-3">
@@ -495,14 +500,12 @@ input.select2-search__field {
                 {
                   var obj = JSON.parse(res);
 
-                    // $('#country_id').val(obj.country_id);
-                    $("div.country_id select").val(obj.country_id);
-                    // $('#country').val(obj.country_name);
-                    // $('#state_id').val(obj.state_id);
-                    $("div.state_id select").val(obj.state_id);
-                    // $('#state').val(obj.state_name);
-                    $('#country_id').prop('disabled', true);
-                    $('#state_id').prop('disabled', true);
+                      $('#country_id').val(obj.country_id);
+                    $('#country').val(obj.country_name);
+                    $('#state_id').val(obj.state_id);
+                    $('#state').val(obj.state_name);
+                    $('#country').prop('disabled', true);
+                    $('#state').prop('disabled', true);
                 }
     
             }); 
