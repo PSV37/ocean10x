@@ -209,7 +209,10 @@ input.select2-search__field {
 .bootstrap-select > .dropdown-toggle {
     display: block;
   }
-
+.select2-container .select2-selection--single {
+    
+    width: 200px;
+}
 </style>
 
 
@@ -381,6 +384,7 @@ input.select2-search__field {
                 <div class="col-md-3">
                   <div class="formrow">
                     <label class="control-label">City: <span class="required">*</span></label>
+                     <input type="text" name="city" class="form-control" id="city" placeholder="City" >
                      <input type="hidden" value="" class="form-control"  name="city_id" id="city_id" onchange="get_country();">
                    <!--  <select  name="city_id" id="city_id" class="form-control select2" required>
                       <option value="">Select City</option>
@@ -455,7 +459,7 @@ input.select2-search__field {
      $("#smsg").fadeTo(2000, 500).slideUp(500, function(){
      $("#smsg").slideUp(500);
      });   
-     
+
     $("#city").autocomplete({
              
              source: "<?php echo base_url();?>employer_register/search_city_name",
