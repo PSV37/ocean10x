@@ -1058,9 +1058,12 @@ button.btn.btn-primary.trash {
         <div id="activity1" class="tab-pane fade in active">
          
           <div id="job_trash">
-   <?php if (!empty($forward_applicationlist)): 
-    $company_active_jobs    = $this->job_posting_model->get_job_details_employer($forward_applicaiton->job_post_id);
-    foreach ($company_active_jobs as $v_companyjobs) : ?>
+   <?php <?  if (!empty($forward_applicationlist)): foreach ($forward_applicationlist as $forward_applicaiton) : 
+
+      $singlejob    = $this->job_posting_model->get_job_details_employer($forward_applicaiton->job_post_id);
+            
+            
+                        $sr_no++; ?>
    <label class="checkbox_label">
       <div class="border-top1"></div>
       <input type="checkbox" id='posted_job' class="posted_job" onchange="get_report_data(<?php echo $v_companyjobs['job_post_id'] ?>)" />
@@ -1069,20 +1072,13 @@ button.btn.btn-primary.trash {
 
 
 
-            <img src="<?php echo base_url() ?>upload/<?php echo $this->company_profile_model->company_logoby_id($company_profile_id);?>" style="height:50px; width:50px;border-radius:5px;float:left;border:solid 1px #eae9e9b8;margin-right:15px;" />
+            <img src="<?php echo base_url() ?>upload/<?php echo $this->company_profile_model->company_logoby_id($forward_applicaiton->company_id);?>" style="height:50px; width:50px;border-radius:5px;float:left;border:solid 1px #eae9e9b8;margin-right:15px;" />
             <div class="job-info">
-               <p class="job_title"><?php echo $v_companyjobs['job_title']; ?></p>
+               <a class="job_title"><?php echo $singlejob['job_title']; ?></a>
             </div>
             <div class="icon-info">
                <li class="left-icon-title"><i class="far fa-money-bill-alt"></i></li>
-               <li class="right-icon-title"> &emsp;<?php echo $v_companyjobs['salary_range']; ?> (Yearly - <?php  $currency = $this->session->userdata('currency');  if (isset($currency) && !empty($currency)) {
-                  $locale='en-US'; //browser or user locale
-                   // $currency='JPY';
-                   $fmt = new NumberFormatter( $locale."@currency=$currency", NumberFormatter::CURRENCY );
-                   $symbol = $fmt->getSymbol(NumberFormatter::CURRENCY_SYMBOL);
-                   header("Content-Type: text/html; charset=UTF-8;");
-                      echo $symbol;echo $symbol;
-                  } ?>)  </li>
+               <li class="right-icon-title"> &emsp;<?php echo $singlejob->salary_range; ?> (Yearly)  </li>
                <li class="left-icon-title"><i class="fas fa-map-marker-alt"></i></li>
                <li class="right-icon-title"> &emsp;<?php echo $v_companyjobs['city_id']; ?></li>
                <li class="left-icon-title"><i class="fas fa-briefcase"></i></li>
