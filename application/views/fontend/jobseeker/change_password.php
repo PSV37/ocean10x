@@ -101,7 +101,7 @@
                   <div class="form-group lineitem_id ">
                      <label for="exampleInputEmail1">Confirm Password <span class="required">*</span></label>
                      <input type="password" name="confirmpassword" id="confirmpassword" required class="form-control" placeholder="Type your current password">
-                     <span toggle="#password-field" class="fa fa-eye-slash field-icon toggle-password1"></span>
+                     <span toggle="#password-field2" class="fa fa-eye-slash field-icon toggle-password1"></span>
                   </div>
                </div>
             </div>
@@ -196,7 +196,7 @@
      }
    
    });
-   $(".toggle-password").click(function() {
+   $(".toggle-password2").click(function() {
    
    $(this).toggleClass("fa-eye fa-eye-slash");
    var x = document.getElementById("confirmpassword");

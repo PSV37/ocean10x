@@ -60,7 +60,7 @@
             Change Password
          </div>
          <?php echo $this->session->flashdata('change_password'); 
-          $company_email = $this->session->userdata('company_email');
+          $company_email = $this->session->userdata('email');
          ?>
          <form id="submit" class="submit-form" action="<?php echo base_url(); ?>employer/change_password" method="post">
             <div class="row">
