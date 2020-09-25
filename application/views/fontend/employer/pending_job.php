@@ -1036,7 +1036,7 @@ span.right-side {
                <div class="clear"></div>
             </div>
             <div class="skl_bnft">
-               <span>Skill sets</span>:
+               <span style="width:100px;">Skill sets</span>:
                <span class="right-side">
                   <?php 
                      $sk=$v_companyjobs->skills_required;
@@ -1054,7 +1054,7 @@ span.right-side {
             </div>
             <br>
             <div class="skl_bnft">
-               <span>Benefits</span>:
+               <span style="width:100px;">Benefits</span>:
                <span class="right-side">
                   <?php 
                      $benefits=explode(',', $v_companyjobs->benefits);
