@@ -396,9 +396,8 @@ input.select2-search__field {
                   <div class="formrow state_id">
                     <label class="control-label">State: <span class="required">*</span></label>
                     <input type="text" name="state" id="state" class="form-control" value="">
-                             <input type="hidden" name="state_id" id="state_id" class="form-control" value="">
-                             <input type="text" name="country" id="country" class="form-control" value="">
-                              <input type="hidden" name="country_id" id="country_id" class="form-control" value="">
+                    <input type="hidden" name="state_id" id="state_id" class="form-control" value="">
+                             
                    <!--  <select  name="state_id" id="state_id" class="form-control select2" required>
                          <option value="">Select State</option>
                       </select> -->
@@ -407,7 +406,8 @@ input.select2-search__field {
                 <div class="col-md-3">
                   <div class="formrow country_id">
                     <label class="control-label">Country: <span class="required">*</span></label>
-
+                    <input type="text" name="country" id="country" class="form-control" value="">
+                    <input type="hidden" name="country_id" id="country_id" class="form-control" value="">
                    <!-- <select   name="country_id" id="country_id" class="form-control select2"  required>
                            <option value="">Select Country</option>
                           <?php foreach($country as $key){?>
