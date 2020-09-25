@@ -32,15 +32,15 @@
    border-radius: 30px;
    cursor:pointer;
    }
-   button#sklbtn {
-   background-color: #afe1de;
-   color: #6f6e6e;
-   border-radius: 20px;
-   border: none;
-   padding: 1px 10px;
-   margin-bottom: 7px;
-   font-size: 11px;
-   }
+    button#sklbtn {
+    background-color: #18c5bd;
+    color: #fdfdfd;
+    border-radius: 20px;
+    border: none;
+    padding: 1px 10px;
+    margin-bottom: 7px;
+    font-size: 11px;
+}
    .btn-default1:not(:checked) + span {
    padding: 4px 15px;
    border-radius: 30px;
@@ -1069,10 +1069,10 @@ span.right-side {
                <div class="clear"></div>
             </div>
             <br>     
-           <a title="details" href=" <?php echo base_url() ?>employer/preview_job_post/<?php echo $v_companyjobs['job_post_id'] ?>"><i class="fa fa-info-circle icon_backg"></i></a>
+           <a title="details" href=" <?php echo base_url() ?>employer/preview_job_post/<?php echo $v_companyjobs->job_post_id ?>"><i class="fa fa-info-circle icon_backg"></i></a>
             <div class="btn-group">
-                        <a title="Edit" href=" <?php echo base_url() ?>employer/update_job/<?php echo $v_companyjobs['job_post_id'] ?>"><i class="far fa-edit icon_backg"></i></a>
-                        <a title="Delete" href="<?php echo base_url('employer/deactivate_job/' . $v_companyjobs['job_post_id']); ?>"><i class="fas fa-trash-alt icon_backg"></i></a>
+                        <a title="Edit" href=" <?php echo base_url() ?>employer/update_job/<?php echo $v_companyjobs->job_post_id ?>"><i class="far fa-edit icon_backg"></i></a>
+                        <a title="Delete" href="<?php echo base_url('employer/deactivate_job/' . $v_companyjobs->job_post_id); ?>"><i class="fas fa-trash-alt icon_backg"></i></a>
                      </div>
             <?php    echo '<span class="pending-span">Pending</span>'; ?>
             <div class="dropdown">
