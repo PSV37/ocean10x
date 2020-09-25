@@ -816,12 +816,12 @@ hr {
             var result = ary.map(function(val) {
               return val.tracking_id_val;
             }).join(',');
-             });
+            
   // console.log(result);
   $('#add_tracking_id').val(result);
   $('#add_job_id').val(job_id);
   $('#addModal').modal('show');
-           
+          });  
        
   });
   $(document).on("click", "#option_list a", function (e) {
