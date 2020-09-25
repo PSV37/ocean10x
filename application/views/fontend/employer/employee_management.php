@@ -295,8 +295,16 @@ input.select2-search__field {
             </div>
                
           </div>
-          <div class="col-md-6" style="text-align: left;margin-left:-12px;"><button class="add_btn">Add</button></div>
-            <div class="col-md-6" style="text-align: right;margin-left: 473px;float: none;"><button class="save_btn">Save</button></div> 
+          <div class="col-md-6" style="text-align: left;margin-left:-12px;"><button data-toggle="modal" data-keyboard="true" data-target="#add_emp" href="#" class="add_btn">Add</button></div>
+            <div class="col-md-6" style="text-align: right;margin-left: 473px;float: none;"><button class="save_btn">Save</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <div class="modal fade" tabindex='-1' id="move_cv<?php echo $cv_row['cv_id']; ?>" role="dialog">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content"> 
             <form id="js" method="post" <?php if (isset($result)) { ?>
              action="<?php  echo base_url();?>employer/postEditData"
             <?php }else{ ?> action="<?php  echo base_url();?>employer/addemployee" <?php } ?>  enctype="multipart/form-data">  
@@ -436,7 +444,7 @@ input.select2-search__field {
           </div>
         </div>
       </div>
-    </div>
+   
 
 <script>
    $(document).ready (function(){
