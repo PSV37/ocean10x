@@ -1278,7 +1278,7 @@ button.btn.btn-primary.trash {
             <img src="<?php echo base_url()?>upload/<?php echo $this->company_profile_model->company_logoby_id($forward_applicaiton->company_id); ?>" class="invitation-img"/>
             <div class="info-invitation">
               <p class="head-invi"><?php echo $this->job_posting_model->job_title_by_name($forward_applicaiton->test_name); ?></p>
-              <span class="salary-info">Topics: <?php echo $this->job_posting_model->job_salary_by_id($forward_applicaiton->topics); ?><span>
+              <span class="salary-info">Topics: <?php echo $this->job_posting_model->job_salary_by_id($forward_applicaiton->topics); ?></span>
               <p>Company name:<?php echo $this->company_profile_model->company_name($forward_applicaiton->company_id); ?></p>
               <div class="detail-b"><a href="<?php echo base_url(); ?>job/show/<?php echo $forward_applicaiton->job_slugs; ?>">Details</a></div>
               <div class="last-row-invitation">
@@ -1316,7 +1316,7 @@ button.btn.btn-primary.trash {
             <img src="<?php echo base_url()?>upload/<?php echo $this->company_profile_model->company_logoby_id($forward_applicaiton->company_id); ?>" class="invitation-img"/>
             <div class="info-invitation">
               <p class="head-invi"><?php echo $this->job_posting_model->job_title_by_name($forward_applicaiton->job_post_id); ?></p>
-              <span class="salary-info">Salaray: <?php print_r($this->job_posting_model->job_salary_by_id($forward_applicaiton->job_post_id)) ;  ?><span>
+              <span class="salary-info">Salaray: <?php print_r($this->job_posting_model->job_salary_by_id($forward_applicaiton->job_post_id)) ;  ?></span>
               <p>Company name:<?php echo $this->company_profile_model->company_name($forward_applicaiton->company_id); ?></p>
               <a href="<?php echo base_url(); ?>job/show/<?php echo $v_companyjobs->job_slugs; ?>">
                 <div class="detail-b">Details</div>
@@ -1363,7 +1363,7 @@ button.btn.btn-primary.trash {
         </div>
       </div>
     </div>
-    div class="col-md-3 ">
+    <div class="col-md-3 ">
    <div class="last_section">
       <div class="pai_chart">
          <main>
@@ -1519,6 +1519,7 @@ button.btn.btn-primary.trash {
 </div>
   </div>
 </div>
+
 <?php foreach ($applicationlist as $applicaiton) : ?>
 <div id="ApplyJob2<?php echo $applicaiton->job_post_id; ?>" class="modal fade" role="dialog">
   <div class="modal-dialog">
