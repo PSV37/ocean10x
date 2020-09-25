@@ -376,6 +376,26 @@ input.select2-search__field {
                   </div>                      
                 </div>
               <div class="row">
+                
+                
+                <div class="col-md-3">
+                  <div class="formrow">
+                    <label class="control-label">City: <span class="required">*</span></label>
+                     <input type="hidden" value="" class="form-control"  name="city_id" id="city_id" onchange="get_country();">
+                   <!--  <select  name="city_id" id="city_id" class="form-control select2" required>
+                      <option value="">Select City</option>
+                       
+                      </select> -->
+                  </div>
+                </div>  
+                <div class="col-md-3">
+                  <div class="formrow">
+                    <label class="control-label">State: <span class="required">*</span></label>
+                    <select  name="state_id" id="state_id" class="form-control select2" onchange="getCitys(this.value)" required>
+                         <option value="">Select State</option>
+                      </select>
+                  </div>
+                </div>
                 <div class="col-md-3">
                   <div class="formrow">
                     <label class="control-label">Country: <span class="required">*</span></label>
@@ -387,23 +407,6 @@ input.select2-search__field {
                         </select>
                   </div>
                  </div>
-                <div class="col-md-3">
-                  <div class="formrow">
-                    <label class="control-label">State: <span class="required">*</span></label>
-                    <select  name="state_id" id="state_id" class="form-control select2" onchange="getCitys(this.value)" required>
-                         <option value="">Select State</option>
-                      </select>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="formrow">
-                    <label class="control-label">City: <span class="required">*</span></label>
-                    <select  name="city_id" id="city_id" class="form-control select2" required>
-                      <option value="">Select City</option>
-                       
-                      </select>
-                  </div>
-                </div>  
                  <div class="col-md-3">
                     <div class="form-group">
                       <label for="exampleInputEmail1" required="">Pincode <span class="required">*</span></label>
@@ -443,15 +446,62 @@ input.select2-search__field {
       </div>
     </div>
   </div>
-  
+
    
 
 <script>
+
    $(document).ready (function(){
      $("#smsg").fadeTo(2000, 500).slideUp(500, function(){
      $("#smsg").slideUp(500);
      });   
+     
+    $("#city").autocomplete({
+             
+             source: "<?php echo base_url();?>employer_register/search_city_name",
+            minLength: 2,
+                 // append: "#rotateModal",
+                 focus: function(event, ui) {
+                  // prevent autocomplete from updating the textbox
+                  event.preventDefault();
+                  // manually update the textbox
+                  // alert(source);
+                  $(this).val(ui.item.label);
+               },
+               select: function(event, ui) {
+                  // prevent autocomplete from updating the textbox
+                  event.preventDefault();
+                  // manually update the textbox and hidden field
+                  $(this).val(ui.item.label);
+                  $('#city_id').val(ui.item.value);
+                  get_country(ui.item.value);
+               }
+               
+              });
    });
+
+   function get_country(city_id)
+   {
+    // var city_id = $('#city_id').val();
+    $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>employer_register/getcity_details',
+                data:{city_id:city_id},
+                success:function(res)
+                {
+                  var obj = JSON.parse(res);
+
+                    $('#country_id').val(obj.country_id);
+                    // $('#country').val(obj.country_name);
+                    $('#state_id').val(obj.state_id);
+                    // $('#state').val(obj.state_name);
+                    $('#country_id').prop('readonly', true);
+                    $('#state_id').prop('readonly', true);
+                }
+    
+            }); 
+
+   }
 </script>
     <script>
   $(document).on('focus', '.select2-selection.select2-selection--single', function (e) {
