@@ -2509,7 +2509,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $data['roles'] = $this->Master_model->getMaster('user_role', $where = false);
         $this->load->view('fontend/employer/employee_management', $data);
         // $this->load->view('fontend/employer/add_new_employee',$data);
-        
+        $this->session->set_flashdata('success', '<div class="alert alert-success text-center">' . $this->input->post('emp_name') . ' CEmployee Details have been updated Successfully !</div>');
     }
     public function addconsultant() {
         $user_id = $this->session->userdata('company_profile_id');
