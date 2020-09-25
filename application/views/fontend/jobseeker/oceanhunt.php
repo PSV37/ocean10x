@@ -1056,12 +1056,12 @@ button.btn.btn-primary.trash {
       </ul>
       <div class="tab-content">
         <div id="activity1" class="tab-pane fade in active">
-          <?  if (!empty($forward_applicationlist)): foreach ($forward_applicationlist as $forward_applicaiton) :
+          <!-- <?  if (!empty($forward_applicationlist)): foreach ($forward_applicationlist as $forward_applicaiton) :
             // for ($i=0; $i <sizeof($forward_applicationlist) ; $i++) { 
             $singlejob    = $this->job_posting_model->get_job_details_employer($forward_applicaiton->job_post_id);
             
             
-                        $sr_no++; ?>
+                        $sr_no++; ?> -->
           <div id="job_trash">
    <?php if (!empty($forward_applicationlist)): 
     $company_active_jobs    = $this->job_posting_model->get_job_details_employer($forward_applicaiton->job_post_id);
