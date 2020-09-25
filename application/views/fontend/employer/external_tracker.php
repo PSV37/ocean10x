@@ -510,9 +510,9 @@ hr {
             <div class="clear"></div>
           </div>
           <div class="col-md-3">
-            <form method="post" action="<?php echo base_url(); ?>employer/corporate_cv_bank">
+            <form id="int_track" method="post" action="<?php echo base_url(); ?>employer/internal_tracker">
               <label class="dropdown" style="float:right;">
-                <div class="dd-button" onclick="myFunction(event)">
+                <div class="dd-button" onclick="myFunction2(event)">
                   Active Job
                 </div>
                 <input type="checkbox" class="dd-input" id="test">
@@ -522,8 +522,8 @@ hr {
                 <!-- <li value="edu">Education</li> -->
                 <!-- </ul> -->
                 <ul id="sizelist" class="dd-menu">
-                  <li data-value="js_name" ><a href="#">Active Job</a></li>
-                  <li data-value="js_experience"><a href="#">Expired Jobs</a></li>
+                  <li data-value="active_jobs" ><a href="#">Active Jobs</a></li>
+                  <li data-value="expired_jobs"><a href="#">Expired Jobs</a></li>
                 </ul>
               </label>
               <input id="sizevalue" size="15" name="sort_val" type="hidden" />
@@ -637,6 +637,14 @@ hr {
   </div>
 </div>
 <script>
+   $("#sizelist").on("click", "a", function(e){
+  e.preventDefault();
+  var $this = $(this).parent();
+  $this.addClass("select").siblings().removeClass("select");
+  $("#sizevalue").val($this.data("value"));
+  $( "#sort_btn" ).click();
+  $( "#test" ).click();
+  })
   function get_aceess_val(val)
   {
     $("#accessvalue").val(val);

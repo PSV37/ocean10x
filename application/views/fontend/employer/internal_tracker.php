@@ -538,7 +538,7 @@ hr {
             <form id="int_track" method="post" action="<?php echo base_url(); ?>employer/internal_tracker">
               <label class="dropdown" style="float:right;">
                 <div class="dd-button" onclick="myFunction2(event)">
-                  Active Job
+                  Active Jobs
                 </div>
                 <input type="checkbox" class="dd-input" id="test">
                 <!-- <ul class="dd-menu" id="test"> -->
@@ -557,7 +557,7 @@ hr {
           </div>
           <div class="col-md-3">
             <label>
-            <a style="float: right;" id="add_cv" href=""><button class="btn btn-primary"><i class="fas fa-plus"></i> Add New Candidate</button></a>
+            <a style="float: right;" id="add_cv" href=""><button class="btn btn-primary"><i class="fas fa-plus"></i> New Candidate</button></a>
             </label>
           </div>
         </div>
