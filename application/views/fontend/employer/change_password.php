@@ -62,7 +62,7 @@
          <?php echo $this->session->flashdata('change_password'); 
           $company_email = $this->session->userdata('email');
          ?>
-         <form id="submit" class="submit-form" action="<?php echo base_url(); ?>employer/change_password" method="post">
+         <form id="submit" class="submit-form" action="<?php echo base_url(); ?>employer/change_password" method="post" onSubmit = "return checkPassword(this)">
             <div class="row">
                <div class="col-md-4">
                   <div class="form-group lineitem_id ">
@@ -94,6 +94,16 @@
                   <p id="output"></p>
                </div>
             </div>
+             <div class="row">
+               <div class="col-md-4">
+                  <div class="form-group lineitem_id ">
+                     <label for="exampleInputEmail1">Confirm Password <span class="required">*</span></label>
+                     <input type="password" name="confirmpassword" id="confirmpassword" required class="form-control" placeholder="confirm password">
+                     <span toggle="#password-field2" class="fa fa-eye-slash field-icon toggle-password1"></span>
+                  </div>
+               </div>
+            </div>
+            <div style="color: red" class="error"></div>
             <div class="col-md-4"></div>
             <div class="col-md-4" style="text-align:right;">
                <button id="submit" type="Submit" class="save_question">Update Password</button>
@@ -102,6 +112,26 @@
       </div>
    </div>
 </div>
+<script> 
+   // Function to check Whether both passwords 
+   // is same or not. 
+   function checkPassword(form) { 
+       password1 = form.newpassword.value; 
+       password2 = form.confirmpassword.value; 
+   
+        if (password1 != password2) { 
+        $('.error').html('Password did not match: Please try again...');
+           // alert ("\nPassword did not match: Please try again...") 
+           return false; 
+       } 
+   
+       // If same return True. 
+       else{ 
+           // alert("Password Match: Welcome to GeeksforGeeks!") 
+           return true; 
+       } 
+   } 
+</script>
 <script>
    function validatePassword(password) {
        
