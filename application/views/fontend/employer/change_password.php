@@ -207,7 +207,17 @@
      }
    
    });
+   $(".toggle-password2").click(function() {
    
+   $(this).toggleClass("fa-eye fa-eye-slash");
+   var x = document.getElementById("confirmpassword");
+     if (x.type === "password") {
+       x.type = "text";
+     } else {
+       x.type = "password";
+     }
+   
+   });
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
 <!-- <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/additional-methods.js"></script> -->
