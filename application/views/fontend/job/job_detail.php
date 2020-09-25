@@ -293,7 +293,7 @@ if ($company_profile_id != null) {
                 <li class="left-title">Engagement Type</li>
                 <li class="right-title">&nbsp; : <?php echo $singlejob->job_nature_name; ?></li>
                 <li class="left-title">No. of Positions</li>
-                <li class="right-title"> &nbsp; :<?php echo $singlejob->no_jobs; ?></li>
+                <li class="right-title"> &nbsp; : <?php echo $singlejob->no_jobs; ?></li>
                 <div class="clear"></div>
               </div>
               <div class="following-info3">
