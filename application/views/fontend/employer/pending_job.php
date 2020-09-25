@@ -1074,7 +1074,7 @@ span.right-side {
                         <a title="Edit" href=" <?php echo base_url() ?>employer/update_job/<?php echo $v_companyjobs->job_post_id ?>"><i class="far fa-edit icon_backg"></i></a>
                         <a title="Delete" href="<?php echo base_url('employer/deactivate_job/' . $v_companyjobs->job_post_id); ?>"><i class="fas fa-trash-alt icon_backg"></i></a>
                      </div>
-            <?php    echo '<span class="pending-span">Pending</span>'; ?>
+           <span class="pending-span">Pending</span>
             <div class="dropdown">
                <a href="#" data-toggle="modal" data-target="#rotateModal<?php echo $v_companyjobs->job_post_id; ?>"> <i class="fas fa-share"></i></a>
                <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

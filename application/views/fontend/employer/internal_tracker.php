@@ -512,6 +512,9 @@ hr {
     /* margin-bottom: -83px; */
     margin-left: 20px;
 }
+ul#sizelist {
+    margin-left: 27px;
+}
 </style>
 <div class="container-fluid main-d">
   <div class="container">
