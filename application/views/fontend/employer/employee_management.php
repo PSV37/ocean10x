@@ -297,10 +297,7 @@ input.select2-search__field {
           </div>
           <div class="col-md-6" style="text-align: left;margin-left:-12px;"><button data-toggle="collapse" data-target="#collapseEx" aria-expanded="false" aria-controls="collapseEx" class="add_btn">Add</button></div>
             <div class="col-md-6" style="text-align: right;margin-left: 473px;float: none;"><button class="save_btn">Save</button></div>
-          </div>
-        </div>
-      </div>
-    </div>
+          
 
       <div class="collapse" id="collapseEx" role="dialog">
         <!-- <div class="modal-dialog modal-sm">
@@ -442,8 +439,11 @@ input.select2-search__field {
             </div>
           </form>
           </div>
-       <!--  </div>
-      </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  
    
 
 <script>
