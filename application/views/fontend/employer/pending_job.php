@@ -941,6 +941,28 @@
    color: #fff;
    font-size: 11px;
    }
+   .icon_backg {
+    background-color: #18c5bd;
+    padding: 12px;
+    border-radius: 34px;
+    color: #fff;
+    cursor: pointer;
+    float: right;
+    margin-right: 5px;
+}
+.btn-group {
+    float: right;
+    margin-top: 3px;
+    /*margin-right: 10px;*/
+}
+span.right-side {
+    display: table-cell;
+    padding-left: 10px;
+    padding-top: -32px;
+}
+.skl_bnft {
+    display: inline-flex;
+}
 </style>
 <!---header-->
 <?php 
@@ -1013,33 +1035,45 @@
                <li class="right-title">&nbsp;:<?php if(!is_null($v_companyjobs->job_deadline)) { echo date('M j Y',strtotime($v_companyjobs->job_deadline)); } ?></li>
                <div class="clear"></div>
             </div>
-            <!-- <div id="skills"> -->
-            <span>Skill sets</span>:
-            <?php 
-               $sk=$v_companyjobs->skills_required;
-               if (isset($sk) && !empty($sk)) {
-                  $where_sk= "id IN (".$sk.") AND status=1";
-                $select_sk = "skill_name ,id";
-                $skills = $this->Master_model->getMaster('skill_master',$where_sk,$join = FALSE, $order = false, $field = false, $select_sk,$limit=10,$start=false, $search=false);
-                if(!empty($skills)){ 
-                  foreach($skills as $skill_row){ ?>
-            <lable class=""><button id="sklbtn"><?php echo  $skill_row['skill_name'];?></button></lable>
-            <?php }
-               } }   ?>
+            <div class="skl_bnft">
+               <span>Skill sets</span>:
+               <span class="right-side">
+                  <?php 
+                     $sk=$v_companyjobs->skills_required;
+                     if (isset($sk) && !empty($sk)) {
+                        $where_sk= "id IN (".$sk.") AND status=1";
+                      $select_sk = "skill_name ,id";
+                      $skills = $this->Master_model->getMaster('skill_master',$where_sk,$join = FALSE, $order = false, $field = false, $select_sk,$limit=10,$start=false, $search=false);
+                      if(!empty($skills)){ 
+                        foreach($skills as $skill_row){ ?>
+                  <lable class=""><button id="sklbtn"><?php echo  $skill_row['skill_name'];?></button></lable>
+                  <?php }
+                     } }   ?>
+               </span>
+               <div class="clear"></div>
+            </div>
             <br>
-            <span>Benefits</span>:
-            <?php 
-               $benefits=explode(',', $v_companyjobs->benefits);
-               
-                if(!empty($benefits)){ 
-                  $i=0;
-                  foreach($benefits as $benefit){ ?>
-            <lable class=""><button id="sklbtn"><?php echo  $benefits[$i];?></button></lable>
-            <?php $i++; }
-               }    ?>
-            <!--  <div class="clear"></div>
-               </div> -->         
-            <button class="detail-btn">details</button>
+            <div class="skl_bnft">
+               <span>Benefits</span>:
+               <span class="right-side">
+                  <?php 
+                     $benefits=explode(',', $v_companyjobs->benefits);
+                     
+                      if(!empty($benefits)){ 
+                        $i=0;
+                        foreach($benefits as $benefit){ ?>
+                  <lable class=""><button id="sklbtn"><?php echo  $benefits[$i];?></button></lable>
+                  <?php $i++; }
+                     }    ?>
+               </span>
+               <div class="clear"></div>
+            </div>
+            <br>     
+           <a title="details" href=" <?php echo base_url() ?>employer/preview_job_post/<?php echo $v_companyjobs['job_post_id'] ?>"><i class="fa fa-info-circle icon_backg"></i></a>
+            <div class="btn-group">
+                        <a title="Edit" href=" <?php echo base_url() ?>employer/update_job/<?php echo $v_companyjobs['job_post_id'] ?>"><i class="far fa-edit icon_backg"></i></a>
+                        <a title="Delete" href="<?php echo base_url('employer/deactivate_job/' . $v_companyjobs['job_post_id']); ?>"><i class="fas fa-trash-alt icon_backg"></i></a>
+                     </div>
             <?php    echo '<span class="pending-span">Pending</span>'; ?>
             <div class="dropdown">
                <a href="#" data-toggle="modal" data-target="#rotateModal<?php echo $v_companyjobs->job_post_id; ?>"> <i class="fas fa-share"></i></a>
@@ -1062,7 +1096,6 @@
    </li>
    <?php endif; ?>
 </div>
-
 <!-- <div class=" text-center">
    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#rotateModal">Rotate Modal</button>
    </div> -->
@@ -1098,5 +1131,3 @@
 <?php
    endforeach;endif;
    ?>
-
-   
