@@ -1131,7 +1131,10 @@ span.right-side {
                 <div class="following-info2">
                 
                 <li class="left-title">Proposed Interview</li>
-                  <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span><?php echo date('j M Y',strtotime($cv_row['js_proposed_interview_date'])); ?></li>
+                  <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span><?php if ($cv_row['js_proposed_interview_date']!='0000-00-00') {
+                    echo date('j M Y',strtotime($cv_row['js_proposed_interview_date'])); 
+                  }
+                   ?></li>
                   <li class="left-title">Notice Period </li>
                   <li class="right-title"><span style="color: blue;margin-right: 7px;">:</span><?php echo $cv_row['js_current_notice_period']; ?></li>
                   <li class="left-title">Work Exp</li>
