@@ -510,7 +510,7 @@ hr {
             <div class="clear"></div>
           </div>
           <div class="col-md-3">
-            <form id="int_track" method="post" action="<?php echo base_url(); ?>employer/internal_tracker">
+            <form id="int_track" method="post" action="<?php echo base_url(); ?>employer/external_tracker">
               <label class="dropdown" style="float:right;">
                 <div class="dd-button" onclick="myFunction2(event)">
                   Active Job
