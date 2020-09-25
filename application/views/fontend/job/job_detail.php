@@ -284,7 +284,7 @@ if ($company_profile_id != null) {
               </div>
               <div class="following-info">
                 <li class="left-title">Education Level</li>
-                <li class="right-title">&nbsp;:<?php echo $singlejob->education_level_name; ?></li>
+                 <li class="right-title">&nbsp;:<?php echo $singlejob->education_level_name; ?></li>
                 <li class="left-title">Job Role</li>
                 <li class="right-title">&nbsp;: <?php echo $singlejob->job_role_title; ?></li>
                 <div class="clear"></div>
