@@ -560,7 +560,7 @@ ul#sizelist {
           </div>
           <div class="col-md-3">
             <label>
-            <a style="float: right;" id="add_cv" href=""><button class="btn btn-primary"><i class="fas fa-plus"></i> New Candidate</button></a>
+            <a style="float: right;width: 135px;" id="add_cv" href=""><button class="btn btn-primary"><i class="fas fa-plus"></i> New Candidate</button></a>
             </label>
           </div>
         </div>

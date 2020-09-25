@@ -59,13 +59,15 @@
          <div class="header-bookbank">
             Change Password
          </div>
-         <?php echo $this->session->flashdata('change_password'); ?>
+         <?php echo $this->session->flashdata('change_password'); 
+          $company_email = $this->session->userdata('company_email');
+         ?>
          <form id="submit" class="submit-form" action="<?php echo base_url(); ?>employer/change_password" method="post">
             <div class="row">
                <div class="col-md-4">
                   <div class="form-group lineitem_id ">
                      <label for="exampleInputEmail1">Username <span class="required">*</span></label>
-                     <input type="username" name="username" id="myInput1" class="form-control">
+                     <input type="username" name="username" id="myInput1" readonly value="<?php echo $company_email; ?>" class="form-control">
                      <!--<span toggle="#password-field" class="fa fa-eye-slash field-icon toggle-password1"></span>-->
                   </div>
                </div>

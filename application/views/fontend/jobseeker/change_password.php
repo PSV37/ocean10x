@@ -61,13 +61,15 @@
          <div class="header-bookbank">
             Change Password
          </div>
-         <?php echo $this->session->flashdata('change_password'); ?>
+         <?php echo $this->session->flashdata('change_password'); 
+          $email = $this->session->userdata('js_email');
+         ?>
          <form id="submit" class="submit-form" action="<?php echo base_url(); ?>job_seeker/change_password" method="post" onSubmit = "return checkPassword(this)">
             <div class="row">
                <div class="col-md-4">
                   <div class="form-group lineitem_id ">
-                     <label for="exampleInputEmail1">Username <span class="required">*</span></label>
-                     <input type="username" name="username" id="myInput1" class="form-control">
+                     <label for="exampleInputEmail1">Username </label>
+                     <input type="username" name="username" id="myInput1" value="<?php echo $email; ?>" readonly class="form-control">
                      <!--<span toggle="#password-field" class="fa fa-eye-slash field-icon toggle-password1"></span>-->
                   </div>
                </div>
@@ -103,9 +105,10 @@
                   </div>
                </div>
             </div>
+             <div style="color: red" class="error"></div>
             <div class="col-md-4"></div>
             <div class="col-md-4" style="text-align:right;">
-               <div class="error"></div>
+              
                <button id="submit" type="Submit" class="save_question">Update Password</button>
             </div>
          </form>
