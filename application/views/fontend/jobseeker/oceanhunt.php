@@ -1058,7 +1058,7 @@ button.btn.btn-primary.trash {
         <div id="activity1" class="tab-pane fade in active">
          
           <div id="job_trash">
-   <?php <?  if (!empty($forward_applicationlist)): foreach ($forward_applicationlist as $forward_applicaiton) : 
+   <?php  if (!empty($forward_applicationlist)): foreach ($forward_applicationlist as $forward_applicaiton) : 
 
       $singlejob    = $this->job_posting_model->get_job_details_employer($forward_applicaiton->job_post_id);
             
