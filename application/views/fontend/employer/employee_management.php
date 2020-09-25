@@ -213,6 +213,12 @@ input.select2-search__field {
     
     width: 200px;
 }
+td {
+    text-align: center;
+}
+th {
+    text-align: center;
+}
 </style>
 
 
@@ -251,11 +257,11 @@ input.select2-search__field {
               <table class="table table-bordered table-striped" id="dataTables-example">
                 <thead>
                   <tr>
-          			  <th>Emp Id.</th>
-          			  <th>Employee Name</th>
-          			  <th>Email Id</th>
-          			  <th>Mobile No.</th>
-                  <th>Access level</th>
+          			  <th>Emp ID</th>
+          			  <th>Name</th>
+          			  <th>E-mail</th>
+          			  <th>Mobile</th>
+                  <th>Department</th>
           			  <th>Status</th>
                   <th>Update</th>
                   </tr>
@@ -299,7 +305,7 @@ input.select2-search__field {
                
           </div>
           <div class="col-md-6" style="text-align: left;margin-left:-12px;"><button data-toggle="collapse" data-target="#collapseEx" aria-expanded="false" aria-controls="collapseEx" class="add_btn">Add</button></div>
-            <div class="col-md-6" style="text-align: right;margin-left: 473px;float: none;"><button class="save_btn">Save</button></div>
+           <!--  <div class="col-md-6" style="text-align: right;margin-left: 473px;float: none;"><button class="save_btn">Save</button></div> -->
           
 
       <div class="collapse" id="collapseEx" role="dialog">
