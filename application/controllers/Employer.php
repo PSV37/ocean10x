@@ -262,7 +262,7 @@ class Employer extends MY_Employer_Controller {
                     'job_role' => $this->input->post('job_role'), //new added field
                 'skills_required' => implode(',', $all_skills), //new added field
                 'salary_range' => $salary_range, 
-                "job_deadline" => date('Y-m-d', strtotime($this->input->post('job_deadline'))), "job_status" => '1', 
+                "job_deadline" => date('Y-m-d', strtotime($this->input->post('job_deadline'))), "job_status" => '0', 
                 'is_test_required' => $this->input->post('job_test_requirment'),
                'test_for_job' => $this->input->post('test_for_job'),
                'created_at'      => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),);
