@@ -395,7 +395,7 @@ input.select2-search__field {
                 <div class="col-md-3">
                   <div class="formrow">
                     <label class="control-label">State: <span class="required">*</span></label>
-                    <select  name="state_id" id="state_id" class="form-control select2" onchange="getCitys(this.value)" required>
+                    <select  name="state_id" id="state_id" class="form-control select2" required>
                          <option value="">Select State</option>
                       </select>
                   </div>
@@ -403,7 +403,7 @@ input.select2-search__field {
                 <div class="col-md-3">
                   <div class="formrow">
                     <label class="control-label">Country: <span class="required">*</span></label>
-                   <select  name="country_id" id="country_id" class="form-control select2" onchange="getStates(this.value)" required>
+                   <select   name="country_id" id="country_id" class="form-control select2"  required>
                            <option value="">Select Country</option>
                           <?php foreach($country as $key){?>
                           <option value="<?php echo $key['country_id']; ?>"<?php if($result['country_id']==$key['country_id']){ echo "selected"; } elseif ($key['country_name']=='India') {echo "selected";}?>><?php echo $key['country_name']; ?></option>
@@ -496,9 +496,10 @@ input.select2-search__field {
                   var obj = JSON.parse(res);
 
                     $('#country_id').val(obj.country_id);
-                    // $('#country_id option[value=obj.country_id]').attr('selected','selected');
+                    $("div#country_id select").val(obj.country_id);
                     // $('#country').val(obj.country_name);
                     $('#state_id').val(obj.state_id);
+                    $("div#state_id select").val(obj.state_id);
                     // $('#state').val(obj.state_name);
                     $('#country_id').prop('disabled', true);
                     $('#state_id').prop('disabled', true);
