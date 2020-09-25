@@ -284,14 +284,14 @@ if ($company_profile_id != null) {
               </div>
               <div class="following-info">
                 <li class="left-title">Education Level</li>
-                 <li class="right-title">&nbsp;:<?php echo $singlejob->education_level_name; ?></li>
+                <li class="right-title">&nbsp;: <?php echo $singlejob->education_level_name; ?></li>
                 <li class="left-title">Job Role</li>
                 <li class="right-title">&nbsp;: <?php echo $singlejob->job_role_title; ?></li>
                 <div class="clear"></div>
               </div>
               <div class="following-info2">
                 <li class="left-title">Engagement Type</li>
-                <li class="right-title">&nbsp;:<?php echo $singlejob->job_nature_name; ?></li>
+                <li class="right-title">&nbsp;: <?php echo $singlejob->job_nature_name; ?></li>
                 <li class="left-title">No. of Positions</li>
                 <li class="right-title">&nbsp;:<?php echo $singlejob->no_jobs; ?></li>
                 <div class="clear"></div>
@@ -320,7 +320,7 @@ if ($company_profile_id != null) {
               </div>
               <div class="skils_benifit">
                 <li class="left-title_seperate"style="margin-top: 3px;font-weight: 600;">skills&nbsp;&nbsp; </li>
-                <li class="right-title_seperate">:
+                <li class="right-title_seperate">: 
                   <?php  $sk=$singlejob->skills_required;
                     if (isset($sk) && !empty($sk)) {
                        $where_sk= "id IN (".$sk.") AND status=1";
@@ -339,7 +339,7 @@ if ($company_profile_id != null) {
               <div class="skils_benifit">
                 <li class="left-title_seperate"style="margin-top: 3px;font-weight: 600;">Benefits</li>
                 <li class="right-title_seperate">
-                  &nbsp;:
+                  &nbsp;: 
                   <?php
                     $benefits = explode(',', $singlejob->benefits);
                     foreach ($benefits as $row) { ?>
@@ -360,7 +360,7 @@ if ($company_profile_id != null) {
               </div>
               <hr>
               <div class="job_dis">
-                <li class="left-title_detail" >Detailed Job Description :</li>
+                <li class="left-title_detail" >Detailed Job Description  : </li>
                 <br>
                 <p class="right-title_detail"><?php echo $singlejob->job_desc; ?></p>
               </div>
