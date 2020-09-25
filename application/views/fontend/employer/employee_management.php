@@ -496,11 +496,12 @@ input.select2-search__field {
                   var obj = JSON.parse(res);
 
                     $('#country_id').val(obj.country_id);
+                    $('#country_id option[value=obj.country_id]').attr('selected','selected');
                     // $('#country').val(obj.country_name);
                     $('#state_id').val(obj.state_id);
                     // $('#state').val(obj.state_name);
-                    $('#country_id').prop('readonly', true);
-                    $('#state_id').prop('readonly', true);
+                    $('#country_id').prop('disabled', true);
+                    $('#state_id').prop('disabled', true);
                 }
     
             }); 
