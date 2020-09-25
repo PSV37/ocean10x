@@ -385,7 +385,7 @@ input.select2-search__field {
                   <div class="formrow">
                     <label class="control-label">City: <span class="required">*</span></label>
                      <input type="text" name="city" class="form-control" id="city" placeholder="City" >
-                     <input type="hidden" value="" class="form-control"  name="city_id" id="city_id" onchange="get_country();">
+                     <input type="hidden" value="" class="form-control"  name="city_id" id="city_id">
                    <!--  <select  name="city_id" id="city_id" class="form-control select2" required>
                       <option value="">Select City</option>
                        
@@ -496,7 +496,7 @@ input.select2-search__field {
                   var obj = JSON.parse(res);
 
                     $('#country_id').val(obj.country_id);
-                    $('#country_id option[value=obj.country_id]').attr('selected','selected');
+                    // $('#country_id option[value=obj.country_id]').attr('selected','selected');
                     // $('#country').val(obj.country_name);
                     $('#state_id').val(obj.state_id);
                     // $('#state').val(obj.state_name);
