@@ -1074,7 +1074,7 @@ button.btn.btn-primary.trash {
 
             <img src="<?php echo base_url() ?>upload/<?php echo $this->company_profile_model->company_logoby_id($forward_applicaiton->company_id);?>" style="height:50px; width:50px;border-radius:5px;float:left;border:solid 1px #eae9e9b8;margin-right:15px;" />
             <div class="job-info">
-               <a class="job_title"><?php echo $singlejob['job_title']; ?></a>
+               <a class="job_title"><?php echo $singlejob->job_title; ?></a>
             </div>
             <div class="icon-info">
                <li class="left-icon-title"><i class="far fa-money-bill-alt"></i></li>
