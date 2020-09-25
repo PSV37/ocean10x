@@ -274,7 +274,7 @@ input.select2-search__field {
           				<td style=""><button class="btn btn-success" name="status" id="status" value="3">Active</button></td>	
                    <? } elseif($key['emp_status']=='2')
                   { ?>
-                  <td style=""><button class="btn btn-primary" name="status" id="status" value="3">Inactive</button></td>
+                  <td style=""><button class="btn btn-primary" name="status" id="status" onclick="Activate_user(this.value);" value="<?php echo $key['emp_id'];?>">Inactive</button></td>
                   <? } elseif($key['emp_status']=='0')
                   { ?>
                   <td style=""><button class="btn btn-danger" name="status" id="status" value="3">Deactivated</button></td>
@@ -575,7 +575,23 @@ document.getElementsByClassName('form-control').innerHTML+="<br />";
        }
      
 
-       
+       function Activate_user(id)
+{
+   // alert(id);
+   if(id){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>Employer/activate',
+                data:{id:id},
+                success:function(res){
+                     // alert('User Activated  Successfully!');
+                    location.reload();
+                     // location.reload();
+                }
+                
+            }); 
+          }
+}
 </script>    
 
  
