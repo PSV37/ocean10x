@@ -173,10 +173,10 @@ class Job extends MY_Fontend_Controller
                 $data['job_test'] = $this->Master_model->getMaster('job_posting',$wherejob,$join = FALSE, $order = false, $field = false, $select_test = false,$limit=false,$start=false, $search=false);
                    $test = $this->input->post('test_option');
                    if ($test == 'Y') {
-                       redirect('job_seeker/ocean_test_start/ base64_encode($job_post_id); /base64_encode($job_apply_id);')
+                       redirect('job_seeker/ocean_test_start/ base64_encode($job_post_id); /base64_encode($job_apply_id);');
                     }
                     else{
-                        redirect('job_seeker/oceanhunt_activities')
+                        redirect('job_seeker/oceanhunt_activities');
                     } 
                 // $this->load->view('fontend/applysucess',$data);
 
