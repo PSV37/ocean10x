@@ -1564,6 +1564,16 @@
           <div class="pai_chart">
             <main>
               <section>
+                <ul class="pieID legend">
+                   <li class="cv">
+                  <em id="spanid1">Total Questions in Q Bank</em>
+                  <span><?php echo sizeof($Total_CVs_in_CVBank); ?></span>
+                </li>
+                <li class="cv">
+                  <em id="spanid2">Appeared in Test Papers</em>
+                  <span id="active_cv"><?php echo sizeof($active_cv_total); ?></span>
+                </li>
+                
                 <div class="pieID pie">
                 </div>
                 <ul class="pieID legend">
@@ -1613,7 +1623,7 @@
                     <span> 50 </span>
                   </li>
                   <li>
-                    <em id="spanid8">Answered Wrongly</em>
+                    <em id="spanid8">Answered Wrongly </em>
                     <!--<span id='early_applications'></span>-->
                     <span> 50 </span>
                   </li>
