@@ -161,7 +161,7 @@ class Job extends MY_Fontend_Controller
                  'forword_job_status' => 2,
                   'expected_salary' => $this->input->post('expected_ctc'),
                   'current_ctc' => $this->input->post('current_ctc'),
-                  'notice_period' => $this->input->post('Notice_period')
+                  'notice_period' => $this->input->post('Notice_period'),'preferred_test_date' => date('Y-m-d' , strtotime($this->input->post('proposed_interview_date')))
                 );
                 $where_update1['job_apply_id'] = $job_apply_id;
                 $this->Master_model->master_update($data_status, 'job_apply', $where_update1);
@@ -171,8 +171,14 @@ class Job extends MY_Fontend_Controller
                 $select_test = "is_test_required,job_post_id,company_profile_id";
               
                 $data['job_test'] = $this->Master_model->getMaster('job_posting',$wherejob,$join = FALSE, $order = false, $field = false, $select_test = false,$limit=false,$start=false, $search=false);
-                    
-                $this->load->view('fontend/applysucess',$data);
+                   $test = $this->input->post('test_option');
+                   if ($test == 'Y') {
+                       redirect('job_seeker/ocean_test_start/ base64_encode($job_post_id); /base64_encode($job_apply_id);')
+                    }
+                    else{
+                        redirect('job_seeker/oceanhunt_activities')
+                    } 
+                // $this->load->view('fontend/applysucess',$data);
 
                 // $this->load->view('fontend/applysucess');
                    
