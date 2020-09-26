@@ -1081,7 +1081,7 @@ button.btn.btn-primary.trash {
 
             <img src="<?php echo base_url() ?>upload/<?php echo $this->company_profile_model->company_logoby_id($forward_applicaiton->company_id);?>" style="height:50px; width:50px;border-radius:5px;float:left;border:solid 1px #eae9e9b8;margin-right:15px;" />
             <div class="job-info">
-               <a class="job_title"><?php echo $singlejob->job_title; ?></a>
+               <a href="<?php echo base_url(); ?>job/show/<?php echo $forward_applicaiton->job_slugs; ?>" class="job_title"><?php echo $singlejob->job_title; ?></a>
             </div>
             <div class="icon-info">
                <li class="left-icon-title"><i class="far fa-money-bill-alt"></i></li>
@@ -1171,11 +1171,27 @@ button.btn.btn-primary.trash {
             </span>
              <div class="clear"></div>
             </div>  
-           
+           <div class="last-row-invitation">
+                <ul>
+                  <li>
+                    <div class="location-inv"><i class="fas fa-map-marker-alt"></i><?php echo $forward_applicaiton->city_id;  ?></div>
+                  </li>
+                  <li>
+                    <div class="year-inv"><i class="fas fa-save"></i>&emsp;<?php echo $forward_applicaiton->experience;  ?> years</div>
+                  </li>
+                  <li>
+                    <div class="calender-inv"><i class="far fa-calendar-alt"></i>&emsp; <?php if(!is_null($forward_applicaiton->created_at)) { $mtime = time_ago_in_php($forward_applicaiton->created_at);
+                      echo $mtime;} ?></div>
+                  </li>
+                  <li>
+                    <div class="fulltime-inv"><i class="fas fa-clock"></i>&emsp;<?php echo $forward_applicaiton->job_nature_name;  ?></div>
+                  </li>
+                </ul>
+              </div>
                <br>       
-            <a title="details" href=" <?php echo base_url() ?>employer/preview_job_post/<?php echo $singlejob->job_post_id ?>"><i class="fa fa-info-circle icon_backg"></i></a>
+            <a title="details" href=" <?php echo base_url(); ?>job/show/<?php echo $forward_applicaiton->job_slugs; ?>"><i class="fa fa-info-circle icon_backg"></i></a>
             <div class="btn-group">
-                        <a title="Edit" href=" <?php echo base_url() ?>employer/update_job/<?php echo $singlejob->job_post_id ?>"><i class="far fa-edit icon_backg"></i></a>
+                        <!-- <a title="Edit" href=" <?php echo base_url() ?>employer/update_job/<?php echo $singlejob->job_post_id ?>"><i class="far fa-edit icon_backg"></i></a> -->
                         <a title="Delete" href="<?php echo base_url('employer/deactivate_job/' . $singlejob->job_post_id); ?>"><i class="fas fa-trash-alt icon_backg"></i></a>
                      </div>
 
@@ -1187,17 +1203,7 @@ button.btn.btn-primary.trash {
                // echo'<button class="btn btn-danger btn-xs">Expired <i class="fa fa-times" aria-hidden="true"></i></button> ';
                echo '<span class="pasive-span">Expired</span>';
                } ?>
-            <div class="dropdown">
-               <a href="#" data-toggle="modal" data-target="#rotateModal<?php echo $singlejob->job_post_id; ?>"> <i class="fas fa-share"></i></a>
-               <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               <i class="fas fa-ellipsis-h"></i>
-               </button>
-               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1">
-                  <li><a class="dropdown-item" href="#">View post job</a></li>
-                  <!-- <li> <a class="dropdown-item" href="<?php echo base_url() ?>employer/update_job/<?php echo $v_companyjobs['job_post_id'] ?>">Edit job post</a></li> -->
-                 <li ><a class="dropdown-item" href="#" id="attach_to_job" data-toggle="modal" data-target="#attach_test<?php echo $singlejob->job_post_id ?>" >Attach Test</a></li>
-               </div>
-            </div>
+            
          </div>
       </div>
    </label>
