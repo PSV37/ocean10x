@@ -311,7 +311,7 @@ class Job_apply_model extends MY_Model
         $this->db->join('job_nature', 'job_posting.job_nature = job_nature.job_nature_id', 'inner');
         // $this->db->join('job_nature.job_nature_id=job_posting.job_nature');
         $this->db->order_by('job_apply_id','desc');
-         if ($limit != '' && $start != '') {
+         if ($limit != '') {
            $this->db->limit($limit, $start);
         }
         $query = $this->db->get($this->_table_name); 
