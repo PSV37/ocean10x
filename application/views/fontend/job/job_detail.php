@@ -428,11 +428,14 @@ if ($company_profile_id != null) {
          <?php if(!empty($forward_status)){ foreach($forward_status as $frow){
             $m_para = explode(',',$frow['mandatory_parameters']);
           } }
-          foreach ($m_para as $row) { ?>
+          foreach ($m_para as $row) { 
+            $name = explode('_', $row);
+            $para_name = ucfirst($name[0]).ucfirst($name[1]);
+            ?>
            <div class="form-group">
-            <label class="control-label col-sm-4" for="email"> <?php echo $row; ?>:</label>
+            <label class="control-label col-sm-4" for="email"> <?php echo  $para_name; ?>:</label>
             <div class="col-sm-8">
-              <input type="text" name="<?php echo $row; ?>" required class="form-control" id="avaliable" placeholder="<?php echo $row; ?>"
+              <input type="text" name="<?php echo $row; ?>" required class="form-control" id="avaliable" placeholder="<?php echo  $para_name; ?>"
 
                    >
             </div>
