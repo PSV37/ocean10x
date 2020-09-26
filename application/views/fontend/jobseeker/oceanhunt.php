@@ -1048,6 +1048,20 @@ button.btn.btn-primary.trash {
     margin-bottom: 20px;
     margin-top: 30px;
 }
+.last-row-invitation ul li {
+    float: left;
+    margin-right: 13px;
+    list-style-type: none;
+    margin-top: 20px;
+}
+.location-inv {
+    background-color: #18c5bd;
+    color: white;
+    border-radius: 41px;
+}
+.last-row-invitation {
+    margin-left: -30px;
+}
 </style>      
 <div class="container-fluid">
 <div class="container">
@@ -1177,14 +1191,14 @@ button.btn.btn-primary.trash {
                     <div class="location-inv"><i class="fas fa-map-marker-alt"></i><?php echo $forward_applicaiton->city_id;  ?></div>
                   </li>
                   <li>
-                    <div class="year-inv"><i class="fas fa-save"></i>&emsp;<?php echo $forward_applicaiton->experience;  ?> years</div>
+                    <div class="location-inv"><i class="fas fa-save"></i>&emsp;<?php echo $forward_applicaiton->experience;  ?> years</div>
                   </li>
                   <li>
-                    <div class="calender-inv"><i class="far fa-calendar-alt"></i>&emsp; <?php if(!is_null($forward_applicaiton->created_at)) { $mtime = time_ago_in_php($forward_applicaiton->created_at);
+                    <div class="location-inv"><i class="far fa-calendar-alt"></i>&emsp; <?php if(!is_null($forward_applicaiton->created_at)) { $mtime = time_ago_in_php($forward_applicaiton->created_at);
                       echo $mtime;} ?></div>
                   </li>
                   <li>
-                    <div class="fulltime-inv"><i class="fas fa-clock"></i>&emsp;<?php echo $forward_applicaiton->job_nature_name;  ?></div>
+                    <div class="location-inv"><i class="fas fa-clock"></i>&emsp;<?php echo $forward_applicaiton->job_nature_name;  ?></div>
                   </li>
                 </ul>
               </div>
