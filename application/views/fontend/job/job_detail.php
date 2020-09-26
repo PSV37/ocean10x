@@ -271,7 +271,7 @@ if ($company_profile_id != null) {
         <div class="card">
           <form action="#" method="post">
             <div class="front">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Rivian_company_logo.jpg" style="height:40px; width:40px;border-radius:5px;float:left" />
+              <img src="<?php echo base_url() ?>upload/<?php echo $this->company_profile_model->company_logoby_id($singlejob->company_id);?>" style="height:40px; width:40px;border-radius:5px;float:left" />
               <div class="job-info">
                 <p class="job_title"><?php echo $singlejob->job_title; ?></p>
               </div>
@@ -425,6 +425,22 @@ if ($company_profile_id != null) {
                    >
             </div>
           </div>
+         <?php if(!empty($forward_status)){ foreach($forward_status as $frow){
+            $m_para = explode(',',$frow['mandatory_parameters']);
+          } }
+          foreach ($m_para as $row) { ?>
+           <div class="form-group">
+            <label class="control-label col-sm-4" for="email"> <?php echo $row; ?>:</label>
+            <div class="col-sm-8">
+              <input type="text" name="<?php echo $row; ?>" required class="form-control" id="avaliable" placeholder="<?php echo $row; ?>"
+
+                   >
+            </div>
+          </div>
+         <?php }
+
+          ?>
+        
           <?php $test=$singlejob->is_test_required;
             if ($test=='Yes') {
           ?>
