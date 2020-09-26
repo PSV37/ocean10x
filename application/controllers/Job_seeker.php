@@ -2496,7 +2496,7 @@ public function user_profile()
             }
             redirect('job_seeker/oceanhunt_activities');
         }
-    }
+    
 
 } //end function
 
