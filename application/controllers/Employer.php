@@ -1852,6 +1852,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $test_id = $this->input->post('test_id');
         $job_id = $this->input->post('job_id');
         $test_data['test_for_job'] = $test_id;
+        $test_data['is_test_required'] = 'Yes';
         $where['job_post_id'] = $job_id;
         $this->Master_model->master_update($test_data, 'job_posting', $where);
         $where_seeker = "job_apply.job_post_id = '$job_id' and apply_status < '2' ";

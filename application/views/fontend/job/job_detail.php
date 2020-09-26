@@ -417,20 +417,20 @@ if ($company_profile_id != null) {
             </div>
           </div>
           <input type="hidden" name="company_id" value="<?php echo $company_id; ?>">
-          <div class="form-group">
+         <!--  <div class="form-group">
             <label class="control-label col-sm-4" for="email"> Expected Salary:</label>
             <div class="col-sm-8">
               <input type="text" name="expected_salary" required class="form-control" id="avaliable" placeholder="Expected Salary"
 
                    >
             </div>
-          </div>
+          </div> -->
          <?php if(!empty($forward_status)){ foreach($forward_status as $frow){
             $m_para = explode(',',$frow['mandatory_parameters']);
           } }
           foreach ($m_para as $row) { 
             $name = explode('_', $row);
-            $para_name = ucfirst($name[0]).ucfirst($name[1]);
+            $para_name = ucfirst($name[0]).' '.ucfirst($name[1]);
             ?>
            <div class="form-group">
             <label class="control-label col-sm-4" for="email"> <?php echo  $para_name; ?>:</label>
