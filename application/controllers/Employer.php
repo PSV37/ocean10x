@@ -4014,7 +4014,11 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     public function forward_cv()
     {
         $company_id = $this->session->userdata('company_profile_id');
-        $email = $this->input->post('consultant_email');
+        $emails = $this->input->post('consultant_email');
+        $cons_emails = explode(',', $emails);
+        foreach ($cons_emails as $email) {
+            # code...
+      
         $where_comp="company_profile.company_email = '$email'";
         $comp_data = $this->Master_model->get_master_row('company_profile', $select = FALSE, $where = $where_comp, $join = FALSE);
         if (empty($comp_data)) {
@@ -4031,8 +4035,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         {
             $comp_id = $comp_data['company_profile_id'];
         }
-        $cv_id = $this->input->post('cv_id');
-        $where = "corporate_cv_bank.cv_id ='$cv_id'";
+        $cv_ids = explode(',',$this->input->post('cv_id'));
+        foreach ($cv_ids as $cv_id) {
+            $where = "corporate_cv_bank.cv_id ='$cv_id'";
         $cv_data=$this->Master_model->get_master_row('corporate_cv_bank', $select = FALSE, $where, $join = FALSE);
         $cv_data_insert = array(
             'company_id'=> $comp_id, 
@@ -4063,6 +4068,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $cv_data_insert['created_by'] = $company_id;
             // $update_cv_id = ['cv_id'];
             $cv_id = $this->Master_model->master_insert($cv_data_insert, 'corporate_cv_bank');
+        }
+        
+        }
              $this->session->set_flashdata('success', '<div class="alert alert-success text-center">CV Forwarded Successfully !</div>');
                 $fid= $this->input->post('folder_id');
                 redirect('employer/corporate_cv_bank/' .$fid);

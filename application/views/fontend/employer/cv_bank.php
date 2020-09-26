@@ -1025,6 +1025,7 @@ span.right-side {
               <input type="checkbox" class="dd-input" id="test1">
               <ul id="myDropdown"  class="dd-menu">
                 <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="frwd_post();">Forward Job Post</a></li>
+                 <li> <a href="#" id="frwd_btn" onclick="frwd_cv();" data-toggle="modal" data-keyboard="true"  data-target="#forward_cv">Forward CVs</a></li>
                 <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="copy_cvs();">Copy CVs</a></li>
                 <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="download_cvs();">Download CVs</a></li>
                 <li> <a href="#" id="frwd_btn" data-toggle="modal" data-keyboard="true"  data-target="#bulkupload">Bulk Upload CVs</a></li>
@@ -1641,6 +1642,43 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
   $key++;
     endforeach;  
   ?>
+  <div class="modal fade" tabindex='-1' id="forward_cv" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <form method="post" action="<?php echo base_url(); ?>employer/forward_cv">
+        <div class="modal-header">
+          <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+          <center><h4 class="modal-title">Forward This CV</h4></center>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" id="frwd_cv_id" name="cv_id" value="<?php echo $cv_row['cv_id']; ?>">
+           <input type="hidden" name="folder_id" value="<?php echo $fid; ?>">
+          <div class="col-md-12" style="margin-top: 20px;">
+            <div class="row">
+             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"style="width: 108%;margin-left: -12px;padding: 0px;">
+            <label class="mdl-textfield__label" for="sample3">E-mail:</label>
+            <input onchange ="show_text();" type="email"  name="consultant_email"  id="email" placeholder="Enter Email"  id="subject" data-required="true" multiple style="display: inline-block;min-width: 100%;height: 30px;" required>
+            
+          </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="row">
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
+                <label class="mdl-textfield__label" for="sample3"><span id="no_of_cvs_forward">No. of CVs: 1</span> </label><br>
+              </div>
+            </div>
+          </div>
+          <!--  <p>This is a small modal.</p> -->
+        </div>
+        <div class="modal-footer">
+          <button type="submit" id="mv_button" class="btn btn-default">Forward</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 <div class="modal fade" id="bulkcopy_cv" tabindex='-1' role="dialog">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
@@ -2249,6 +2287,30 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
                  alert('Please select atleast one cv to forward the job!')
               }
               
+  }
+
+  function frwd_cv()
+  {
+  var checkedValsofname = $('.chkbx:checkbox:checked').map(function() {
+                  return this.getAttribute("data-valuetwo");
+              }).get();
+       var cvs_name= (checkedValsofname.join(","));
+           
+           
+  
+              // alert(emails.length);
+                if (cvs_name.length > 0) 
+              {
+              var elements = cvs_name.split(',').length;
+            
+                 $('#no_of_cvs_forward').html('No. of CVs:'+elements);
+                 $('#frwd_cv_id').val(cvs_name);
+                 setTimeout(function(){
+                 $('#forward_cv').modal('show'); }, 500);
+              }else
+              {
+                 alert('Please select atleast one cv to Forward!')
+              }
   }
   
   function download_cvs()
