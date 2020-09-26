@@ -459,15 +459,7 @@ if ($company_profile_id != null) {
          
           <!-- <label class="col-sm-2">Radio: </label> -->
           <div style="margin-left: 90px;">
-            <div class="form-check form-check-inline">
-<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1">
-<label class="form-check-label">1</label>
-</div>
 
-<div class="form-check form-check-inline">
-<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2">
-<label class="form-check-label">2</label>
-</div>
               <div class="form-check form-check-inline">
                   <input style="display: block;" class="form-check-input" type="radio" name="test_option" id="inlineRadio1" value="Y" onclick="show_date('Y');">
                   <label class="form-check-label" for="inlineRadio1">Give Test Now</label>
