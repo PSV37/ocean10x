@@ -456,7 +456,20 @@ if ($company_profile_id != null) {
           ?>
           <div><b>Note: This job has a Online Test.</b></div>
           <div class="panel-body"></div>
+          <div class="form-group">
+            
+            <input type="radio" name="give_test" required class="form-control" value="Y">Give Test Now
+            <input type="radio" name="give_test" required class="form-control" onclick="show_date('N');" value="N">Give Test Later
+            </div>
+          <div class="form-group" id="pdate" style="display: none;">
+            <label class="control-label col-sm-4" for="email">Prefferd Date :</label>
+            <div class="col-sm-8">
+             <input type="text" id="interview_picker" name="proposed_interview_date" style="display: inline-block;" class="form-control datepicker "   value=""> 
+            </div>
+          </div>
         <?php }else{} ?>
+
+
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-primary">Submit</button>
@@ -467,3 +480,28 @@ if ($company_profile_id != null) {
     </div>
   </div>
 </div>
+<script>
+  function show_date(test_option) {
+    if (test_option == 'N') 
+    {
+      $('#pdate').show();
+    }
+  }
+  $(document).ready(function() { 
+     $('#other_terxtbx').hide();
+  
+    $(function() { 
+   
+   var oneYearFromNow = new Date();
+ oneYearFromNow.setFullYear(oneYearFromNow.getFullYear() + 1);
+ var plusone = oneYearFromNow.getFullYear().toString();
+
+    $("#interview_picker").datepicker(
+    { 
+
+      dateFormat: 'dd-mm-yy',minDate: '0', changeMonth: true,
+   changeYear: true,
+   yearRange: new Date().getFullYear().toString()+':'+plusone });
+  });
+  });
+</script>
