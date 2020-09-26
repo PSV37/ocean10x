@@ -735,7 +735,7 @@ exit;*/
         $jobseeker_id    = $this->session->userdata('job_seeker_id');
         $applicationlist = $this->job_apply_model->seeker_all_application($jobseeker_id);
 
-        $forward_applicationlist = $this->job_apply_model->seeker_all_application_send($jobseeker_id);
+        $forward_application = $this->job_apply_model->seeker_all_application_send($jobseeker_id);
 
          
         // $employer_id = $this->session->userdata('company_profile_id');
@@ -743,7 +743,7 @@ exit;*/
 
         $oceanchamp_tests = $this->Master_model->get_master_row('forwarded_tests', $select = FALSE, $where = $where_all, $join = FALSE);
         $config['base_url'] = base_url() . 'job_seeker/oceanhunt_activities';
-            $config['total_rows'] = sizeof($forward_applicationlist);
+            $config['total_rows'] = sizeof($forward_application);
             $config['per_page'] = 5;
             $config['attributes'] = array('class' => 'myclass');
             $config['page_query_string'] = TRUE;
@@ -775,10 +775,10 @@ exit;*/
                 $offset = ($page - 1) * $config['per_page'];
             }
             $this->pagination->initialize($config);
-             $data["links"] = $this->pagination->create_links();
+             $links = $this->pagination->create_links();
             $forward_applicationlist = $this->job_apply_model->seeker_all_application_send($jobseeker_id,$config['per_page'],$page);
         // print_r($this->db->last_query());die;
-        $this->load->view('fontend/jobseeker/oceanhunt', compact('forward_applicationlist','applicationlist' ,'oceanchamp_tests'));
+        $this->load->view('fontend/jobseeker/oceanhunt', compact('forward_applicationlist','applicationlist' ,'oceanchamp_tests' ,'links'));
     }
 
     public function update_reference()
