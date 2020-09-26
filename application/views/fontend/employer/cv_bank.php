@@ -1158,6 +1158,7 @@ span.right-side {
                 </span>
                 </div>
                 <br>
+                <hr>
                 <?php  
                     $cv_id =$cv_row['cv_id'];
                     $where="forwarded_jobs_cv.cv_id ='$cv_id'";
