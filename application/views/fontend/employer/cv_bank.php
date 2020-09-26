@@ -2305,8 +2305,8 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
             
                  $('#no_of_cvs_forward').html('No. of CVs:'+elements);
                  $('#frwd_cv_id').val(cvs_name);
-                 setTimeout(function(){
-                 $('#forward_cv').modal('show'); }, 500);
+                 
+                 $('#forward_cv').modal('show');
               }else
               {
                  alert('Please select atleast one cv to Forward!')
