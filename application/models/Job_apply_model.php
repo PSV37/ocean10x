@@ -22,7 +22,7 @@ class Job_apply_model extends MY_Model
         $this->db->where('job_seeker_id', $userId);
         $this->db->where('company_id', $company_id);
         $this->db->where('job_post_id', $job_post_id);
-        // $this->db->where('forword_job_status',0);
+        $this->db->where('forword_job_status !=',1);
         $query = $this->db->get($this->_table_name);
         if ($query->num_rows() > 0) {
             return true;

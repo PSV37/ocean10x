@@ -366,12 +366,19 @@ if ($company_profile_id != null) {
               </div>
               <input type="hidden" name="job_id" value="<?php echo $job_id; ?>">
               <div class="preview_btns">
-                <?php if (isset($jobseeker_id)) { ?>
-                    <a href="#" data-toggle="modal" data-target="#ApplyJob"><button class="apply-cv" id="b3">Apply with Ocean CV</button></a>
+               <?php  
+               $job_post_id = $singlejob->job_post_id;
+                $company_id = $singlejob->company_profile_id;
+                           
+                  if ($this->job_apply_model->check_apply_job($jobseeker_id, $company_id, $job_post_id)) { ?>
+
+                <a href="#" ><button class="apply-cv" id="b3">Applied</button></a>
+                    
                
-                 <?php    } ?>
+                 <?php    }else{ ?>
                 
-               
+               <a href="#" data-toggle="modal" data-target="#ApplyJob"><button class="apply-cv" id="b3">Apply with Ocean CV</button></a>
+             <?php } ?>
               </div>
             </div>
           </form>
