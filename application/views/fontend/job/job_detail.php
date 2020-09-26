@@ -456,11 +456,23 @@ if ($company_profile_id != null) {
           ?>
           <div><b>Note: This job has a Online Test.</b></div>
           <div class="panel-body"></div>
-          <div class="form-group">
-            
-            <input type="radio" name="give_test" required class="form-control" value="Y">Give Test Now
-            <input type="radio" name="give_test" required class="form-control" onclick="show_date('N');" value="N">Give Test Later
+          <div class="form-group row">
+          <!-- <label class="col-sm-2">Radio: </label> -->
+          <div class="col-sm-10">
+              <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Y" onclick="show_date('Y');">
+                  <label class="form-check-label" for="inlineRadio1">Give Test Now</label>
+              </div>
+              <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="N" onclick="show_date('N');">
+                  <label class="form-check-label" for="inlineRadio2">Give Test Later</label>
+              </div>
             </div>
+          </div>
+            
+            <!-- <input type="radio" name="give_test" required class="form-control" value="Y">Give Test Now
+            <input type="radio" name="give_test" required class="form-control" onclick="show_date('N');" value="N">Give Test Later
+            </div> -->
           <div class="form-group" id="pdate" style="display: none;">
             <label class="control-label col-sm-4" for="email">Prefferd Date :</label>
             <div class="col-sm-8">
@@ -485,6 +497,11 @@ if ($company_profile_id != null) {
     if (test_option == 'N') 
     {
       $('#pdate').show();
+    }
+    else
+    {
+      $('#pdate').hide();
+
     }
   }
   $(document).ready(function() { 
