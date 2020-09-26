@@ -735,17 +735,50 @@ exit;*/
         $jobseeker_id    = $this->session->userdata('job_seeker_id');
         $applicationlist = $this->job_apply_model->seeker_all_application($jobseeker_id);
 
-        $forward_applicationlist = $this->job_apply_model->seeker_all_application_send($jobseeker_id);
+        $forward_application = $this->job_apply_model->seeker_all_application_send($jobseeker_id);
 
          
         // $employer_id = $this->session->userdata('company_profile_id');
         $where_all = "forwarded_tests.status != 'Test Completed' AND job_seeker_id = '$jobseeker_id'";
 
         $oceanchamp_tests = $this->Master_model->get_master_row('forwarded_tests', $select = FALSE, $where = $where_all, $join = FALSE);
-        
-
+        $config['base_url'] = base_url() . 'job_seeker/oceanhunt_activities';
+            $config['total_rows'] = sizeof($forward_application);
+            $config['per_page'] = 5;
+            $config['attributes'] = array('class' => 'myclass');
+            $config['page_query_string'] = TRUE;
+            $config['num_links'] = 2;
+            // $config['use_page_numbers'] = TRUE;
+            $config['query_string_segment'] = 'page';
+           
+            $config['full_tag_open'] = '<div class="pagination">';
+            $config['full_tag_close'] = '</div>';
+            $config['first_link'] = '<button>First Page</button>';
+            $config['first_tag_open'] = '<span class="firstlink">';
+            $config['first_tag_close'] = '</span>';
+            $config['last_link'] = '<button style="color:#FFF;background: #18c5bd;border: none;">Last Page</button>';
+            $config['last_tag_open'] = '<span class="lastlink">';
+            $config['last_tag_close'] = '</span>';
+            $config['next_link'] = '<span style="margin-left:8px;"><button style="color:#FFF;background: #18c5bd;border: none;">Next Page</button></span>';
+            $config['next_tag_open'] = '<span class="nextlink">';
+            $config['next_tag_close'] = '</span>';
+            $config['prev_link'] = '<button style="color:#FFF;background: #18c5bd;border: none;">Prev Page</button>';
+            $config['prev_tag_open'] = '<span class="prevlink">';
+            $config['prev_tag_close'] = '</span>';
+            $config['cur_tag_open'] = '<span style="margin-left:8px;">';
+            $config['cur_tag_close'] = '</span>';
+            $config['num_tag_open'] = '<span style="margin-left:8px;">';
+            $config['num_tag_close'] = '</span>';
+            $offset = 0;
+            $page = $this->input->get('page');
+            if ($page) {
+                $offset = ($page - 1) * $config['per_page'];
+            }
+            $this->pagination->initialize($config);
+             $links = $this->pagination->create_links();
+            $forward_applicationlist = $this->job_apply_model->seeker_all_application_send($jobseeker_id,$config['per_page'],$page);
         // print_r($this->db->last_query());die;
-        $this->load->view('fontend/jobseeker/oceanhunt', compact('forward_applicationlist','applicationlist' ,'oceanchamp_tests'));
+        $this->load->view('fontend/jobseeker/oceanhunt', compact('forward_applicationlist','applicationlist' ,'oceanchamp_tests' ,'links'));
     }
 
     public function update_reference()

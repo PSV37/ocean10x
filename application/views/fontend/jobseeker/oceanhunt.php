@@ -1063,6 +1063,10 @@ button.btn.btn-primary.trash {
 .last-row-invitation {
     margin-left: -30px;
 }
+.nav-tabs>li {
+    margin-right: 15px;
+    margin-top: 10px;
+}
 </style>      
 <div class="container-fluid">
 <div class="container">
@@ -1229,6 +1233,13 @@ button.btn.btn-primary.trash {
    </li>
    <?php endif; ?>
 </div>
+<div class="container-fluid">
+             <div class="col-md-6"></div>
+            <div class="col-md-6">
+            <span><?php echo $links; ?></span>   
+            </div>
+               
+          </div>
    </div>
 
             

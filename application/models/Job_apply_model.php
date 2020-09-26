@@ -22,7 +22,7 @@ class Job_apply_model extends MY_Model
         $this->db->where('job_seeker_id', $userId);
         $this->db->where('company_id', $company_id);
         $this->db->where('job_post_id', $job_post_id);
-        // $this->db->where('forword_job_status',0);
+        $this->db->where('forword_job_status !=',1);
         $query = $this->db->get($this->_table_name);
         if ($query->num_rows() > 0) {
             return true;
@@ -303,7 +303,7 @@ class Job_apply_model extends MY_Model
         return $query->result();
     }
     // forwarded  jobs
-    public function seeker_all_application_send($job_seeker_id){
+    public function seeker_all_application_send($job_seeker_id , $limit=null, $start=null){
         $this->db->select("*");
         $this->db->where('job_seeker_id', $job_seeker_id);
         $this->db->where('forword_job_status!=', '0');
@@ -311,7 +311,9 @@ class Job_apply_model extends MY_Model
         $this->db->join('job_nature', 'job_posting.job_nature = job_nature.job_nature_id', 'inner');
         // $this->db->join('job_nature.job_nature_id=job_posting.job_nature');
         $this->db->order_by('job_apply_id','desc');
-        
+         if ($limit != '') {
+           $this->db->limit($limit, $start);
+        }
         $query = $this->db->get($this->_table_name); 
         return $query->result();
     }

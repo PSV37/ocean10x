@@ -117,7 +117,7 @@ class Job extends MY_Fontend_Controller
                 $this->job_posting_model->update_Searchview($job_id,$totalview);
 
                 $where_apply = "job_apply.job_seeker_id='$jobseeker_id' AND job_apply.job_post_id='$job_id'";
-                $select_status ="job_apply.forword_job_status,job_apply.job_apply_id";
+                $select_status ="job_apply.forword_job_status,job_apply.job_apply_id,job_apply.mandatory_parameters";
                 $forward_status = $this->Master_model->getMaster('job_apply',$where_apply, $join=false, $order = false, $field = false, $select_status,$limit=false,$start=false, $search=false);
            }
 
@@ -159,7 +159,9 @@ class Job extends MY_Fontend_Controller
                 // To update job status
                 $data_status=array( 
                  'forword_job_status' => 2,
-                  'expected_salary' => $this->input->post('expected_salary'),
+                  'expected_salary' => $this->input->post('expected_ctc'),
+                  'current_ctc' => $this->input->post('current_ctc'),
+                  'notice_period' => $this->input->post('Notice_period')
                 );
                 $where_update1['job_apply_id'] = $job_apply_id;
                 $this->Master_model->master_update($data_status, 'job_apply', $where_update1);
@@ -168,7 +170,7 @@ class Job extends MY_Fontend_Controller
                 $wherejob = "job_post_id='$job_post_id' AND company_profile_id='$company_id'";
                 $select_test = "is_test_required,job_post_id,company_profile_id";
               
-                $data['job_test'] = $this->Master_model->getMaster('job_posting',$wherejob,$join = FALSE, $order = false, $field = false, $select_test,$limit=false,$start=false, $search=false);
+                $data['job_test'] = $this->Master_model->getMaster('job_posting',$wherejob,$join = FALSE, $order = false, $field = false, $select_test = false,$limit=false,$start=false, $search=false);
                     
                 $this->load->view('fontend/applysucess',$data);
 

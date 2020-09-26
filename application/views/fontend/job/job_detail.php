@@ -271,7 +271,7 @@ if ($company_profile_id != null) {
         <div class="card">
           <form action="#" method="post">
             <div class="front">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Rivian_company_logo.jpg" style="height:40px; width:40px;border-radius:5px;float:left" />
+              <img src="<?php echo base_url() ?>upload/<?php echo $this->company_profile_model->company_logoby_id($singlejob->company_id);?>" style="height:40px; width:40px;border-radius:5px;float:left" />
               <div class="job-info">
                 <p class="job_title"><?php echo $singlejob->job_title; ?></p>
               </div>
@@ -366,12 +366,19 @@ if ($company_profile_id != null) {
               </div>
               <input type="hidden" name="job_id" value="<?php echo $job_id; ?>">
               <div class="preview_btns">
-                <?php if (isset($jobseeker_id)) { ?>
-                    <a href="#" data-toggle="modal" data-target="#ApplyJob"><button class="apply-cv" id="b3">Apply with Ocean CV</button></a>
+               <?php  
+               $job_post_id = $singlejob->job_post_id;
+                $company_id = $singlejob->company_profile_id;
+                           
+                  if ($this->job_apply_model->check_apply_job($jobseeker_id, $company_id, $job_post_id)) { ?>
+
+                <a href="#" ><button class="apply-cv" id="b3">Applied</button></a>
+                    
                
-                 <?php    } ?>
+                 <?php    }else{ ?>
                 
-               
+               <a href="#" data-toggle="modal" data-target="#ApplyJob"><button class="apply-cv" id="b3">Apply with Ocean CV</button></a>
+             <?php } ?>
               </div>
             </div>
           </form>
@@ -417,14 +424,33 @@ if ($company_profile_id != null) {
             </div>
           </div>
           <input type="hidden" name="company_id" value="<?php echo $company_id; ?>">
-          <div class="form-group">
+         <!--  <div class="form-group">
             <label class="control-label col-sm-4" for="email"> Expected Salary:</label>
             <div class="col-sm-8">
               <input type="text" name="expected_salary" required class="form-control" id="avaliable" placeholder="Expected Salary"
 
                    >
             </div>
+          </div> -->
+         <?php if(!empty($forward_status)){ foreach($forward_status as $frow){
+            $m_para = explode(',',$frow['mandatory_parameters']);
+          } }
+          foreach ($m_para as $row) { 
+            $name = explode('_', $row);
+            $para_name = ucfirst($name[0]).' '.ucfirst($name[1]);
+            ?>
+           <div class="form-group">
+            <label class="control-label col-sm-4" for="email"> <?php echo  $para_name; ?>:</label>
+            <div class="col-sm-8">
+              <input type="text" name="<?php echo $row; ?>" required class="form-control" id="avaliable" placeholder="<?php echo  $para_name; ?>"
+
+                   >
+            </div>
           </div>
+         <?php }
+
+          ?>
+        
           <?php $test=$singlejob->is_test_required;
             if ($test=='Yes') {
           ?>
