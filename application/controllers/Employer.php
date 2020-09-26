@@ -2509,7 +2509,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $data['roles'] = $this->Master_model->getMaster('user_role', $where = false);
         $this->load->view('fontend/employer/employee_management', $data);
         // $this->load->view('fontend/employer/add_new_employee',$data);
-        
+
     }
     public function addconsultant() {
         $user_id = $this->session->userdata('company_profile_id');
@@ -2933,6 +2933,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                         $action = str_replace("_", ' ', $parameter);
                         $data = array('company' => $company_name, 'action_taken_for' => $employee_name, 'field_changed' => $action, 'Action' => 'Updated ' . $action . ' of ' . $employee_name, 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
                         $result = $this->Master_model->master_insert($data, 'employer_audit_record');
+                        $this->session->set_flashdata('success', '<div class="alert alert-success text-center">' . $this->input->post('emp_name') . ' Employee Details have been updated Successfully !</div>');
                         // print_r($this->db->last_query());die;
                         
                     }
