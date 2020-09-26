@@ -5,6 +5,8 @@
   $this->load->view('fontend/layout/new_seeker_header.php');
   
   ?> 
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/post_new_job.css">
+
 <!---header end--->  
 <style>    
    .border-top1{
@@ -62,7 +64,7 @@
     display: flow-root;
     padding: 0px !important;
     border: none !important;
-    width: 599px;
+    /*width: 599px;*/
 }    
    .btn_all {
    color: #539617;
