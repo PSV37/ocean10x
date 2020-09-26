@@ -1578,42 +1578,42 @@
                     
                   </li>-->
                   <li>
-                    <em id="spanid1">Sent to Candidates</em>
+                    <em id="spanid1">Appeared in Test Papers</em>
                     <!--<span id='total_forwarded'> </span>-->
                     <span> 50 </span>
                   </li>
                   <li>
-                    <em id="spanid2">Applications Rcvd</em>
+                    <em id="spanid2">Not Appeared in Test Papers</em>
                     <!--<span id='total_applied'> </span>-->
                     <span> 50 </span>
                   </li>
                   <li>
-                    <em id="spanid3">Test Attempted</em> 
+                    <em id="spanid3">Expert Level </em> 
                     <!--<span id='total_test'> </span>-->
                     <span> 50 </span>
                   </li>
                   <li>
-                    <em id="spanid4">Test Passed</em>
+                    <em id="spanid4">Medium Level</em>
                     <!--<span id='total_passed'></span>-->
                     <span> 50 </span>
                   </li>
                   <li>
-                    <em id="spanid5">Interview Passed</em> 
+                    <em id="spanid5">Beginners Level</em> 
                     <!--<span id='total_test_int_pass'></span>-->
                     <span> 50 </span>
                   </li>
                   <li>
-                    <em id="spanid6">Interview Failed</em>
+                    <em id="spanid6">Attempted</em>
                     <!--<span id='total_test_int_fail'></span>-->
                     <span> 50 </span>
                   </li>
                   <li>
-                    <em id="spanid7">Offer Accepted</em>
+                    <em id="spanid7">Answered Correctly</em>
                     <!--<span id='total_offer_accept'></span>-->
                     <span> 50 </span>
                   </li>
                   <li>
-                    <em id="spanid8">Early Applications</em>
+                    <em id="spanid8">Answered Wrongly</em>
                     <!--<span id='early_applications'></span>-->
                     <span> 50 </span>
                   </li>
