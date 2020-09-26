@@ -1229,7 +1229,7 @@ button.btn.btn-primary.trash {
                </button> -->
                <!-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1">
                   <li><a class="dropdown-item" href="#">View post job</a></li>
-                   <li> <a class="dropdown-item" href="<?php echo base_url() ?>employer/update_job/<?php echo $v_companyjobs['job_post_id'] ?>">Edit job post</a></li> -->
+                   <li> <a class="dropdown-item" href="<?php echo base_url() ?>employer/update_job/<?php echo $v_companyjobs['job_post_id'] ?>">Edit job post</a></li> 
                  <li ><a class="dropdown-item" href="#" id="attach_to_job" data-toggle="modal" data-target="#attach_test<?php echo $v_companyjobs['job_post_id'] ?>" >Attach Test</a></li>
                </div> -->
             </div>
