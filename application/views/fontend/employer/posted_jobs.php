@@ -1581,11 +1581,8 @@ function get_trash()
    $(document).ready (function(){
      $("#smsg").fadeTo(2000, 500).slideUp(500, function(){
      $("#smsg").slideUp(500);
-     });   
-   });
-</script>
-<script>
-   $("#email").autocomplete({
+     });  
+     $("#email").autocomplete({
              
              source: "<?php echo base_url();?>Employer/get_candidate_by_email",
              minLength: 2,
@@ -1593,7 +1590,11 @@ function get_trash()
             
     
             
-           });
+           }); 
+   });
+</script>
+<script>
+   
    
 </script>
 
