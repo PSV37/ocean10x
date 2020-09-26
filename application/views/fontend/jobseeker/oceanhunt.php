@@ -1229,6 +1229,13 @@ button.btn.btn-primary.trash {
    </li>
    <?php endif; ?>
 </div>
+<div class="container-fluid">
+             <div class="col-md-6"></div>
+            <div class="col-md-6">
+            <span><?php echo $links; ?></span>   
+            </div>
+               
+          </div>
    </div>
 
             
