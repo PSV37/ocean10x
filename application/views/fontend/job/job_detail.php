@@ -367,7 +367,7 @@ if ($company_profile_id != null) {
               <input type="hidden" name="job_id" value="<?php echo $job_id; ?>">
               <div class="preview_btns">
                 <?php if (isset($jobseeker_id)) { ?>
-                    <a href="#" data-toggle="modal" data-target="#ApplyJob"><button class="apply-cv" id="b3">Apply with Ocean cv</button></a>
+                    <a href="#" data-toggle="modal" data-target="#ApplyJob"><button class="apply-cv" id="b3">Apply with Ocean CV</button></a>
                
                  <?php    } ?>
                 
