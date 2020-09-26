@@ -1616,7 +1616,7 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
             <div class="row">
              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"style="width: 108%;margin-left: -12px;padding: 0px;">
             <label class="mdl-textfield__label" for="sample3">E-mail:</label>
-            <input onchange ="show_text();" type="email"  name="consultant_email"  id="email" placeholder="Enter Email"  id="subject" data-required="true" multiple style="display: inline-block;min-width: 100%;height: 30px;" required>
+            <input  type="email"  name="consultant_email"  id="email" placeholder="Enter Email"  id="subject" data-required="true" multiple style="display: inline-block;min-width: 100%;height: 30px;" required>
             
           </div>
             </div>
