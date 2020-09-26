@@ -1571,11 +1571,11 @@
                 <ul class="pieID legend">
                    <li class="cv">
                   <em id="spanid1">Total Questions in Q Bank</em>
-                  <span><?php echo sizeof($Total_CVs_in_CVBank); ?></span>
+                  <span><?php echo sizeof($Total_questions_in_q_bank); ?></span>
                 </li>
                 <li class="cv">
                   <em id="spanid2">Appeared in Test Papers</em>
-                  <span id="active_cv"><?php echo sizeof($active_cv_total); ?></span>
+                  <span id="active_cv"><?php echo sizeof($appeared_in_test_papers); ?></span>
                 </li>
                 
                 <div class="pieID pie">
@@ -1593,43 +1593,43 @@
                   </li>-->
                   <li>
                     <em id="spanid1">Appeared in Test Papers</em>
-                    <!--<span id='total_forwarded'> </span>-->
-                    <span> 50 </span>
+                    <span id='appeared_in_test_paper'> </span>
+                    <!--<span> 50 </span>-->
                   </li>
                   <li>
                     <em id="spanid2">Not Appeared in Test Papers</em>
-                    <!--<span id='total_applied'> </span>-->
-                    <span> 50 </span>
+                    <span id='not_appeared_in_test_papers'> </span>
+                    <!--<span> 50 </span>-->
                   </li>
                   <li>
                     <em id="spanid3">Expert Level </em> 
-                    <!--<span id='total_test'> </span>-->
-                    <span> 50 </span>
+                    <span id='expert_level'> </span>
+                    <!--<span> 50 </span>-->
                   </li>
                   <li>
                     <em id="spanid4">Medium Level</em>
-                    <!--<span id='total_passed'></span>-->
-                    <span> 50 </span>
+                    <span id='Medium_level'></span>
+                    <!--<span> 50 </span>-->
                   </li>
                   <li>
                     <em id="spanid5">Beginners Level</em> 
-                    <!--<span id='total_test_int_pass'></span>-->
-                    <span> 50 </span>
+                    <span id='Beginners_level'></span>
+                    <!--<span> 50 </span>-->
                   </li>
                   <li>
                     <em id="spanid6">Attempted</em>
-                    <!--<span id='total_test_int_fail'></span>-->
-                    <span> 50 </span>
+                    <span id='attempted'></span>
+                    <!--<span> 50 </span>-->
                   </li>
                   <li>
                     <em id="spanid7">Answered Correctly</em>
-                    <!--<span id='total_offer_accept'></span>-->
-                    <span> 50 </span>
+                    <span id='answered_correctly'></span>
+                    <!--<span> 50 </span>-->
                   </li>
                   <li>
                     <em id="spanid8">Answered Wrongly </em>
-                    <!--<span id='early_applications'></span>-->
-                    <span> 50 </span>
+                    <span id='answered_wrongly'></span>
+                    <!--<span> 50 </span>-->
                   </li>
                 </ul>
               </section>
