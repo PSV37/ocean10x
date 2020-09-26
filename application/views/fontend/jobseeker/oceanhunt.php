@@ -1058,6 +1058,7 @@ button.btn.btn-primary.trash {
     background-color: #18c5bd;
     color: white;
     border-radius: 41px;
+        width: 100px;
 }
 .last-row-invitation {
     margin-left: -30px;
@@ -1188,17 +1189,17 @@ button.btn.btn-primary.trash {
            <div class="last-row-invitation">
                 <ul>
                   <li>
-                    <div class="location-inv"><i class="fas fa-map-marker-alt"></i><?php echo $forward_applicaiton->city_id;  ?></div>
+                    <span class="location-inv"><i class="fas fa-map-marker-alt"></i><?php echo $forward_applicaiton->city_id;  ?></span>
                   </li>
                   <li>
-                    <div class="location-inv"><i class="fas fa-save"></i>&emsp;<?php echo $forward_applicaiton->experience;  ?> years</div>
+                    <span class="location-inv"><i class="fas fa-save"></i>&emsp;<?php echo $forward_applicaiton->experience;  ?> years</span>
                   </li>
                   <li>
-                    <div class="location-inv"><i class="far fa-calendar-alt"></i>&emsp; <?php if(!is_null($forward_applicaiton->created_at)) { $mtime = time_ago_in_php($forward_applicaiton->created_at);
-                      echo $mtime;} ?></div>
+                    <span class="location-inv"><i class="far fa-calendar-alt"></i>&emsp; <?php if(!is_null($forward_applicaiton->created_at)) { $mtime = time_ago_in_php($forward_applicaiton->created_at);
+                      echo $mtime;} ?></span>
                   </li>
                   <li>
-                    <div class="location-inv"><i class="fas fa-clock"></i>&emsp;<?php echo $forward_applicaiton->job_nature_name;  ?></div>
+                    <span class="location-inv"><i class="fas fa-clock"></i>&emsp;<?php echo $forward_applicaiton->job_nature_name;  ?></span>
                   </li>
                 </ul>
               </div>
