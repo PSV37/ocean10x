@@ -1025,7 +1025,7 @@ span.right-side {
               <input type="checkbox" class="dd-input" id="test1">
               <ul id="myDropdown"  class="dd-menu">
                 <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="frwd_post();">Forward Job Post</a></li>
-                 <li> <a href="#" id="frwd_btn" onclick="frwd_cv();" data-toggle="modal" data-keyboard="true"  data-target="#forward_cv">Forward CVs</a></li>
+                 <li> <a href="#" id="frwd_btn" onclick="frwd_cv();" >Forward CVs</a></li>
                 <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="copy_cvs();">Copy CVs</a></li>
                 <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="download_cvs();">Download CVs</a></li>
                 <li> <a href="#" id="frwd_btn" data-toggle="modal" data-keyboard="true"  data-target="#bulkupload">Bulk Upload CVs</a></li>
