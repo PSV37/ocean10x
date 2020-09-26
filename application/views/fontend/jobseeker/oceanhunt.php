@@ -1063,6 +1063,10 @@ button.btn.btn-primary.trash {
 .last-row-invitation {
     margin-left: -30px;
 }
+.nav-tabs>li {
+    margin-right: 15px;
+    margin-top: 10px;
+}
 </style>      
 <div class="container-fluid">
 <div class="container">
