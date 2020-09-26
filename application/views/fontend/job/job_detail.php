@@ -456,9 +456,9 @@ if ($company_profile_id != null) {
           ?>
           <div><b>Note: This job has a Online Test.</b></div>
           <div class="panel-body"></div>
-          <div class="row">
+         
           <!-- <label class="col-sm-2">Radio: </label> -->
-          <div class="col-sm-10">
+          <div style="margin-left: 25px;">
               <div class="form-check form-check-inline">
                   <input style="display: block;" class="form-check-input" type="radio" name="test_option" id="inlineRadio1" value="Y" onclick="show_date('Y');">
                   <label class="form-check-label" for="inlineRadio1">Give Test Now</label>
@@ -468,7 +468,7 @@ if ($company_profile_id != null) {
                   <label class="form-check-label" for="inlineRadio2">Give Test Later</label>
               </div>
             </div>
-          </div>
+        
           <div class="panel-body"></div>
             
             <!-- <input type="radio" name="give_test" required class="form-control" value="Y">Give Test Now
