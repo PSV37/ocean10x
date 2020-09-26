@@ -320,13 +320,13 @@ th {
                 <div class="row">
            	      <div class="col-md-3">
                     <div class="form-group">                                       
-                     <label for="exampleInputEmail1">Employee ID <span class="required">*</span></label>
+                     <label for="exampleInputEmail1">Emp ID <span class="required">*</span></label>
                       <input type="text" min="1" name="emp_no" id="emp_no" class="form-control allownumericwithoutdecimal" value="<?php  $val = set_value('emp_no'); if(!empty($val)){ echo $val; } else{ echo $result['emp_no'];} ?>" ><?php echo form_error('emp_no'); ?>                    
                     </div>
                   </div>
                   <div class="col-md-3">
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Employee Name <span class="required">*</span></label>
+                      <label for="exampleInputEmail1">Name <span class="required">*</span></label>
                       <input type="text" name="emp_name" id="emp_name" class="form-control allowalphabates" value="<?php  $val = set_value('emp_name'); if(!empty($val)){ echo $val; } else {echo $result['emp_name'];} ?>" ><?php echo form_error('emp_name'); ?>                      
                     </div>
                   </div>
@@ -344,7 +344,7 @@ th {
                   </div> 
                   <div class="col-md-3">
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Contact No. <span class="required">*</span></label>
+                      <label for="exampleInputEmail1">Mobile <span class="required">*</span></label>
                       <input type="tel" name="mobile" id="mobile" class="form-control allowphonenumber" value="<?php  $val = set_value('company_email'); if(!empty($val)){ echo $val; } else{ echo $result['mobile'];} ?>" onkeypress="phoneno()" maxlength="10" >     <?php echo form_error('mobile'); ?>                  
                     </div>
                   </div>        
@@ -389,7 +389,7 @@ th {
                 
                 <div class="col-md-3">
                   <div class="formrow">
-                    <label class="control-label">City: <span class="required">*</span></label>
+                    <label class="control-label">City <span class="required">*</span></label>
                      <input type="text" name="city" class="form-control" id="city" placeholder="City" title="select city from the list" >
                      <input type="hidden" value="" class="form-control"  name="city_id" id="city_id">
                    <!--  <select  name="city_id" id="city_id" class="form-control select2" required>
@@ -400,7 +400,7 @@ th {
                 </div>  
                 <div class="col-md-3">
                   <div class="formrow state_id">
-                    <label class="control-label">State: <span class="required">*</span></label>
+                    <label class="control-label">State <span class="required">*</span></label>
                     <input type="text" name="state" id="state" class="form-control" value="">
                     <input type="hidden" name="state_id" id="state_id" class="form-control" value="">
                              
@@ -411,7 +411,7 @@ th {
                 </div>
                 <div class="col-md-3">
                   <div class="formrow country_id">
-                    <label class="control-label">Country: <span class="required">*</span></label>
+                    <label class="control-label">Country <span class="required">*</span></label>
                     <input type="text" name="country" id="country" class="form-control" value="">
                     <input type="hidden" name="country_id" id="country_id" class="form-control" value="">
                    <!-- <select   name="country_id" id="country_id" class="form-control select2"  required>
