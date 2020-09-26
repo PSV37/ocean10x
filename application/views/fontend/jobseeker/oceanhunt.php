@@ -429,9 +429,13 @@
    .modal-content {
    background-image: linear-gradient(#18c5bd, #d4efec);
    }
-   .sendEmail label{color:#fff;font-size:13px;}
+   .sendEmail label{color:black;font-size:13px;}
    .sendEmail input{background-color: #f3f7f663;}
    .sendEmail textarea.form-control{background-color:#fbffff80;}
+   .modal-body {
+    background-color: white;
+    color: black;
+}
    @media (min-width: 768px){
    .modal-dialog {
    width: 460px;
