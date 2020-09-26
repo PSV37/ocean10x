@@ -1232,7 +1232,7 @@ button.btn.btn-primary.trash {
            }); 
    });
 </script>
-<script>
+<!-- <script>
    function sliceSize(dataNum, dataTotal) {
      return (dataNum / dataTotal) * 360;
    }
@@ -1293,4 +1293,4 @@ button.btn.btn-primary.trash {
    }
    createPie(".pieID.legend", ".pieID.pie");
    
-</script>
+</script> -->
