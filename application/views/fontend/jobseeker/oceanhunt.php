@@ -1627,7 +1627,7 @@ button.btn.btn-primary.trash {
          <form action="<?php echo base_url() ?>job_seeker/forword_job_post" class="sendEmail" method="post" autocomplete="off">
             <div class="modal-body" style="padding:15px 40px;">
                <input type="hidden" name="job_post_id" value="<?php echo $singlejob->job_post_id; ?>">
-               <input type="hidden" name="employer_id" value="<?php echo $singlejob->company_id; ?>">  
+               <input type="hidden" name="employer_id" value="<?php echo $forward_applicaiton->company_id; ?>">  
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
               <label class="mdl-textfield__label" for="sample3">E-mail:</label>
                   <input type="email"  class="form-control" name="candiate_email"  id="email" placeholder="Enter comma seperated Emails"  data-required="true" multiple style="display: inline-block;" required>
