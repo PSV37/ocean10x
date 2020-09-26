@@ -2260,7 +2260,243 @@ public function user_profile()
         // print_r($this->db->last_query());die;
         $this->load->view('fontend/jobseeker/chatting_card.php',$data);
     }
-
+ public function forword_job_post() {
+        $job_seeker_id = $this->session->userdata('job_seeker_id');
+        $send_to = $this->input->post('consultant');
+        // echo $send_to;
+        if ($_POST) {
+            $employer_id = $this->input->post('employer_id');
+            $candiate_email = $this->input->post('candiate_email');
+            $job_post_id = $this->input->post('job_post_id');
+            $job_desc = $this->input->post('message_id');
+            // $mandatory = $this->input->post('mandatory');
+            $email = preg_split('/;|,/', $candiate_email);
+            // $email = explode(',', $candiate_email);
+            $where_req = "job_post_id= '$job_post_id'";
+            $join_req = array('job_types' => 'job_types.job_types_id = job_posting.job_types|LEFT OUTER', 'company_profile' => 'company_profile.company_profile_id = job_posting.company_profile_id|LEFT OUTER', 'city' => 'city.id = job_posting.city_id|LEFT OUTER', 'country' => 'country.country_id = job_posting.job_location|LEFT OUTER', 'state' => 'state.state_id = job_posting.state_id|LEFT OUTER', 'job_category' => 'job_category.job_category_id = job_posting.job_category|LEFT OUTER', 'job_nature' => 'job_nature.job_nature_id = job_posting.job_nature|LEFT OUTER', 'job_level' => 'job_level.job_level_id = job_posting.job_level|LEFT OUTER', 'job_role' => 'job_role.id = job_posting.job_role|LEFT OUTER', 'education_level' => 'education_level.education_level_id = job_posting.job_edu|LEFT OUTER', 'education_specialization' => 'education_specialization.id = job_posting.edu_specialization|LEFT OUTER');
+            $select_job = "job_role.job_role_title,education_specialization.education_specialization,education_level.education_level_name,job_level.job_level_name,job_nature.job_nature_name,job_category.job_category_name,state.state_name,country.country_name,city.city_name,company_profile.company_name,company_profile.company_logo,job_types.job_types_name,job_posting.job_title,job_posting.job_position,job_posting.job_desc,job_posting.education,job_posting.salary_range,job_posting.job_deadline,job_posting.preferred_age,job_posting.preferred_age_to,job_posting.working_hours,job_posting.no_jobs,job_posting.benefits,job_posting.experience,job_posting.skills_required,job_posting.test_for_job";
+            $req_details = $this->Master_model->getMaster('job_posting', $where_req, $join_req, $order = false, $field = false, $select_job, $limit = false, $start = false, $search = false);
+            // print_r($this->db->last_query());die;
+            if ($req_details) {
+                foreach ($req_details as $require) {
+                }
+            }
+            $test_id = $require['test_for_job'];
+            $skill_id = $require['skills_required'];
+            $where_req_skill = "skill_master.id IN (" . $skill_id . ")";
+            $select_skill = "skill_master.skill_name";
+            $req_skill_details = $this->Master_model->getMaster('skill_master', $where_req_skill, $join = false, $order = false, $field = false, $select_skill, $limit = false, $start = false, $search = false);
+            // echo $this->db->last_query(); die;
+            for ($i = 0;$i < sizeof($email);$i++) {
+                
+                    $where_can = "email='$email[$i]'";
+                    $can_data = $this->Master_model->getMaster('js_info', $where_can);
+                    if ($can_data) {
+                        $seeker_id = $can_data[0]['job_seeker_id'];
+                    } else {
+                        $new_JS_array = array('email' => $email[$i], 'js_token' => md5($email[$i]), 'create_at' => date('Y-m-d H:i:s'));
+                        $seeker_id = $this->Master_model->master_insert($new_JS_array, 'js_info');
+                    }
+                    $where_can = "email='$email[$i]'";
+                    $can_data = $this->Master_model->getMaster('js_info', $where_can);
+                    $where_cv = "js_email='$email[$i]' and company_id='$employer_id'";
+                    $cv_data = $this->Master_model->getMaster('corporate_cv_bank', $where_cv);
+                    if (empty($cv_data)) {
+                        $cv_array = array(
+                            'company_id' => $employer_id, 
+                            'js_name' => $can_data[0]['full_name'], 
+                            'js_email' => $can_data[0]['email'], 
+                            'js_mobile' => $can_data[0]['mobile_no'], 
+                            'created_on' => date('Y-m-d'), 
+                            'created_by' => $employer_id);
+                        $add_cv = $this->Master_model->master_insert($cv_array, 'corporate_cv_bank');
+                        $cv_id = $add_cv;
+                    } else {
+                        $cv_id = $cv_data[0]['cv_id'];
+                    }
+                    $apply_array = array('job_seeker_id' => $seeker_id, 'company_id' => $employer_id, 'job_post_id' => $job_post_id, 'forword_job_status' => 1, 'updated_on' => date('Y-m-d'));
+                    $whereres = "job_seeker_id='$seeker_id' and company_id = '$employer_id' and job_post_id = '$job_post_id'";
+                    $job_apply_data = $this->Master_model->get_master_row('
+                        job_apply', $select = FALSE, $whereres);
+                    if (empty($job_apply_data)) {
+                        $apply = $this->Master_model->master_insert($apply_array, 'job_apply');
+                        $external_array = array(
+                            'cv_id' => $cv_id, 
+                            'company_id' => $employer_id, 
+                            'job_post_id' => $job_post_id, 
+                            'apply_id' => $apply, 
+                            'status' => 1, 
+                            'company_id' => $employer_id, 
+                            'name' => $can_data[0]['full_name'], 
+                            'email' => $can_data[0]['email'], 
+                            'mobile' => $can_data[0]['mobile_no'], 
+                            'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),);
+                        $frwd = $this->Master_model->master_insert($external_array, 'external_tracker');
+                        $frwd_array = array('cv_id' => $cv_id, 'company_id' => $employer_id, 'job_post_id' => $job_post_id, 'apply_id' => $apply, 'status' => 1, 'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),);
+                        $frwd = $this->Master_model->master_insert($frwd_array, 'forwarded_jobs_cv');
+                        if (isset($test_id)) {
+                            $test_array = array('job_seeker_id' => $seeker_id, 'company_id' => $employer_id, 'test_id' => $test_id, 'status' => 'Farwarded Test with job', 'updated_on' => date('Y-m-d'),);
+                            $whereres = "job_seeker_id='$seeker_id' and company_id = '$employer_id' and test_id = '$test_id'";
+                            $test_data = $this->Master_model->get_master_row('
+                                forwarded_tests', $select = FALSE, $whereres);
+                            if (empty($test_data)) {
+                                $frwd = $this->Master_model->master_insert($test_array, 'forwarded_tests');
+                            }
+                        }
+                    }
+                    if ($apply) {
+                        $email_name = explode('@', $email[$i]);
+                        $subject = $require['company_name'] . ' has invited you to apply for a New Job Post ';
+                        $message = '
+                                <style>
+ 
+  .following-info{margin-bottom:10px;}
+  .following-info2{margin-bottom:10px;}   
+  .following-info3{margin-bottom:10px; margin-top: -154px;}
+  li.left-title {
+  list-style-type: none;
+  float: left;
+  font-size: 12px;
+  font-weight: 100;
+  width: 83px;
+  height: 15px;
+  }
+  li.right-title {
+  list-style-type: none;
+  font-size: 12px;
+  font-weight: 100;
+  width: 179px;
+  }
+</style>
+<div style="max-width:600px!important;padding:4px">
+  <table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0">
+    <tbody>
+      <tr>
+        <td align="center">
+          <table width="100%" cellspacing="0" border="0">
+            <tbody>
+              <tr>
+                <td style="font-size:0px;text-align:left" valign="top"></td>
+              </tr>
+            </tbody>
+          </table>
+          <table width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left">
+                <td>
+                  <a href="#"><img src="' . base_url() . 'upload/' . $require['company_logo'] . '" style="height: 50px;"> </a>
+                  <br><br>Hi ' . $email_name[0] . ',<br><br/><br/>A new job post invitation has been sent to you by ' . $require['company_name'] . ' . Details of this job post are as follows:-<em><b>
+                  <div class="card">
+                    <div class="front">
+                      <div class="job-info">
+                        <p class="job_title">' . $require['job_title'] . '</p>
+                      </div>
+                      <div class="icon-info">
+                        <li class="left-icon-title"><i class="fas fa-map-marker-alt"></i></li>
+                        <li class="right-icon-title"> &emsp;' . $require['city_id'] . '</li>
+                        <li class="left-icon-title"><i class="fas fa-briefcase"></i></li>
+                        <li class="right-title" style="width:100%;"> &emsp;' . $require['experience'] . '(experience)</li>
+                        <div class="clear"></div>
+                      </div>
+                      <div class="following-info">
+                        <li class="left-title"
+                          >Job Roll</li>
+                        <li class="right-title">&nbsp;: ' . $require['job_role_title'] . '</li>
+                        <li class="left-title">Engagement</li>
+                        <li class="right-title">&nbsp;: ' . $require['job_nature_name'] . '</li>
+                        <li class="left-title">Domain</li>
+                        <li class="right-title">&nbsp;:' . $require['job_category_name'] . '</li>
+                        <!--  <li class="left-title">Role Type </li><li class="right-title">&nbsp;:</li>
+                          <li class="left-title">Dummy1</li>
+                          <li class="right-title">&nbsp;:</li>
+                          <!--  <li class="left-title">Dummy2</li><li class="right-title">&nbsp;:</li> -->
+                        <div class="clear"></div>
+                      </div>
+                      <div class="following-info2">
+                        <li class="left-title">Education</li>
+                        <li class="right-title">&nbsp;: ' . $require['education_level_name'] . '</li>
+                        <li class="left-title">experience</li>
+                        <li class="right-title">&nbsp;:' . $require['experience'] . '</li>
+                        <li class="left-title">CTC</li>
+                        <li class="right-title">&nbsp;:' . $require['salary_range'] . '</li>
+                        <li class="left-title">Vacancies</li>
+                        <li class="right-title">&nbsp;: ' . $require['no_jobs'] . '</li>
+                      
+                        <div class="clear"></div>
+                      </div>
+                      <div class="following-info3">
+                        <li class="left-title">JD attached&nbsp;<i class="fas fa-link"></i></li>
+                        <li class="right-title">&nbsp;: ';
+                        if (isset($require['jd_file']) && !empty($require['jd_file'])) {
+                            $message.= 'Yes <a style="margin-left: 15px" href="' . base_url() . 'upload/job_description/' . $require['jd_file'] . '" download><i class="fa fa-download" aria-hidden="true"></i></a> ';
+                        } else {
+                            $message.= "No";
+                        }
+                        '
+                        </li>
+                        <li class="left-title">Ocean Test</li>
+                        <li class="right-title">&nbsp;:' . $require['is_test_required'] . '</li>
+                        <li class="left-title">Published on</li>
+                        <li class="right-title">&nbsp;:';
+                        if (!is_null($require['created_at'])) {
+                            $message.= date('M j Y', strtotime($require->created_at));
+                        }
+                        '
+                        </li>
+                        <li class="left-title">Job expiry</li>
+                        <li class="right-title">&nbsp;:';
+                        if (!is_null($require['job_deadline'])) {
+                            $message.= date('M j Y', strtotime($require['job_deadline']));
+                        }
+                        '
+                        </li>
+                        <div class="clear"></div>
+                      </div>
+                      <!-- <div id="skills"> -->
+                      <span>Skill sets</span>:';
+                        $sk = $require['skills_required'];
+                        if (isset($sk) && !empty($sk)) {
+                            $where_sk = "id IN (" . $sk . ") AND status=1";
+                            $select_sk = "skill_name ,id";
+                            $skills = $this->Master_model->getMaster('skill_master', $where_sk, $join = FALSE, $order = false, $field = false, $select_sk, $limit = 10, $start = false, $search = false);
+                            if (!empty($skills)) {
+                                foreach ($skills as $skill_row) {
+                                    $message.= '
+                      <lable class=""><button id="sklbtn">' . $skill_row['skill_name'] . '</button></lable>
+                      ';
+                                }
+                            }
+                        }
+                        $message.= '</div>
+                  </label<br><br>   <a href="' . base_url() . 'job/show/' . $v_companyjobs['job_slugs'] . '">Link</a>
+                  <br><br>Thanks,<br><br>Team TheOcean<br><br>
+                </td>
+              </tr>
+              <tr>
+                <td height="40"></td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+';
+                        $send = sendEmail_JobRequest($email[$i], $message, $subject);
+                        //echo $send;
+                        // echo $message;
+                        $company_name = $this->session->userdata('company_name');
+                        $data = array('company' => $company_name, 'action_taken_for' => $email[$i], 'field_changed' => 'Forwarded Job ', 'Action' => $company_name . ' Forwarded job for the position of ' . $require['job_title'], 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
+                        $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Job Post has been Forwarded & Tracker Entry Created Successfully  !</div>');
+                    } else {
+                        $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Jobseeker ha already applied for this job</div>');
+                    }
+                }
+            }
+            redirect('job_seeker/oceanhunt_activities');
+        }
+    }
 
 } //end function
 

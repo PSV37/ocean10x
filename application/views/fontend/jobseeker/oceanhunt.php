@@ -1222,7 +1222,17 @@ button.btn.btn-primary.trash {
                // echo'<button class="btn btn-danger btn-xs">Expired <i class="fa fa-times" aria-hidden="true"></i></button> ';
                echo '<span class="pasive-span">Expired</span>';
                } ?>
-            
+             <div class="dropdown">
+               <a href="#" data-toggle="modal" data-target="#rotateModal<?php echo $singlejob->job_post_id; ?>"> <i class="fas fa-share"></i></a>
+              <!--  <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <i class="fas fa-ellipsis-h"></i>
+               </button> -->
+               <!-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1">
+                  <li><a class="dropdown-item" href="#">View post job</a></li>
+                   <li> <a class="dropdown-item" href="<?php echo base_url() ?>employer/update_job/<?php echo $v_companyjobs['job_post_id'] ?>">Edit job post</a></li> -->
+                 <li ><a class="dropdown-item" href="#" id="attach_to_job" data-toggle="modal" data-target="#attach_test<?php echo $v_companyjobs['job_post_id'] ?>" >Attach Test</a></li>
+               </div> -->
+            </div>
          </div>
       </div>
    </label>
@@ -1602,6 +1612,42 @@ button.btn.btn-primary.trash {
   </div>
 </div>
 <?php  endforeach;  ?>
+<?php
+ if (!empty($forward_applicationlist)): foreach ($forward_applicationlist as $forward_applicaiton) : 
+
+      $singlejob    = $this->job_posting_model->get_job_details_employer($forward_applicaiton->job_post_id); ?>
+<div class="modal" id="rotateModal<?php echo $singlejob->job_post_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+   <input type="hidden" name="company_profile_id" id="company_profile_id" value="<?php echo $this->session->userdata('company_profile_id'); ?>">
+   <div class="modal-dialog" role="document">
+      <div class="modal-content">
+         <div class="modal-header" style="border-bottom:none;">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Forward This Job Post</h5>
+         </div>
+         <form action="<?php echo base_url() ?>job_seeker/forword_job_post" class="sendEmail" method="post" autocomplete="off">
+            <div class="modal-body" style="padding:15px 40px;">
+               <input type="hidden" name="job_post_id" value="<?php echo $singlejob->job_post_id; ?>">
+               <input type="hidden" name="employer_id" value="<?php echo $singlejob->company_id; ?>">  
+               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <label class="mdl-textfield__label" for="sample3">E-mail:</label>
+                  <input type="email"  class="form-control" name="candiate_email"  id="email" placeholder="Enter comma seperated Emails"  data-required="true" multiple style="display: inline-block;" required>
+               </div>
+               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
+                  <label class="mdl-textfield__label" for="sample3">Message:</label>
+                  <textarea class="form-control" name="message" rows="5" id="comment" required></textarea>
+               </div>
+               
+            </div>
+            <div class="modal-footer">
+               <button type="submit" class="btn btn-save">Send</button>
+            </div>
+         </form>
+      </div>
+   </div>
+</div>
+<?php
+   endforeach;endif;
+   ?>
 <script>
   $(".allownumericwithdecimal").on("keypress keyup blur",function (event) {
             //this.value = this.value.replace(/[^0-9\.]/g,'');
@@ -1610,6 +1656,22 @@ button.btn.btn-primary.trash {
                 event.preventDefault();
             }
         });
+</script>
+<script>
+   $(document).ready (function(){
+     $("#smsg").fadeTo(2000, 500).slideUp(500, function(){
+     $("#smsg").slideUp(500);
+     });  
+     $("#email").autocomplete({
+             
+             source: "<?php echo base_url();?>Employer/get_candidate_by_email",
+             minLength: 2,
+              // append: "#rotateModal",
+            
+    
+            
+           }); 
+   });
 </script>
 <!-- <script>
    function sliceSize(dataNum, dataTotal) {
