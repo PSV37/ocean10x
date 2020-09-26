@@ -1787,7 +1787,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
     public function all_questions() {
         $this->session->unset_userdata('activemenu');
         $data['activemenu'] = 'questionbank';
-        $this->load->model('Q_model');
+        
         $data['active_cv_Total_questions_in_q_bank'] = $this->Master_model->master_get_num_rows('questionbank', $where = FALSE, $like = false, $join=false, $select = false);
         
         $this->session->set_userdata($data);
