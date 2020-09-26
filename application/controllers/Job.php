@@ -159,9 +159,9 @@ class Job extends MY_Fontend_Controller
                 // To update job status
                 $data_status=array( 
                  'forword_job_status' => 2,
-                  'expected_salary' => $this->input->post('expected_salary'),
+                  'expected_salary' => $this->input->post('expected_ctc'),
                   'current_ctc' => $this->input->post('current_ctc'),
-                  'notice_period' => $this->input->post('notice_period')
+                  'notice_period' => $this->input->post('Notice_period')
                 );
                 $where_update1['job_apply_id'] = $job_apply_id;
                 $this->Master_model->master_update($data_status, 'job_apply', $where_update1);

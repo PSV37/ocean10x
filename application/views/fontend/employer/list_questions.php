@@ -988,6 +988,10 @@
     margin-right: 7px;
     /* width: 35px; */
 }
+.box:hover {
+    background-color: #18c5bd;
+     color: black; 
+}
 </style>
 <!---header-->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/questionbank.css">

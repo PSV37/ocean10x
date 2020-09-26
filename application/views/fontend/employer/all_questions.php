@@ -8,6 +8,10 @@
     margin-bottom: 5px;
     font-weight: bold;
 }
+.box:hover {
+    background-color: #18c5bd;
+    /* color: #fff; */
+}
 </style>
 <!-- Page Title start -->
 
