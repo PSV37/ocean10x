@@ -57,8 +57,13 @@
    border-radius: 10px;
    cursor: pointer;
    }    
-   .card{height:auto;display: flow-root;padding:0px !important;
-   border:none !important;}    
+   .card {
+    height: auto;
+    display: flow-root;
+    padding: 0px !important;
+    border: none !important;
+    width: 599px;
+}    
    .btn_all {
    color: #539617;
    background-color: #fff;
@@ -1066,7 +1071,7 @@ button.btn.btn-primary.trash {
                         $sr_no++; ?>
    <label class="checkbox_label">
       <div class="border-top1"></div>
-      <input type="checkbox" id='posted_job' class="posted_job" onchange="get_report_data(<?php echo $v_companyjobs['job_post_id'] ?>)" />
+      <input type="checkbox" id='posted_job' class="posted_job" onchange="get_report_data(<?php echo $singlejob->job_post_id ?>)" />
       <div class="card">
          <div class="front">
 
@@ -1080,22 +1085,22 @@ button.btn.btn-primary.trash {
                <li class="left-icon-title"><i class="far fa-money-bill-alt"></i></li>
                <li class="right-icon-title"> &emsp;<?php echo $singlejob->salary_range; ?> (Yearly)  </li>
                <li class="left-icon-title"><i class="fas fa-map-marker-alt"></i></li>
-               <li class="right-icon-title"> &emsp;<?php echo $v_companyjobs['city_id']; ?></li>
+               <li class="right-icon-title"> &emsp;<?php echo $singlejob->city_id; ?></li>
                <li class="left-icon-title"><i class="fas fa-briefcase"></i></li>
-               <li class="right-title" style="width:100%;"> &emsp;<?php echo $v_companyjobs['experience']; ?> (Experience)</li>
+               <li class="right-title" style="width:100%;"> &emsp;<?php echo $singlejob->experience; ?> (Experience)</li>
                <div class="clear"></div>
             </div>
 
             <div class="following-info">
                <li class="left-title"
                   >Job Role </li>
-                  <li class="right-title">&nbsp;: <?php echo $v_companyjobs['job_role_title']; ?></li>
+                  <li class="right-title">&nbsp;: <?php echo $singlejob->job_role_title; ?></li>
                   <li class="left-title">Education</li>
-               <li class="right-title">&nbsp;: <?php echo $v_companyjobs['education_level_name']; ?></li>
+               <li class="right-title">&nbsp;: <?php echo $singlejob->education_level_name; ?></li>
                
                
                <li class="left-title">Domain</li>
-               <li class="right-title">&nbsp;:<?php echo $v_companyjobs['job_category_name']; ?></li>
+               <li class="right-title">&nbsp;:<?php echo $singlejob->job_category_name; ?></li>
               
               
                <div class="clear"></div>
@@ -1103,29 +1108,29 @@ button.btn.btn-primary.trash {
             <div class="following-info2">
                
              <li class="left-title">Vacancies</li>
-               <li class="right-title">&nbsp;: <?php echo $v_companyjobs['no_jobs']; ?></li>
+               <li class="right-title">&nbsp;: <?php echo $singlejob->no_jobs; ?></li>
                <li class="left-title">Engagement</li>
-               <li class="right-title">&nbsp;: <?php echo $v_companyjobs['job_nature_name']; ?></li>
+               <li class="right-title">&nbsp;: <?php echo $singlejob->job_nature_name; ?></li>
                
               
                 <li class="left-title">Published on</li>
-               <li class="right-title">&nbsp;:<?php if(!is_null($v_companyjobs['posting_date'])) { echo date('j M Y',strtotime($v_companyjobs['posting_date'])); } ?></li>
+               <li class="right-title">&nbsp;:<?php if(!is_null($singlejob->posting_date)) { echo date('j M Y',strtotime($singlejob->posting_date)); } ?></li>
                <div class="clear"></div>
             </div>
             <div class="following-info3">
                
                
                <li class="left-title">Ocean Test</li>
-               <li class="right-title">&nbsp;:<?php echo $v_companyjobs['is_test_required']; ?>
-               <?php if ($v_companyjobs['is_test_required'] == 'Yes' && empty($v_companyjobs['test_for_job'])) { ?>
+               <li class="right-title">&nbsp;:<?php echo $singlejob->is_test_required; ?>
+               <?php if ($singlejob->is_test_required == 'Yes' && empty($singlejob->test_for_job)) { ?>
                   <sup><span title="Marked yes but test is not attached" class="required">*</span></sup>
              <?php  } ?></li>
              <li class="left-title">JD attached&nbsp;<i class="fas fa-link"></i></li>
 
-               <li class="right-title">&nbsp;: <?php if (isset($v_companyjobs['jd_file']) && !empty($v_companyjobs['jd_file'])) { echo "Yes"; ?>  <a style="margin-left: 15px" href="<?php echo base_url() ?>upload/job_description/<?php echo $v_companyjobs['jd_file']; ?>" download><i class="fa fa-download" aria-hidden="true"></i></a> <?php } else { echo "No";} ?></li>
+               <li class="right-title">&nbsp;: <?php if (isset($singlejob->jd_file) && !empty($singlejob->jd_file)) { echo "Yes"; ?>  <a style="margin-left: 15px" href="<?php echo base_url() ?>upload/job_description/<?php echo $singlejob->jd_file; ?>" download><i class="fa fa-download" aria-hidden="true"></i></a> <?php } else { echo "No";} ?></li>
               
                <li class="left-title">Job expiry</li>
-               <li class="right-title">&nbsp;:<?php if(!is_null($v_companyjobs['job_deadline'])) { echo date('j M Y',strtotime($v_companyjobs['job_deadline'])); } ?></li>
+               <li class="right-title">&nbsp;:<?php if(!is_null($singlejob->job_deadline)) { echo date('j M Y',strtotime($singlejob->job_deadline)); } ?></li>
                <div class="clear"></div>
             </div>
              <br>
@@ -1134,7 +1139,7 @@ button.btn.btn-primary.trash {
             <span>Skill sets</span>:
             <span class="right-side">
             <?php 
-               $sk=$v_companyjobs['skills_required'];
+               $sk=$singlejob->skills_required;
                if (isset($sk) && !empty($sk)) {
                   $where_sk= "id IN (".$sk.") AND status=1";
                 $select_sk = "skill_name ,id";
@@ -1153,7 +1158,7 @@ button.btn.btn-primary.trash {
             <span>Benefits</span>:
             <span class="right-side">
             <?php 
-               $benefits=explode(',', $v_companyjobs['benefits']);
+               $benefits=explode(',', $singlejob->benefits);
                
                 if(!empty($benefits)){ 
                   $i=0;
@@ -1166,13 +1171,13 @@ button.btn.btn-primary.trash {
             </div>  
            
                <br>       
-            <a title="details" href=" <?php echo base_url() ?>employer/preview_job_post/<?php echo $v_companyjobs['job_post_id'] ?>"><i class="fa fa-info-circle icon_backg"></i></a>
+            <a title="details" href=" <?php echo base_url() ?>employer/preview_job_post/<?php echo $singlejob->job_post_id ?>"><i class="fa fa-info-circle icon_backg"></i></a>
             <div class="btn-group">
-                        <a title="Edit" href=" <?php echo base_url() ?>employer/update_job/<?php echo $v_companyjobs['job_post_id'] ?>"><i class="far fa-edit icon_backg"></i></a>
-                        <a title="Delete" href="<?php echo base_url('employer/deactivate_job/' . $v_companyjobs['job_post_id']); ?>"><i class="fas fa-trash-alt icon_backg"></i></a>
+                        <a title="Edit" href=" <?php echo base_url() ?>employer/update_job/<?php echo $singlejob->job_post_id ?>"><i class="far fa-edit icon_backg"></i></a>
+                        <a title="Delete" href="<?php echo base_url('employer/deactivate_job/' . $singlejob->job_post_id); ?>"><i class="fas fa-trash-alt icon_backg"></i></a>
                      </div>
 
-            <?php  if ($v_companyjobs['job_deadline'] > date('Y-m-d')){
+            <?php  if ($singlejob->job_deadline > date('Y-m-d')){
                // echo '<button class="btn btn-success btn-xs">Live <i class="fa fa-check-circle" aria-hidden="true"></i></button>';
                echo '<span class="active-span">Active</span>';
                }
@@ -1181,14 +1186,14 @@ button.btn.btn-primary.trash {
                echo '<span class="pasive-span">Expired</span>';
                } ?>
             <div class="dropdown">
-               <a href="#" data-toggle="modal" data-target="#rotateModal<?php echo $v_companyjobs['job_post_id']; ?>"> <i class="fas fa-share"></i></a>
+               <a href="#" data-toggle="modal" data-target="#rotateModal<?php echo $singlejob->job_post_id; ?>"> <i class="fas fa-share"></i></a>
                <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                <i class="fas fa-ellipsis-h"></i>
                </button>
                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1">
                   <li><a class="dropdown-item" href="#">View post job</a></li>
                   <!-- <li> <a class="dropdown-item" href="<?php echo base_url() ?>employer/update_job/<?php echo $v_companyjobs['job_post_id'] ?>">Edit job post</a></li> -->
-                 <li ><a class="dropdown-item" href="#" id="attach_to_job" data-toggle="modal" data-target="#attach_test<?php echo $v_companyjobs['job_post_id'] ?>" >Attach Test</a></li>
+                 <li ><a class="dropdown-item" href="#" id="attach_to_job" data-toggle="modal" data-target="#attach_test<?php echo $singlejob->job_post_id ?>" >Attach Test</a></li>
                </div>
             </div>
          </div>
@@ -1258,7 +1263,7 @@ button.btn.btn-primary.trash {
           </div>
         </div>
         <?php  endforeach;  ?>
-        <div id="activity5" class="tab-pane fade in active">
+        <div id="activity5" class="tab-pane fade ">
           <?  if (!empty($oceanchamp_tests)): foreach ($oceanchamp_tests as $forward_applicaiton) :
             // for ($i=0; $i <sizeof($forward_applicationlist) ; $i++) { 
             $singlejob    = $this->job_posting_model->get_job_details_employer($forward_applicaiton->job_post_id);
@@ -1309,7 +1314,7 @@ button.btn.btn-primary.trash {
               <p class="head-invi"><?php echo $this->job_posting_model->job_title_by_name($forward_applicaiton->job_post_id); ?></p>
               <span class="salary-info">Salaray: <?php print_r($this->job_posting_model->job_salary_by_id($forward_applicaiton->job_post_id)) ;  ?></span>
               <p>Company name:<?php echo $this->company_profile_model->company_name($forward_applicaiton->company_id); ?></p>
-              <a href="<?php echo base_url(); ?>job/show/<?php echo $v_companyjobs->job_slugs; ?>">
+              <a href="<?php echo base_url(); ?>job/show/<?php echo $singlejob->job_slugs; ?>">
                 <div class="detail-b">Details</div>
               </a>
               <div class="last-row-invitation">

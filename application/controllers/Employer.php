@@ -4477,7 +4477,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             // echo $this->db->last_query();
             // echo "<pre>";
             $latest = $result['0'];
-            if ($latest['update_at'] > $cv_bank_data[0]['updated_on'] ) {
+            if ($latest['update_at'] >= $cv_bank_data[0]['updated_on'] ) {
                 # code...
           
             $update_profile = array(
