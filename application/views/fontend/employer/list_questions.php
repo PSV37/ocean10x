@@ -1038,10 +1038,10 @@ input.btn.btn-primary {
               <!--  <a style="float: right;margin-right: 200px;"  href="<?php echo base_url(); ?>employer/create-test"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Create Test</i></button></a> -->
               <div class="btn-group-toggle" data-toggle="buttons" >
                 <a href="#add_test" data-toggle="tab"><label class="btn btn-secondary   <?php $submenu=$this->session->userdata('submenu');  if(isset($submenu) && !empty($submenu)){if($submenu == '1' ) {echo 'active'; } }else{ echo 'active'; }?>">
-                <input type="radio" name="options" id="option1" autocomplete="off"  style="display: none;">I want to choose My Questions in the Test !
+                <input type="radio" name="options" id="option1" autocomplete="off"  style="display: none;"><i class="fa fa-plus"> </i> I will select the Questions
                 </label></a><br>
                 <a href="#create_test" data-toggle="tab"><label class="btn btn-secondary  <?php $submenu=$this->session->userdata('submenu');  if(isset($submenu) && !empty($submenu)){if( $submenu == '2'   ) echo 'active'; } ?>">
-                <input type="radio" name="options" id="option2" autocomplete="off" style="display: none;"> Ocean can help me create the Test !
+                <input type="radio" name="options" id="option2" autocomplete="off" style="display: none;"><i class="fa fa-plus"> </i>  Ocean can select Questions
                 </label></a>
               </div>
             </div>
