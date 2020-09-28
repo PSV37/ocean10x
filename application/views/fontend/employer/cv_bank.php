@@ -1163,11 +1163,11 @@ span.right-side {
                 <?php  
                     $cv_id =$cv_row['cv_id'];
                     $employer_id = $this->session->userdata('company_profile_id');
-                    $where="forwarded_jobs_cv.cv_id ='$cv_id or (corporate_cv_bank.created_by = '$employer_id and corporate_cv_bank.company_id != '$employer_id') ";
-                    $join = array('corporate_cv_bank'=>'corporate_cv_bank.cv_id = forwarded_jobs_cv.cv_id |Left OUTER',
+                    $where="forwarded_jobs_cv.cv_id ='$cv_id or (corporate_cv_bank.created_by = '$employer_id' and corporate_cv_bank.company_id != '$employer_id') ";
+                    $join = array('forwarded_jobs_cv'=>'forwarded_jobs_cv.cv_id = corporate_cv_bank.cv_id |Left OUTER',
                       'job_posting'=>'job_posting.job_post_id = forwarded_jobs_cv.job_post_id |Left OUTER',
                       'company_profile'=>'company_profile.company_profile_id = corporate_cv_bank.company_id |Left OUTER');
-                    $jobs_data = $this->Master_model->getMaster('corporate_cv_bank', $where , $join, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false); 
+                    $jobs_data = $this->Master_model->getMaster('corporate_cv_bank', $where , $join, $order = 'desc', $field = 'date', $select = '*,IFNULL(forwarded_jobs_cv.created_on, corporate_cv_bank.created_on) AS date',$limit=false,$start=false, $search=false); 
                       if (!empty($jobs_data)) { ?>
                        <span data-toggle="collapse" data-target="#collapseEx<?php echo $cv_row['cv_id']?>" aria-expanded="false" aria-controls="collapseEx" style="color: red;font-size: 25px;margin-left: 38px;" title="Click to see the Jobs Forwarded" class="required"> * </span>
                        <div class="collapse" id="collapseEx<?php echo $cv_row['cv_id']?>">
