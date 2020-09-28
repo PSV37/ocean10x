@@ -1177,7 +1177,7 @@ span.right-side {
                         foreach ($jobs_data as $row) {
 
                           if (isset($row['job_title'])) { ?>
-                             <p><?php echo $i; ?>.Job Post Forwarded - <?php echo date('d-m-y H:i',strtotime($row['date'])) ; '-' echo $row['job_title']; ?> </p>
+                             <p><?php echo $i; ?>.Job Post Forwarded - <?php echo date('d-m-y H:i',strtotime($row['date'])) ; ?> - <?php echo $row['job_title']; ?> </p>
                         <?php  }else{ ?>
                           <p><?php echo $i; ?>. CV Forwarded - <?php echo date('d-m-y H:i',strtotime($row['date'])) ; ?> - <?php echo $row['company_email']; ?>  </p>
                        <?php  }
