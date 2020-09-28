@@ -1792,7 +1792,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
 
 
         $select = "oceanchamp_tests.total_questions";
-        $data['Appeared_in_test_papers'] = $this->Master_model->master_get_num_rows('oceanchamp_tests', $where = FALSE, $like = false, $join=false, $select = true);
+        $data['Appeared_in_test_papers'] = $this->Master_model->master_get_num_rows('oceanchamp_tests', $where = FALSE, $like = false, $join=false, $select );
         
 
         
