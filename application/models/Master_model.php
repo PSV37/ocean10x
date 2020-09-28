@@ -344,39 +344,7 @@ class Master_model extends CI_Model
      * @return function insert_id (returns last insert id of the company)
      */
     
-    public function appeared_questions($tablename, $where = FALSE, $like = false, $join=false, $select = false) {
-        if ($select) {
-            $this->db->select($select, FALSE);
-        } else {
-            $this->db->select('total_questions');
-        }
-        if ($where) {
-            if (is_array($where)) {
-                foreach ($where as $key => $value) {
-
-                    $this->db->where($key, $value);
-                }
-            } else {
-                $this->db->where($where, NULL, FALSE);
-            }
-        }
-
-        if ($like) {
-            foreach ($like as $key => $value) {
-                $this->db->like($key, $value);
-            }
-        }
-        if ($join) {
-            if (count($join) > 0) {
-                foreach ($join as $key => $value) {
-                    $explode = explode('|', $value);
-                    $this->db->join($key, $explode[0], $explode[1]);
-                }
-            }
-        }
-        $query = $this->db->get($tablename);
-        return $query->num_rows();
-    }
+   
 
     public function insertData($tablename, $postData,$main_store_id='')
     {
