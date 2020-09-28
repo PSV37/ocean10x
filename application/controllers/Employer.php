@@ -1798,10 +1798,10 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         
 
         //echo $data['Appeared_in_test_papers'];
-        //$sort_val = $this->input->post('sort_val');
-        //if (empty($sort_val)) {
-          //  $sort_val = $this->input->get('sort');
-        //}
+        $sort_val = $this->input->post('sort_val');
+        if (empty($sort_val)) {
+           $sort_val = $this->input->get('sort');
+        }
         // print_r($_GET);
         // echo $sort_val;die;
 
