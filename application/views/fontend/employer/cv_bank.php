@@ -1173,11 +1173,20 @@ span.right-side {
                        <div class="collapse" id="collapseEx<?php echo $cv_row['cv_id']?>">
                       <div class="card-body">
                       <?php $i=1; if (!empty($jobs_data)) {
-                        print_r($jobs_data);
-                        foreach ($jobs_data as $row) { ?>
-                        <p><?php echo $i; ?>.  <?php echo $row['job_title']; ?> - Job Post sent on <?php echo date('d-m-y H:i',strtotime($row['created_on'])) ; ?>
+                        // print_r($jobs_data);
+                        foreach ($jobs_data as $row) {
+
+                          if (isset($row['job_title'];)) { ?>
+                             <p><?php echo $i; ?>.Job Post Forwarded - <?php echo date('d-m-y H:i',strtotime($row['date'])) ; '-' echo $row['job_title']; ?> </p>
+                        <?php  }else{ ?>
+                          <p><?php echo $i; ?>. CV Forwarded - <?php echo date('d-m-y H:i',strtotime($row['date'])) ; ?> - <?php echo $row['company_email']; ?>  </p>
+                       <?php  }
+                         ?>
+
+                       
 
                             <?php $i++;  } } ?>
+                        }
                       </div>
                       </div>
                      <?php  }
