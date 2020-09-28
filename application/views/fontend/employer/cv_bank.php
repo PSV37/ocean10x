@@ -1185,8 +1185,8 @@ span.right-side {
 
                        
 
-                            <?php $i++;  } } ?>
-                        }
+                            <?php $i++;  } } } ?>
+                        
                       </div>
                       </div>
                      <?php  }
