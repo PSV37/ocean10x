@@ -1781,13 +1781,23 @@ input.btn.btn-primary {
         <div class="modal-body" style="padding:15px 40px;">
           <input type="hidden" name="consultant" value="JobSeeker">  
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <label class="mdl-textfield__label" for="sample3">E-mail:</label>
-            <input type="email"  name="candiate_email"  id="email" placeholder="Enter comma seperated Emails"  id="subject" data-required="true" multiple style="display: inline-block;" required>
+            <label class="mdl-textfield__label" for="sample3">E-mail</label>
+            <input type="email"  name="candiate_email"  id="email" placeholder="Enter comma seperated Emails"  id="subject" data-required="true" multiple style="display: inline-block;width: 100%;" required>
           </div>
           <input type="hidden" name="job_post_id" value="" id="auto-value">
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
             <label class="mdl-textfield__label" for="sample3">Message:</label>
-            <textarea class="form-control" name="message" rows="5" id="comment" value="" required></textarea>
+            <textarea class="form-control" name="message" rows="5" id="comment" value="" required>Hello ,
+
+Please take this test as per the instructions given. 
+
+Good Luck !
+
+Warm Regards,
+
+<?php echo $this->session->userdata('company_name'); ?>
+Company Name
+</textarea>
           </div>
           <input type="hidden" name="forward_job_email" id="forward_job_email" value="<?php echo $cv_row['js_email']; ?>">
         </div>
@@ -2189,6 +2199,18 @@ input.btn.btn-primary {
               }
            })
   }
+</script>
+<script>
+   $("#email").autocomplete({
+             
+             source: "<?php echo base_url();?>Employer/get_company_by_email",
+             minLength: 2,
+              // append: "#rotateModal",
+            
+    
+            
+           });
+   
 </script>
 <script>
   $(document).on('focus', '.select2-selection.select2-selection--single', function (e) {
