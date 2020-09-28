@@ -452,6 +452,12 @@ class Master_model extends CI_Model
         $sql = $this->db->query("SELECT distinct `artist` from `chords` WHERE artist LIKE '%$my_data%' ORDER BY `artist`  limit 0,10;");
         return $sql ->result();
 	}
+
+    public function total_q_in_cv_bank($term){
+        $my_data = mysql_real_escape_string($term);
+        $sql = $this->db->query("SELECT distinct `artist` from `chords` WHERE artist LIKE '%$my_data%' ORDER BY `artist`  limit 0,10;");
+        return $sql ->result();
+    }
 	
 	
 

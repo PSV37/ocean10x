@@ -1570,7 +1570,7 @@
               <section>
                 <ul class="pieID legend">
                    <li class="cv">
-                  <em id="spanid1">Total Questions in Q Bank</em>
+                  <em id="spanid1">Questions in Q Bank</em>
                   <span><?php echo $Total_questions_in_q_bank; ?></span>
                 </li>
                 <li class="cv">
