@@ -24,7 +24,7 @@ return array(
            'text/csv', 
            'application/csv', 
            'application/excel', 
-           'application/vnd.msexcel')
+           'application/vnd.msexcel'),
 	'bin'	=>	array('application/macbinary', 'application/mac-binary', 'application/octet-stream', 'application/x-binary', 'application/x-macbinary'),
 	'dms'	=>	'application/octet-stream',
 	'lha'	=>	'application/octet-stream',
