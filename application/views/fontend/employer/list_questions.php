@@ -1448,7 +1448,26 @@
             <a id="qbottons" style="margin-top: -25px;" href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> </i>Bulk Upload Questions</button></a>
             <div class="select-option">
               <!--<p style="FONT-SIZE: 12PX;COLOR: #0a5854;">Total No. Of Question:<?php echo $total_question; ?></p>-->
+              <div class="col-md-4">
+            <form method="post" action="<?php echo base_url(); ?>employer/all_questions">
               <label class="dropdown">
+                <div class="dd-button" onclick="myFunction2(event)">
+                  Sort by
+                </div>
+                <input type="checkbox" class="dd-input" id="test">
+                <ul id="sizelist" class="dd-menu">
+                  <li data-value="skill_name" ><a href="#">Subject</a></li>
+                  <li data-value="level"><a href="#">Level</a></li>
+                  <li data-value="time_for_question"><a href="#">Time</a></li>
+                  <li data-value="topic_name"><a href="#">Topics</a></li>
+                </ul>
+              </label>
+              <input id="sizevalue" value="<?php if(isset($sort))
+              {echo $sort; } ?>" size="15" name="sort_val" type="hidden" />
+              <button type="submit" name="sort" class="hidden" id="sort_btn"></button>
+            </form>
+          </div>
+              <!-- <label class="dropdown">
                 <div class="dd-button" onclick="myFunction(event)">
                   Filter
                 </div>
@@ -1459,7 +1478,7 @@
                   <li>Time</li>
                   <li>Topics</li>
                 </ul>
-              </label>
+              </label> -->
               <label style=" width: 86px;float: right;">
               <input type="checkbox" value="4" class="btn-default1" checked="" name="benefits[]">
               <span>Select all</span>
@@ -2068,6 +2087,14 @@
     </div>
   </div>
   <script>
+    $("#sizelist").on("click", "a", function(e){
+  e.preventDefault();
+  var $this = $(this).parent();
+  $this.addClass("select").siblings().removeClass("select");
+  $("#sizevalue").val($this.data("value"));
+  $( "#sort_btn" ).click();
+  $( "#test" ).click();
+  })
    $(document).ready(function(){
    
     $('#myInput').keyup(function(){

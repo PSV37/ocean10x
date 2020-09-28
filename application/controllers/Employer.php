@@ -1844,9 +1844,18 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                 $offset = ($page - 1) * $config['per_page'];
             }
             $this->pagination->initialize($config);
-             $data['questionbank'] = $this->Master_model->getMaster('questionbank', $where_all, $join_emp, $order = 'desc', $field = 'ques_id', $select = false, $limit = $config['per_page'], $start = $page, $search = false);
+            $sort_val = $this->input->post('sort_val');
+            if (!empty($sort_val)) {
+                $data['questionbank'] = $this->Master_model->getMaster('questionbank', $where_all, $join_emp, $order = 'desc', $field = $sort_val, $select = false, $limit = $config['per_page'], $start = $page, $search = false);
+            }
+            else
+            {
+                $data['questionbank'] = $this->Master_model->getMaster('questionbank', $where_all, $join_emp, $order = 'desc', $field = 'ques_id', $select = false, $limit = $config['per_page'], $start = $page, $search = false);
+            }
+             
            
             $data["links"] = $this->pagination->create_links();
+            
         $this->load->view('fontend/employer/list_questions', $data);
         // $this->load->view('fontend/employer/all_questions.php', $data);
         
