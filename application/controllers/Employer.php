@@ -3143,6 +3143,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         //load model
         $this->load->model('Questionbank_employer_model');
         // Check form submit or not
+          print_r($_POST);
+          print_r($_FILES);die;
         if ($this->input->post('upload') != NULL) {
             $data = array();
             print_r($_FILES);die;
