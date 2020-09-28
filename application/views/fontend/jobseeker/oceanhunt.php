@@ -1079,7 +1079,7 @@ button.btn.btn-primary.trash {
         <div id="activity4" class="tab-pane fade">
         </div>
       </div>
-    </div>
+
     <div class="col-md-3 ">
    <div class="last_section">
       <div class="pai_chart">
