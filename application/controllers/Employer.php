@@ -1794,7 +1794,6 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $select = "oceanchamp_tests.total_questions";
         $data['Appeared_in_test_papers'] = $this->Master_model->master_get_num_rows('oceanchamp_tests', $where = FALSE, $like = false, $join=false, $select = true);
         
-=======
 
         
         $sort_val = $this->input->post('sort_val');
@@ -1803,7 +1802,6 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         }
         // print_r($_GET);
         // echo $sort_val;die;
->>>>>>> 8972d0ee2ae27c19fbc56206a5c385be7b83aefb
 
         $this->session->set_userdata($data);
         $employer_id = $this->session->userdata('company_profile_id');
