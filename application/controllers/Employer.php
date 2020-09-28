@@ -3219,7 +3219,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     $data['response'] = 'failed';
                 }
             } else {
-                $data['response'] = 'failed';
+                 $error = array('error' => $this->upload->display_errors());
+                $data['response'] = 'failed'.$error;
             }
             // load view
             $this->load->view('fontend/employer/questionbank_view', $data);
