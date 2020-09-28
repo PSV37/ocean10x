@@ -3147,7 +3147,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         //   print_r($_FILES);die;
         // if ($this->input->post('upload') != NULL) {
         //     $data = array();
-            print_r($_FILES);
+            // print_r($_FILES);
             if (!empty($_FILES['file']['name'])) {
                 // Set preference
                 $config['upload_path'] = 'question_excel/files/';
@@ -3218,11 +3218,13 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                         }
                         $skip++;
                     }
-                    redirect('employer/questionbank-import');
+            redirect('employer/all_questions');
+                    
+                    // redirect('employer/questionbank-import');
                     $data['response'] = 'successfully uploaded ' . $filename;
                 } else {
                      $error = array('error' => $this->upload->display_errors());
-                     print_r($error);die;
+                     // print_r($error);die;
                 $data['response'] = 'failed'.$error;
                 }
             } else {
@@ -3230,7 +3232,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $data['response'] = 'failed';
             }
             // load view
-            $this->load->view('fontend/employer/questionbank_view', $data);
+            redirect('employer/all_questions');
+            // $this->load->view('fontend/employer/questionbank_view', $data);
         // } 
         // else {
         //     // load view
