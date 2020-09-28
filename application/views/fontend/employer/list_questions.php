@@ -992,6 +992,40 @@
     background-color: #18c5bd;
      color: black; 
 }
+div#trash_append {
+    margin-top: 40px;
+}
+.btn.btn-primary {
+    /* float: right; */
+    background-color: #18c5bd;
+    border: none;
+    border-radius: 35px;
+    margin-top: 13px;
+    font-size: 12px;
+}
+input.btn.btn-primary {
+    margin-left: 90px;
+    height: 28px;
+    width: 65px;
+    font-weight: 700;
+}
+.ui-autocomplete-input {
+  border: none; 
+  font-size: 14px;
+  width: 300px;
+  height: 24px;
+  margin-bottom: 5px;
+  padding-top: 2px;
+  border: 1px solid #DDD !important;
+  padding-top: 0px !important;
+  z-index: 1511;
+  position: relative;
+  }
+  .ui-autocomplete {
+  z-index: 5000;
+  background: #b3ebe8;;
+  width: 0%;
+  }
 </style>
 <!---header-->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/questionbank.css">
@@ -1021,10 +1055,10 @@
               <!--  <a style="float: right;margin-right: 200px;"  href="<?php echo base_url(); ?>employer/create-test"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> Create Test</i></button></a> -->
               <div class="btn-group-toggle" data-toggle="buttons" >
                 <a href="#add_test" data-toggle="tab"><label class="btn btn-secondary   <?php $submenu=$this->session->userdata('submenu');  if(isset($submenu) && !empty($submenu)){if($submenu == '1' ) {echo 'active'; } }else{ echo 'active'; }?>">
-                <input type="radio" name="options" id="option1" autocomplete="off"  style="display: none;">I want to choose My Questions in the Test !
+                <input type="radio" name="options" id="option1" autocomplete="off"  style="display: none;"><i class="fa fa-plus"> </i> I will select the Questions
                 </label></a><br>
                 <a href="#create_test" data-toggle="tab"><label class="btn btn-secondary  <?php $submenu=$this->session->userdata('submenu');  if(isset($submenu) && !empty($submenu)){if( $submenu == '2'   ) echo 'active'; } ?>">
-                <input type="radio" name="options" id="option2" autocomplete="off" style="display: none;"> Ocean can help me create the Test !
+                <input type="radio" name="options" id="option2" autocomplete="off" style="display: none;"><i class="fa fa-plus"> </i>  Ocean can select Questions
                 </label></a>
               </div>
             </div>
@@ -1125,7 +1159,7 @@
                     <div class="col-md-6"></div>
                     <div class="col-md-6">
                       <div class="col-md-3">
-                        <button class="btn btn-primary" type="reset">Discard</button>
+                       <input type="reset"  class="btn btn-primary">
                       </div>
                       <div class="col-md-3" style="margin-left: 20;">
                         <button class="btn btn-primary" id="frwd_btn" type="submit">Create</button>
@@ -1215,7 +1249,7 @@
                           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1" style="top:47px;">
                             <li ><a class="dropdown-item" href="#" id="div_frwrd" data-toggle="modal" data-target="#rotateModal<?php echo $tests['test_id'] ?>" >Forward This Test</a></li>
                             <li ><a class="dropdown-item" href="#" id="attach_to_job" data-toggle="modal" data-target="#attach_to_job<?php echo $tests['test_id'] ?>" >Attach To Job Post</a></li>
-                            <li> <a class="dropdown-item"  href="#" data-toggle="modal" data-target="#edit_test<?php echo $tests['test_id'] ?>" >Edit Test</a></li>
+                            <li> <a class="dropdown-item"  href="#" data-toggle="modal" data-target="#edit_test<?php echo $tests['test_id'] ?>" >Edit Test Parameters</a></li>
                             <!--  <li><a class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-target="#move_cv" href="#">Move this CV</a></li> -->
                           </div>
                         </div>
@@ -1251,7 +1285,7 @@
                     <div class="col-md-4">
                       <div class="form-group technical_id">
                         <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
-                        <select id="subject" name="technical_id" required class="form-control select2"  onchange="getTopicocean(this.value)">
+                        <select id="subject1" name="technical_id" required class="form-control select2"  onchange="getTopicocean(this.value)">
                           <option value="">Select Subject</option>
                           <?php if (!empty($skill_master))
                             foreach($skill_master as $skill) 
@@ -1311,7 +1345,7 @@
                     <div class="col-md-6"></div>
                     <div class="col-md-6">
                       <div class="col-md-3">
-                        <button class="btn btn-primary" type="reset">Discard</button>
+                       <input type="reset"  class="btn btn-primary">
                       </div>
                       <div class="col-md-3" style="margin-left: 20;">
                         <button  class="btn btn-primary" type="submit">Create</button>
@@ -1401,7 +1435,7 @@
                           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1" style="top:47px;">
                             <li ><a class="dropdown-item" href="#" id="div_frwrd" data-toggle="modal" data-target="#oceanModal<?php echo $tests['test_id'] ?>" >Forward This Test</a></li>
                             <li ><a class="dropdown-item" href="#" id="attach_to_job" data-toggle="modal" data-target="#ocean_attach_to_job<?php echo $tests['test_id'] ?>" >Attach To Job Post</a></li>
-                            <li> <a class="dropdown-item"  href="#" data-toggle="modal" data-target="#ocean_edit_test<?php echo $tests['test_id'] ?>" >Edit Test</a></li>
+                            <li> <a class="dropdown-item"  href="#" data-toggle="modal" data-target="#ocean_edit_test<?php echo $tests['test_id'] ?>" >Edit Test Parameters</a></li>
                             <!--  <li><a class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-target="#move_cv" href="#">Move this CV</a></li> -->
                           </div>
                         </div>
@@ -1448,7 +1482,26 @@
             <a id="qbottons" style="margin-top: -25px;" href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> </i>Bulk Upload Questions</button></a>
             <div class="select-option">
               <!--<p style="FONT-SIZE: 12PX;COLOR: #0a5854;">Total No. Of Question:<?php echo $total_question; ?></p>-->
+              <div class="col-md-4">
+            <form method="post" action="<?php echo base_url(); ?>employer/all_questions">
               <label class="dropdown">
+                <div class="dd-button" onclick="myFunction2(event)">
+                  Sort by
+                </div>
+                <input type="checkbox" class="dd-input" id="test">
+                <ul id="sizelist" class="dd-menu">
+                  <li data-value="skill_name" ><a href="#">Subject</a></li>
+                  <li data-value="level"><a href="#">Level</a></li>
+                  <li data-value="time_for_question"><a href="#">Time</a></li>
+                  <li data-value="topic_name"><a href="#">Topics</a></li>
+                </ul>
+              </label>
+              <input id="sizevalue" value="<?php if(isset($sort))
+              {echo $sort; } ?>" size="15" name="sort_val" type="hidden" />
+              <button type="submit" name="sort" class="hidden" id="sort_btn"></button>
+            </form>
+          </div>
+              <!-- <label class="dropdown">
                 <div class="dd-button" onclick="myFunction(event)">
                   Filter
                 </div>
@@ -1459,7 +1512,7 @@
                   <li>Time</li>
                   <li>Topics</li>
                 </ul>
-              </label>
+              </label> -->
               <label style=" width: 86px;float: right;">
               <input type="checkbox" value="4" class="btn-default1" checked="" name="benefits[]">
               <span>Select all</span>
@@ -1745,13 +1798,23 @@
         <div class="modal-body" style="padding:15px 40px;">
           <input type="hidden" name="consultant" value="JobSeeker">  
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <label class="mdl-textfield__label" for="sample3">E-mail:</label>
-            <input type="email"  name="candiate_email"  id="email" placeholder="Enter comma seperated Emails"  id="subject" data-required="true" multiple style="display: inline-block;" required>
+            <label class="mdl-textfield__label" for="sample3">E-mail</label>
+            <input type="email"  name="candiate_email"  id="email1" placeholder="Enter comma seperated Emails"  id="subject" data-required="true" multiple style="display: inline-block;width: 100%;" required>
           </div>
           <input type="hidden" name="job_post_id" value="" id="auto-value">
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
             <label class="mdl-textfield__label" for="sample3">Message:</label>
-            <textarea class="form-control" name="message" rows="5" id="comment" value="" required></textarea>
+            <textarea class="form-control" name="message" rows="5" id="comment" value="" required>Hello ,
+
+Please take this test as per the instructions given. 
+
+Good Luck !
+
+Warm Regards,
+
+<?php echo $this->session->userdata('company_name'); ?>
+Company Name
+</textarea>
           </div>
           <input type="hidden" name="forward_job_email" id="forward_job_email" value="<?php echo $cv_row['js_email']; ?>">
         </div>
@@ -1795,7 +1858,7 @@
     <div class="modal-content">
       <div class="modal-header" style="border-bottom:none;">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Forward This Test</h5>
+        <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Change Test Parameters</h5>
       </div>
       <form action="<?php echo base_url() ?>employer/update_test" class="sendEmail" method="post" autocomplete="off">
         <input type="hidden" name="test_id" id="test_id" value="<?php echo $tests['test_id']; ?>">
@@ -1903,13 +1966,22 @@
         <div class="modal-body" style="padding:15px 40px;">
           <input type="hidden" name="consultant" value="JobSeeker">  
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <label class="mdl-textfield__label" for="sample3">E-mail:</label>
-            <input type="email"  name="candiate_email"  id="email" placeholder="Enter comma seperated Emails"  id="subject" data-required="true" multiple style="display: inline-block;" required>
+            <label class="mdl-textfield__label" for="sample3">E-mail</label>
+            <input type="email"  name="candiate_email"  id="email" placeholder="Enter comma seperated Emails"  id="subject" data-required="true" multiple style="display: inline-block;width: 100%;" required>
           </div>
           <input type="hidden" name="job_post_id" value="" id="auto-value">
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
             <label class="mdl-textfield__label" for="sample3">Message:</label>
-            <textarea class="form-control" name="message" rows="5" id="comment" value="" required></textarea>
+            <textarea class="form-control" name="message" rows="5" id="comment" value="" required>Hello ,
+
+Please take this test as per the instructions given. 
+
+Good Luck !
+
+Warm Regards,
+
+<?php echo $this->session->userdata('company_name'); ?>
+Company Name</textarea>
           </div>
           <input type="hidden" name="forward_job_email" id="forward_job_email" value="<?php echo $cv_row['js_email']; ?>">
         </div>
@@ -1954,7 +2026,7 @@
     <div class="modal-content">
       <div class="modal-header" style="border-bottom:none;">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Forward This Test</h5>
+        <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Change Test Parameters</h5>
       </div>
       <form action="<?php echo base_url() ?>employer/update_test" class="sendEmail" method="post" autocomplete="off">
         <input type="hidden" name="test_id" id="test_id" value="<?php echo $tests['test_id']; ?>">
@@ -2068,6 +2140,14 @@
     </div>
   </div>
   <script>
+    $("#sizelist").on("click", "a", function(e){
+  e.preventDefault();
+  var $this = $(this).parent();
+  $this.addClass("select").siblings().removeClass("select");
+  $("#sizevalue").val($this.data("value"));
+  $( "#sort_btn" ).click();
+  $( "#test" ).click();
+  })
    $(document).ready(function(){
    
     $('#myInput').keyup(function(){
@@ -2145,6 +2225,27 @@
               }
            })
   }
+</script>
+<script>
+   $("#email").autocomplete({
+             
+             source: "<?php echo base_url();?>Employer/get_company_by_email",
+             minLength: 2,
+              // append: "#rotateModal",
+            
+    
+            
+           });
+   $("#email1").autocomplete({
+             
+             source: "<?php echo base_url();?>Employer/get_company_by_email",
+             minLength: 2,
+              // append: "#rotateModal",
+            
+    
+            
+           });
+   
 </script>
 <script>
   $(document).on('focus', '.select2-selection.select2-selection--single', function (e) {
