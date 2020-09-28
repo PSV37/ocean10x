@@ -1163,7 +1163,7 @@ span.right-side {
                 <?php  
                     $cv_id =$cv_row['cv_id'];
                     $employer_id = $this->session->userdata('company_profile_id');
-                    $where="forwarded_jobs_cv.cv_id ='$cv_id' or (corporate_cv_bank.created_by = '$employer_id' and corporate_cv_bank.company_id != '$employer_id') ";
+                    $where="forwarded_jobs_cv.cv_id ='$cv_id' or (corporate_cv_bank.created_by = '$employer_id' and corporate_cv_bank.company_id != '$employer_id') and corporate_cv_bank.cv_id = '$cv_id' ";
                     $join = array('forwarded_jobs_cv'=>'forwarded_jobs_cv.cv_id = corporate_cv_bank.cv_id |Left OUTER',
                       'job_posting'=>'job_posting.job_post_id = forwarded_jobs_cv.job_post_id |Left OUTER',
                       'company_profile'=>'company_profile.company_profile_id = corporate_cv_bank.company_id |Left OUTER');
