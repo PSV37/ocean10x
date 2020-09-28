@@ -1013,7 +1013,7 @@
              if($submenu == 'qbank') 
              { echo 'active'; }
              }else{  echo 'active'; } ?> "><a href="#qbank" data-toggle="tab">Question Bank</a></li>
-          <li class="btn btn-secondary <?php $submenu=$this->session->userdata('submenu');  if(isset($submenu) && !empty($submenu)){if($submenu == '1' || $submenu == '2'   ) echo 'active'; } ?>"><a href="#Videos" data-toggle="tab">Test Paper Bank</a></li>
+          <li class="btn btn-secondary <?php $submenu=$this->session->userdata('submenu');  if(isset($submenu) && !empty($submenu)){if($submenu == '1' || $submenu == '2'   ) echo 'active'; } ?>"><a href="#Videos" data-toggle="tab">Test Bank</a></li>
         </ul>
         <div class="tab-content">
           <div role="tabpanel" class="tab-pane fade <?php $submenu=$this->session->userdata('submenu');  if(isset($submenu) && !empty($submenu)){if($submenu == '1' || $submenu == '2'   ) echo 'in active'; } ?>" id="Videos">
@@ -1454,13 +1454,10 @@
                 </div>
                 <input type="checkbox" class="dd-input" id="test">
                 <ul class="dd-menu">
-                  <li>Action</li>
-                  <li>Another action</li>
-                  <li>Something else here</li>
-                  <li class="divider"></li>
-                  <li>
-                    <a href="http://rane.io">Link to Rane.io</a>
-                  </li>
+                  <li>Subject</li>
+                  <li>Level</li>
+                  <li>Time</li>
+                  <li>Topics</li>
                 </ul>
               </label>
               <label style=" width: 86px;float: right;">
