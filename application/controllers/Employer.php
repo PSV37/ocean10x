@@ -3143,11 +3143,11 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         //load model
         $this->load->model('Questionbank_employer_model');
         // Check form submit or not
-          print_r($_POST);
-          print_r($_FILES);die;
-        if ($this->input->post('upload') != NULL) {
-            $data = array();
-            print_r($_FILES);die;
+        //   print_r($_POST);
+        //   print_r($_FILES);die;
+        // if ($this->input->post('upload') != NULL) {
+        //     $data = array();
+        //     print_r($_FILES);die;
             if (!empty($_FILES['file']['name'])) {
                 // Set preference
                 $config['upload_path'] = 'question_excel/files/';
@@ -3229,10 +3229,11 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             }
             // load view
             $this->load->view('fontend/employer/questionbank_view', $data);
-        } else {
-            // load view
-            $this->load->view('fontend/employer/questionbank_view', $data);
-        }
+        // } 
+        // else {
+        //     // load view
+        //     $this->load->view('fontend/employer/questionbank_view', $data);
+        // }
     }
     public function interview_scheduler() {
         $company_id = $this->session->userdata('company_profile_id');
