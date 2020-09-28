@@ -3222,6 +3222,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     $data['response'] = 'successfully uploaded ' . $filename;
                 } else {
                      $error = array('error' => $this->upload->display_errors());
+                     print_r($error)die;
                 $data['response'] = 'failed'.$error;
                 }
             } else {
