@@ -1791,7 +1791,10 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $data['Total_questions_in_q_bank'] = $this->Master_model->master_get_num_rows('questionbank', $where = FALSE, $like = false, $join=false, $select = false);
 
         $data['Appeared_in_test_papers'] = $this->Master_model->appeared_questions('oceanchamp_tests', $where = FALSE, $like = false, $join=false, $select = false);
-        
+        $sort_val = $this->input->post('sort_val');
+        if (empty($sort_val)) {
+            $sort_val = $this->input->get('sort_val');
+        }
         $this->session->set_userdata($data);
         $employer_id = $this->session->userdata('company_profile_id');
         $where_cn = "status=1";
@@ -1813,7 +1816,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $join_emp = array('skill_master' => 'skill_master.id=questionbank.technical_id |left outer', 'topic' => 'topic.topic_id=questionbank.topic_id |left outer', 'subtopic' => 'subtopic.subtopic_id=questionbank.subtopic_id |left outer', 'lineitem' => 'lineitem.lineitem_id=questionbank.lineitem_id |left outer', 'lineitemlevel' => 'lineitemlevel.lineitemlevel_id=questionbank.lineitemlevel_id |left outer', 'questionbank_answer' => 'questionbank_answer.question_id = questionbank.ques_id|LEFT OUTER');
         $questionbank = $this->Master_model->getMaster('questionbank', $where_all, $join_emp, $order = 'desc', $field = 'ques_id', $select = false, $limit = false, $start = false, $search = false);
             $data['total_question'] = sizeof($questionbank);
-            $config['base_url'] = base_url() . 'employer/all_questions';
+            $config['base_url'] = base_url() . 'employer/all_questions/sort='$sort_val;
             $config['total_rows'] = sizeof($questionbank);
             $config['per_page'] = 5;
             $config['attributes'] = array('class' => 'myclass');
@@ -1846,9 +1849,9 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                 $offset = ($page - 1) * $config['per_page'];
             }
             $this->pagination->initialize($config);
-            $sort_val = $this->input->post('sort_val');
+            
             $data['sort'] = $sort_val;
-            if (!empty($sort_val)) {
+            if (!empty($sort_val) ) {
                 $data['questionbank'] = $this->Master_model->getMaster('questionbank', $where_all, $join_emp, $order = 'asc', $field = $sort_val, $select = false, $limit = $config['per_page'], $start = $page, $search = false);
             }
             else
