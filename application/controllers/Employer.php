@@ -1847,8 +1847,9 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             }
             $this->pagination->initialize($config);
             $sort_val = $this->input->post('sort_val');
+            $data['sort'] = $sort_val;
             if (!empty($sort_val)) {
-                $data['questionbank'] = $this->Master_model->getMaster('questionbank', $where_all, $join_emp, $order = 'desc', $field = $sort_val, $select = false, $limit = $config['per_page'], $start = $page, $search = false);
+                $data['questionbank'] = $this->Master_model->getMaster('questionbank', $where_all, $join_emp, $order = 'asc', $field = $sort_val, $select = false, $limit = $config['per_page'], $start = $page, $search = false);
             }
             else
             {
