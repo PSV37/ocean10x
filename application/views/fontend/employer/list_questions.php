@@ -992,6 +992,9 @@
     background-color: #18c5bd;
      color: black; 
 }
+div#trash_append {
+    margin-top: 40px;
+}
 </style>
 <!---header-->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/questionbank.css">
