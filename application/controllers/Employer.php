@@ -1791,8 +1791,8 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $data['Total_questions_in_q_bank'] = $this->Master_model->master_get_num_rows('questionbank', $where = FALSE, $like = false, $join=false, $select = false);
 
 
-        $select = "oceanchamp_tests.total_questions";
-        $data['Appeared_in_test_papers'] = $this->Master_model->master_get_num_rows('oceanchamp_tests', $where = FALSE, $like = false, $join=false, $select = true);
+        $select_appeared_questions = "oceanchamp_tests.total_questions";
+        $data['Appeared_in_test_papers'] = $this->Master_model->master_get_num_rows('oceanchamp_tests', $where = FALSE, $like = false, $join=false, $select_appeared_questions);
         
 
         
