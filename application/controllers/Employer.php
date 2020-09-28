@@ -3145,6 +3145,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         // Check form submit or not
         if ($this->input->post('upload') != NULL) {
             $data = array();
+            print_r($_FILES);die;
             if (!empty($_FILES['file']['name'])) {
                 // Set preference
                 $config['upload_path'] = 'question_excel/files/';
@@ -3172,7 +3173,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     fclose($file);
                     $skip = 0;
                     // insert import data
-                    foreach ($importData_arr as $userdata) {
+                foreach ($importData_arr as $userdata) {
                         if ($skip != 0) {
                             echo "<pre>";
                             //print_r($userdata);
@@ -3228,7 +3229,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $this->load->view('fontend/employer/questionbank_view', $data);
         } else {
             // load view
-            $this->load->view('fontend/employer/questionbank_view');
+            $this->load->view('fontend/employer/questionbank_view', $data);
         }
     }
     public function interview_scheduler() {
