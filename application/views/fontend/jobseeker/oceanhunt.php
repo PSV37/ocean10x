@@ -902,7 +902,8 @@ button.btn.btn-primary.trash {
           </div>
         </div>
         <div id="activity2" class="tab-pane fade">
-          <?  if (!empty($applicationlist)): foreach ($applicationlist as $forward_applicaiton) :
+         <div id="job_trash">
+  <?  if (!empty($applicationlist)): foreach ($applicationlist as $forward_applicaiton) :
             // for ($i=0; $i <sizeof($forward_applicationlist) ; $i++) { 
             $singlejob    = $this->job_posting_model->get_job_details_employer($forward_applicaiton->job_post_id);
             // print_r($forward_applicaiton->job_post_id);
@@ -911,50 +912,167 @@ button.btn.btn-primary.trash {
             
             
                         $sr_no++; ?>
-          <div class="invi-div">
-            <img src="<?php echo base_url()?>upload/<?php echo $this->company_profile_model->company_logoby_id($forward_applicaiton->company_id); ?>" class="invitation-img"/>
-            <div class="info-invitation">
-              <p class="head-invi"><?php echo $this->job_posting_model->job_title_by_name($forward_applicaiton->job_post_id); ?></p>
-              <span class="salary-info">Salaray: <?php print_r($this->job_posting_model->job_salary_by_id($forward_applicaiton->job_post_id)) ;  ?></span>
-              <p>Company name:<?php echo $this->company_profile_model->company_name($forward_applicaiton->company_id); ?></p>
-              <a href="<?php echo base_url(); ?>job/show/<?php echo $singlejob->job_slugs; ?>">
-                <div class="detail-b">Details</div>
-              </a>
-              <div class="last-row-invitation">
+   <label class="checkbox_label">
+      <div class="border-top1"></div>
+      <input type="checkbox" id='posted_job' class="posted_job" onchange="get_report_data(<?php echo $singlejob->job_post_id ?>)" />
+      <div class="card">
+         <div class="front">
+
+
+
+            <img src="<?php echo base_url() ?>upload/<?php echo $this->company_profile_model->company_logoby_id($forward_applicaiton->company_id);?>" style="height:50px; width:50px;border-radius:5px;float:left;border:solid 1px #eae9e9b8;margin-right:15px;" />
+            <div class="job-info">
+               <a href="<?php echo base_url(); ?>job/show/<?php echo $forward_applicaiton->job_slugs; ?>" class="job_title"><?php echo $singlejob->job_title; ?></a>
+            </div>
+            <div class="icon-info">
+               <li class="left-icon-title"><i class="far fa-money-bill-alt"></i></li>
+               <li class="right-icon-title"> &emsp;<?php echo $singlejob->salary_range; ?> (Yearly)  </li>
+               <li class="left-icon-title"><i class="fas fa-map-marker-alt"></i></li>
+               <li class="right-icon-title"> &emsp;<?php echo $singlejob->city_id; ?></li>
+               <li class="left-icon-title"><i class="fas fa-briefcase"></i></li>
+               <li class="right-title" style="width:100%;"> &emsp;<?php echo $singlejob->experience; ?> (Experience)</li>
+               <div class="clear"></div>
+            </div>
+
+            <div class="following-info">
+               <li class="left-title"
+                  >Job Role </li>
+                  <li class="right-title">&nbsp;: <?php echo $singlejob->job_role_title; ?></li>
+                  <li class="left-title">Education</li>
+               <li class="right-title">&nbsp;: <?php echo $singlejob->education_level_name; ?></li>
+               
+               
+               <li class="left-title">Domain</li>
+               <li class="right-title">&nbsp;:<?php echo $singlejob->job_category_name; ?></li>
+              
+              
+               <div class="clear"></div>
+            </div>
+            <div class="following-info2">
+               
+             <li class="left-title">Vacancies</li>
+               <li class="right-title">&nbsp;: <?php echo $singlejob->no_jobs; ?></li>
+               <li class="left-title">Engagement</li>
+               <li class="right-title">&nbsp;: <?php echo $singlejob->job_nature_name; ?></li>
+               
+              
+                <li class="left-title">Published on</li>
+               <li class="right-title">&nbsp;:<?php if(!is_null($singlejob->posting_date)) { echo date('j M Y',strtotime($singlejob->posting_date)); } ?></li>
+               <div class="clear"></div>
+            </div>
+            <div class="following-info3">
+               
+               
+               <li class="left-title">Ocean Test</li>
+               <li class="right-title">&nbsp;:<?php echo $singlejob->is_test_required; ?>
+               <?php if ($singlejob->is_test_required == 'Yes' && empty($singlejob->test_for_job)) { ?>
+                  <sup><span title="Marked yes but test is not attached" class="required">*</span></sup>
+             <?php  } ?></li>
+             <li class="left-title">JD attached&nbsp;<i class="fas fa-link"></i></li>
+
+               <li class="right-title">&nbsp;: <?php if (isset($singlejob->jd_file) && !empty($singlejob->jd_file)) { echo "Yes"; ?>  <a style="margin-left: 15px" href="<?php echo base_url() ?>upload/job_description/<?php echo $singlejob->jd_file; ?>" download><i class="fa fa-download" aria-hidden="true"></i></a> <?php } else { echo "No";} ?></li>
+              
+               <li class="left-title">Job expiry</li>
+               <li class="right-title">&nbsp;:<?php if(!is_null($singlejob->job_deadline)) { echo date('j M Y',strtotime($singlejob->job_deadline)); } ?></li>
+               <div class="clear"></div>
+            </div>
+             <br>
+            <div class="skl_bnft">
+              
+            <span>Skill sets</span>:
+            <span class="right-side">
+            <?php 
+               $sk=$singlejob->skills_required;
+               if (isset($sk) && !empty($sk)) {
+                  $where_sk= "id IN (".$sk.") AND status=1";
+                $select_sk = "skill_name ,id";
+                $skills = $this->Master_model->getMaster('skill_master',$where_sk,$join = FALSE, $order = false, $field = false, $select_sk,$limit=10,$start=false, $search=false);
+                if(!empty($skills)){ 
+                  foreach($skills as $skill_row){ ?>
+            <lable class=""><button id="sklbtn"><?php echo  $skill_row['skill_name'];?></button></lable>
+            <?php }
+               } }   ?>
+            </span>
+               <div class="clear"></div>
+               </div> 
+           
+            <br>
+            <div class="skl_bnft">
+            <span>Benefits</span>:
+            <span class="right-side">
+            <?php 
+               $benefits=explode(',', $singlejob->benefits);
+               
+                if(!empty($benefits)){ 
+                  $i=0;
+                  foreach($benefits as $benefit){ ?>
+            <lable class=""><button id="sklbtn"><?php echo  $benefits[$i];?></button></lable>
+            <?php $i++; }
+               }    ?>
+            </span>
+             <div class="clear"></div>
+            </div>  
+           <div class="last-row-invitation">
                 <ul>
                   <li>
-                    <div class="location-inv"><i class="fas fa-map-marker-alt"></i><?php echo $forward_applicaiton->city_id;  ?></div>
+                    <span class="location-inv"><i class="fas fa-map-marker-alt"></i><?php echo $forward_applicaiton->city_id;  ?></span>
                   </li>
                   <li>
-                    <div class="year-inv"><i class="fas fa-save"></i>&emsp;<?php echo $forward_applicaiton->experience;  ?> years</div>
+                    <span class="location-inv"><i class="fas fa-save"></i>&emsp;<?php echo $forward_applicaiton->experience;  ?> years</span>
                   </li>
                   <li>
-                    <div class="calender-inv"><i class="far fa-calendar-alt"></i>&emsp; <?php if(!is_null($forward_applicaiton->created_at)) { $mtime = time_ago_in_php($forward_applicaiton->created_at);
-                      echo $mtime;} ?></div>
+                    <span class="location-inv"><i class="far fa-calendar-alt"></i>&emsp; <?php if(!is_null($forward_applicaiton->created_at)) { $mtime = time_ago_in_php($forward_applicaiton->created_at);
+                      echo $mtime;} ?></span>
                   </li>
                   <li>
-                    <div class="fulltime-inv"><i class="fas fa-clock"></i>&emsp;<?php echo $forward_applicaiton->job_nature_name;  ?></div>
+                    <span class="location-inv"><i class="fas fa-clock"></i>&emsp;<?php echo $forward_applicaiton->job_nature_name;  ?></span>
                   </li>
                 </ul>
               </div>
-              <button class="apply-invi" data-toggle="modal" data-target="#ApplyJob2<?php echo $forward_applicaiton->job_post_id; ?>">Apply</button>
+               <br>       
+            <a title="details" href=" <?php echo base_url(); ?>job/show/<?php echo $forward_applicaiton->job_slugs; ?>"><i class="fa fa-info-circle icon_backg"></i></a>
+            <div class="btn-group">
+                        <!-- <a title="Edit" href=" <?php echo base_url() ?>employer/update_job/<?php echo $singlejob->job_post_id ?>"><i class="far fa-edit icon_backg"></i></a> -->
+                        <a title="Delete" href="<?php echo base_url('employer/deactivate_job/' . $singlejob->job_post_id); ?>"><i class="fas fa-trash-alt icon_backg"></i></a>
+                     </div>
+
+            <?php  if ($singlejob->job_deadline > date('Y-m-d')){
+               // echo '<button class="btn btn-success btn-xs">Live <i class="fa fa-check-circle" aria-hidden="true"></i></button>';
+               echo '<span class="active-span">Active</span>';
+               }
+               else {
+               // echo'<button class="btn btn-danger btn-xs">Expired <i class="fa fa-times" aria-hidden="true"></i></button> ';
+               echo '<span class="pasive-span">Expired</span>';
+               } ?>
+             <div class="dropdown">
+               <a href="#" data-toggle="modal" data-target="#rotateModal<?php echo $singlejob->job_post_id; ?>"> <i class="fas fa-share"></i></a>
+              <!--  <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <i class="fas fa-ellipsis-h"></i>
+               </button> -->
+               <!-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1">
+                  <li><a class="dropdown-item" href="#">View post job</a></li>
+                   <li> <a class="dropdown-item" href="<?php echo base_url() ?>employer/update_job/<?php echo $v_companyjobs['job_post_id'] ?>">Edit job post</a></li> 
+                 <li ><a class="dropdown-item" href="#" id="attach_to_job" data-toggle="modal" data-target="#attach_test<?php echo $v_companyjobs['job_post_id'] ?>" >Attach Test</a></li>
+               </div> -->
             </div>
-            <div class="clear"></div>
+         </div>
+      </div>
+   </label>
+   <?php endforeach; 
+      else : ?> 
+   <li>
+      <strong>There are no Invitations to Display !</strong>
+   </li>
+   <?php endif; ?>
+</div>
+<div class="container-fluid">
+             <div class="col-md-6"></div>
+            <div class="col-md-6">
+            <span><?php echo $links; ?></span>   
+            </div>
+               
           </div>
-          <?php
-            // $sr_no++;
-             // }
-            
-            endforeach;
-            ?>
-          <?php else : ?> 
-          <div>
-            <strong>There is no data to display</strong>
-          </div>
-          <?php endif; ?>
-          <div class="btn-more">
-            <button class="more-btn">show more</button>
-          </div>
+   </div>
         </div>
         <div id="activity3" class="tab-pane fade">
         </div>
