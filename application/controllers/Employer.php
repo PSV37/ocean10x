@@ -3147,7 +3147,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         //   print_r($_FILES);die;
         // if ($this->input->post('upload') != NULL) {
         //     $data = array();
-        //     print_r($_FILES);die;
+            print_r($_FILES);
             if (!empty($_FILES['file']['name'])) {
                 // Set preference
                 $config['upload_path'] = 'question_excel/files/';
@@ -3221,11 +3221,12 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     redirect('employer/questionbank-import');
                     $data['response'] = 'successfully uploaded ' . $filename;
                 } else {
-                    $data['response'] = 'failed';
+                     $error = array('error' => $this->upload->display_errors());
+                $data['response'] = 'failed'.$error;
                 }
             } else {
-                 $error = array('error' => $this->upload->display_errors());
-                $data['response'] = 'failed'.$error;
+                
+                $data['response'] = 'failed';
             }
             // load view
             $this->load->view('fontend/employer/questionbank_view', $data);
