@@ -1262,7 +1262,7 @@ div#trash_append {
                     <div class="col-md-4">
                       <div class="form-group technical_id">
                         <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
-                        <select id="subject" name="technical_id" required class="form-control select2"  onchange="getTopicocean(this.value)">
+                        <select id="subject1" name="technical_id" required class="form-control select2"  onchange="getTopicocean(this.value)">
                           <option value="">Select Subject</option>
                           <?php if (!empty($skill_master))
                             foreach($skill_master as $skill) 
@@ -1322,7 +1322,7 @@ div#trash_append {
                     <div class="col-md-6"></div>
                     <div class="col-md-6">
                       <div class="col-md-3">
-                        <button class="btn btn-primary" type="reset">Discard</button>
+                       <input type="reset"  class="btn btn-primary">
                       </div>
                       <div class="col-md-3" style="margin-left: 20;">
                         <button  class="btn btn-primary" type="submit">Create</button>
