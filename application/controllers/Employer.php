@@ -1795,7 +1795,8 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         if (empty($sort_val)) {
             $sort_val = $this->input->get('sort');
         }
-        print_r($sort_val);die;
+        print_r($_GET);
+        echo $sort_val;die;
         $this->session->set_userdata($data);
         $employer_id = $this->session->userdata('company_profile_id');
         $where_cn = "status=1";
