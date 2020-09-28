@@ -1128,7 +1128,7 @@ div#trash_append {
                     <div class="col-md-6"></div>
                     <div class="col-md-6">
                       <div class="col-md-3">
-                        <button class="btn btn-primary" type="reset">Discard</button>
+                       <input type="reset"  class="btn btn-primary">Discard
                       </div>
                       <div class="col-md-3" style="margin-left: 20;">
                         <button class="btn btn-primary" id="frwd_btn" type="submit">Create</button>
