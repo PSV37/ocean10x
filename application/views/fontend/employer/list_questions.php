@@ -1479,7 +1479,7 @@ input.btn.btn-primary {
             </div>
           </div>
             <br>
-            <a id="qbottons" style="margin-top: -25px;" href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> </i>Bulk Upload Questions</button></a>
+            <a id="qbottons" style="margin-top: -25px;" href="#"data-toggle="modal" data-keyboard="true"  data-target="#bulkupload"><i class="fa fa-plus" > </i>Bulk Upload Questions</a>
             <div class="select-option">
               <!--<p style="FONT-SIZE: 12PX;COLOR: #0a5854;">Total No. Of Question:<?php echo $total_question; ?></p>-->
               <div class="col-md-4">
@@ -2139,6 +2139,43 @@ Company Name</textarea>
       </form>
     </div>
   </div>
+  <div class="modal fade" id="bulkupload" tabindex='-1' role="dialog">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <form method="post" action="<?php echo base_url();?>employer/questionbank-import" enctype="multipart/form-data">
+        <div class="modal-header">
+          <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+          <h4 class="modal-title">Bulk Upload CV</h4>
+        </div>
+        <div class="modal-body">
+          <div class="col-md-12" style="margin-top: 20px;">
+            <div class="row">
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <!-- <label class="mdl-textfield__label" for="sample3">Folder Name:</label> -->
+                <small>To Import Question's Download Question Format 
+                  <a href="<?php echo base_url(); ?>questionimportpattarn/Questionbank_pattern.csv" download="Questionbank_pattern.csv">
+                
+                    <strong>Click here To Download</strong></a></small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="row">
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input type='file' name='file' required class="form-control" >
+              </div>
+            </div>
+          </div>
+          <!--  <p>This is a small modal.</p> -->
+        </div>
+        <div class="modal-footer">
+          <button type="submit" name='upload' class="btn btn-default">Upload Now</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
   <script>
     $("#sizelist").on("click", "a", function(e){
   e.preventDefault();
