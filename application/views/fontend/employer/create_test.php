@@ -81,9 +81,12 @@ span.select2.select2-container.select2-container--default {
     border-radius: 35px;
     margin-top: 13px;
     font-size: 12px;
+    height: 28px;
+    width: 65px;
+    font-weight: 700;
 }
 input.btn.btn-primary {
-    margin-left: 90px;
+    /*margin-left: 90px;*/
     height: 28px;
     width: 65px;
     font-weight: 700;
