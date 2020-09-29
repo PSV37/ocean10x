@@ -2190,6 +2190,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             $test_data['negative_marks'] = $this->input->post('negative');
             $test_data['correct_ans_each_ques'] = $this->input->post('each_question_ans');
             $test_data['final_result'] = $this->input->post('display_result');
+             $test_data['updated_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
             $where['test_id'] = $test_id;
             $this->Master_model->master_update($test_data, 'oceanchamp_tests', $where);
         }
