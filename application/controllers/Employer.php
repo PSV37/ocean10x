@@ -1798,10 +1798,10 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         
 
         //echo $data['Appeared_in_test_papers'];
-        //$sort_val = $this->input->post('sort_val');
-        //if (empty($sort_val)) {
-          //  $sort_val = $this->input->get('sort');
-        //}
+        $sort_val = $this->input->post('sort_val');
+        if (empty($sort_val)) {
+           $sort_val = $this->input->get('sort');
+        }
         // print_r($_GET);
         // echo $sort_val;die;
 
@@ -3143,12 +3143,15 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         //load model
         $this->load->model('Questionbank_employer_model');
         // Check form submit or not
-        if ($this->input->post('upload') != NULL) {
-            $data = array();
+        //   print_r($_POST);
+        //   print_r($_FILES);die;
+        // if ($this->input->post('upload') != NULL) {
+        //     $data = array();
+            // print_r($_FILES);
             if (!empty($_FILES['file']['name'])) {
                 // Set preference
                 $config['upload_path'] = 'question_excel/files/';
-                $config['allowed_types'] = 'csv';
+                $config['allowed_types'] = '*';
                 $config['max_size'] = '1000'; // max_size in kb
                 $config['file_name'] = $_FILES['file']['name'];
                 // Load upload library
@@ -3172,7 +3175,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     fclose($file);
                     $skip = 0;
                     // insert import data
-                    foreach ($importData_arr as $userdata) {
+                foreach ($importData_arr as $userdata) {
                         if ($skip != 0) {
                             echo "<pre>";
                             //print_r($userdata);
@@ -3215,20 +3218,27 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                         }
                         $skip++;
                     }
-                    redirect('employer/questionbank-import');
+            redirect('employer/all_questions');
+                    
+                    // redirect('employer/questionbank-import');
                     $data['response'] = 'successfully uploaded ' . $filename;
                 } else {
-                    $data['response'] = 'failed';
+                     $error = array('error' => $this->upload->display_errors());
+                     // print_r($error);die;
+                $data['response'] = 'failed'.$error;
                 }
             } else {
+                
                 $data['response'] = 'failed';
             }
             // load view
-            $this->load->view('fontend/employer/questionbank_view', $data);
-        } else {
-            // load view
-            $this->load->view('fontend/employer/questionbank_view');
-        }
+            redirect('employer/all_questions');
+            // $this->load->view('fontend/employer/questionbank_view', $data);
+        // } 
+        // else {
+        //     // load view
+        //     $this->load->view('fontend/employer/questionbank_view', $data);
+        // }
     }
     public function interview_scheduler() {
         $company_id = $this->session->userdata('company_profile_id');
@@ -6172,6 +6182,23 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $this->Master_model->master_delete('tracker_consultant_mapping', $where);
        
         echo true;
+    }
+
+    public function choose_questions()
+    {
+         $employer_id = $this->session->userdata('company_profile_id');
+        $where_cn = "status=1";
+        $data['skill_master'] = $this->Master_model->getMaster('skill_master', $where_cn);
+        //$where_opt= "options.status=1";
+        $data['options'] = $this->Master_model->getMaster('options');
+        $where_state = "topic.topic_status=1";
+        $data['topic'] = $this->Master_model->getMaster('topic', $where_state);
+        $where_subtopic = "subtopic.subtopic_status='1'";
+        $data['subtopic'] = $this->Master_model->getMaster('subtopic', $where_subtopic);
+        $where_lineitem = "lineitem.lineitem_status='1'";
+        $data['lineitem'] = $this->Master_model->getMaster('lineitem', $where_lineitem);
+        $where_all = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id' and test_status = '1'";
+        $this->load->view('fontend/employer/create_test',$data);
     }
 }
 ?>

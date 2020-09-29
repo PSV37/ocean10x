@@ -12,7 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 return array(
 	'hqx'	=>	array('application/mac-binhex40', 'application/mac-binhex', 'application/x-binhex40', 'application/x-mac-binhex40'),
 	'cpt'	=>	'application/mac-compactpro',
-	'csv'	=>	array('application/vnd.ms-excel', 
+	'csv'   =>  array('application/vnd.ms-excel', 
            'text/anytext', 
            'text/plain', 
            'text/x-comma-separated-values', 

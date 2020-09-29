@@ -23,7 +23,9 @@
       <?php $this->load->view('fontend/layout/employer_left.php'); ?>
       <div class="content col-md-9">
         <div class="userccount empdash">
-          <div class="formpanel"> <?php echo $this->session->flashdata('success'); ?>
+          <div class="formpanel"> <?php echo $this->session->flashdata('success');
+          print_r($response);
+           ?>
            
       		  <form method='post' action="<?php echo base_url();?>employer/questionbank-import" enctype="multipart/form-data">
           		<div class="panel-body">
