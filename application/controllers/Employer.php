@@ -1793,7 +1793,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
 
         $select = "SUM(oceanchamp_tests.total_questions) aS TOTAL";
         //$select = "array_sum(oceanchamp_tests.total_questions)";
-        $data['Appeared_in_test_papers'] = $this->Master_model->master_get_num_rows('oceanchamp_tests', $where = FALSE, $like = false, $join=false, $select );
+        $data['Appeared_in_test_papers'] = $this->Master_model->getMaster('oceanchamp_tests', $where = FALSE, $join = FALSE, $order = false, $field = false, $select,$limit=false,$start=false, $search=false);
 
         
 
