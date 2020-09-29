@@ -190,7 +190,17 @@ span.select2.select2-container.select2-container--default {
                 </select> <?php echo form_error('ques_type'); ?>   
               </div>
             </div>
-
+</div>
+<div class="row">
+           <div class="col-md-4">
+              <div class="form-group subtopic_id">
+                <label for="exampleInputEmail1">Duration (min) <span class="required">*</span></label>
+                        <input type="Number" max="60" min="1" class="form-control" maxlength="2" id="time" name="test_duration">   
+              </div>
+            </div>      
+            
+            
+</div>
             
              <!-- <div class="row">
            
