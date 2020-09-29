@@ -88,234 +88,94 @@ span.select2.select2-container.select2-container--default {
   <div class="container">
     <div class="col-md-12">
       <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
-       <form method="post" action="<?php echo base_url(); ?>employer/add_to_test">
+      
         <div class="col-md-9 add-question">
           <div class="header-bookbank">
            Create Test
           
           </div>
-         <div class="row">
-           <div class="col-md-4">
-             
-           </div>
-           <div class="col-md-4">
-              <!--  <a style="float: right;" href="<?php echo base_url(); ?>employer/show_saved_tests"><button type="button" id="question_add" class="btn btn-default"><i class="fa fa-plus">Show Saved Tests</i></button></a> -->
-           </div>
-            <div class="col-md-4">
-              <a style="float: right;" href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-default"><i class="fa fa-plus"> Add Question</i></button></a>
-           </div>
-
-         </div>
-           <!-- <div class="row">
-           <div class="col-md-4">
-
-             <label class="radio-inline">
-                <input type="radio" name="optradio" data-toggle="modal" data-target="#exampleModalCenter">Option 1
-              </label>
-            </div>
-            <div class="col-md-4">
-
-              <label class="radio-inline">
-                <input type="radio" data-toggle="modal" data-target="#exampleModalCenter1" name="optradio">Option 2
-              </label>
-            </div>
-               <div class="col-md-4">
-
-              <label class="radio-inline">
-                <input type="radio" data-toggle="modal" data-target="#exampleModalCenter2" name="optradio">Option 3
-              </label>
-           </div>
-           
-         </div> -->
-          <div class="row">
-            <div class="col-md-4">
-              <div class="form-group technical_id">            
-                <input type="hidden" class="form-control" readonly style="border: none;" id="test_time" name="test_time"> 
-                <input type="hidden" id="question_id" name="data_arr" value="">
-                <label for="exampleInputEmail1">Test Name <span class="required">*</span></label>
-                        <input type="text" class="form-control" id="test_name" name="test_name" required="">   
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="form-group technical_id">                                       
-               <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
-                <select id="subject" name="technical_id" required class="form-control select2"  onchange="getTopic(this.value)">
-                  <option value="">Select Subject</option> 
-                    <?php if (!empty($skill_master))
-                       foreach($skill_master as $skill) 
-                       {
-                    ?>   
-                        <option value="<?php echo $skill['id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['technical_id']==$skill['id'])echo "selected";?>><?php echo $skill['skill_name']; ?></option> 
-                    <?php } ?>
-                  </select> <?php echo form_error('technical_id'); ?>   
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="form-group topic_id">
-                <label for="exampleInputEmail1">Main Topic <span class="required">*</span></label>
-                <select id="topic_id" name="topic_id" class="form-control select2" onchange="getSubtopic(this.value)">
-                  <option value="">Select Topic</option> 
-                  <!-- <option value="1">HTML 5</option>  -->
-                </select> <?php echo form_error('topic_id'); ?>   
-              </div>
-            </div>
-                     
-          </div>
-          <div class="row">
-           <div class="col-md-4">
-              <div class="form-group subtopic_id">
-                <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
-                <select id="subtopic_id" name="subtopic_id" class="form-control select2" onchange="get_questuions();" >
-                </select> <?php echo form_error('subtopic_id'); ?>   
-              </div>
-            </div>      
-            
-            <div class="col-md-4">
-              <div class="form-group level">
-                <label for="exampleInputEmail1">Level<span class="required">*</span></label>
-                    <select name="level_data" onchange="get_questuions();" id="level" class="form-control select2">
+         <form method="post" action="<?php echo base_url(); ?>employer/add_to_test">
+                  <input type="hidden" id="question_id" name="data_arr" value="">
+                  <input type="hidden" class="form-control" readonly style="border: none;" id="test_time" name="test_time">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="form-group technical_id">                                       
+                        <label for="exampleInputEmail1">Test Name <span class="required">*</span></label>
+                        <input type="text" class="form-control" id="test_name" name="test_name" required="">
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group technical_id">
+                        <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
+                        <select id="subject" name="subject_data" required class="form-control select2"  onchange="getTopic(this.value)">
+                          <option value="">Select Subject</option>
+                          <?php if (!empty($skill_master))
+                            foreach($skill_master as $skill) 
+                            {
+                            ?>   
+                          <option value="<?php echo $skill['id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['technical_id']==$skill['id'])echo "selected";?>><?php echo $skill['skill_name']; ?></option>
+                          <?php } ?>
+                        </select>
+                        <?php echo form_error('technical_id'); ?>   
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group topic_id">
+                        <label for="exampleInputEmail1">Main Topic <span class="required">*</span></label>
+                        <select id="topic_id" name="topic_id" class="form-control select2" onchange="getSubtopic(this.value)">
+                          <option value="">Select Topic</option>
+                          <!-- <option value="1">HTML 5</option>  -->
+                        </select>
+                        <?php echo form_error('topic_id'); ?>   
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="form-group subtopic_id">
+                        <label for="exampleInputEmail1">Sub Topic <span class="required">*</span></label>
+                        <select id="subtopic_id" name="subtopic_id" class="form-control select2" onchange="get_questuions();" >
+                        </select> <?php echo form_error('subtopic_id'); ?>   
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group level">
+                        <label for="exampleInputEmail1">Level <span class="required">*</span></label>
+                        <select name="level_data" onchange="get_questuions();" id="level" class="form-control select2">
                           <option value="Expert"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Expert')echo "selected";?>>Expert</option>
                           <option value="Medium"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Medium')echo "selected";?>>Medium</option>
                           <option value="Beginner"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Beginner')echo "selected";?>>Beginner</option>
                         </select>
-                        <?php echo form_error('level'); ?>    
-              </div>
-            </div>
-          
-          
-            <div class="col-md-4">
-              <div class="form-group ques_type">
-                <label for="exampleInputEmail1">Question Type<span class="required">*</span></label>
-                <select name="ques_type" id="ques_type" class="form-control select2" type="text" onchange="get_questuions();">
-                  <option value="MCQ"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='MCQ')echo "selected";?>>MCQ</option>
-                    <option value="Subjective"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Subjective')echo "selected";?>>Subjective</option>
-                    <option value="Practical"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Practical')echo "selected";?>>Practical</option>
-                </select> <?php echo form_error('ques_type'); ?>   
-              </div>
-            </div>
-</div>
-<div class="row">
-           <div class="col-md-4">
-              <div class="form-group subtopic_id">
-                <label for="exampleInputEmail1">Duration (min) <span class="required">*</span></label>
-                        <input type="Number" max="60" min="1" class="form-control" maxlength="2" id="time" name="test_duration">   
-              </div>
-            </div>      
-            
-            
-</div>
-            
-             <!-- <div class="row">
-           
-            
-             <div class="col-md-4">
-              <div class="form-group previous_option">
-                <label for="male">Allowed to Go back</label><br>
-                  <label class="radio-inline" style="margin-left: 20px;" >
-                    <input type="radio" name="previous_option"  style=" margin-right: 11px;" value="Y" checked> Yes
-                  </label>
-                  <label class="radio-inline" style=" margin-right: 50px;">
-                    <input type="radio" name="previous_option" value="N" style="margin-left: -30px;">No
-                  </label>
-                
-              </div>
-            </div>
-          
-          
-            <div class="col-md-4">
-              <div class="form-group review_option">
-                <label for="male">Allowed to Review</label><br>
-                  <label class="radio-inline" style="margin-left: 20px;" >
-                    <input type="radio" name="review_option" style=" margin-right: 11px;" value="Y" checked> Yes
-                  </label>
-                  <label class="radio-inline" style=" margin-right: 50px;">
-                    <input type="radio" name="review_option" value="N" style="margin-left: -30px;">No
-                  </label>
-                
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="form-group negative">
-                <label for="male">Negative Marking</label><br>
-                  <label class="radio-inline" style="margin-left: 20px;" >
-                    <input type="radio" name="negative" style=" margin-right: 11px;" value="Y" checked> Yes
-                  </label>
-                  <label class="radio-inline" style=" margin-right: 50px;">
-                    <input type="radio" name="negative" value="N" style="margin-left: -30px;">No
-                  </label>
-                
-              </div>
-            </div>
-
-             
-         </div> -->
-            <!--  <div class="row">
-           
-            
-             <div class="col-md-4">
-              <div class="form-group each_question_ans">
-                <label for="male">Display Correct Answer for each Question</label><br>
-                  <label class="radio-inline" style="margin-left: 20px;" >
-                    <input type="radio" name="each_question_ans" style=" margin-right: 11px;" value="Y" checked> Yes
-                  </label>
-                  <label class="radio-inline" style=" margin-right: 50px;">
-                    <input type="radio" name="each_question_ans" value="N" style="margin-left: -30px;">No
-                  </label>
-                
-              </div>
-            </div>
-          
-          
-            <div class="col-md-4">
-              <div class="form-group display_result">
-                <label for="male">Display Test Result to Candidate</label><br>
-                  <label class="radio-inline" style="margin-left: 20px;" >
-                    <input type="radio" name="display_result" style=" margin-right: 11px;" value="Y" checked> Yes
-                  </label>
-                  <label class="radio-inline" style=" margin-right: 50px;">
-                    <input type="radio" name="display_result" value="N" style="margin-left: -30px;">No
-                  </label>
-                
-              </div>
-            </div>
-
-
-             
-         </div> -->
-             
-     
-      <div class="box-body">
-        <div class="box" >
-         <p ><b style="float: left;margin-right: 80px">Total Time Duration <span id="total_time"></span></b> <b style="float: right;margin-right: 80px" >Total Questions:<span id="total_questions"></span></b></p>
-               <div class="card content">
-                     <!-- <div class="front"> -->
-                      <div class="following-info">
-                         <table class="table table-borderless" id="myTable">
+                        <?php echo form_error('level'); ?>   
+                      </div>
+                    </div>
+                  </div>
+                  <div class="box-body">
+                    <div class="box" >
+                      <p ><b style="float: left;margin-right: 80px">Total Time Duration <span id="total_time"></span></b> <b style="float: right;margin-right: 80px" >Total Questions:<span id="total_questions"></span></b></p>
+                      <div class="card content">
+                        <!-- <div class="front"> -->
+                        <div class="following-info">
+                          <table class="table table-borderless" id="myTable">
                             <thead>
                               <tr>
-
                                 <th scope="col">Sr No</th>
                                 <th scope="col">Line Item 1</th>
                                 <th scope="col">Line Item 2</th>
                                 <th scope="col">Question</th>
                                 <th scope="col">time</th>
                                 <th scope="col">Action</th>
-                               
                               </tr>
                             </thead>
                             <tbody>
-                             
                             </tbody>
                           </table>
                         </div>
-                     <!-- </div> -->
-                   </div>
-               
-            </div>
-      </div>
-       <span style="float: right; margin-top: 20px;"> 
-         <div class="row">
+                        <!-- </div> -->
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
                     <div class="col-md-6"></div>
                     <div class="col-md-6">
                       <div class="col-md-3">
@@ -326,9 +186,7 @@ span.select2.select2-container.select2-container--default {
                       </div>
                     </div>
                   </div>
-        </span>
-    </div>
-  </form>
+                </form>
   </div>
 </div>
 
