@@ -933,9 +933,16 @@
       <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
       <div class="col-md-6" style="margin-top:75px;">
         <div class="row">
-          <a style="float: right;"  href="<?php echo base_url(); ?>employer/create-test"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> </i>Create New Test</button></a>
+          <a style="float: right;"  href="<?php echo base_url(); ?>employer/create-test"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> </i> Create a Test</button></a>
         </div>
-        
+         <div class="col-md-6">
+                  <form class="navbar-form" role="search">
+                    
+                     <input type="text" id="myInput" class="form-control" placeholder="Test Name / Skill / Topic / Duration" style="width: 100%">
+                    
+                  </form>
+                  <div class="clear"></div>
+               </div>
         <div class="row">
           <div class="box" >
             <?php $key = 1; if (!empty($ocean_tests)): foreach ($ocean_tests as $tests) : 
