@@ -6183,6 +6183,23 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
        
         echo true;
     }
+
+    public function choose_questions()
+    {
+         $employer_id = $this->session->userdata('company_profile_id');
+        $where_cn = "status=1";
+        $data['skill_master'] = $this->Master_model->getMaster('skill_master', $where_cn);
+        //$where_opt= "options.status=1";
+        $data['options'] = $this->Master_model->getMaster('options');
+        $where_state = "topic.topic_status=1";
+        $data['topic'] = $this->Master_model->getMaster('topic', $where_state);
+        $where_subtopic = "subtopic.subtopic_status='1'";
+        $data['subtopic'] = $this->Master_model->getMaster('subtopic', $where_subtopic);
+        $where_lineitem = "lineitem.lineitem_status='1'";
+        $data['lineitem'] = $this->Master_model->getMaster('lineitem', $where_lineitem);
+        $where_all = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id' and test_status = '1'";
+        $this->load->view('fontend/employer/create_test',$data);
+    }
 }
 ?>
 
