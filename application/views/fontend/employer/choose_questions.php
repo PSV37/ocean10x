@@ -145,7 +145,7 @@ span.select2.select2-container.select2-container--default {
                     <div class="col-md-4">
                       <div class="form-group level">
                         <label for="exampleInputEmail1">Level <span class="required">*</span></label>
-                        <select name="level" onchange="get_questuions();" id="level" class="form-control select2">
+                        <select name="level" onchange="" id="level" class="form-control select2">
                           <option value="Expert"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Expert')echo "selected";?>>Expert</option>
                           <option value="Medium"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Medium')echo "selected";?>>Medium</option>
                           <option value="Beginner"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Beginner')echo "selected";?>>Beginner</option>
@@ -386,6 +386,7 @@ span.select2.select2-container.select2-container--default {
 <script src="<?php echo base_url() ?>asset/js/search.js"></script> -->
 <script>
 
+
   function getTopic(id){
          if(id){
            $.ajax({
@@ -402,7 +403,6 @@ span.select2.select2-container.select2-container--default {
                 else
                 {
                   $('#topic_id').html(res);
-                  $('#topic_id').attr('disabled', false);
                 }
              }
              
@@ -410,34 +410,57 @@ span.select2.select2-container.select2-container--default {
            }
            get_questuions();
         }
+        function getTopicocean(id){
+         if(id){
+           $.ajax({
+             type:'POST',
+             url:'<?php echo base_url();?>employer/gettopic',
+             data:{id:id},
+             success:function(res){
+                 if (res.length == 1) 
+                {
+                   $('#topic_id_ocean').attr('disabled', true);
+                   $('#subtopic_id_ocean').attr('disabled', true);
+  
+                }
+                else
+                {
+                  $('#topic_id_ocean').html(res);
+                }
+             
+             }
+             
+           }); 
+           }
+           // get_questuions();
+  
+        }
         
-        function getSubtopic(id){
+     function getSubtopics(id){
          if(id){
              $.ajax({
                  type:'POST',
                  url:'<?php echo base_url();?>employer/getsubtopic',
                  data:{id:id},
                  success:function(res){
-                   if (res.length == 1) 
+                    if (res.length == 1) 
                 {
                    
-                   $('#subtopic_id').attr('disabled', true);
+                   $('#subtopic_id_ocean').attr('disabled', true);
   
                 }
                 else
                 {
-                  $('#subtopic_id').html(res);
-                  $('#subtopic_id').attr('disabled', false);
+                  $('#subtopic_id_ocean').html(res);
                 }
-                   
+                    
                  }
                  
              }); 
            }
            get_questuions();
-       
+    
      }
-     
   function get_total(){
     // if ($('#checkbox').is(':checked')) {
       // alert('ff');
