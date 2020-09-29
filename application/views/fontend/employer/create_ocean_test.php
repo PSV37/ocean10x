@@ -935,106 +935,94 @@
         <div class="row">
           <a style="float: right;"  href="<?php echo base_url(); ?>employer/create-test"><button type="button" id="question_add" class="btn btn-primary"><i class="fa fa-plus"> </i>Create New Test</button></a>
         </div>
-        
         <div class="row">
-          <div class="box" >
-            <?php $key = 1; if (!empty($ocean_tests)): foreach ($ocean_tests as $tests) : 
-              $on_ocean = $tests['ocean_candidate'];
-                    if($on_ocean == 'Yes')
-                    {
-                       $resume = getUploadedResume($tests['js_email']);
-                       $photo = getSeekerPhoto($tests['js_email']);
-                       $updates = getSeekerlastUpdates($tests['js_email']);
-                       if (!empty($updates)) {
-                         if($updates[0]['update_at']=='0000-00-00 00:00:00') { 
-                           $mtime = date('d-M-y',strtotime($updates[0]['create_at']));
-                         } else{
-                           $mtime = date('d-M-y',strtotime($updates[0]['update_at']));
-                         }
-                       }else{
-                         $mtime = date('d-M-y',strtotime($tests['created_on']));
-                       }
-                    }else{
-                     $mtime = date('d-M-y',strtotime($tests['created_on']));
-                    }
-                   
-                   ?>
-            <label>
-              <div class="check">
-                <!--  <input type="checkbox" value="<?php echo $cv_row['js_email']; ?>" data-valuetwo="<?php echo $cv_row['cv_id'];  ?>" data-valueone="<?php if(isset($cv_row['js_resume']) && !empty($cv_row['js_resume'])){ echo $cv_row['js_resume']; } ?>" class="chkbx" /> -->
-              </div>
-              <div class="card content">
-                <div class="front">
-                  <?php
-                    if($on_ocean == 'Yes')
-                      {
-                    if(!empty($photo)){ ?>
-                  <img src="<?php echo  base_url(); ?>upload/<?php if(!empty($photo[0]['photo_path'])){echo $photo[0]['photo_path'];} ?>" style="height:25px; width:25px;border-radius:5px;float:left" />
-                  <?php }else{ ?>
-                  <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" style="height:25px; width:25px;border-radius:5px;float:left" />
-                  <?php } }else{ ?>
-                  <img src="<?php echo base_url() ?>fontend/images/no-image.jpg" style="height:25px; width:25px;border-radius:5px;float:left" />
-                  <?php } ?>
-                  <div class="job-info">
-                    <div class="a">
-                      <li class="right-title" style="font-size:19px;margin-top:-4px;"  ><?php echo $tests['test_name']; ?></li>
-                    </div>
-                  </div>
-                  <div class="following-info">
-                    <li class="left-title"
-                      >Type</li>
-                    <li class="right-title">&nbsp;:<?php echo $tests['type']; ?></li>
-                    <li class="left-title">Total Questions</li>
-                    <li class="right-title">&nbsp;:<?php echo $tests['total_questions']; ?></li>
-                    <li class="left-title">Timer on Each Question</li>
-                    <li class="right-title">&nbsp;: <?php echo $tests['timer_on_each_que']; ?></li>
-                    <li class="left-title">Display Correct Answer</li>
-                    <li class="right-title">&nbsp;:<?php echo $tests['correct_ans_each_ques']; ?></li>
-                    <div class="clear"></div>
-                  </div>
-                  <div class="following-info2">
-                    <li class="left-title">Level</li>
-                    <li class="right-title">&nbsp;:<?php echo $tests['level']; ?></li>
-                    <li class="left-title">Total Duration</li>
-                    <li class="right-title">&nbsp;:<?php echo $tests['test_duration']; ?></li>
-                    <li class="left-title">Allowed to Go back</li>
-                    <li class="right-title">&nbsp;:<?php echo $tests['previous_option']; ?></li>
-                    <li class="left-title">Display Result </li>
-                    <li class="right-title">&nbsp;:<?php echo $tests['final_result']; ?></li>
-                    <div class="clear"></div>
-                  </div>
-                  <div class="following-info3">
-                    <li class="left-title">Topics</li>
-                    <li class="right-title">&nbsp;: <?php echo $tests['topics']; ?></li>
-                    <li class="left-title">Allowed to Review</li>
-                    <li class="right-title">&nbsp;:<?php echo $tests['review_option']; ?></li>
-                    <li class="left-title">Negative Marking</li>
-                    <li class="right-title">&nbsp;:<?php echo $tests['negative_marks']; ?></li>
-                    <div class="clear"></div>
-                  </div>
-                  <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
-                  </button>
-                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1" style="top:47px;">
-                    <li ><a class="dropdown-item" href="#" id="div_frwrd" data-toggle="modal" data-target="#rotateModal<?php echo $tests['test_id'] ?>" >Forward This Test</a></li>
-                    <li ><a class="dropdown-item" href="#" id="attach_to_job" data-toggle="modal" data-target="#attach_to_job<?php echo $tests['test_id'] ?>" >Attach To Job Post</a></li>
-                    <li> <a class="dropdown-item"  href="#" data-toggle="modal" data-target="#edit_test<?php echo $tests['test_id'] ?>" >Edit Test</a></li>
-                    <!--  <li><a class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-target="#move_cv" href="#">Move this CV</a></li> -->
-                  </div>
+          <form method="post" action="<?php echo base_url(); ?>employer/randomly_create_oceantest">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group technical_id">                                       
+                  <label for="exampleInputEmail1">Test Name <span class="required">*</span></label>
+                  <input type="text" class="form-control" id="test_name" name="test_name">
                 </div>
               </div>
-            </label>
-            <?php
-              $key++;
-                endforeach;  
-              ?>     
-            <?php else : ?> 
-            <li colspan="3">
-              <strong> No Tests Created. Click on "Create A Test" !</strong>
-            </li>
-            <?php endif; ?>
-          </div>
+              <div class="col-md-4">
+                <div class="form-group technical_id">                                       
+                  <label for="exampleInputEmail1">Duration <span class="required">*</span></label>
+                  <input type="Number" max="60" min="1" class="form-control" id="time" name="test_duration">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group technical_id">
+                  <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
+                  <select id="subject" name="technical_id" required class="form-control select2"  onchange="getTopicocean(this.value)">
+                    <option value="">Select Subject</option>
+                    <?php if (!empty($skill_master))
+                      foreach($skill_master as $skill) 
+                      {
+                      ?>   
+                    <option value="<?php echo $skill['id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['technical_id']==$skill['id'])echo "selected";?>><?php echo $skill['skill_name']; ?></option>
+                    <?php } ?>
+                  </select>
+                  <?php echo form_error('technical_id'); ?>   
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group topic_id">
+                  <label for="exampleInputEmail1">Main Topic <span class="required">*</span></label>
+                  <select id="topic_id_ocean" name="topic_id" class="form-control select2" onchange="getSubtopics(this.value)">
+                    <option value="">Select Topic</option>
+                    <!-- <option value="1">HTML 5</option>  -->
+                  </select>
+                  <?php echo form_error('topic_id'); ?>   
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group subtopic_id">
+                  <label for="exampleInputEmail1">Sub Topic <span class="required">*</span></label>
+                  <select id="subtopic_id_ocean" name="subtopic_id" class="form-control select2" >
+                  </select> <?php echo form_error('subtopic_id'); ?>   
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group level">
+                  <label for="exampleInputEmail1">Level <span class="required">*</span></label>
+                  <select name="level" onchange="get_questuions();" id="level" class="form-control select2">
+                    <option value="Expert"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Expert')echo "selected";?>>Expert</option>
+                    <option value="Medium"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Medium')echo "selected";?>>Medium</option>
+                    <option value="Beginner"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Beginner')echo "selected";?>>Beginner</option>
+                  </select>
+                  <?php echo form_error('level'); ?>   
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group ques_type">
+                  <label for="exampleInputEmail1">Question Type <span class="required">*</span></label>
+                  <select name="ques_type" id="ques_type" class="form-control select2" type="text" onchange="get_questuions();">
+                    <option value="MCQ"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='MCQ')echo "selected";?>>MCQ</option>
+                    <option value="Subjective"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Subjective')echo "selected";?>>Subjective</option>
+                    <option value="Practical"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Practical')echo "selected";?>>Practical</option>
+                  </select>
+                  <?php echo form_error('ques_type'); ?>   
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6"></div>
+              <div class="col-md-6">
+                <div class="col-md-3">
+                  <button class="btn btn-primary" type="reset">Discard</button>
+                </div>
+                <div class="col-md-3" style="margin-left: 20;">
+                  <button class="btn btn-primary" type="submit">Create</button>
+                </div>
+              </div>
+            </div>
+          </form>
         </div>
+        
       </div>
       <div class="col-md-3 ">
         <div class="last_section">
