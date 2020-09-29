@@ -513,33 +513,81 @@ span.select2.select2-container.select2-container--default {
 <script src="<?php echo base_url() ?>asset/tokenjs/typeahead.bundle.min.js"></script>
 <script src="<?php echo base_url() ?>asset/js/search.js"></script> -->
 <script>
- function getTopic(id){
-        if(id){
-          $.ajax({
-            type:'POST',
-            url:'<?php echo base_url();?>employer/gettopic',
-            data:{id:id},
-            success:function(res){
-              $('#topic_id').html(res);
-            }
-            
-          }); 
-          }
-       }
-       function getSubtopic(id){
-        if(id){
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url();?>employer/getsubtopic',
-                data:{id:id},
-                success:function(res){
-                    $('#subtopic_id').html(res);
+
+  function getTopic(id){
+         if(id){
+           $.ajax({
+             type:'POST',
+             url:'<?php echo base_url();?>employer/gettopic',
+             data:{id:id},
+             success:function(res){
+                if (res.length == 1) 
+                {
+                   $('#topic_id').attr('disabled', true);
+                   $('#subtopic_id').attr('disabled', true);
+  
                 }
-                
-            }); 
-          }
-   
-    }
+                else
+                {
+                  $('#topic_id').html(res);
+                }
+             }
+             
+           }); 
+           }
+           get_questuions();
+        }
+        function getTopicocean(id){
+         if(id){
+           $.ajax({
+             type:'POST',
+             url:'<?php echo base_url();?>employer/gettopic',
+             data:{id:id},
+             success:function(res){
+                 if (res.length == 1) 
+                {
+                   $('#topic_id_ocean').attr('disabled', true);
+                   $('#subtopic_id_ocean').attr('disabled', true);
+  
+                }
+                else
+                {
+                  $('#topic_id_ocean').html(res);
+                }
+             
+             }
+             
+           }); 
+           }
+           get_questuions();
+  
+        }
+        function getSubtopic(id){
+         if(id){
+             $.ajax({
+                 type:'POST',
+                 url:'<?php echo base_url();?>employer/getsubtopic',
+                 data:{id:id},
+                 success:function(res){
+                   if (res.length == 1) 
+                {
+                   
+                   $('#subtopic_id').attr('disabled', true);
+  
+                }
+                else
+                {
+                  $('#subtopic_id').html(res);
+                }
+                   
+                 }
+                 
+             }); 
+           }
+           get_questuions();
+       
+     }
+     
   function get_total(){
     // if ($('#checkbox').is(':checked')) {
       // alert('ff');
