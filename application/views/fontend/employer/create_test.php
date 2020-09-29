@@ -129,7 +129,9 @@ span.select2.select2-container.select2-container--default {
          </div> -->
           <div class="row">
             <div class="col-md-4">
-              <div class="form-group technical_id">                                  <input type="hidden" id="question_id" name="data_arr" value="">
+              <div class="form-group technical_id">            
+                <input type="hidden" class="form-control" readonly style="border: none;" id="test_time" name="test_time"> 
+                <input type="hidden" id="question_id" name="data_arr" value="">
                 <label for="exampleInputEmail1">Test Name <span class="required">*</span></label>
                         <input type="text" class="form-control" id="test_name" name="test_name" required="">   
               </div>

@@ -1797,7 +1797,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
 
         
 
-       print_r($data['Appeared_in_test_papers']);
+       // print_r($data['Appeared_in_test_papers']);
         $sort_val = $this->input->post('sort_val');
         if (empty($sort_val)) {
            $sort_val = $this->input->get('sort');
