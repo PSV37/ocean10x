@@ -1957,7 +1957,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
     }
     public function create_test() {
         $this->session->unset_userdata('activemenu');
-        $data['activemenu'] = 'questionbank';
+        $data['activemenu'] = 'test_papers';
         $this->session->set_userdata($data);
         $employer_id = $this->session->userdata('company_profile_id');
         $where_cn = "status=1";

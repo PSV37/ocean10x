@@ -1470,11 +1470,21 @@
              url:'<?php echo base_url();?>employer/gettopic',
              data:{id:id},
              success:function(res){
-               $('#topic_id').html(res);
+                if (res.length == 1) 
+                {
+                   $('#topic_id').attr('disabled', true);
+                   $('#subtopic_id').attr('disabled', true);
+  
+                }
+                else
+                {
+                  $('#topic_id').html(res);
+                }
              }
              
            }); 
            }
+           get_questuions();
         }
         function getTopicocean(id){
          if(id){
@@ -1503,18 +1513,29 @@
            }
     
      }
-     function getSubtopics(id){
+      function getSubtopics(id){
          if(id){
              $.ajax({
                  type:'POST',
                  url:'<?php echo base_url();?>employer/getsubtopic',
                  data:{id:id},
                  success:function(res){
-                     $('#subtopic_id_ocean').html(res);
+                    if (res.length == 1) 
+                {
+                   
+                   $('#subtopic_id_ocean').attr('disabled', true);
+  
+                }
+                else
+                {
+                  $('#subtopic_id_ocean').html(res);
+                }
+                    
                  }
                  
              }); 
            }
+           get_questuions();
     
      }
    function get_total(){
