@@ -177,7 +177,7 @@ input.btn.btn-primary {
                         <label for="exampleInputEmail1">Test Deadline <span class="required">*</span></label>
                          <?php
                         $old_date = date('d-m-Y');
-                        $next_due_date = date('d-m-Y', strtotime($old_date. ' +30 days'));
+                        $next_due_date = date('d-m-Y', strtotime($old_date. ' +7 days'));
                         
                         ?>
                          <input type="text" id="deadline_picker" name="test_deadline" style="display: inline-block;" class="form-control datepicker "   value="<?php echo $next_due_date; ?>">

@@ -2035,7 +2035,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                 $test_data['topics'] = $subject_data;
                 $test_data['test_status'] = '1';
                 $test_data['status'] = '1';
-                $test_data['test_deadline'] = $this->input->post('test_deadline');
+                $test_data['test_deadline'] =  date('Y-m-d', strtotime($this->input->post('test_deadline')));
                 // $test_data['previous_option'] = $this->input->post('previous_option');
                 // $test_data['review_option'] = $this->input->post('review_option');
                 // $test_data['negative_marks'] = $this->input->post('negative');
@@ -2072,7 +2072,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             $test_data['topics'] = implode(',', $new_arr_topic);
             $test_data['total_questions'] = sizeof($new_arr);
             $test_data['test_duration'] = array_sum($new_arr_test_duration);
-            $test_data['test_deadline'] = $this->input->post('test_deadline');
+            $test_data['test_deadline'] = date('Y-m-d', strtotime($this->input->post('test_deadline')));
             $test_data['updated_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
             $result = $this->Master_model->master_update($test_data, 'oceanchamp_tests', $where);
             if ($result) {
@@ -2091,7 +2091,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $technical_id = $this->input->post('technical_id');
         $topic_id = $this->input->post('topic_id');
         $subtopic_id = $this->input->post('subtopic_id');
-        $test_deadline = $this->input->post('test_deadline');
+        $test_deadline =  $this->input->post('test_deadline');
         $level = $this->input->post('level');
         $ques_type = $this->input->post('ques_type');
         $employer_id = $this->session->userdata('company_profile_id');
@@ -2112,7 +2112,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                 $test_data['test_name'] = $test_name;
                 $test_data['company_id'] = $employer_id;
                 $test_data['questions'] = implode(',', $test_questions);
-                $test_data['test_deadline'] = $test_deadline;
+                $test_data['test_deadline'] = date('Y-m-d', strtotime($test_deadline));
                 // $test_data['type'] = $type;
                 $test_data['total_questions'] = sizeof($test_questions);
                 $test_data['test_duration'] = $test_duration;
