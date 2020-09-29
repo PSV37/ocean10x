@@ -1627,7 +1627,7 @@ input.btn.btn-primary {
                 </li>
                 <li class="cv">
                   <em id="spanid2">Appeared in Test Papers</em>
-                  <span id="active_cv"><?php echo sizeof($Appeared_in_test_papers); ?></span>
+                  <span id="active_cv"><?php echo $Appeared_in_test_papers; ?></span>
                 </li>
                 
                 <div class="pieID pie">
