@@ -148,7 +148,8 @@
   box-shadow: none;
   border: solid 2px #18c5bd;
   border-radius: 65px;
-  width: 40%;
+  min-width: 40%;
+  width: auto;
   }
   li.btn.btn-secondary {
   width: 40%;
@@ -1053,9 +1054,9 @@ input.btn.btn-primary {
           <div role="tabpanel" class="tab-pane fade <?php $submenu=$this->session->userdata('submenu');  if(isset($submenu) && !empty($submenu)){if($submenu == '1' || $submenu == '2'   ) echo 'in active'; } ?>" id="Videos">
             <div class="row" style="float: right;">
              
-               <a class="qntn"  href="<?php echo base_url(); ?>employer/choose_questions"><i class="fa fa-plus"> </i> I will select the Questions</a>
+               <li class="btn btn-secondary Active"><a class="qntn"  href="<?php echo base_url(); ?>employer/choose_questions"><i class="fa fa-plus"> </i> I will select the Questions</a></li>
              
-                <li class="btn btn-secondary"><a class="qntn" href="<?php echo base_url(); ?>employer/choose_questions/1">
+                <li class="btn btn-secondary Active"><a class="qntn" href="<?php echo base_url(); ?>employer/choose_questions/1">
                 <i class="fa fa-plus"> </i>  Ocean can select Questions
                </a></li>
               <!-- </div> -->
@@ -1072,99 +1073,7 @@ input.btn.btn-primary {
             </div>
             <div class="tab-content">
               <div role="tabpanel" class="tab-pane fade <?php $submenu=$this->session->userdata('submenu');  if(isset($submenu) && !empty($submenu)){if($submenu == '1' ){ echo 'in active'; }  }else{ echo 'in active'; }?>" id="add_test">
-                <form method="post" action="<?php echo base_url(); ?>employer/add_to_test">
-                  <input type="hidden" id="question_id" name="data_arr" value="">
-                  <input type="hidden" class="form-control" readonly style="border: none;" id="test_time" name="test_time">
-                  <div class="row">
-                    <div class="col-md-4">
-                      <div class="form-group technical_id">                                       
-                        <label for="exampleInputEmail1">Test Name <span class="required">*</span></label>
-                        <input type="text" class="form-control" id="test_name" name="test_name" required="">
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="form-group technical_id">
-                        <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
-                        <select id="subject" name="subject_data" required class="form-control select2"  onchange="getTopic(this.value)">
-                          <option value="">Select Subject</option>
-                          <?php if (!empty($skill_master))
-                            foreach($skill_master as $skill) 
-                            {
-                            ?>   
-                          <option value="<?php echo $skill['id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['technical_id']==$skill['id'])echo "selected";?>><?php echo $skill['skill_name']; ?></option>
-                          <?php } ?>
-                        </select>
-                        <?php echo form_error('technical_id'); ?>   
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="form-group topic_id">
-                        <label for="exampleInputEmail1">Main Topic <span class="required">*</span></label>
-                        <select id="topic_id" name="topic_id" class="form-control select2" onchange="getSubtopic(this.value)">
-                          <option value="">Select Topic</option>
-                          <!-- <option value="1">HTML 5</option>  -->
-                        </select>
-                        <?php echo form_error('topic_id'); ?>   
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-4">
-                      <div class="form-group subtopic_id">
-                        <label for="exampleInputEmail1">Sub Topic <span class="required">*</span></label>
-                        <select id="subtopic_id" name="subtopic_id" class="form-control select2" onchange="get_questuions();" >
-                        </select> <?php echo form_error('subtopic_id'); ?>   
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="form-group level">
-                        <label for="exampleInputEmail1">Level <span class="required">*</span></label>
-                        <select name="level_data" onchange="get_questuions();" id="level" class="form-control select2">
-                          <option value="Expert"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Expert')echo "selected";?>>Expert</option>
-                          <option value="Medium"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Medium')echo "selected";?>>Medium</option>
-                          <option value="Beginner"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Beginner')echo "selected";?>>Beginner</option>
-                        </select>
-                        <?php echo form_error('level'); ?>   
-                      </div>
-                    </div>
-                  </div>
-                  <div class="box-body">
-                    <div class="box" >
-                      <p ><b style="float: left;margin-right: 80px">Total Time Duration <span id="total_time"></span></b> <b style="float: right;margin-right: 80px" >Total Questions:<span id="total_questions"></span></b></p>
-                      <div class="card content">
-                        <!-- <div class="front"> -->
-                        <div class="following-info">
-                          <table class="table table-borderless" id="myTable">
-                            <thead>
-                              <tr>
-                                <th scope="col">Sr No</th>
-                                <th scope="col">Line Item 1</th>
-                                <th scope="col">Line Item 2</th>
-                                <th scope="col">Question</th>
-                                <th scope="col">time</th>
-                                <th scope="col">Action</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                          </table>
-                        </div>
-                        <!-- </div> -->
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6"></div>
-                    <div class="col-md-6">
-                      <div class="col-md-3">
-                       <input type="reset"  class="btn btn-primary">
-                      </div>
-                      <div class="col-md-3" style="margin-left: 20;">
-                        <button class="btn btn-primary" id="frwd_btn" type="submit">Create</button>
-                      </div>
-                    </div>
-                  </div>
-                </form>
+                
                 <div class="row">
                   <div class="box1" >
                     <?php $key = 1; if (!empty($oceanchamp_tests)): foreach ($oceanchamp_tests as $tests) : 
@@ -1265,92 +1174,8 @@ input.btn.btn-primary {
                   </div>
                 </div>
               </div>
-              <div role="tabpanel" class="tab-pane fade <?php $submenu=$this->session->userdata('submenu');  if(isset($submenu) && !empty($submenu)){if( $submenu == '2'   ) echo 'in active'; } ?> " id="create_test">
-                <form method="post" action="<?php echo base_url(); ?>employer/randomly_create_test">
-                  <div class="row">
-                    <div class="col-md-4">
-                      <div class="form-group technical_id">                                       
-                        <label for="exampleInputEmail1">Test Name <span class="required">*</span></label>
-                        <input type="text" class="form-control" id="test_name" name="test_name">
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="form-group technical_id">                                       
-                        <label for="exampleInputEmail1">Duration (min) <span class="required">*</span></label>
-                        <input type="Number" max="60" min="1" class="form-control" maxlength="2" id="time" name="test_duration">
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="form-group technical_id">
-                        <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
-                        <select id="subject1" name="technical_id" required class="form-control select2"  onchange="getTopicocean(this.value)">
-                          <option value="">Select Subject</option>
-                          <?php if (!empty($skill_master))
-                            foreach($skill_master as $skill) 
-                            {
-                            ?>   
-                          <option value="<?php echo $skill['id']; ?>"<?php if (!empty($edit_questionbank_info)) if($row['technical_id']==$skill['id'])echo "selected";?>><?php echo $skill['skill_name']; ?></option>
-                          <?php } ?>
-                        </select>
-                        <?php echo form_error('technical_id'); ?>   
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-4">
-                      <div class="form-group topic_id">
-                        <label for="exampleInputEmail1">Main Topic <span class="required">*</span></label>
-                        <select id="topic_id_ocean" name="topic_id" class="form-control select2" onchange="getSubtopics(this.value)">
-                          <option value="">Select Topic</option>
-                          <!-- <option value="1">HTML 5</option>  -->
-                        </select>
-                        <?php echo form_error('topic_id'); ?>   
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="form-group subtopic_id">
-                        <label for="exampleInputEmail1">Sub Topic <span class="required">*</span></label>
-                        <select id="subtopic_id_ocean" name="subtopic_id" class="form-control select2" >
-                        </select> <?php echo form_error('subtopic_id'); ?>   
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="form-group level">
-                        <label for="exampleInputEmail1">Level <span class="required">*</span></label>
-                        <select name="level" onchange="get_questuions();" id="level" class="form-control select2">
-                          <option value="Expert"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Expert')echo "selected";?>>Expert</option>
-                          <option value="Medium"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Medium')echo "selected";?>>Medium</option>
-                          <option value="Beginner"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Beginner')echo "selected";?>>Beginner</option>
-                        </select>
-                        <?php echo form_error('level'); ?>   
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-4">
-                      <div class="form-group ques_type">
-                        <label for="exampleInputEmail1">Question Type <span class="required">*</span></label>
-                        <select name="ques_type" id="ques_type" class="form-control select2" type="text" onchange="get_questuions();">
-                          <option value="MCQ"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='MCQ')echo "selected";?>>MCQ</option>
-                          <option value="Subjective"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Subjective')echo "selected";?>>Subjective</option>
-                          <option value="Practical"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Practical')echo "selected";?>>Practical</option>
-                        </select>
-                        <?php echo form_error('ques_type'); ?>   
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6"></div>
-                    <div class="col-md-6">
-                      <div class="col-md-3">
-                       <input type="reset"  class="btn btn-primary">
-                      </div>
-                      <div class="col-md-3" style="margin-left: 20;">
-                        <button  class="btn btn-primary" type="submit">Create</button>
-                      </div>
-                    </div>
-                  </div>
-                </form>
+             
+                
                 <div class="row">
                   <div class="box" >
                     <?php $key = 1; if (!empty($ocean_tests)): foreach ($ocean_tests as $tests) : 
@@ -1450,7 +1275,7 @@ input.btn.btn-primary {
                     <?php endif; ?>
                   </div>
                 </div>
-              </div>
+            
             </div>
           </div>
           <div role="tabpanel" class="tab-pane fade <?php $submenu=$this->session->userdata('submenu'); $activemenu=$this->session->userdata('activemenu'); 
