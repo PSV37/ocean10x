@@ -1154,7 +1154,7 @@ input.btn.btn-primary {
                             <?php  
                     $test_id =$tests['test_id'];
                     $employer_id = $this->session->userdata('company_profile_id');
-                    $where="oceanchamp_tests.test_id ='$test_id' oceanchamp_tests.company_id = '$employer_id' ";
+                    $where="oceanchamp_tests.test_id ='$test_id' and oceanchamp_tests.company_id = '$employer_id' ";
                     $join = array('forwarded_tests'=>'forwarded_tests.test_id = oceanchamp_tests.test_id |Left OUTER',
                       'job_posting'=>'job_posting.test_for_job = oceanchamp_tests.test_id |Left OUTER',
                       'company_profile'=>'company_profile.company_profile_id = oceanchamp_tests.company_id |Left OUTER','js_info'=>'js_info.job_seeker_id = forwarded_tests.job_seeker_id |LEFT OUTER');
