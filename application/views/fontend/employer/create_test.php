@@ -80,7 +80,7 @@ span.select2.select2-container.select2-container--default {
   <div class="container">
     <div class="col-md-12">
       <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
-      <form id="js">
+       <form method="post" action="<?php echo base_url(); ?>employer/add_to_test">
         <div class="col-md-9 add-question">
           <div class="header-bookbank">
            Create Test
@@ -192,7 +192,7 @@ span.select2.select2-container.select2-container--default {
 
              
          </div>
-             <div class="row">
+             <!-- <div class="row">
            
             
              <div class="col-md-4">
@@ -236,8 +236,8 @@ span.select2.select2-container.select2-container--default {
             </div>
 
              
-         </div>
-             <div class="row">
+         </div> -->
+            <!--  <div class="row">
            
             
              <div class="col-md-4">
@@ -269,12 +269,12 @@ span.select2.select2-container.select2-container--default {
 
 
              
-         </div>
+         </div> -->
              
      
       <div class="box-body">
         <div class="box" >
-          <p style="float: right;margin-right: 80px"><b>Total Time Duration:</b><span id="total_time"></span></p>
+         <p ><b style="float: left;margin-right: 80px">Total Time Duration <span id="total_time"></span></b> <b style="float: right;margin-right: 80px" >Total Questions:<span id="total_questions"></span></b></p>
                <div class="card content">
                      <!-- <div class="front"> -->
                       <div class="following-info">
@@ -302,8 +302,17 @@ span.select2.select2-container.select2-container--default {
             </div>
       </div>
        <span style="float: right; margin-top: 20px;"> 
-          <!-- <input  type="checkbox" name="check_all" id="checkAllchk">&nbsp; all -->
-           <button type="button" id="frwd_btn" class="btn btn-default">Add To </button>
+         <div class="row">
+                    <div class="col-md-6"></div>
+                    <div class="col-md-6">
+                      <div class="col-md-3">
+                       <input type="reset"  class="btn btn-primary">
+                      </div>
+                      <div class="col-md-3" style="margin-left: 20;">
+                        <button class="btn btn-primary" id="frwd_btn" type="submit">Create</button>
+                      </div>
+                    </div>
+                  </div>
         </span>
     </div>
   </form>
@@ -530,6 +539,7 @@ span.select2.select2-container.select2-container--default {
                 else
                 {
                   $('#topic_id').html(res);
+                  $('#topic_id').attr('disabled', false);
                 }
              }
              
@@ -537,31 +547,7 @@ span.select2.select2-container.select2-container--default {
            }
            get_questuions();
         }
-        function getTopicocean(id){
-         if(id){
-           $.ajax({
-             type:'POST',
-             url:'<?php echo base_url();?>employer/gettopic',
-             data:{id:id},
-             success:function(res){
-                 if (res.length == 1) 
-                {
-                   $('#topic_id_ocean').attr('disabled', true);
-                   $('#subtopic_id_ocean').attr('disabled', true);
-  
-                }
-                else
-                {
-                  $('#topic_id_ocean').html(res);
-                }
-             
-             }
-             
-           }); 
-           }
-           get_questuions();
-  
-        }
+        
         function getSubtopic(id){
          if(id){
              $.ajax({
@@ -578,6 +564,7 @@ span.select2.select2-container.select2-container--default {
                 else
                 {
                   $('#subtopic_id').html(res);
+                  $('#subtopic_id').attr('disabled', false);
                 }
                    
                  }
@@ -602,6 +589,7 @@ span.select2.select2-container.select2-container--default {
           var total_time = sum(myNameArray);
 
              $('#total_time').html(total_time+' seconds');
+             $('#total_questions').html(myNameArray.length);
   }
 
 
