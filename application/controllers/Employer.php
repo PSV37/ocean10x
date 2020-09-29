@@ -1798,12 +1798,13 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         
 
 
+
         $sort_val = $this->input->post('sort_val');
         if (empty($sort_val)) {
            $sort_val = $this->input->get('sort');
         }
-        // print_r($_GET);
-        // echo $sort_val;die;
+
+        
 
         $this->session->set_userdata($data);
         $employer_id = $this->session->userdata('company_profile_id');
