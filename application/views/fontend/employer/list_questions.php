@@ -1169,7 +1169,8 @@ input.btn.btn-primary {
 
                           if (isset($row['job_title'])) { ?>
                              <p><?php echo $i; ?>.Attached to Job Post - <?php echo $row['job_title']; ?> - <?php echo date('d-m-y H:i',strtotime($row['date'])) ; ?>  </p>
-                        <?php  }else{ ?>
+                        <?php  }elseif(!empty($row['email']))
+                        { ?>
                           <p><?php echo $i; ?>. Forwarded to - <?php echo $row['email']; ?>- <?php echo date('d-m-y H:i',strtotime($row['date'])) ; ?>   </p>
                        <?php  }
                          ?>
