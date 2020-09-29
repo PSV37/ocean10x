@@ -1008,6 +1008,18 @@
                   <?php echo form_error('ques_type'); ?>   
                 </div>
               </div>
+              <div class="col-md-4">
+                      <div class="form-group ques_type">
+                        <label for="exampleInputEmail1">Test Deadline <span class="required">*</span></label>
+                         <?php
+                        $old_date = date('d-m-Y');
+                        $next_due_date = date('d-m-Y', strtotime($old_date. ' +7 days'));
+                        
+                        ?>
+                         <input type="text" id="deadline_picker" name="test_deadline" style="display: inline-block;" class="form-control datepicker "   value="<?php echo $next_due_date; ?>">
+                        <?php echo form_error('ques_type'); ?>   
+                      </div>
+                    </div>
             </div>
             <div class="row">
               <div class="col-md-6"></div>
@@ -1406,6 +1418,7 @@
     $('.content:contains("'+text+'")').show();
    
    });
+     $("#test_deadline").datepicker({ dateFormat: 'yy-mm-dd',minDate: '0' });
   
   });
   $.expr[":"].contains = $.expr.createPseudo(function(arg) {

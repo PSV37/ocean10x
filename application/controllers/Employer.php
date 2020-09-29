@@ -2144,6 +2144,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $level = $this->input->post('level');
         $ques_type = $this->input->post('ques_type');
         $employer_id = $this->session->userdata('company_profile_id');
+        $test_deadline = $this->input->post('test_deadline');
         $time = $test_duration / 20;
         $where = "technical_id = '$technical_id' and topic_id ='$topic_id' and subtopic_id ='$subtopic_id' and level ='$level' and ques_type ='$ques_type' ";
         $questions = $this->Master_model->getMaster('questionbank', $where, $join = FALSE, $order = 'RANDOM', $field = 'ques_id', $select = false, $limit = 20, $start = false, $search = false);
@@ -2165,6 +2166,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                 $test_data['level'] = $level;
                 $test_data['topics'] = $technical_id;
                 $test_data['test_status'] = '1';
+                $test_data['test_deadline'] = $test_deadline;
                 // $test_data['timer_on_each_que'] = $this->input->post('timer');
                 // $test_data['previous_option'] = $this->input->post('previous_option');
                 // $test_data['review_option'] = $this->input->post('review_option');
