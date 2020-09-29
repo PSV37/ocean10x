@@ -6185,7 +6185,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         echo true;
     }
 
-    public function choose_questions($id)
+    public function choose_questions($id = NULL)
     {
 
          $employer_id = $this->session->userdata('company_profile_id');

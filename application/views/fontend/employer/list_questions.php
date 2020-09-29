@@ -1053,9 +1053,9 @@ input.btn.btn-primary {
           <div role="tabpanel" class="tab-pane fade <?php $submenu=$this->session->userdata('submenu');  if(isset($submenu) && !empty($submenu)){if($submenu == '1' || $submenu == '2'   ) echo 'in active'; } ?>" id="Videos">
             <div class="row" style="float: right;">
              
-               <a  href="<?php echo base_url(); ?>employer/choose_questions"><i class="fa fa-plus"> </i> I will select the Questions</a>
+               <a class="qntn"  href="<?php echo base_url(); ?>employer/choose_questions"><i class="fa fa-plus"> </i> I will select the Questions</a>
              
-                <a href="<?php echo base_url(); ?>employer/choose_questions/1" data-toggle="tab">
+                <a class="qntn" href="<?php echo base_url(); ?>employer/choose_questions/1">
                 <i class="fa fa-plus"> </i>  Ocean can select Questions
                </a>
               <!-- </div> -->
