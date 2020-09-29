@@ -1071,9 +1071,7 @@ input.btn.btn-primary {
                 </label></a>
                 </div> -->
             </div>
-            <div class="tab-content">
-              <div role="tabpanel" class="tab-pane fade <?php $submenu=$this->session->userdata('submenu');  if(isset($submenu) && !empty($submenu)){if($submenu == '1' ){ echo 'in active'; }  }else{ echo 'in active'; }?>" id="add_test">
-                
+           
                 <div class="row">
                   <div class="box1" >
                     <?php $key = 1; if (!empty($oceanchamp_tests)): foreach ($oceanchamp_tests as $tests) : 
@@ -1172,7 +1170,7 @@ input.btn.btn-primary {
                     </li>
                     <?php endif; ?>
                   </div>
-                </div>
+               
               </div>
              
                 
