@@ -74,6 +74,14 @@ ul.select2-results__options {
 span.select2.select2-container.select2-container--default {
     width: 100%;
 }
+.btn.btn-primary {
+    /* float: right; */
+    background-color: #18c5bd;
+    border: none;
+    border-radius: 35px;
+    margin-top: 13px;
+    font-size: 12px;
+}
 </style>
 
  <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/questionbank.css">
@@ -91,14 +99,14 @@ span.select2.select2-container.select2-container--default {
              
            </div>
            <div class="col-md-4">
-               <a style="float: right;" href="<?php echo base_url(); ?>employer/show_saved_tests"><button type="button" id="question_add" class="btn btn-default"><i class="fa fa-plus">Show Saved Tests</i></button></a>
+              <!--  <a style="float: right;" href="<?php echo base_url(); ?>employer/show_saved_tests"><button type="button" id="question_add" class="btn btn-default"><i class="fa fa-plus">Show Saved Tests</i></button></a> -->
            </div>
             <div class="col-md-4">
               <a style="float: right;" href="<?php echo base_url(); ?>employer/add-question"><button type="button" id="question_add" class="btn btn-default"><i class="fa fa-plus"> Add Question</i></button></a>
            </div>
 
          </div>
-           <div class="row">
+           <!-- <div class="row">
            <div class="col-md-4">
 
              <label class="radio-inline">
@@ -118,8 +126,14 @@ span.select2.select2-container.select2-container--default {
               </label>
            </div>
            
-         </div>
+         </div> -->
           <div class="row">
+            <div class="col-md-4">
+              <div class="form-group technical_id">                                       
+                <label for="exampleInputEmail1">Test Name <span class="required">*</span></label>
+                        <input type="text" class="form-control" id="test_name" name="test_name" required="">   
+              </div>
+            </div>
             <div class="col-md-4">
               <div class="form-group technical_id">                                       
                <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
@@ -143,16 +157,16 @@ span.select2.select2-container.select2-container--default {
                 </select> <?php echo form_error('topic_id'); ?>   
               </div>
             </div>
-            <div class="col-md-4">
+                     
+          </div>
+          <div class="row">
+           <div class="col-md-4">
               <div class="form-group subtopic_id">
                 <label for="exampleInputEmail1">Subtopic<span class="required">*</span></label>
                 <select id="subtopic_id" name="subtopic_id" class="form-control select2" onchange="get_questuions();" >
                 </select> <?php echo form_error('subtopic_id'); ?>   
               </div>
-            </div>               
-          </div>
-          <div class="row">
-           
+            </div>      
             
             <div class="col-md-4">
               <div class="form-group level">
@@ -177,21 +191,7 @@ span.select2.select2-container.select2-container--default {
               </div>
             </div>
 
-            <div class="col-md-4">
-              <div class="form-group timer">
-                <label for="male">Timer On each Question</label><br>
-                  <label class="radio-inline" style="margin-left: 20px;" >
-                    <input type="radio" name="timer" style=" margin-right: 11px;" value="Y" checked> Yes
-                  </label>
-                  <label class="radio-inline" style=" margin-right: 50px;">
-                    <input type="radio" name="timer" value="N" style="margin-left: -30px;">No
-                  </label>
-                
-              </div>
-            </div>
-
-             
-         </div>
+            
              <!-- <div class="row">
            
             
