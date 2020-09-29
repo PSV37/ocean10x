@@ -1159,7 +1159,7 @@ input.btn.btn-primary {
                       'job_posting'=>'job_posting.test_for_job = oceanchamp_tests.test_id |Left OUTER',
                       'company_profile'=>'company_profile.company_profile_id = oceanchamp_tests.company_id |Left OUTER','js_info'=>'js_info.job_seeker_id = forwarded_tests.job_seeker_id |LEFT OUTER');
                     $jobs_data = $this->Master_model->getMaster('oceanchamp_tests', $where , $join, $order = 'desc', $field = 'date', $select = '*,IFNULL(forwarded_tests.updated_on, job_posting.update_at) AS date',$limit=false,$start=false, $search=false); 
-                      if (!empty($jobs_data)) { ?>
+                      if (!empty($jobs_data[0]['job_title'] || !empty($jobs_data[0]['email']))) { ?>
                         <span data-toggle="collapse" data-target="#collapseEx<?php echo $tests['test_id']?>" aria-expanded="false" aria-controls="collapseEx" style="color: red;font-size: 25px;margin-left: 38px;" title="Click to see the Jobs Forwarded" class="required"> * </span>
                         <div class="collapse" id="collapseEx<?php echo $tests['test_id']?>">
                       <div class="card-body">
