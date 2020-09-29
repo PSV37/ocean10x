@@ -1055,9 +1055,9 @@ input.btn.btn-primary {
              
                <a class="qntn"  href="<?php echo base_url(); ?>employer/choose_questions"><i class="fa fa-plus"> </i> I will select the Questions</a>
              
-                <a class="qntn" href="<?php echo base_url(); ?>employer/choose_questions/1">
+                <li class="btn btn-secondary"><a class="qntn" href="<?php echo base_url(); ?>employer/choose_questions/1">
                 <i class="fa fa-plus"> </i>  Ocean can select Questions
-               </a>
+               </a></li>
               <!-- </div> -->
             </div>
             <div class="row">
