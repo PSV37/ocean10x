@@ -1073,7 +1073,7 @@ input.btn.btn-primary {
             </div>
            
                 <div class="row">
-                  <div class="box1" >
+                  <div class="box" >
                     <?php $key = 1; if (!empty($oceanchamp_tests)): foreach ($oceanchamp_tests as $tests) : 
                       $on_ocean = $tests['ocean_candidate'];
                             if($on_ocean == 'Yes')
