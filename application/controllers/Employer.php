@@ -1820,7 +1820,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $data['lineitem'] = $this->Master_model->getMaster('lineitem', $where_lineitem);
         $where_all = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id' and test_status = '1'";
         $data['oceanchamp_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where = $where_all, $join = FALSE, $order = 'desc', $field = 'oceanchamp_tests.test_id', $select = false, $limit = false, $start = false, $search = false);
-        $where = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id' and test_status = '2'";
+        $where = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id' ";
         $data['ocean_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where = $where, $join = FALSE, $order = 'desc', $field = 'oceanchamp_tests.test_id', $select = false, $limit = false, $start = false, $search = false);
         $data['company_active_jobs'] = $this->job_posting_model->get_company_active_jobs($employer_id);
         $where_all = "questionbank.ques_status='1' AND ques_created_by='$employer_id'";
