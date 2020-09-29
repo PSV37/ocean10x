@@ -6185,8 +6185,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         echo true;
     }
 
-    public function choose_questions()
+    public function choose_questions($id)
     {
+
          $employer_id = $this->session->userdata('company_profile_id');
         $where_cn = "status=1";
         $data['skill_master'] = $this->Master_model->getMaster('skill_master', $where_cn);
@@ -6199,7 +6200,14 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $where_lineitem = "lineitem.lineitem_status='1'";
         $data['lineitem'] = $this->Master_model->getMaster('lineitem', $where_lineitem);
         $where_all = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id' and test_status = '1'";
-        $this->load->view('fontend/employer/create_test',$data);
+        if (isset($id)) {
+            $this->load->view('fontend/employer/choose_questions',$data);
+        }
+        else
+        {
+             $this->load->view('fontend/employer/create_test',$data);
+        }
+       
     }
 }
 ?>
