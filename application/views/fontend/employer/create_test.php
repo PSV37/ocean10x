@@ -571,7 +571,7 @@ function sum(input){
      
      $("#my_date_picker").datepicker({ dateFormat: 'yy-mm-dd',maxDate: '0' });
      $("#last_salary_hike").datepicker({ dateFormat: 'yy-mm-dd',maxDate: '0' });
-      $("#test_deadline").datepicker({ dateFormat: 'yy-mm-dd',minDate: '0' });
+      $("#deadline_picker").datepicker({ dateFormat: 'yy-mm-dd',minDate: '0' });
      });
 // $('#btn').on('click', function() {
 $("#js").validate (  

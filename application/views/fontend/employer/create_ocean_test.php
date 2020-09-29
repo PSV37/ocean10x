@@ -1418,7 +1418,10 @@
     $('.content:contains("'+text+'")').show();
    
    });
-     $("#test_deadline").datepicker({ dateFormat: 'yy-mm-dd',minDate: '0' });
+    $(function() { 
+     $("#deadline_picker").datepicker({ dateFormat: 'yy-mm-dd',minDate: '0' });
+
+   });
   
   });
   $.expr[":"].contains = $.expr.createPseudo(function(arg) {
