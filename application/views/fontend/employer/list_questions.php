@@ -1151,6 +1151,37 @@ input.btn.btn-primary {
                             <li class="right-title">&nbsp;:<?php echo $tests['negative_marks']; ?></li>
                             <div class="clear"></div>
                           </div>
+                            <?php  
+                    $test_id =$tests['test_id'];
+                    $employer_id = $this->session->userdata('company_profile_id');
+                    $where="oceanchamp_tests.test_id ='$test_id' oceanchamp_tests.company_id = '$employer_id' ";
+                    $join = array('forwarded_tests'=>'forwarded_tests.test_id = oceanchamp_tests.test_id |Left OUTER',
+                      'job_posting'=>'job_posting.test_for_job = oceanchamp_tests.test_id |Left OUTER',
+                      'company_profile'=>'company_profile.company_profile_id = oceanchamp_tests.company_id |Left OUTER','js_info'=>'js_info.job_seeker_id = forwarded_tests.job_seeker_id |LEFT OUTER');
+                    $jobs_data = $this->Master_model->getMaster('oceanchamp_tests', $where , $join, $order = 'desc', $field = 'date', $select = '*,IFNULL(forwarded_tests.updated_on, job_posting.update_at) AS date',$limit=false,$start=false, $search=false); 
+                      if (!empty($jobs_data)) { ?>
+                        <span data-toggle="collapse" data-target="#collapseEx<?php echo $cv_row['cv_id']?>" aria-expanded="false" aria-controls="collapseEx" style="color: red;font-size: 25px;margin-left: 38px;" title="Click to see the Jobs Forwarded" class="required"> * </span>
+                        <div class="collapse" id="collapseEx<?php echo $cv_row['cv_id']?>">
+                      <div class="card-body">
+                      <?php $i=1; if (!empty($jobs_data)) {
+                        // print_r($jobs_data);
+                        foreach ($jobs_data as $row) {
+
+                          if (isset($row['job_title'])) { ?>
+                             <p><?php echo $i; ?>.Attached to Job Post - <?php echo $row['job_title']; ?> - <?php echo date('d-m-y H:i',strtotime($row['date'])) ; ?>  </p>
+                        <?php  }else{ ?>
+                          <p><?php echo $i; ?>. Forwarded to - <?php echo $row['email']; ?>- <?php echo date('d-m-y H:i',strtotime($row['date'])) ; ?>   </p>
+                       <?php  }
+                         ?>
+
+                       
+
+                            <?php $i++;  } }  ?>
+                        
+                      </div>
+                      </div>
+                     <?php  }
+                    ?>
                           <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
                           </button>

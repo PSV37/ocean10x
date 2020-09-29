@@ -2092,7 +2092,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $technical_id = $this->input->post('technical_id');
         $topic_id = $this->input->post('topic_id');
         $subtopic_id = $this->input->post('subtopic_id');
-        $test_deadline =  $this->input->post('test_deadline');
+        $test_deadline = date('Y-m-d', strtotime($this->input->post('test_deadline')));
         $level = $this->input->post('level');
         $ques_type = $this->input->post('ques_type');
         $employer_id = $this->session->userdata('company_profile_id');
