@@ -107,7 +107,7 @@ span.select2.select2-container.select2-container--default {
                     <div class="col-md-4">
                       <div class="form-group technical_id">
                         <label for="exampleInputEmail1">Subject <span class="required">*</span></label>
-                        <select id="subject" name="subject_data" required class="form-control select2"  onchange="getTopic(this.value)">
+                       <select id="subject" name="subject_data" required class="form-control select2"  onchange="getTopic(this.value)">
                           <option value="">Select Subject</option>
                           <?php if (!empty($skill_master))
                             foreach($skill_master as $skill) 
