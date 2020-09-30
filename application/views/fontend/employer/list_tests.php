@@ -1287,7 +1287,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;"> Change Test Parameters</h5>
       </div>
-      <form action="<?php echo base_url() ?>employer/update_ocean_test" class="sendEmail" method="post" autocomplete="off">
+      <form action="<?php echo base_url() ?>employer/update_test" class="sendEmail" method="post" autocomplete="off">
         <input type="hidden" name="test_id" id="test_id" value="<?php echo $tests['test_id']; ?>">
         <div class="modal-body" style="padding:15px 40px;">
           <div class="col-md-6">
