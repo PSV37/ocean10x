@@ -2516,7 +2516,7 @@ public function user_profile()
         $data['lineitem'] = $this->Master_model->getMaster('lineitem', $where_lineitem);
         $data['company_active_jobs'] = $this->job_posting_model->get_company_active_jobs($employer_id);
         // echo  $this->db->last_query(); die;
-        $this->load->view('fontend/job_seeker/list_tests', $data);
+        $this->load->view('fontend/jobseeker/list_tests', $data);
         // $this->load->view('fontend/employer/all_questions.php', $data);
         
     }

@@ -1,5 +1,5 @@
 <div class="col-md-3 ">
-  <div class="main-height">
+  <div class="main-height"style="height: 335px">
     <aside id="left-panel" style="
       margin-left: 14px;height:auto; position: fixed;
       z-index: 999;vertical-align:baseline;">
