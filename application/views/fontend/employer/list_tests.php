@@ -955,7 +955,7 @@
                   <li data-value="test_name" ><a href="#">Test Name</a></li>
                   <li data-value="skill_name"><a href="#">Skill</a></li>
                   <li data-value="topic_name"><a href="#">Topic</a></li>
-                  <li data-value="js_top_education"><a href="#">Duration</a></li>
+                  <li data-value="total_duration"><a href="#">Duration</a></li>
                 </ul>
               </label>
               <input id="sizevalue" value="<?php if(isset($sort))

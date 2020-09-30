@@ -2230,9 +2230,25 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $this->session->unset_userdata('activemenu');
         $data['activemenu'] = 'test_papers';
         $this->session->set_userdata($data);
+
+        $sort_val = $this->input->post('sort_val');
+
         $employer_id = $this->session->userdata('company_profile_id');
+
         $where = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id' and test_status = '3'";
+        if ((isset($_POST['sort']) || !empty($sort_val) {
+
+
+         $join = array('topic' => 'topic._topic_id = oceanchamp_tests.topics' );
+         $data['ocean_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where = $where, $join = FALSE, $order = 'desc', $field = $sort_val, $select = false, $limit = false, $start = false, $search = false);
+        }
+         else {
         $data['ocean_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where = $where, $join = FALSE, $order = 'desc', $field = 'oceanchamp_tests.test_id', $select = false, $limit = false, $start = false, $search = false);
+
+         }
+
+        
+        
         $where_cn = "status=1";
         $data['skill_master'] = $this->Master_model->getMaster('skill_master', $where_cn);
         //$where_opt= "options.status=1";
@@ -2244,6 +2260,8 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $where_lineitem = "lineitem.lineitem_status='1'";
         $data['lineitem'] = $this->Master_model->getMaster('lineitem', $where_lineitem);
         $data['company_active_jobs'] = $this->job_posting_model->get_company_active_jobs($employer_id);
+            
+        
         // echo  $this->db->last_query(); die;
         $this->load->view('fontend/employer/list_tests', $data);
         // $this->load->view('fontend/employer/all_questions.php', $data);
