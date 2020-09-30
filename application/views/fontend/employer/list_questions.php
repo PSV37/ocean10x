@@ -2369,13 +2369,14 @@ Company Name</textarea>
       "olivedrab", 
       "orange", 
       "tomato", 
-      "#ff00f7", 
       "purple", 
       "turquoise", 
       "forestgreen", 
       "navy", 
       "gray",
-      "#6fc6ef"
+      "#6fc6ef",
+      "#e7d712",
+      "#fb0097"
     ];
     for(var i=0; i<listData.length; i++) {
       var size = sliceSize(listData[i], listTotal);
