@@ -943,6 +943,27 @@
                   </form>
                   <div class="clear"></div>
                </div>
+
+        <div class="col-md-4">
+            <form method="post" action="<?php echo base_url(); ?>employer/all_tests/<?php if(!empty($fid)){ echo $fid;} ?>">
+              <label class="dropdown">
+                <div class="dd-button" onclick="myFunction2(event)">
+                  Sort by
+                </div>
+                <input type="checkbox" class="dd-input" id="test">
+                <ul id="sizelist" class="dd-menu">
+                  <li data-value="js_name" ><a href="#">Name</a></li>
+                  <li data-value="js_experience"><a href="#">Experience</a></li>
+                  <li data-value="js_top_education"><a href="#">Education</a></li>
+                </ul>
+              </label>
+              <input id="sizevalue" value="<?php if(isset($sort))
+              {echo $sort; } ?>" size="15" name="sort_val" type="hidden" />
+              <button type="submit" name="sort" class="hidden" id="sort_btn"></button>
+            </form>
+          </div>
+
+
         <div class="row">
           <div class="box" >
             <?php $key = 1; if (!empty($ocean_tests)): foreach ($ocean_tests as $tests) : 
