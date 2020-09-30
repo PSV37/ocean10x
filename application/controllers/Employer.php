@@ -2196,6 +2196,21 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         }
         redirect('employer/all_tests');
     }
+    public function update_ocean_test() {
+        $test_id = $this->input->post('test_id');
+        if (isset($test_id) && !empty($test_id)) {
+            $test_data['timer_on_each_que'] = $this->input->post('timer');
+            $test_data['previous_option'] = $this->input->post('previous_option');
+            $test_data['review_option'] = $this->input->post('review_option');
+            $test_data['negative_marks'] = $this->input->post('negative');
+            $test_data['correct_ans_each_ques'] = $this->input->post('each_question_ans');
+            $test_data['final_result'] = $this->input->post('display_result');
+             $test_data['updated_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
+            $where['test_id'] = $test_id;
+            $this->Master_model->master_update($test_data, 'ocean_tests', $where);
+        }
+        redirect('employer/all_tests');
+    }
     public function show_saved_tests() {
         $employer_id = $this->session->userdata('company_profile_id');
         $where_all = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id'";

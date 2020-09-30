@@ -1169,12 +1169,14 @@ span.right-side {
                       'company_profile'=>'company_profile.company_profile_id = corporate_cv_bank.company_id |Left OUTER');
                     $jobs_data = $this->Master_model->getMaster('corporate_cv_bank', $where , $join, $order = 'desc', $field = 'date', $select = '*,IFNULL(forwarded_jobs_cv.created_on, corporate_cv_bank.created_on) AS date',$limit=false,$start=false, $search=false); 
                       if (!empty($jobs_data)) { ?>
-                         <hr>
+
                        <span data-toggle="collapse" data-target="#collapseEx<?php echo $cv_row['cv_id']?>" aria-expanded="false" aria-controls="collapseEx" style="color: red;font-size: 25px;margin-left: 38px;" title="Click to see the Jobs Forwarded" class="required"> * </span>
+
                        <div class="collapse" id="collapseEx<?php echo $cv_row['cv_id']?>">
                       <div class="card-body">
-                      <?php $i=1; if (!empty($jobs_data)) {
-                        // print_r($jobs_data);
+                      <?php $i=1; if (!empty($jobs_data)) { ?>
+                         <hr>
+                        <?php // print_r($jobs_data);
                         foreach ($jobs_data as $row) {
 
                           if (isset($row['job_title'])) { ?>

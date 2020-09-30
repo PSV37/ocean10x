@@ -1058,7 +1058,7 @@
                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1" style="top:47px;">
                     <li ><a class="dropdown-item" href="#" id="div_frwrd" data-toggle="modal" data-target="#rotateModal<?php echo $tests['test_id'] ?>" >Forward This Test</a></li>
                     <li ><a class="dropdown-item" href="#" id="attach_to_job" data-toggle="modal" data-target="#attach_to_job<?php echo $tests['test_id'] ?>" >Attach To Job Post</a></li>
-                    <li> <a class="dropdown-item"  href="#" data-toggle="modal" data-target="#edit_test<?php echo $tests['test_id'] ?>" >Edit Test</a></li>
+                    <li> <a class="dropdown-item"  href="#" data-toggle="modal" data-target="#edit_test<?php echo $tests['test_id'] ?>" >Edit Test Parameters</a></li>
                     <!--  <li><a class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-target="#move_cv" href="#">Move this CV</a></li> -->
                   </div>
                 </div>
@@ -1234,8 +1234,8 @@
         <div class="modal-body" style="padding:15px 40px;">
           <input type="hidden" name="consultant" value="JobSeeker">  
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <label class="mdl-textfield__label" for="sample3">E-mail:</label>
-            <input type="email"  name="candiate_email"  id="email" placeholder="Enter comma seperated Emails"  id="subject" data-required="true" multiple style="display: inline-block;" required>
+            <label class="mdl-textfield__label" for="sample3">E-mail</label>
+            <input type="email"  name="candiate_email"  id="email" placeholder="Enter comma seperated Emails"  id="subject" data-required="true" multiple style="display: inline-block;width: 100%;" required>
           </div>
           <input type="hidden" name="job_post_id" value="" id="auto-value">
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
@@ -1285,9 +1285,9 @@
     <div class="modal-content">
       <div class="modal-header" style="border-bottom:none;">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Forward This Test</h5>
+        <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;"> Change Test Parameters</h5>
       </div>
-      <form action="<?php echo base_url() ?>employer/update_test" class="sendEmail" method="post" autocomplete="off">
+      <form action="<?php echo base_url() ?>employer/update_ocean_test" class="sendEmail" method="post" autocomplete="off">
         <input type="hidden" name="test_id" id="test_id" value="<?php echo $tests['test_id']; ?>">
         <div class="modal-body" style="padding:15px 40px;">
           <div class="col-md-6">
@@ -1441,7 +1441,15 @@
   $( "#test" ).click();
   })
   
-  
+  $("#email").autocomplete({
+             
+             source: "<?php echo base_url();?>Employer/get_company_by_email",
+             minLength: 2,
+              // append: "#rotateModal",
+            
+    
+            
+           });
 </script>
 <script>
   $(document).ready(function(){
