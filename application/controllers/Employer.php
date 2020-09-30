@@ -2245,7 +2245,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         }
 
          else {
-        $data['ocean_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where = $where, $join = FALSE, $order = 'desc', $field = s'oceanchamp_tests.test_id', $select = false, $limit = false, $start = false, $search = false);
+        $data['ocean_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where = $where, $join = FALSE, $order = 'desc', $field = 'oceanchamp_tests.test_id', $select = false, $limit = false, $start = false, $search = false);
 
          }
 
