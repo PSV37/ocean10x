@@ -945,7 +945,7 @@
                </div>
 
         <div class="col-md-4">
-            <form method="post" action="<?php echo base_url(); ?>employer/corporate_cv_bank/<?php if(!empty($fid)){ echo $fid;} ?>">
+            <form method="post" action="<?php echo base_url(); ?>employer/all_tests/<?php if(!empty($fid)){ echo $fid;} ?>">
               <label class="dropdown">
                 <div class="dd-button" onclick="myFunction2(event)">
                   Sort by
@@ -963,7 +963,7 @@
             </form>
           </div>
 
-          
+
         <div class="row">
           <div class="box" >
             <?php $key = 1; if (!empty($ocean_tests)): foreach ($ocean_tests as $tests) : 
