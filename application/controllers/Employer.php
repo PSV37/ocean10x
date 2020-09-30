@@ -2165,7 +2165,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                 $test_data['test_duration'] = $test_duration;
                 $test_data['level'] = $level;
                 $test_data['topics'] = $technical_id;
-                $test_data['test_status'] = '1';
+                $test_data['test_status'] = '3';
                 $test_data['test_deadline'] = $test_deadline;
                 // $test_data['timer_on_each_que'] = $this->input->post('timer');
                 // $test_data['previous_option'] = $this->input->post('previous_option');
@@ -2175,7 +2175,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                 // $test_data['final_result'] = $this->input->post('display_result');
                 $test_data['created_by'] = $this->session->userdata('company_profile_id');
                 $test_data['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
-                $this->Master_model->master_insert($test_data, 'ocean_tests');
+                $this->Master_model->master_insert($test_data, 'oceanchamp_tests');
                 $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Test Created Successfully</div>');
             }
         }
@@ -2193,21 +2193,6 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
              $test_data['updated_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
             $where['test_id'] = $test_id;
             $this->Master_model->master_update($test_data, 'oceanchamp_tests', $where);
-        }
-        redirect('employer/all_tests');
-    }
-    public function update_ocean_test() {
-        $test_id = $this->input->post('test_id');
-        if (isset($test_id) && !empty($test_id)) {
-            $test_data['timer_on_each_que'] = $this->input->post('timer');
-            $test_data['previous_option'] = $this->input->post('previous_option');
-            $test_data['review_option'] = $this->input->post('review_option');
-            $test_data['negative_marks'] = $this->input->post('negative');
-            $test_data['correct_ans_each_ques'] = $this->input->post('each_question_ans');
-            $test_data['final_result'] = $this->input->post('display_result');
-             $test_data['updated_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
-            $where['test_id'] = $test_id;
-            $this->Master_model->master_update($test_data, 'ocean_tests', $where);
         }
         redirect('employer/all_tests');
     }
@@ -2246,8 +2231,8 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $data['activemenu'] = 'test_papers';
         $this->session->set_userdata($data);
         $employer_id = $this->session->userdata('company_profile_id');
-        $where = "ocean_tests.status='1' AND ocean_tests.company_id='$employer_id' and test_status = '1'";
-        $data['ocean_tests'] = $this->Master_model->getMaster('ocean_tests', $where = $where, $join = FALSE, $order = 'desc', $field = 'ocean_tests.test_id', $select = false, $limit = false, $start = false, $search = false);
+        $where = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id' and test_status = '3'";
+        $data['ocean_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where = $where, $join = FALSE, $order = 'desc', $field = 'oceanchamp_tests.test_id', $select = false, $limit = false, $start = false, $search = false);
         $where_cn = "status=1";
         $data['skill_master'] = $this->Master_model->getMaster('skill_master', $where_cn);
         //$where_opt= "options.status=1";
