@@ -1044,8 +1044,8 @@
                          <p><?php echo $i; ?>. Parameters Edited - <?php echo date('d-m-y H:i',strtotime($row['update_date'])) ; ?>   </p>
                        
 
-                            <?php } $i++;  }   ?>
-                       }
+                            <?php } $i++;  } }  ?>
+                       
                         
                       </div>
                       </div>
