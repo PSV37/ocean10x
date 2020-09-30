@@ -2501,9 +2501,9 @@ public function user_profile()
         $data['activemenu'] = 'ocean_bank';
         $this->session->set_userdata($data);
         $job_seeker_id = $this->session->userdata('job_seeker_id');
-        $join = array('oceanchamp_tests'=>'oceanchamp_tests.test_id = forwarded_tests.test_id')
+        $join = array('oceanchamp_tests'=>'oceanchamp_tests.test_id = forwarded_tests.test_id');
         $where = "oceanchamp_tests.status='1' AND forwarded_tests.job_seeker_id='$job_seeker_id' and forwarded_tests.status != 'Test Completed'";
-        $data['ocean_tests'] = $this->Master_model->getMaster('forwarded_tests', $where = $where, $join = FALSE, $order = 'desc', $field = 'forwarded_tests.id', $select = false, $limit = false, $start = false, $search = false);
+        $data['ocean_tests'] = $this->Master_model->getMaster('forwarded_tests', $where = $where, $join , $order = 'desc', $field = 'forwarded_tests.id', $select = false, $limit = false, $start = false, $search = false);
         $where_cn = "status=1";
         $data['skill_master'] = $this->Master_model->getMaster('skill_master', $where_cn);
         //$where_opt= "options.status=1";
