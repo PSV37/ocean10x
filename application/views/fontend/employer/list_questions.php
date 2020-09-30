@@ -1386,54 +1386,50 @@ input.btn.btn-primary {
                 </div>
                
                   <li>
-                    <em id="spanid0">Total Questions</em>
+                    <em id="spanid3">Total Questions</em>
                     <span><?php echo $total_question; ?></span>
-                    <!--<span>718</span> -->
+                   
                   </li>
-                  <!--<li>
-                    <em id="spanid0">Total Active Job Posts</em>
-                    <span><?php echo sizeof($company_active_jobs); ?></span>
-                    
-                  </li>-->
+               
                   <li>
-                    <em id="spanid1">Appeared in Test Papers</em>
-                    <span id='appeared_in_test_paper'> </span>
-                    <!--<span> 50 </span>-->
+                    <em id="spanid4">Appeared in Test Papers</em>
+                    <span id='appeared_in_test_paper'>10 </span>
+                   
                   </li>
                   <li>
-                    <em id="spanid2">Not Appeared in Test Papers</em>
-                    <span id='not_appeared_in_test_papers'> </span>
-                    <!--<span> 50 </span>-->
+                    <em id="spanid5">Not Appeared in Test Papers</em>
+                    <span id='not_appeared_in_test_papers'>10 </span>
+                  
                   </li>
                   <li>
-                    <em id="spanid3">Expert Level </em> 
-                    <span id='expert_level'> </span>
-                    <!--<span> 50 </span>-->
+                    <em id="spanid6">Expert Level </em> 
+                    <span id='expert_level'>10 </span>
+                  
                   </li>
                   <li>
-                    <em id="spanid4">Medium Level</em>
+                    <em id="spanid7">Medium Level</em>
                     <span id='Medium_level'></span>
                     <!--<span> 50 </span>-->
                   </li>
                   <li>
-                    <em id="spanid5">Beginners Level</em> 
-                    <span id='Beginners_level'></span>
-                    <!--<span> 50 </span>-->
+                    <em id="spanid8">Beginners Level</em> 
+                    <span id='Beginners_level'>10</span>
+                    
                   </li>
                   <li>
-                    <em id="spanid6">Attempted</em>
-                    <span id='attempted'></span>
-                    <!--<span> 50 </span>-->
+                    <em id="spanid9">Attempted</em>
+                    <span id='attempted'>10</span>
+                 
                   </li>
                   <li>
-                    <em id="spanid7">Answered Correctly</em>
-                    <span id='answered_correctly'></span>
-                    <!--<span> 50 </span>-->
+                    <em id="spanid10">Answered Correctly</em>
+                    <span id='answered_correctly'>10</span>
+                 
                   </li>
                   <li>
-                    <em id="spanid8">Answered Wrongly </em>
-                    <span id='answered_wrongly'></span>
-                    <!--<span> 50 </span>-->
+                    <em id="spanid11">Answered Wrongly </em>
+                    <span id='answered_wrongly'>10</span>
+                    
                   </li>
                 </ul>
               </section>
@@ -2365,18 +2361,18 @@ Company Name</textarea>
     }
     var offset = 0;
     var color = [
-      "#FFEC21", 
-      "#378AFF", 
-      "#FFA32F", 
-      "#F54F52", 
-      "#93F03B", 
-      "#9552EA", 
       "#6050DC", 
       "#D52DB7", 
-      "#FF2E7E",
-      "#44FF07",
-      "#FF6B45",
-      "#2900A5"
+      "#FF2E7E", 
+      "#FF6B45", 
+      "#FFAB05", 
+      "#EC6B56", 
+      "#FFC154", 
+      "#47B39C", 
+      "#E6F69D",
+      "#64C2A6",
+      "#2D87BB",
+      "#377B2B"
     ];
     for(var i=0; i<listData.length; i++) {
       var size = sliceSize(listData[i], listTotal);
