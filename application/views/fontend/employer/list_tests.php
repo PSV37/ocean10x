@@ -1032,7 +1032,7 @@
                         <div class="collapse" id="collapseEx<?php echo $tests['test_id']?>">
                       <div class="card-body">
                       <?php $i=1; if (!empty($jobs_data)) {
-                        // print_r($jobs_data);
+                        print_r($this->db->last_query());
                         foreach ($jobs_data as $row) {
 
                           if (isset($row['job_title'])) { ?>
@@ -1051,9 +1051,10 @@
                       </div>
                      <?php  }
                     ?>
-                  <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
-                  </button>
+                    <div></div>
+                 <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
+                </button>
                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1" style="top:47px;">
                     <li ><a class="dropdown-item" href="#" id="div_frwrd" data-toggle="modal" data-target="#rotateModal<?php echo $tests['test_id'] ?>" >Forward This Test</a></li>
                     <li ><a class="dropdown-item" href="#" id="attach_to_job" data-toggle="modal" data-target="#attach_to_job<?php echo $tests['test_id'] ?>" >Attach To Job Post</a></li>
