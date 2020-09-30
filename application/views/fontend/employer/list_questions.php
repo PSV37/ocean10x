@@ -2365,18 +2365,18 @@ Company Name</textarea>
     }
     var offset = 0;
     var color = [
-      "cornflowerblue", 
-      "olivedrab", 
-      "orange", 
-      "tomato", 
-      "purple", 
-      "turquoise", 
-      "forestgreen", 
-      "navy", 
-      "gray",
-      "#6fc6ef",
-      "#e7d712",
-      "#fb0097"
+      "#FFEC21", 
+      "#378AFF", 
+      "#FFA32F", 
+      "#F54F52", 
+      "#93F03B", 
+      "#9552EA", 
+      "#6050DC", 
+      "#D52DB7", 
+      "#FF2E7E",
+      "#44FF07",
+      "#FF6B45",
+      "#2900A5"
     ];
     for(var i=0; i<listData.length; i++) {
       var size = sliceSize(listData[i], listTotal);
