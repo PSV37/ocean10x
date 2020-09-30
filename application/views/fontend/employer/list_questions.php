@@ -484,7 +484,7 @@
     /* margin: 0; */
     background: #FFF;
     padding: 15px;
-    font-size: 13px;
+    font-size: 12px;
     box-shadow: 1px 1px 0 #DDD, 2px 2px 0 #BBB;
 }
   .last_section{border:solid 1px #e8e4e4;margin-top: 77px;padding:0px 10px;}
@@ -497,7 +497,7 @@
   color: #18c5bd;
   }
   .legend li {
-  width: 166px;
+  width: 200px;
   height: 1.25em;
   margin-bottom: 0.7em;
   padding-left: 0.5em;
@@ -1408,7 +1408,7 @@ input.btn.btn-primary {
                   </li>
                   <li>
                     <em id="spanid7">Medium Level</em>
-                    <span id='Medium_level'></span>
+                    <span id='Medium_level'>10</span>
                     <!--<span> 50 </span>-->
                   </li>
                   <li>
