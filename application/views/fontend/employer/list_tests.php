@@ -1026,24 +1026,24 @@
                     $join = array('forwarded_tests'=>'forwarded_tests.test_id = oceanchamp_tests.test_id |Left OUTER',
                       'job_posting'=>'job_posting.test_for_job = oceanchamp_tests.test_id |Left OUTER',
                       'company_profile'=>'company_profile.company_profile_id = oceanchamp_tests.company_id |Left OUTER','js_info'=>'js_info.job_seeker_id = forwarded_tests.job_seeker_id |LEFT OUTER');
-                    $jobs_data = $this->Master_model->getMaster('oceanchamp_tests', $where , $join, $order = 'desc', $field = 'date,oceanchamp_tests.updated_on', $select = '*,IFNULL(forwarded_tests.updated_on, job_posting.update_at) AS date,oceanchamp_tests.updated_on as update_date',$limit=false,$start=false, $search=false); 
+                    $jobs_data = $this->Master_model->getMaster('oceanchamp_tests', $where , $join, $order = 'desc', $field = 'date,update_date', $select = '*,IFNULL(forwarded_tests.updated_on, job_posting.update_at) AS date,oceanchamp_tests.updated_on as update_date',$limit=false,$start=false, $search=false); 
                       if (!empty($jobs_data[0]['job_title'] || !empty($jobs_data[0]['email']))) { ?>
                         <span data-toggle="collapse" data-target="#collapseEx<?php echo $tests['test_id']?>" aria-expanded="false" aria-controls="collapseEx" style="color: red;font-size: 25px;margin-left: 38px;" title="Click to see the Jobs Forwarded" class="required"> * </span>
                         <div class="collapse" id="collapseEx<?php echo $tests['test_id']?>">
                       <div class="card-body">
                       <?php $i=1; if (!empty($jobs_data)) {
-                        // print_r($this->db->last_query());
+                        print_r($this->db->last_query());
                         foreach ($jobs_data as $row) {
 
                           if (isset($row['job_title'])) { ?>
-                             <p><?php echo $i; ?>.Attached to Job Post - <?php echo $row['job_title']; ?> - <?php echo date('d-m-y H:i',strtotime($row['date'])) ; ?>  </p>
+                             <p>Attached to Job Post - <?php echo $row['job_title']; ?> - <?php echo date('d-m-y H:i',strtotime($row['date'])) ; ?>  </p>
                         <?php  }
                         if(!empty($row['email']))
                         { ?>
-                          <p><?php echo $i; ?>. Forwarded to - <?php echo $row['email']; ?>- <?php echo date('d-m-y H:i',strtotime($row['date'])) ; ?>   </p>
+                          <p> Forwarded to - <?php echo $row['email']; ?>- <?php echo date('d-m-y H:i',strtotime($row['date'])) ; ?>   </p>
                        <?php  }
                        if(!empty($row['update_date']) && $row['update_date'] !='0000-00-00 00:00:00') { ?>
-                         <p><?php echo $i; ?>. Parameters Edited - <?php echo date('d-m-y H:i',strtotime($row['update_date'])) ; ?>   </p>
+                         <p> Parameters Edited - <?php echo date('d-m-y H:i',strtotime($row['update_date'])) ; ?>   </p>
                        
 
                             <?php } $i++;  } }  ?>
