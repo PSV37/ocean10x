@@ -1385,7 +1385,7 @@ input.btn.btn-primary {
                 
                 <div class="pieID pie">
                 </div>
-                <ul class="pieID legend">
+               
                   <li>
                     <em id="spanid0">Total Questions</em>
                     <span><?php echo $total_question; ?></span>
