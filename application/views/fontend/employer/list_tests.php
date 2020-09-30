@@ -1037,10 +1037,12 @@
 
                           if (isset($row['job_title'])) { ?>
                              <p><?php echo $i; ?>.Attached to Job Post - <?php echo $row['job_title']; ?> - <?php echo date('d-m-y H:i',strtotime($row['date'])) ; ?>  </p>
-                        <?php  }elseif(!empty($row['email']))
+                        <?php  }
+                        if(!empty($row['email']))
                         { ?>
                           <p><?php echo $i; ?>. Forwarded to - <?php echo $row['email']; ?>- <?php echo date('d-m-y H:i',strtotime($row['date'])) ; ?>   </p>
-                       <?php  }elseif(!empty($row['update_date']) && $row['update_date'] !='0000-00-00 00:00:00') { ?>
+                       <?php  }
+                       if(!empty($row['update_date']) && $row['update_date'] !='0000-00-00 00:00:00') { ?>
                          <p><?php echo $i; ?>. Parameters Edited - <?php echo date('d-m-y H:i',strtotime($row['update_date'])) ; ?>   </p>
                        
 
