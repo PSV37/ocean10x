@@ -1032,7 +1032,7 @@
                         <div class="collapse" id="collapseEx<?php echo $tests['test_id']?>">
                       <div class="card-body">
                       <?php $i=1; if (!empty($jobs_data)) {
-                        print_r($this->db->last_query());
+                        // print_r($this->db->last_query());
                         foreach ($jobs_data as $row) {
 
                           if (isset($row['job_title'])) { ?>
