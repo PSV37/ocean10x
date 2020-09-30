@@ -1053,7 +1053,7 @@
                       </div>
                      <?php  }
                     ?>
-                    <div></div>
+                   <div class="btn-group"></div>
                  <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
                 </button>
