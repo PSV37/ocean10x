@@ -2496,7 +2496,30 @@ public function user_profile()
             }
             redirect('job_seeker/oceanhunt_activities');
         }
-    
+    public function ocean_test() {
+      
+        $data['activemenu'] = 'ocean_bank';
+        $this->session->set_userdata($data);
+        $job_seeker_id = $this->session->userdata('job_seeker_id');
+        $join = array('oceanchamp_tests'=>'oceanchamp_tests.test_id = forwarded_tests.test_id')
+        $where = "oceanchamp_tests.status='1' AND forwarded_tests.job_seeker_id='$job_seeker_id' and forwarded_tests.status != 'Test Completed'";
+        $data['ocean_tests'] = $this->Master_model->getMaster('forwarded_tests', $where = $where, $join = FALSE, $order = 'desc', $field = 'forwarded_tests.id', $select = false, $limit = false, $start = false, $search = false);
+        $where_cn = "status=1";
+        $data['skill_master'] = $this->Master_model->getMaster('skill_master', $where_cn);
+        //$where_opt= "options.status=1";
+        $data['options'] = $this->Master_model->getMaster('options');
+        $where_state = "topic.topic_status=1";
+        $data['topic'] = $this->Master_model->getMaster('topic', $where_state);
+        $where_subtopic = "subtopic.subtopic_status='1'";
+        $data['subtopic'] = $this->Master_model->getMaster('subtopic', $where_subtopic);
+        $where_lineitem = "lineitem.lineitem_status='1'";
+        $data['lineitem'] = $this->Master_model->getMaster('lineitem', $where_lineitem);
+        $data['company_active_jobs'] = $this->job_posting_model->get_company_active_jobs($employer_id);
+        // echo  $this->db->last_query(); die;
+        $this->load->view('fontend/job_seeker/list_tests', $data);
+        // $this->load->view('fontend/employer/all_questions.php', $data);
+        
+    }
 
 } //end function
 
