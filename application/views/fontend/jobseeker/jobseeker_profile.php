@@ -161,6 +161,7 @@ button#sklbtn {
             </ul>
             <div class="col-md-12 bd-2">
               <?php 
+              $where_skill = "job_seeker_id = '$job_seeker'";
                 $js_skills = $this->Master_model->getMaster('job_seeker_skills',$where_skill);
                  
                 
