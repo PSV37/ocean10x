@@ -2520,6 +2520,18 @@ public function user_profile()
         // $this->load->view('fontend/employer/all_questions.php', $data);
         
     }
+    public function ocean_champ()
+    {
+         $data['activemenu'] = 'ocean_champ';
+        $this->session->set_userdata($data);
+        $job_seeker_id = $this->session->userdata('job_seeker_id');
+       
+        $where = "job_seeker_skills.job_seeker_id='$job_seeker_id' ";
+        $data['ocean_tests'] = $this->Master_model->getMaster('job_seeker_skills', $where = $where, $join , $order = 'desc', $field = 'job_seeker_skills.js_skill_id', $select = false, $limit = false, $start = false, $search = false);
+        
+        // echo  $this->db->last_query(); die;
+        $this->load->view('fontend/jobseeker/list_skills', $data);
+    }
 
 } //end function
 
