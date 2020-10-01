@@ -172,6 +172,19 @@ input.btn.btn-primary {
                       </div>
                     </div>
                   </div>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="form-group ques_type">
+                        <label for="exampleInputEmail1">Test Type <span class="required">*</span></label>
+                        <select name="ques_type" id="ques_type" class="form-control select2" type="text" onchange="get_questuions();">
+                          <option value="MCQ"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='MCQ')echo "selected";?>>MCQ</option>
+                          <option value="Subjective"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Subjective')echo "selected";?>>Subjective</option>
+                          <option value="Practical"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Practical')echo "selected";?>>Practical</option>
+                        </select>
+                        <?php echo form_error('ques_type'); ?>   
+                      </div>
+                    </div>
+                  </div>
                   <div class="box-body">
                     <div class="box" >
                       <p ><b style="float: left;margin-right: 80px">Total Time Duration <span id="total_time"></span></b> <b style="float: right;margin-right: 80px" >Total Questions:<span id="total_questions"></span></b></p>
