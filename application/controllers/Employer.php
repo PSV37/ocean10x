@@ -2154,7 +2154,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $employer_id = $this->session->userdata('company_profile_id');
         $time = $test_duration / 20;
         // $where = "technical_id = '$technical_id' and topic_id ='$topic_id' and subtopic_id ='$subtopic_id' and level ='$level' and ques_type ='$ques_type' ";
-        $where = "technical_id = '$technical_id'  and level ='$level' and ques_type ='$ques_type' ";
+        $where = "technical_id IN('".$technical_id."')  and level ='$level' and ques_type ='$ques_type' ";
         $questions = $this->Master_model->getMaster('questionbank', $where, $join = FALSE, $order = 'RANDOM', $field = 'ques_id', $select = false, $limit = 20, $start = false, $search = false);
         // print_r($this->db->last_query());
         $test_questions = array();
@@ -2174,7 +2174,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                 $test_data['total_questions'] = sizeof($test_questions);
                 $test_data['test_duration'] = $test_duration;
                 $test_data['level'] = $level;
-                $test_data['topics'] = $technical_id;
+                $test_data['topics'] = implode(',', $topic_id);
                 $test_data['test_status'] = '2';
                 $test_data['status'] = '1';
                 // $test_data['timer_on_each_que'] = $this->input->post('timer');
@@ -2202,7 +2202,8 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $employer_id = $this->session->userdata('company_profile_id');
         $test_deadline = $this->input->post('test_deadline');
         $time = $test_duration / 20;
-        $where = "technical_id = '$technical_id' and topic_id ='$topic_id' and subtopic_id ='$subtopic_id' and level ='$level' and ques_type ='$ques_type' ";
+        // $where = "technical_id = '$technical_id' and topic_id ='$topic_id' and subtopic_id ='$subtopic_id' and level ='$level' and ques_type ='$ques_type' ";
+         $where = "technical_id IN('".$technical_id."')  and level ='$level' and ques_type ='$ques_type' ";
         $questions = $this->Master_model->getMaster('questionbank', $where, $join = FALSE, $order = 'RANDOM', $field = 'ques_id', $select = false, $limit = 20, $start = false, $search = false);
         $test_questions = array();
         foreach ($questions as $row) {
@@ -2220,7 +2221,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                 $test_data['total_questions'] = sizeof($test_questions);
                 $test_data['test_duration'] = $test_duration;
                 $test_data['level'] = $level;
-                $test_data['topics'] = $technical_id;
+                $test_data['topics'] = implode(',', $topic_id);
                 $test_data['test_status'] = '3';
                 $test_data['test_deadline'] = $test_deadline;
                 // $test_data['timer_on_each_que'] = $this->input->post('timer');
