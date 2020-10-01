@@ -1856,6 +1856,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                  $data['submenu'] = '2';
                 $this->session->set_userdata($data);
             }
+
             $this->pagination->initialize($config);
             $data["link"] = $this->pagination->create_links();
              $data['ocean_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where = $where, $join = FALSE, $order = 'desc', $field = 'oceanchamp_tests.test_id', $select = false, $limit = $config['per_page'], $start = $page, $search = false);
@@ -1895,6 +1896,8 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             $page = $this->input->get('page');
             if ($page) {
                 $offset = ($page - 1) * $config['per_page'];
+            $this->session->unset_userdata('submenu');
+
             }
             $this->pagination->initialize($config);
             $data["links"] = $this->pagination->create_links();
