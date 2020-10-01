@@ -1091,7 +1091,7 @@ input.btn.btn-primary {
                 <div class="row">
                   <div class="box1" >
                     <?php $key = 1; if (!empty($ocean_tests)): foreach ($ocean_tests as $tests) : 
-                    print_r($tests);
+                    // print_r($tests);
                       $on_ocean = $tests['ocean_candidate'];
                             if($on_ocean == 'Yes')
                             {
@@ -1158,7 +1158,7 @@ input.btn.btn-primary {
                           </div>
                           <div class="following-info3">
                             <li class="left-title">Topics</li>
-                            <li class="right-title">&nbsp;: <?php echo $tests['topic_name']; ?></li>
+                            <li class="right-title">&nbsp;: <?php echo $tests['topic_names']; ?></li>
                             <li class="left-title">Allowed to Review</li>
                             <li class="right-title">&nbsp;:<?php echo $tests['review_option']; ?></li>
                             <li class="left-title">Negative Marking</li>

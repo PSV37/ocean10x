@@ -1821,8 +1821,8 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $where_all = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id' and test_status = '1'";
         $data['oceanchamp_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where = $where_all, $join = FALSE, $order = 'desc', $field = 'oceanchamp_tests.test_id', $select = false, $limit = false, $start = false, $search = false);
         $join = array("topic" => "find_in_set(topic.topic_id, oceanchamp_tests.topics)");
-        $where = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id'and test_status != '3' ";
-        $ocean_tests = $this->Master_model->getMaster('oceanchamp_tests', $where = $where, $join = $join, $order = 'desc', $field = 'oceanchamp_tests.test_id', $select = false, $limit = false, $start = false, $search = false);
+        $where = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id'and test_status != '3' group  by oceanchamp_tests.test_id ";
+        $ocean_tests = $this->Master_model->getMaster('oceanchamp_tests', $where = $where, $join = $join, $order = 'desc', $field = 'oceanchamp_tests.test_id', $select = '*,group_concat(topic.topic_name) as topic_names', $limit = false, $start = false, $search = false);
          $config['base_url'] = base_url() . 'employer/all_questions?sort='.$sort_val;
             $config['total_rows'] = sizeof($ocean_tests);
             $config['per_page'] = 5;
@@ -1860,7 +1860,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
 
             $this->pagination->initialize($config);
             $data["link"] = $this->pagination->create_links();
-             $data['ocean_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where = $where, $join = $join, $order = 'desc', $field = 'oceanchamp_tests.test_id', $select = false, $limit = $config['per_page'], $start = $page, $search = false);
+             $data['ocean_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where = $where, $join = $join, $order = 'desc', $field = 'oceanchamp_tests.test_id', $select = '*,group_concat(topic.topic_name) as topic_names', $limit = $config['per_page'], $start = $page, $search = false);
         $data['company_active_jobs'] = $this->job_posting_model->get_company_active_jobs($employer_id);
         $where_all = "questionbank.ques_status='1' AND ques_created_by='$employer_id'";
         $join_emp = array('skill_master' => 'skill_master.id=questionbank.technical_id |left outer', 'topic' => 'topic.topic_id=questionbank.topic_id |left outer', 'subtopic' => 'subtopic.subtopic_id=questionbank.subtopic_id |left outer', 'lineitem' => 'lineitem.lineitem_id=questionbank.lineitem_id |left outer', 'lineitemlevel' => 'lineitemlevel.lineitemlevel_id=questionbank.lineitemlevel_id |left outer', 'questionbank_answer' => 'questionbank_answer.question_id = questionbank.ques_id|LEFT OUTER');
