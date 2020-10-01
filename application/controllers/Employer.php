@@ -2039,12 +2039,12 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             $where_all = "questionbank.ques_status='1' AND ques_created_by='$employer_id' and questionbank.technical_id = '$subject' AND time_for_question != ''";
         }
         if (!empty($topics)) {
-            $topic=array_filter($topics));
+            $topic=array_filter($topics);
             $topic_id = implode(',', $topic);
             $where_all.= " and questionbank.topic_id IN ('".$topic_id."')";
         }
         if (!empty($subtopic)) {
-            $subtopic=array_filter();
+            $subtopic=array_filter($subtopic);
             $subtopic_id = implode(',',$subtopic);
             $where_all.= " and questionbank.subtopic_id  IN ('".$subtopic_id."')";
         }
