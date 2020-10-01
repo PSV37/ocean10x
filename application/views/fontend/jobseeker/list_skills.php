@@ -341,7 +341,7 @@
   top: 50px;
   left: 50px;
   }
-  .pie::after {
+ /* .pie::after {
   content: "";
   display: block;
   width: 120px;
@@ -350,7 +350,7 @@
   border-radius: 50%;
   box-shadow: 0 0 3px 4px rgba(0,0,0,0.1);
   margin: 220px auto;
-  }
+  }*/
   section {
   padding: 0px 45px 25px;
   }
