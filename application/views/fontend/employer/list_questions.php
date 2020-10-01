@@ -1040,6 +1040,9 @@ input.btn.btn-primary {
   background: #b3ebe8;;
   width: 0%;
   }
+  .a {
+    margin-top: 5px;
+}
 </style>
 <!---header-->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/questionbank.css">
@@ -1133,7 +1136,7 @@ input.btn.btn-primary {
                               <li class="right-title" style="font-size:19px;margin-top:-4px;"  ><?php echo $tests['test_name']; ?></li>
                             </div>
                             <div class="a">
-                              <li class="right-title" style="font-size:19px;margin-top:-4px;"  ><?php echo $tests['topic_names']; ?></li>
+                              <li class="right-title" style="font-size:15px;margin-top:4px; width: auto;"  ><?php echo $tests['topic_names']; ?></li>
                             </div>
                           </div>
                           <div class="following-info">
