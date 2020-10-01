@@ -1035,7 +1035,7 @@
                   </div>
                   <div class="following-info3">
                     <li class="left-title">Topics</li>
-                    <li class="right-title">&nbsp;: <?php echo $tests['topics']; ?></li>
+                    <li class="right-title">&nbsp;: <?php echo $tests['topic_names']; ?></li>
                     <li class="left-title">Allowed to Review</li>
                     <li class="right-title">&nbsp;:<?php echo $tests['review_option']; ?></li>
                     <li class="left-title">Negative Marking</li>

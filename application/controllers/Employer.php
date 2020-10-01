@@ -2292,13 +2292,13 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
 
         $employer_id = $this->session->userdata('company_profile_id');
 
-        $where = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id' and test_status = '3'";
+        $where = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id' and test_status = '3' GROUP by oceanchamp_tests.test_id";
 
         if (isset($_POST['sort']) || !empty($sort_val)) {
 
-
-         $join = array('topic' => 'topic.topic_id = oceanchamp_tests.topics' );
-         $data['ocean_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where = $where, $join = $join , $order = 'desc', $field = $sort_val, $select = false, $limit = false, $start = false, $search = false);
+        $join = array("topic" => "find_in_set(topic.topic_id, oceanchamp_tests.topics)");
+       
+         $data['ocean_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where = $where, $join = $join , $order = 'desc', $field = $sort_val, $select = '*,group_concat(topic.topic_name) as topic_names', $limit = false, $start = false, $search = false);
         }
 
          else {
