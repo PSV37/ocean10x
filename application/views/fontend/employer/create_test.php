@@ -132,7 +132,7 @@ input.btn.btn-primary {
                     <div class="col-md-4">
                       <div class="form-group topic_id">
                         <label for="exampleInputEmail1">Main Topic <span class="required">*</span></label>
-                        <select id="topic_id" name="topic_id" class="form-control select2" onchange="getSubtopic(this.value)">
+                        <select id="topic_id" name="topic_id" class="form-control select2" multiple="multiple" onchange="getSubtopic(this.value)">
                           <option value="">Select Topic</option>
                           <!-- <option value="1">HTML 5</option>  -->
                         </select>
