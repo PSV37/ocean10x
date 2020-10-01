@@ -156,7 +156,7 @@
 li.btn.btn-secondary a
 {
   color: black;
-  font-weight: 700;
+  /*font-weight: 600;*/
 }
   li.btn.btn-secondary {
     width: auto;
@@ -1219,7 +1219,14 @@ input.btn.btn-primary {
                     <?php endif; ?>
                   </div>
                 </div>
-            
+            <div class=""></div>
+              <div class="container-fluid">
+             <div class="col-md-6"></div>
+            <div class="col-md-6">
+            <span><?php echo $links; ?></span>   
+            </div>
+               
+          </div>
             </div>
           <!-- </div> -->
           <div role="tabpanel" class="tab-pane fade <?php $submenu=$this->session->userdata('submenu'); $activemenu=$this->session->userdata('activemenu'); 
