@@ -153,6 +153,11 @@
     background-color: #18c5bd;
     /* color: white; */
 }
+li.btn.btn-secondary a
+{
+  color: black;
+  font-weight: 700;
+}
   li.btn.btn-secondary {
     width: auto;
    box-shadow: none;
