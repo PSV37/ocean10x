@@ -1213,9 +1213,13 @@ input.btn.btn-primary {
                         endforeach;  
                       ?>     
                     <?php else : ?> 
+                      <div class="card content">
+                      <div class="front">
                     <li colspan="3">
                       <strong> No Tests Created. Click on "Create A Test" !</strong>
                     </li>
+                  </div>
+                </div>
                     <?php endif; ?>
                   </div>
                 </div>
@@ -1223,7 +1227,7 @@ input.btn.btn-primary {
               <div class="container-fluid">
              <div class="col-md-6"></div>
             <div class="col-md-6">
-            <span><?php echo $links; ?></span>   
+            <span><?php echo $link; ?></span>   
             </div>
                
           </div>
