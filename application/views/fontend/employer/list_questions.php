@@ -145,14 +145,21 @@
   margin-left: 139px;
   }
   li.btn.btn-secondary.active {
-  box-shadow: none;
-  border: solid 2px #18c5bd;
-  border-radius: 65px;
-  min-width: 40%;
-  width: auto;
-  }
+    box-shadow: none;
+    border: solid 2px #18c5bd;
+    border-radius: 65px;
+    min-width: 40%;
+    width: auto;
+    background-color: #18c5bd;
+    /* color: white; */
+}
   li.btn.btn-secondary {
-  width: 40%;
+    width: auto;
+   box-shadow: none;
+    border: solid 2px #18c5bd;
+    border-radius: 65px;
+    min-width: 40%;
+    width: auto;
   }
   #qbottons
   {
@@ -1055,9 +1062,9 @@ input.btn.btn-primary {
           <div role="tabpanel" class="tab-pane fade <?php $submenu=$this->session->userdata('submenu');  if(isset($submenu) && !empty($submenu)){if($submenu == '1' || $submenu == '2'   ) echo 'in active'; } ?>" id="Videos">
             <div class="row" style="float: right;">
              
-               <li class="btn btn-secondary Active"><a class="qntn"  href="<?php echo base_url(); ?>employer/choose_questions"><i class="fa fa-plus"> </i> I will select the Questions</a></li>
+               <li class="btn btn-secondary"><a class="qntn"  href="<?php echo base_url(); ?>employer/choose_questions"><i class="fa fa-plus"> </i> I will select the Questions</a></li>
              
-                <li class="btn btn-secondary Active"><a class="qntn" href="<?php echo base_url(); ?>employer/choose_questions/1">
+                <li class="btn btn-secondary"><a class="qntn" href="<?php echo base_url(); ?>employer/choose_questions/1">
                 <i class="fa fa-plus"> </i>  Ocean can select Questions
                </a></li>
               <!-- </div> -->
@@ -1077,7 +1084,7 @@ input.btn.btn-primary {
              
                 
                 <div class="row">
-                  <div class="box" >
+                  <div class="box1" >
                     <?php $key = 1; if (!empty($ocean_tests)): foreach ($ocean_tests as $tests) : 
                       $on_ocean = $tests['ocean_candidate'];
                             if($on_ocean == 'Yes')
