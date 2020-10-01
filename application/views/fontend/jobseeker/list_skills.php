@@ -1005,52 +1005,10 @@
                   <?php } ?>
                   <div class="job-info">
                     <div class="a">
-                      <li class="right-title" style="font-size:19px;margin-top:-4px;"  ><?php echo $tests['test_name']; ?></li>
+                      <li class="right-title" style="font-size:19px;margin-top:-4px;"  ><?php echo $tests['skills']; ?></li>
                     </div>
                   </div>
-                  <div class="following-info">
-                    <li class="left-title"
-                      >Type</li>
-                    <li class="right-title">&nbsp;:<?php echo $tests['type']; ?></li>
-                    <li class="left-title">Total Questions</li>
-                    <li class="right-title">&nbsp;:<?php echo $tests['total_questions']; ?></li>
-                    <li class="left-title">Timer on Each Question</li>
-                    <li class="right-title">&nbsp;: <?php echo $tests['timer_on_each_que']; ?></li>
-                    <li class="left-title">Display Correct Answer</li>
-                    <li class="right-title">&nbsp;:<?php echo $tests['correct_ans_each_ques']; ?></li>
-                    <div class="clear"></div>
-                  </div>
-                  <div class="following-info2">
-                    <li class="left-title">Level</li>
-                    <li class="right-title">&nbsp;:<?php echo $tests['level']; ?></li>
-                    <li class="left-title">Total Duration</li>
-                    <li class="right-title">&nbsp;:<?php echo $tests['test_duration']; ?></li>
-                    <li class="left-title">Allowed to Go back</li>
-                    <li class="right-title">&nbsp;:<?php echo $tests['previous_option']; ?></li>
-                    <li class="left-title">Display Result </li>
-                    <li class="right-title">&nbsp;:<?php echo $tests['final_result']; ?></li>
-                    <div class="clear"></div>
-                  </div>
-                  <div class="following-info3">
-                    <li class="left-title">Topics</li>
-                    <li class="right-title">&nbsp;: <?php echo $tests['topics']; ?></li>
-                    <li class="left-title">Allowed to Review</li>
-                    <li class="right-title">&nbsp;:<?php echo $tests['review_option']; ?></li>
-                    <li class="left-title">Negative Marking</li>
-                    <li class="right-title">&nbsp;:<?php echo $tests['negative_marks']; ?></li>
-                    <div class="clear"></div>
-                  </div>
                   
-                 <!--   <div class="btn-group"></div>
-                 <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
-                </button>
-                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1" style="top:47px;">
-                    <li ><a class="dropdown-item" href="#" id="div_frwrd" data-toggle="modal" data-target="#rotateModal<?php echo $tests['test_id'] ?>" >Forward This Test</a></li>
-                    <li ><a class="dropdown-item" href="#" id="attach_to_job" data-toggle="modal" data-target="#attach_to_job<?php echo $tests['test_id'] ?>" >Attach To Job Post</a></li>
-                    <li> <a class="dropdown-item"  href="#" data-toggle="modal" data-target="#edit_test<?php echo $tests['test_id'] ?>" >Edit Test Parameters</a></li>
-                    <li><a class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-target="#move_cv" href="#">Move this CV</a></li> 
-                  </div> -->
                   <?php  
                     $test_id =$tests['test_id'];
                     $employer_id = $this->session->userdata('company_profile_id');
