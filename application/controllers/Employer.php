@@ -2237,7 +2237,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
 
         $where = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id' and test_status = '3'";
 
-        if ((isset($_POST['sort']) || !empty($sort_val)) {
+        if (isset($_POST['sort']) || !empty($sort_val)) {
 
 
          $join = array('topic' => 'topic._topic_id = oceanchamp_tests.topics' );
