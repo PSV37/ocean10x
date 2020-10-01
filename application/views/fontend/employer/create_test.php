@@ -132,7 +132,7 @@ input.btn.btn-primary {
                     <div class="col-md-4">
                       <div class="form-group topic_id">
                         <label for="exampleInputEmail1">Main Topic <span class="required">*</span></label>
-                        <select id="topic_id" name="topic_id" class="form-control select2" multiple="multiple" onchange="getSubtopic(this.value)">
+                        <select id="topic_id" name="topic_id[]" class="form-control select2" multiple="multiple" onchange="getSubtopic(this.value)">
                           <option value="">Select Topic</option>
                           <!-- <option value="1">HTML 5</option>  -->
                         </select>
@@ -144,7 +144,7 @@ input.btn.btn-primary {
                     <div class="col-md-4">
                       <div class="form-group subtopic_id">
                         <label for="exampleInputEmail1">Sub Topic <span class="required">*</span></label>
-                        <select id="subtopic_id" name="subtopic_id" class="form-control select2" onchange="get_questuions();" >
+                        <select id="subtopic_id" name="subtopic_id" multiple="multiple" class="form-control select2" onchange="get_questuions();" >
                         </select> <?php echo form_error('subtopic_id'); ?>   
                       </div>
                     </div>
@@ -456,7 +456,7 @@ input.btn.btn-primary {
                 }
                 else
                 {
-                  $('#subtopic_id').html(res);
+                  $('#subtopic_id').append(res);
                   $('#subtopic_id').attr('disabled', false);
                 }
                    
