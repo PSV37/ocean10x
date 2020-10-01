@@ -2298,7 +2298,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
 
 
 
-         $join .= array('topic' => 'topic.topic_id = oceanchamp_tests.topics', 'skill' => 'oceanchamp_tests.test_id = skill_master.id' );
+         $join .= array( 'skill' => 'oceanchamp_tests.test_id = skill_master.id' );
 
          $data['ocean_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where = $where, $join = $join , $order = 'desc', $field = $sort_val, $select = '*,group_concat(topic.topic_name) as topic_names', $limit = false, $start = false, $search = false);
 
