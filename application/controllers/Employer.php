@@ -2240,7 +2240,8 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         if (isset($_POST['sort']) || !empty($sort_val)) {
 
 
-         $join = array('topic' => 'topic.topic_id = oceanchamp_tests.topics' );
+         $join = array('topic' => 'topic.topic_id = oceanchamp_tests.topics', 'skill' => 'oceanchamp_tests.test_id = skill_master.id' );
+
          $data['ocean_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where = $where, $join = $join , $order = 'desc', $field = $sort_val, $select = false, $limit = false, $start = false, $search = false);
         }
 
