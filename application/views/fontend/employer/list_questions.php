@@ -432,6 +432,8 @@
   height: 200px;
   width: 200px;
   position: relative;
+  margin-top: 20px;
+  margin-bottom: 20px;
   }
   .pie::before {
   content: "";

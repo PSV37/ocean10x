@@ -328,6 +328,8 @@
   height: 200px;
   width: 200px;
   position: relative;
+  margin-top: 20px;
+  margin-bottom: 20px;
   }
   .pie::before {
   content: "";
@@ -1106,41 +1108,65 @@
           <div class="pai_chart">
             <main>
               <section>
+                <ul class="pieID legend">
+                   <li class="cv">
+                  <em id="spanid1">Questions in Q Bank</em>
+                  <span>10</span>
+                </li>
+                <li class="cv">
+                  <em id="spanid2">Appeared in Test Papers</em>
+
+                  <span id="active_cv">10</span>
+                </li>
+                
                 <div class="pieID pie">
                 </div>
-                <ul class="pieID legend">
+               
                   <li>
-                    <em>Total Job Posts</em>
-                    <span><?php echo sizeof($company_active_jobs); ?></span>
-                    <!--<span>718</span> -->
+                    <em id="spanid3">Total Questions</em>
+                    <span>10</span>
+                   
+                  </li>
+               
+                  <li>
+                    <em id="spanid4">Appeared in Test Papers</em>
+                    <span id='appeared_in_test_paper'>10 </span>
+                   
                   </li>
                   <li>
-                    <em> Total Job Forwarded</em>
-                    <span id='total_forwarded'> </span>
+                    <em id="spanid5">Not Appeared in Test Papers</em>
+                    <span id='not_appeared_in_test_papers'>10 </span>
+                  
                   </li>
                   <li>
-                    <em>Total Job Applied</em>
-                    <span id='total_applied'> </span>
+                    <em id="spanid6">Expert Level </em> 
+                    <span id='expert_level'>10 </span>
+                  
                   </li>
                   <li>
-                    <em>Total attempted test</em>
-                    <span id='total_test'> </span>
+                    <em id="spanid7">Medium Level</em>
+                    <span id='Medium_level'>10</span>
+                    <!--<span> 50 </span>-->
                   </li>
                   <li>
-                    <em>Total Candidates passed </em>
-                    <span id='total_passed'></span>
+                    <em id="spanid8">Beginners Level</em> 
+                    <span id='Beginners_level'>10</span>
+                    
                   </li>
                   <li>
-                    <em>Total Candidates interview and passed</em>
-                    <span id='total_test_int_pass'></span>
+                    <em id="spanid9">Attempted</em>
+                    <span id='attempted'>10</span>
+                 
                   </li>
                   <li>
-                    <em>Total Candidates interview and failed</em>
-                    <span id='total_test_int_fail'></span>
+                    <em id="spanid10">Answered Correctly</em>
+                    <span id='answered_correctly'>10</span>
+                 
                   </li>
                   <li>
-                    <em>Total Candidates Accepted Offer</em>
-                    <span id='total_offer_accept'></span>
+                    <em id="spanid11">Answered Wrongly </em>
+                    <span id='answered_wrongly'>10</span>
+                    
                   </li>
                 </ul>
               </section>
@@ -1151,7 +1177,7 @@
               <div class="panel-heading">
                 <h3 class="panel-title">Location</h3>
                 <div class="pull-right">
-                  <span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
+                  <span class="clickable filter" data-toggle="tooltip"  data-container="body">
                   <i class="glyphicon glyphicon-filter"></i>
                   </span>
                 </div>
@@ -1708,4 +1734,199 @@
 </script> 
 <script>
   $('.select2').select2();
+</script>
+<script>
+  function sliceSize(dataNum, dataTotal) {
+    return (dataNum / dataTotal) * 360;
+  }
+  function addSlice(sliceSize, pieElement, offset, sliceID, color,dataCount) {
+     var val = $('#spanid'+dataCount).text();
+  
+     console.log(val);
+  
+    $(pieElement).append("<div class='slice "+sliceID+"'><span title='"+val+"'></span></div>");
+    var offset = offset - 1;
+    var sizeRotation = -179 + sliceSize;
+    $("."+sliceID).css({
+      "transform": "rotate("+offset+"deg) translate3d(0,0,0)"
+    });
+    $("."+sliceID+" span").css({
+      "transform"       : "rotate("+sizeRotation+"deg) translate3d(0,0,0)",
+      "background-color": color
+    });
+  }
+  function iterateSlices(sliceSize, pieElement, offset, dataCount, sliceCount, color) {
+    var sliceID = "s"+dataCount+"-"+sliceCount;
+    var maxSize = 179;
+    if(sliceSize<=maxSize) {
+      addSlice(sliceSize, pieElement, offset, sliceID, color,dataCount);
+    } else {
+      addSlice(maxSize, pieElement, offset, sliceID, color,dataCount);
+      iterateSlices(sliceSize-maxSize, pieElement, offset+maxSize, dataCount, sliceCount, color);
+    }
+  }
+  function createPie(dataElement, pieElement) {
+    var listData = [];
+    $(dataElement+" span").each(function() {
+      listData.push(Number($(this).html()));
+    });
+    var listTotal = 0;
+    for(var i=0; i<listData.length; i++) {
+      listTotal += listData[i];
+    }
+    var offset = 0;
+    var color = [
+      "#6050DC", 
+      "#D52DB7", 
+      "#FF2E7E", 
+      "#FF6B45", 
+      "#FFAB05", 
+      "#EC6B56", 
+      "#FFC154", 
+      "#47B39C", 
+      "#E6F69D",
+      "#64C2A6",
+      "#2D87BB",
+      "#377B2B"
+    ];
+    for(var i=0; i<listData.length; i++) {
+      var size = sliceSize(listData[i], listTotal);
+      iterateSlices(size, pieElement, offset, i, 0, color[i]);
+      $(dataElement+" li:nth-child("+(i+1)+")").css("border-color", color[i]);
+      offset += size;
+    }
+  }
+  createPie(".pieID.legend", ".pieID.pie");
+  
+</script>
+<script>
+  /**
+  *   I don't recommend using this plugin on large tables, I just wrote it to make the demo useable. It will work fine for smaller tables 
+  *   but will likely encounter performance issues on larger tables.
+  *
+  *   <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter Developers" />
+  *   $(input-element).filterTable()
+  *   
+  * The important attributes are 'data-action="filter"' and 'data-filters="#table-selector"'
+  */
+  (function(){
+    'use strict';
+  var $ = jQuery;
+  $.fn.extend({
+    filterTable: function(){
+      return this.each(function(){
+        $(this).on('keyup', function(e){
+          $('.filterTable_no_results').remove();
+          var $this = $(this), 
+                        search = $this.val().toLowerCase(), 
+                        target = $this.attr('data-filters'), 
+                        $target = $(target), 
+                        $rows = $target.find('tbody tr');
+                        
+          if(search == '') {
+            $rows.show(); 
+          } else {
+            $rows.each(function(){
+              var $this = $(this);
+              $this.text().toLowerCase().indexOf(search) === -1 ? $this.hide() : $this.show();
+            })
+            if($target.find('tbody tr:visible').size() === 0) {
+              var col_count = $target.find('tr').first().find('td').size();
+              var no_results = $('<tr class="filterTable_no_results"><td colspan="'+col_count+'">No results found</td></tr>')
+              $target.find('tbody').append(no_results);
+            }
+          }
+        });
+      });
+    }
+  });
+  $('[data-action="filter"]').filterTable();
+  })(jQuery);
+  
+  $(function(){
+    // attach table filter plugin to inputs
+  $('[data-action="filter"]').filterTable();
+  
+  $('.container').on('click', '.panel-heading span.filter', function(e){
+    var $this = $(this), 
+      $panel = $this.parents('.panel');
+    
+    $panel.find('.panel-body').slideToggle();
+    if($this.css('display') != 'none') {
+      $panel.find('.panel-body input').focus();
+    }
+  });
+  $('[data-toggle="tooltip"]').tooltip();
+  })
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/bootstrap-slider.min.js"></script>
+<script>
+  // Basic Slider
+  var slider = new Slider("#basic", {
+    tooltip: 'always'
+  });
+  
+  // Vertical Slider
+  var slider = new Slider("#vertical", {
+    orientation: 'vertical',
+    tooltip: 'always'
+  });
+  
+  // Range Slider
+  var slider = new Slider("#range", {
+    min: 0,
+    max: 100,
+    value: [50, 80],
+    range: true,
+    tooltip: 'always'
+  });
+</script> 
+<script>
+  window.addEventListener("DOMContentLoaded",() => {
+    let range1 = new NeumorphicRange({
+        element: "#range1",
+        tick: 1
+      }),
+      
+      range3 = new NeumorphicRange({
+        element:"#range3",
+        tick: 10
+      });
+  });
+  
+  class NeumorphicRange {
+    constructor(args) {
+      this.el = document.querySelector(args.element);
+      this.min = +this.el.min || 0;
+      this.max = +this.el.max || 100;
+      this.step = +this.el.step || 1;
+      this.tick = args.tick || this.step;
+      this.addTicks();
+    }
+    addTicks() {
+      // div to contain everything
+      let wrap = document.createElement("div");
+      wrap.className = "range";
+      this.el.parentElement.insertBefore(wrap,this.el);
+      wrap.appendChild(this.el);
+  
+      // div to contain the ticks
+      let ticks = document.createElement("div");
+      ticks.className = "range__ticks";
+      wrap.appendChild(ticks);
+  
+      // draw the ticks
+      for (let t = this.min; t <= this.max; t += this.tick) {
+        // zero-width span to allow proper space between each tick
+        let tick = document.createElement("span");
+        tick.className = "range__tick";
+        ticks.appendChild(tick);
+  
+        let tickText = document.createElement("span");
+        tickText.className = "range__tick-text";
+        tick.appendChild(tickText);
+        tickText.textContent = t;
+      }
+    }
+  }
 </script>
