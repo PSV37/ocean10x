@@ -144,7 +144,7 @@ input.btn.btn-primary {
                     <div class="col-md-4">
                       <div class="form-group subtopic_id">
                         <label for="exampleInputEmail1">Sub Topic <span class="required">*</span></label>
-                        <select id="subtopic_id" name="subtopic_id" multiple="multiple" class="form-control select2" onchange="get_questuions();" >
+                        <select id="subtopic_id" name="subtopic_id[]" multiple="multiple" class="form-control select2" onchange="get_questuions();" >
                         </select> <?php echo form_error('subtopic_id'); ?>   
                       </div>
                     </div>

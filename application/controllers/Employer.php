@@ -2021,29 +2021,32 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
     }
     public function get_test_questions() {
         $employer_id = $this->session->userdata('company_profile_id');
-        // $subject = $this->input->post('subject');
-        // $topics = $this->input->post('topic_id');
-        // $subtopic_id = ;
+        $subject = $this->input->post('subject');
+        $topics = $this->input->post('topic_id');
+        $subtopic = $this->input->post('subtopic_id') ;
         $ques_type = $this->input->post('ques_type');
         $level = $this->input->post('level');
 
-        $sub=array_filter(explode(',',$this->input->post('subject')));
-        $subject = implode(',',$sub);
+       
+       
 
-        $subtopic=array_filter(explode(',',$this->input->post('subtopic_id')));
-        $subtopic_id = implode(',',$subtopic);
-
-        $topic=array_filter($this->input->post('topic_id'));
-        $topic_id = implode(',', $topic);
+       
         
         if (!empty($subject)) {
-            $where_all = "questionbank.ques_status='1' AND ques_created_by='$employer_id' and questionbank.technical_id IN ('".$subject."') AND time_for_question != ''";
+            //  $sub=array_filter($subject);
+            // $subject = implode(',',$sub);
+
+            $where_all = "questionbank.ques_status='1' AND ques_created_by='$employer_id' and questionbank.technical_id = '$subject' AND time_for_question != ''";
         }
-        if (!empty($topic_id)) {
-            $where_all.= " and questionbank.topic_id = IN ('".$topic_id."')";
+        if (!empty($topics)) {
+            $topic=array_filter($topics));
+            $topic_id = implode(',', $topic);
+            $where_all.= " and questionbank.topic_id IN ('".$topic_id."')";
         }
-        if (!empty($subtopic_id)) {
-            $where_all.= " and questionbank.subtopic_id = IN ('".$subtopic_id."')";
+        if (!empty($subtopic)) {
+            $subtopic=array_filter();
+            $subtopic_id = implode(',',$subtopic);
+            $where_all.= " and questionbank.subtopic_id  IN ('".$subtopic_id."')";
         }
         if (!empty($level)) {
             $where_all.= " and questionbank.level = '$level'";
