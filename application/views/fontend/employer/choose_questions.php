@@ -138,7 +138,7 @@ input.btn.btn-primary {
                     <div class="col-md-4">
                       <div class="form-group topic_id">
                         <label for="exampleInputEmail1">Main Topic <span class="required">*</span></label>
-                        <select id="topic_id_ocean" name="topic_id" class="form-control select2" onchange="getSubtopics(this.value)">
+                        <select id="topic_id_ocean" name="topic_id[]" multiple="multiple" class="form-control select2" onchange="getSubtopics(this.value)">
                           <option value="">Select Topic</option>
                           <!-- <option value="1">HTML 5</option>  -->
                         </select>
@@ -148,7 +148,7 @@ input.btn.btn-primary {
                     <div class="col-md-4">
                       <div class="form-group subtopic_id">
                         <label for="exampleInputEmail1">Sub Topic <span class="required">*</span></label>
-                        <select id="subtopic_id_ocean" name="subtopic_id" class="form-control select2" >
+                        <select id="subtopic_id_ocean" name="subtopic_id[]" multiple="multiple" class="form-control select2" >
                         </select> <?php echo form_error('subtopic_id'); ?>   
                       </div>
                     </div>
@@ -167,7 +167,7 @@ input.btn.btn-primary {
                   <div class="row">
                     <div class="col-md-4">
                       <div class="form-group ques_type">
-                        <label for="exampleInputEmail1">Question Type <span class="required">*</span></label>
+                        <label for="exampleInputEmail1">Test Type <span class="required">*</span></label>
                         <select name="ques_type" id="ques_type" class="form-control select2" type="text" onchange="get_questuions();">
                           <option value="MCQ"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='MCQ')echo "selected";?>>MCQ</option>
                           <option value="Subjective"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Subjective')echo "selected";?>>Subjective</option>

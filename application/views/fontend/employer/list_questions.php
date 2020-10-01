@@ -145,14 +145,26 @@
   margin-left: 139px;
   }
   li.btn.btn-secondary.active {
-  box-shadow: none;
-  border: solid 2px #18c5bd;
-  border-radius: 65px;
-  min-width: 40%;
-  width: auto;
-  }
+    box-shadow: none;
+    border: solid 2px #18c5bd;
+    border-radius: 65px;
+    min-width: 40%;
+    width: auto;
+    background-color: #18c5bd;
+    /* color: white; */
+}
+li.btn.btn-secondary a
+{
+  color: black;
+  /*font-weight: 600;*/
+}
   li.btn.btn-secondary {
-  width: 40%;
+    width: auto;
+   box-shadow: none;
+    border: solid 2px #18c5bd;
+    border-radius: 65px;
+    min-width: 40%;
+    width: auto;
   }
   #qbottons
   {
@@ -1028,6 +1040,9 @@ input.btn.btn-primary {
   background: #b3ebe8;;
   width: 0%;
   }
+  .a {
+    margin-top: 5px;
+}
 </style>
 <!---header-->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/questionbank.css">
@@ -1055,9 +1070,9 @@ input.btn.btn-primary {
           <div role="tabpanel" class="tab-pane fade <?php $submenu=$this->session->userdata('submenu');  if(isset($submenu) && !empty($submenu)){if($submenu == '1' || $submenu == '2'   ) echo 'in active'; } ?>" id="Videos">
             <div class="row" style="float: right;">
              
-               <li class="btn btn-secondary Active"><a class="qntn"  href="<?php echo base_url(); ?>employer/choose_questions"><i class="fa fa-plus"> </i> I will select the Questions</a></li>
+               <li class="btn btn-secondary"><a class="qntn"  href="<?php echo base_url(); ?>employer/choose_questions"><i class="fa fa-plus"> </i> I will select the Questions</a></li>
              
-                <li class="btn btn-secondary Active"><a class="qntn" href="<?php echo base_url(); ?>employer/choose_questions/1">
+                <li class="btn btn-secondary"><a class="qntn" href="<?php echo base_url(); ?>employer/choose_questions/1">
                 <i class="fa fa-plus"> </i>  Ocean can select Questions
                </a></li>
               <!-- </div> -->
@@ -1077,8 +1092,9 @@ input.btn.btn-primary {
              
                 
                 <div class="row">
-                  <div class="box" >
+                  <div class="box1" >
                     <?php $key = 1; if (!empty($ocean_tests)): foreach ($ocean_tests as $tests) : 
+                    // print_r($tests);
                       $on_ocean = $tests['ocean_candidate'];
                             if($on_ocean == 'Yes')
                             {
@@ -1117,7 +1133,10 @@ input.btn.btn-primary {
                           <?php } ?>
                           <div class="job-info">
                             <div class="a">
-                              <li class="right-title" style="font-size:19px;margin-top:-4px;"  ><?php echo $tests['test_name']; ?></li>
+                              <li class="right-title" style="font-size:19px;margin-top:-20px;"  ><?php echo $tests['test_name']; ?></li>
+                            </div>
+                            <div class="a">
+                              <li class="right-title" style="font-size:15px;margin-top:-17px; width: auto;"  ><?php echo $tests['topic_names']; ?></li>
                             </div>
                           </div>
                           <div class="following-info">
@@ -1145,7 +1164,7 @@ input.btn.btn-primary {
                           </div>
                           <div class="following-info3">
                             <li class="left-title">Topics</li>
-                            <li class="right-title">&nbsp;: <?php echo $tests['topics']; ?></li>
+                            <li class="right-title">&nbsp;: <?php echo $tests['topic_names']; ?></li>
                             <li class="left-title">Allowed to Review</li>
                             <li class="right-title">&nbsp;:<?php echo $tests['review_option']; ?></li>
                             <li class="left-title">Negative Marking</li>
@@ -1201,13 +1220,24 @@ input.btn.btn-primary {
                         endforeach;  
                       ?>     
                     <?php else : ?> 
+                      <div class="card content">
+                      <div class="front">
                     <li colspan="3">
                       <strong> No Tests Created. Click on "Create A Test" !</strong>
                     </li>
+                  </div>
+                </div>
                     <?php endif; ?>
                   </div>
                 </div>
-            
+            <div class=""></div>
+              <div class="container-fluid">
+             <div class="col-md-6"></div>
+            <div class="col-md-6">
+            <span><?php echo $link; ?></span>   
+            </div>
+               
+          </div>
             </div>
           <!-- </div> -->
           <div role="tabpanel" class="tab-pane fade <?php $submenu=$this->session->userdata('submenu'); $activemenu=$this->session->userdata('activemenu'); 

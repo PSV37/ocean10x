@@ -971,7 +971,7 @@
               <div class="col-md-4">
                 <div class="form-group topic_id">
                   <label for="exampleInputEmail1">Main Topic <span class="required">*</span></label>
-                  <select id="topic_id_ocean" name="topic_id" class="form-control select2" onchange="getSubtopics(this.value)">
+                  <select id="topic_id_ocean" name="topic_id[]" multiple="multiple" class="form-control select2" onchange="getSubtopics(this.value)">
                     <option value="">Select Topic</option>
                     <!-- <option value="1">HTML 5</option>  -->
                   </select>
@@ -981,14 +981,14 @@
               <div class="col-md-4">
                 <div class="form-group subtopic_id">
                   <label for="exampleInputEmail1">Sub Topic <span class="required">*</span></label>
-                  <select id="subtopic_id_ocean" name="subtopic_id" class="form-control select2" >
+                  <select id="subtopic_id_ocean" name="subtopic_id[]" multiple="multiple" class="form-control select2" >
                   </select> <?php echo form_error('subtopic_id'); ?>   
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group level">
                   <label for="exampleInputEmail1">Level <span class="required">*</span></label>
-                  <select name="level" onchange="get_questuions();" id="level" class="form-control select2">
+                  <select name="level"  onchange="get_questuions();" id="level" class="form-control select2">
                     <option value="Expert"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Expert')echo "selected";?>>Expert</option>
                     <option value="Medium"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Medium')echo "selected";?>>Medium</option>
                     <option value="Beginner"<?php if (!empty($edit_questionbank_info)) if($row['level']=='Beginner')echo "selected";?>>Beginner</option>

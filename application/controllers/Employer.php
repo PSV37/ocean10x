@@ -1820,8 +1820,47 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $data['lineitem'] = $this->Master_model->getMaster('lineitem', $where_lineitem);
         $where_all = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id' and test_status = '1'";
         $data['oceanchamp_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where = $where_all, $join = FALSE, $order = 'desc', $field = 'oceanchamp_tests.test_id', $select = false, $limit = false, $start = false, $search = false);
-        $where = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id' ";
-        $data['ocean_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where = $where, $join = FALSE, $order = 'desc', $field = 'oceanchamp_tests.test_id', $select = false, $limit = false, $start = false, $search = false);
+        $join = array("topic" => "find_in_set(topic.topic_id, oceanchamp_tests.topics)");
+        $where = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id'and test_status != '3' group  by oceanchamp_tests.test_id ";
+        $ocean_tests = $this->Master_model->getMaster('oceanchamp_tests', $where = $where, $join = $join, $order = 'desc', $field = 'oceanchamp_tests.test_id', $select = '*,group_concat(topic.topic_name) as topic_names', $limit = false, $start = false, $search = false);
+         $config['base_url'] = base_url() . 'employer/all_questions?sort='.$sort_val;
+            $config['total_rows'] = sizeof($ocean_tests);
+            $config['per_page'] = 5;
+            $config['attributes'] = array('class' => 'myclass');
+            $config['page_query_string'] = TRUE;
+            $config['num_links'] = 2;
+            // $config['use_page_numbers'] = TRUE;
+            $config['query_string_segment'] = 'pages';
+           
+            $config['full_tag_open'] = '<div class="pagination">';
+            $config['full_tag_close'] = '</div>';
+            $config['first_link'] = '<button>First Page</button>';
+            $config['first_tag_open'] = '<span class="firstlink">';
+            $config['first_tag_close'] = '</span>';
+            $config['last_link'] = '<button style="color:#FFF;background: #18c5bd;border: none;">Last Page</button>';
+            $config['last_tag_open'] = '<span class="lastlink">';
+            $config['last_tag_close'] = '</span>';
+            $config['next_link'] = '<span style="margin-left:8px;"><button style="color:#FFF;background: #18c5bd;border: none;">Next Page</button></span>';
+            $config['next_tag_open'] = '<span class="nextlink">';
+            $config['next_tag_close'] = '</span>';
+            $config['prev_link'] = '<button style="color:#FFF;background: #18c5bd;border: none;">Prev Page</button>';
+            $config['prev_tag_open'] = '<span class="prevlink">';
+            $config['prev_tag_close'] = '</span>';
+            $config['cur_tag_open'] = '<span style="margin-left:8px;">';
+            $config['cur_tag_close'] = '</span>';
+            $config['num_tag_open'] = '<span style="margin-left:8px;">';
+            $config['num_tag_close'] = '</span>';
+            $offset = 0;
+            $page = $this->input->get('pages');
+            if ($page) {
+                $offset = ($page - 1) * $config['per_page'];
+                 $data['submenu'] = '2';
+                $this->session->set_userdata($data);
+            }
+
+            $this->pagination->initialize($config);
+            $data["link"] = $this->pagination->create_links();
+             $data['ocean_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where = $where, $join = $join, $order = 'desc', $field = 'oceanchamp_tests.test_id', $select = '*,group_concat(topic.topic_name) as topic_names', $limit = $config['per_page'], $start = $page, $search = false);
         $data['company_active_jobs'] = $this->job_posting_model->get_company_active_jobs($employer_id);
         $where_all = "questionbank.ques_status='1' AND ques_created_by='$employer_id'";
         $join_emp = array('skill_master' => 'skill_master.id=questionbank.technical_id |left outer', 'topic' => 'topic.topic_id=questionbank.topic_id |left outer', 'subtopic' => 'subtopic.subtopic_id=questionbank.subtopic_id |left outer', 'lineitem' => 'lineitem.lineitem_id=questionbank.lineitem_id |left outer', 'lineitemlevel' => 'lineitemlevel.lineitemlevel_id=questionbank.lineitemlevel_id |left outer', 'questionbank_answer' => 'questionbank_answer.question_id = questionbank.ques_id|LEFT OUTER');
@@ -1858,8 +1897,11 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             $page = $this->input->get('page');
             if ($page) {
                 $offset = ($page - 1) * $config['per_page'];
+            $this->session->unset_userdata('submenu');
+
             }
             $this->pagination->initialize($config);
+            $data["links"] = $this->pagination->create_links();
             
             $data['sort'] = $sort_val;
             if (!empty($sort_val) ) {
@@ -1871,7 +1913,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             }
              
            
-            $data["links"] = $this->pagination->create_links();
+            
             
         $this->load->view('fontend/employer/list_questions', $data);
         // $this->load->view('fontend/employer/all_questions.php', $data);
@@ -1981,18 +2023,31 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
     public function get_test_questions() {
         $employer_id = $this->session->userdata('company_profile_id');
         $subject = $this->input->post('subject');
-        $topic_id = $this->input->post('topic_id');
-        $subtopic_id = $this->input->post('subtopic_id');
+        $topics = $this->input->post('topic_id');
+        $subtopic = $this->input->post('subtopic_id') ;
         $ques_type = $this->input->post('ques_type');
         $level = $this->input->post('level');
+
+       
+       
+
+       
+        
         if (!empty($subject)) {
+            //  $sub=array_filter($subject);
+            // $subject = implode(',',$sub);
+
             $where_all = "questionbank.ques_status='1' AND ques_created_by='$employer_id' and questionbank.technical_id = '$subject' AND time_for_question != ''";
         }
-        if (!empty($topic_id)) {
-            $where_all.= " and questionbank.topic_id = '$topic_id'";
+        if (!empty($topics)) {
+            $topic=array_filter($topics);
+            $topic_id = implode(',', $topic);
+            $where_all.= " and questionbank.topic_id IN ('".$topic_id."')";
         }
-        if (!empty($subtopic_id)) {
-            $where_all.= " and questionbank.subtopic_id = '$subtopic_id'";
+        if (!empty($subtopic)) {
+            $subtopic=array_filter($subtopic);
+            $subtopic_id = implode(',',$subtopic);
+            $where_all.= " and questionbank.subtopic_id  IN ('".$subtopic_id."')";
         }
         if (!empty($level)) {
             $where_all.= " and questionbank.level = '$level'";
@@ -2017,7 +2072,8 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $test_time = $this->input->post('test_time');
         $level_data = $this->input->post('level_data');
         $subject_data = $this->input->post('subject_data');
-        $type = $this->input->post('type');
+        $topic_id = $this->input->post('topic_id');
+        $type = $this->input->post('ques_type');
         // echo  $test_id;
         // echo  $test_name; die;
         // print_r($_POST);die();
@@ -2029,11 +2085,11 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                 $test_data['test_name'] = $test_name;
                 $test_data['company_id'] = $employer_id;
                 $test_data['questions'] = $up_date;
-                // $test_data['type'] = $type;
+                $test_data['type'] = $type;
                 $test_data['total_questions'] = sizeof(explode(',', $up_date));
                 $test_data['test_duration'] = $test_time;
                 $test_data['level'] = $level_data;
-                $test_data['topics'] = $subject_data;
+                $test_data['topics'] = implode(',', $topic_id);
                 $test_data['test_status'] = '1';
                 $test_data['status'] = '1';
                 $test_data['test_deadline'] =  date('Y-m-d', strtotime($this->input->post('test_deadline')));
@@ -2098,7 +2154,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $employer_id = $this->session->userdata('company_profile_id');
         $time = $test_duration / 20;
         // $where = "technical_id = '$technical_id' and topic_id ='$topic_id' and subtopic_id ='$subtopic_id' and level ='$level' and ques_type ='$ques_type' ";
-        $where = "technical_id = '$technical_id'  and level ='$level' and ques_type ='$ques_type' ";
+        $where = "technical_id IN('".$technical_id."')  and level ='$level' and ques_type ='$ques_type' ";
         $questions = $this->Master_model->getMaster('questionbank', $where, $join = FALSE, $order = 'RANDOM', $field = 'ques_id', $select = false, $limit = 20, $start = false, $search = false);
         // print_r($this->db->last_query());
         $test_questions = array();
@@ -2118,7 +2174,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                 $test_data['total_questions'] = sizeof($test_questions);
                 $test_data['test_duration'] = $test_duration;
                 $test_data['level'] = $level;
-                $test_data['topics'] = $technical_id;
+                $test_data['topics'] = implode(',', $topic_id);
                 $test_data['test_status'] = '2';
                 $test_data['status'] = '1';
                 // $test_data['timer_on_each_que'] = $this->input->post('timer');
@@ -2146,7 +2202,8 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $employer_id = $this->session->userdata('company_profile_id');
         $test_deadline = $this->input->post('test_deadline');
         $time = $test_duration / 20;
-        $where = "technical_id = '$technical_id' and topic_id ='$topic_id' and subtopic_id ='$subtopic_id' and level ='$level' and ques_type ='$ques_type' ";
+        // $where = "technical_id = '$technical_id' and topic_id ='$topic_id' and subtopic_id ='$subtopic_id' and level ='$level' and ques_type ='$ques_type' ";
+         $where = "technical_id IN('".$technical_id."')  and level ='$level' and ques_type ='$ques_type' ";
         $questions = $this->Master_model->getMaster('questionbank', $where, $join = FALSE, $order = 'RANDOM', $field = 'ques_id', $select = false, $limit = 20, $start = false, $search = false);
         $test_questions = array();
         foreach ($questions as $row) {
@@ -2164,7 +2221,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                 $test_data['total_questions'] = sizeof($test_questions);
                 $test_data['test_duration'] = $test_duration;
                 $test_data['level'] = $level;
-                $test_data['topics'] = $technical_id;
+                $test_data['topics'] = implode(',', $topic_id);
                 $test_data['test_status'] = '3';
                 $test_data['test_deadline'] = $test_deadline;
                 // $test_data['timer_on_each_que'] = $this->input->post('timer');

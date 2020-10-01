@@ -132,7 +132,7 @@ input.btn.btn-primary {
                     <div class="col-md-4">
                       <div class="form-group topic_id">
                         <label for="exampleInputEmail1">Main Topic <span class="required">*</span></label>
-                        <select id="topic_id" name="topic_id" class="form-control select2" onchange="getSubtopic(this.value)">
+                        <select id="topic_id" name="topic_id[]" class="form-control select2" multiple="multiple" onchange="getSubtopic(this.value)">
                           <option value="">Select Topic</option>
                           <!-- <option value="1">HTML 5</option>  -->
                         </select>
@@ -144,7 +144,7 @@ input.btn.btn-primary {
                     <div class="col-md-4">
                       <div class="form-group subtopic_id">
                         <label for="exampleInputEmail1">Sub Topic <span class="required">*</span></label>
-                        <select id="subtopic_id" name="subtopic_id" class="form-control select2" onchange="get_questuions();" >
+                        <select id="subtopic_id" name="subtopic_id[]" multiple="multiple" class="form-control select2" onchange="get_questuions();" >
                         </select> <?php echo form_error('subtopic_id'); ?>   
                       </div>
                     </div>
@@ -168,6 +168,19 @@ input.btn.btn-primary {
                         
                         ?>
                          <input type="text" id="deadline_picker" name="test_deadline" style="display: inline-block;" class="form-control datepicker "   value="<?php echo $next_due_date; ?>">
+                        <?php echo form_error('ques_type'); ?>   
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="form-group ques_type">
+                        <label for="exampleInputEmail1">Test Type <span class="required">*</span></label>
+                        <select name="ques_type" id="ques_type" class="form-control select2" type="text" onchange="get_questuions();">
+                          <option value="MCQ"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='MCQ')echo "selected";?>>MCQ</option>
+                          <option value="Subjective"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Subjective')echo "selected";?>>Subjective</option>
+                          <option value="Practical"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Practical')echo "selected";?>>Practical</option>
+                        </select>
                         <?php echo form_error('ques_type'); ?>   
                       </div>
                     </div>
@@ -456,7 +469,7 @@ input.btn.btn-primary {
                 }
                 else
                 {
-                  $('#subtopic_id').html(res);
+                  $('#subtopic_id').append(res);
                   $('#subtopic_id').attr('disabled', false);
                 }
                    
