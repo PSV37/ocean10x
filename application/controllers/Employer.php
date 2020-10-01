@@ -2033,7 +2033,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $subtopic=array_filter(explode(',',$this->input->post('subtopic_id')));
         $subtopic_id = implode(',',$subtopic);
 
-        $topic=array_filter(explode(',',$this->input->post('topic_id')));
+        $topic=array_filter(',',$this->input->post('topic_id'));
         $topic_id = implode(',', $topic);
         
         if (!empty($subject)) {
