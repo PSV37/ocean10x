@@ -1133,10 +1133,10 @@ input.btn.btn-primary {
                           <?php } ?>
                           <div class="job-info">
                             <div class="a">
-                              <li class="right-title" style="font-size:19px;margin-top:-4px;"  ><?php echo $tests['test_name']; ?></li>
+                              <li class="right-title" style="font-size:19px;margin-top:-20px;"  ><?php echo $tests['test_name']; ?></li>
                             </div>
                             <div class="a">
-                              <li class="right-title" style="font-size:15px;margin-top:4px; width: auto;"  ><?php echo $tests['topic_names']; ?></li>
+                              <li class="right-title" style="font-size:15px;margin-top:-17px; width: auto;"  ><?php echo $tests['topic_names']; ?></li>
                             </div>
                           </div>
                           <div class="following-info">
