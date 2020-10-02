@@ -1224,7 +1224,7 @@ span.right-side {
                       <div class="collapse" id="cc<?php echo $cv_row['cv_id']?>">
                       <div class="card-body">
                       
-                             <p><?php echo $comp_data['company_name']; ?> has Forwarded this CV - <?php echo $comp_data['created_on'] ; ?> </p>
+                             <p><?php echo $comp_data['company_name']; ?> has Forwarded this CV - <?php echo $cv_row['created_on'] ; ?> </p>
                       
                         
                       </div>
