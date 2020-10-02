@@ -1169,6 +1169,7 @@ button.btn.btn-primary.trash {
                      
                       'company_profile'=>'company_profile.company_profile_id = job_posting.company_profile_id |Left OUTER');
                     $jobs_data = $this->Master_model->getMaster('job_posting', $where , $join, $order = 'desc', $field = 'date', $select = '*,IFNULL(forwarded_jobs_cv.created_on, job_posting.update_at) AS date',$limit=false,$start=false, $search=false); 
+                    print_r($this->db->last_query());
                       if (!empty($jobs_data)) { ?>
 
                        <span data-toggle="collapse" data-target="#collapseEx<?php echo $v_companyjobs['job_post_id']?>" aria-expanded="false" aria-controls="collapseEx" style="color: red;font-size: 25px;margin-left: 38px;" title="Click to see the Jobs Forwarded" class="required"> * </span>
