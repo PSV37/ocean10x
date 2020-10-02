@@ -331,7 +331,11 @@
                <?php }else{ ?>
                      <button type="submit" class="Postjob_btn" name="post_preview">Post Job</button>
                      <button type="submit" class="edit_btn" name="edit">Edit</button>
-               <?php } ?>
+               <?php }
+                if ($job_status == '0') { ?>
+                   <button type="submit" class="Postjob_btn" name="post_preview">Post Job</button>
+              <?php  }
+                ?>
                
               </div>
             </div>

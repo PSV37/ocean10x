@@ -6112,7 +6112,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 'city_id' => $job_details['city_id'], //new added field
                 'skills_required' => $job_details['skills_required'], //new added field
                 'salary_range' => $job_details['salary_range'], 
-                "job_deadline" => date('d-m-Y', strtotime($job_details['job_deadline'])), "job_status" => '1', 
+                "job_deadline" => date('d-m-Y', strtotime($job_details['job_deadline'])), "job_status" => '0', 
                 'is_test_required' => $job_details['is_test_required']);
                  $job_info['benefits'] = explode(',', $job_details['benefits']);
                    $ed = $job_details['job_edu'];
