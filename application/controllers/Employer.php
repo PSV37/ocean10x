@@ -2297,9 +2297,10 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         if (isset($_POST['sort']) || !empty($sort_val)) {
 
 
-         $join = array('topic' => 'topic.topic_id = oceanchamp_tests.topics|LEFT OUTER', 'skill' => 'questionbank.technical_id = oceanchamp_tests.tests_id|LEFT OUTER', 'question' => 'questionbank.ques_id = oceanchamp_tests.questions|LEFT OUTER' );
+         $join = array('topic' => 'find_in_set(topic.topic_id, oceanchamp_tests.topics)|LEFT OUTER',
+         'questionbank' => 'find_in_set(oceanchamp_tests.questions, questionbank.ques_id)', 'skill_master' => 'skill_master.id = questionbank.technical_id|LEFT OUTER'  );
 
-         $data['ocean_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where = $where, $join = $join , $order = 'desc', $field = $sort_val, $select = '*,group_concat(topic.topic_name) as topic_names', $limit = false, $start = false, $search = false);
+         $data['ocean_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where = $where, $join = $join , $order = 'desc', $field = $sort_val, $select = '*,group_concat(topic.topic_name) as topic_names,group_concat(skill_master.skill_name) as skill_name', $limit = false, $start = false, $search = false);
 
         }
 
