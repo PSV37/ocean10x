@@ -1187,6 +1187,42 @@ button.btn.btn-primary.trash {
                  <li ><a class="dropdown-item" href="#" id="attach_to_job" data-toggle="modal" data-target="#attach_test<?php echo $v_companyjobs['job_post_id'] ?>" >Attach Test</a></li>
                </div>
             </div>
+
+            <?php  
+                    $job_post_id =$v_companyjobs['job_post_id'];
+                    $employer_id = $this->session->userdata('company_profile_id');
+                    $where="job_posting.job_post_id = '$cv_id' ";
+                    $join = array('forwarded_jobs_cv'=>'forwarded_jobs_cv.job_post_id = job_posting.job_post_id |Left OUTER',
+                     'corporate_cv_bank'=>'corporate_cv_bank.cv_id=forwarded_jobs_cv.cv_id | LEFT OUTER',
+                     
+                      'company_profile'=>'company_profile.company_profile_id = job_posting.company_profile_id |Left OUTER');
+                    $jobs_data = $this->Master_model->getMaster('job_posting', $where , $join, $order = 'desc', $field = 'date', $select = '*,IFNULL(forwarded_jobs_cv.created_on, job_posting.update_at) AS date',$limit=false,$start=false, $search=false); 
+                      if (!empty($jobs_data)) { ?>
+
+                       <span data-toggle="collapse" data-target="#collapseEx<?php echo $v_companyjobs['job_post_id']?>" aria-expanded="false" aria-controls="collapseEx" style="color: red;font-size: 25px;margin-left: 38px;" title="Click to see the Jobs Forwarded" class="required"> * </span>
+
+                       <div class="collapse" id="collapseEx<?php echo $$v_companyjobs['job_post_id']?>">
+                      <div class="card-body">
+                      <?php $i=1; if (!empty($jobs_data)) { ?>
+                         <hr>
+                        <?php // print_r($jobs_data);
+                        foreach ($jobs_data as $row) {
+
+                          if (isset($row['update_at'])) { ?>
+                             <p><?php echo $i; ?>.Job Post Updated - <?php echo date('d-m-y H:i',strtotime($row['date'])) ; ?> - <?php echo $row['company_name']; ?> </p>
+                        <?php  }elseif(isset($row['cv_id'])){ ?>
+                          <p><?php echo $i; ?>.Job Post Forwarded - <?php echo date('d-m-y H:i',strtotime($row['date'])) ; ?> - <?php echo $row['js_email']; ?>  </p>
+                       <?php  }
+                         ?>
+
+                       
+
+                            <?php $i++;  } }  ?>
+                        
+                      </div>
+                      </div>
+                     <?php  }
+                    ?>
          </div>
       </div>
    </label>

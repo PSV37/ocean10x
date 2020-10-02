@@ -455,13 +455,14 @@ class Employer extends MY_Employer_Controller {
                 "job_deadline" => date('Y-m-d', strtotime($this->input->post('job_deadline'))),
                 //                   'preferred_age'      => $this->input->post('preferred_age_from'),
                 'test_for_job' => $this->input->post('test_for_job'),
-                'created_at'      => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),
+               
                 'is_test_required' => $this->input->post('job_test_requirment'));
                 if (isset($job_desc_file) && !empty($job_desc_file)) {
                     $job_info['jd_file'] = $job_desc_file;
                 }
                 // print_r($job_info);
                 if (empty($job_post_id)) {
+                    $job_info['created_at']  = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
                     $job_id = $this->job_posting_model->insert($job_info);
                     $company_name = $this->session->userdata('company_name');
                     $data = array('company' => $company_name, 'action_taken_for' => $company_name, 'field_changed' => 'Posted A new Job', 'Action' => 'Posted A new  Job ', 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
@@ -502,6 +503,7 @@ class Employer extends MY_Employer_Controller {
                             }
                         }
                     }
+                    $job_info['update_at']  = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
                     $this->job_posting_model->update($job_info, $job_post_id);
                     $this->session->set_flashdata('success', '<div class="alert alert-success alert-dismissable">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
@@ -1254,7 +1256,17 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                     $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Jobseeker has already applied to this job post</div>');
                     if (empty($job_apply_data)) {
                         $apply = $this->Master_model->master_insert($apply_array, 'job_apply');
-                        $external_array = array('cv_id' => $cv_id, 'company_id' => $employer_id, 'job_post_id' => $job_post_id, 'apply_id' => $apply, 'status' => 1, 'company_id' => $employer_id, 'name' => $can_data[0]['full_name'], 'email' => $can_data[0]['email'], 'mobile' => $can_data[0]['mobile_no'], 'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),);
+                        $external_array = array(
+                        'cv_id' => $cv_id, 
+                        'company_id' => $employer_id, 
+                        'job_post_id' => $job_post_id, 
+                        'apply_id' => $apply, 
+                        'status' => 1, 
+                        'company_id' => $employer_id, 
+                        'name'=>$can_data[0]['full_name'], 
+                        'email'=> $can_data[0]['email'], 
+                        'mobile'=>$can_data[0]['mobile_no'], 
+                        'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),);
                         $frwd = $this->Master_model->master_insert($external_array, 'external_tracker');
                         $frwd_array = array('cv_id' => $cv_id, 'company_id' => $employer_id, 'job_post_id' => $job_post_id, 'apply_id' => $apply, 'status' => 1, 'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),);
                         $frwd = $this->Master_model->master_insert($frwd_array, 'forwarded_jobs_cv');
