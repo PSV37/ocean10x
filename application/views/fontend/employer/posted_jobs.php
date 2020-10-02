@@ -1160,6 +1160,11 @@ button.btn.btn-primary.trash {
             </span>
              <div class="clear"></div>
             </div>  
+             <a title="details" href=" <?php echo base_url() ?>employer/preview_job_post/<?php echo $v_companyjobs['job_post_id'] ?>"><i class="fa fa-info-circle icon_backg"></i></a>
+            <div class="btn-group">
+                        <a title="Edit" href=" <?php echo base_url() ?>employer/update_job/<?php echo $v_companyjobs['job_post_id'] ?>"><i class="far fa-edit icon_backg"></i></a>
+                        <a title="Delete" href="<?php echo base_url('employer/deactivate_job/' . $v_companyjobs['job_post_id']); ?>"><i class="fas fa-trash-alt icon_backg"></i></a>
+                     </div>
             <?php  
                     $job_post_id = $v_companyjobs['job_post_id'];
                     $employer_id = $this->session->userdata('company_profile_id');
@@ -1197,11 +1202,7 @@ button.btn.btn-primary.trash {
                      <?php  }
                     ?>
                <br>       
-            <a title="details" href=" <?php echo base_url() ?>employer/preview_job_post/<?php echo $v_companyjobs['job_post_id'] ?>"><i class="fa fa-info-circle icon_backg"></i></a>
-            <div class="btn-group">
-                        <a title="Edit" href=" <?php echo base_url() ?>employer/update_job/<?php echo $v_companyjobs['job_post_id'] ?>"><i class="far fa-edit icon_backg"></i></a>
-                        <a title="Delete" href="<?php echo base_url('employer/deactivate_job/' . $v_companyjobs['job_post_id']); ?>"><i class="fas fa-trash-alt icon_backg"></i></a>
-                     </div>
+           
 
             <?php  if ($v_companyjobs['job_deadline'] > date('Y-m-d')){
                // echo '<button class="btn btn-success btn-xs">Live <i class="fa fa-check-circle" aria-hidden="true"></i></button>';
