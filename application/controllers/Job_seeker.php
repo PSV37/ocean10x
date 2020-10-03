@@ -1951,11 +1951,8 @@ public function user_profile()
     $forward_test = $this->Master_model->get_master_row('forwarded_tests', $select = FALSE, $where_forward , $join = FALSE);
     if (!empty($forward_test)) {
         $test_array = array(
-                        
-                        'status' => 'Test Completed',
-                        'updated_on' => date('Y-m-d'),
-                        
-                    );
+                 'status' => 'Test Completed',
+                  'updated_on' => date('Y-m-d'));
              $where_tesf['test_id'] = $test_id;
              $where_tesf['job_seeker_id'] = $seeker_id;
             $this->Master_model->master_update($test_array, 'forwarded_tests', $where_tesf);
@@ -2005,7 +2002,9 @@ public function user_profile()
                         'updated_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'))
                         
                     );
-            $this->Master_model->master_update($update_array, 'external_tracker', $where);
+             $where_ex['test_id'] = $test_id;
+             $where_ex['job_seeker_id'] = $seeker_id;
+            $this->Master_model->master_update($update_array, 'external_tracker', $where_ex);
             $join =array('job_apply' => 'job_apply.job_post_id = external_tracker.job_post_id');
             $where_cond = "external_tracker.apply_id = '$apply_id'";
             $total_ranks = $this->Master_model->getMaster('external_tracker',  $where_cond, $join , $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
@@ -2029,9 +2028,9 @@ public function user_profile()
                         'updated_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')));
                         
                 
-             $where['score'] = $row.'/'.$data['total_questions'];
+             $wherescore['score'] = $row.'/'.$data['total_questions'];
            
-            $this->Master_model->master_update($array,'external_tracker', $where);
+            $this->Master_model->master_update($array,'external_tracker', $wherescore);
 
             $k++;
             // print_r($this->db->last_query());die;

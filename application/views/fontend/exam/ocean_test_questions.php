@@ -972,8 +972,7 @@ input[type="radio"] {
           answers.push(
             `<label>
               <input type="radio" onclick="get_checked(${questionNumber});" style="display:block;" name="question${questionNumber}" value="${letter}">
-              ${letter} :
-              ${currentQuestion.answers[letter]}
+              ${letter} :${currentQuestion.answers[letter]}
             </label>
             `
           );
