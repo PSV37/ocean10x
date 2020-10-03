@@ -962,7 +962,7 @@
               <button type="submit" name="sort" class="hidden" id="sort_btn"></button>
             </form>
           </div>
-          <?php print_r($ocean_tests); ?>
+          <!-- <?php print_r($ocean_tests); ?> -->
 
         <div class="row">
           <div class="box" >
