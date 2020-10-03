@@ -2559,8 +2559,8 @@ public function user_profile()
          $data['activemenu'] = 'ocean_champ';
         $this->session->set_userdata($data);
         $job_seeker_id = $this->session->userdata('job_seeker_id');
-         $topic=array_filter($topics);
-            $topic_id = implode(',', $topic);
+         // $topic=array_filter($topics);
+         //    $topic_id = implode(',', $topic);
        $join = array("skill_master"=>"skill_master.skill_name LIKE Concat('%', job_seeker_skills.skills, '%') | LEFT OUTER","topic"=>"topic.technical_id = skill_master.id | LEFT OUTER ",
         "oceanchamp_tests"=>"find_in_set(topic.topic_id, oceanchamp_tests.topics)| LEFT OUTER"
    );
