@@ -650,7 +650,7 @@ button.btn.btn-primary.trash {
           $job_post_id = $forward_applicaiton->job_post_id;
         $company_id = $singlejob->company_profile_id;
 
-          $where = "job_seeker_id='$job_seeker_id' and company_id = '$company_id' and job_post_id = '$job_post_id'  and forword_job_status = '1'";
+          $where = "job_seeker_id='$job_seeker_id' and company_id = '$company_id' and job_post_id = '$job_post_id'  and is_test_done = '0'";
           $apply = $this->Master_model->get_master_row('job_apply', $select = FALSE, $where , $join = FALSE);
             // print_r($this->db->last_query());
                         $sr_no++; ?>

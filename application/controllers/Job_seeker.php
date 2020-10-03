@@ -1984,6 +1984,11 @@ public function user_profile()
            
             $this->Master_model->master_update($test_array, 'forwarded_jobs_cv', $where);
 
+            $job_apply_update =array('forword_job_status'=> 2,'is_test_done'=>1);
+             $wherejob['job_apply_id'] = $apply_id;
+
+            $this->Master_model->master_update($job_apply_update, 'job_apply', $wherejob);
+
             $score = $data['correct_ans'] ."/". $data['total_questions'];
 
             $update_array = array(
