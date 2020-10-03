@@ -1793,7 +1793,7 @@ public function user_profile()
         $company_id = $singlejob->company_profile_id;
         // print_r($test_id);
         // print_r($job_post_id);die;
-        $job_apply = $this->job_apply_model->check_apply_job($jobseeker_id, $company_id, $job_post_id);
+        $job_apply = $this->job_apply_model->check_apply_job($job_seeker_id, $company_id, $job_post_id);
         if ($job_apply) {
             $where = "job_seeker_id='$job_seeker_id' and company_id = '$company_id' and job_post_id = '$job_post_id'";
             $apply = $this->Master_model->get_master_row('job_apply', $select = FALSE, $where , $join = FALSE);
@@ -1802,7 +1802,7 @@ public function user_profile()
         {
             
              $apply_info   = array(
-                        'job_seeker_id'   => $jobseeker_id,
+                        'job_seeker_id'   => $job_seeker_id,
                         'company_id'      => $company_id,
                         'job_post_id'     => $job_post_id
                        
