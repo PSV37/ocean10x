@@ -2622,7 +2622,7 @@ public function user_profile()
                 if ($can_data) {
                     $seeker_id = $can_data[0]['job_seeker_id'];
                 } else {
-                    $new_JS_array = array('email' => $email[$i], 'js_token' => md5($email[$i]), 'create_at' => date('Y-m-d H:i:s'));
+                    $new_JS_array = array('email' => $email[$i], 'js_token' => md5($email[$i]), 'create_at' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
                     $seeker_id = $this->Master_model->master_insert($new_JS_array, 'js_info');
                 }
                 $where_can = "email='$email[$i]'";
@@ -2630,7 +2630,7 @@ public function user_profile()
                 $where_cv = "js_email='$email[$i]' and company_id='$employer_id'";
                 $cv_data = $this->Master_model->getMaster('corporate_cv_bank', $where_cv);
                 if (empty($cv_data)) {
-                    $cv_array = array('company_id' => $employer_id, 'js_name' => $can_data[0]['full_name'], 'js_email' => $can_data[0]['email'], 'js_mobile' => $can_data[0]['mobile_no'], 'created_on' => date('Y-m-d'), 'created_by' => $employer_id);
+                    $cv_array = array('company_id' => $employer_id, 'js_name' => $can_data[0]['full_name'], 'js_email' => $can_data[0]['email'], 'js_mobile' => $can_data[0]['mobile_no'], 'created_on' => ddate('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')), 'created_by' => $employer_id);
                     $add_cv = $this->Master_model->master_insert($cv_array, 'corporate_cv_bank');
                     $cv_id = $add_cv;
                 } else {
