@@ -937,7 +937,7 @@
          <div class="col-md-6">
                   <form id="test_form" class="navbar-form" role="search" action="<?php echo base_url(); ?>job_seeker/get_test_details">
                     
-                     <input type="text" id="test_name" class="form-control" placeholder="Test Name" onchange="submit_form();" style="width: 100%">
+                     <input type="text" id="test_name" class="form-control" placeholder="Test Name" onselect ="submit_form();" style="width: 100%;margin-top: 20px;height: 40px;border-radius: 25px;">
                       <input type="hidden" name="test_id" value="" id="test_id-value">
                   </form>
                   <div class="clear"></div>
