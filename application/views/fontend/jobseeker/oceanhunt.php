@@ -652,7 +652,7 @@ button.btn.btn-primary.trash {
 
           $where = "job_seeker_id='$job_seeker_id' and company_id = '$company_id' and job_post_id = '$job_post_id'  and forword_job_status = '1'";
           $apply = $this->Master_model->get_master_row('job_apply', $select = FALSE, $where , $join = FALSE);
-            print_r($this->db->last_query());
+            // print_r($this->db->last_query());
                         $sr_no++; ?>
    <label class="checkbox_label">
       <div class="border-top1"></div>
@@ -712,7 +712,7 @@ button.btn.btn-primary.trash {
              <?php  }elseif ($singlejob->is_test_required == 'Yes' && !empty($singlejob->test_for_job) && !empty($apply)) { 
               $apply_id=$apply['job_apply_id'];
               ?>
-              <a style="margin-left: 15px" title="Give test" href="<?php echo base_url() ?>job_seeker/ocean_test_start/'<?php base64_encode($job_post_id) ?>'/'<?php base64_encode($apply_id); ?>" ><i class="fa fa-download" aria-hidden="true"></i></a>
+              <a style="margin-left: 15px" title="Give test" href="<?php echo base_url() ?>job_seeker/ocean_test_start/'<?php echo base64_encode($job_post_id) ?>'/'<?php echo base64_encode($apply_id); ?>" ><i class="fa file-alt" aria-hidden="true"></i></a>
             <?php } ?></li>
              <li class="left-title">JD attached&nbsp;<i class="fas fa-link"></i></li>
 
