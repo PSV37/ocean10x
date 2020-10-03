@@ -305,7 +305,7 @@
    height: 200px;
    width: 200px;
    position: relative;
-   margin:0 30px 30px -23px;
+   margin:0px 30px 30px px0px;
    }
    .pie::before {
    content: "";
