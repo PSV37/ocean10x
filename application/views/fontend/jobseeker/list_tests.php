@@ -1093,7 +1093,7 @@
                 endforeach;  
               ?>     
             <?php else : ?> 
-            <div>
+            <div style="margin-top: 50px;">
             <br>              
             <strong> No Tests Available !</strong>
             </div>
