@@ -1049,9 +1049,9 @@
                 </button>
                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1" style="top:47px;">
                     <li ><a class="dropdown-item" href="#" id="div_frwrd" data-toggle="modal" data-target="#rotateModal<?php echo $tests['test_id'] ?>" >Forward This Test</a></li>
-                    <li ><a class="dropdown-item" href="#" id="attach_to_job" data-toggle="modal" data-target="#attach_to_job<?php echo $tests['test_id'] ?>" >Attach To Job Post</a></li>
-                    <li> <a class="dropdown-item"  href="#" data-toggle="modal" data-target="#edit_test<?php echo $tests['test_id'] ?>" >Edit Test Parameters</a></li>
-                    <!--  <li><a class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-target="#move_cv" href="#">Move this CV</a></li> -->
+                    <?php $test_id = $tests['test_id'];  ?>
+                    <li > <a style="margin-left: 15px" title="Give test" href="<?php echo base_url() ?>job_seeker/ocean_test_start/<?php echo base64_encode($test_id) ?>/<?php echo base64_encode($apply_id); ?>/<?php echo $singlejob->job_post_id ?>" ><i class="fa fa-file-text" aria-hidden="true"></i>Give test</a></li>
+                  
                   </div>
                  <?php }else{ ?>
 
@@ -1279,199 +1279,7 @@
     </div>
   </div>
 </div>
-<?php $key = 1; if (!empty($ocean_tests)): foreach ($ocean_tests as $tests) : ?>
-<div class="modal" id="rotateModal<?php echo $tests['test_id'] ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header" style="border-bottom:none;">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Forward This Test</h5>
-      </div>
-      <form action="<?php echo base_url() ?>employer/forword_test" class="sendEmail" method="post" autocomplete="off">
-        <input type="hidden" name="test_id" id="test_id" value="<?php echo $tests['test_id']; ?>">
-        <div class="modal-body" style="padding:15px 40px;">
-          <input type="hidden" name="consultant" value="JobSeeker">  
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <label class="mdl-textfield__label" for="sample3">E-mail</label>
-            <input type="email"  name="candiate_email"  id="email" placeholder="Enter comma seperated Emails"  id="subject" data-required="true" multiple style="display: inline-block;width: 100%;" required>
-          </div>
-          <input type="hidden" name="job_post_id" value="" id="auto-value">
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
-            <label class="mdl-textfield__label" for="sample3">Message:</label>
-            <textarea class="form-control" name="message" rows="5" id="comment" value="" required></textarea>
-          </div>
-          <input type="hidden" name="forward_job_email" id="forward_job_email" value="<?php echo $cv_row['js_email']; ?>">
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-save">Send</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-<div class="modal" id="attach_to_job<?php echo $tests['test_id'] ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header" style="border-bottom:none;">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Attach This Test To Job</h5>
-      </div>
-      <form action="<?php echo base_url() ?>employer/attach_to_job" class="sendEmail" method="post" autocomplete="off">
-        <input type="hidden" name="test_id" id="test_id" value="<?php echo $tests['test_id']; ?>">
-        <div class="modal-body" style="padding:15px 40px;">
-          <input type="hidden" name="consultant" value="JobSeeker">  
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <label class="mdl-textfield__label" for="sample3">Active Job:</label>
-            <select class="form-control select2" name="job_id">
-              <?php foreach ($company_active_jobs as $row) { ?>
-              <option value="<?php echo $row->job_post_id ?>"><?php echo $row->job_title?></option>
-              <?php } ?>
-            </select>
-          </div>
-          <input type="hidden" name="job_post_id" value="" id="auto-value">
-          <input type="hidden" name="forward_job_email" id="forward_job_email" value="<?php echo $cv_row['js_email']; ?>">
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-save">Send</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-<div class="modal" id="edit_test<?php echo $tests['test_id'] ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header" style="border-bottom:none;">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;"> Change Test Parameters</h5>
-      </div>
-      <form action="<?php echo base_url() ?>employer/update_test" class="sendEmail" method="post" autocomplete="off">
-        <input type="hidden" name="test_id" id="test_id" value="<?php echo $tests['test_id']; ?>">
-        <div class="modal-body" style="padding:15px 40px;">
-          <div class="col-md-6">
-            <div class="form-group ques_type">
-              <label for="exampleInputEmail1">Question Type<span class="required">*</span></label>
-              <select name="ques_type" id="ques_type" class="form-control select2" type="text" onchange="get_questuions();">
-                <option value="MCQ"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='MCQ')echo "selected";?>>MCQ</option>
-                <option value="Subjective"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Subjective')echo "selected";?>>Subjective</option>
-                <option value="Practical"<?php if (!empty($edit_questionbank_info)) if($row['ques_type']=='Practical')echo "selected";?>>Practical</option>
-              </select>
-              <?php echo form_error('ques_type'); ?>   
-            </div>
-          </div>
-          <div class="col-md-6"></div>
-          <div class="col-md-4">
-            <div class="form-group timer">
-              <label for="male">Timer On each Question</label><br>
-              <label class="radio-inline" >
-              <input type="radio" name="timer" style=" margin-right: 11px;" value="Y" checked> Yes
-              </label>
-              <label class="radio-inline">
-              <input type="radio" name="timer" value="N" style="margin-left: -30px;">No
-              </label>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="form-group previous_option">
-              <label for="male">Allowed to Go back</label><br>
-              <label class="radio-inline">
-              <input type="radio" name="previous_option"  style=" margin-right: 11px;" value="Y" checked> Yes
-              </label>
-              <label class="radio-inline">
-              <input type="radio" name="previous_option" value="N" style="margin-left: -30px;">No
-              </label>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="form-group review_option">
-              <label for="male">Allowed to Review</label><br>
-              <label class="radio-inline">
-              <input type="radio" name="review_option" style=" margin-right: 11px;" value="Y" checked> Yes
-              </label>
-              <label class="radio-inline">
-              <input type="radio" name="review_option" value="N" style="margin-left: -30px;">No
-              </label>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="form-group negative">
-              <label for="male">Negative Marking</label><br>
-              <label class="radio-inline">
-              <input type="radio" name="negative" style=" margin-right: 11px;" value="Y" checked> Yes
-              </label>
-              <label class="radio-inline">
-              <input type="radio" name="negative" value="N" style="margin-left: -30px;">No
-              </label>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="form-group each_question_ans">
-              <label for="male">Display Correct Answer for each Question</label><br>
-              <label class="radio-inline">
-              <input type="radio" name="each_question_ans" style=" margin-right: 11px;" value="Y" checked> Yes
-              </label>
-              <label class="radio-inline">
-              <input type="radio" name="each_question_ans" value="N" style="margin-left: -30px;">No
-              </label>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="form-group display_result">
-              <label for="male">Display Test Result to Candidate</label><br>
-              <label class="radio-inline">
-              <input type="radio" name="display_result" style=" margin-right: 11px;" value="Y" checked> Yes
-              </label>
-              <label class="radio-inline">
-              <input type="radio" name="display_result" value="N" style="margin-left: -30px;">No
-              </label>
-            </div>
-          </div>
-          <input type="hidden" name="job_post_id" value="" id="auto-value">
-          <input type="hidden" name="forward_job_email" id="forward_job_email" value="<?php echo $cv_row['js_email']; ?>">
-        </div>
-        <div class="modal-footer"  style="    margin-top: 340px;">
-          <button type="submit" class="btn btn-save">update</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-<?php
-  endforeach;endif;?>
-<div class="modal" id="rotateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <input type="hidden" name="cv_id" id="cv_id" value="<?php $cv_row['cv_id']; ?>">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header" style="border-bottom:none;">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Forward This Job Post</h5>
-      </div>
-      <form action="<?php echo base_url() ?>employer/forward_posted_job" class="sendEmail" method="post" autocomplete="off">
-        <div class="modal-body" style="padding:15px 40px;">
-          <input type="hidden" name="job_post_id" value="<?php echo $v_companyjobs->job_post_id; ?>">
-          <input type="hidden" name="consultant" value="JobSeeker">  
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <label class="mdl-textfield__label" for="sample3">job Post:</label>
-            <input type="text"  name="job_titles"  id="job_titles" placeholder=""  id="subject" data-required="true" multiple style="display: inline-block; width: 100%;" required>
-          </div>
-          <input type="hidden" name="job_post_id" value="" id="autocomplete2-value">
-          <!-- <input id="" type="text" name="code"> -->
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
-            <label class="mdl-textfield__label" for="sample3">Message:</label>
-            <textarea class="form-control" name="message" rows="5" id="comment" required></textarea>
-          </div>
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
-            <label class="mdl-textfield__label" for="sample3">Number of cvs:<span id="no_of_cvs"></span></label><br>
-          </div>
-          <input type="hidden" name="forward_job_emails" id="forward_job_emails" value="">
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-save">Send</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
+
 <script>
   $(document).on('focus', '.select2-selection.select2-selection--single', function (e) {
   $(this).closest(".select2-container").siblings('select:enabled').select2('open');
@@ -1527,7 +1335,7 @@
                  $(this).val(ui.item.label);
                  $("#test_id-value").val(ui.item.value);
                  $('#test_form').submit();
-                 
+
               }
       
               
