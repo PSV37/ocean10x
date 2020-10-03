@@ -2559,7 +2559,9 @@ public function user_profile()
          $data['activemenu'] = 'ocean_champ';
         $this->session->set_userdata($data);
         $job_seeker_id = $this->session->userdata('job_seeker_id');
-       
+       $join = array("skill_master"=>"skill_master.skill_name LIKE Concat('%', job_seeker_skills.skills, '%') | LEFT OUTER","topic"=>"topic.technical_id = skill_master.id | LEFT OUTER "
+        "oceanchamp_tests"=>"oceanchamp_tests.topic_id = topic.topic_id | LEFT OUTER"
+   );
         $where = "job_seeker_skills.job_seeker_id='$job_seeker_id' ";
         $data['ocean_tests'] = $this->Master_model->getMaster('job_seeker_skills', $where = $where, $join , $order = 'desc', $field = 'job_seeker_skills.js_skill_id', $select = false, $limit = false, $start = false, $search = false);
         

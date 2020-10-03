@@ -963,7 +963,7 @@
             </form>
           </div>
 
-
+          <?php print_r($ocean_tests); ?>
         <div class="row">
           <div class="box" >
             <?php $key = 1; if (!empty($ocean_tests)): foreach ($ocean_tests as $tests) : 
