@@ -420,7 +420,9 @@ class Exam extends MY_Seeker_Controller
             $temp_array= array();
             if(!empty($topics))
             {
-                $all_topics = implode(',', $this->input->post('topics'));
+                 $sub=array_filter($this->input->post('topics'));
+            $all_topics = implode(',',$sub);
+                // $all_topics = implode(',', $this->input->post('topics'));
                 $skill = $this->input->post('skill_name');
                 $level = $this->input->post('level');
 
