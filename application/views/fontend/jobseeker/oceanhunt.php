@@ -712,7 +712,7 @@ button.btn.btn-primary.trash {
              <?php  }elseif ($singlejob->is_test_required == 'Yes' && !empty($singlejob->test_for_job) && !empty($apply)) { 
               $apply_id=$apply['job_apply_id'];
               ?>
-              <a style="margin-left: 15px" title="Give test" href="<?php echo base_url() ?>job_seeker/ocean_test_start/'<?php base64_encode($job_post_id) ?>'/'<?php base64_encode($apply_id)); ?>" ><i class="fa fa-download" aria-hidden="true"></i></a>
+              <a style="margin-left: 15px" title="Give test" href="<?php echo base_url() ?>job_seeker/ocean_test_start/'<?php base64_encode($job_post_id) ?>'/'<?php base64_encode($apply_id); ?>" ><i class="fa fa-download" aria-hidden="true"></i></a>
             <?php } ?> ?></li>
              <li class="left-title">JD attached&nbsp;<i class="fas fa-link"></i></li>
 
