@@ -2586,7 +2586,7 @@ public function user_profile()
         $test_id = $this->input->post('test_id');
         // $join = array('oceanchamp_tests'=>'oceanchamp_tests.test_id = forwarded_tests.test_id');
         $where = "oceanchamp_tests.status='1' AND oceanchamp_tests.test_id='$test_id' ";
-        $data['ocean_tests'] = $this->Master_model->getMaster('forwarded_tests', $where = $where, $join = false , $order = 'desc', $field = 'forwarded_tests.id', $select = false, $limit = false, $start = false, $search = false);
+        $data['ocean_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where = $where, $join = false , $order = 'desc', $field = 'oceanchamp_tests.id', $select = false, $limit = false, $start = false, $search = false);
         $where_cn = "status=1";
         $data['skill_master'] = $this->Master_model->getMaster('skill_master', $where_cn);
         //$where_opt= "options.status=1";
