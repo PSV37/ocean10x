@@ -1784,13 +1784,32 @@ public function user_profile()
         $oceanchamp_tests = $this->Master_model->get_master_row('forwarded_tests', $select = FALSE, $where = $where_all, $join = FALSE);
     }
 
-   public function ocean_test_start($test_id = null,$apply_id= null)
+   public function ocean_test_start($test_id = null,$apply_id= null,$job_post_id=NULL)
     {
-        // $company_profile_id = $this->session->userdata('company_profile_id');
+        $job_seeker_id = $this->session->userdata('job_seeker_id');
         $test_id           = base64_decode($test_id);
         $apply_id           = base64_decode($apply_id);
+        $singlejob    = $this->job_posting_model->get_job_details_employer($forward_applicaiton->job_post_id);
+        $company_id = $singlejob->company_id;
         // print_r($test_id);
         // print_r($job_post_id);die;
+        $job_apply = $this->job_apply_model->check_apply_job($jobseeker_id, $company_id, $job_post_id);
+        if ($job_apply) {
+            $where = "job_seeker_id='$job_seeker_id' and company_id = '$company_id' and job_post_id = '$job_post_id'";
+            $apply = $this->Master_model->get_master_row('job_apply', $select = FALSE, $where , $join = FALSE);
+            $apply_id=$apply['job_apply_id'];
+        }else
+        {
+            
+             $apply_info   = array(
+                        'job_seeker_id'   => $jobseeker_id,
+                        'company_id'      => $company_id,
+                        'job_post_id'     => $job_post_id
+                       
+                    );
+            $apply_id = $this->job_apply_model->insert($apply_info);
+        }
+  
         
         if (!empty($test_id)) {
             

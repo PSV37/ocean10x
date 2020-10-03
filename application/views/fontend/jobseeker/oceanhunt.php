@@ -646,7 +646,12 @@ button.btn.btn-primary.trash {
    <?php  if (!empty($forward_applicationlist)): foreach ($forward_applicationlist as $forward_applicaiton) : 
 
       $singlejob    = $this->job_posting_model->get_job_details_employer($forward_applicaiton->job_post_id);
-            
+          $job_seeker_id = $this->session->userdata('job_seeker_id');
+          $job_post_id = $forward_applicaiton->job_post_id;
+        $company_id = $singlejob->company_id;
+
+          $where = "job_seeker_id='$job_seeker_id' and company_id = '$company_id' and job_post_id = '$job_post_id'  and forword_job_status = '1'";
+          $apply = $this->Master_model->get_master_row('job_apply', $select = FALSE, $where , $join = FALSE);
             
                         $sr_no++; ?>
    <label class="checkbox_label">
@@ -704,7 +709,11 @@ button.btn.btn-primary.trash {
                <li class="right-title">&nbsp;:<?php echo $singlejob->is_test_required; ?>
                <?php if ($singlejob->is_test_required == 'Yes' && empty($singlejob->test_for_job)) { ?>
                   <sup><span title="Marked yes but test is not attached" class="required">*</span></sup>
-             <?php  } ?></li>
+             <?php  }elseif ($singlejob->is_test_required == 'Yes' && !empty($singlejob->test_for_job) && !empty($apply)) { 
+              $apply_id=$apply['job_apply_id'];
+              ?>
+              <a style="margin-left: 15px" title="Give test" href="<?php echo base_url() ?>job_seeker/ocean_test_start/'<?php base64_encode($job_post_id) ?>'/'<?php base64_encode($apply_id)); ?>" ><i class="fa fa-download" aria-hidden="true"></i></a>
+            <?php } ?> ?></li>
              <li class="left-title">JD attached&nbsp;<i class="fas fa-link"></i></li>
 
                <li class="right-title">&nbsp;: <?php if (isset($singlejob->jd_file) && !empty($singlejob->jd_file)) { echo "Yes"; ?>  <a style="margin-left: 15px" href="<?php echo base_url() ?>upload/job_description/<?php echo $singlejob->jd_file; ?>" download><i class="fa fa-download" aria-hidden="true"></i></a> <?php } else { echo "No";} ?></li>
@@ -909,6 +918,7 @@ button.btn.btn-primary.trash {
             // print_r($forward_applicaiton->job_post_id);
             $salary= $this->job_posting_model->job_salary_by_id($forward_applicaiton->job_post_id); 
             // print_r($salary);
+
             
             
                         $sr_no++; ?>
@@ -967,7 +977,9 @@ button.btn.btn-primary.trash {
                <li class="right-title">&nbsp;:<?php echo $singlejob->is_test_required; ?>
                <?php if ($singlejob->is_test_required == 'Yes' && empty($singlejob->test_for_job)) { ?>
                   <sup><span title="Marked yes but test is not attached" class="required">*</span></sup>
-             <?php  } ?></li>
+             <?php  }elseif ($singlejob->is_test_required == 'Yes' && !empty($singlejob->test_for_job)) { ?>
+              <a style="margin-left: 15px" title="Give test" href="<?php echo base_url() ?>upload/job_description/<?php echo $singlejob->jd_file; ?>" download><i class="fa fa-download" aria-hidden="true"></i></a>
+            <?php } ?></li>
              <li class="left-title">JD attached&nbsp;<i class="fas fa-link"></i></li>
 
                <li class="right-title">&nbsp;: <?php if (isset($singlejob->jd_file) && !empty($singlejob->jd_file)) { echo "Yes"; ?>  <a style="margin-left: 15px" href="<?php echo base_url() ?>upload/job_description/<?php echo $singlejob->jd_file; ?>" download><i class="fa fa-download" aria-hidden="true"></i></a> <?php } else { echo "No";} ?></li>
