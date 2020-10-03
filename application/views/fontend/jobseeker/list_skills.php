@@ -1526,6 +1526,8 @@
                  // manually update the textbox and hidden field
                  $(this).val(ui.item.label);
                  $("#test_id-value").val(ui.item.value);
+                 $('#test_form').submit();
+                 
               }
       
               
@@ -1556,57 +1558,7 @@
   
   
 </script>
-<script>
-  function submit_form()
-  {
-    $('#test_form').click();
-  }
-  $("#job_titles").autocomplete({
-               
-               source: "<?php echo base_url();?>Employer/search_job_keywords",
-               minLength: 2,
-                // append: "#rotateModal",
-                focus: function(event, ui) {
-                 // prevent autocomplete from updating the textbox
-                 event.preventDefault();
-                 // manually update the textbox
-                 // alert(source);
-                 $(this).val(ui.item.label);
-              },
-              select: function(event, ui) {
-                 // prevent autocomplete from updating the textbox
-                 event.preventDefault();
-                 // manually update the textbox and hidden field
-                 $(this).val(ui.item.label);
-                 $("#autocomplete2-value").val(ui.item.value);
-                 $('#test_form').submit();
-              }
-      
-              
-             });
-  $("#job_title").autocomplete({
-               
-               source: "<?php echo base_url();?>Employer/search_job_keywords",
-               minLength: 2,
-                // append: "#rotateModal",
-                focus: function(event, ui) {
-                 // prevent autocomplete from updating the textbox
-                 event.preventDefault();
-                 // manually update the textbox
-                 // alert(source);
-                 $(this).val(ui.item.label);
-              },
-              select: function(event, ui) {
-                 // prevent autocomplete from updating the textbox
-                 event.preventDefault();
-                 // manually update the textbox and hidden field
-                 $(this).val(ui.item.label);
-                 $("#auto-value").val(ui.item.value);
-              }
-      
-              
-             });
-</script>
+
 <script>
   function getTopic(id){
          if(id){
