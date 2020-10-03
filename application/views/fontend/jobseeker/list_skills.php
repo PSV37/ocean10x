@@ -1579,6 +1579,7 @@
                  // manually update the textbox and hidden field
                  $(this).val(ui.item.label);
                  $("#autocomplete2-value").val(ui.item.value);
+                 $('#test_form').submit();
               }
       
               
