@@ -1953,9 +1953,9 @@ public function user_profile()
                         'updated_on' => date('Y-m-d'),
                         
                     );
-             $where = "test_id  ='$test_id' and job_seeker_id = '$seeker_id'";
-             // $where['job_seeker_id'] = $seeker_id;
-            $this->Master_model->master_update($test_array, 'forwarded_tests', $where);
+             $where_tesf['test_id'] = $test_id;
+             $where_tesf['job_seeker_id'] = $seeker_id;
+            $this->Master_model->master_update($test_array, 'forwarded_tests', $where_tesf);
     }
         
         
@@ -1984,9 +1984,9 @@ public function user_profile()
                         'updated_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')));
                         
                 
-             $where['apply_id'] = $apply_id;
+             $whereapp['apply_id'] = $apply_id;
            
-            $this->Master_model->master_update($test_array, 'forwarded_jobs_cv', $where);
+            $this->Master_model->master_update($test_array, 'forwarded_jobs_cv', $whereapp);
 
             $job_apply_update =array('forword_job_status'=> 2,'is_test_done'=>1);
              $wherejob['job_apply_id'] = $apply_id;
