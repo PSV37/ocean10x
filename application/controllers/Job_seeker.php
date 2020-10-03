@@ -1953,8 +1953,8 @@ public function user_profile()
                         'updated_on' => date('Y-m-d'),
                         
                     );
-             $where['test_id'] = $test_id;
-             $where['job_seeker_id'] = $seeker_id;
+             $where = "test_id  ='$test_id' and job_seeker_id = '$seeker_id'";
+             // $where['job_seeker_id'] = $seeker_id;
             $this->Master_model->master_update($test_array, 'forwarded_tests', $where);
     }
         
