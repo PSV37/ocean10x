@@ -1817,6 +1817,8 @@ public function user_profile()
             $where_all = "oceanchamp_tests.status='1' AND  test_id = '$test_id'";
 
             $oceanchamp_tests = $this->Master_model->get_master_row('oceanchamp_tests', $select = FALSE, $where = $where_all, $join = FALSE);
+                  print_r($this->db->last_query());
+
 
             $all_questions = array();
            // foreach ($oceanchamp_tests as $question) {
@@ -1826,7 +1828,7 @@ public function user_profile()
                  
                 $questions = explode(',',$oceanchamp_tests['questions']);
                 
-             //    $i=0;
+             print_r($questions);
                 foreach ($questions as $row) {
              //     
                   $where = "questionbank.ques_id='$row'";
