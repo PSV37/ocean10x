@@ -1945,7 +1945,7 @@ public function user_profile()
         $last_id    = $this->Master_model->master_insert($exam_array, 'seeker_test_result');
     }
     $where_forward = "forwarded_tests.test_id='$test_id' and job_seeker_id = '$seeker_id'";
-    $forward_test = $this->Master_model->get_master_row('forwarded_tests', $select = FALSE, $where_forward , $join = FALSE)
+    $forward_test = $this->Master_model->get_master_row('forwarded_tests', $select = FALSE, $where_forward , $join = FALSE);
     if (!empty($forward_test)) {
         $test_array = array(
                         
