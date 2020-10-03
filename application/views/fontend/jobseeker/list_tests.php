@@ -1098,9 +1098,9 @@
               <strong> No Tests Available !</strong>
             </div>
             <?php endif; ?>
-          <!-- </div> -->
+          </div>
         </div>
-      </div>
+      <!-- </div> -->
       <div class="col-md-3 ">
         <div class="last_section">
           <div class="pai_chart">
