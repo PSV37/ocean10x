@@ -1279,7 +1279,39 @@
     </div>
   </div>
 </div>
-
+<?php $key = 1; if (!empty($ocean_tests)): foreach ($ocean_tests as $tests) : ?>
+<div class="modal" id="rotateModal<?php echo $tests['test_id'] ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="border-bottom:none;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Forward This Test</h5>
+      </div>
+      <form action="<?php echo base_url() ?>employer/forword_test" class="sendEmail" method="post" autocomplete="off">
+        <input type="hidden" name="test_id" id="test_id" value="<?php echo $tests['test_id']; ?>">
+        <input type="hidden" name="company_id" id="company_id" value="<?php echo $tests['company_id']; ?>">
+        <div class="modal-body" style="padding:15px 40px;">
+          <input type="hidden" name="consultant" value="JobSeeker">  
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <label class="mdl-textfield__label" for="sample3">E-mail</label>
+            <input type="email"  name="candiate_email"  id="email" placeholder="Enter comma seperated Emails"  id="subject" data-required="true" multiple style="display: inline-block;width: 100%;" required>
+          </div>
+          <input type="hidden" name="job_post_id" value="" id="auto-value">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-top:10px;">
+            <label class="mdl-textfield__label" for="sample3">Message:</label>
+            <textarea class="form-control" name="message" rows="5" id="comment" value="" required></textarea>
+          </div>
+          <input type="hidden" name="forward_job_email" id="forward_job_email" value="<?php echo $cv_row['js_email']; ?>">
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-save">Send</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<?php
+  endforeach;endif;?>
 <script>
   $(document).on('focus', '.select2-selection.select2-selection--single', function (e) {
   $(this).closest(".select2-container").siblings('select:enabled').select2('open');

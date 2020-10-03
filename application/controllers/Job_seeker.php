@@ -2584,7 +2584,7 @@ public function user_profile()
 
     public function get_test_details()
     {
-        $data['activemenu'] = 'ocean_bank';
+        $data['activemenu'] = 'ocean_champ';
         $this->session->set_userdata($data);
         $job_seeker_id = $this->session->userdata('job_seeker_id');
         $test_id = $this->input->post('test_id');
@@ -2604,6 +2604,108 @@ public function user_profile()
         $data['company_active_jobs'] = $this->job_posting_model->get_company_active_jobs($employer_id);
         // echo  $this->db->last_query(); die;
         $this->load->view('fontend/jobseeker/list_skills', $data);
+    }
+     public function forword_test() {
+        $employer_id = $this->input->post('company_id');
+        if ($_POST) {
+           
+            $candiate_email = $this->input->post('candiate_email');
+            $test_id = $this->input->post('test_id');
+            $job_desc = $this->input->post('message');
+            $email = explode(',', $candiate_email);
+            $where_req = "test_id= '$test'";
+            $join_req = array('topic' => 'topic.topic_id = oceanchamp_tests.topics');
+            $req_details = $this->Master_model->getMaster('oceanchamp_tests', $where_req, $join_req, $order = false, $field = false, $select_job = false, $limit = false, $start = false, $search = false);
+            for ($i = 0;$i < sizeof($email);$i++) {
+                $where_can = "email='$email[$i]'";
+                $can_data = $this->Master_model->getMaster('js_info', $where_can);
+                if ($can_data) {
+                    $seeker_id = $can_data[0]['job_seeker_id'];
+                } else {
+                    $new_JS_array = array('email' => $email[$i], 'js_token' => md5($email[$i]), 'create_at' => date('Y-m-d H:i:s'));
+                    $seeker_id = $this->Master_model->master_insert($new_JS_array, 'js_info');
+                }
+                $where_can = "email='$email[$i]'";
+                $can_data = $this->Master_model->getMaster('js_info', $where_can);
+                $where_cv = "js_email='$email[$i]' and company_id='$employer_id'";
+                $cv_data = $this->Master_model->getMaster('corporate_cv_bank', $where_cv);
+                if (empty($cv_data)) {
+                    $cv_array = array('company_id' => $employer_id, 'js_name' => $can_data[0]['full_name'], 'js_email' => $can_data[0]['email'], 'js_mobile' => $can_data[0]['mobile_no'], 'created_on' => date('Y-m-d'), 'created_by' => $employer_id);
+                    $add_cv = $this->Master_model->master_insert($cv_array, 'corporate_cv_bank');
+                    $cv_id = $add_cv;
+                } else {
+                    $cv_id = $cv_data[0]['cv_id'];
+                }
+                $test_array = array('job_seeker_id' => $seeker_id, 'company_id' => $employer_id, 'test_id' => $test_id, 'status' => 'Farwarded Test individually', 'updated_on' => date('Y-m-d'),);
+                $whereres = "job_seeker_id='$seeker_id' and company_id = '$employer_id' and test_id = '$test_id'";
+                $test_data = $this->Master_model->get_master_row('
+                        forwarded_tests', $select = FALSE, $whereres);
+                if (empty($test_data)) {
+                    $frwd = $this->Master_model->master_insert($test_array, 'forwarded_tests');
+                }
+                if ($req_details) {
+                    foreach ($req_details as $require) {
+                    }
+                }
+                //     $external_array = array(
+                //     'cv_id' => $cv_id,
+                //     'company_id' => $employer_id,
+                //     'job_post_id' => $job_post_id,
+                //     'apply_id' => $apply,
+                //     'status' => 1,
+                //     'company_id' => $employer_id,
+                //     'name' => $can_data[0]['full_name'],
+                //     'email' => $can_data[0]['email'],
+                //     'mobile' => $can_data[0]['mobile_no'],
+                //   'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),
+                // );
+                // $frwd = $this->Master_model->master_insert($external_array, 'external_tracker');
+                //     $frwd_array = array(
+                //     'cv_id' => $cv_id,
+                //     'company_id' => $employer_id,
+                //     'job_post_id' => $job_post_id,
+                //     'apply_id' => $apply,
+                //     'status' => 1,
+                //     'created_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes')),
+                // );
+                //      $frwd = $this->Master_model->master_insert($frwd_array, 'forwarded_jobs_cv');
+                if ($frwd) {
+                    $email_name = explode('@', $email[$i]);
+                    $company_name = $this->session->userdata('company_name');
+                    $subject = $company_name . ' has asked you to take a ' . $require['topic_name'] . ' Test ';
+                    $message = '
+                                <style>
+                                    .btn-primary{
+                                        width: 232px;
+                                        color: #fff;
+                                        text-align: center;
+                                        margin: 0 0 0 5%;
+                                        background-color: #6495ED;
+                                        padding: 5px;
+                                        text-decoration: none;
+                                    }
+                                
+                                </style>
+                            <div style="max-width:600px!important;padding:4px"><table style="padding:0 45px;width:100%!important;padding-top:45px;border:1px solid #f0f0f0;background-color:#ffffff" align="center" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="center">
+                            <table width="100%" cellspacing="0" border="0"><tbody><tr><td style="font-size:0px;text-align:left" valign="top"></td></tr></tbody></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr style="font-size:16px;font-weight:300;color:#404040;line-height:26px;text-align:left"><td>
+                            <a href="#"><img src="' . base_url() . 'upload/' . $require['company_logo'] . '" style="height: 50px;"> </a>
+                            <br><br>Hi ' . $email_name[0] . ',<br>';
+                    $message.= '<br/><b>' . $company_name . '</b> has asked you to take a test. Kindly click on the Test URL give below and follow the steps thereon. <br><br>
+                        <a href="' . base_url() . 'job_seeker/ocean_test_start/' . base64_encode($test_id) . '"><button >Give Test</button></a><br><br><br></td></tr><tr><td height="40"></td></tr></tbody></table></td></tr></tbody></table><br><br>
+                        Regards,<br><br>Team TheOcean.</div>';
+                    $send = sendEmail_JobRequest($email[$i], $message, $subject);
+                    //echo $send;
+                    // echo $message;
+                    $company_name = $this->session->userdata('company_name');
+                    $data = array('company' => $company_name, 'action_taken_for' => $email[$i], 'field_changed' => 'Forwarded Job ', 'Action' => $company_name . ' Forwarded job for the position of ' . $require['job_title'], 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
+                }
+                // else{
+                //     redirect('employer/active_job');
+                // }
+                
+            }
+        }
+        redirect('job_seeker/ocean_champ');
     }
 
 } //end function
