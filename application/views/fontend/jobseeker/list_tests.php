@@ -1041,16 +1041,15 @@
                     <div class="clear"></div>
                   </div>
                   
-                 <!--   <div class="btn-group"></div>
+                   <div class="btn-group"></div>
                  <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
                 </button>
                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1" style="top:47px;">
-                    <li ><a class="dropdown-item" href="#" id="div_frwrd" data-toggle="modal" data-target="#rotateModal<?php echo $tests['test_id'] ?>" >Forward This Test</a></li>
-                    <li ><a class="dropdown-item" href="#" id="attach_to_job" data-toggle="modal" data-target="#attach_to_job<?php echo $tests['test_id'] ?>" >Attach To Job Post</a></li>
-                    <li> <a class="dropdown-item"  href="#" data-toggle="modal" data-target="#edit_test<?php echo $tests['test_id'] ?>" >Edit Test Parameters</a></li>
-                    <li><a class="dropdown-item" class="dropdown-item" href="#"  data-toggle="modal" data-target="#move_cv" href="#">Move this CV</a></li> 
-                  </div> -->
+                     <li ><a class="dropdown-item" href="#" id="div_frwrd" data-toggle="modal" data-target="#rotateModal<?php echo $tests['test_id'] ?>" >Forward This Test</a></li>
+                    <?php $test_id = $tests['test_id'];  ?>
+                    <li > <a style="margin-left: 15px" title="Give test" href="<?php echo base_url() ?>job_seeker/ocean_test_start/<?php echo base64_encode($test_id) ?>/<?php echo base64_encode($apply_id); ?>/<?php echo $singlejob->job_post_id ?>" >Give test</a></li>
+                  </div>
                   <?php  
                     $test_id =$tests['test_id'];
                     $employer_id = $this->session->userdata('company_profile_id');
@@ -1278,8 +1277,9 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Forward This Test</h5>
       </div>
-      <form action="<?php echo base_url() ?>employer/forword_test" class="sendEmail" method="post" autocomplete="off">
+      <form action="<?php echo base_url() ?>job_seeker/forword_test" class="sendEmail" method="post" autocomplete="off">
         <input type="hidden" name="test_id" id="test_id" value="<?php echo $tests['test_id']; ?>">
+         <input type="hidden" name="company_id" id="company_id" value="<?php echo $tests['company_id']; ?>">
         <div class="modal-body" style="padding:15px 40px;">
           <input type="hidden" name="consultant" value="JobSeeker">  
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
