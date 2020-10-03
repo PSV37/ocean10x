@@ -1794,8 +1794,8 @@ public function user_profile()
         // print_r($test_id);
         // print_r($job_post_id);die;
         $job_apply = $this->job_apply_model->check_apply_job($job_seeker_id, $company_id, $job_post_id);
-        print_r($job_apply);
-        $this->db->last_query();die;
+        // print_r($job_apply);
+        //  print_r($this->db->last_query());die;
         
         if ($job_apply) {
             $where = "job_seeker_id='$job_seeker_id' and company_id = '$company_id' and job_post_id = '$job_post_id'";
