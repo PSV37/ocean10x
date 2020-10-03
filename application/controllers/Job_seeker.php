@@ -2002,9 +2002,8 @@ public function user_profile()
                         'updated_on' => date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'))
                         
                     );
-             $where_ex['test_id'] = $test_id;
-             $where_ex['job_seeker_id'] = $seeker_id;
-            $this->Master_model->master_update($update_array, 'external_tracker', $where_ex);
+            
+            $this->Master_model->master_update($update_array, 'external_tracker', $wherejob);
             $join =array('job_apply' => 'job_apply.job_post_id = external_tracker.job_post_id');
             $where_cond = "external_tracker.apply_id = '$apply_id'";
             $total_ranks = $this->Master_model->getMaster('external_tracker',  $where_cond, $join , $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
