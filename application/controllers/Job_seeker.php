@@ -1790,7 +1790,7 @@ public function user_profile()
         $test_id           = base64_decode($test_id);
         $apply_id           = base64_decode($apply_id);
         $singlejob    = $this->job_posting_model->get_job_details_employer($forward_applicaiton->job_post_id);
-        $company_id = $singlejob->company_id;
+        $company_id = $singlejob->company_profile_id;
         // print_r($test_id);
         // print_r($job_post_id);die;
         $job_apply = $this->job_apply_model->check_apply_job($jobseeker_id, $company_id, $job_post_id);
