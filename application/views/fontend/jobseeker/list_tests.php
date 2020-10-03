@@ -1093,9 +1093,9 @@
                 endforeach;  
               ?>     
             <?php else : ?> 
-            <li colspan="3">
-              <strong> No Tests Created. Click on "Create A Test" !</strong>
-            </li>
+            <div>
+              <strong> No Tests Available !</strong>
+            </div>
             <?php endif; ?>
           </div>
         </div>
