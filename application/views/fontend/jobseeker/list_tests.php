@@ -1088,6 +1088,7 @@
                 </div>
               </div>
             </label>
+          </div>
             <?php
               $key++;
                 endforeach;  
@@ -1097,7 +1098,7 @@
               <strong> No Tests Available !</strong>
             </div>
             <?php endif; ?>
-          </div>
+          <!-- </div> -->
         </div>
       </div>
       <div class="col-md-3 ">
