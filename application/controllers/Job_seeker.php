@@ -2562,6 +2562,43 @@ public function user_profile()
         // echo  $this->db->last_query(); die;
         $this->load->view('fontend/jobseeker/list_skills', $data);
     }
+    function search_test_keywords() {
+      
+        if (isset($_GET['term'])) {
+            $result = $this->job_posting_model->search_test_keywords($_GET['term']);
+            if (count($result) > 0) {
+                $i = 0;
+                foreach ($result as $row) $arr_result[$i]['label'] = $row->test_name;
+                $arr_result[$i]['value'] = $row->test_id;
+                $i++;
+                echo json_encode($arr_result);
+            }
+        }
+    }
+
+    public function get_test_details()
+    {
+        $data['activemenu'] = 'ocean_bank';
+        $this->session->set_userdata($data);
+        $job_seeker_id = $this->session->userdata('job_seeker_id');
+        $test_id = $this->input->post('test_id');
+        // $join = array('oceanchamp_tests'=>'oceanchamp_tests.test_id = forwarded_tests.test_id');
+        $where = "oceanchamp_tests.status='1' AND oceanchamp_tests.test_id='$test_id' ";
+        $data['ocean_tests'] = $this->Master_model->getMaster('forwarded_tests', $where = $where, $join = false , $order = 'desc', $field = 'forwarded_tests.id', $select = false, $limit = false, $start = false, $search = false);
+        $where_cn = "status=1";
+        $data['skill_master'] = $this->Master_model->getMaster('skill_master', $where_cn);
+        //$where_opt= "options.status=1";
+        $data['options'] = $this->Master_model->getMaster('options');
+        $where_state = "topic.topic_status=1";
+        $data['topic'] = $this->Master_model->getMaster('topic', $where_state);
+        $where_subtopic = "subtopic.subtopic_status='1'";
+        $data['subtopic'] = $this->Master_model->getMaster('subtopic', $where_subtopic);
+        $where_lineitem = "lineitem.lineitem_status='1'";
+        $data['lineitem'] = $this->Master_model->getMaster('lineitem', $where_lineitem);
+        $data['company_active_jobs'] = $this->job_posting_model->get_company_active_jobs($employer_id);
+        // echo  $this->db->last_query(); die;
+        $this->load->view('fontend/jobseeker/list_skills', $data);
+    }
 
 } //end function
 

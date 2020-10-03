@@ -936,6 +936,16 @@ public function get_all_company_by_banksbook()
         return $this->db->get('job_posting')->result();
     }
 
+    function search_test_keywords($title){
+        $this->db->select("test_name,test_id");
+
+        $this->db->like('test_name', $title , 'both');
+        $this->db->order_by('test_name', 'ASC');
+         // $this->db->where('company_profile_id', $employer_id);
+
+        return $this->db->get('oceanchamp_tests')->result();
+    }
+
     function search_candidate($title,$employer_id){
         $this->db->select("cv_id,js_email");
 
