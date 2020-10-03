@@ -168,12 +168,13 @@ class Job extends MY_Fontend_Controller
 
 
                 $wherejob = "job_post_id='$job_post_id' AND company_profile_id='$company_id'";
-                $select_test = "is_test_required,job_post_id,company_profile_id";
+                $select_test = "is_test_required,job_post_id,company_profile_id,test_for_job";
               
                 $data['job_test'] = $this->Master_model->getMaster('job_posting',$wherejob,$join = FALSE, $order = false, $field = false, $select_test = false,$limit=false,$start=false, $search=false);
                    $test = $this->input->post('test_option');
+                   $test_id = $data['job_test'][0]['test_for_job'];
                    if ($test == 'Y') {
-                       redirect('job_seeker/ocean_test_start/'.base64_encode($job_post_id).' /'.base64_encode($job_apply_id));
+                       redirect('job_seeker/ocean_test_start/'.base64_encode($test_id).' /'.base64_encode($job_apply_id));
                     }
                     else{
                         redirect('job_seeker/oceanhunt_activities');
