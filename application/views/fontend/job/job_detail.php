@@ -27,17 +27,17 @@ if ($company_profile_id != null) {
 ?>
 <style>
   .card {
-  position: relative;
-  height: auto;
-  width: 100%;
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  -webkit-transition: all 600ms;
-  transition: all 600ms;
-  border-radius:13px;
-  padding:0px;
-  margin-top:75px;
-  }
+    position: relative;
+    height: auto;
+    width: 100%;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: all 600ms;
+    transition: all 600ms;
+    border-radius: 13px;
+    padding: 0px;
+    margin-top: 100px;
+}
   .card div {
   background: #FFF;
   -webkit-backface-visibility: hidden;
