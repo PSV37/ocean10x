@@ -1817,7 +1817,7 @@ public function user_profile()
             $where_all = "oceanchamp_tests.status='1' AND  test_id = '$test_id'";
 
             $oceanchamp_tests = $this->Master_model->get_master_row('oceanchamp_tests', $select = FALSE, $where = $where_all, $join = FALSE);
-                  print_r($this->db->last_query());
+                  // print_r($this->db->last_query());
 
 
             $all_questions = array();
@@ -1828,7 +1828,7 @@ public function user_profile()
                  
                 $questions = explode(',',$oceanchamp_tests['questions']);
                 
-             print_r($questions);
+             // print_r($questions);
                 foreach ($questions as $row) {
              //     
                   $where = "questionbank.ques_id='$row'";
@@ -1839,7 +1839,7 @@ public function user_profile()
             );
             
                   $question_data  = $this->Master_model->get_master_row('questionbank', $select = 'questionbank.question,JSON_OBJECT("a",questionbank.option1,"b",questionbank.option2,"c",questionbank.option3,"d",questionbank.option4 ) as answers,time_for_question,questionbank_answer.answer_id as correctAnswer', $where, $join = $Join_data);
-                  print_r($this->db->last_query());die;
+                  // print_r($this->db->last_query());die;
                     $resultArray['question'] = $question_data['question'];
                     $resultArray['time_for_question'] = $question_data['time_for_question'];
                     if ($question_data['correctAnswer']==1) {
