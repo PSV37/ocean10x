@@ -2568,9 +2568,11 @@ public function user_profile()
             $result = $this->job_posting_model->search_test_keywords($_GET['term']);
             if (count($result) > 0) {
                 $i = 0;
-                foreach ($result as $row) $arr_result[$i]['label'] = $row->test_name;
+                foreach ($result as $row)
+                { $arr_result[$i]['label'] = $row->test_name;
                 $arr_result[$i]['value'] = $row->test_id;
                 $i++;
+                }
                 echo json_encode($arr_result);
             }
         }

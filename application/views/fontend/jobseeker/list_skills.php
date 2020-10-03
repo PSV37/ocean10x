@@ -935,9 +935,9 @@
          
         </div>
          <div class="col-md-6">
-                  <form class="navbar-form" role="search" action="<?php echo base_url(); ?>job_seeker/get_test_details">
+                  <form id="test_form" class="navbar-form" role="search" action="<?php echo base_url(); ?>job_seeker/get_test_details">
                     
-                     <input type="text" id="test_name" class="form-control" placeholder="Test Name" style="width: 100%">
+                     <input type="text" id="test_name" class="form-control" placeholder="Test Name" onchange="submit_form();" style="width: 100%">
                       <input type="hidden" name="test_id" value="" id="test_id-value">
                   </form>
                   <div class="clear"></div>
@@ -1557,6 +1557,10 @@
   
 </script>
 <script>
+  function submit_form()
+  {
+    $('#test_form').click();
+  }
   $("#job_titles").autocomplete({
                
                source: "<?php echo base_url();?>Employer/search_job_keywords",
