@@ -698,7 +698,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             $this->load->view('fontend/employer/change_password');
         }
     }
-    public function active_job() {
+    public function active_job($sort_val=NULL) {
         $this->session->unset_userdata('submenu');
         $this->session->unset_userdata('activesubmenu');
         $this->session->unset_userdata('activemenu');
@@ -706,7 +706,10 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $this->session->set_userdata($data);
         $data['employer_id'] = $this->session->userdata('company_profile_id');
         $employer_id = $data['employer_id'];
-        $sort_val = $this->input->post('sort_val');
+        if (empty($sort_val)) {
+            $sort_val = $this->input->post('sort_val');
+        }
+       
         // $company_active_jobs = $this->job_posting_model->get_company_active_jobs($employer_id);
         $where = "job_status = '1' and company_profile_id = '$employer_id'";
         $join = array('job_nature'=>'job_nature.job_nature_id=job_posting.job_nature',
@@ -715,7 +718,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             'education_level'=>'education_level.education_level_id=job_posting.job_edu');
         $select = "job_posting.*,job_nature.*,job_category.*,job_role.*,education_level.*,job_posting.created_at as posting_date";
         $jobs = $this->Master_model->getMaster('job_posting', $where , $join , $order = 'desc', $field = 'job_post_id', $select ,$limit=false,$start=false, $search=false);
-        $config['base_url'] = base_url() . 'employer/active_job';
+        $config['base_url'] = base_url() . 'employer/active_job'.$sort_val;
             $config['total_rows'] = sizeof($jobs);
             $config['per_page'] = 5;
             $config['attributes'] = array('class' => 'myclass');
