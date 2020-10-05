@@ -6310,6 +6310,41 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         }
        
     }
+    public function show_test_details($test=Null)
+    {
+        $test_id = base64_decode($test);
+        $this->session->unset_userdata('submenu');
+        $this->session->unset_userdata('activesubmenu');
+        $this->session->unset_userdata('activemenu');
+        $data['activemenu'] = 'test_papers';
+        $this->session->set_userdata($data);
+
+        $sort_val = $this->input->post('sort_val');
+
+        $employer_id = $this->session->userdata('company_profile_id');
+
+        $where = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id' and test_id = '$test_id' GROUP by oceanchamp_tests.test_id";
+  
+       
+        $join = array("topic" => "find_in_set(topic.topic_id, oceanchamp_tests.topics)");
+        $data['ocean_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where = $where, $join , $order = 'desc', $field = 'oceanchamp_tests.test_id', $select = '*,group_concat(topic.topic_name) as topic_names', $limit = false, $start = false, $search = false);
+            $where_cn = "status=1";
+       
+            $data['company_active_jobs'] = $this->job_posting_model->get_company_active_jobs($employer_id);
+            if ($data['ocean_tests'][0]['test_status'] == '3') {
+                $this->load->view('fontend/employer/list_tests', $data);
+            }
+            else
+            {
+                  $data['submenu'] = $data['ocean_tests'][0]['test_status'];
+                $this->session->set_userdata($data);
+                  $this->load->view('fontend/employer/list_questions', $data);
+            }
+        
+      
+      
+      
+    }
 }
 ?>
 
