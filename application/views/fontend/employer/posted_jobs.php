@@ -1152,10 +1152,10 @@ button.btn.btn-primary.trash {
    <br><br>
    <div id="job_trash">
    <?php if (!empty($company_active_jobs)): foreach ($company_active_jobs as $v_companyjobs) : ?>
-   <label class="checkbox_label">
+   <label class="checkbox_label content">
       <div class="border-top1"></div>
       <input type="checkbox" id='posted_job' class="posted_job" onchange="get_report_data(<?php echo $v_companyjobs['job_post_id'] ?>)" />
-      <div class="card content">
+      <div class="card">
          <div class="front">
 
 
