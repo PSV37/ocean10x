@@ -6331,7 +6331,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $where_cn = "status=1";
        
             $data['company_active_jobs'] = $this->job_posting_model->get_company_active_jobs($employer_id);
-            print_r($data['ocean_tests'][0]['test_status']);die;
+            print_r($this->db->last_query());
+            print_r($data['ocean_tests'][0]);die;
             if ($data['ocean_tests'][0]['test_status'] == '3') {
                 $this->load->view('fontend/employer/list_tests', $data);
             }
