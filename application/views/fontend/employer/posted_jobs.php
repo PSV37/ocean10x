@@ -1049,6 +1049,36 @@ button.btn.btn-primary.trash {
 <!-- <div class="panel-body"></div> -->
 <div class="col-md-6 active-job">
    <div id="smsg"> <?php echo $this->session->flashdata('success'); ?></div>
+   <div class="row">
+               <div class="col-md-6">
+                  <form class="navbar-form" role="search">
+                    
+                     <input type="text" id="myInput" class="form-control" placeholder="Subject | Topic | Answer Time" style="width: 100%">
+                    
+                  </form>
+                  <div class="clear"></div>
+               </div>
+              <div class="col-md-4">
+              <form method="post" action="<?php echo base_url(); ?>employer/all_questions">
+              <label class="dropdown">
+                <div class="dd-button" onclick="myFunction2(event)">
+                  Sort by
+                </div>
+                <input type="checkbox" class="dd-input" id="test">
+                <ul id="sizelist" class="dd-menu">
+                  <li data-value="skill_name" ><a href="#">Subject</a></li>
+                  <li data-value="level"><a href="#">Level</a></li>
+                  <li data-value="time_for_question"><a href="#">Time</a></li>
+                  <li data-value="topic_name"><a href="#">Topics</a></li>
+                </ul>
+              </label>
+              <input id="sizevalue" value="<?php if(isset($sort))
+              {echo $sort; } ?>" size="15" name="sort_val" type="hidden" />
+              <button type="submit" name="sort" class="hidden" id="sort_btn"></button>
+            </form>
+              </div>
+             
+          </div>
     <a href="#" onclick="get_trash();"><button class="btn btn-primary trash" ><i class="fas fa-trash-alt" ></i> Trash</button></a>
    <br><br>
    <div id="job_trash">
