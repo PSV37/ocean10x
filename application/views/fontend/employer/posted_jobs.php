@@ -1122,7 +1122,7 @@ button.btn.btn-primary.trash {
                <div class="col-md-6">
                   <form class="navbar-form" role="search">
                     
-                     <input type="text" id="myInput" class="form-control" placeholder="Subject | Topic | Answer Time" style="width: 100%">
+                     <input type="text" id="myInput" class="form-control" placeholder="Name | Role | Domain" style="width: 100%">
                     
                   </form>
                   <div class="clear"></div>
@@ -1729,6 +1729,7 @@ function get_trash()
     
             
            }); 
+
    });
 </script>
 <script>
