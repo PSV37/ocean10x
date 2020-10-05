@@ -706,6 +706,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         $this->session->set_userdata($data);
         $data['employer_id'] = $this->session->userdata('company_profile_id');
         $employer_id = $data['employer_id'];
+        $sort_val = $this->input->post('sort_val');
         // $company_active_jobs = $this->job_posting_model->get_company_active_jobs($employer_id);
         $where = "job_status = '1' and company_profile_id = '$employer_id'";
         $join = array('job_nature'=>'job_nature.job_nature_id=job_posting.job_nature',
@@ -748,7 +749,14 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             }
             $this->pagination->initialize($config);
              $data["links"] = $this->pagination->create_links();
-        $data['company_active_jobs'] = $this->Master_model->getMaster('job_posting', $where , $join , $order = 'desc', $field = 'job_post_id', $select,$limit=$config['per_page'],$start=$page, $search=false);
+             if (isset($sort_val)) {
+                $data['company_active_jobs'] = $this->Master_model->getMaster('job_posting', $where , $join , $order = 'desc', $field = $sort_val, $select,$limit=$config['per_page'],$start=$page, $search=false);
+             }
+             else
+             {
+                $data['company_active_jobs'] = $this->Master_model->getMaster('job_posting', $where , $join , $order = 'desc', $field = 'job_post_id', $select,$limit=$config['per_page'],$start=$page, $search=false);
+             }
+        
         $this->load->view('fontend/employer/posted_jobs', $data);
     }
     public function pending_job() {

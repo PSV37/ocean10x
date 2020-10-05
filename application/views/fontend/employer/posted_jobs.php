@@ -1119,7 +1119,7 @@ button.btn.btn-primary.trash {
 <div class="col-md-6 active-job">
    <div id="smsg"> <?php echo $this->session->flashdata('success'); ?></div>
    <div class="row">
-               <div class="col-md-6">
+               <div class="col-md-8">
                   <form class="navbar-form" role="search">
                     
                      <input type="text" id="myInput" class="form-control" placeholder="Name | Role | Domain" style="width: 100%">
@@ -1128,15 +1128,15 @@ button.btn.btn-primary.trash {
                   <div class="clear"></div>
                </div>
               <div class="col-md-4">
-              <form method="post" action="<?php echo base_url(); ?>employer/all_questions">
+              <form method="post" action="<?php echo base_url(); ?>employer/active-job">
               <label class="dropdown">
                 <div class="dd-button" onclick="myFunction2(event)">
                   Sort by
                 </div>
                 <input type="checkbox" class="dd-input" id="test">
                 <ul id="sizelist" class="dd-menu">
-                  <li data-value="skill_name" ><a href="#">Subject</a></li>
-                  <li data-value="level"><a href="#">Level</a></li>
+                  <li data-value="job_title" ><a href="#">Job Title</a></li>
+                  <li data-value="job_role_title"><a href="#">Job Role</a></li>
                   <li data-value="time_for_question"><a href="#">Time</a></li>
                   <li data-value="topic_name"><a href="#">Topics</a></li>
                 </ul>
