@@ -756,7 +756,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
              {
                 $data['company_active_jobs'] = $this->Master_model->getMaster('job_posting', $where , $join , $order = 'desc', $field = 'job_post_id', $select,$limit=$config['per_page'],$start=$page, $search=false);
              }
-        
+        $data['sort'] = $sort_val;
         $this->load->view('fontend/employer/posted_jobs', $data);
     }
     public function pending_job() {
