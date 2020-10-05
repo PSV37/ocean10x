@@ -712,11 +712,11 @@ button.btn.btn-primary.trash {
               $apply_id=$apply['job_apply_id'];
               $test_id = $singlejob->test_for_job;
               ?>
-              <a style="margin-left: 15px" title="Give test" href="<?php echo base_url() ?>job_seeker/ocean_test_start/<?php echo base64_encode($test_id) ?>/<?php echo base64_encode($apply_id); ?>/<?php echo $singlejob->job_post_id ?>" ><i class="fa fa-file-text" aria-hidden="true"></i></a>
+              <a style="margin-left: 15px" title="Give test" href="<?php echo base_url() ?>job_seeker/ocean_test_start/<?php echo base64_encode($test_id) ?>/<?php echo base64_encode($apply_id); ?>/<?php echo $singlejob->job_post_id ?>" ><lable class="">Start Test<button id="sklbtn"><i class="fa fa-file-text" aria-hidden="true"></i></button></lable></a>
             <?php } ?></li>
              <li class="left-title">JD attached&nbsp;<i class="fas fa-link"></i></li>
 
-               <li class="right-title">&nbsp;: <?php if (isset($singlejob->jd_file) && !empty($singlejob->jd_file)) { echo "Yes"; ?>  <a style="margin-left: 15px" href="<?php echo base_url() ?>upload/job_description/<?php echo $singlejob->jd_file; ?>" download> <lable class="">Start Test<button id="sklbtn"><i class="fa fa-download" aria-hidden="true"></i></button></lable></a> <?php } else { echo "No";} ?></li>
+               <li class="right-title">&nbsp;: <?php if (isset($singlejob->jd_file) && !empty($singlejob->jd_file)) { echo "Yes"; ?>  <a style="margin-left: 15px" href="<?php echo base_url() ?>upload/job_description/<?php echo $singlejob->jd_file; ?>" download> <i class="fa fa-download" aria-hidden="true"></i></a> <?php } else { echo "No";} ?></li>
               
                <li class="left-title">Job expiry</li>
                <li class="right-title">&nbsp;:<?php if(!is_null($singlejob->job_deadline)) { echo date('j M Y',strtotime($singlejob->job_deadline)); } ?></li>
