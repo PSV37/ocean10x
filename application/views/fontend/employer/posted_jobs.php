@@ -1117,7 +1117,7 @@ button.btn.btn-primary.trash {
                   <sup><span title="Marked yes but test is not attached" class="required">*</span></sup>
              <?php  } elseif ($v_companyjobs['is_test_required'] == 'Yes' && !empty($v_companyjobs['test_for_job'])) { ?>
                <a style="margin-left: 15px" title="start test" href="<?php echo base_url() ?>employer/show_test_details/<?php echo base64_encode($v_companyjobs['test_for_job']); ?>/" >Yes</i></a>
-            <?php }else{echo $v_companyjobs['is_test_required']; ?>} ?></li>
+            <?php }else{echo $v_companyjobs['is_test_required']; } ?> </li>
              <li class="left-title">JD attached&nbsp;<i class="fas fa-link"></i></li>
 
                <li class="right-title">&nbsp;: <?php if (isset($v_companyjobs['jd_file']) && !empty($v_companyjobs['jd_file'])) { echo "Yes"; ?>  <a style="margin-left: 15px" href="<?php echo base_url() ?>upload/job_description/<?php echo $v_companyjobs['jd_file']; ?>" download><i class="fa fa-download" aria-hidden="true"></i></a> <?php } else { echo "No";} ?></li>
