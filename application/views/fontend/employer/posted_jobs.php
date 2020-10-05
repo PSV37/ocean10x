@@ -1041,6 +1041,75 @@ button.btn.btn-primary.trash {
     margin-bottom: 20px;
     margin-top: 30px;
 }
+.dropdown {
+  display: inline-block;
+  position: relative;
+  }   
+  .dd-button {
+  display: inline-block;
+  border: 1px solid #dedede;
+  border-radius: 4px;
+  padding: 5px 30px 5px 20px;
+  background-color:#cde4f5;
+  cursor: pointer;
+  white-space: nowrap;
+  border-radius: 33px;
+  color:#848484;
+  font-size:12px;
+  }
+  .dd-button:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  width: 0; 
+  height: 0; 
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #6f6b6b;
+  }
+  .dd-button:hover {
+  background-color: #eeeeee;
+  }
+  .dd-input {
+  display: none;
+  }
+  .dd-menu {
+  position: absolute;
+  top: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0;
+  margin: 2px 0 0 0;
+  box-shadow: 0 0 6px 0 rgba(0,0,0,0.1);
+  background-color: #ffffff;
+  list-style-type: none;
+  }
+  .dd-input + .dd-menu {
+  display: none;
+  } 
+  .dd-input:checked + .dd-menu {
+  display: block;
+  z-index:999;
+  } 
+  .dd-menu li {
+  padding: 10px 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  }
+  .dd-menu li:hover {
+  background-color: #f6f6f6;
+  }
+  .dd-menu li a {
+  display: block;
+  margin: -10px -20px;
+  padding: 10px 20px;
+  }
+  .dd-menu li.divider{
+  padding: 0;
+  border-bottom: 1px solid #cccccc;
+  }
 </style>
 <div class="container-fluid main-d">
 <div class="container">
@@ -1719,6 +1788,39 @@ function get_trash()
    
    
     
+   
+   
+</script>
+ <script>
+    $("#sizelist").on("click", "a", function(e){
+  e.preventDefault();
+  var $this = $(this).parent();
+  $this.addClass("select").siblings().removeClass("select");
+  $("#sizevalue").val($this.data("value"));
+  $( "#sort_btn" ).click();
+  $( "#test" ).click();
+  })
+   $(document).ready(function(){
+   
+    $('#myInput').keyup(function(){
+    
+     // Search text
+     var text1 = $(this).val();
+    var text = text1.toUpperCase();
+   
+     $('.content').hide();
+   
+     // Search and show
+     $('.content:contains("'+text+'")').show();
+    
+    });
+   
+   });
+   $.expr[":"].contains = $.expr.createPseudo(function(arg) {
+   return function( elem ) {
+   return $(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
+   };
+   });
    
    
 </script>
