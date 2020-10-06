@@ -777,9 +777,10 @@ button.btn.btn-primary.trash {
               </div>
                <br>       
             <a title="details" href=" <?php echo base_url(); ?>job/show/<?php echo $forward_applicaiton->job_slugs; ?>"><i class="fa fa-info-circle icon_backg"></i></a>
+             <a title="apply" href=" <?php echo base_url(); ?>job/show/<?php echo $forward_applicaiton->job_slugs; ?>"> <lable class=""><button id="sklbtn">Apply</button></lable></a>
             <div class="btn-group">
                         <!-- <a title="Edit" href=" <?php echo base_url() ?>employer/update_job/<?php echo $singlejob->job_post_id ?>"><i class="far fa-edit icon_backg"></i></a> -->
-                        <a title="Delete" href="<?php echo base_url('employer/deactivate_job/' . $singlejob->job_post_id); ?>"><i class="fas fa-trash-alt icon_backg"></i></a>
+                        <!-- <a title="Delete" href="<?php echo base_url('employer/deactivate_job/' . $singlejob->job_post_id); ?>"><i class="fas fa-trash-alt icon_backg"></i></a> -->
                      </div>
 
             <?php  if ($singlejob->job_deadline > date('Y-m-d')){
@@ -1043,7 +1044,7 @@ button.btn.btn-primary.trash {
               </div>
                <br>       
             <a title="details" href=" <?php echo base_url(); ?>job/show/<?php echo $forward_applicaiton->job_slugs; ?>"><i class="fa fa-info-circle icon_backg"></i></a>
-             <a title="details" href=" <?php echo base_url(); ?>job/show/<?php echo $forward_applicaiton->job_slugs; ?>"> <lable class=""><button id="sklbtn">Apply</button></lable></a>
+             <a title="apply" href=" <?php echo base_url(); ?>job/show/<?php echo $forward_applicaiton->job_slugs; ?>"> <lable class=""><button id="sklbtn">Apply</button></lable></a>
             <div class="btn-group">
                         <!-- <a title="Edit" href=" <?php echo base_url() ?>employer/update_job/<?php echo $singlejob->job_post_id ?>"><i class="far fa-edit icon_backg"></i></a> -->
                         <!-- <a title="Delete" href="<?php echo base_url('employer/deactivate_job/' . $singlejob->job_post_id); ?>"><i class="fas fa-trash-alt icon_backg"></i></a> -->

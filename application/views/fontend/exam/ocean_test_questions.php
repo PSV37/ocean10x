@@ -901,7 +901,6 @@ input[type="radio"] {
                     <div id="skip">
                         
                   </div>
-                  <form id="nextques" class="submit-form" action="<?php echo base_url();?>job_seeker/insert_test_data" method="post">
                   <div class="quizArea">
                      <div class="multipleChoiceQues">
                         <div id="app"></div>
@@ -910,7 +909,7 @@ input[type="radio"] {
                            <p id="my-progress-completion" class="js-my-progress-completion sr-only" aria-live="polite">0% complete</p>
                         </div>
                         <div class="quizBox">
-                          
+                          <form id="nextques" class="submit-form" action="<?php echo base_url();?>job_seeker/insert_test_data" method="post">
 
                               <input type="hidden" name="test_id" value="<?php echo($test_id); ?>">
                               <input type="hidden" name="apply_id" value="<?php echo($apply_id); ?>">
@@ -918,11 +917,6 @@ input[type="radio"] {
                               <div class="quiz-container">
                                 <div id="quiz"></div>
                               </div>
-                           
-                   </div>
-                  </div>
-                  </div>
-                     <div>
                               <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['previous_option'] == 'Y') { ?>
                               <button type="button" id="previous">Previous Question</button>
                         <? } ?>
@@ -930,13 +924,15 @@ input[type="radio"] {
                               <button id="submit">Submit Quiz</button>
                               <div id="results"></div>
                                <div id="total_performance">
-                               </div>
-                         </div>
-            </form>
-              
+                        
+                  </div>
+                     </form>
+                        </div>
+                     </div>
+                    
 
 
-               
+                  </div>
                 
                   <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['review_option'] == 'Y') { ?>
                       
@@ -950,7 +946,17 @@ input[type="radio"] {
                  
                </div>
               <script>
-                    
+              function removeTags(str) { 
+    if ((str===null) || (str==='')) 
+        return false; 
+    else
+        str = str.toString(); 
+          
+    // Regular expression to identify HTML tags in  
+    // the input string. Replacing the identified  
+    // HTML tag with a null string. 
+    return str.replace( /(<([^>]+)>)/ig, ''); 
+}      
 // (function(){
   // Functions
   function buildQuiz(){
@@ -976,8 +982,8 @@ input[type="radio"] {
           answers.push(
             `<label>
               <input type="radio" onclick="get_checked(${questionNumber});" style="display:block;" name="question${questionNumber}" value="${letter}">
-              ${letter} :${currentQuestion.answers[letter]}
-            </label>
+              ${letter} :`removeTags(`${currentQuestion.answers[letter]}`)
+            `</label>
             `
           );
         }
