@@ -1,11 +1,9 @@
   <!---header-->
-  
-      <?php  $this->load->view('fontend/layout/new_seeker_header.php'); ?>
-
+      <?php  $this->load->view('fontend/layout/employer_new_header.php'); ?>
       <!---header--->
       <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/oceanchamp_exp.css">
    <style>
-   /*small*/
+      /*small*/
       .base-timer {
       position: relative;
       width: 60px;
@@ -874,13 +872,14 @@ input[type="radio"] {
   height: 200px;
   margin-top: 40px;
 }
+
    </style>
    <body>
     
       <div class="container-fluid main-d">
          <div class="container">
             <div class="col-md-12">
-               <?php $this->load->view('fontend/layout/seeker_left_menu.php'); ?>
+               <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
                <div class="col-md-9 test_d">
                   <div id="clockdiv">
                     <!--  <div>
@@ -908,24 +907,14 @@ input[type="radio"] {
                            <p id="my-progress-completion" class="js-my-progress-completion sr-only" aria-live="polite">0% complete</p>
                         </div>
                         <div class="quizBox">
-                          <form id="nextques" class="submit-form" action="<?php echo base_url();?>job_seeker/insert_test_data" method="post">
+                          <form id="nextques" class="submit-form" action="<?php echo base_url();?>employer/insert_test_data" method="post">
 
                               <input type="hidden" name="test_id" value="<?php echo($test_id); ?>">
-                              <input type="hidden" name="apply_id" value="<?php echo($apply_id); ?>">
                             
                               <div class="quiz-container">
                                 <div id="quiz"></div>
                               </div>
-                              
-                     </form>
-                        </div>
-                     </div>
-                    
-
-
-                  </div>
-                <div style="margin-top: 200px;">
-                      <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['previous_option'] == 'Y') { ?>
+                              <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['previous_option'] == 'Y') { ?>
                               <button type="button" id="previous">Previous Question</button>
                         <? } ?>
                               <button type="button" id="next">Next Question</button>
@@ -934,7 +923,14 @@ input[type="radio"] {
                                <div id="total_performance">
                         
                   </div>
-                </div>
+                     </form>
+                        </div>
+                     </div>
+                    
+
+
+                  </div>
+                
                   <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['review_option'] == 'Y') { ?>
                       
                  <!--  } ?> -->
@@ -973,7 +969,8 @@ input[type="radio"] {
           answers.push(
             `<label>
               <input type="radio" onclick="get_checked(${questionNumber});" style="display:block;" name="question${questionNumber}" value="${letter}">
-              ${letter} :${currentQuestion.answers[letter]}
+              ${letter} :
+              ${currentQuestion.answers[letter]}
             </label>
             `
           );
