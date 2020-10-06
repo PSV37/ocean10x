@@ -901,6 +901,7 @@ input[type="radio"] {
                     <div id="skip">
                         
                   </div>
+                  <form id="nextques" class="submit-form" action="<?php echo base_url();?>job_seeker/insert_test_data" method="post">
                   <div class="quizArea">
                      <div class="multipleChoiceQues">
                         <div id="app"></div>
@@ -909,7 +910,7 @@ input[type="radio"] {
                            <p id="my-progress-completion" class="js-my-progress-completion sr-only" aria-live="polite">0% complete</p>
                         </div>
                         <div class="quizBox">
-                          <form id="nextques" class="submit-form" action="<?php echo base_url();?>job_seeker/insert_test_data" method="post">
+                          
 
                               <input type="hidden" name="test_id" value="<?php echo($test_id); ?>">
                               <input type="hidden" name="apply_id" value="<?php echo($apply_id); ?>">
@@ -917,6 +918,11 @@ input[type="radio"] {
                               <div class="quiz-container">
                                 <div id="quiz"></div>
                               </div>
+                           
+                   </div>
+                  </div>
+                  </div>
+                     <div>
                               <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['previous_option'] == 'Y') { ?>
                               <button type="button" id="previous">Previous Question</button>
                         <? } ?>
@@ -924,15 +930,13 @@ input[type="radio"] {
                               <button id="submit">Submit Quiz</button>
                               <div id="results"></div>
                                <div id="total_performance">
-                        
-                  </div>
-                     </form>
-                        </div>
-                     </div>
-                    
+                               </div>
+                         </div>
+            </form>
+              
 
 
-                  </div>
+               
                 
                   <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['review_option'] == 'Y') { ?>
                       
