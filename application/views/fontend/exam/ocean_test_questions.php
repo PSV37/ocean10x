@@ -5,7 +5,7 @@
       <!---header--->
       <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/oceanchamp_exp.css">
    <style>
-      /*small*/
+   /*small*/
       .base-timer {
       position: relative;
       width: 60px;
@@ -874,7 +874,6 @@ input[type="radio"] {
   height: 200px;
   margin-top: 40px;
 }
-
    </style>
    <body>
     
@@ -925,7 +924,7 @@ input[type="radio"] {
 
 
                   </div>
-                <div>
+                <div style="margin-top: 200px;">
                       <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['previous_option'] == 'Y') { ?>
                               <button type="button" id="previous">Previous Question</button>
                         <? } ?>
