@@ -44,7 +44,7 @@
 <h1>Thank You !</h1>
 </div>
 
-<p style="text-align: center;font-size: 18px;">Your test compleated successfully</p>
+<p style="text-align: center;font-size: 18px;">Thanks ! Your test has been Completed Successfully !</p>
 <div class="back_btn">
 <a href="<?php echo base_url(); ?>"><button class="back-b">Back to home Page</button></a>
 </div>
@@ -61,7 +61,7 @@
     var timer = document.getElementById("timer"); // Timer ID
     if (count > 0) {
       count--;
-      timer.innerHTML = "This page will redirect in " + count + " seconds."; // Timer Message
+      timer.innerHTML = "Please wait while we take you back !  " + count + " seconds."; // Timer Message
       setTimeout("countDown()", 1000);
     } else {
       window.location.href = redirect;
