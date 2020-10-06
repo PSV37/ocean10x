@@ -48,5 +48,23 @@
 <div class="back_btn">
 <a href="<?php echo base_url(); ?>"><button class="back-b">Back to home Page</button></a>
 </div>
-        
-               
+<p id="timer">
+        <script type="text/javascript">
+          countDown();
+        </script>
+      </p>
+<script type="text/javascript">
+  var count = 5; // Timer
+  var redirect = "<?php echo base_url(); ?>job_seeker/seeker_info"; // Target URL
+
+  function countDown() {
+    var timer = document.getElementById("timer"); // Timer ID
+    if (count > 0) {
+      count--;
+      timer.innerHTML = "This page will redirect in " + count + " seconds."; // Timer Message
+      setTimeout("countDown()", 1000);
+    } else {
+      window.location.href = redirect;
+    }
+  }
+</script>         
