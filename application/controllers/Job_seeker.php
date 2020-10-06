@@ -2542,13 +2542,13 @@ public function user_profile()
         if (isset($sort_val) && !empty($sort_val)) {
             $join = array('oceanchamp_tests'=>'oceanchamp_tests.test_id = forwarded_tests.test_id','topic' => 'find_in_set(topic.topic_id, oceanchamp_tests.topics)|LEFT OUTER',
          'questionbank' => 'find_in_set(questionbank.ques_id, oceanchamp_tests.questions)|LEFT OUTER', 'skill_master' => 'skill_master.id = questionbank.technical_id|LEFT OUTER'  );
-              $data['ocean_tests'] = $this->Master_model->getMaster('forwarded_tests', $where = $where, $join , $order = 'desc', $field = $sort_val, $select = false, $limit = false, $start = false, $search = false);
+              $data['ocean_tests'] = $this->Master_model->getMaster('forwarded_tests', $where = $where, $join , $order = 'desc', $field = $sort_val, $select = '*,group_concat(DISTINCT topic.topic_name) as topic_names,group_concat(DISTINCT skill_master.skill_name) as skill_name', $limit = false, $start = false, $search = false);
               $data['sort'] = $sort_val;
         }
         else
         {
              $join = array('oceanchamp_tests'=>'oceanchamp_tests.test_id = forwarded_tests.test_id');
-              $data['ocean_tests'] = $this->Master_model->getMaster('forwarded_tests', $where = $where, $join , $order = 'desc', $field = 'forwarded_tests.id', $select = '*,group_concat(DISTINCT topic.topic_name) as topic_names,group_concat(DISTINCT skill_master.skill_name) as skill_name', $limit = false, $start = false, $search = false);
+              $data['ocean_tests'] = $this->Master_model->getMaster('forwarded_tests', $where = $where, $join , $order = 'desc', $field = 'forwarded_tests.id', $select = false, $limit = false, $start = false, $search = false);
         }
         
       
@@ -2573,13 +2573,20 @@ public function user_profile()
          $data['activemenu'] = 'ocean_champ';
         $this->session->set_userdata($data);
         $job_seeker_id = $this->session->userdata('job_seeker_id');
-         // $topic=array_filter($topics);
-         //    $topic_id = implode(',', $topic);
-       $join = array("skill_master"=>"skill_master.skill_name LIKE Concat('%', job_seeker_skills.skills, '%') | LEFT OUTER","topic"=>"topic.technical_id = skill_master.id | LEFT OUTER ",
+         $join = array("skill_master"=>"skill_master.skill_name LIKE Concat('%', job_seeker_skills.skills, '%') | LEFT OUTER","topic"=>"topic.technical_id = skill_master.id | LEFT OUTER ",
         "oceanchamp_tests"=>"find_in_set(topic.topic_id, oceanchamp_tests.topics)| LEFT OUTER"
    );
         $where = "job_seeker_skills.job_seeker_id='$job_seeker_id' ";
-        $data['ocean_tests'] = $this->Master_model->getMaster('job_seeker_skills', $where = $where, $join , $order = 'desc', $field = 'job_seeker_skills.js_skill_id', $select = false, $limit = false, $start = false, $search = false);
+          $sort_val = $this->input->post('sort_val');
+        if (isset($sort_val) && !empty($sort_val)) {
+             $data['ocean_tests'] = $this->Master_model->getMaster('job_seeker_skills', $where = $where, $join , $order = 'desc', $field = $sort_val, $select = '*,group_concat(DISTINCT topic.topic_name) as topic_names,group_concat(DISTINCT skill_master.skill_name) as skill_name', $limit = false, $start = false, $search = false);
+              $data['sort'] = $sort_val;
+             
+        }else{
+             $data['ocean_tests'] = $this->Master_model->getMaster('job_seeker_skills', $where = $where, $join , $order = 'desc', $field = 'job_seeker_skills.js_skill_id', $select = false, $limit = false, $start = false, $search = false);
+        }
+      
+       
         
         // echo  $this->db->last_query(); die;
         $this->load->view('fontend/jobseeker/list_skills', $data);
