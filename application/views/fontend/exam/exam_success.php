@@ -46,25 +46,34 @@
 
 <p style="text-align: center;font-size: 18px;">Thanks ! Your test has been Completed Successfully !</p>
 <div class="back_btn">
-<a href="<?php echo base_url(); ?>"><button class="back-b">Back to home Page</button></a>
-</div>
-<p id="timer">
-        <script type="text/javascript">
-          countDown();
-        </script>
-      </p>
+<!-- <a href="<?php echo base_url(); ?>"><button class="back-b">Back to home Page</button></a>
+</div> -->
+<p>Please wait while we take you back ! <span id="seconds">5</span> seconds.
+</p>
 <script type="text/javascript">
-  var count = 5; // Timer
-  var redirect = "<?php echo base_url(); ?>job_seeker/seeker_info"; // Target URL
+ 
 
-  function countDown() {
-    var timer = document.getElementById("timer"); // Timer ID
-    if (count > 0) {
-      count--;
-      timer.innerHTML = "Please wait while we take you back !  " + count + " seconds."; // Timer Message
-      setTimeout("countDown()", 1000);
-    } else {
-      window.location.href = redirect;
+var seconds = 5; // seconds for HTML
+var foo; // variable for clearInterval() function
+
+function redirect() {
+    document.location.href = '<?php echo base_url() ?>seeker/dashboard';
+}
+
+function updateSecs() {
+    document.getElementById("seconds").innerHTML = seconds;
+    seconds--;
+    if (seconds == -1) {
+        clearInterval(foo);
+        redirect();
     }
-  }
+}
+
+function countdownTimer() {
+    foo = setInterval(function () {
+        updateSecs()
+    }, 1000);
+}
+
+countdownTimer();
 </script>         
