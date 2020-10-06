@@ -2579,9 +2579,9 @@ public function user_profile()
         $where = "job_seeker_skills.job_seeker_id='$job_seeker_id' ";
           $sort_val = $this->input->post('sort_val');
         if (isset($sort_val) && !empty($sort_val)) {
-             $data['ocean_tests'] = $this->Master_model->getMaster('job_seeker_skills', $where = $where, $join , $order = 'desc', $field = $sort_val, $select = '*,group_concat(DISTINCT topic.topic_name) as topic_names,group_concat(DISTINCT skill_master.skill_name) as skill_name', $limit = false, $start = false, $search = false);
+             $data['ocean_tests'] = $this->Master_model->getMaster('job_seeker_skills', $where = $where, $join , $order = 'desc', $field = $sort_val, $select = false, $limit = false, $start = false, $search = false);
               $data['sort'] = $sort_val;
-             
+
         }else{
              $data['ocean_tests'] = $this->Master_model->getMaster('job_seeker_skills', $where = $where, $join , $order = 'desc', $field = 'job_seeker_skills.js_skill_id', $select = false, $limit = false, $start = false, $search = false);
         }
