@@ -2536,9 +2536,22 @@ public function user_profile()
         $data['activemenu'] = 'ocean_bank';
         $this->session->set_userdata($data);
         $job_seeker_id = $this->session->userdata('job_seeker_id');
-        $join = array('oceanchamp_tests'=>'oceanchamp_tests.test_id = forwarded_tests.test_id');
+       
         $where = "oceanchamp_tests.status='1' AND forwarded_tests.job_seeker_id='$job_seeker_id' and forwarded_tests.status != 'Test Completed'";
-        $data['ocean_tests'] = $this->Master_model->getMaster('forwarded_tests', $where = $where, $join , $order = 'desc', $field = 'forwarded_tests.id', $select = false, $limit = false, $start = false, $search = false);
+        $sort_val = $this->input->post('sort_val');
+        if (isset($sort_val) && !empty($sort_val)) {
+            $join = array('oceanchamp_tests'=>'oceanchamp_tests.test_id = forwarded_tests.test_id','topic' => 'find_in_set(topic.topic_id, oceanchamp_tests.topics)|LEFT OUTER',
+         'questionbank' => 'find_in_set(questionbank.ques_id, oceanchamp_tests.questions)|LEFT OUTER', 'skill_master' => 'skill_master.id = questionbank.technical_id|LEFT OUTER'  );
+              $data['ocean_tests'] = $this->Master_model->getMaster('forwarded_tests', $where = $where, $join , $order = 'desc', $field = $sort_val, $select = false, $limit = false, $start = false, $search = false);
+              $data['sort'] = $sort_val;
+        }
+        else
+        {
+             $join = array('oceanchamp_tests'=>'oceanchamp_tests.test_id = forwarded_tests.test_id');
+              $data['ocean_tests'] = $this->Master_model->getMaster('forwarded_tests', $where = $where, $join , $order = 'desc', $field = 'forwarded_tests.id', $select = '*,group_concat(DISTINCT topic.topic_name) as topic_names,group_concat(DISTINCT skill_master.skill_name) as skill_name', $limit = false, $start = false, $search = false);
+        }
+        
+      
         $where_cn = "status=1";
         $data['skill_master'] = $this->Master_model->getMaster('skill_master', $where_cn);
         //$where_opt= "options.status=1";
