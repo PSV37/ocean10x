@@ -917,10 +917,16 @@ input[type="radio"] {
                               <div class="quiz-container">
                                 <div id="quiz"></div>
                               </div>
-                            
+                              
                      </form>
                         </div>
-                          <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['previous_option'] == 'Y') { ?>
+                     </div>
+                    
+
+
+                  </div>
+                <div>
+                      <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['previous_option'] == 'Y') { ?>
                               <button type="button" id="previous">Previous Question</button>
                         <? } ?>
                               <button type="button" id="next">Next Question</button>
@@ -929,12 +935,7 @@ input[type="radio"] {
                                <div id="total_performance">
                         
                   </div>
-                     </div>
-                    
-
-
-                  </div>
-                
+                </div>
                   <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['review_option'] == 'Y') { ?>
                       
                  <!--  } ?> -->
