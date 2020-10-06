@@ -1325,7 +1325,7 @@ button.btn.btn-primary.trash {
       <div class="modal-content">
          <div class="modal-header" style="border-bottom:none;">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Forward This Job Post</h5>
+            <h5 style="text-align: center;font-size: 20px;font-weight: 800;color:#fff;">Share this Job Post with your Friends !</h5>
          </div>
          <form action="<?php echo base_url() ?>job_seeker/forword_job_post" class="sendEmail" method="post" autocomplete="off">
             <div class="modal-body" style="padding:15px 40px;">
