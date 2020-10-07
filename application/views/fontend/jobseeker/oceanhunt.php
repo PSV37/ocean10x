@@ -777,7 +777,20 @@ button.btn.btn-primary.trash {
               </div>
                <br>       
             <a title="details" href=" <?php echo base_url(); ?>job/show/<?php echo $forward_applicaiton->job_slugs; ?>"><i class="fa fa-info-circle icon_backg"></i></a>
-             <a title="apply" href=" <?php echo base_url(); ?>job/show/<?php echo $forward_applicaiton->job_slugs; ?>"> <lable class=""><button id="sklbtn">Apply</button></lable></a>
+            <?php  
+               $job_post_id = $singlejob->job_post_id;
+                $company_id = $singlejob->company_profile_id;
+                $jobseeker_id = $this->session->userdata('job_seeker_id');   
+                  if ($this->job_apply_model->check_apply_job($jobseeker_id, $company_id, $job_post_id)) { ?>
+
+                <a title="apply" href=" <?php echo base_url(); ?>job/show/<?php echo $forward_applicaiton->job_slugs; ?>"> <lable class=""><button id="sklbtn">Applied</button></lable></a>
+                    
+               
+                 <?php    }else{ ?>
+                
+              <a title="apply" href=" <?php echo base_url(); ?>job/show/<?php echo $forward_applicaiton->job_slugs; ?>"> <lable class=""><button id="sklbtn">Apply here</button></lable></a>
+             <?php } ?>
+             
             <div class="btn-group">
                         <!-- <a title="Edit" href=" <?php echo base_url() ?>employer/update_job/<?php echo $singlejob->job_post_id ?>"><i class="far fa-edit icon_backg"></i></a> -->
                         <!-- <a title="Delete" href="<?php echo base_url('employer/deactivate_job/' . $singlejob->job_post_id); ?>"><i class="fas fa-trash-alt icon_backg"></i></a> -->
