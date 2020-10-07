@@ -328,14 +328,19 @@
                
                 <?php if (isset($preview)) { ?>
                     <a href=" <?php echo base_url() ?>employer/update_job/<?php echo $job_id; ?>"><button type="button" name="edit" class="edit_btn">Edit</button></a>
-               <?php }else{ ?>
+               <?php }elseif ($job_status == '0') { ?>
+                   <button type="submit" class="Postjob_btn" name="post_preview">Post Job</button>
+                   >
+                     <button type="submit" class="edit_btn" name="edit">Edit</button>
+
+
+               <?php  }
+                else{ ?>
                      <button type="submit" class="Postjob_btn" name="post_preview">Post Job</button>
                      <button type="submit" class="edit_btn" name="edit">Edit</button>
-               <?php }
-                if ($job_status == '0') { ?>
-                   <button type="submit" class="Postjob_btn" name="post_preview">Post Job</button>
-              <?php  }
-                ?>
+               <?php } ?>
+              
+             
                
               </div>
             </div>

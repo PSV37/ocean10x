@@ -459,9 +459,10 @@
                      <label class="control-label ">Test</label>
                      <select name="test_for_job" id="test_for_job" class="form-control select2" data-style="btn-default" data-live-search="true" >
                        <?php  if (isset($oceanchamp_tests) && !empty($oceanchamp_tests)) {
-                        foreach ($oceanchamp_tests as $row) { if ($row['test_status'] == 3) { ?>
+                        foreach ($oceanchamp_tests as $row) { 
+                           if($row['test_status'] == 3) { ?>
                           <option value="<?php echo $row['test_id']; ?>">Ocean - <?php echo $row['test_name']; ?></option>
-                        }else { ?>
+                        <?php }else { ?>
                           <option value="<?php echo $row['test_id']; ?>"><?php echo $row['test_name']; ?></option>
                      <?php   } }
                      } ?>
