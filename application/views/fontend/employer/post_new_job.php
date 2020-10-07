@@ -408,7 +408,7 @@
                </div>
                <div class="col-md-3 col-sm-12" id="spectial" >
                   <div class="formrow preffered_certificates" >
-                     <label class="control-label ">Certifications Preferred <span class="required"> * </span></label>
+                     <label class="control-label ">Certifications Preferred </label>
                      <select name="preffered_certificates" id="preffered_certificates" class="form-control select2" data-style="btn-default" data-live-search="true">
                       <option></option>
                         <?php $cret_value = set_value('preffered_certificates'); foreach($certificates as $certificate){?>
@@ -417,18 +417,7 @@
                      </select>
                   </div>
                </div>
-               <div class="col-md-3 col-sm-12" >
-                  <div class="formrow">
-                     <label class="control-label">Deadline<span class="required"> * </span> </label>
-                     <?php
-                        $old_date = date('d-m-Y');
-                        $next_due_date = date('d-m-Y', strtotime($old_date. ' +30 days'));
-                        
-                        ?>
-                     <!-- <input type="date" name="job_deadline" class="form-control datepicker" id="job_deadline_day" min="<?php echo date('Y-m-d'); ?>" required value="<?php echo $next_due_date; ?>" autocomplete="off">  -->    
-                     <input type="text" id="my_date_picker" name="job_deadline" style="display: inline-block;" class="form-control datepicker" id="job_deadline_day"  value="<?php $jb_deadline=set_value('job_deadline'); if(!empty($jb_deadline)){ echo $jb_deadline;} else{ echo $next_due_date; } ?>" autocomplete="off">     <?php echo form_error('job_deadline'); ?>
-                  </div>
-               </div>
+               
                
                <div class="col-md-3 col-sm-12">
                   <div class="formrow salrange" >
@@ -440,6 +429,18 @@
                      <div class="col-md-3 formrow" style="width:100px;margin-left:-19px;margin-top: 37px;">
                         <input class="form-control allownumericwithdecimal" min="1" maxlength="2" type="text" name="salrange_to"  value="<?php echo $sal[1]; ?><?php echo set_value('salrange_to'); ?>" />
                      </div>
+                  </div>
+               </div>
+               <div class="col-md-3 col-sm-12" >
+                  <div class="formrow">
+                     <label class="control-label">Job Post Expiry<span class="required"> * </span> </label>
+                     <?php
+                        $old_date = date('d-m-Y');
+                        $next_due_date = date('d-m-Y', strtotime($old_date. ' +30 days'));
+                        
+                        ?>
+                     <!-- <input type="date" name="job_deadline" class="form-control datepicker" id="job_deadline_day" min="<?php echo date('Y-m-d'); ?>" required value="<?php echo $next_due_date; ?>" autocomplete="off">  -->    
+                     <input type="text" id="my_date_picker" name="job_deadline" style="display: inline-block;" class="form-control datepicker" id="job_deadline_day"  value="<?php $jb_deadline=set_value('job_deadline'); if(!empty($jb_deadline)){ echo $jb_deadline;} else{ echo $next_due_date; } ?>" autocomplete="off">     <?php echo form_error('job_deadline'); ?>
                   </div>
                </div>
                <div class="col-md-3 col-sm-12" >
@@ -458,9 +459,11 @@
                      <label class="control-label ">Test</label>
                      <select name="test_for_job" id="test_for_job" class="form-control select2" data-style="btn-default" data-live-search="true" >
                        <?php  if (isset($oceanchamp_tests) && !empty($oceanchamp_tests)) {
-                        foreach ($oceanchamp_tests as $row) { ?>
+                        foreach ($oceanchamp_tests as $row) { if ($row['test_status'] == '3') { ?>
                           <option value="<?php echo $row['test_id']; ?>"><?php echo $row['test_name']; ?></option>
-                     <?php   }
+                        }else { ?>
+                          <option value="<?php echo $row['test_id']; ?>">Ocean - <?php echo $row['test_name']; ?></option>
+                     <?php   } }
                      } ?>
                   </select>
                      <?php echo form_error('test_for_job'); ?>             
@@ -715,11 +718,11 @@
           
          },
 
-   'preffered_certificates':{
+   // 'preffered_certificates':{
     
-          required: true,
+   //        required: true,
           
-         },
+   //       },
         
    
    'city_id':{

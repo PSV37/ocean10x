@@ -171,7 +171,7 @@ class Employer extends MY_Employer_Controller {
             $this->form_validation->set_rules('no_jobs', 'Number of Positions', 'required');
             $this->form_validation->set_rules('job_edu', 'Education Level', 'required');
             $this->form_validation->set_rules('job_nature', 'Engagement Model', 'required');
-            $this->form_validation->set_rules('preffered_certificates', 'Certification Preferred', 'required');
+            // $this->form_validation->set_rules('preffered_certificates', 'Certification Preferred', 'required');
             $this->form_validation->set_rules('job_test_requirment', 'Ocean Test Required', 'required');
             $this->form_validation->set_rules('salrange_from', 'Salary Range From', 'required|max_length[2]');
             $this->form_validation->set_rules('salrange_to', 'Salary Range To', 'required|max_length[2]');
