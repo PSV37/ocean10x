@@ -1788,6 +1788,10 @@ public function user_profile()
         $data['test_id'] = $test_id;
         $data['apply_id'] = $apply_id;
         $data['job_post_id'] = $job_post_id;
+
+       
+        $where_all = "oceanchamp_tests.status='1'  AND test_id = '$test_id'";
+        $data['oceanchamp_tests'] = $this->Master_model->get_master_row('oceanchamp_tests', $select = FALSE, $where = $where_all, $join = FALSE);
          $this->load->view('fontend/jobseeker/ocean_test_instructions',$data);
     }
    public function ocean_test_start($test_id = null,$apply_id= null,$job_post_id=NULL)
