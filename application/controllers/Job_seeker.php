@@ -1792,30 +1792,30 @@ public function user_profile()
        
         // print_r($test_id);
         // print_r($job_post_id);die;
-        if (!empty($job_post_id)) {
-            $singlejob    = $this->job_posting_model->get_job_details_employer($job_post_id);
-        $company_id = $singlejob->company_profile_id;
+        // if (!empty($job_post_id)) {
+        //     $singlejob    = $this->job_posting_model->get_job_details_employer($job_post_id);
+        // $company_id = $singlejob->company_profile_id;
             
-            $job_apply = $this->job_apply_model->check_apply_job($job_seeker_id, $company_id, $job_post_id);
-        // print_r($job_apply);
-        //  print_r($this->db->last_query());die;
+        //     $job_apply = $this->job_apply_model->check_apply_job($job_seeker_id, $company_id, $job_post_id);
+        // // print_r($job_apply);
+        // //  print_r($this->db->last_query());die;
         
-            if ($job_apply) {
-                $where = "job_seeker_id='$job_seeker_id' and company_id = '$company_id' and job_post_id = '$job_post_id'";
-                $apply = $this->Master_model->get_master_row('job_apply', $select = FALSE, $where , $join = FALSE);
-                $apply_id=$apply['job_apply_id'];
-            }else
-            {
+        //     if ($job_apply) {
+        //         $where = "job_seeker_id='$job_seeker_id' and company_id = '$company_id' and job_post_id = '$job_post_id'";
+        //         $apply = $this->Master_model->get_master_row('job_apply', $select = FALSE, $where , $join = FALSE);
+        //         $apply_id=$apply['job_apply_id'];
+        //     }else
+        //     {
                 
-                 $apply_info   = array(
-                            'job_seeker_id'   => $job_seeker_id,
-                            'company_id'      => $company_id,
-                            'job_post_id'     => $job_post_id
+        //          $apply_info   = array(
+        //                     'job_seeker_id'   => $job_seeker_id,
+        //                     'company_id'      => $company_id,
+        //                     'job_post_id'     => $job_post_id
                            
-                        );
-                $apply_id = $this->job_apply_model->insert($apply_info);
-            }
-        }
+        //                 );
+        //         $apply_id = $this->job_apply_model->insert($apply_info);
+        //     }
+        // }
         
   
         
@@ -1878,8 +1878,8 @@ public function user_profile()
             
             $data['test_id'] = $test_id;
             $data['apply_id'] = $apply_id;
-            $this->load->view('fontend/exam/ocean_test_questions', $data);
-            // $this->load->view('fontend/exam/oceantest_test',$data);
+            // $this->load->view('fontend/exam/ocean_test_questions', $data);
+            $this->load->view('fontend/exam/oceantest_take_test',$data);
             
         } 
     }
