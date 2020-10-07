@@ -1785,12 +1785,13 @@ public function user_profile()
     }
     public function ocean_test_instructions($test_id = null,$apply_id= null,$job_post_id=NULL)
     {
-        $data['test_id'] = $test_id;
-        $data['apply_id'] = $apply_id;
+        $data['test_id'] = base64_decode($test_id);
+        $data['apply_id'] = base64_decode($apply_id);
         $data['job_post_id'] = $job_post_id;
+        $test = $data['test_id'];
 
        
-        $where_all = "oceanchamp_tests.status='1'  AND test_id = '$test_id'";
+        $where_all = "oceanchamp_tests.status='1'  AND test_id = '$test'";
         $data['oceanchamp_tests'] = $this->Master_model->get_master_row('oceanchamp_tests', $select = FALSE, $where = $where_all, $join = FALSE);
          $this->load->view('fontend/jobseeker/ocean_test_instructions',$data);
     }
