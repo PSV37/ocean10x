@@ -259,7 +259,7 @@
                 if ($is_test_required == 'Yes' && empty($test_for_job)) { echo $is_test_required;  ?>
                   <sup><span title="Marked yes but test is not attached" class="required">*</span></sup>
              <?php  } elseif ($is_test_required == 'Yes' && !empty($test_for_job)) { ?>
-               <a style="margin-left: 15px" title="<?php echo $v_companyjobs['test_name'] ?>" href="<?php echo base_url() ?>employer/show_test_details/<?php echo base64_encode($test_for_job); ?>/" >Yes</a>
+               <a style="margin-left: 15px" title="<?php echo $test_name ?>" href="<?php echo base_url() ?>employer/show_test_details/<?php echo base64_encode($test_for_job); ?>/" >Yes</a>
             <?php }else{echo $is_test_required; } ?> </li>
                 <li class="left-title">JD attached&nbsp;<i class="fas fa-link"></i></li>
                 <li class="right-title">

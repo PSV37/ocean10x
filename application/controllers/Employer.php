@@ -6130,7 +6130,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 'job_category'=>$job_details['job_category'], 
                 'experience'=>$job_details['experience'], 
                 'no_jobs'=>$job_details['no_jobs'],
-                'test_for_job'=>$job_details['test_for_job'], 
+                'test_for_job'=>$job_details['test_for_job'],
+                 'test_name'=>$job_details['test_name'], 
                 'job_role' => $job_details['job_role'], //new added field
                 'city_id' => $job_details['city_id'], //new added field
                 'skills_required' => $job_details['skills_required'], //new added field
