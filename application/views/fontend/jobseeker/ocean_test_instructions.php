@@ -6,10 +6,10 @@
    <div class="container-fluid main-d">
       <div class="container">
          <div class="col-md-12">
-            <<?php $this->load->view('fontend/layout/seeker_left_menu.php'); ?>
+            <?php $this->load->view('fontend/layout/seeker_left_menu.php'); ?>
             <!-- <form id="submit" class="submit-form" action="" method="post"> -->
+            <div class="col-md-9 instruction_text">
                <form method="post" action="<?php echo base_url(); ?>job_seeker/ocean_test_start/<?php if(!empty($test_id))echo base64_encode($test_id); ?>"> 
-                           <div class="col-md-9 instruction_text">
                               <!-- <?php print_r($oceanchamp_tests); ?> -->
 
                <h4 style="margin-bottom:20px;font-size:22px;color:#14a9a2;">Before You Start The Test Carefully Read The Instructions Below !</h4>
@@ -23,8 +23,8 @@
                <div class="row" style="text-align:end;">
                   <button type="submit">Lets Start</button>
                </div>
-            </div>
-         </form>
+           </form>
+        </div>
          </div>
       </div>
    </div>
