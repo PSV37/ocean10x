@@ -783,12 +783,12 @@ button.btn.btn-primary.trash {
                 $jobseeker_id = $this->session->userdata('job_seeker_id');   
                   if ($this->job_apply_model->check_apply_job($jobseeker_id, $company_id, $job_post_id)) { ?>
 
-                <a title="apply" href=" <?php echo base_url(); ?>job/show/<?php echo $forward_applicaiton->job_slugs; ?>"> <lable class=""><button id="sklbtn">Applied</button></lable></a>
+                <a style="float: right;" href=" <?php echo base_url(); ?>job/show/<?php echo $forward_applicaiton->job_slugs; ?>"> <lable class=""><button id="sklbtn">Applied</button></lable></a>
                     
                
                  <?php    }else{ ?>
                 
-              <a title="apply" href=" <?php echo base_url(); ?>job/show/<?php echo $forward_applicaiton->job_slugs; ?>"> <lable class=""><button id="sklbtn">Apply here</button></lable></a>
+              <a style="float: right;" href=" <?php echo base_url(); ?>job/show/<?php echo $forward_applicaiton->job_slugs; ?>"> <lable class=""><button id="sklbtn">Apply here</button></lable></a>
              <?php } ?>
              
             <div class="btn-group">
