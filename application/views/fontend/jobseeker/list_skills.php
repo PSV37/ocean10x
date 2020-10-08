@@ -1042,15 +1042,15 @@
                     <li class="right-title">&nbsp;:<?php echo $tests['negative_marks']; ?></li>
                     <div class="clear"></div>
                   </div>
-                  
+                    <a style="margin-left: 15px" title="start test" href="<?php echo base_url() ?>job_seeker/ocean_test_instructions/<?php echo base64_encode($test_id) ?>/<?php echo base64_encode($apply_id); ?>/<?php echo $singlejob->job_post_id ?>" ><lable class=""><button id="sklbtn"><i class="fa fa-file-text" aria-hidden="true"></i></button></lable></a>
                    <div class="btn-group"></div>
                  <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
                 </button>
                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1" style="top:47px;">
-                    <li ><a class="dropdown-item" href="#" id="div_frwrd" data-toggle="modal" data-target="#rotateModal<?php echo $tests['test_id'] ?>" >Forward This Test</a></li>
+                    <li ><a class="dropdown-item" href="#" id="div_frwrd" data-toggle="modal" data-target="#rotateModal<?php echo $tests['test_id'] ?>" >Share This Test</a></li>
                     <?php $test_id = $tests['test_id'];  ?>
-                    <li > <a style="margin-left: 15px" title="Give test" href="<?php echo base_url() ?>job_seeker/ocean_test_start/<?php echo base64_encode($test_id) ?>/<?php echo base64_encode($apply_id); ?>/<?php echo $singlejob->job_post_id ?>" >Give test</a></li>
+                   <!--  <li > <a style="margin-left: 15px" title="Give test" href="<?php echo base_url() ?>job_seeker/ocean_test_start/<?php echo base64_encode($test_id) ?>/<?php echo base64_encode($apply_id); ?>/<?php echo $singlejob->job_post_id ?>" >Give test</a></li> -->
                   
                   </div>
                  <?php }else{ ?>
