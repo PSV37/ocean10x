@@ -1281,6 +1281,7 @@ function next(n)
 
 function getval(value)
 {
+      clearInterval(timerInterval);
       qid = value - 1;
      <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['previous_option'] == 'N') 
      {
