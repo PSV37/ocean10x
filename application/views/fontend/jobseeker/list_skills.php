@@ -925,6 +925,15 @@
   span.select2-selection.select2-selection--single {
   width: 180px;
   }
+   button#sklbtn {
+    background-color: #18c5bd;
+    color: #fdfdfd;
+    border-radius: 20px;
+    border: none;
+    padding: 1px 10px;
+    margin-bottom: 7px;
+    font-size: 11px;
+}
 </style>
 <div class="container-fluid main-d">
   <div class="container">
