@@ -1080,7 +1080,7 @@
                     //   'job_posting'=>'job_posting.test_for_job = oceanchamp_tests.test_id |Left OUTER',
                     //   'company_profile'=>'company_profile.company_profile_id = oceanchamp_tests.company_id |Left OUTER','js_info'=>'js_info.job_seeker_id = forwarded_tests.job_seeker_id |LEFT OUTER');
                     $jobs_data = $this->Master_model->getMaster('seeker_test_result', $where , $join, $order = 'desc', $field = 'id',$select = false,$limit=false,$start=false, $search=false); 
-                      if (!empty($jobs_data[0]['job_title'] )) { ?>
+                      if (!empty($jobs_data)) { ?>
                         <span data-toggle="collapse" data-target="#collapseEx<?php echo $tests['test_id']?>" aria-expanded="false" aria-controls="collapseEx" style="color: red;font-size: 25px;margin-left: 38px;" title="Click to see the Jobs Forwarded" class="required"> * </span>
                         <div class="collapse" id="collapseEx<?php echo $tests['test_id']?>">
                       <div class="card-body">
@@ -1088,18 +1088,14 @@
                         // print_r($this->db->last_query());
                         foreach ($jobs_data as $row) {
 
-                          if (isset($row['job_title'])) { ?>
-                             <p>Attached to Job Post - <?php echo $row['job_title']; ?> - <?php echo date('d-m-y H:i',strtotime($row['date'])) ; ?>  </p>
+                          if (isset($row['test_id'])) { ?>
+                             <p>Attempted this test  - <?php echo date('d-m-y H:i',strtotime($row['date_time'])) ; ?>  </p>
                         <?php  }
-                        if(!empty($row['email']))
-                        { ?>
-                          <p> Forwarded to - <?php echo $row['email']; ?>- <?php echo date('d-m-y H:i',strtotime($row['date'])) ; ?>   </p>
-                       <?php  }
-                       if(!empty($row['update_date']) && $row['update_date'] !='0000-00-00 00:00:00') { ?>
-                         <p> Parameters Edited - <?php echo date('d-m-y H:i',strtotime($row['update_date'])) ; ?>   </p>
+                       
+                      
                        
 
-                            <?php } $i++;  } }  ?>
+                              $i++;  } }  ?>
                        
                         
                       </div>
