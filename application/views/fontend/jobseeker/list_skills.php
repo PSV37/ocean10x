@@ -1074,13 +1074,13 @@
                <?php  } ?>
                   <?php  
                     $test_id =$tests['test_id'];
-                    $employer_id = $this->session->userdata('company_profile_id');
-                    $where="oceanchamp_tests.test_id ='$test_id' and oceanchamp_tests.company_id = '$employer_id' and oceanchamp_tests.test_status ='3' ";
-                    $join = array('forwarded_tests'=>'forwarded_tests.test_id = oceanchamp_tests.test_id |Left OUTER',
-                      'job_posting'=>'job_posting.test_for_job = oceanchamp_tests.test_id |Left OUTER',
-                      'company_profile'=>'company_profile.company_profile_id = oceanchamp_tests.company_id |Left OUTER','js_info'=>'js_info.job_seeker_id = forwarded_tests.job_seeker_id |LEFT OUTER');
-                    $jobs_data = $this->Master_model->getMaster('oceanchamp_tests', $where , $join, $order = 'desc', $field = 'date,update_date', $select = '*,IFNULL(forwarded_tests.updated_on, job_posting.update_at) AS date,oceanchamp_tests.updated_on as update_date',$limit=false,$start=false, $search=false); 
-                      if (!empty($jobs_data[0]['job_title'] || !empty($jobs_data[0]['email']))) { ?>
+                    $seeker_id = $this->session->userdata('job_seeker_id');
+                    $where="seeker_test_result.test_id ='$test_id' and seeker_test_result.job_seeker_id = '$seeker_id' group by test_id.job_seeker_id,date_time ";
+                    // $join = array('forwarded_tests'=>'forwarded_tests.test_id = oceanchamp_tests.test_id |Left OUTER',
+                    //   'job_posting'=>'job_posting.test_for_job = oceanchamp_tests.test_id |Left OUTER',
+                    //   'company_profile'=>'company_profile.company_profile_id = oceanchamp_tests.company_id |Left OUTER','js_info'=>'js_info.job_seeker_id = forwarded_tests.job_seeker_id |LEFT OUTER');
+                    $jobs_data = $this->Master_model->getMaster('seeker_test_result', $where , $join, $order = 'desc', $field = 'id',$select = false,$limit=false,$start=false, $search=false); 
+                      if (!empty($jobs_data[0]['job_title'] )) { ?>
                         <span data-toggle="collapse" data-target="#collapseEx<?php echo $tests['test_id']?>" aria-expanded="false" aria-controls="collapseEx" style="color: red;font-size: 25px;margin-left: 38px;" title="Click to see the Jobs Forwarded" class="required"> * </span>
                         <div class="collapse" id="collapseEx<?php echo $tests['test_id']?>">
                       <div class="card-body">
