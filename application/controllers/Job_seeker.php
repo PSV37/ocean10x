@@ -1853,8 +1853,8 @@ public function user_profile()
                 
              // print_r($questions);
                 foreach ($questions as $row) {
-             //     
-                  $where = "questionbank.ques_id='$row'";
+                 $ques_id = $row['ques_id'];
+                  $where = "questionbank.ques_id='$ques_id'";
 
                    $Join_data      = array(
                     'questionbank_answer' => 'questionbank_answer.question_id = questionbank.ques_id|Left OUTER '
