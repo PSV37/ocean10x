@@ -1054,8 +1054,9 @@
                   </div>
                   <div>
                    <?php $test_id = $tests['test_id'];  ?>
-                    <a style="float: right;" title="start test" href="<?php echo base_url() ?>job_seeker/ocean_test_instructions/<?php echo base64_encode($test_id) ?>/<?php echo base64_encode($apply_id); ?>/<?php echo $singlejob->job_post_id ?>" >test</a>
-                  </div><br>
+                    <a style="float: right;/* border: 2px solid black; */background-color: #18c5bd;color: white;width: auto;border-radius: 28px;padding: 1px 5px 1px 5px;font-size: 15px;" title="start test" href="<?php echo base_url() ?>job_seeker/ocean_test_instructions/<?php echo base64_encode($test_id) ?>/<?php echo base64_encode($apply_id); ?>/<?php echo $singlejob->job_post_id ?>" >test</a>
+                  </div>
+                  <!-- <br> -->
                    <div class="btn-group"></div>
                  <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
