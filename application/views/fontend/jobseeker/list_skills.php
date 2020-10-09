@@ -1093,7 +1093,7 @@
                         foreach ($jobs_data as $row) {
 
                           if (isset($row['test_id'])) { ?>
-                             <p>Attempted this test  - <?php echo date('d-m-y H:i',strtotime($row['date_time'])) ; ?>  </p>
+                             <p style="font-size:15px;font-weight: 600;">Attempted this test  - <?php echo date('d-m-y H:i',strtotime($row['date_time'])) ; ?>  </p>
                         <?php  }
                        
                       
