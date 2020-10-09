@@ -2589,7 +2589,50 @@ public function user_profile()
         "oceanchamp_tests"=>"find_in_set(topic.topic_id, oceanchamp_tests.topics)| LEFT OUTER"
    );
         $where = "job_seeker_skills.job_seeker_id='$job_seeker_id' ";
-          $sort_val = $this->input->post('sort_val');
+      $sort_val = $this->input->post('sort_val');
+        if (empty($sort_val)) {
+           $sort_val = $this->input->get('sort');
+        }
+         $ocean_tests = $this->Master_model->getMaster('job_seeker_skills', $where = $where, $join , $order = 'desc', $field = 'job_seeker_skills.js_skill_id', $select = false, $limit = false, $start = false, $search = false);
+      
+         $config['base_url'] = base_url() . 'employer/ocean_champ?sort='.$sort_val;
+            $config['total_rows'] = sizeof($ocean_tests);
+            $config['per_page'] = 5;
+            $config['attributes'] = array('class' => 'myclass');
+            $config['page_query_string'] = TRUE;
+            $config['num_links'] = 2;
+            // $config['use_page_numbers'] = TRUE;
+            $config['query_string_segment'] = 'pages';
+           
+            $config['full_tag_open'] = '<div class="pagination">';
+            $config['full_tag_close'] = '</div>';
+            $config['first_link'] = '<button>First Page</button>';
+            $config['first_tag_open'] = '<span class="firstlink">';
+            $config['first_tag_close'] = '</span>';
+            $config['last_link'] = '<button style="color:#FFF;background: #18c5bd;border: none;">Last Page</button>';
+            $config['last_tag_open'] = '<span class="lastlink">';
+            $config['last_tag_close'] = '</span>';
+            $config['next_link'] = '<span style="margin-left:8px;"><button style="color:#FFF;background: #18c5bd;border: none;">Next Page</button></span>';
+            $config['next_tag_open'] = '<span class="nextlink">';
+            $config['next_tag_close'] = '</span>';
+            $config['prev_link'] = '<button style="color:#FFF;background: #18c5bd;border: none;">Prev Page</button>';
+            $config['prev_tag_open'] = '<span class="prevlink">';
+            $config['prev_tag_close'] = '</span>';
+            $config['cur_tag_open'] = '<span style="margin-left:8px;">';
+            $config['cur_tag_close'] = '</span>';
+            $config['num_tag_open'] = '<span style="margin-left:8px;">';
+            $config['num_tag_close'] = '</span>';
+            $offset = 0;
+            $page = $this->input->get('pages');
+            if ($page) {
+                $offset = ($page - 1) * $config['per_page'];
+                 $data['submenu'] = '2';
+                $this->session->set_userdata($data);
+            }
+
+            $this->pagination->initialize($config);
+            $data["link"] = $this->pagination->create_links();
+         
         if (isset($sort_val) && !empty($sort_val)) {
              $data['ocean_tests'] = $this->Master_model->getMaster('job_seeker_skills', $where = $where, $join , $order = 'desc', $field = $sort_val, $select = false, $limit = false, $start = false, $search = false);
               $data['sort'] = $sort_val;
