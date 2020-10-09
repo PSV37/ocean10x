@@ -1052,10 +1052,7 @@
                     <li class="right-title">&nbsp;:<?php echo $tests['negative_marks']; ?></li>
                     <div class="clear"></div>
                   </div>
-                  <div>
-                   <?php $test_id = $tests['test_id'];  ?>
-                    <a style="float: right;/* border: 2px solid black; */background-color: #18c5bd;color: white;width: auto;border-radius: 28px;padding: 1px 5px 1px 5px;font-size: 15px;" title="start test" href="<?php echo base_url() ?>job_seeker/ocean_test_instructions/<?php echo base64_encode($test_id) ?>/<?php echo base64_encode($apply_id); ?>/<?php echo $singlejob->job_post_id ?>" >test</a>
-                  </div>
+                 
                   <!-- <br> -->
                    <div class="btn-group"></div>
                  <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -1084,6 +1081,10 @@
                     //   'company_profile'=>'company_profile.company_profile_id = oceanchamp_tests.company_id |Left OUTER','js_info'=>'js_info.job_seeker_id = forwarded_tests.job_seeker_id |LEFT OUTER');
                     $jobs_data = $this->Master_model->getMaster('seeker_test_result', $where , $join, $order = 'desc', $field = 'id',$select = false,$limit=false,$start=false, $search=false); 
                       if (!empty($jobs_data)) { ?>
+                         <div>
+                       <?php $test_id = $tests['test_id'];  ?>
+                        <a style="float: right;/* border: 2px solid black; */background-color: #18c5bd;color: white;width: auto;border-radius: 28px;padding: 1px 5px 1px 5px;font-size: 15px;" title="start test" href="<?php echo base_url() ?>job_seeker/ocean_test_instructions/<?php echo base64_encode($test_id) ?>/<?php echo base64_encode($apply_id); ?>/<?php echo $singlejob->job_post_id ?>" >Re-attempt</a>
+                      </div>
                         <span data-toggle="collapse" data-target="#collapseEx<?php echo $tests['test_id']?>" aria-expanded="false" aria-controls="collapseEx" style="color: red;font-size: 25px;margin-left: 38px;" title="Click to see the Jobs Forwarded" class="required"> * </span>
                         <div class="collapse" id="collapseEx<?php echo $tests['test_id']?>">
                       <div class="card-body">
@@ -1103,7 +1104,12 @@
                         
                       </div>
                       </div>
-                     <?php  }
+                     <?php  }else{ ?>
+                        <div>
+                       <?php $test_id = $tests['test_id'];  ?>
+                        <a style="float: right;/* border: 2px solid black; */background-color: #18c5bd;color: white;width: auto;border-radius: 28px;padding: 1px 5px 1px 5px;font-size: 15px;" title="start test" href="<?php echo base_url() ?>job_seeker/ocean_test_instructions/<?php echo base64_encode($test_id) ?>/<?php echo base64_encode($apply_id); ?>/<?php echo $singlejob->job_post_id ?>" >Start Test</a>
+                      </div>
+                     <?php }
                     ?>
                 </div>
               </div>
