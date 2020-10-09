@@ -1053,7 +1053,7 @@
                     <div class="clear"></div>
                   </div>
                    <?php $test_id = $tests['test_id'];  ?>
-                    <a style="margin-left: 15px" title="start test" href="<?php echo base_url() ?>job_seeker/ocean_test_instructions/<?php echo base64_encode($test_id) ?>/<?php echo base64_encode($apply_id); ?>/<?php echo $singlejob->job_post_id ?>" ><lable class=""><button id="sklbtn">Start Test</button></lable></a>
+                    <a style="float: right;" title="start test" href="<?php echo base_url() ?>job_seeker/ocean_test_instructions/<?php echo base64_encode($test_id) ?>/<?php echo base64_encode($apply_id); ?>/<?php echo $singlejob->job_post_id ?>" ><lable class=""><button id="sklbtn">Start Test</button></lable></a>
                    <div class="btn-group"></div>
                  <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
