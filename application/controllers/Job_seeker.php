@@ -1959,7 +1959,7 @@ public function user_profile()
 
             $exam_array = array(
             'test_id' => $test_id,
-            // 'employee_id' => $employer_id,
+            'job_seeker_id' => $seeker_id,
             'question_id' => $row,
             'marks' => $mark,
             'correct_status' => $status,
@@ -2589,7 +2589,8 @@ public function user_profile()
         $this->session->set_userdata($data);
         $job_seeker_id = $this->session->userdata('job_seeker_id');
          $join = array("skill_master"=>"skill_master.skill_name LIKE Concat('%', job_seeker_skills.skills, '%') | LEFT OUTER","topic"=>"topic.technical_id = skill_master.id | LEFT OUTER ",
-        "oceanchamp_tests"=>"find_in_set(topic.topic_id, oceanchamp_tests.topics)| LEFT OUTER"
+        "oceanchamp_tests"=>"find_in_set(topic.topic_id, oceanchamp_tests.topics)| LEFT OUTER",
+        ""
    );
         $where = "job_seeker_skills.job_seeker_id='$job_seeker_id' group by oceanchamp_tests.test_id ";
       $sort_val = $this->input->post('sort_val');
