@@ -2596,7 +2596,7 @@ public function user_profile()
         if (empty($sort_val)) {
            $sort_val = $this->input->get('sort');
         }
-         $ocean_tests = $this->Master_model->getMaster('job_seeker_skills', $where = $where, $join , $order = 'desc', $field = 'job_seeker_skills.js_skill_id', $select = false, $limit = false, $start = false, $search = false);
+         $ocean_tests = $this->Master_model->getMaster('job_seeker_skills', $where = $where, $join , $order = 'desc', $field = 'oceanchamp_tests.test_id', $select = false, $limit = false, $start = false, $search = false);
       
          $config['base_url'] = base_url() . 'job_seeker/ocean_champ?sort='.$sort_val;
             $config['total_rows'] = sizeof($ocean_tests);
@@ -2641,7 +2641,7 @@ public function user_profile()
               $data['sort'] = $sort_val;
 
         }else{
-             $data['ocean_tests'] = $this->Master_model->getMaster('job_seeker_skills', $where = $where, $join , $order = 'desc', $field = 'job_seeker_skills.js_skill_id', $select = false, $limit = $config['per_page'], $start = $page, $search = false);
+             $data['ocean_tests'] = $this->Master_model->getMaster('job_seeker_skills', $where = $where, $join , $order = 'desc', $field = 'oceanchamp_tests.test_id', $select = false, $limit = $config['per_page'], $start = $page, $search = false);
         }
       
        
