@@ -933,6 +933,7 @@
     padding: 1px 10px;
     margin-bottom: 7px;
     font-size: 11px;
+    float: right;
 }
 </style>
 <div class="container-fluid main-d">

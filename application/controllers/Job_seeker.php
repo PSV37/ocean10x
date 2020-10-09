@@ -1837,15 +1837,16 @@ public function user_profile()
 
             $oceanchamp_tests = $this->Master_model->get_master_row('oceanchamp_tests', $select = FALSE, $where = $where_all, $join = FALSE);
                   // print_r($this->db->last_query());
-
-
+            $technical_id = $oceanchamp_tests['topics'];
+            $where = "technical_id IN('".$technical_id."')  and level ='$level' and ques_type ='$ques_type' ";
+        $questions = $this->Master_model->getMaster('questionbank', $where, $join = FALSE, $order = 'RANDOM', $field = 'ques_id', $select = false, $limit = 10, $start = false, $search = false);
             $all_questions = array();
            // foreach ($oceanchamp_tests as $question) {
                 # code...
 
              
                  
-                $questions = explode(',',$oceanchamp_tests['questions']);
+                // $questions = explode(',',$oceanchamp_tests['questions']);
                 
              // print_r($questions);
                 foreach ($questions as $row) {
