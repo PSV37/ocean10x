@@ -2595,7 +2595,7 @@ public function user_profile()
         }
          $ocean_tests = $this->Master_model->getMaster('job_seeker_skills', $where = $where, $join , $order = 'desc', $field = 'job_seeker_skills.js_skill_id', $select = false, $limit = false, $start = false, $search = false);
       
-         $config['base_url'] = base_url() . 'employer/ocean_champ?sort='.$sort_val;
+         $config['base_url'] = base_url() . 'job_seeker/ocean_champ?sort='.$sort_val;
             $config['total_rows'] = sizeof($ocean_tests);
             $config['per_page'] = 5;
             $config['attributes'] = array('class' => 'myclass');
@@ -2634,11 +2634,11 @@ public function user_profile()
             $data["link"] = $this->pagination->create_links();
          
         if (isset($sort_val) && !empty($sort_val)) {
-             $data['ocean_tests'] = $this->Master_model->getMaster('job_seeker_skills', $where = $where, $join , $order = 'desc', $field = $sort_val, $select = false, $limit = false, $start = false, $search = false);
+             $data['ocean_tests'] = $this->Master_model->getMaster('job_seeker_skills', $where = $where, $join , $order = 'desc', $field = $sort_val, $select = false, $limit = $config['per_page'], $start = $page, $search = false);
               $data['sort'] = $sort_val;
 
         }else{
-             $data['ocean_tests'] = $this->Master_model->getMaster('job_seeker_skills', $where = $where, $join , $order = 'desc', $field = 'job_seeker_skills.js_skill_id', $select = false, $limit = false, $start = false, $search = false);
+             $data['ocean_tests'] = $this->Master_model->getMaster('job_seeker_skills', $where = $where, $join , $order = 'desc', $field = 'job_seeker_skills.js_skill_id', $select = false, $limit = $config['per_page'], $start = $page, $search = false);
         }
       
        

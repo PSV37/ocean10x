@@ -1118,15 +1118,16 @@
               <strong> No Tests Created. Click on "Create A Test" !</strong>
             </li>
             <?php endif; ?>
-          </div>
-        </div>
-          <div class="container-fluid">
+             <div class="container-fluid">
              <div class="col-md-6"></div>
             <div class="col-md-6">
-            <span><?php echo $links; ?></span>   
+            <span><?php echo $link; ?></span>   
             </div>
                
           </div>
+          </div>
+        </div>
+
       </div>
       <div class="col-md-3 ">
         <div class="last_section">
