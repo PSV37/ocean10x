@@ -57,7 +57,7 @@ var seconds = 5; // seconds for HTML
 var foo; // variable for clearInterval() function
 
 function redirect() {
-    document.location.href = '<?php echo base_url() ?>seeker/dashboard';
+    document.location.href = '<?php echo base_url() ?>seeker/ocean_champ';
 }
 
 function updateSecs() {
