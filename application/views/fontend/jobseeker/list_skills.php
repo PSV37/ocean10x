@@ -1075,7 +1075,7 @@
                   <?php  
                     $test_id =$tests['test_id'];
                     $seeker_id = $this->session->userdata('job_seeker_id');
-                    $where="seeker_test_result.test_id ='$test_id' and seeker_test_result.job_seeker_id = '$seeker_id' group by test_id.job_seeker_id,date_time ";
+                    $where="seeker_test_result.test_id ='$test_id' and seeker_test_result.job_seeker_id = '$seeker_id' group by test_id,job_seeker_id,date_time ";
                     // $join = array('forwarded_tests'=>'forwarded_tests.test_id = oceanchamp_tests.test_id |Left OUTER',
                     //   'job_posting'=>'job_posting.test_for_job = oceanchamp_tests.test_id |Left OUTER',
                     //   'company_profile'=>'company_profile.company_profile_id = oceanchamp_tests.company_id |Left OUTER','js_info'=>'js_info.job_seeker_id = forwarded_tests.job_seeker_id |LEFT OUTER');
