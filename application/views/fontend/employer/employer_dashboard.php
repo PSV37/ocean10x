@@ -263,8 +263,12 @@
    padding-top: -55px;
    margin-top: -15px;
    }
-   .bg-lggreen {
-    background-color: #60afc1;
+   .bg-dream-pink {
+    background-color: #D81B60;
+}
+.bg-dream-purple {
+    background-color: #a612a6;
+    color: white;
 }
 </style>
 <div class="container-fluid main-d">
@@ -316,7 +320,7 @@
                         </div>
                      </div>
                      <div class="col-md-3 card-lb">
-                        <div class="card text-white bg-lggreen o-hidden h-100">
+                        <div class="card text-white .bg-dream-pink o-hidden h-100">
                            <div class="card-body">
                               <div class="card-body-icon">
                                  <i class="fas fa-users fa-fw"></i>
@@ -376,7 +380,7 @@
                         </div>
                      </div>
                      <div class="col-md-3 card-lb">
-                        <div class="card text-white bg-warning o-hidden h-100">
+                        <div class="card text-white bg-dream-purple o-hidden h-100">
                            <div class="card-body">
                               <div class="card-body-icon">
                                  <i class="fas fa-users fa-fw"></i>
