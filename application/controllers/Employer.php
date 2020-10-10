@@ -43,7 +43,7 @@ class Employer extends MY_Employer_Controller {
           $where = "job_posting.job_category IN('".$job_category."') ";
          $jobs = $this->Master_model->getMaster('job_posting', $where = FALSE, $join = FALSE, $order = 'desc', $field = 'job_post_id', $select = false,$limit=false,$start=false, $search=false);
          $config['base_url'] = base_url() . 'employer';
-            $config['total_rows'] = sizeof($ocean_tests);
+            $config['total_rows'] = sizeof($jobs);
             $config['per_page'] = 5;
             $config['attributes'] = array('class' => 'myclass');
             $config['page_query_string'] = TRUE;
@@ -78,7 +78,8 @@ class Employer extends MY_Employer_Controller {
             }
 
             $this->pagination->initialize($config);
-            $data["link"] = $this->pagination->create_links();
+            $link = $this->pagination->create_links();
+            $jobs = $this->Master_model->getMaster('job_posting', $where = FALSE, $join = FALSE, $order = 'desc', $field = 'job_post_id', $select = false,$limit=$config['per_page'],$start=$page, $search=false);
         $this->load->view('fontend/employer/employer_dashboard', compact('success_full_hiring', 'open_positions', 'cv_bank_data', 'company_active_jobs', 'company_info', 'chatbox','jobs'));
     }
     /*** Dashboard ***/
