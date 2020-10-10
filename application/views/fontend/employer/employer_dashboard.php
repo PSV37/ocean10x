@@ -259,7 +259,7 @@
     float: left;
     line-height: 30px;
 }
-   .following-info2{margin-bottom:10px;margin-left: 210px;
+   .following-info2{margin-bottom:10px;margin-left: 355px;
     line-height: 30px;}   
    .following-info3 {
     margin-bottom: 10px;
@@ -1377,6 +1377,10 @@ button.btn.btn-primary.trash {
     background-color: #a612a6;
     color: white;
 }
+label {
+    font-size: 12px;
+    min-width: 100%;
+
 </style>
 <div class="container-fluid main-d">
    <div class="container">
