@@ -548,7 +548,7 @@ input.capital {
                   <div class="row f-4">
                      <div class="col-md-6 col-sm-12">
                         <div class="formrow">
-                           <label class="control-label">Company Services </label><span class="required">*</span>
+                           <label class="control-label">Company’s Work Domain </label><span class="required">*</span>
                            <select name="company_category"  class="form-control select2" data-style="btn-default" data-live-search="true" aria-hidden="true">
                               <option value="">Select Services</option>
                               <?php $value =  set_value('company_category');   if (!empty($value)) {
@@ -573,37 +573,30 @@ input.capital {
                      </div>
                   </div>
                   <div class="row f-9">
-                     <div class="col-md-3 col-sm-4">
+                    <div class="col-md-3 col-sm-4">
                         <div class="formrow">
-                           <label class="control-label ">Company Country <span class="required">*</span></label>
-                           <select name="country_id" id="country_id" class="form-control select2" onchange="getStates(this.value)" aria-hidden="true">
-                              <?php 
-                                 $val =   set_value('country_id'); 
-                                  foreach($country as $key){?>
-                              <option value="<?php echo $key['country_id']; ?>"<?php if ($val == $key['country_id'] ) {
-                                 echo "selected";
-                                 } elseif($company_info->country_id==$key['country_id']){ echo "selected"; }?>><?php echo $key['country_name']; ?></option>
-                              <?php } ?>
-                           </select>
-                           <?php echo form_error('country_id'); ?>        
+                           <label class="control-label ">Head Office City <span class="required">*</span></label>
+                            <input type="text" name="city" class="form-control" id="city" placeholder="City" >
+                             <span class="required">*</span>
+                            <input type="hidden" value="" class="form-control"  name="city_id" id="city_id" onchange="get_country();">
+                           <?php echo form_error('city_id'); ?>        
                         </div>
                      </div>
+                     
                      <div class="col-md-3 col-sm-4">
                         <div class="formrow">
-                           <label class="control-label ">Company State <span class="required">*</span></label>
-                           <select name="state_id" id="state_id" class="form-control select2" onchange="getCitys(this.value)">
-                              <option value="">Select State</option>
-                           </select>
+                           <label class="control-label ">State <span class="required">*</span></label>
+                           <input type="text" name="state" id="state" class="form-control" value="">
+                             <input type="hidden" name="state_id" id="state_id" class="form-control" value="">
                            <?php echo form_error('state_id'); ?>        
                         </div>
                      </div>
                      <div class="col-md-3 col-sm-4">
                         <div class="formrow">
-                           <label class="control-label ">Company City <span class="required">*</span></label>
-                           <select name="city_id" id="city_id" class="form-control select2">
-                              <option value="">Select City</option>
-                           </select>
-                           <?php echo form_error('city_id'); ?>        
+                           <label class="control-label ">Country <span class="required">*</span></label>
+                            <input type="text" name="country" id="country" class="form-control" value="">
+                              <input type="hidden" name="country_id" id="country_id" class="form-control" value="">
+                           <?php echo form_error('country_id'); ?>        
                         </div>
                      </div>
                      <div class="col-md-3 col-sm-6">
@@ -1034,7 +1027,53 @@ input.capital {
        //   utilsScript: "",
        // });
    // });
-   
+   $(document).ready(function() {
+   $("#city").autocomplete({
+             
+             source: "<?php echo base_url();?>employer_register/search_city_name",
+            minLength: 2,
+                 // append: "#rotateModal",
+                 focus: function(event, ui) {
+                  // prevent autocomplete from updating the textbox
+                  event.preventDefault();
+                  // manually update the textbox
+                  // alert(source);
+                  $(this).val(ui.item.label);
+               },
+               select: function(event, ui) {
+                  // prevent autocomplete from updating the textbox
+                  event.preventDefault();
+                  // manually update the textbox and hidden field
+                  $(this).val(ui.item.label);
+                  $('#city_id').val(ui.item.value);
+                  get_country(ui.item.value);
+               }
+               
+              });
+   });
+
+   function get_country(city_id)
+   {
+    // var city_id = $('#city_id').val();
+    $.ajax({
+                type:'POST',
+                url:'<?php echo base_url();?>employer_register/getcity_details',
+                data:{city_id:city_id},
+                success:function(res)
+                {
+                  var obj = JSON.parse(res);
+
+                    $('#country_id').val(obj.country_id);
+                    $('#country').val(obj.country_name);
+                    $('#state_id').val(obj.state_id);
+                    $('#state').val(obj.state_name);
+                    $('#country').prop('readonly', true);
+                    $('#state').prop('readonly', true);
+                }
+    
+            }); 
+
+   }
 </script>
 <script>
    function getStates(id){
