@@ -80,7 +80,7 @@ class Employer extends MY_Employer_Controller {
             $this->pagination->initialize($config);
             $link = $this->pagination->create_links();
             $jobs = $this->Master_model->getMaster('job_posting', $where = FALSE, $join = FALSE, $order = 'desc', $field = 'job_post_id', $select = false,$limit=$config['per_page'],$start=$page, $search=false);
-        $this->load->view('fontend/employer/employer_dashboard', compact('success_full_hiring', 'open_positions', 'cv_bank_data', 'company_active_jobs', 'company_info', 'chatbox','jobs'));
+        $this->load->view('fontend/employer/employer_dashboard', compact('success_full_hiring', 'open_positions', 'cv_bank_data', 'company_active_jobs', 'company_info', 'chatbox','jobs','link'));
     }
     /*** Dashboard ***/
     public function profile_setting() {
