@@ -237,6 +237,7 @@ input.capital {
             <div class="col-md-9 edit-profile">
                <div class="col-md-12 header-profile">
                   <div class="col-md-2"> 
+                    <?php print_r($company_info); ?>
                   <?php $profile_pic = $this->company_profile_model->company_logoby_id($company_profile_id);
                   if (isset($profile_pic) && !empty($profile_pic)) { ?>
                       <img src="<?php echo base_url() ?>upload/<?php echo $profile_pic ?>" style="height:80px;width:80px;border-radius:50%;" class="img-thumbnail-profile" />
@@ -623,7 +624,7 @@ input.capital {
                         <div class="formrow">
                            <label class="control-label ">Country <span class="required">*</span></label>
 
-                            <input type="text" name="country" id="country_comp" class="form-control" value="<?php if(!empty($company_info->company_name)){ echo $company_info->country_name; } ?>">
+                            <input type="text" name="country" id="country_comp" class="form-control" value="<?php if(!empty($company_info)){ echo $company_info->country_name; } ?>">
                               <input type="hidden" name="country_id" id="country_id" class="form-control" value="<?php if(!empty($company_info->company_name)){ echo $company_info->country_id; } ?>">
                            <?php echo form_error('country_id'); ?>        
                         </div>
