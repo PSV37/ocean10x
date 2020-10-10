@@ -153,7 +153,7 @@ class Employer extends MY_Employer_Controller {
             $wheres = "status='0' AND company_profile_id='$employer_id'";
             $join = array("city"=>"city.city_id = company_profile.city_id");
             $branches = $this->Master_model->getMaster('company_branches', $where = $wheres);
-            $company_info=$this->Master_model->getMaster('company_profile', $where = $wheres, $join , $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false)
+            $company_info=$this->Master_model->getMaster('company_profile', $where = $wheres, $join , $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
             // $company_info = $this->company_profile_model->get($employer_id);
             $country = $this->Master_model->getMaster('country', $where = false);
             $this->load->view('fontend/employer/profile', compact('company_info', 'country', 'branches'));
