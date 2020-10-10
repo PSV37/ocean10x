@@ -2,7 +2,7 @@
 
 <?php $this->load->view('fontend/layout/employer_new_header.php');?>  
 <!---header--->
-<!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/post_new_job.css"> -->
+<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/post_new_job.css"> 
 <style>    
    .border-top1{
    height: 3px;
@@ -1430,7 +1430,7 @@ button.btn.btn-primary.trash {
                         <div class="card text-white bg-dream-pink o-hidden h-100">
                            <div class="card-body">
                               <div class="card-body-icon">
-                                <i class="far fa-address-card"></i>
+                                 <i class="fas fa-users fa-fw"></i>
                               </div>
                               <div>CV Bank</div>
                            </div>
