@@ -578,7 +578,11 @@
    
    
   });
-  
+  $(document).on('keydown', function(event) {
+       if (event.key == "Escape") {
+           alert('Esc key pressed.');
+       }
+   });
   (function() {
   
   "use strict";
