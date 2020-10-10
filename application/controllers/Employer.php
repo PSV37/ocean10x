@@ -43,7 +43,7 @@ class Employer extends MY_Employer_Controller {
          $job_category = $company_info['company_skillset'];
           $where = "job_posting.job_category IN('".$job_category."') and job_deadline >= '$today' ";
          $jobs = $this->Master_model->getMaster('job_posting', $where , $join = FALSE, $order = 'desc', $field = 'job_post_id', $select = false,$limit=false,$start=false, $search=false);
-        print_r($this->db->last_query());die();
+        // print_r($this->db->last_query());die();s
          $config['base_url'] = base_url() . 'employer';
             $config['total_rows'] = sizeof($jobs);
             $config['per_page'] = 5;
