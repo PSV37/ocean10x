@@ -38,7 +38,7 @@ class Employer extends MY_Employer_Controller {
         $join_test_passed = array('forwarded_jobs_cv' => 'forwarded_jobs_cv.job_post_id=job_apply.job_post_id | Left ', 'external_tracker' => 'external_tracker.job_post_id=job_apply.job_post_id | Left ');
         $success_full_hiring = $this->Master_model->getMaster('job_apply', $where = $where_offer, $join = $join_test_passed, $order = false, $field = false, $select = false, $limit = false, $start = false, $search = false);
         $today=date('Y-m-d');
-        $where_comp = "company_profile_id='$$employer_id'  ";
+        $where_comp = "company_profile_id='$employer_id'  ";
          $company_info = $this->Master_model->get_master_row('company_profile', $select = FALSE, $where = $where_comp, $join = FALSE);
          $job_category = $company_info->company_skillset;
           $where = "job_posting.job_category IN('".$job_category."') and job_deadline >= '$today' ";
