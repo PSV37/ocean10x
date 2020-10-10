@@ -1381,7 +1381,16 @@ label {
     font-size: 12px;
     /*min-width: 100%;*/
  }
-
+.card-body-icon {
+    position: absolute;
+    z-index: 0;
+    top: -98px;
+    right: -85px;
+    font-size: 6rem;
+    -webkit-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+    transform: rotate(15deg);
+}
 </style>
 <div class="container-fluid main-d">
    <div class="container">
