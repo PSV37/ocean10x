@@ -263,7 +263,7 @@
    padding-top: -55px;
    margin-top: -15px;
    }
-   .bg-green {
+   .bg-lggreen {
     background-color: #60afc1;
 }
 </style>
@@ -316,7 +316,7 @@
                         </div>
                      </div>
                      <div class="col-md-3 card-lb">
-                        <div class="card text-white bg-green o-hidden h-100">
+                        <div class="card text-white bg-lggreen o-hidden h-100">
                            <div class="card-body">
                               <div class="card-body-icon">
                                  <i class="fas fa-users fa-fw"></i>
