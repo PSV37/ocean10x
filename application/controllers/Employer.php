@@ -40,7 +40,7 @@ class Employer extends MY_Employer_Controller {
         $today=date('Y-m-d');
         $where_comp = "company_profile_id='$$employer_id'  ";
          $company_info = $this->Master_model->get_master_row('company_profile', $select = FALSE, $where = $where_comp, $join = FALSE);
-         $job_category = $company_info['company_skillset'];
+         $job_category = $company_info->company_skillset;
           $where = "job_posting.job_category IN('".$job_category."') and job_deadline >= '$today' ";
          $jobs = $this->Master_model->getMaster('job_posting', $where , $join = FALSE, $order = 'desc', $field = 'job_post_id', $select = false,$limit=false,$start=false, $search=false);
         print_r($this->db->last_query());die();
