@@ -157,7 +157,7 @@ class Employer extends MY_Employer_Controller {
                 "country"=>"country.country_id = company_profile.country_id","state"=>"state.state_id = company_profile.state_id");
            // $company_info = $this->company_profile_model->get($employer_id);
             $company_info=$this->Master_model->getMaster('company_profile', $where = $wherecomp, $join =  $join , $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
-           // print_r($this->db->last_query());die;
+           print_r($company_info);
             $country = $this->Master_model->getMaster('country', $where = false);
             $this->load->view('fontend/employer/profile', compact('company_info', 'country', 'branches'));
         }
