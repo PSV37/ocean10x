@@ -347,12 +347,12 @@
       </div>
     </aside>
   </div>
-  <ul class='custom-menu'>
+  <ul class='custom-menu' tabindex="-1">
     <li data-action = "first">Add Folder</li>
     <li data-action = "second">Delete Folder</li>
     <li data-action = "third">Rename Folder</li>
   </ul>
-  <ul class='custom-menu1'>
+  <ul class='custom-menu1' tabindex="-1">
     <li data-action = "first">Add Folder</li>
   </ul>
   <div id="mySidenav" class="sidenav">

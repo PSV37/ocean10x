@@ -1072,15 +1072,8 @@
                    <!--  <li > <a style="margin-left: 15px" title="Give test" href="<?php echo base_url() ?>job_seeker/ocean_test_start/<?php echo base64_encode($test_id) ?>/<?php echo base64_encode($apply_id); ?>/<?php echo $singlejob->job_post_id ?>" >Give test</a></li> -->
                   
                   <!-- </div> -->
-                 <?php }else{ ?>
-
-                   <div class="job-info">
-                    <div class="a">
-                      <li class="right-title" style="font-size:19px;margin-top:-4px;"  ><?php echo $tests['skills']; ?></li>
-                    </div>
-                  </div>
-               <?php  } ?>
-                  <?php  
+                 <?php 
+                }  
                     $test_id =$tests['test_id'];
                     $seeker_id = $this->session->userdata('job_seeker_id');
                     $where="seeker_test_result.test_id ='$test_id' and seeker_test_result.job_seeker_id = '$seeker_id' group by test_id,job_seeker_id,date_time ";
