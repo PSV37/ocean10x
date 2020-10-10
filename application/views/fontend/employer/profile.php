@@ -301,7 +301,7 @@ input.capital {
                         <div class="formrow">
                            <label class="control-label">Country Code</label>&nbsp;<i title="Logout & Login again for Currency Changes to take effect ! " class="fa fa-info-circle" aria-hidden="true"></i>
                            <select id="country" name="country_code" class="form-control select2"  aria-hidden="true">
-                              <option>IN - India (+91)</option>
+                              <!-- <option>IN - India (+91)</option> -->
                               <option value="AD - Andorra (+376)">AD - Andorra (+376)</option>
                               <option value="AE - United Arab Emirates (+971)">AE - United Arab Emirates (+971)</option>
                               <option value="AF - Afghanistan (+93)">AF - Afghanistan (+93)</option>
@@ -577,7 +577,7 @@ input.capital {
                         <div class="formrow">
                            <label class="control-label ">Head Office City <span class="required">*</span></label>
                             <input type="text" name="city" class="form-control" id="city" placeholder="City" >
-                             <span class="required">*</span>
+                            
                             <input type="hidden" value="" class="form-control"  name="city_id" id="city_id" onchange="get_country();">
                            <?php echo form_error('city_id'); ?>        
                         </div>
@@ -594,7 +594,8 @@ input.capital {
                      <div class="col-md-3 col-sm-4">
                         <div class="formrow">
                            <label class="control-label ">Country <span class="required">*</span></label>
-                            <input type="text" name="country_comp" id="country" class="form-control" value="">
+
+                            <input type="text" name="country" id="country_comp" class="form-control" value="">
                               <input type="hidden" name="country_id" id="country_id" class="form-control" value="">
                            <?php echo form_error('country_id'); ?>        
                         </div>
@@ -1067,7 +1068,7 @@ input.capital {
                     $('#country_comp').val(obj.country_name);
                     $('#state_id').val(obj.state_id);
                     $('#state').val(obj.state_name);
-                    $('#country').prop('readonly', true);
+                    $('#country_comp').prop('readonly', true);
                     $('#state').prop('readonly', true);
                 }
     
