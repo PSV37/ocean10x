@@ -594,7 +594,7 @@ input.capital {
                      <div class="col-md-6 col-sm-12">
                         <div class="formrow">
                            <label class="control-label">Alert Company's <span class="required">*</span></label>  
-                           <input type="text" name="alert_comp" class="form-control capital"  placeholder="Company Name" value>
+                           <input type="text" name="alert_comp" class="form-control capital"  placeholder="Company Name" value="<?php if(!empty($company_info->company_name)){ echo $company_info->alert_comp; } ?>">
                            <?php echo form_error('contact_name'); ?>        
                         </div>
                      </div>
@@ -603,9 +603,9 @@ input.capital {
                     <div class="col-md-3 col-sm-4">
                         <div class="formrow">
                            <label class="control-label ">Head Office City <span class="required">*</span></label>
-                            <input type="text" name="city" class="form-control" id="city" placeholder="City" >
+                            <input type="text" name="city" class="form-control" id="city" placeholder="City" value="<?php if(!empty($company_info->company_name)){ echo $company_info->city_name; } ?>" >
                             
-                            <input type="hidden" value="" class="form-control"  name="city_id" id="city_id" onchange="get_country();">
+                            <input type="hidden" value="<?php if(!empty($company_info->company_name)){ echo $company_info->city_id; } ?>" class="form-control"  name="city_id" id="city_id" onchange="get_country(<?php if(!empty($company_info->company_name)){ echo $company_info->city_id; } ?>);">
                            <?php echo form_error('city_id'); ?>        
                         </div>
                      </div>
