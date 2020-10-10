@@ -1052,19 +1052,26 @@
                     <li class="right-title">&nbsp;:<?php echo $tests['negative_marks']; ?></li>
                     <div class="clear"></div>
                   </div>
-                 
+                 <div class="dropdown">
+                  <button class="btn btn-link dropdown-toggle"type="button" data-toggle="dropdown"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></button>
+                  <ul class="dropdown-menu dropdown-menu-right">
+                   <li ><a class="dropdown-item" href="#" id="div_frwrd" data-toggle="modal" data-target="#rotateModal<?php echo $tests['test_id'] ?>" >Share This Test</a></li>
+                   <!--  <li><a href="#">CSS</a></li>
+                    <li><a href="#">JavaScript</a></li> -->
+                  </ul>
+                </div>
                   <!-- <br> -->
                    <!-- <div> -->
-                 <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
-                </button>
+                 <!-- <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                
+                </button> -->
                  <!-- </div> -->
-                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1" style="top:47px;">
-                    <li ><a class="dropdown-item" href="#" id="div_frwrd" data-toggle="modal" data-target="#rotateModal<?php echo $tests['test_id'] ?>" >Share This Test</a></li>
+                  <!-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1" style="top:47px;">
+                    <li ><a class="dropdown-item" href="#" id="div_frwrd" data-toggle="modal" data-target="#rotateModal<?php echo $tests['test_id'] ?>" >Share This Test</a></li> -->
                    
                    <!--  <li > <a style="margin-left: 15px" title="Give test" href="<?php echo base_url() ?>job_seeker/ocean_test_start/<?php echo base64_encode($test_id) ?>/<?php echo base64_encode($apply_id); ?>/<?php echo $singlejob->job_post_id ?>" >Give test</a></li> -->
                   
-                  </div>
+                  <!-- </div> -->
                  <?php }else{ ?>
 
                    <div class="job-info">
