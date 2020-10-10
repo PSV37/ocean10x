@@ -42,7 +42,7 @@ class Employer extends MY_Employer_Controller {
          $company_info = $this->Master_model->get_master_row('company_profile', $select = FALSE, $where = $where_comp, $join = FALSE);
          $job_category = $company_info['company_skillset'];
           $where = "job_posting.job_category IN('".$job_category."') and job_deadline >= '$today' ";
-         $jobs = $this->Master_model->getMaster('job_posting', $where = FALSE, $join = FALSE, $order = 'desc', $field = 'job_post_id', $select = false,$limit=false,$start=false, $search=false);
+         $jobs = $this->Master_model->getMaster('job_posting', $where , $join = FALSE, $order = 'desc', $field = 'job_post_id', $select = false,$limit=false,$start=false, $search=false);
          $config['base_url'] = base_url() . 'employer';
             $config['total_rows'] = sizeof($jobs);
             $config['per_page'] = 5;
@@ -80,7 +80,7 @@ class Employer extends MY_Employer_Controller {
 
             $this->pagination->initialize($config);
             $link = $this->pagination->create_links();
-            $jobs = $this->Master_model->getMaster('job_posting', $where = FALSE, $join = FALSE, $order = 'desc', $field = 'job_post_id', $select = false,$limit=$config['per_page'],$start=$page, $search=false);
+            $jobs = $this->Master_model->getMaster('job_posting', $where , $join = FALSE, $order = 'desc', $field = 'job_post_id', $select = false,$limit=$config['per_page'],$start=$page, $search=false);
         $this->load->view('fontend/employer/employer_dashboard', compact('success_full_hiring', 'open_positions', 'cv_bank_data', 'company_active_jobs', 'company_info', 'chatbox','jobs','link'));
     }
     /*** Dashboard ***/
