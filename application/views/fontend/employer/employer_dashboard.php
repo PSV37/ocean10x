@@ -320,7 +320,7 @@
                         </div>
                      </div>
                      <div class="col-md-3 card-lb">
-                        <div class="card text-white .bg-dream-pink o-hidden h-100">
+                        <div class="card text-white bg-dream-pink o-hidden h-100">
                            <div class="card-body">
                               <div class="card-body-icon">
                                  <i class="fas fa-users fa-fw"></i>

@@ -577,6 +577,7 @@ input.capital {
                         <div class="formrow">
                            <label class="control-label">Skillsets </label><span class="required">*</span>
                            <select name="company_skillset[]"  class="form-control select2" multiple="multiple" data-style="btn-default" data-live-search="true" aria-hidden="true">
+                            
                               <option value="">Select Services</option>
                               <?php $value =  set_value('company_category');   if (!empty($value)) {
                                  echo $this->job_category_model->selected($value);
