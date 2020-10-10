@@ -594,7 +594,7 @@ input.capital {
                      <div class="col-md-3 col-sm-4">
                         <div class="formrow">
                            <label class="control-label ">Country <span class="required">*</span></label>
-                            <input type="text" name="country" id="country" class="form-control" value="">
+                            <input type="text" name="country_comp" id="country" class="form-control" value="">
                               <input type="hidden" name="country_id" id="country_id" class="form-control" value="">
                            <?php echo form_error('country_id'); ?>        
                         </div>
@@ -822,7 +822,7 @@ input.capital {
    
    // url: true,
 
-  url_regex: true,
+  // url_regex: true,
    
    },
    
@@ -1064,7 +1064,7 @@ input.capital {
                   var obj = JSON.parse(res);
 
                     $('#country_id').val(obj.country_id);
-                    $('#country').val(obj.country_name);
+                    $('#country_comp').val(obj.country_name);
                     $('#state_id').val(obj.state_id);
                     $('#state').val(obj.state_name);
                     $('#country').prop('readonly', true);
