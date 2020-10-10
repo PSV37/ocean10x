@@ -577,7 +577,7 @@ input.capital {
                         <div class="formrow">
                            <label class="control-label">Skillsets </label><span class="required">*</span>
                            <select name="company_skillset[]"  class="form-control select2" multiple="multiple" data-style="btn-default" data-live-search="true" aria-hidden="true">
-                            
+
                               <option value="">Select Services</option>
                               <?php $value =  set_value('company_category');   if (!empty($value)) {
                                  echo $this->job_category_model->selected($value);
@@ -604,7 +604,7 @@ input.capital {
                     <div class="col-md-3 col-sm-4">
                         <div class="formrow">
                            <label class="control-label ">Head Office City <span class="required">*</span></label>
-                            <input type="text" name="city" class="form-control" id="city" placeholder="City" value="<?php if(!empty($company_info->company_name)){ echo $company_info->city_name; } ?>" >
+                            <input type="text" name="city" class="form-control" id="city" placeholder="City" value="<?php if(!empty($company_info)){ echo $company_info->city_name; } ?>" >
                             
                             <input type="hidden" value="<?php if(!empty($company_info->company_name)){ echo $company_info->city_id; } ?>" class="form-control"  name="city_id" id="city_id" onchange="get_country(<?php if(!empty($company_info->company_name)){ echo $company_info->city_id; } ?>);">
                            <?php echo form_error('city_id'); ?>        
@@ -614,8 +614,8 @@ input.capital {
                      <div class="col-md-3 col-sm-4">
                         <div class="formrow">
                            <label class="control-label ">State <span class="required">*</span></label>
-                           <input type="text" name="state" id="state" class="form-control" value="">
-                             <input type="hidden" name="state_id" id="state_id" class="form-control" value="">
+                           <input type="text" name="state" id="state" class="form-control" readonly="" value="<?php if(!empty($company_info->company_name)){ echo $company_info->state_name; } ?>">
+                             <input type="hidden" name="state_id" id="state_id" class="form-control" value="<?php if(!empty($company_info->company_name)){ echo $company_info->state_id; } ?>">
                            <?php echo form_error('state_id'); ?>        
                         </div>
                      </div>
@@ -623,8 +623,8 @@ input.capital {
                         <div class="formrow">
                            <label class="control-label ">Country <span class="required">*</span></label>
 
-                            <input type="text" name="country" id="country_comp" class="form-control" value="">
-                              <input type="hidden" name="country_id" id="country_id" class="form-control" value="">
+                            <input type="text" name="country" id="country_comp" class="form-control" value="<?php if(!empty($company_info->company_name)){ echo $company_info->country_name; } ?>">
+                              <input type="hidden" name="country_id" id="country_id" class="form-control" value="<?php if(!empty($company_info->company_name)){ echo $company_info->country_id; } ?>">
                            <?php echo form_error('country_id'); ?>        
                         </div>
                      </div>
