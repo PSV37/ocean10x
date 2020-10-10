@@ -578,9 +578,19 @@
    
    
   });
-  $(document).on('keydown', function(event) {
-       if (event.key == "Escape") {
-           alert('Esc key pressed.');
+  $(document).on('keydown', function(e) {
+       if (e.key == "Escape") {
+    if (!$(e.target).parents(".custom-menu").length > 0) {
+    
+       $(".custom-menu").hide(100);
+      
+   }
+  
+   if (!$(e.target).parents(".custom-menu1").length > 0) {
+     
+       $(".custom-menu1").hide(100);
+    
+   }
        }
    });
   (function() {
