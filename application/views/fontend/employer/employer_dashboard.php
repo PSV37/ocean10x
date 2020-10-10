@@ -1379,7 +1379,8 @@ button.btn.btn-primary.trash {
 }
 label {
     font-size: 12px;
-    min-width: 100%;
+    /*min-width: 100%;*/
+ }
 
 </style>
 <div class="container-fluid main-d">
@@ -1506,7 +1507,7 @@ label {
                   </div>
                </div>
                <?php if (!empty($jobs)): foreach ($jobs as $v_companyjobs) : ?>
-   <label class="checkbox_label content">
+   <label style="min-width: 100%;" class="checkbox_label content">
       <div class="border-top1"></div>
       <input type="checkbox" id='posted_job' class="posted_job" onchange="get_report_data(<?php echo $v_companyjobs['job_post_id'] ?>)" />
       <div class="card">
