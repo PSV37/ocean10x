@@ -1490,7 +1490,7 @@ button.btn.btn-primary.trash {
                         <div class="card text-white bg-dream-purple o-hidden h-100">
                            <div class="card-body">
                               <div class="card-body-icon">
-                                 <i class="far fa-address-card"></i>
+                                 <i class="fas fa-users fa-fw"></i>
                               </div>
                               <div>CV Bank</div>
                            </div>
