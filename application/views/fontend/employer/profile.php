@@ -237,7 +237,7 @@ input.capital {
             <div class="col-md-9 edit-profile">
                <div class="col-md-12 header-profile">
                   <div class="col-md-2"> 
-                    <?php print_r($company_info); ?>
+                   
                   <?php $profile_pic = $this->company_profile_model->company_logoby_id($company_profile_id);
                   if (isset($profile_pic) && !empty($profile_pic)) { ?>
                       <img src="<?php echo base_url() ?>upload/<?php echo $profile_pic ?>" style="height:80px;width:80px;border-radius:50%;" class="img-thumbnail-profile" />
@@ -1093,7 +1093,8 @@ input.capital {
                 success:function(res)
                 {
                   var obj = JSON.parse(res);
-
+                   $('#city').val(obj.city_name);
+                    $('#country_comp').val(obj.country_name);
                     $('#country_id').val(obj.country_id);
                     $('#country_comp').val(obj.country_name);
                     $('#state_id').val(obj.state_id);
