@@ -268,12 +268,12 @@
    <div class="container">
       <div class="col-md-12">
          <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
-         <div class="col-lg-6 mid-section">
+         <div class="col-lg-9 mid-section">
             <div class="row">
                <div class="col-md-12 bd-1">
                   <div class="dash-box-w">
                      <h3 class="heading-dash">My Dashboard</h3>
-                     <div class="col-md-4 card-lb">
+                     <div class="col-md-3 card-lb">
                         <div class="card text-white bg-primary o-hidden h-100">
                            <div class="card-body">
                               <div class="card-body-icon">
@@ -286,7 +286,7 @@
                            </a>  
                         </div>
                      </div>
-                     <div class="col-md-4 card-lb">
+                     <div class="col-md-3 card-lb">
                         <div class="card text-white bg-danger o-hidden h-100">
                            <div class="card-body">
                               <div class="card-body-icon">
@@ -299,7 +299,7 @@
                            </a>
                         </div>
                      </div>
-                     <div class="col-md-4 card-lb">
+                     <div class="col-md-3 card-lb">
                         <div class="card text-white bg-warning o-hidden h-100">
                            <div class="card-body">
                               <div class="card-body-icon">
@@ -312,7 +312,20 @@
                            </a>
                         </div>
                      </div>
-                     <div class="col-md-4 card-lb">
+                     <div class="col-md-3 card-lb">
+                        <div class="card text-white bg-warning o-hidden h-100">
+                           <div class="card-body">
+                              <div class="card-body-icon">
+                                 <i class="fas fa-users fa-fw"></i>
+                              </div>
+                              <div>CV Bank</div>
+                           </div>
+                           <a class="card-footer text-white clearfix small z-1" href="#">
+                           <span class="float-left" style="font-size:22px;"><span><?php echo sizeof($cv_bank_data); ?></span>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-3 card-lb">
                         <div class="card text-white bg-bluish o-hidden h-100">
                            <div class="card-body">
                               <div class="card-body-icon">
@@ -333,7 +346,7 @@
                            </a>
                         </div>
                      </div>
-                     <div class="col-md-4 card-lb">
+                     <div class="col-md-3 card-lb">
                         <div class="card text-white bg-link o-hidden h-100">
                            <div class="card-body">
                               <div class="card-body-icon">
@@ -346,7 +359,7 @@
                            </a>
                         </div>
                      </div>
-                     <div class="col-md-4 card-lb">
+                     <div class="col-md-3 card-lb">
                         <div class="card text-white bg-green o-hidden h-100">
                            <div class="card-body">
                               <div class="card-body-icon">
@@ -356,6 +369,19 @@
                            </div>
                            <a class="card-footer text-white clearfix small z-1" href="#">
                            <span class="float-left" style="font-size:22px;">20</span>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-3 card-lb">
+                        <div class="card text-white bg-warning o-hidden h-100">
+                           <div class="card-body">
+                              <div class="card-body-icon">
+                                 <i class="fas fa-users fa-fw"></i>
+                              </div>
+                              <div>CV Bank</div>
+                           </div>
+                           <a class="card-footer text-white clearfix small z-1" href="#">
+                           <span class="float-left" style="font-size:22px;"><span><?php echo sizeof($cv_bank_data); ?></span>
                            </a>
                         </div>
                      </div>

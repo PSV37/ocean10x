@@ -572,6 +572,33 @@ input.capital {
                         </div>
                      </div>
                   </div>
+                  <div class="row f-5">
+                     <div class="col-md-6 col-sm-12">
+                        <div class="formrow">
+                           <label class="control-label">Skillsets </label><span class="required">*</span>
+                           <select name="company_skillset[]"  class="form-control select2" multiple="multiple" data-style="btn-default" data-live-search="true" aria-hidden="true">
+                              <option value="">Select Services</option>
+                              <?php $value =  set_value('company_category');   if (!empty($value)) {
+                                 echo $this->job_category_model->selected($value);
+                                  }
+                                 else if(!empty($company_info->company_category)) {
+                                  echo $this->job_category_model->selected($company_info->company_category);
+                                  } else {
+                                     echo $this->job_category_model->selected();
+                                  }
+                                   ?><?php echo form_error('company_category'); ?>
+                           </select>
+                           <?php echo form_error('company_category'); ?>        
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-sm-12">
+                        <div class="formrow">
+                           <label class="control-label">Alert Company's <span class="required">*</span></label>  
+                           <input type="text" name="alert_comp" class="form-control capital"  placeholder="Company Name" value>
+                           <?php echo form_error('contact_name'); ?>        
+                        </div>
+                     </div>
+                  </div>
                   <div class="row f-9">
                     <div class="col-md-3 col-sm-4">
                         <div class="formrow">
