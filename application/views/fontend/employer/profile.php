@@ -15,8 +15,7 @@
    $Corporate_docs_each=$Corporate_docs/4;
    $wheres="status='0' AND company_profile_id='$employer_id'";
     $branches = $this->Master_model->getMaster('company_branches',$where=$wheres);
-    // $company_info = $company_info[0];
-   // $company_info = $this->company_profile_model->get($employer_id);
+   $company_info = $this->company_profile_model->get($employer_id);
    // print_r($Corporate_docs_each);die;
    
    if (isset($company_info->company_logo) && !empty($company_info->company_logo)) {
@@ -1059,6 +1058,7 @@ input.capital {
        // });
    // });
    $(document).ready(function() {
+     get_country(<?php if(!empty($company_info->company_name)){ echo $company_info->city_id; } ?>);
    $("#city").autocomplete({
              
              source: "<?php echo base_url();?>employer_register/search_city_name",
