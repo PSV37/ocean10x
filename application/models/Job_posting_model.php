@@ -354,7 +354,7 @@ order by created_date asc limit 10");
 
     public function get_job_forwarded_candidate_by_date($job_id,$date)
     {
-        $this->db->select('forwarded_jobs_cv.*,corporate_cv_bank.*,education_level.*,DATE_FORMAT(forwarded_jobs_cv.created_on,"%Y-%m-%d")as datecreation ,DATE_FORMAT(forwarded_jobs_cv.updated_on,"%Y-%m-%d")as updated_on');
+        $this->db->select('*,DATE_FORMAT(forwarded_jobs_cv.created_on,"%Y-%m-%d")as datecreation ,DATE_FORMAT(forwarded_jobs_cv.updated_on,"%Y-%m-%d")as updated_on');
         $this->db->from('forwarded_jobs_cv');
         $this->db->where('forwarded_jobs_cv.job_post_id', $job_id);
         $this->db->where('DATE_FORMAT(forwarded_jobs_cv.created_on,"%y-%m-%d")',$date);
