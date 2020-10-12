@@ -5430,7 +5430,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     {
         $stage_id = $this->input->post('stage');
         $where_stage = "tracker_status_master.stage_id ='$stage_id'";
-        $status = $this->Master_model->getMaster('tracker_status_master', $where = $where_stage, $join = FALSE, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false)
+        $status = $this->Master_model->getMaster('tracker_status_master', $where = $where_stage, $join = FALSE, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
          if (!empty($status)) {
             // $result.= '<option value="">Select Test</option>';
             foreach ($status as $key) {
