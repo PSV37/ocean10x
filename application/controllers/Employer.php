@@ -5469,9 +5469,11 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $frwrd_update_cv['tracking_status'] = $row->status;
             $frwrd_update_cv['updated_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
             $where_frwdcv['cv_id'] = $row->value;
+
             $update = $this->Master_model->master_update($frwrd_update_cv, 'forwarded_jobs_cv', $where_frwdcv);
         }
-        echo json_encode($update);
+        // echo json_encode($update);
+        echo $this->db->last_query();
     }
     function update_external() {
         $up_date = json_decode($this->input->post('data_arr'));
