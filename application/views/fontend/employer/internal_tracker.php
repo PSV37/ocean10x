@@ -520,6 +520,15 @@ ul#sizelist {
     border-radius: 20px;
     margin-left: 45px;
 }
+nav.navbar.navbar-default {
+    /* background-color: white; */
+    /* border-color: white; */
+    border: none;
+}
+.navbar-default .navbar-nav>li>a {
+    /* color: #777; */
+    font-size: 18px;
+}
 </style>
 <div class="container-fluid main-d">
   <div class="container">
@@ -616,10 +625,12 @@ ul#sizelist {
                     <th scope="col">Notice (days)</th>
                     <th scope="col">Education</th>
                     <th scope="col">Organization</th>
-                    <th scope="col">Status</th>
+
                     <th scope="col">Action Items</th>
                     <th scope="col">Notes</th>
                     <th scope="col">Reminders</th>
+                     <th scope="col">Current stage</th>
+                    <th scope="col">Status</th>
                     <th scope="col">Update external</th>
                   </tr>
                 </thead>
@@ -725,6 +736,24 @@ ul#sizelist {
   </div>
 </div>
 <script>
+  function get_rel_status()
+  {
+    var stage_id = $('#stage').val();
+    // 
+     $.ajax({
+              url: "<?php echo base_url();?>employer/get_status",
+              type: "POST",
+              data: {stage:stage},
+              // contentType:false,
+              // processData:false,
+               // dataType: "json",
+              success: function(data)
+              {
+               // $('#shared_list').html(data);
+                $("#status").html(data);
+              }
+        });
+  }
   function show_text()
   {
     $('#shared_list').hide();

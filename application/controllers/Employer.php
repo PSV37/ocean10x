@@ -5403,7 +5403,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         if (!empty($job_id)) {
             $forwarded_job_tracking = $this->job_posting_model->get_job_forwarded_candidate($job_id);
             $education_level = $this->Master_model->getMaster('education_level', $where = false);
-            $tracker_status = $this->Master_model->getMaster('tracker_status_master', $where = false);
+            $tracking_stages = $this->Master_model->getMaster('tracking_stages', $where = false);
             $this->load->view('fontend/employer/internal_tracker_card.php', compact('forwarded_job_tracking', 'employer_id', 'education_level', 'tracker_status', 'job_id'));
         }
     }
@@ -5425,6 +5425,19 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $tracker_status = $this->Master_model->getMaster('tracker_status_master', $where = false);
             $this->load->view('fontend/employer/external_tracker_card.php', compact('get_external_tracker', 'employer_id', 'education_level', 'tracker_status', 'job_id'));
         }
+    }
+    function get_status()
+    {
+        $stage_id = $this->input->post('stage');
+        $where_stage = "tracker_status_master.stage_id ='$stage_id'";
+        $status = $this->Master_model->getMaster('tracker_status_master', $where = $where_stage, $join = FALSE, $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false)
+         if (!empty($status)) {
+            // $result.= '<option value="">Select Test</option>';
+            foreach ($status as $key) {
+                $result.= '<option value="' . $key['status_id'] . '">' . $key['status_name'] . '</option>';
+            }
+        }
+        return $result; 
     }
     function update_cv() {
         // print_r( ); die();

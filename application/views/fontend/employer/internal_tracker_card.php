@@ -36,17 +36,24 @@
   </td>
   <td ><input id="org" type="text" name="org"  value="<?php echo $job_row->current_org; ?>" readonly maxlength='3' ></td>
   <!--  <input id="edu" type="text" name="edu" value="<?php echo $job_row->education_level_name; ?>" ></td> -->
-  <td>
-    <select name="status" style="min-width: 200px; border: none;" id="status" class="form-control select2" data-style="btn-default" data-live-search="true"  >
-      <option value=""> </option>
-      <?php   foreach($tracker_status as $status){?>
-      <option value="<?php echo $status['status_id']; ?>"<?php if($job_row->tracking_status==$status['status_id']){ echo "selected"; }?>><?php echo $status['status_name']; ?></option>
-      <?php } ?>
-    </select>
-  </td>
+  
   <td ><input type="text" class="email allowalphabatesspace" id="action" name="comment" value="<?php echo $job_row->action_item; ?>" ></td>
   <td ><textarea class="email allowalphabates" id="comment" name="comment" value=""><?php echo $job_row->comments; ?></textarea></td>
   <td ><input type="text" class="email allowalphabates" id="reminder" name="comment" value="<?php echo $job_row->reminder; ?>" ></td>
+  <td>
+    <select name="stage" style="min-width: 200px; border: none;" id="stage" class="form-control select2" data-style="btn-default" data-live-search="true" onchange="get_rel_status();"  >
+      <option value=""> </option>
+      <?php   foreach($tracking_stages as $stage){?>
+      <option value="<?php echo $stage['stage_id']; ?>"<?php if($job_row->tracking_status==$stage['stage_id']){ echo "selected"; }?>><?php echo $stage['stage']; ?></option>
+      <?php } ?>
+    </select>
+  </td>
+  <td>
+    <select name="status" style="min-width: 200px; border: none;" id="status" class="form-control select2" data-style="btn-default" data-live-search="true"  >
+      <option value=""> </option>
+     
+    </select>
+  </td>
   <td style="min-width: 150px;"><input type="checkbox" id="update" class="chkbx" checked name=""></td>
   <input type="hidden" class="email allowalphabates" id="tracking_id_val" name="comment" value="<?php echo $job_row->id; ?>" >
 </tr>
