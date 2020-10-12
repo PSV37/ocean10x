@@ -757,7 +757,7 @@ $(document).on("click", "#stage", function (e) {
                 $("#status").html(data);
               }
         });
-  }
+  });
   function get_rel_status()
   {
    
