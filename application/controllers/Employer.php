@@ -5400,7 +5400,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     }
     public function get_tracker_card() {
         $job_id = $this->input->post('job_id');
-         $stage_id = $this->input->post('stage_id');
+         $stage_id = $this->input->post('stage');
         if (!empty($job_id)) {
             $forwarded_job_tracking = $this->job_posting_model->get_job_forwarded_candidate($job_id,$stage_id);
             $education_level = $this->Master_model->getMaster('education_level', $where = false);
