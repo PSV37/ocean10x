@@ -542,7 +542,7 @@ ul#sizelist {
           <!-- </div> -->
         </nav>
         <div class="row">
-          <div class="col-md-3">
+          <div class="col-md-4">
             <select class="form-control select2" id="job_select" onchange="tracker_card(this.value);">
               <?php  if (isset($company_active_jobs) && !empty($company_active_jobs)) {
                 foreach ($company_active_jobs as $row) { ?>
@@ -554,7 +554,7 @@ ul#sizelist {
             </select>
             <div class="clear"></div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-4">
             <!-- <button  type="button" class="btn btn-default btn-sm save"> -->
             <span title="save" class="glyphicon glyphicon-floppy-save  save icon_backg"></span>
             <!-- </button> -->
@@ -571,7 +571,7 @@ ul#sizelist {
               <input type="checkbox" name="check_all" id="jevattend_id" value="1">
               </label> -->
           </div>
-          <div class="col-md-3">
+          <div class="col-md-4">
             <form id="int_track" method="post" action="<?php echo base_url(); ?>employer/internal_tracker">
               <label class="dropdown" style="float:right;">
                 <div class="dd-button" onclick="myFunction2(event)">
