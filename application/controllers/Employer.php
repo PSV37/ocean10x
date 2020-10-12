@@ -5442,6 +5442,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     function update_cv() {
         // print_r( ); die();
         $up_date = json_decode($this->input->post('data_arr'));
+        print_r($up_date);die;
         foreach ($up_date as $row) {
             $update_cv['js_email'] = $row->email;
             $update_cv['js_name'] = $row->name;
