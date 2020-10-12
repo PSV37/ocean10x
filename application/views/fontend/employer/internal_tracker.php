@@ -548,8 +548,8 @@ nav.navbar.navbar-default {
             
             <ul id="credit" class="nav navbar-nav">
              
-              <li class="active"data-interest = "1"><a href="#"data-toggle="tab"> 1</a></li>
-            <li onclick="get_card(2);"><a href="#" data-toggle="tab"> 2</a></li>
+              <li id="li1" class="active"data-interest = "1"><a href="#"data-toggle="tab"> 1</a></li>
+            <li id="li2" onclick="get_card(2);"><a href="#" data-toggle="tab"> 2</a></li>
             <li onclick="get_card(3);"><a href="#" data-toggle="tab"> 3</a></li>
             <li onclick="get_card(4);"><a href="#" data-toggle="tab">4</a></li>
             <li onclick="get_card(5);"><a href="#" data-toggle="tab">5</a></li>
@@ -758,26 +758,15 @@ nav.navbar.navbar-default {
 //               }
 //         });
 //   });
-$(function() {
-   $("li").click(function() {
-      // remove classes from all
-      $("li").removeClass("active");
-      // add class to the one we clicked
-      $(this).addClass("active");
+
+function get_card(id)
+{
   var job_id = $('#job_select').val();
   tracker_card(job_id);
-  
-
-   });
-})
-// function get_card(id)
-// {
-//   var job_id = $('#job_select').val();
-//   tracker_card(job_id);
-//    $("li").removeClass("active");
-//       // add class to the one we clicked
-//       $(this).addClass("active");
-// }
+   $("li").removeClass("active");
+      // add class to the one we clicked
+      $('#li'+id).addClass("active");
+}
   function get_rel_status(id)
   {
    var stage = $('#stage'+id).val();
