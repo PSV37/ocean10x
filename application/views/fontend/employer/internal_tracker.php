@@ -554,7 +554,7 @@ ul#sizelist {
             </select>
             <div class="clear"></div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-6">
             <!-- <button  type="button" class="btn btn-default btn-sm save"> -->
             <span title="save" class="glyphicon glyphicon-floppy-save  save icon_backg"></span>
             <!-- </button> -->
@@ -571,7 +571,7 @@ ul#sizelist {
               <input type="checkbox" name="check_all" id="jevattend_id" value="1">
               </label> -->
           </div>
-          <div class="col-md-2">
+          <div class="col-md-3">
             <form id="int_track" method="post" action="<?php echo base_url(); ?>employer/internal_tracker">
               <label class="dropdown" style="float:right;">
                 <div class="dd-button" onclick="myFunction2(event)">
@@ -591,12 +591,13 @@ ul#sizelist {
               <input id="sizevalue" size="15" name="sort_val" type="hidden" />
               <button type="submit" name="sort" class="hidden" id="sort_btn"></button>
             </form>
-          </div>
-          <div class="col-md-2">
-            <label>
-            <a style="float: right;" id="add_cv" href=""><button style="width: 140px;" class="btn btn-primary"><i class="fas fa-plus"></i> New Candidate</button></a>
+             <label>
+            <a  id="add_cv" href=""><button style="width: 140px;" class="btn btn-primary"><i class="fas fa-plus"></i> New Candidate</button></a>
             </label>
           </div>
+         <!--  <div class="col-md-2">
+           
+          </div> -->
         </div>
         
         <div class="box" >
