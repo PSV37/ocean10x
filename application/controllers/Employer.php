@@ -5402,11 +5402,11 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $job_id = $this->input->post('job_id');
          $stage_id = $this->input->post('stage');
         if (!empty($job_id)) {
-            $forwarded_job_tracking = $this->job_posting_model->get_job_forwarded_candidate($job_id,$stage_id);
-            echo ($this->db->last_query);die;
+            $forwarded_job_tracking = $this->job_posting_model->get_job_forwarded_candidate($job_id);
+
             $education_level = $this->Master_model->getMaster('education_level', $where = false);
             $tracking_stages = $this->Master_model->getMaster('tracking_stages', $where = false);
-            // $this->load->view('fontend/employer/internal_tracker_card.php', compact('forwarded_job_tracking', 'employer_id', 'education_level', 'tracking_stages', 'job_id'));
+            $this->load->view('fontend/employer/internal_tracker_card.php', compact('forwarded_job_tracking', 'employer_id', 'education_level', 'tracking_stages', 'job_id','stage_id'));
         }
     }
     public function get_shared_tracker_card() {
