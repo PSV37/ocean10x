@@ -766,8 +766,8 @@ function get_card(id)
   
    $("li").removeClass("active");
       // add class to the one we clicked
-      $('#li'+id).addClass("active");
-      tracker_card(job_id);
+    $('#li'+id).addClass("active");
+    
 }
   function get_rel_status(id)
   {
@@ -1132,7 +1132,7 @@ function get_card(id)
     
   function tracker_card(job_id)
   {
-     var interest = $('ul#credit').find('li.active').data('interest');
+     var stage_id = $('ul#credit').find('li.active').data('interest');
      alert(interest);
    var url = '<?php echo base_url(); ?>employer/add_new_cv/'+job_id;
    $('#add_cv').attr('href',url);
@@ -1145,7 +1145,7 @@ function get_card(id)
    $.ajax({
              url: "<?php echo base_url();?>employer/get_tracker_card",
              type: "POST",
-             data: {job_id:job_id},
+             data: {job_id:job_id,stage:stage_id},
              // contentType:false,
              // processData:false,
               // dataType: "json",
