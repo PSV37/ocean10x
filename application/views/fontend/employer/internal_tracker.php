@@ -508,9 +508,9 @@ hr {
     border-radius: 34px;
     color: #fff;
     cursor: pointer;
-    margin-top: 25px;
+    /*margin-top: 25px;*/
     /* margin-bottom: -83px; */
-    margin-left: 20px;
+    /*margin-left: 20px;*/
 }
 ul#sizelist {
     margin-left: 27px;
@@ -529,7 +529,7 @@ ul#sizelist {
             
             <ul class="nav navbar-nav">
              
-              <li><a href="#"> 1</a></li>
+              <li class="Active"><a href="#"> 1</a></li>
               <li><a href="#"> 2</a></li>
               <li><a href="#"> 3</a></li>
               <li><a href="#">4</a></li>
@@ -555,10 +555,9 @@ ul#sizelist {
             <div class="clear"></div>
           </div>
           <div class="col-md-5">
-            <!-- <button  type="button" class="btn btn-default btn-sm save"> -->
+          
             <span title="save" class="glyphicon glyphicon-floppy-save  save icon_backg"></span>
-            <!-- </button> -->
-             <!-- <button style="" type="button" class="btn btn-default btn-sm share"> -->
+           
             <span title="share"><i class="fa fa-share-alt icon_backg share"></i></span>
 
             <span title="add Existing"><i class="fa fa-plus icon_backg add"></i></span>
@@ -566,14 +565,11 @@ ul#sizelist {
             <span style="margin-top: 20px;"> 
             <input  type="checkbox" name="check_all" id="checkAllchk">&nbsp; all
             <button style="width: 125px;" type="button" id="frwd_btn" class="btn btn-primary">update external</button></span>
-            <!--  <label style="float: right;margin-top: 17px;" class="btn btn-default">
-              check all
-              <input type="checkbox" name="check_all" id="jevattend_id" value="1">
-              </label> -->
+         
           </div>
           <div class="col-md-4">
             <form id="int_track" method="post" action="<?php echo base_url(); ?>employer/internal_tracker">
-              <label class="dropdown" style="float:right;">
+              <label class="dropdown" style="    margin-left: -65px;">
                 <div class="dd-button" onclick="myFunction2(event)">
                   Active Jobs
                 </div>
@@ -591,7 +587,7 @@ ul#sizelist {
               <input id="sizevalue" size="15" name="sort_val" type="hidden" />
               <button type="submit" name="sort" class="hidden" id="sort_btn"></button>
             </form>
-             <label>
+             <label style="margin-left: 112px;margin-top: -48px;">
             <a  id="add_cv" href=""><button style="width: 140px;" class="btn btn-primary"><i class="fas fa-plus"></i> New Candidate</button></a>
             </label>
           </div>
