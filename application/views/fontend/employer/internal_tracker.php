@@ -525,10 +525,8 @@ ul#sizelist {
         <div class="smsg" id="smsg"></div>
         <br><br>
         <nav class="navbar navbar-default">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <a class="navbar-brand" href="#">WebSiteName</a>
-            </div>
+          <!-- <div class="container-fluid"> -->
+            
             <ul class="nav navbar-nav">
              
               <li><a href="#"> 1</a></li>
@@ -541,7 +539,7 @@ ul#sizelist {
               <li><a href="#">8</a></li>
               <li><a href="#">9</a></li>
             </ul>
-          </div>
+          <!-- </div> -->
         </nav>
         <div class="row">
           <div class="col-md-3">
@@ -556,7 +554,7 @@ ul#sizelist {
             </select>
             <div class="clear"></div>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-4">
             <!-- <button  type="button" class="btn btn-default btn-sm save"> -->
             <span title="save" class="glyphicon glyphicon-floppy-save  save icon_backg"></span>
             <!-- </button> -->
@@ -573,7 +571,7 @@ ul#sizelist {
               <input type="checkbox" name="check_all" id="jevattend_id" value="1">
               </label> -->
           </div>
-          <div class="col-md-3">
+          <div class="col-md-2">
             <form id="int_track" method="post" action="<?php echo base_url(); ?>employer/internal_tracker">
               <label class="dropdown" style="float:right;">
                 <div class="dd-button" onclick="myFunction2(event)">
@@ -594,7 +592,7 @@ ul#sizelist {
               <button type="submit" name="sort" class="hidden" id="sort_btn"></button>
             </form>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-2">
             <label>
             <a style="float: right;" id="add_cv" href=""><button style="width: 140px;" class="btn btn-primary"><i class="fas fa-plus"></i> New Candidate</button></a>
             </label>
