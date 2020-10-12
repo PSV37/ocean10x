@@ -515,6 +515,11 @@ hr {
 ul#sizelist {
     margin-left: 27px;
 }
+.navbar li {
+    border: 2px solid;
+    border-radius: 20px;
+    margin-left: 45px;
+}
 </style>
 <div class="container-fluid main-d">
   <div class="container">
