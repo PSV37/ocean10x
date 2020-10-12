@@ -542,7 +542,7 @@ ul#sizelist {
           <!-- </div> -->
         </nav>
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-3">
             <select class="form-control select2" id="job_select" onchange="tracker_card(this.value);">
               <?php  if (isset($company_active_jobs) && !empty($company_active_jobs)) {
                 foreach ($company_active_jobs as $row) { ?>
@@ -554,7 +554,7 @@ ul#sizelist {
             </select>
             <div class="clear"></div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-5">
             <!-- <button  type="button" class="btn btn-default btn-sm save"> -->
             <span title="save" class="glyphicon glyphicon-floppy-save  save icon_backg"></span>
             <!-- </button> -->
