@@ -971,7 +971,7 @@ nav.navbar.navbar-default {
                 var comment = $("#comment", b).val();
                 var action = $("#action", b).val();
                 var reminder = $("#reminder", b).val();
-                 var stage = $("#stage", b).val();
+                 var stage = $("#stage"+value, b).val();
                 ary.push({name:name,email:email,mobile:mobile,status:status,ctc:ctc,exp:exp,notice:notice,edu:edu,comment:comment,value:value,action:action,reminder:reminder,stage:stage});
                
             });
