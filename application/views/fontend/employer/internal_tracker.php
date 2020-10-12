@@ -757,6 +757,7 @@ nav.navbar.navbar-default {
 //   });
 function get_card(id)
 {
+  alert(id);
      var job_id = $('#job_select').val();
 
 }
