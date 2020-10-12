@@ -740,10 +740,10 @@ nav.navbar.navbar-default {
     </div>
   </div>
 </div>
-<script>+
-$(document).on("click", "#stage", function (e) {
-   var stage_id = $('#stage').val();
-    // 
+<script>
+$(document).on("change", "#stage", function (e) {
+   var stage = $('#stage').val();
+   
      $.ajax({
               url: "<?php echo base_url();?>employer/get_status",
               type: "POST",
