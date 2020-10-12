@@ -543,23 +543,20 @@ nav.navbar.navbar-default {
         <div id="smsg"><?php echo $this->session->flashdata('success'); ?></div>
         <div class="smsg" id="smsg"></div>
         <br><br>
-        <nav class="navbar navbar-default">
-          <!-- <div class="container-fluid"> -->
-            
-            <ul class="nav navbar-nav">
-             
-              <li><a href="#"> 1</a></li>
-              <li><a href="#"> 2</a></li>
-              <li><a href="#"> 3</a></li>
-              <li><a href="#">4</a></li>
-              <li><a href="#">5</a></li>
-              <li><a href="#">6</a></li>
-              <li><a href="#">7</a></li>
-              <li><a href="#">8</a></li>
-              <li><a href="#">9</a></li>
-            </ul>
-          <!-- </div> -->
-        </nav>
+        <div id="exTab3" class="container"> 
+          <ul  class="nav nav-pills">
+            <li class="active"><a href="#"data-toggle="tab"> 1</a></li>
+            <li onclick="get_card(1);"><a href="#"data-toggle="tab"> 2</a></li>
+            <li><a href="#"data-toggle="tab"> 3</a></li>
+            <li><a href="#"data-toggle="tab">4</a></li>
+            <li><a href="#"data-toggle="tab">5</a></li>
+            <li><a href="#"data-toggle="tab">6</a></li>
+            <li><a href="#"data-toggle="tab">7</a></li>
+            <li><a href="#"data-toggle="tab">8</a></li>
+            <li><a href="#"data-toggle="tab">9</a></li>
+          </ul>
+        </div>
+       
         <div class="row">
           <div class="col-md-3">
             <select class="form-control select2" id="job_select" onchange="tracker_card(this.value);">
@@ -758,6 +755,11 @@ nav.navbar.navbar-default {
 //               }
 //         });
 //   });
+function get_card(id)
+{
+     var job_id = $('#job_select').val();
+
+}
   function get_rel_status(id)
   {
    var stage = $('#stage'+id).val();
@@ -1121,6 +1123,8 @@ nav.navbar.navbar-default {
     
   function tracker_card(job_id)
   {
+    var act_val = $('.Active').val();
+    alert(act_val);
    var url = '<?php echo base_url(); ?>employer/add_new_cv/'+job_id;
    $('#add_cv').attr('href',url);
   
