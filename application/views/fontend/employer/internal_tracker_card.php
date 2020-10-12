@@ -44,7 +44,7 @@
     <select name="stage" style="min-width: 200px; border: none;" id="stage" class="form-control select2" data-style="btn-default" data-live-search="true" onchange="get_rel_status();"  >
       <option value=""> </option>
       <?php   foreach($tracking_stages as $stage){?>
-      <option value="<?php echo $stage['stage_id']; ?>"<?php if($job_row->tracking_status==$stage['stage_id']){ echo "selected"; }?>><?php echo $stage['stage']; ?></option>
+      <option value="<?php echo $stage['stage_id']; ?>"><?php echo $stage['stage']; ?></option>
       <?php } ?>
     </select>
   </td>

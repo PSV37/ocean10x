@@ -525,9 +525,13 @@ nav.navbar.navbar-default {
     /* border-color: white; */
     border: none;
 }
+
 .navbar-default .navbar-nav>li>a {
-    /* color: #777; */
-    font-size: 18px;
+    color: #f8f8f8;
+    background-color: #18c5bd;
+    border-radius: 20px;
+    width: 40px;
+     font-size: 18px;
 }
 </style>
 <div class="container-fluid main-d">
