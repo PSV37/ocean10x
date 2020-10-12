@@ -761,11 +761,13 @@ nav.navbar.navbar-default {
 
 function get_card(id)
 {
+  alert(id);
   var job_id = $('#job_select').val();
-  tracker_card(job_id);
+  
    $("li").removeClass("active");
       // add class to the one we clicked
       $('#li'+id).addClass("active");
+      tracker_card(job_id);
 }
   function get_rel_status(id)
   {
@@ -1130,8 +1132,8 @@ function get_card(id)
     
   function tracker_card(job_id)
   {
-     var interest = $('ul#credit').find('li.active').data('interest');
-     alert(interest);
+     // var interest = $('ul#credit').find('li.active').data('interest');
+     // alert(interest);
    var url = '<?php echo base_url(); ?>employer/add_new_cv/'+job_id;
    $('#add_cv').attr('href',url);
   
