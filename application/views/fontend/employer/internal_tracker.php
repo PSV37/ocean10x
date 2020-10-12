@@ -957,7 +957,8 @@ $(document).on("change", "#stage", function (e) {
                 var comment = $("#comment", b).val();
                 var action = $("#action", b).val();
                 var reminder = $("#reminder", b).val();
-                ary.push({name:name,email:email,mobile:mobile,status:status,ctc:ctc,exp:exp,notice:notice,edu:edu,comment:comment,value:value,action:action,reminder:reminder});
+                 var stage = $("#stage", b).val();
+                ary.push({name:name,email:email,mobile:mobile,status:status,ctc:ctc,exp:exp,notice:notice,edu:edu,comment:comment,value:value,action:action,reminder:reminder,stage:stage});
                
             });
             // alert(JSON.stringify( ary));

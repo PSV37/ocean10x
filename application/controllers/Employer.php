@@ -5448,6 +5448,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $update_cv['js_mobile'] = $row->mobile;
             $update_cv['js_current_ctc'] = $row->ctc;
             $update_cv['js_experience'] = $row->exp;
+            $update_cv['tracking_stage'] = $row->stage;
             $update_cv['js_current_notice_period'] = $row->notice;
             $update_cv['js_top_education'] = $row->edu;
             $update_cv['updated_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
