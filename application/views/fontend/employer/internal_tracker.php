@@ -519,6 +519,7 @@ ul#sizelist {
     border: 2px solid;
     border-radius: 20px;
     margin-left: 45px;
+    border: none;
 }
 nav.navbar.navbar-default {
     /* background-color: white; */
@@ -739,10 +740,9 @@ nav.navbar.navbar-default {
     </div>
   </div>
 </div>
-<script>
-  function get_rel_status()
-  {
-    var stage_id = $('#stage').val();
+<script>+
+$(document).on("click", "#stage", function (e) {
+   var stage_id = $('#stage').val();
     // 
      $.ajax({
               url: "<?php echo base_url();?>employer/get_status",
@@ -757,6 +757,10 @@ nav.navbar.navbar-default {
                 $("#status").html(data);
               }
         });
+  }
+  function get_rel_status()
+  {
+   
   }
   function show_text()
   {
