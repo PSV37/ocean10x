@@ -5442,7 +5442,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     function update_cv() {
         // print_r( ); die();
         $up_date = json_decode($this->input->post('data_arr'));
-        print_r($up_date);die;
+        // print_r($up_date);die;
         foreach ($up_date as $row) {
             $update_cv['js_email'] = $row->email;
             $update_cv['js_name'] = $row->name;
@@ -5473,8 +5473,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
             $update = $this->Master_model->master_update($frwrd_update_cv, 'forwarded_jobs_cv', $where_frwdcv);
         }
-        // echo json_encode($update);
-        echo $this->db->last_query();
+        echo json_encode($update);
+        // echo $this->db->last_query();
     }
     function update_external() {
         $up_date = json_decode($this->input->post('data_arr'));
