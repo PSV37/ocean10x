@@ -5437,7 +5437,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $result.= '<option value="' . $key['status_id'] . '">' . $key['status_name'] . '</option>';
             }
         }
-        return $result; 
+         echo $result; 
     }
     function update_cv() {
         // print_r( ); die();
