@@ -548,15 +548,15 @@ nav.navbar.navbar-default {
             
             <ul id="credit" class="nav navbar-nav">
              
-              <li id="li1" class="active"data-interest = "1"><a href="#"data-toggle="tab"> 1</a></li>
+              <li id="li1" onclick="get_card(1);" class="active"data-interest = "1"><a href="#"data-toggle="tab"> 1</a></li>
             <li id="li2" onclick="get_card(2);"><a href="#" data-toggle="tab"> 2</a></li>
-            <li onclick="get_card(3);"><a href="#" data-toggle="tab"> 3</a></li>
-            <li onclick="get_card(4);"><a href="#" data-toggle="tab">4</a></li>
-            <li onclick="get_card(5);"><a href="#" data-toggle="tab">5</a></li>
-            <li onclick="get_card(6);"><a href="#" data-toggle="tab">6</a></li>
-            <li onclick="get_card(7);"><a href="#" data-toggle="tab">7</a></li>
-            <li onclick="get_card(8);"><a href="#" data-toggle="tab">8</a></li>
-            <li onclick="get_card(9);"><a href="#" data-toggle="tab">9</a></li>
+            <li id="li3" onclick="get_card(3);"><a href="#" data-toggle="tab"> 3</a></li>
+            <li id="li4" onclick="get_card(4);"><a href="#" data-toggle="tab">4</a></li>
+            <li id="li5" onclick="get_card(5);"><a href="#" data-toggle="tab">5</a></li>
+            <li id="li6" onclick="get_card(6);"><a href="#" data-toggle="tab">6</a></li>
+            <li id="li7" onclick="get_card(7);"><a href="#" data-toggle="tab">7</a></li>
+            <li id="li8" onclick="get_card(8);"><a href="#" data-toggle="tab">8</a></li>
+            <li id="li9" onclick="get_card(9);"><a href="#" data-toggle="tab">9</a></li>
             </ul>
           <!-- </div> -->
         </nav>
@@ -1132,8 +1132,8 @@ function get_card(id)
     
   function tracker_card(job_id)
   {
-     // var interest = $('ul#credit').find('li.active').data('interest');
-     // alert(interest);
+     var interest = $('ul#credit').find('li.active').data('interest');
+     alert(interest);
    var url = '<?php echo base_url(); ?>employer/add_new_cv/'+job_id;
    $('#add_cv').attr('href',url);
   
