@@ -760,7 +760,7 @@ nav.navbar.navbar-default {
 //   });
   function get_rel_status(id)
   {
-   var stage = $('#stage').val();
+   var stage = $('#stage'+id).val();
    
      $.ajax({
               url: "<?php echo base_url();?>employer/get_status",
