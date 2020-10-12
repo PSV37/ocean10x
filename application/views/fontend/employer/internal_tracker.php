@@ -741,23 +741,7 @@ nav.navbar.navbar-default {
   </div>
 </div>
 <script>
-// $(document).on("change", "#stage", function (e) {
-//    var stage = $('#stage').val();
-   
-//      $.ajax({
-//               url: "<?php echo base_url();?>employer/get_status",
-//               type: "POST",
-//               data: {stage:stage},
-//               // contentType:false,
-//               // processData:false,
-//                // dataType: "json",
-//               success: function(data)
-//               {
-//                // $('#shared_list').html(data);
-//                 $("#status").html(data);
-//               }
-//         });
-//   });
+
 
 function get_card(id)
 {
@@ -767,6 +751,10 @@ function get_card(id)
    $("li").removeClass("active");
       // add class to the one we clicked
     $('#li'+id).addClass("active");
+    if($('#li'+id).hasClass("active"))
+    {
+      tracker_card(job_id);
+    }
     
 }
   function get_rel_status(id)
@@ -1133,7 +1121,7 @@ function get_card(id)
   function tracker_card(job_id)
   {
      var stage_id = $('ul#credit').find('li.active').data('interest');
-     alert(interest);
+     // alert(interest);
    var url = '<?php echo base_url(); ?>employer/add_new_cv/'+job_id;
    $('#add_cv').attr('href',url);
   
