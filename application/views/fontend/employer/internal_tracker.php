@@ -758,14 +758,26 @@ nav.navbar.navbar-default {
 //               }
 //         });
 //   });
-function get_card(id)
-{
-  var job_id = $('#job_select').val();
-  tracker_card(job_id);
-   $("li").removeClass("active");
+$(function() {
+   $("li").click(function() {
+      // remove classes from all
+      $("li").removeClass("active");
       // add class to the one we clicked
       $(this).addClass("active");
-}
+  var job_id = $('#job_select').val();
+  tracker_card(job_id);
+  
+
+   });
+})
+// function get_card(id)
+// {
+//   var job_id = $('#job_select').val();
+//   tracker_card(job_id);
+//    $("li").removeClass("active");
+//       // add class to the one we clicked
+//       $(this).addClass("active");
+// }
   function get_rel_status(id)
   {
    var stage = $('#stage'+id).val();
