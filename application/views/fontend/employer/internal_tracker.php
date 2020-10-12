@@ -534,6 +534,20 @@ nav.navbar.navbar-default {
     width: 40px;
      font-size: 18px;
 }
+.btn {
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Style the active class, and buttons on mouse-over */
+.active, .btn:hover {
+  background-color: #666;
+  color: white;
+}
 </style>
 <div class="container-fluid main-d">
   <div class="container">
@@ -543,23 +557,13 @@ nav.navbar.navbar-default {
         <div id="smsg"><?php echo $this->session->flashdata('success'); ?></div>
         <div class="smsg" id="smsg"></div>
         <br><br>
-        <nav class="navbar navbar-default">
-          <!-- <div class="container-fluid"> -->
-            
-            <ul class="nav navbar-nav">
-             
-              <li class="active" onclick="get_card(1);"><a href="#"data-toggle="tab"> 1</a></li>
-            <li onclick="get_card(2);"><a href="#" data-toggle="tab"> 2</a></li>
-            <li onclick="get_card(3);"><a href="#" data-toggle="tab"> 3</a></li>
-            <li onclick="get_card(4);"><a href="#" data-toggle="tab">4</a></li>
-            <li onclick="get_card(5);"><a href="#" data-toggle="tab">5</a></li>
-            <li onclick="get_card(6);"><a href="#" data-toggle="tab">6</a></li>
-            <li onclick="get_card(7);"><a href="#" data-toggle="tab">7</a></li>
-            <li onclick="get_card(8);"><a href="#" data-toggle="tab">8</a></li>
-            <li onclick="get_card(9);"><a href="#" data-toggle="tab">9</a></li>
-            </ul>
-          <!-- </div> -->
-        </nav>
+        <div id="myDIV">
+  <button data-interest = "1" class="btn">1</button>
+  <button data-interest = "2" class="btn active">2</button>
+  <button data-interest = "3" class="btn">3</button>
+  <button data-interest = "4" class="btn">4</button>
+  <button data-interest = "5" class="btn">5</button>
+</div>
         <div class="row">
           <div class="col-md-3">
             <select class="form-control select2" id="job_select" onchange="tracker_card(this.value);">
@@ -740,6 +744,18 @@ nav.navbar.navbar-default {
     </div>
   </div>
 </div>
+<script>
+// Add active class to the current button (highlight it)
+var header = document.getElementById("myDIV");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active");
+  current[0].className = current[0].className.replace(" active", "");
+  this.className += " active";
+  });
+}
+</script>
 <script>
 // $(document).on("change", "#stage", function (e) {
 //    var stage = $('#stage').val();
@@ -1125,6 +1141,9 @@ function get_card(id)
     
   function tracker_card(job_id)
   {
+     // var interest = $('ul#credit').find('li.active').data('interest');
+     var interest = $('div#myDIV').find('button.active').data('interest');
+     alert(interest);
    var url = '<?php echo base_url(); ?>employer/add_new_cv/'+job_id;
    $('#add_cv').attr('href',url);
   
