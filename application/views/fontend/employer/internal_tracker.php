@@ -524,8 +524,27 @@ ul#sizelist {
         <div id="smsg"><?php echo $this->session->flashdata('success'); ?></div>
         <div class="smsg" id="smsg"></div>
         <br><br>
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">WebSiteName</a>
+            </div>
+            <ul class="nav navbar-nav">
+             
+              <li><a href="#"> 1</a></li>
+              <li><a href="#"> 2</a></li>
+              <li><a href="#"> 3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li><a href="#">6</a></li>
+              <li><a href="#">7</a></li>
+              <li><a href="#">8</a></li>
+              <li><a href="#">9</a></li>
+            </ul>
+          </div>
+        </nav>
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-3">
             <select class="form-control select2" id="job_select" onchange="tracker_card(this.value);">
               <?php  if (isset($company_active_jobs) && !empty($company_active_jobs)) {
                 foreach ($company_active_jobs as $row) { ?>
@@ -536,6 +555,23 @@ ul#sizelist {
                 } $this->session->unset_userdata('job_id'); ?>
             </select>
             <div class="clear"></div>
+          </div>
+          <div class="col-md-3">
+            <!-- <button  type="button" class="btn btn-default btn-sm save"> -->
+            <span title="save" class="glyphicon glyphicon-floppy-save  save icon_backg"></span>
+            <!-- </button> -->
+             <!-- <button style="" type="button" class="btn btn-default btn-sm share"> -->
+            <span title="share"><i class="fa fa-share-alt icon_backg share"></i></span>
+
+            <span title="add Existing"><i class="fa fa-plus icon_backg add"></i></span>
+            <!-- </button> -->
+            <span style="margin-top: 20px;"> 
+            <input  type="checkbox" name="check_all" id="checkAllchk">&nbsp; all
+            <button style="width: 125px;" type="button" id="frwd_btn" class="btn btn-primary">update external</button></span>
+            <!--  <label style="float: right;margin-top: 17px;" class="btn btn-default">
+              check all
+              <input type="checkbox" name="check_all" id="jevattend_id" value="1">
+              </label> -->
           </div>
           <div class="col-md-3">
             <form id="int_track" method="post" action="<?php echo base_url(); ?>employer/internal_tracker">
@@ -560,29 +596,11 @@ ul#sizelist {
           </div>
           <div class="col-md-3">
             <label>
-            <a style="float: right;width: 135px;" id="add_cv" href=""><button class="btn btn-primary"><i class="fas fa-plus"></i> New Candidate</button></a>
+            <a style="float: right;" id="add_cv" href=""><button style="width: 140px;" class="btn btn-primary"><i class="fas fa-plus"></i> New Candidate</button></a>
             </label>
           </div>
         </div>
-        <div class="row">
-          <div col-md-12>
-            <!-- <button  type="button" class="btn btn-default btn-sm save"> -->
-            <span title="save" class="glyphicon glyphicon-floppy-save  save icon_backg"></span>
-            <!-- </button> -->
-             <!-- <button style="" type="button" class="btn btn-default btn-sm share"> -->
-            <span title="share"><i class="fa fa-share-alt icon_backg share"></i></span>
-
-            <span title="add Existing"><i class="fa fa-plus icon_backg add"></i></span>
-            <!-- </button> -->
-            <span style="margin-top: 20px;"> 
-            <input  type="checkbox" name="check_all" id="checkAllchk">&nbsp; all
-            <button style="width: 125px;" type="button" id="frwd_btn" class="btn btn-primary">update external</button></span>
-            <!--  <label style="float: right;margin-top: 17px;" class="btn btn-default">
-              check all
-              <input type="checkbox" name="check_all" id="jevattend_id" value="1">
-              </label> -->
-          </div>
-        </div>
+        
         <div class="box" >
           <div class="card content">
             <!-- <div class="front"> -->
