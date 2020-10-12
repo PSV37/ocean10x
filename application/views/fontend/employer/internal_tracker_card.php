@@ -50,7 +50,7 @@
   </td>
   <td>
     <select name="status" style="min-width: 200px; border: none;"  id="status<?php echo $job_row->cv_id; ?>" class="form-control select2" data-style="btn-default" data-live-search="true"  >
-      <?php if(!empty($job_row->tracking_status)){?>  <option value="<?php echo $job_row->tracking_status; ?>"><?php echo $job_row->status_name ?> </option> } ?>
+      <?php if(!empty($job_row->tracking_status)){?>  <option value="<?php echo $job_row->tracking_status; ?>"><?php echo $job_row->status_name; ?> </option> <?php } ?>
      
      
     </select>
