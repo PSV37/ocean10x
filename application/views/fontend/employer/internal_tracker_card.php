@@ -41,7 +41,7 @@
   <td ><textarea class="email allowalphabates" id="comment" name="comment" value=""><?php echo $job_row->comments; ?></textarea></td>
   <td ><input type="text" class="email allowalphabates" id="reminder" name="comment" value="<?php echo $job_row->reminder; ?>" ></td>
   <td>
-    <select name="stage" style="min-width: 200px; border: none;" id="stage" class="form-control select2" data-style="btn-default" data-live-search="true">
+    <select name="stage" style="min-width: 200px; border: none;" id="stage" onchange="get_rel_status(<?php echo $job_row->cv_id; ?>);" class="form-control select2" data-style="btn-default" data-live-search="true">
       <option value=""> </option>
       <?php   foreach($tracking_stages as $stage){?>
       <option value="<?php echo $stage['stage_id']; ?>"><?php echo $stage['stage']; ?></option>
@@ -49,7 +49,7 @@
     </select>
   </td>
   <td>
-    <select name="status" style="min-width: 200px; border: none;" id="status" class="form-control select2" data-style="btn-default" data-live-search="true"  >
+    <select name="status" style="min-width: 200px; border: none;" id="status<?php echo $job_row->cv_id; ?>" class="form-control select2" data-style="btn-default" data-live-search="true"  >
       <option value=""> </option>
      
     </select>

@@ -741,7 +741,25 @@ nav.navbar.navbar-default {
   </div>
 </div>
 <script>
-$(document).on("change", "#stage", function (e) {
+// $(document).on("change", "#stage", function (e) {
+//    var stage = $('#stage').val();
+   
+//      $.ajax({
+//               url: "<?php echo base_url();?>employer/get_status",
+//               type: "POST",
+//               data: {stage:stage},
+//               // contentType:false,
+//               // processData:false,
+//                // dataType: "json",
+//               success: function(data)
+//               {
+//                // $('#shared_list').html(data);
+//                 $("#status").html(data);
+//               }
+//         });
+//   });
+  function get_rel_status(id)
+  {
    var stage = $('#stage').val();
    
      $.ajax({
@@ -754,13 +772,9 @@ $(document).on("change", "#stage", function (e) {
               success: function(data)
               {
                // $('#shared_list').html(data);
-                $("#status").html(data);
+                $("#status"+id).html(data);
               }
         });
-  });
-  function get_rel_status()
-  {
-   
   }
   function show_text()
   {
