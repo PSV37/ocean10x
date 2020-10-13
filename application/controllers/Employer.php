@@ -5398,7 +5398,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     }
     public function get_tracker_card() {
         $job_id = $this->input->post('job_id');
-         $stage_id = $this->input->post('stage');
+        $stage_id = $this->input->post('stage');
         if (!empty($job_id)) {
             $forwarded_job_tracking = $this->job_posting_model->get_job_forwarded_candidate($job_id);
 
@@ -5419,11 +5419,14 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     }
     public function get_extracker_card() {
         $job_id = $this->input->post('job_id');
+        $stage_id = $this->input->post('stage');
+        
         if (!empty($job_id)) {
             $get_external_tracker = $this->job_posting_model->get_external_tracker($job_id);
             $education_level = $this->Master_model->getMaster('education_level', $where = false);
             $tracker_status = $this->Master_model->getMaster('tracker_status_master', $where = false);
-            $this->load->view('fontend/employer/external_tracker_card.php', compact('get_external_tracker', 'employer_id', 'education_level', 'tracker_status', 'job_id'));
+            $this->load->view('fontend/employer/external_tracker_card.php', compact('get_external_tracker', 'employer_id', 'education_level', 'tracker_status', 'job_id' , 
+                'stage_id'));
         }
     }
     function get_status()
@@ -5503,6 +5506,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $update_external['education'] = $row->edu;
             $update_external['updated_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
             $update_external['tracking_status'] = $row->status;
+            $update_external['tracking_stage'] = $row->stage;
             $update_external['updated_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
             $where_frwdcv['cv_id'] = $row->value;
             $update = $this->Master_model->master_update($update_external, 'external_tracker', $where_frwdcv);

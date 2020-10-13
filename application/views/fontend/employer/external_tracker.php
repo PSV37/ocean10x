@@ -673,6 +673,20 @@ nav.navbar.navbar-default {
   </div>
 </div>
 <script>
+  function get_card(id)
+{
+  // alert(id);
+  var job_id = $('#job_select').val();
+  
+   $("li").removeClass("active");
+      // add class to the one we clicked
+    $('#li'+id).addClass("active");
+    if($('#li'+id).hasClass("active"))
+    {
+      tracker_card(job_id);
+    }
+    
+}
    $("#sizelist").on("click", "a", function(e){
   e.preventDefault();
   var $this = $(this).parent();
@@ -845,6 +859,7 @@ nav.navbar.navbar-default {
     
   function tracker_card(job_id)
   {
+    var stage_id = $('ul#credit').find('li.active').data('interest');
    var url = '<?php echo base_url(); ?>employer/add_new_cv/'+job_id;
    $('#add_cv').attr('href',url);
   
@@ -856,7 +871,7 @@ nav.navbar.navbar-default {
    $.ajax({
              url: "<?php echo base_url();?>employer/get_extracker_card",
              type: "POST",
-             data: {job_id:job_id},
+             data: {job_id:job_id,stage:stage_id},
              // contentType:false,
              // processData:false,
               // dataType: "json",
