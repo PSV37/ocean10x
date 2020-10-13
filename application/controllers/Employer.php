@@ -5415,7 +5415,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $education_level = $this->Master_model->getMaster('education_level', $where = false);
             $tracker_status = $this->Master_model->getMaster('tracker_status_master', $where = false);
              $tracking_stages = $this->Master_model->getMaster('tracking_stages', $where = false);
-            $this->load->view('fontend/employer/shared_tracker_card.php', compact('shared', 'employer_id', 'education_level', 'tracker_status', 'job_id'));
+            $this->load->view('fontend/employer/shared_tracker_card.php', compact('shared', 'employer_id', 'education_level', 'tracker_status','tracking_stages' ,'job_id'));
         }
     }
     public function get_extracker_card() {
