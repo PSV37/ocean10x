@@ -1843,7 +1843,7 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
               </div>
             </div>
           </div>
-          <div class="col-md-12" style="margin-top: 20px;">
+          <!-- <div class="col-md-12" style="margin-top: 20px;">
             <div class="row">
               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                 <!-- <label class="mdl-textfield__label" for="sample3">Folder Name:</label> -->
@@ -1853,7 +1853,7 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
                     <strong>Click here To Download</strong></a></small>
               </div>
             </div>
-          </div>
+          </div> -->
           <div class="col-md-12">
             <div class="row">
               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
