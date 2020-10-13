@@ -4469,179 +4469,178 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             redirect('employer/corporate_cv_bank');
         }
     }
-public function bulk_upload_folder() {
- ini_set('upload_max_filesize', '10M');
- ini_set('post_max_size', '10M');
- ini_set('max_input_time', 0);
- ini_set('max_execution_time', 0);
- $employer_id = $this->session->userdata('company_profile_id');
- $this->load->model('Questionbank_employer_model');
- if (isset($_POST['upload'])) {
- if (!empty($_FILES['file']['name'])) {
- // Set preference
- $config['upload_path'] = 'cv_bank_excel/files/';
- $ext = strtolower(end(explode('.', $_FILES['file']['name'])));
- $config['allowed_types'] = 'csv';
- $config['max_size'] = '10000'; // max_size in kb
- $config['file_name'] = $_FILES['file']['name'];
- // Load upload library
- $this->load->library('upload', $config);
- // File upload
- if ($ext === 'csv') {
- if ($this->upload->do_upload('file')) {
- $uploadData = $this->upload->data();
- $filename = $uploadData['file_name'];
- // Reading file
- $file = fopen("cv_bank_excel/files/" . $filename, "r");
- $i = 0;
- $importData_arr = array();
- while (($filedata = fgetcsv($file, 1000, ",")) !== FALSE) 
- {
-  $num = count($filedata);
-  for ($c = 0;$c < $num;$c++) {
-  $importData_arr[$i][] = $filedata[$c];}
-  $i++;
- }
- fclose($file);
- $skip = 0;
- // insert import data
- $cv = array();
- foreach ($importData_arr as $userdata) 
- {
- if ($skip != 0) {
- $cv_id = $this->Questionbank_employer_model->InsertCVData($userdata);
- // print_r($cv_id);die;
- $company_name = $this->session->userdata('company_name');
- $data = array('company' => $company_name, 'action_taken_for' => $this->session->userdata('company_name'), 'field_changed' => 'Imported CVs', 'Action' => 'Imported Multiple CVs', 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
- $result = $this->Master_model->master_insert($data, 'employer_audit_record');
- array_push($cv, $cv_id);
- }
- $skip++;
- }
- $count = 0;
- $company_id = $this->session->userdata('company_profile_id');
- $paths = $this->input->post('paths');
- $folder_path = explode(',', $paths);
- // $now = date('Y-m-d H:i:s');
- // $folder_name = $now.$company_id;
- $uploadDir = 'cv_folder/';
- if ($_SERVER['REQUEST_METHOD'] == 'POST') {
- foreach ($_FILES['files']['name'] as $i => $name) {
- $folders = explode('/', $folder_path[$i]);
- for ($k = 0;$k <= sizeof($folders);$k++) {
- $folder_name = $folders[$k];
- if ($folder_name == $_FILES['files']['name'][$i]) {
- if (strlen($_FILES['files']['name'][$i]) > 1) {
- if (move_uploaded_file($_FILES['files']['tmp_name'][$i], $folder_path_final . '/' . $name)) {
- $count++;
- }
- }
- } else {
- if ($k > 0) {
- $j = $k - 1;
- $folder_struct = array();
- for ($n = 0;$n <= $j;$n++) {
- array_push($folder_struct, $folders[$n]);
- }
- $names = implode('/', $folder_struct);
- if (!file_exists('cv_folder/' . $names . '/' . $folder_name)) {
- mkdir('cv_folder/' . $names . '/' . $folder_name, 0777, true);
- }
- $folder_path_final = 'cv_folder/' . $names . '/' . $folder_name;
- $where_curr_folder = "cv_folder.folder_name = '$folder_name' and company_id = '$employer_id'";
- $curr_foldr = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_curr_folder, $join = FALSE);
- $previous_folder = $folders[$j];
- $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id'";
- $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join = FALSE);
- // print_r($parent);
- // print_r($folder_name); die;
- if ($parent && empty($curr_foldr)) {
- $insert_folder_data['folder_name'] = $folder_name;
- $insert_folder_data['company_id'] = $employer_id;
- $insert_folder_data['parent_id'] = $parent['id'];
- $insert_folder_data['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
- $insert_folder_data['created_by'] = $employer_id;
- $result = $this->Master_model->master_insert($insert_folder_data, 'cv_folder');
- }
- } else {
- if (!file_exists('cv_folder/' . $folder_name)) {
- mkdir('cv_folder/' . $folder_name, 0777, true);
- }
- $folder_path_final = 'cv_folder/' . $folder_name;
- $where_folder = "cv_folder.folder_name = '$folder_name' and company_id = '$employer_id'";
- $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join = FALSE);
- if (empty($parent)) {
- $insert_folder_data['folder_name'] = $folder_name;
- $insert_folder_data['company_id'] = $employer_id;
- $insert_folder_data['parent_id'] = '0';
- $insert_folder_data['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
- $insert_folder_data['created_by'] = $employer_id;
- $result = $this->Master_model->master_insert($insert_folder_data, 'cv_folder');
- }
- }
- }
- foreach ($cv as $cvs) {
- $where = "corporate_cv_bank.cv_id = '$cvs'";
- $cv_name = $this->Master_model->get_master_row('corporate_cv_bank', $select = 'js_name', $where, $join = FALSE);
- $js_name = explode(' ', $cv_name['js_name']);
- if (strpos($name, $js_name[0]) !== false) {
- $where11['cv_id'] = $cvs;
- $path = $folder_path_final;
- // print_r($path);die;
- $update_doc['js_document'] = $path;
- $this->Master_model->master_update($update_doc, 'corporate_cv_bank', $where11);
- $previous_folder = $folders[$k];
- $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id'";
- $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join = FALSE);
- // print_r($this->db->last_query());die;
- $folder_id = $parent['id'];
- $whereres = "cv_folder_id='$folder_id' and cv_id = '$cvs' ";
- $folder_dbdata = $this->Master_model->get_master_row('cv_folder_relation', $select = FALSE, $whereres);
- if (empty($folder_dbdata) && !empty($folder_id)) {
- $cv_folder_data['cv_folder_id'] = $folder_id;
- $cv_folder_data['cv_id'] = $cvs;
- $cv_folder_data['status'] = '1';
- $result = $this->Master_model->master_insert($cv_folder_data, 'cv_folder_relation');
- }
- // echo 'The specific word is present.';
-
- }
- }
- }
- }
- }
- $folder_data['company_id'] = $company_id;
- $folders = explode('/', $folder_path[0]);
- $folder_data['folder_name'] = $folders[0];
- $folder_data['cv'] = implode(',', $cv);
- $result = $this->Master_model->master_insert($folder_data, 'folder_company_mapping');
- // $data['response'] = 'successfully uploaded '.$filename;
- $this->session->set_flashdata('success', '<div class="alert alert-success text-center">CVs Uploaded successfully!</div>');
- // redirect('employer/bulk_upload_cvs');
-
- } else {
- //$data['response'] = 'failed';
- $error = $this->upload->display_errors();
- $this->session->set_flashdata('success', '<div class="alert alert-warning text-center">CVs Upload failed!' . $error . '</div>');
- }
- } else {
- $this->session->set_flashdata('success', '<div class="alert alert-warning text-center">File Format not supported</div>');
- }
- } else {
- // $data['response'] = 'failed';
- $error = $_FILES['file']['error'];
- $this->session->set_flashdata('success', '<div class="alert alert-danger text-center">CVs Upload failed!' . $error . '</div>');
- }
- // $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">CVs Uploaded successfully!</div>');
- redirect('employer/corporate_cv_bank');
- // load view
- // $this->load->view('fontend/employer/bulk_cv_upload_view',$data);
-
- } else {
- // load view
- redirect('employer/corporate_cv_bank');
- }
-}
+    public function bulk_upload_folder() {
+    ini_set('upload_max_filesize', '10M');
+    ini_set('post_max_size', '10M');
+    ini_set('max_input_time', 0);
+    ini_set('max_execution_time', 0);
+    $employer_id = $this->session->userdata('company_profile_id');
+        $this->load->model('Questionbank_employer_model');
+        if (isset($_POST['upload'])) {
+        if (!empty($_FILES['file']['name'])) {
+                // Set preference
+            $config['upload_path'] = 'cv_bank_excel/files/';
+            $ext = strtolower(end(explode('.', $_FILES['file']['name'])));
+            $config['allowed_types'] = 'csv';
+            $config['max_size'] = '10000'; // max_size in kb
+            $config['file_name'] = $_FILES['file']['name'];
+                // Load upload library
+            $this->load->library('upload', $config);
+                // File upload
+            if ($ext === 'csv') {
+             if ($this->upload->do_upload('file')) {
+                $uploadData = $this->upload->data();
+                $filename = $uploadData['file_name'];
+                        // Reading file
+                $file = fopen("cv_bank_excel/files/" . $filename, "r");
+                  $i = 0;
+                   $importData_arr = array();
+                    while (($filedata = fgetcsv($file, 1000, ",")) !== FALSE) {
+                     $num = count($filedata);
+                     for ($c = 0;$c < $num;$c++) {
+                        $importData_arr[$i][] = $filedata[$c];
+                       }
+                         $i++;
+                        }
+                       fclose($file);
+                       $skip = 0;
+                        // insert import data
+                        $cv = array();
+                        foreach ($importData_arr as $userdata) {
+                            if ($skip != 0) {
+                             $cv_id = $this->Questionbank_employer_model->InsertCVData($userdata);
+                                // print_r($cv_id);die;
+                                $company_name = $this->session->userdata('company_name');
+                                $data = array('company' => $company_name, 'action_taken_for' => $this->session->userdata('company_name'), 'field_changed' => 'Imported CVs', 'Action' => 'Imported Multiple CVs', 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
+                                $result = $this->Master_model->master_insert($data, 'employer_audit_record');
+                                array_push($cv, $cv_id);
+                            }
+                            $skip++;
+                        }
+                        $count = 0;
+                        $company_id = $this->session->userdata('company_profile_id');
+                        $paths = $this->input->post('paths');
+                        $folder_path = explode(',', $paths);
+                        // $now = date('Y-m-d H:i:s');
+                        // $folder_name = $now.$company_id;
+                        $uploadDir = 'cv_folder/';
+                        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                            foreach ($_FILES['files']['name'] as $i => $name) {
+                                $folders = explode('/', $folder_path[$i]);
+                                for ($k = 0;$k <= sizeof($folders);$k++) {
+                                    $folder_name = $folders[$k];
+                                    if ($folder_name == $_FILES['files']['name'][$i]) {
+                                        if (strlen($_FILES['files']['name'][$i]) > 1) {
+                                            if (move_uploaded_file($_FILES['files']['tmp_name'][$i], $folder_path_final . '/' . $name)) {
+                                                $count++;
+                                            }
+                                        }
+                                    } else {
+                                        if ($k > 0) {
+                                            $j = $k - 1;
+                                            $folder_struct = array();
+                                            for ($n = 0;$n <= $j;$n++) {
+                                                array_push($folder_struct, $folders[$n]);
+                                            }
+                                            $names = implode('/', $folder_struct);
+                                            if (!file_exists('cv_folder/' . $names . '/' . $folder_name)) {
+                                                mkdir('cv_folder/' . $names . '/' . $folder_name, 0777, true);
+                                            }
+                                            $folder_path_final = 'cv_folder/' . $names . '/' . $folder_name;
+                                            $where_curr_folder = "cv_folder.folder_name = '$folder_name' and company_id = '$employer_id'";
+                                            $curr_foldr = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_curr_folder, $join = FALSE);
+                                            $previous_folder = $folders[$j];
+                                            $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id'";
+                                            $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join = FALSE);
+                                            // print_r($parent);
+                                            // print_r($folder_name); die;
+                                            if ($parent && empty($curr_foldr)) {
+                                                $insert_folder_data['folder_name'] = $folder_name;
+                                                $insert_folder_data['company_id'] = $employer_id;
+                                                $insert_folder_data['parent_id'] = $parent['id'];
+                                                $insert_folder_data['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
+                                                $insert_folder_data['created_by'] = $employer_id;
+                                                $result = $this->Master_model->master_insert($insert_folder_data, 'cv_folder');
+                                            }
+                                        } else {
+                                            if (!file_exists('cv_folder/' . $folder_name)) {
+                                                mkdir('cv_folder/' . $folder_name, 0777, true);
+                                            }
+                                            $folder_path_final = 'cv_folder/' . $folder_name;
+                                            $where_folder = "cv_folder.folder_name = '$folder_name' and company_id = '$employer_id'";
+                                            $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join = FALSE);
+                                            if (empty($parent)) {
+                                                $insert_folder_data['folder_name'] = $folder_name;
+                                                $insert_folder_data['company_id'] = $employer_id;
+                                                $insert_folder_data['parent_id'] = '0';
+                                                $insert_folder_data['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
+                                                $insert_folder_data['created_by'] = $employer_id;
+                                                $result = $this->Master_model->master_insert($insert_folder_data, 'cv_folder');
+                                            }
+                                        }
+                                    }
+                                    foreach ($cv as $cvs) {
+                                        $where = "corporate_cv_bank.cv_id = '$cvs'";
+                                        $cv_name = $this->Master_model->get_master_row('corporate_cv_bank', $select = 'js_name', $where, $join = FALSE);
+                                        $js_name = explode(' ', $cv_name['js_name']);
+                                        if (strpos($name, $js_name[0]) !== false) {
+                                            $where11['cv_id'] = $cvs;
+                                            $path = $folder_path_final;
+                                            // print_r($path);die;
+                                            $update_doc['js_document'] = $path;
+                                            $this->Master_model->master_update($update_doc, 'corporate_cv_bank', $where11);
+                                            $previous_folder = $folders[$k];
+                                            $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id'";
+                                            $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join = FALSE);
+                                            // print_r($this->db->last_query());die;
+                                            $folder_id = $parent['id'];
+                                            $whereres = "cv_folder_id='$folder_id' and cv_id = '$cvs' ";
+                                            $folder_dbdata = $this->Master_model->get_master_row('cv_folder_relation', $select = FALSE, $whereres);
+                                            if (empty($folder_dbdata) && !empty($folder_id)) {
+                                                $cv_folder_data['cv_folder_id'] = $folder_id;
+                                                $cv_folder_data['cv_id'] = $cvs;
+                                                $cv_folder_data['status'] = '1';
+                                                $result = $this->Master_model->master_insert($cv_folder_data, 'cv_folder_relation');
+                                            }
+                                            // echo 'The specific word is present.';
+                                            
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        $folder_data['company_id'] = $company_id;
+                        $folders = explode('/', $folder_path[0]);
+                        $folder_data['folder_name'] = $folders[0];
+                        $folder_data['cv'] = implode(',', $cv);
+                        $result = $this->Master_model->master_insert($folder_data, 'folder_company_mapping');
+                        // $data['response'] = 'successfully uploaded '.$filename;
+                        $this->session->set_flashdata('success', '<div class="alert alert-success text-center">CVs Uploaded successfully!</div>');
+                        // redirect('employer/bulk_upload_cvs');
+                        
+                    } else {
+                        //$data['response'] = 'failed';
+                        $error = $this->upload->display_errors();
+                        $this->session->set_flashdata('success', '<div class="alert alert-warning text-center">CVs Upload failed!' . $error . '</div>');
+                    }
+                } else {
+                    $this->session->set_flashdata('success', '<div class="alert alert-warning text-center">File Format not supported</div>');
+                }
+            } else {
+                // $data['response'] = 'failed';
+                $error = $_FILES['file']['error'];
+                $this->session->set_flashdata('success', '<div class="alert alert-danger text-center">CVs Upload failed!' . $error . '</div>');
+            }
+            // $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">CVs Uploaded successfully!</div>');
+            redirect('employer/corporate_cv_bank');
+            // load view
+            // $this->load->view('fontend/employer/bulk_cv_upload_view',$data);
+            
+        } else {
+            // load view
+            redirect('employer/corporate_cv_bank');
+        }
+    }
     function get_fav_consultants() {
         $emp_id = $this->input->post('emp_id');
         $where_cond = "consultant_company_mapping.company_id='$emp_id' AND consultant_company_mapping.is_favourite='yes'";

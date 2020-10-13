@@ -1843,24 +1843,24 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
               </div>
             </div>
           </div>
-        <!--   <div class="col-md-12" style="margin-top: 20px;">
+          <div class="col-md-12" style="margin-top: 20px;">
             <div class="row">
               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-             
+                <!-- <label class="mdl-textfield__label" for="sample3">Folder Name:</label> -->
                  <small>To Import CV's Download CSV Format 
                   <a href="<?php echo base_url(); ?>cv_bank_excel/bulk_upload_format.csv" download="bulk_upload_format.csv">
                 
                     <strong>Click here To Download</strong></a></small>
               </div>
             </div>
-          </div> -->
-         <!--  <div class="col-md-12">
+          </div>
+          <div class="col-md-12">
             <div class="row">
               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                 <input type='file' name='file' required class="form-control" >
               </div>
             </div>
-          </div> -->
+          </div>
           <!--  <p>This is a small modal.</p> -->
         </div>
         <div class="modal-footer">
