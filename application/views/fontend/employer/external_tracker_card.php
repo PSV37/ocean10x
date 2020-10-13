@@ -32,7 +32,8 @@
     </select>
   </td>
   <!--  <input id="edu" type="text" name="edu" value="<?php echo $job_row->education_level_name; ?>" ></td> -->
- 
+  <td ><input  type="text" name="org"  value="<?php echo $job_row->current_org; ?>" readonly maxlength='3' ></td>
+  
   <td ><input type="text" class="email allowalphabates" id="reminder" readonly="" name="comment" value="<?php echo $job_row->score; ?>" ></td>
   <td ><input type="text" class="email allowalphabates" id="reminder" readonly="" name="comment" value="<?php $rank= $job_row->rank.'/'.sizeof($external_tracking_date); echo $rank ?>" ></td>
   <td ><input type="text" class="email allowalphabates" id="action" name="comment" value="<?php echo $job_row->action_item; ?>" ></td>
