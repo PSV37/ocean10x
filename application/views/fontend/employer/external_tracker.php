@@ -488,9 +488,9 @@ hr {
     border-radius: 34px;
     color: #fff;
     cursor: pointer;
-    margin-top: 25px;
+    /*margin-top: 25px;*/
     /* margin-bottom: -83px; */
-    margin-left: 20px;
+    margin-left: 50px;
 }
 ul#sizelist {
     margin-left: 27px;
@@ -557,7 +557,7 @@ nav.navbar.navbar-default {
           </div>
           <div class="col-md-4">
             <form id="int_track" method="post" action="<?php echo base_url(); ?>employer/external_tracker">
-              <label class="dropdown" style="float:right;">
+              <label class="dropdown">
                 <div class="dd-button" onclick="myFunction2(event)">
                   Active Job
                 </div>
