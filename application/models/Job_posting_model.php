@@ -373,11 +373,12 @@ order by created_date asc limit 10");
         return $query;
     }
 
-     public function get_external_tracker_date($job_id,$date)
+     public function get_external_tracker_date($job_id,$date,$stage_id)
     {
-        $this->db->select('external_tracker.*,education_level.*,DATE_FORMAT(external_tracker.created_on,"%y-%m-%d")as datecreation');
+        $this->db->select('*,DATE_FORMAT(external_tracker.created_on,"%y-%m-%d")as datecreation');
         $this->db->from('external_tracker');
         $this->db->where('external_tracker.job_post_id', $job_id);
+         $this->db->where('forwarded_jobs_cv.tracking_stage',$stage_id);
         $this->db->where('DATE_FORMAT(external_tracker.created_on,"%y-%m-%d")',$date);
       
         
