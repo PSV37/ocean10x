@@ -5426,8 +5426,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $get_external_tracker = $this->job_posting_model->get_external_tracker($job_id);
             $education_level = $this->Master_model->getMaster('education_level', $where = false);
             $tracker_status = $this->Master_model->getMaster('tracker_status_master', $where = false);
+             $tracking_stages = $this->Master_model->getMaster('tracking_stages', $where = false);
             $this->load->view('fontend/employer/external_tracker_card.php', compact('get_external_tracker', 'employer_id', 'education_level', 'tracker_status', 'job_id' , 
-                'stage_id'));
+                'stage_id','tracking_stages'));
         }
     }
     function get_status()
