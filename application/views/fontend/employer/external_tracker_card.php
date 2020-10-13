@@ -32,20 +32,27 @@
     </select>
   </td>
   <!--  <input id="edu" type="text" name="edu" value="<?php echo $job_row->education_level_name; ?>" ></td> -->
-  <td ><input  type="text" name="org"  value="<?php echo $job_row->current_org; ?>" readonly maxlength='3' ></td>
-  <td>
-    <select name="status" style="min-width: 200px; border: none;" id="status" class="form-control select2" data-style="btn-default" data-live-search="true"  >
-      <option value=""> </option>
-      <?php   foreach($tracker_status as $status){?>
-      <option value="<?php echo $status['status_id']; ?>"<?php if($job_row->tracking_status==$status['status_id']){ echo "selected"; }?>><?php echo $status['status_name']; ?></option>
-      <?php } ?>
-    </select>
-  </td>
+ 
   <td ><input type="text" class="email allowalphabates" id="reminder" readonly="" name="comment" value="<?php echo $job_row->score; ?>" ></td>
   <td ><input type="text" class="email allowalphabates" id="reminder" readonly="" name="comment" value="<?php $rank= $job_row->rank.'/'.sizeof($external_tracking_date); echo $rank ?>" ></td>
   <td ><input type="text" class="email allowalphabates" id="action" name="comment" value="<?php echo $job_row->action_item; ?>" ></td>
   <td ><textarea class="email allowalphabates" id="comment" name="comment" value=""><?php echo $job_row->comments; ?></textarea></td>
   <td ><input type="text" class="email allowalphabates" id="reminder" name="comment" value="<?php echo $job_row->reminder; ?>" ></td>
+  <td>
+    <select name="stage" style="min-width: 200px; border: none;" id="stage<?php echo $job_row->cv_id; ?>" onchange="get_rel_status(<?php echo $job_row->cv_id; ?>);" class="form-control select2" data-style="btn-default" data-live-search="true">
+      <option value=""> </option>
+      <?php   foreach($tracking_stages as $stage){?>
+      <option <?php if($job_row->tracking_stage == $stage['stage_id'] ){ echo "selected"; } ?> value="<?php echo $stage['stage_id']; ?>"><?php echo $stage['stage']; ?></option>
+      <?php } ?>
+    </select>
+  </td>
+  <td>
+    <select name="status" style="min-width: 200px; border: none;"  id="status<?php echo $job_row->cv_id; ?>" class="form-control select2" data-style="btn-default" data-live-search="true"  >
+      <?php if(!empty($job_row->tracking_status)){?>  <option value="<?php echo $job_row->tracking_status; ?>"><?php echo $job_row->status_name; ?> </option> <?php } ?>
+     
+     
+    </select>
+  </td>
   <input type="hidden" class="email allowalphabates" id="tracking_id_val" name="comment" value="<?php echo $job_row->id; ?>" >
   <!--  <td style="min-width: 150px;" id="share"> 
     <a href="#" onclick="get_value(<?php echo $job_row->id; ?>)"  > <i class="fas fa-share"></i></a>
