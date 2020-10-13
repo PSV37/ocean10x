@@ -1017,7 +1017,7 @@ function get_card(id)
                   notice: $tr.find("#notice").val(),
                   org: $tr.find("#org").val(),
                   edu: $tr.find("#edu").val(),
-                  status: $tr.find("#status").val(),
+                  status: $tr.find("#status"+values).val(),
                   stage: $tr.find("#stage"+values).val(),
                   action: $tr.find("#action").val(),
                   comment: $tr.find("#comment").val(),
