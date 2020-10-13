@@ -378,7 +378,7 @@ order by created_date asc limit 10");
         $this->db->select('*,DATE_FORMAT(external_tracker.created_on,"%y-%m-%d")as datecreation');
         $this->db->from('external_tracker');
         $this->db->where('external_tracker.job_post_id', $job_id);
-         $this->db->where('forwarded_jobs_cv.tracking_stage',$stage_id);
+         $this->db->where('external_tracker.tracking_stage',$stage_id);
         $this->db->where('DATE_FORMAT(external_tracker.created_on,"%y-%m-%d")',$date);
       
         
