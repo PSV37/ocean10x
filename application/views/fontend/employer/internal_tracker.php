@@ -1006,7 +1006,7 @@ function get_card(id)
             $("table > tbody > tr").each(function () {
               var $tr = $(this);
               if ($tr.find(".chkbx").is(":checked")) {
-                 values: $tr.find("#cv_id").val(),
+                var values = $tr.find("#cv_id").val();
                 data.push({
                   value: $tr.find("#cv_id").val(),
                   name: $tr.find("#name").val(),
