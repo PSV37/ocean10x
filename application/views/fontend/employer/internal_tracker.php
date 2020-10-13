@@ -1006,6 +1006,7 @@ function get_card(id)
             $("table > tbody > tr").each(function () {
               var $tr = $(this);
               if ($tr.find(".chkbx").is(":checked")) {
+                 values: $tr.find("#cv_id").val(),
                 data.push({
                   value: $tr.find("#cv_id").val(),
                   name: $tr.find("#name").val(),
@@ -1017,7 +1018,7 @@ function get_card(id)
                   org: $tr.find("#org").val(),
                   edu: $tr.find("#edu").val(),
                   status: $tr.find("#status").val(),
-                  stage: $tr.find("#stage"+value).val(),
+                  stage: $tr.find("#stage"+values).val(),
                   action: $tr.find("#action").val(),
                   comment: $tr.find("#comment").val(),
                   reminder: $tr.find("#reminder").val(),
