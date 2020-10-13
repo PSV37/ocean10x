@@ -495,12 +495,48 @@ hr {
 ul#sizelist {
     margin-left: 27px;
 }
+.navbar li {
+    border: 2px solid;
+    border-radius: 20px;
+    margin-left: 45px;
+    border: none;
+}
+nav.navbar.navbar-default {
+    /* background-color: white; */
+    /* border-color: white; */
+    border: none;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #f8f8f8;
+    background-color: #18c5bd;
+    border-radius: 20px;
+    width: 40px;
+     font-size: 18px;
+}
 </style>
 <div class="container-fluid main-d">
   <div class="container">
     <div class="col-md-12">
       <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
       <div class="col-md-9 cv_bank">
+        <nav class="navbar navbar-default">
+          <!-- <div class="container-fluid"> -->
+            
+            <ul id="credit" class="nav navbar-nav">
+             
+              <li id="li1" onclick="get_card(1);" class="active" data-interest = "1"><a href="#"data-toggle="tab"> 1</a></li>
+            <li id="li2" data-interest = "2" onclick="get_card(2);"><a href="#" data-toggle="tab"> 2</a></li>
+            <li id="li3" data-interest = "3" onclick="get_card(3);"><a href="#" data-toggle="tab"> 3</a></li>
+            <li data-interest = "4" id="li4" onclick="get_card(4);"><a href="#" data-toggle="tab">4</a></li>
+            <li id="li5" data-interest = "5" onclick="get_card(5);"><a href="#" data-toggle="tab">5</a></li>
+            <li id="li6" data-interest = "6" onclick="get_card(6);"><a href="#" data-toggle="tab">6</a></li>
+            <li id="li7" data-interest = "7" onclick="get_card(7);"><a href="#" data-toggle="tab">7</a></li>
+            <li data-interest = "8" id="li8" onclick="get_card(8);"><a href="#" data-toggle="tab">8</a></li>
+            <li data-interest = "9" id="li9" onclick="get_card(9);"><a href="#" data-toggle="tab">9</a></li>
+            </ul>
+          <!-- </div> -->
+        </nav>
         <div class="row">
           <div class="col-md-4">
             <select class="form-control select2" id="job_select" onchange="tracker_card(this.value);">
@@ -512,7 +548,14 @@ ul#sizelist {
             </select>
             <div class="clear"></div>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-4">
+          
+            <span title="save" class="glyphicon glyphicon-floppy-save save icon_backg"></span> 
+         
+            <span title="share"><i class="fa fa-share-alt icon_backg share"></i></span> 
+            <!-- </button> -->
+          </div>
+          <div class="col-md-4">
             <form id="int_track" method="post" action="<?php echo base_url(); ?>employer/external_tracker">
               <label class="dropdown" style="float:right;">
                 <div class="dd-button" onclick="myFunction2(event)">
@@ -533,20 +576,10 @@ ul#sizelist {
               <button type="submit" name="sort" class="hidden" id="sort_btn"></button>
             </form>
           </div>
-          <div class="col-md-3">
-            <label>
-            </label>
-          </div>
+          
         </div>
         <div class="row">
-          <div col-md-12>
-           <!--  <button style="float: right;" type="button" class="btn btn-default btn-sm save"> -->
-            <span title="save" class="glyphicon glyphicon-floppy-save save icon_backg"></span> 
-            <!-- </button> -->
-           <!--  <button style="float: right;" type="button" class="btn btn-default btn-sm share"> -->
-            <span title="share"><i class="fa fa-share-alt icon_backg share"></i></span> 
-            <!-- </button> -->
-          </div>
+          
         </div>
         <div class="box" >
           <div class="card content">

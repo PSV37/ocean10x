@@ -4470,44 +4470,42 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         }
     }
     public function bulk_upload_folder() {
-        ini_set('upload_max_filesize', '10M');
-        ini_set('post_max_size', '10M');
-        ini_set('max_input_time', 0);
-        ini_set('max_execution_time', 0);
-        $employer_id = $this->session->userdata('company_profile_id');
+    ini_set('upload_max_filesize', '10M');
+    ini_set('post_max_size', '10M');
+    ini_set('max_input_time', 0);
+    ini_set('max_execution_time', 0);
+    $employer_id = $this->session->userdata('company_profile_id');
         $this->load->model('Questionbank_employer_model');
         if (isset($_POST['upload'])) {
-            if (!empty($_FILES['file']['name'])) {
+        if (!empty($_FILES['file']['name'])) {
                 // Set preference
-                $config['upload_path'] = 'cv_bank_excel/files/';
-                $ext = strtolower(end(explode('.', $_FILES['file']['name'])));
-                $config['allowed_types'] = 'csv';
-                $config['max_size'] = '10000'; // max_size in kb
-                $config['file_name'] = $_FILES['file']['name'];
+            $config['upload_path'] = 'cv_bank_excel/files/';
+            $ext = strtolower(end(explode('.', $_FILES['file']['name'])));
+            $config['allowed_types'] = 'csv';
+            $config['max_size'] = '10000'; // max_size in kb
+            $config['file_name'] = $_FILES['file']['name'];
                 // Load upload library
-                $this->load->library('upload', $config);
+            $this->load->library('upload', $config);
                 // File upload
-                if ($ext === 'csv') {
-                    if ($this->upload->do_upload('file')) {
-                        // Get data about the file
-                        $uploadData = $this->upload->data();
-                        $filename = $uploadData['file_name'];
+            if ($ext === 'csv') {
+             if ($this->upload->do_upload('file')) {
+                $uploadData = $this->upload->data();
+                $filename = $uploadData['file_name'];
                         // Reading file
-                        $file = fopen("cv_bank_excel/files/" . $filename, "r");
-                        $i = 0;
-                        $importData_arr = array();
-                        while (($filedata = fgetcsv($file, 1000, ",")) !== FALSE) {
-                            $num = count($filedata);
-                            for ($c = 0;$c < $num;$c++) {
-                                $importData_arr[$i][] = $filedata[$c];
-                            }
+                $file = fopen("cv_bank_excel/files/" . $filename, "r");
+                    $i = 0;
+                    $importData_arr = array();
+                     while (($filedata = fgetcsv($file, 1000, ",")) !== FALSE) {
+                     $num = count($filedata);
+                     for ($c = 0;$c < $num;$c++) {
+                            $importData_arr[$i][] = $filedata[$c];}
                             $i++;
                         }
                         fclose($file);
                         $skip = 0;
                         // insert import data
                         $cv = array();
-                        foreach ($importData_arr as $userdata) {
+    foreach ($importData_arr as $userdata) {
                             if ($skip != 0) {
                                 $cv_id = $this->Questionbank_employer_model->InsertCVData($userdata);
                                 // print_r($cv_id);die;
