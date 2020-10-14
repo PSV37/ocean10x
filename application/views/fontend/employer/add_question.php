@@ -166,7 +166,7 @@ ul.select2-results__options {
                     <li style="position:relative;"><span style="position:absolute;font-weight: 700;">1.</span>
                       <div class="checkbox">
                         <label>
-                          <input type="checkbox" value="1" class="btn-default1 checkbox"  name="correct_answer[]" <?php if ($row['answer_id'] == 1): echo "checked"; endif ?>>
+                          <input type="checkbox" value="1" class="btn-default1 checkbox"  name="correct_answer[]" <?php if (in_array("1", $row['answer_id'])): echo "checked"; endif ?>>
                           <span>Option 1</span>
                         </label>
                       </div>
@@ -175,7 +175,7 @@ ul.select2-results__options {
                       <div class="checkbox">
                         <label>
                           <input type="checkbox" value="3" class="btn-default1 checkbox"  name="correct_answer[]"
-                          <?php if ($row['answer_id'] == 3): echo "checked"; endif ?>>
+                          <?php if (in_array("3", $row['answer_id'])): echo "checked"; endif ?>>
                           <span>Option 3</span>
                         </label>
                       </div>
@@ -618,7 +618,7 @@ required: true
             }, 
 
 
-'time': {required: true},
+// 'time': {required: true},
 'question': {required: true},
 'option1': {required: true},
 'option2': {required: true},
