@@ -6511,7 +6511,7 @@ public  function upload_folder()
            foreach ($_FILES['files']['name'] as $i => $name) 
            {
              $folders = explode('/', $folder_path[$i]);
-             $file = fopen($paths.'/'.$name, "r");
+             $file = fopen($folder_path.'/'.$name, "r");
                 $members = array();
 
                 while (!feof($file)) {
