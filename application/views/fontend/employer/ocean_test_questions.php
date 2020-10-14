@@ -1256,7 +1256,7 @@ function get_checked(n)
       $('input[name = "question'+n+'"]').attr('disabled', true);
 <?php } ?>
       $('#status'+j).css('background-color', '#94f36d');
-       <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['review_option'] == 'Y') 
+       <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['review_option'] == 'N') 
       { ?>
             $("#next").click();
       <?php } ?>
