@@ -6487,6 +6487,7 @@ public  function upload_folder()
                }
                 $skip++;
            }
+            $this->session->set_flashdata('success', '<div class="alert alert-success text-center">CVs Uploaded successfully!</div>');
            redirect('employer/corporate_cv_bank');
           }
           else {
@@ -6501,7 +6502,28 @@ public  function upload_folder()
      else
      {
       print_r($_FILES);
-     }
+      $count = 0;
+       $company_id = $this->session->userdata('company_profile_id');
+      $paths = $this->input->post('paths');
+      $folder_path = explode(',', $paths);
+      $uploadDir = 'cv_folder/';
+       if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+           foreach ($_FILES['files']['name'] as $i => $name) 
+           {
+             $folders = explode('/', $folder_path[$i]);
+             $file = fopen($name, "r");
+                $members = array();
+
+                while (!feof($file)) {
+                   $members[] = fgets($file);
+                }
+
+                fclose($file);
+
+               var_dump($members);
+            }
+           }
+          }    
     }else
     {
      redirect('employer/corporate_cv_bank');
