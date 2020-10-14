@@ -1857,7 +1857,7 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
           <div class="col-md-12">
             <div class="row">
               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input type='file' name='file' required class="form-control" >
+                <input type='file' name='file'  class="form-control" >
               </div>
             </div>
           </div>
