@@ -6510,8 +6510,72 @@ public  function upload_folder()
        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
            foreach ($_FILES['files']['name'] as $i => $name) 
            {
-             $folders = explode('/', $folder_path[$i]);
-             $file = fopen($folder_path[$i], "r");
+            $folders = explode('/', $folder_path[$i]);
+              for ($k = 0;$k <= sizeof($folders);$k++) {
+              $folder_name = $folders[$k];
+              if ($folder_name == $_FILES['files']['name'][$i]) 
+              {
+               if (strlen($_FILES['files']['name'][$i]) > 1) 
+               {
+                if (move_uploaded_file($_FILES['files']['tmp_name'][$i], $folder_path_final . '/' . $name)) 
+                {
+                 $count++;
+                }
+               }
+              } else
+              {
+               if ($k > 0) 
+               {
+                $j =$k-1;
+                $folder_struct = array();
+                for ($n = 0;$n <= $j;$n++) 
+                {
+                  array_push($folder_struct, $folders[$n]);
+                }
+                 $names = implode('/', $folder_struct);
+                if (!file_exists('cv_folder/' . $names . '/' . $folder_name)) 
+                {
+                 mkdir('cv_folder/' . $names . '/' . $folder_name, 0777, true);
+                }
+                $folder_path_final = 'cv_folder/' . $names . '/' .$folder_name;
+                $where_curr_folder = "cv_folder.folder_name = '$folder_name' and company_id = '$employer_id'";
+                $curr_foldr = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_curr_folder, $join = FALSE);
+                $previous_folder = $folders[$j];
+                $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id'";
+                $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join = FALSE);
+                 // print_r($parent);
+                 // print_r($folder_name); die;
+                if ($parent && empty($curr_foldr)) 
+                {
+                  $insert_folder_data['folder_name'] = $folder_name;
+                  $insert_folder_data['company_id'] = $employer_id;
+                  $insert_folder_data['parent_id'] = $parent['id'];
+                  $insert_folder_data['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
+                 $insert_folder_data['created_by'] = $employer_id;
+                 $result = $this->Master_model->master_insert($insert_folder_data, 'cv_folder');
+                 }
+               } else
+                {
+                if (!file_exists('cv_folder/' . $folder_name)) 
+                {
+                 mkdir('cv_folder/' . $folder_name, 0777, true);
+                }
+                $folder_path_final = 'cv_folder/' . $folder_name;
+                $where_folder = "cv_folder.folder_name = '$folder_name' and company_id = '$employer_id'";
+                $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join = FALSE);
+                if (empty($parent)) 
+                {
+                 $insert_folder_data['folder_name'] = $folder_name;
+                 $insert_folder_data['company_id'] = $employer_id;
+                 $insert_folder_data['parent_id'] = '0';
+                 $insert_folder_data['created_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
+                 $insert_folder_data['created_by'] = $employer_id;
+                 $result = $this->Master_model->master_insert($insert_folder_data, 'cv_folder');
+                }
+               }
+             }
+            
+             $file = fopen($folder_path_final, "r");
                 $members = array();
 
                 while (!feof($file)) {
