@@ -6487,6 +6487,7 @@ public  function upload_folder()
                }
                 $skip++;
            }
+           redirect('employer/corporate_cv_bank');
           }
           else {
             $error = $this->upload->display_errors();
@@ -6501,6 +6502,9 @@ public  function upload_folder()
      {
       print_r($_FILES);
      }
+    }else
+    {
+     redirect('employer/corporate_cv_bank');
     }
  }
 }
