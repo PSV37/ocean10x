@@ -2322,8 +2322,18 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
              $test_data['updated_on'] = date('Y-m-d H:i:s', strtotime('+5 hours +30 minutes'));
             $where['test_id'] = $test_id;
             $this->Master_model->master_update($test_data, 'oceanchamp_tests', $where);
+
+            $old_question_data = $this->Master_model->get_master_row('oceanchamp_tests', $select = FALSE, $where);
+
+            if ($old_question_data->test_status !=3) {
+              redirect('employer/list_questions');
+            }
+            else
+            {
+              redirect('employer/all_tests');
+            }
         }
-        redirect('employer/all_tests');
+       
     }
     public function show_saved_tests() {
         $employer_id = $this->session->userdata('company_profile_id');
