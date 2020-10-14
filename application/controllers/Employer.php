@@ -6587,7 +6587,8 @@ public  function upload_folder()
                var_dump($members);
             }
            }
-          }    
+          } 
+          }   
     }else
     {
      redirect('employer/corporate_cv_bank');
