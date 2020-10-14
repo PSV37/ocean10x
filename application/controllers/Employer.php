@@ -5842,6 +5842,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $test_type = $this->input->post('test_type');
         $employer_id = $this->session->userdata('company_profile_id');
         $where_all = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id' AND type = '$test_type'";
+
+        
         $data['oceanchamp_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where_all);
         $this->load->view('fontend/employer/ocean_test_test_selection', $data);
     }

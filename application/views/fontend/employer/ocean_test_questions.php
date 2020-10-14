@@ -1152,9 +1152,10 @@ input[type="radio"] {
  var total_slides=slides.length;
  // console.log(n);
  console.log(myQuestions[n]);
+<?php if (isset($oceanchamp_tests) && $oceanchamp_tests['timer_on_each_que'] == 'Y') { ?>
 
   set_timer(n,total_slides);
-
+<?php } ?>
   }
 
   function showNextSlide() {
@@ -1268,6 +1269,7 @@ function next(n)
 
 function getval(value)
 {
+      clearInterval(timerInterval);
       qid = value - 1;
      <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['previous_option'] == 'N') 
      {
@@ -1320,7 +1322,6 @@ for(var key in categories){
       // });
      // var bodyColor = $(this).attr("style");
 })
-
 function set_timer(n,total_slides)
 {
        const FULL_DASH_ARRAY = 283;
