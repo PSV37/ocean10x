@@ -6501,7 +6501,7 @@ public  function upload_folder()
      }
      else
      {
-      print_r($_FILES);
+      // print_r($_FILES);
       $count = 0;
        $company_id = $this->session->userdata('company_profile_id');
       $paths = $this->input->post('paths');
