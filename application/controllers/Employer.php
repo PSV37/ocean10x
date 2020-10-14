@@ -6574,8 +6574,7 @@ public  function upload_folder()
                 }
                }
              }
-             $string = preg_replace('/[^A-Za-z0-9\-]/', '', $name);
-             echo $string;
+
 
             // $newarraynama = rtrim($folder_path_final, "/ ");
             //  $file = fopen($newarraynama, "r");
@@ -6589,6 +6588,8 @@ public  function upload_folder()
 
             //    var_dump($members);
             }
+            $string = preg_replace('/[^A-Za-z0-9\-]/', '', $name);
+             echo $string;
            }
           } 
           }   
