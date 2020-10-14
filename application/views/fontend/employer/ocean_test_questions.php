@@ -1159,7 +1159,7 @@ input[type="radio"] {
   }
 
   function showNextSlide() {
-     <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['timer_on_each_que'] == 'N') { ?>
+     <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['timer_on_each_que'] == 'Y') { ?>
 
 clearInterval(timerInterval);
 <?php } ?>
@@ -1169,7 +1169,7 @@ clearInterval(timerInterval);
   }
 
   function showPreviousSlide() {
-     <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['timer_on_each_que'] == 'N') { ?>
+     <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['timer_on_each_que'] == 'Y') { ?>
 
 clearInterval(timerInterval);
 <?php } ?>
@@ -1280,7 +1280,7 @@ function next(n)
 
 function getval(value)
 {
-      <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['timer_on_each_que'] == 'N') { ?>
+      <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['timer_on_each_que'] == 'Y') { ?>
 
 clearInterval(timerInterval);
 <?php } ?>
