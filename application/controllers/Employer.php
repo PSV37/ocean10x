@@ -2519,12 +2519,14 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                     $where_delete['question_id'] = $id;
                     $this->Master_model->master_delete($tablename, $where_delete);
                     $c_answer = $this->input->post('correct_answer');
-                    for ($i = 0;$i < sizeof($c_answer);$i++) {
+                    // for ($i = 0;$i < sizeof($c_answer);$i++) {
                         $data_answer = array();
-                        $data_answer['question_id'] = $id;
-                        $data_answer['answer_id'] = $c_answer[$i];
+                        $data_answer['question_id'] = $q_id;
+                        $ans=array_filter($c_answer);
+                        $ans_id = implode(',', $ans);
+                        $data_answer['answer_id'] = $ans_id;
                         $this->Master_model->master_insert($data_answer, 'questionbank_answer');
-                    }
+                    // }
                 }
                 if ($this->input->post('ques_type') == 'Subjective') {
                     $tablename = 'questionbank_answer';
