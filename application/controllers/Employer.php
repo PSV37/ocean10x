@@ -5843,7 +5843,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
         $employer_id = $this->session->userdata('company_profile_id');
         $where_all = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id' AND type = '$test_type'";
 
-        
+
         $data['oceanchamp_tests'] = $this->Master_model->getMaster('oceanchamp_tests', $where_all);
         $this->load->view('fontend/employer/ocean_test_test_selection', $data);
     }
@@ -5867,6 +5867,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             # code...
             $questions = explode(',', $oceanchamp_tests['questions']);
             //    $i=0;
+            print_r($questions);die;
             foreach ($questions as $row) {
                 //
                 $where = "questionbank.ques_id='$row'";
