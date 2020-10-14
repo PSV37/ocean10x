@@ -1661,10 +1661,14 @@ Company Name
             <div class="form-group timer">
               <label for="male">Timer On each Question</label><br>
               <label class="radio-inline" >
-              <input type="radio" name="timer" style=" margin-right: 11px;" value="Y" checked> Yes
+              <input type="radio" <?php if($tests['timer_on_each_que'] == 'Y') {
+               echo "checked";
+              } ?> name="timer" style=" margin-right: 11px;" value="Y" > Yes
               </label>
               <label class="radio-inline">
-              <input type="radio" name="timer" value="N" style="margin-left: -30px;">No
+              <input type="radio" <?php if($tests['timer_on_each_que'] == 'N') {
+               echo "checked";
+              } ?> name="timer" value="N" style="margin-left: -30px;">No
               </label>
             </div>
           </div>

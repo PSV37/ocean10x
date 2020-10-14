@@ -1836,12 +1836,20 @@ public function user_profile()
             $where_all = "oceanchamp_tests.status='1' AND  test_id = '$test_id'";
 
             $oceanchamp_tests = $this->Master_model->get_master_row('oceanchamp_tests', $select = FALSE, $where = $where_all, $join = FALSE);
+            if ($oceanchamp_tests['test_status'] !=1) 
+            {
+               $technical_id = $oceanchamp_tests['topics'];
+                $level = $oceanchamp_tests['level'];
+                    $ques_type = 'MCQ';
+                $where = "technical_id IN('".$technical_id."')  and level ='$level' and ques_type ='$ques_type' ";
+                $questions = $this->Master_model->getMaster('questionbank', $where, $join = FALSE, $order = 'RANDOM', $field = 'ques_id', $select = false, $limit = 10, $start = 'ques_id', $search = false);
+            }
+            else
+            {
+                 $questions = explode(',',$oceanchamp_tests['questions']);
+            }
                   // print_r($this->db->last_query());
-            $technical_id = $oceanchamp_tests['topics'];
-            $level = $oceanchamp_tests['level'];
-            $ques_type = 'MCQ';
-            $where = "technical_id IN('".$technical_id."')  and level ='$level' and ques_type ='$ques_type' ";
-        $questions = $this->Master_model->getMaster('questionbank', $where, $join = FALSE, $order = 'RANDOM', $field = 'ques_id', $select = false, $limit = 10, $start = 'ques_id', $search = false);
+            
         // print_r($this->db->last_query());die;
             $all_questions = array();
            // foreach ($oceanchamp_tests as $question) {
