@@ -5867,7 +5867,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             # code...
             $questions = explode(',', $oceanchamp_tests['questions']);
             //    $i=0;
-            print_r($questions);die;
+
             foreach ($questions as $row) {
                 //
                 $where = "questionbank.ques_id='$row'";
@@ -5889,6 +5889,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 // $answer_data  = $this->Master_model->get_master_row('questionbank', $select = 'questionbank.option 1 as a', $where, $join = false);
                 array_push($all_questions, $resultArray);
             }
+            // print_r($questions);die;
             $data['all_questions'] = $all_questions;
             $data['test_duration'] = $oceanchamp_tests['test_duration'];
             $data['oceanchamp_tests'] = $oceanchamp_tests;
