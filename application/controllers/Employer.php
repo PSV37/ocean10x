@@ -2114,12 +2114,12 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         if (!empty($topics)) {
             $topic=array_filter($topics);
             $topic_id = implode(',', $topic);
-            $where_all.= " and questionbank.topic_id IN ('".$topic_id."')";
+            $where_all.= " and questionbank.topic_id IN (".$topic_id.")";
         }
         if (!empty($subtopic)) {
             $subtopic=array_filter($subtopic);
             $subtopic_id = implode(',',$subtopic);
-            $where_all.= " and questionbank.subtopic_id  IN ('".$subtopic_id."')";
+            $where_all.= " and questionbank.subtopic_id  IN (".$subtopic_id.")";
         }
         if (!empty($level)) {
             $where_all.= " and questionbank.level = '$level'";
@@ -2130,7 +2130,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
         // and questionbank.topic_id = '$topic_id' and questionbank.subtopic_id  = '$subtopic_id' and questionbank.ques_type = '$ques_type' and questionbank.level = '$level'  ";
         $join_emp = array('skill_master' => 'skill_master.id=questionbank.technical_id |left outer', 'topic' => 'topic.topic_id=questionbank.topic_id |left outer', 'subtopic' => 'subtopic.subtopic_id=questionbank.subtopic_id |left outer', 'lineitem' => 'lineitem.lineitem_id=questionbank.lineitem_id |left outer', 'lineitemlevel' => 'lineitemlevel.lineitemlevel_id=questionbank.lineitemlevel_id |left outer', 'questionbank_answer' => 'questionbank_answer.question_id = questionbank.ques_id|LEFT OUTER');
         $data['questionbank'] = $this->Master_model->getMaster('questionbank', $where_all, $join_emp);
-        print_r($this->db->last_query());die;
+        // print_r($this->db->last_query());die;
         $this->load->view('fontend/employer/qb_test_card.php', $data);
     }
     public function add_to_test() {
