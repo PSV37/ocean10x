@@ -2326,13 +2326,14 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             $old_question_data = $this->Master_model->get_master_row('oceanchamp_tests', $select = FALSE, $where);
 
             if ($old_question_data->test_status !=3) {
-
+              $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Test Details updated Successfully</div>');
                   $data['submenu'] = '2';
                 $this->session->set_userdata($data);
               redirect('employer/all_questions');
             }
             else
             {
+              $this->session->set_flashdata('success', '<div class="alert alert-success text-center">Test Details updated Successfully</div>');
               redirect('employer/all_tests');
             }
         }
