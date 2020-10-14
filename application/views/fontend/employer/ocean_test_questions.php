@@ -1011,7 +1011,7 @@ input[type="radio"] {
   
         // add this question and its answers to the output
         output.push(
-          `<div class="slide"  id="${questionNumber}">
+          `<div class="slide" onclick="click_next();"  id="${questionNumber}">
             <div class="question" id="${questionNumber}"> ${currentQuestion.question} </div>
             <div class="answers"> ${answers.join("")} </div>
           <input type = "hidden" id="timer${questionNumber}" value="${currentQuestion.time_for_question}">
@@ -1257,6 +1257,14 @@ function get_checked(n)
       $('#status'+j).css('background-color', '#94f36d');
 
 
+
+}
+function click_next()
+{
+      <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['review_option'] == 'Y') 
+      { ?>
+            $("#next").click();
+      <?php ?>
 
 }
 function next(n)
