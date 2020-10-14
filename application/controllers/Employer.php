@@ -2521,7 +2521,7 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                     $c_answer = $this->input->post('correct_answer');
                     // for ($i = 0;$i < sizeof($c_answer);$i++) {
                         $data_answer = array();
-                        $data_answer['question_id'] = $q_id;
+                        $data_answer['question_id'] = $id;
                         $ans=array_filter($c_answer);
                         $ans_id = implode(',', $ans);
                         $data_answer['answer_id'] = $ans_id;
