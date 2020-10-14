@@ -6574,17 +6574,17 @@ public  function upload_folder()
                 }
                }
              }
-            $newarraynama = rtrim($folder_path_final, "/ ");
-             $file = fopen($newarraynama, "r");
-                $members = array();
+            // $newarraynama = rtrim($folder_path_final, "/ ");
+            //  $file = fopen($newarraynama, "r");
+            //     $members = array();
 
-                while (!feof($file)) {
-                   $members[] = fgets($file);
-                }
+            //     while (!feof($file)) {
+            //        $members[] = fgets($file);
+            //     }
 
-                fclose($file);
+            //     fclose($file);
 
-               var_dump($members);
+            //    var_dump($members);
             }
            }
           } 
