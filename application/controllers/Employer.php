@@ -6440,6 +6440,69 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
       
       
     }
+public  function upload_folder()
+ {
+  $employer_id = $this->session->userdata('company_profile_id');
+  $this->load->model('Questionbank_employer_model');
+  if (isset($_POST['upload'])) 
+  {
+    if (!empty($_FILES['file']['name'])) 
+    {
+      $config['upload_path'] = 'cv_bank_excel/files/';
+      $ext = strtolower(end(explode('.', $_FILES['file']['name'])));
+      $config['allowed_types'] = 'csv';
+      $config['max_size'] = '10000'; // max_size in kb
+      $config['file_name'] = $_FILES['file']['name'];
+      $this->load->library('upload', $config);
+      if ($ext === 'csv') 
+      {
+        if ($this->upload->do_upload('file')) 
+        {
+          $uploadData = $this->upload->data();
+          $filename = $uploadData['file_name'];
+          $file = fopen("cv_bank_excel/files/" . $filename, "r");
+          $i = 0;
+          $importData_arr = array();
+          while (($filedata = fgetcsv($file, 1000, ",")) !== FALSE) 
+          {
+            $num = count($filedata);
+            for ($c = 0;$c < $num;$c++) 
+            {
+             $importData_arr[$i][] = $filedata[$c];
+            }
+            $i++;
+           }
+           fclose($file);
+           $skip = 0;
+           $cv = array();
+           foreach ($importData_arr as $userdata) 
+           {
+             if ($skip != 0) 
+             {
+               $cv_id = $this->Questionbank_employer_model->InsertCVData($userdata);
+               $company_name = $this->session->userdata('company_name');
+               $data = array('company' => $company_name, 'action_taken_for' => $this->session->userdata('company_name'), 'field_changed' => 'Imported CVs', 'Action' => 'Imported Multiple CVs', 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
+               $result = $this->Master_model->master_insert($data, 'employer_audit_record');
+                  array_push($cv, $cv_id);
+               }
+                $skip++;
+           }
+          }
+          else {
+            $error = $this->upload->display_errors();
+            $this->session->set_flashdata('success', '<div class="alert alert-warning text-center">CVs Upload failed!' . $error . '</div>');
+           }
+        }
+         else {
+           $this->session->set_flashdata('success', '<div class="alert alert-warning text-center">File Format not supported</div>');
+          }
+     }
+     else
+     {
+      print_r($_FILES);
+     }
+    }
+ }
 }
 ?>
 
