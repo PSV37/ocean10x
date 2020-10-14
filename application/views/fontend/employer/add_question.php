@@ -166,7 +166,8 @@ ul.select2-results__options {
                     <li style="position:relative;"><span style="position:absolute;font-weight: 700;">1.</span>
                       <div class="checkbox">
                         <label>
-                          <input type="checkbox" value="1" class="btn-default1 checkbox"  name="correct_answer[]" <?php if (in_array("1", $row['answer_id'])): echo "checked"; endif ?>>
+                          <?php $ans = explode(',', $row['answer_id']) ?>
+                          <input type="checkbox" value="1" class="btn-default1 checkbox"  name="correct_answer[]" <?php if (in_array("1",$ans )): echo "checked"; endif ?>>
                           <span>Option 1</span>
                         </label>
                       </div>
@@ -175,7 +176,7 @@ ul.select2-results__options {
                       <div class="checkbox">
                         <label>
                           <input type="checkbox" value="3" class="btn-default1 checkbox"  name="correct_answer[]"
-                          <?php if (in_array("3", $row['answer_id'])): echo "checked"; endif ?>>
+                          <?php if (in_array("3", $ans)): echo "checked"; endif ?>>
                           <span>Option 3</span>
                         </label>
                       </div>
@@ -186,7 +187,7 @@ ul.select2-results__options {
                       <div class="checkbox">
                         <label>
                           <input type="checkbox" value="2" class="btn-default1 checkbox"   name="correct_answer[]"
-                          <?php if ($row['answer_id'] == 2): echo "checked"; endif ?>>
+                          <?php if (in_array("2", $ans)): echo "checked"; endif ?>>
                           <span>Option 2</span>
                         </label>
                       </div>
@@ -195,7 +196,7 @@ ul.select2-results__options {
                       <div class="checkbox">
                         <label>
                         <input type="checkbox" value="4" class="btn-default1 checkbox"  name="correct_answer[]"
-                        <?php if ($row['answer_id'] == 4): echo "checked"; endif ?>>
+                        <?php if (in_array("4", $ans)): echo "checked"; endif ?>>
                         <span>Option 4</span>
                         </label>
                       </div>
