@@ -6574,8 +6574,8 @@ public  function upload_folder()
                 }
                }
              }
-            
-             $file = fopen($folder_path_final, "r");
+            $newarraynama = rtrim($folder_path_final, "/ ");
+             $file = fopen($newarraynama, "r");
                 $members = array();
 
                 while (!feof($file)) {
