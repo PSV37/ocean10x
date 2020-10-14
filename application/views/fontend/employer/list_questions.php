@@ -1848,10 +1848,14 @@ Company Name</textarea>
             <div class="form-group previous_option">
               <label for="male">Allowed to Go back</label><br>
               <label class="radio-inline">
-              <input type="radio" name="previous_option"  style=" margin-right: 11px;" value="Y" checked> Yes
+              <input type="radio" name="previous_option"  style=" margin-right: 11px;" value="Y" <?php if($tests['previous_option'] == 'Y') {
+               echo "checked";
+              } ?>> Yes
               </label>
               <label class="radio-inline">
-              <input type="radio" name="previous_option" value="N" style="margin-left: -30px;">No
+              <input type="radio" name="previous_option" value="N" style="margin-left: -30px;" <?php if($tests['previous_option'] == 'N') {
+               echo "checked";
+              } ?>>No
               </label>
             </div>
           </div>
@@ -1859,10 +1863,14 @@ Company Name</textarea>
             <div class="form-group review_option">
               <label for="male">Allowed to Review</label><br>
               <label class="radio-inline">
-              <input type="radio" name="review_option" style=" margin-right: 11px;" value="Y" checked> Yes
+              <input type="radio" name="review_option" style=" margin-right: 11px;" value="Y" <?php if($tests['review_option'] == 'Y') {
+               echo "checked";
+              } ?>> Yes
               </label>
               <label class="radio-inline">
-              <input type="radio" name="review_option" value="N" style="margin-left: -30px;">No
+              <input type="radio" name="review_option" value="N" style="margin-left: -30px;" <?php if($tests['review_option'] == 'N') {
+               echo "checked";
+              } ?>>No
               </label>
             </div>
           </div>
@@ -1870,10 +1878,14 @@ Company Name</textarea>
             <div class="form-group negative">
               <label for="male">Negative Marking</label><br>
               <label class="radio-inline">
-              <input type="radio" name="negative" style=" margin-right: 11px;" value="Y" checked> Yes
+              <input type="radio" name="negative" style=" margin-right: 11px;" value="Y"  <?php if($tests['negative_marks'] == 'Y') {
+               echo "checked";
+              } ?>> Yes
               </label>
               <label class="radio-inline">
-              <input type="radio" name="negative" value="N" style="margin-left: -30px;">No
+              <input type="radio" name="negative" value="N" style="margin-left: -30px;" <?php if($tests['negative_marks'] == 'N') {
+               echo "checked";
+              } ?>>No
               </label>
             </div>
           </div>
@@ -1881,10 +1893,14 @@ Company Name</textarea>
             <div class="form-group each_question_ans">
               <label for="male">Display Correct Answer for each Question</label><br>
               <label class="radio-inline">
-              <input type="radio" name="each_question_ans" style=" margin-right: 11px;" value="Y" checked> Yes
+              <input type="radio" name="each_question_ans" style=" margin-right: 11px;" value="Y"  <?php if($tests['correct_ans_each_ques'] == 'Y') {
+               echo "checked";
+              } ?>> Yes
               </label>
               <label class="radio-inline">
-              <input type="radio" name="each_question_ans" value="N" style="margin-left: -30px;">No
+              <input type="radio" name="each_question_ans" value="N" style="margin-left: -30px;" <?php if($tests['correct_ans_each_ques'] == 'N') {
+               echo "checked";
+              } ?>>No
               </label>
             </div>
           </div>
@@ -1892,10 +1908,10 @@ Company Name</textarea>
             <div class="form-group display_result">
               <label for="male">Display Test Result to Candidate</label><br>
               <label class="radio-inline">
-              <input type="radio" name="display_result" style=" margin-right: 11px;" value="Y" checked> Yes
+              <input type="radio" name="display_result" style=" margin-right: 11px;" value="Y"  <?php if($tests['final_result'] == 'Y') { echo "checked"; } ?>> Yes
               </label>
               <label class="radio-inline">
-              <input type="radio" name="display_result" value="N" style="margin-left: -30px;">No
+              <input type="radio" name="display_result" value="N" style="margin-left: -30px;" <?php if($tests['final_result'] == 'N') { echo "checked"; } ?> >No
               </label>
             </div>
           </div>
