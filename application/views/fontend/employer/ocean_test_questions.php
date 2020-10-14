@@ -1159,14 +1159,20 @@ input[type="radio"] {
   }
 
   function showNextSlide() {
-      clearInterval(timerInterval);
+     <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['timer_on_each_que'] == 'N') { ?>
+
+clearInterval(timerInterval);
+<?php } ?>
       
       // $('#timer'+currentSlide).val('00');
     showSlide(currentSlide + 1);
   }
 
   function showPreviousSlide() {
-      clearInterval(timerInterval);
+     <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['timer_on_each_que'] == 'N') { ?>
+
+clearInterval(timerInterval);
+<?php } ?>
 
       // $('#timer'+currentSlide).val();
     showSlide(currentSlide - 1);
@@ -1274,7 +1280,11 @@ function next(n)
 
 function getval(value)
 {
-      clearInterval(timerInterval);
+      <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['timer_on_each_que'] == 'N') { ?>
+
+clearInterval(timerInterval);
+<?php } ?>
+      
       qid = value - 1;
      <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['previous_option'] == 'N') 
      {
