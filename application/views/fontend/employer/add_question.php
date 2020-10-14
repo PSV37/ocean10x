@@ -154,8 +154,8 @@ ul.select2-results__options {
       </div>
     </div>  
       <div class="box-body">
-                <input type="hidden" name="is_admin" value="1" class="form-control" id="checkboxjs"> 
-                </div>  
+        <input type="hidden" name="is_admin" value="1" class="form-control" id="checkboxjs"> 
+      </div>  
      <div class="row">
         <div class="col-md-4">
           <div class="form-group">

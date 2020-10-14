@@ -2436,7 +2436,21 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
             
         } else {
             $user_id = $this->session->userdata('company_profile_id');
-            $state_dt = array('technical_id' => $this->input->post('technical_id'), 'topic_id' => $this->input->post('topic_id'), 'subtopic_id' => $this->input->post('subtopic_id'), 'lineitem_id' => $this->input->post('lineitem_id'), 'lineitemlevel_id' => $this->input->post('lineitemlevel_id'), 'level' => $this->input->post('level'), 'ques_type' => $this->input->post('ques_type'), 'question' => $this->input->post('question'), 'option1' => $this->input->post('option1'), 'option2' => $this->input->post('option2'), 'option3' => $this->input->post('option3'), 'option4' => $this->input->post('option4'), 'time_for_question' => $this->input->post('time'), 'is_admin' => $this->input->post('is_admin'));
+            $state_dt = array(
+             'technical_id' => $this->input->post('technical_id'), 
+             'topic_id' => $this->input->post('topic_id'), 
+             'subtopic_id' => $this->input->post('subtopic_id'), 
+             'lineitem_id' => $this->input->post('lineitem_id'), 
+             'lineitemlevel_id' => $this->input->post('lineitemlevel_id'), 
+             'level' => $this->input->post('level'), 
+             'ques_type' => $this->input->post('ques_type'), 
+             'question' => $this->input->post('question'), 
+             'option1' => $this->input->post('option1'), '
+             option2' => $this->input->post('option2'), 
+             'option3' => $this->input->post('option3'), 
+             'option4' => $this->input->post('option4'), 
+             'time_for_question' => $this->input->post('time'), 
+             'is_admin' => $this->input->post('is_admin'));
             if (empty($id)) {
                 $state_dt['ques_created_date'] = date('Y-m-d H:i:s');
                 $state_dt['ques_created_by'] = $user_id;
@@ -2450,12 +2464,14 @@ Team ConsultnHire!<br>Enjoy personalized job searching experience<br>Goa a Quest
                     $this->Master_model->master_delete($tablename, $where_delete);
                     $c_answer = $this->input->post('correct_answer');
                     // var_dump($c_answer); die;
-                    for ($i = 0;$i < sizeof($c_answer);$i++) {
+                    // for ($i = 0;$i < sizeof($c_answer);$i++) {
                         $data_answer = array();
                         $data_answer['question_id'] = $q_id;
-                        $data_answer['answer_id'] = $c_answer[$i];
+                        $ans=array_filter($c_answer);
+                        $ans_id = implode(',', $ans);
+                        $data_answer['answer_id'] = $ans_id;
                         $this->Master_model->master_insert($data_answer, 'questionbank_answer');
-                    }
+                    // }
                 }
                 if ($this->input->post('ques_type') == 'Subjective') {
                     $tablename = 'questionbank_answer';
