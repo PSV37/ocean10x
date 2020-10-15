@@ -1478,12 +1478,12 @@ function set_timer(n,total_slides)
                   }
 
               </script>
-              <script>
+              <!-- <script>
                   function getTimeRemaining(endtime) {
                     var t = Date.parse(endtime) - Date.parse(new Date());
-                    // var seconds = Math.floor((t / 1000) % <?php echo $test_duration; ?>);
-                  var seconds = <?php echo $test_duration; ?>;
-                    console.log(seconds);
+                    var seconds = Math.floor((t / 1000) % <?php echo $test_duration; ?>);
+                  // var seconds = <?php echo $test_duration; ?>;
+                   
                    
                     return {
                       'total': t,
@@ -1507,12 +1507,12 @@ function set_timer(n,total_slides)
                     
                       // hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
                       // minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-                      secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
-                  
-                      if (t.total <= 0) {
+                      secondsSpan.innerHTML = (t.seconds);
+                         console.log(seconds);
+                      if (t.seconds <= 0) {
                         clearInterval(timeinterval);
                         // alert('kf');
-                        // $("#submit").click();
+                        $("#submit").click();
                       }
                     }
                   
@@ -1523,7 +1523,22 @@ function set_timer(n,total_slides)
                   // var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
                   var deadline = <?php echo  $oceanchamp_tests['test_duration'] ?>;
                   initializeClock('clockdiv', deadline);
-               </script>
+               </script> -->
+<script>
+var clock = document.getElementById('#clockdiv');
+var secondsSpan = clock.querySelector('.seconds');
+var timeleft = <?php echo  $oceanchamp_tests['test_duration'] ?>;
+var downloadTimer = setInterval(function(){
+  if(timeleft <= 0){
+    clearInterval(downloadTimer);
+     $("#submit").click();
+    // document.getElementById("countdown").innerHTML = "Finished";
+  } else {
+    secondsSpan.innerHTML = timeleft ;
+  }
+  timeleft -= 1;
+}, 1000);
+</script>
               <!--  <script>
                   // Credit: Mateusz Rybczonec
              
