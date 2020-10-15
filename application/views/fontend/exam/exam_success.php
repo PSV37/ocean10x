@@ -57,7 +57,13 @@ var seconds = 5; // seconds for HTML
 var foo; // variable for clearInterval() function
 
 function redirect() {
+    <?php $js_id = $this->session->userdata('job_seeker_id'); 
+    if(!empty($js_id)){ ?>
     document.location.href = '<?php echo base_url() ?>seeker/ocean-champ';
+<?php }else{ ?>
+    document.location.href = '<?php echo base_url() ?>employer/dashboard';
+
+    <?php } ?>
 }
 
 function updateSecs() {

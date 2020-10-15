@@ -1511,7 +1511,7 @@ function set_timer(n,total_slides)
                       if (t.total <= 0) {
                         clearInterval(timeinterval);
                         // alert('kf');
-                        $("#submit").click();
+                        // $("#submit").click();
                       }
                     }
                   
