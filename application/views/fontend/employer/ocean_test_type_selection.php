@@ -83,8 +83,8 @@
                      </form>
                      <div class="row">
                      <?php if(!empty($oceanchamp_tests)) foreach ($oceanchamp_tests as $svalue) { ?>
-                     <div class="col-md-2" id="toggle" onclick="get_value('<?php echo $svalue['type']; ?>')">
-                     <div class="box box-active" >
+                     <div class="col-md-2" onclick="get_value('<?php echo $svalue['type']; ?>')">
+                     <div class="box box-active"  id="toggle" >
                      <span name="type" id="type"  value="<?php echo $svalue['type']; ?>"><?php echo $svalue['type']; ?></span>
                    
                      </div>
