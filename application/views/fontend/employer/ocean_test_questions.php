@@ -1481,7 +1481,7 @@ function set_timer(n,total_slides)
               <script>
                   function getTimeRemaining(endtime) {
                     var t = Date.parse(endtime) - Date.parse(new Date());
-                    var seconds = Math.floor((t / 1000) % <?php echo $test_duration; ?>);
+                    var seconds =  <?php echo $test_duration; ?>;
                     console.log(seconds);
                    
                     return {
@@ -1511,7 +1511,7 @@ function set_timer(n,total_slides)
                       if (t.total <= 0) {
                         clearInterval(timeinterval);
                         // alert('kf');
-                        // $("#submit").click();
+                        $("#submit").click();
                       }
                     }
                   
