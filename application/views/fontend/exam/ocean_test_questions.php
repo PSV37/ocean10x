@@ -946,16 +946,16 @@ input[type="radio"] {
                  
                </div>
               <script>
-              function removeTags(str) { 
-    if ((str===null) || (str==='')) 
+function removeTags(str) { 
+if ((str===null) || (str==='')) 
         return false; 
-    else
-        str = str.toString(); 
+else
+tr = str.toString(); 
           
     // Regular expression to identify HTML tags in  
     // the input string. Replacing the identified  
     // HTML tag with a null string. 
-    return str.replace( /(<([^>]+)>)/ig, ''); 
+return str.replace( /(<([^>]+)>)/ig, ''); 
 }      
 // (function(){
   // Functions
