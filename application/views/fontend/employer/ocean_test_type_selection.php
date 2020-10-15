@@ -49,6 +49,12 @@
    padding: 4px 12px;
    margin-bottom: 25px;
    }
+   .open
+   {
+      background-color: #18c5bd;
+    color: #fff;
+    box-shadow: 5px 5px #ede2e2;
+   }
 </style>
 <body>
    <div class="container-fluid main-d">
@@ -77,7 +83,7 @@
                      </form>
                      <div class="row">
                      <?php if(!empty($oceanchamp_tests)) foreach ($oceanchamp_tests as $svalue) { ?>
-                     <div class="col-md-2" onclick="get_value('<?php echo $svalue['type']; ?>')">
+                     <div class="col-md-2" id="toggle" onclick="get_value('<?php echo $svalue['type']; ?>')">
                      <div class="box box-active" >
                      <span name="type" id="type"  value="<?php echo $svalue['type']; ?>"><?php echo $svalue['type']; ?></span>
                    
@@ -126,7 +132,10 @@
               });//end ajax
       
       }
-      
+    $('#toggle').on('click', function () {
+        $(this).toggleClass('open');
+         // $('#test_type').val($t);
+    });   
         function get_value(value)
       {
         
