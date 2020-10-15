@@ -371,7 +371,7 @@ li.btn.btn-secondary a
   background-image: linear-gradient(#18c5bd, #d4efec);
   }
   .sendEmail label{color:#fff;font-size:13px;}
-  .sendEmail input{background-color: #f3f7f663;}
+  /*.sendEmail input{background-color: #f3f7f663;}*/
   .sendEmail textarea.form-control{background-color:#fbffff80;}
   @media (min-width: 768px){
   .modal-dialog {
@@ -925,7 +925,7 @@ li.btn.btn-secondary a
   background-image: linear-gradient(#18c5bd, #d4efec);
   }
   .sendEmail label{color:#fff;font-size:13px;}
-  .sendEmail input{background-color: #f3f7f663;}
+  /*.sendEmail input{background-color: #f3f7f663;}*/
   .sendEmail textarea.form-control{background-color:#fbffff80;}
   @media (min-width: 768px){
   .modal-dialog {
@@ -1043,9 +1043,9 @@ input.btn.btn-primary {
   .a {
     margin-top: 5px;
 }
-input#time {
+/*input#time {
     background-color: white;
-}
+}*/
 </style>
 <!---header-->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/questionbank.css">
