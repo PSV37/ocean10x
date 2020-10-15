@@ -1910,12 +1910,12 @@ Company Name</textarea>
               <label class="radio-inline">
               <input type="radio" name="each_question_ans" style=" margin-right: 11px;" value="Y"  <?php if($tests['correct_ans_each_ques'] == 'Y') {
                echo "checked";
-              } ?>> Yes
+              } ?> disabled> Yes
               </label>
               <label class="radio-inline">
               <input type="radio" name="each_question_ans" value="N" style="margin-left: -30px;" <?php if($tests['correct_ans_each_ques'] == 'N') {
                echo "checked";
-              } ?>>No
+              } ?> checked disabled >No
               </label>
             </div>
           </div>
