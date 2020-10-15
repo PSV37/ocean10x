@@ -1832,7 +1832,7 @@ Company Name</textarea>
           <div class="col-md-6" id="timediv" style="display: none;">
                 <div class="form-group technical_id">                                       
                   <label for="exampleInputEmail1">Duration <span class="required">*</span></label>
-                  <input type="Number" max="999" min="1" class="form-control" id="time" name="test_duration">
+                  <input type="Number" maxlength="3" max="999" min="1" class="form-control" id="time" name="test_duration">
                 </div>
               </div>
           </div>
@@ -1929,7 +1929,7 @@ Company Name</textarea>
           <input type="hidden" name="job_post_id" value="" id="auto-value">
           <input type="hidden" name="forward_job_email" id="forward_job_email" value="<?php echo $cv_row['js_email']; ?>">
         </div>
-        <div class="modal-footer"  style="    margin-top: 340px;">
+        <div class="modal-footer" >
           <button type="submit" class="btn btn-save">update</button>
         </div>
       </form>
