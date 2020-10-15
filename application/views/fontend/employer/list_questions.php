@@ -1843,12 +1843,12 @@ Company Name</textarea>
               <label class="radio-inline" >
              <input type="radio" <?php if($tests['timer_on_each_que'] == 'Y') {
                echo "checked";
-              } ?> name="timer" onclick="timer('Y');" style=" margin-right: 11px;" value="Y"> Yes
+              } ?> name="timer" onclick="timeradd('Y');" style=" margin-right: 11px;" value="Y"> Yes
               </label>
               <label class="radio-inline">
               <input type="radio" <?php if($tests['timer_on_each_que'] == 'N') {
                echo "checked";
-              } ?> name="timer" onclick="timer('N');" value="N" style="margin-left: -30px;">No
+              } ?> name="timer" onclick="timeradd('N');" value="N" style="margin-left: -30px;">No
               </label>
             </div>
           </div>
@@ -2024,7 +2024,7 @@ Company Name</textarea>
    };
    });
    
-   function timer(value)
+   function timeradd(value)
    {
       if (value=='N') 
       {
