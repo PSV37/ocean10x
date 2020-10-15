@@ -5930,7 +5930,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $where_all = "questionbank_answer.question_id='$row' ";
                 $oceanchamp_tests1 = $this->Master_model->get_master_row('questionbank_answer', $select = FALSE, $where = $where_all, $join = FALSE);
                 if ($option == $oceanchamp_tests1['answer_id']) {
-                    $mark = 1;
+                    $mark = 4;
                     $status = 'Yes';
                 } else {
                     if (isset($oceanchamp_tests) && $oceanchamp_tests['negative_marks'] == 'Y') {
