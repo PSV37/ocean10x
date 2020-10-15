@@ -1525,7 +1525,7 @@ function set_timer(n,total_slides)
                   initializeClock('clockdiv', deadline);
                </script> -->
 <script>
-var clock = document.getElementById('#clockdiv');
+var clock = document.getElementById('clockdiv');
 var secondsSpan = clock.querySelector('.seconds');
 var timeleft = <?php echo  $oceanchamp_tests['test_duration'] ?>;
 var downloadTimer = setInterval(function(){
