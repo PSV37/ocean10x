@@ -948,7 +948,7 @@
               <div class="col-md-4">
                 <div class="form-group technical_id">                                       
                   <label for="exampleInputEmail1">Duration <span class="required">*</span></label>
-                  <input type="Number" max="60" min="1" class="form-control" id="time" name="test_duration">
+                  <input type="Number" max="999" min="1" class="form-control" id="time" name="test_duration">
                 </div>
               </div>
               <div class="col-md-4">

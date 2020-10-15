@@ -1817,6 +1817,7 @@ Company Name</textarea>
       <form action="<?php echo base_url() ?>employer/update_test" class="sendEmail" method="post" autocomplete="off">
         <input type="hidden" name="test_id" id="test_id" value="<?php echo $tests['test_id']; ?>">
         <div class="modal-body" style="padding:15px 40px;">
+          <div class="row">
           <div class="col-md-6">
             <div class="form-group ques_type">
               <label for="exampleInputEmail1">Question Type<span class="required">*</span></label>
@@ -1828,19 +1829,26 @@ Company Name</textarea>
               <?php echo form_error('ques_type'); ?>   
             </div>
           </div>
-          <div class="col-md-6"></div>
+          <div class="col-md-6" id="timediv" style="display: none;">
+                <div class="form-group technical_id">                                       
+                  <label for="exampleInputEmail1">Duration <span class="required">*</span></label>
+                  <input type="Number" max="999" min="1" class="form-control" id="time" name="test_duration">
+                </div>
+              </div>
+          </div>
+          <div class="row">
           <div class="col-md-4">
             <div class="form-group timer">
               <label for="male">Timer On each Question</label><br>
               <label class="radio-inline" >
              <input type="radio" <?php if($tests['timer_on_each_que'] == 'Y') {
                echo "checked";
-              } ?> name="timer" style=" margin-right: 11px;" value="Y"> Yes
+              } ?> name="timer" onclick="timer('Y');" style=" margin-right: 11px;" value="Y"> Yes
               </label>
               <label class="radio-inline">
               <input type="radio" <?php if($tests['timer_on_each_que'] == 'N') {
                echo "checked";
-              } ?> name="timer" value="N" style="margin-left: -30px;">No
+              } ?> name="timer" onclick="timer('N');" value="N" style="margin-left: -30px;">No
               </label>
             </div>
           </div>
@@ -1874,6 +1882,8 @@ Company Name</textarea>
               </label>
             </div>
           </div>
+        </div>
+        <div class="row">
           <div class="col-md-4">
             <div class="form-group negative">
               <label for="male">Negative Marking</label><br>
@@ -1904,7 +1914,7 @@ Company Name</textarea>
               </label>
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-4">
             <div class="form-group display_result">
               <label for="male">Display Test Result to Candidate</label><br>
               <label class="radio-inline">
@@ -1915,6 +1925,7 @@ Company Name</textarea>
               </label>
             </div>
           </div>
+        </div>
           <input type="hidden" name="job_post_id" value="" id="auto-value">
           <input type="hidden" name="forward_job_email" id="forward_job_email" value="<?php echo $cv_row['js_email']; ?>">
         </div>
@@ -2013,6 +2024,17 @@ Company Name</textarea>
    };
    });
    
+   function timer(value)
+   {
+      if (value=='N') 
+      {
+        $('#timediv').show();
+      }
+      else
+      {
+        $('#timediv').hide();
+      }
+   }
    
 </script>
 <script>
