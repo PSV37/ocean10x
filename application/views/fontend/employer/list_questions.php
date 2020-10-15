@@ -1043,6 +1043,9 @@ input.btn.btn-primary {
   .a {
     margin-top: 5px;
 }
+input#time {
+    background-color: white;
+}
 </style>
 <!---header-->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>fontend/css/employer/questionbank.css">
@@ -1829,10 +1832,12 @@ Company Name</textarea>
               <?php echo form_error('ques_type'); ?>   
             </div>
           </div>
-          <div class="col-md-6" id="timediv" style="display: none;">
+          <div class="col-md-6" id="timediv">
                 <div class="form-group technical_id">                                       
                   <label for="exampleInputEmail1">Duration <span class="required">*</span></label>
-                  <input type="Number" maxlength="3" max="999" min="1" class="form-control" id="time" name="test_duration">
+                  <input type="Number" <?php if($tests['timer_on_each_que'] == 'Y') {
+               echo "readonly";
+              } ?> maxlength="3" value="<?php echo $tests['test_duration']; ?>" max="999" min="1" class="form-control" id="time" name="test_duration">
                 </div>
               </div>
           </div>
