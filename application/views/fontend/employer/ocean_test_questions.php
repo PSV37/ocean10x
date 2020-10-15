@@ -954,7 +954,7 @@
                     // ...add an HTML radio button
                     answers.push(
                       `<label>
-                        <input type="radio" onclick="get_checked(${questionNumber});" style="display:block;" name="question${questionNumber}" value="${letter}">
+                        <input type="radio" onclick="get_checked(${questionNumber},${letter});" style="display:block;" name="question${questionNumber}" value="${letter}">
                         ${letter} :${ans}
                       </label>
                       `
@@ -1236,10 +1236,12 @@
           
           // })();
           
-          
-          function get_checked(n)
+    var ans_selected = [];      
+          function get_checked(n,option)
           {
+            ans_selected.push(option);
                 // alert(n);
+                console.log(ans_selected);
                 
                 var j = n + 1;
                  <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['correct_ans_each_ques'] == 'Y') { ?>
