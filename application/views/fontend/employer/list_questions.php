@@ -2033,11 +2033,13 @@ Company Name</textarea>
    {
       if (value=='N') 
       {
-        $('#timediv').show();
+        $('#time').attr('disabled', true);
+        // $('#timediv').show();
       }
       else
       {
-        $('#timediv').hide();
+        $('#time').attr('disabled', false);
+        // $('#timediv').hide();
       }
    }
    
