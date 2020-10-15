@@ -61,7 +61,7 @@ function redirect() {
     if(!empty($js_id)){ ?>
     document.location.href = '<?php echo base_url() ?>seeker/ocean-champ';
 <?php }else{ ?>
-    document.location.href = '<?php echo base_url() ?>employer/dashboard';
+    document.location.href = '<?php echo base_url() ?>employer';
 
     <?php } ?>
 }
