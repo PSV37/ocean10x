@@ -1241,6 +1241,8 @@
           {
             ans_selected.push(option);
                 // alert(n);
+                console.log(option);
+
                 console.log(ans_selected);
                 
                 var j = n + 1;
