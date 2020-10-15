@@ -1836,7 +1836,7 @@ Company Name</textarea>
                 <div class="form-group technical_id">                                       
                   <label for="exampleInputEmail1">Duration <span class="required">*</span></label>
                   <input type="Number" <?php if($tests['timer_on_each_que'] == 'Y') {
-               echo "readonly";
+               echo "disabled";
               } ?> maxlength="3" value="<?php echo $tests['test_duration']; ?>" max="999" min="1" class="form-control" id="time" name="test_duration">
                 </div>
               </div>
@@ -2033,12 +2033,12 @@ Company Name</textarea>
    {
       if (value=='N') 
       {
-        $('#time').attr('disabled', true);
+        $('#time').attr('disabled', false);
         // $('#timediv').show();
       }
       else
       {
-        $('#time').attr('disabled', false);
+        $('#time').attr('disabled', true);
         // $('#timediv').hide();
       }
    }
