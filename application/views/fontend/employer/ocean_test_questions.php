@@ -1520,7 +1520,7 @@ function set_timer(n,total_slides)
                   }
                   
                   // var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
-                  var deadline = <?php echo  $oceanchamp_tests['test_duration'] ?>
+                  var deadline = <?php echo  $oceanchamp_tests['test_duration'] ?>;
                   initializeClock('clockdiv', deadline);
                </script>
               <!--  <script>
