@@ -893,6 +893,8 @@
               <div class="quizBox">
                 <form id="nextques" class="submit-form" action="<?php echo base_url();?>employer/insert_test_data" method="post">
                   <input type="hidden" name="test_id" value="<?php echo($test_id); ?>">
+
+                 
                   <div class="quiz-container">
                     <div id="quiz"></div>
                   </div>
@@ -1000,6 +1002,7 @@
                       <div class="question" id="${questionNumber}"> ${currentQuestion.question} </div>
                       <div class="answers"> ${answers.join("")} </div>
                     <input type = "hidden" id="timer${questionNumber}" value="${currentQuestion.time_for_question}">
+                      <input type="hidden" name="answers_selected" id="answers_selected${questionNumber}" value="">
                     </div>`
                   );
                
@@ -1144,6 +1147,7 @@
             }
           
             function showNextSlide() {
+                   var ans_selected = [];
                <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['timer_on_each_que'] == 'Y') { ?>
           
           clearInterval(timerInterval);
@@ -1241,7 +1245,7 @@
           {
             var option = $('input[name = "question'+n+'"]').val();
             ans_selected.push(option);
-                // alert(n);
+               $('#answers_selected'+n).val(ans_selected);
                 console.log(option);
 
                 console.log(ans_selected);
