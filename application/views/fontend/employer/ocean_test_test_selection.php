@@ -136,8 +136,9 @@
               });//end ajax
       
       }
-       $('#toggle').on('click', function () {
-        $(this).toggleClass('open');
+       $('.box').on('click', function () {
+         $(".box").removeClass( "open" )
+        $(this).addClass('open');
          // $('#test_type').val($t);
     });
       
