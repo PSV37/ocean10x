@@ -1236,6 +1236,7 @@ var ans_selected = [];
             // nextButton.addEventListener("click", showNextSlide);
 nextButton.addEventListener("click", function() {
    var ans_selected = [];
+   showNextSlide();
 });
           
            // console.log(myQuestions);
