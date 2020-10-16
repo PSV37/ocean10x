@@ -1012,6 +1012,7 @@ var ans_selected = [];
                       <div class="question" id="${questionNumber}"> ${currentQuestion.question} </div>
                       <div class="answers"> ${answers.join("")} </div>
                     <input type = "hidden" id="timer${questionNumber}" value="${currentQuestion.time_for_question}">
+                    <input type = "hidden" id="time_taken${questionNumber}" value="">
                       <input type="hidden" name="answers_selected[]" id="answers_selected${questionNumber}" value="">
                     </div>`
                   );
@@ -1163,9 +1164,10 @@ var ans_selected = [];
             var currnt = $('#base-timer-label').text();
             var res = currnt.split(":");
             var time_taken = timer - res[1];
-            console.log(timer);
-            console.log(currnt);
-            console.log(time_taken);
+            // console.log(timer);
+            // console.log(currnt);
+            // console.log(time_taken);
+            $('#time_taken'+currentSlide).val(time_taken);
 
                <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['timer_on_each_que'] == 'Y') { ?>
           
