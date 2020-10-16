@@ -39,11 +39,11 @@
                </div>
                <div class="q1">
                   <li class="left_q">Test - Max Duration (min) &nbsp;</li>
-                  <li class="right_q">:&emsp;<?php echo $test_duration; ?></li>
+                  <li class="right_q">:&emsp;<?php echo round($test_duration, 2); ?></li>
                </div>
                <div class="q1">
                   <li class="left_q">Time Taken (min) &nbsp;</li>
-                   <li class="right_q">:&emsp;<?php  echo $time_taken; ?></li>
+                   <li class="right_q">:&emsp;<?php  echo round($time_taken, 2);?></li>
                  <!--  <li class="right_q">:&emsp;<?php  echo round((strtotime($end_time) - strtotime($start_time)) /60); ?></li> -->
                </div>
                <div class="q1">
