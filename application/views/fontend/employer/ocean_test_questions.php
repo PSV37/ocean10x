@@ -1161,8 +1161,11 @@ var ans_selected = [];
             
             var timer = $('#timer'+currentSlide).val();
             var currnt = $('#base-timer-label').text();
+            var res = currnt.split(":");
+            var time_taken = timer - res[1];
             console.log(timer);
             console.log(currnt);
+            console.log(time_taken);
 
                <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['timer_on_each_que'] == 'Y') { ?>
           
