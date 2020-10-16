@@ -645,6 +645,7 @@ class Exam extends MY_Seeker_Controller
         // print_r($data['final_result']);
         $this->load->view('fontend/exam/ocean_champ_result', $data);
     }
+     
     /*END OCEAN CHAMP TEST SECTION*/
 
   

@@ -29,6 +29,14 @@
          <div class="col-md-6 report">
             <h5 style="text-align:center;font-size:25px;margin-bottom:30px;color:#18c5bd;font-weight:700;">Your Report Card !</h5>
             <div class="a" style="margin-left:190px;">
+              <div class="q1">
+                  <li class="left_q">Test Start - Date / Time&nbsp;</li>
+                  <li class="right_q">:&emsp;<?php echo $total_questions; ?></li>
+               </div>
+               <div class="q1">
+                  <li class="left_q">Test End - Date / Time&nbsp;</li>
+                  <li class="right_q">:&emsp;<?php echo $end_time; ?></li>
+               </div>
                <div class="q1">
                   <li class="left_q">Total Questions&nbsp;</li>
                   <li class="right_q">:&emsp;<?php echo $total_questions; ?></li>
