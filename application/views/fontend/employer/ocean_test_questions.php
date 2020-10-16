@@ -1248,19 +1248,19 @@
         
           function get_checked(n,option)
           {
-           
-            if (Array.isArray(ans_selected+n) && ans_selected+n.length)
+            var array_name= 'ans_selected'+n;
+            if (Array.isArray() && array_name.length)
             {
 
             }
            else{
-             var ans_selected+n = [];
+             var array_name = [];
             } 
-            ans_selected+n.push(option);
-               $('#answers_selected'+n).val(ans_selected+n);
+            array_name.push(option);
+               $('#answers_selected'+n).val(array_name);
                 console.log(option);
 
-                console.log(ans_selected+n);
+                console.log(array_name);
                 
                 var j = n + 1;
                  <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['correct_ans_each_ques'] == 'Y') { ?>
