@@ -5965,7 +5965,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $data['test_duration'] = ceil($oceanchamp_tests['test_duration']/60);
                
                 // echo $average;
-                $data['avg_time'] = $avg_time;
+                $data['avg_time'] = $average;
                 $data['attended_questions'] = $this->input->post('green');
                 $data['skipped_questions'] = $this->input->post('gray') + $this->input->post('white');
                 $data['correct_ans'] = $this->input->post('correct');
