@@ -1249,19 +1249,19 @@ var ans_selected = [];
         
           function get_checked(n,option)
           {
-            if (Array.isArray(n) && n.length>0)
-            {
+            // if (Array.isArray(n) && n.length>0)
+            // {
 
-            }
-             else 
-            {
-                  var n = [];
-            }
-                  n.push(option);
-               $('#answers_selected'+n).val(n);
-                console.log(option);
+            // }
+            //  else 
+            // {
+            //       var n = [];
+            // }
+            //       n.push(option);
+            //    $('#answers_selected'+n).val(n);
+            //     console.log(option);
 
-                console.log(n);
+            //     console.log(n);
                 
                 var j = n + 1;
                  <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['correct_ans_each_ques'] == 'Y') { ?>
