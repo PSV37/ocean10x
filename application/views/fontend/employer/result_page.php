@@ -10,8 +10,8 @@
    .left_q{float:left;}
    .q1{line-height:35px;}   
    li.left_q {
-   width: 150px;
-   }
+    width: 185px;
+}
 </style>
 <!---header-->
 <?php 
@@ -28,7 +28,7 @@
          <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
          <div class="col-md-6 report">
             <h5 style="text-align:center;font-size:25px;margin-bottom:30px;color:#18c5bd;font-weight:700;">Your Report Card !</h5>
-            <div class="a" style="margin-left:190px;">
+            <div class="a" style="margin-left:150px;">
               <div class="q1">
                   <li class="left_q">Test Start&nbsp;</li>
                   <li class="right_q">:&emsp;<?php echo $start_time; ?></li>
@@ -43,7 +43,7 @@
                </div>
                <div class="q1">
                   <li class="left_q">Time Taken (min) &nbsp;</li>
-                  <li class="right_q">:&emsp;<?php  echo round(abs($end_time - $start_time) / 60,2). " min"; ?></li>
+                  <li class="right_q">:&emsp;<?php  echo round(abs($end_time - $start_time) / 60). " min"; ?></li>
                </div>
                <div class="q1">
                   <li class="left_q">Total Questions&nbsp;</li>
