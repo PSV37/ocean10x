@@ -956,7 +956,7 @@
                     // ...add an HTML radio button
                     answers.push(
                       `<label>
-                        <input type="radio" onclick="get_checked(${questionNumber},${letter});" style="display:block;" id="${letter}${questionNumber}" name="question${questionNumber}" value="${letter}">
+                        <input type="radio" onclick="get_checked(${questionNumber},'${letter}');" style="display:block;" id="${letter}${questionNumber}" name="question${questionNumber}" value="${letter}">
                         ${letter} :${ans}
                       </label>
                       `
