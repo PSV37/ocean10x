@@ -1160,7 +1160,7 @@ var ans_selected = [];
             function showNextSlide() {
             
             var timer = $('#timer'+currentSlide).val();
-            var currnt = $('.seconds').text();
+            var currnt = $('#base-timer-label').text();
             console.log(timer);
             console.log(currnt);
 
