@@ -1238,6 +1238,8 @@ nextButton.addEventListener("click", function() {
    var ans_selected = [];
    showNextSlide();
 });
+                console.log('kkk'+ans_selected);
+
           
            // console.log(myQuestions);
            //  var obj = JSON.parse(myQuestions);
@@ -1251,7 +1253,7 @@ nextButton.addEventListener("click", function() {
           {
             
             ans_selected.push(option);
-               $('#answers_selected'+n).val(n+'-'+ans_selected);
+               $('#answers_selected'+n).val(ans_selected);
                 console.log(option);
 
                 console.log(ans_selected);
