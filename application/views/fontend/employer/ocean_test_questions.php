@@ -918,11 +918,16 @@
           <div class="row preview" style=" margin-top: 150px;">
             <?php $i=1; foreach ($all_questions as $row) { ?>
             <div class="col-md-2 exp-box" id="status<?php echo $i; ?>" onclick="getval(<?php echo $i; ?>);"><span name="levels[]" id="levels"   value=""><?php echo $i; ?></span></div>
-            <? $i++; } }else{  ?>
-                   <?php $i=1; foreach ($all_questions as $row) { ?>
-            <div  class="col-md-2 exp-box" id="status<?php echo $i; ?>" onclick="getval(<?php echo $i; ?>);"><span name="levels[]" id="levels"   value=""><?php echo $i; ?></span></div>
-             <? $i++; } } ?>
+            <? $i++; } } ?>
           </div>
+           <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['review_option'] == 'N') { ?>
+          <!--  } ?> -->
+          <div class="row preview" style=" display: none; margin-top: 150px;">
+            <?php $i=1; foreach ($all_questions as $row) { ?>
+            <div class="col-md-2 exp-box" id="status<?php echo $i; ?>" onclick="getval(<?php echo $i; ?>);"><span name="levels[]" id="levels"   value=""><?php echo $i; ?></span></div>
+            <? $i++; } } ?>
+          </div>
+
         </div>
 <script>
 var ans_selected = [];
