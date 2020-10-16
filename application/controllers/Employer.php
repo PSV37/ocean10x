@@ -5961,8 +5961,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $data['total_questions'] = sizeof($questions);
                 $data['end_time'] = date('d-m-Y H:i:s', strtotime('+5 hours +30 minutes'));
                 $data['start_time'] = $this->input->post('start_time');
-                $data['time_taken'] =ceil(array_sum($avg_time)/60);
-                $data['test_duration'] = ceil($oceanchamp_tests['test_duration']/60);
+                $data['time_taken'] =array_sum($avg_time)/60;
+                $data['test_duration'] = $oceanchamp_tests['test_duration']/60;
                
                 // echo $average;
                 $data['avg_time'] = $average;
