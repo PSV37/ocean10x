@@ -1100,6 +1100,7 @@
             }
           
             function showSlide(n) {
+                  var ans_selected = [];  
                 // alert(n);
               slides[currentSlide].classList.remove('active-slide');
               slides[n].classList.add('active-slide');
@@ -1147,7 +1148,7 @@
             }
           
             function showNextSlide() {
-                   
+            
                <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['timer_on_each_que'] == 'Y') { ?>
           
           clearInterval(timerInterval);
@@ -1240,7 +1241,7 @@
           
           // })();
           
-    var ans_selected = [];      
+        
           function get_checked(n,option)
           {
             // var letter = $('input[name = "question'+n+'"]').val();
