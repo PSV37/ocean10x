@@ -5946,7 +5946,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             }
             if (isset($oceanchamp_tests) && $oceanchamp_tests['final_result'] == 'Y') {
                 $data['total_questions'] = sizeof($questions);
-                $data['end_time'] = date('d-m-Y H:i:s',$cenvertedTime);
+                $data['end_time'] = date('d-m-Y H:i:s', strtotime('+5 hours +30 minutes'));
+                $data['start_time'] = $this->input->post('start_time');
                 $data['attended_questions'] = $this->input->post('green');
                 $data['skipped_questions'] = $this->input->post('gray') + $this->input->post('white');
                 $data['correct_ans'] = $this->input->post('correct');
