@@ -69,7 +69,7 @@
 
                 <div class="q1">
                   <li class="left_q">Av. Time / Question (min)&nbsp;</li>
-                  <li class="right_q">:&emsp;<?php echo $skipped_questions; ?></li>
+                  <li class="right_q">:&emsp;<?php echo $avg_time; ?></li>
                </div>
               
                <div class="q1">

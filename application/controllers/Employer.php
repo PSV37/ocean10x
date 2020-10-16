@@ -5915,6 +5915,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $i = 0;
             $created_on = date('Y-m-d H:i:s');
             $cenvertedTime = date('Y-m-d H:i:s', strtotime('+5 hour +30 minutes', strtotime($created_on)));
+                $avg_time = array();
+            
             foreach ($questions as $row) {
                 if ($_POST['question' . $i] == 'a') {
                     $option = '1';
@@ -5941,6 +5943,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                         $mark = 0;
                     }
                 }
+                array_push($avg_time, $_POST['time_taken' . $i])
                 $exam_array = array(
                  'test_id' => $test_id, 
                  'employee_id' => $employer_id, 
