@@ -5916,7 +5916,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $created_on = date('Y-m-d H:i:s');
             $cenvertedTime = date('Y-m-d H:i:s', strtotime('+5 hour +30 minutes', strtotime($created_on)));
                 $avg_time = array();
-            
+
             foreach ($questions as $row) {
                 if ($_POST['question' . $i] == 'a') {
                     $option = '1';
@@ -5943,7 +5943,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                         $mark = 0;
                     }
                 }
-                array_push($avg_time, $_POST['time_taken' . $i])
+                array_push($avg_time, $_POST['time_taken' . $i]);
                 $exam_array = array(
                  'test_id' => $test_id, 
                  'employee_id' => $employer_id, 
@@ -5955,12 +5955,17 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $last_id = $this->Master_model->master_insert($exam_array, 'emp_test_result');
             }
             if (isset($oceanchamp_tests) && $oceanchamp_tests['final_result'] == 'Y') {
+              $avg_time = array_filter($avg_time);
+               $average = array_sum($avg_time)/count($avg_time);
+
                 $data['total_questions'] = sizeof($questions);
                 $data['end_time'] = date('d-m-Y H:i:s', strtotime('+5 hours +30 minutes'));
                 $data['start_time'] = $this->input->post('start_time');
 
                 $data['test_duration'] = ceil($oceanchamp_tests['test_duration']/60);
-                // $data['start_time'] = $this->input->post('start_time');
+               
+                // echo $average;
+                $data['avg_time'] = $avg_time;
                 $data['attended_questions'] = $this->input->post('green');
                 $data['skipped_questions'] = $this->input->post('gray') + $this->input->post('white');
                 $data['correct_ans'] = $this->input->post('correct');
