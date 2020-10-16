@@ -1249,7 +1249,7 @@
           function get_checked(n,option)
           {
             // var ans_selected+n;
-           if (ans_selected+n && ans_selected+n.length > 0) {
+           if (ans_selected+n && ans_selected+n.length > 0) 
             {
 
             }
