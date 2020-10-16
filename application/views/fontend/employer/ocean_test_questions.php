@@ -1246,17 +1246,17 @@ var ans_selected = [];
           
           // })();
          
-         var n = [];
+        
           function get_checked(n,option)
           {
-            // if (Array.isArray(n) && n.length>0)
-            // {
+            if (Array.isArray(n) && n.length>0)
+            {
 
-            // }
-            //  else 
-            // {
-                 
-            // }
+            }
+             else 
+            {
+                  var n = [];
+            }
             
             n.push(option);
                $('#answers_selected'+n).val(n);
