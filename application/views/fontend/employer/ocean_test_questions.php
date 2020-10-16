@@ -920,7 +920,8 @@
             <? $i++; } } ?>
           </div>
         </div>
-        <script>
+<script>
+var ans_selected = [];
           function removeTags(str) { 
           if ((str===null) || (str==='')) 
                   return false; 
@@ -1100,7 +1101,7 @@
             }
           
             function showSlide(n) {
-                  var ans_selected = [];  
+                    
                 // alert(n);
               slides[currentSlide].classList.remove('active-slide');
               slides[n].classList.add('active-slide');
@@ -1232,7 +1233,10 @@
           
            
            
-            nextButton.addEventListener("click", showNextSlide);
+            // nextButton.addEventListener("click", showNextSlide);
+nextButton.addEventListener("click", function() {
+   var ans_selected = [];
+});
           
            // console.log(myQuestions);
            //  var obj = JSON.parse(myQuestions);
@@ -1240,7 +1244,7 @@
            
           
           // })();
-          
+         
         
           function get_checked(n,option)
           {
