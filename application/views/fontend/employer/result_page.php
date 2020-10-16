@@ -43,7 +43,7 @@
                </div>
                <div class="q1">
                   <li class="left_q">Time Taken (min) &nbsp;</li>
-                  <li class="right_q">:&emsp;<?php  echo round(abs($end_time - $start_time) / 60). " min"; ?></li>
+                  <li class="right_q">:&emsp;<?php  echo round((strtotime($end_time) - strtotime($start_time)) /60); ?></li>
                </div>
                <div class="q1">
                   <li class="left_q">Total Questions&nbsp;</li>
