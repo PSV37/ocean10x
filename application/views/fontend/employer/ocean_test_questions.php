@@ -920,7 +920,7 @@
             <div class="col-md-2 exp-box" id="status<?php echo $i; ?>" onclick="getval(<?php echo $i; ?>);"><span name="levels[]" id="levels"   value=""><?php echo $i; ?></span></div>
             <? $i++; } }else{  ?>
                    <?php $i=1; foreach ($all_questions as $row) { ?>
-            <div class="col-md-2 exp-box" id="status<?php echo $i; ?>" onclick="getval(<?php echo $i; ?>);"><span name="levels[]" id="levels"   value=""><?php echo $i; ?></span></div>
+            <div style="display: none;" class="col-md-2 exp-box" id="status<?php echo $i; ?>" onclick="getval(<?php echo $i; ?>);"><span name="levels[]" id="levels"   value=""><?php echo $i; ?></span></div>
              <? $i++; } } ?>
           </div>
         </div>
