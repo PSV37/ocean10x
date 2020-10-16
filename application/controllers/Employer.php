@@ -5906,7 +5906,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
     public function insert_test_data() {
         if (!empty($_POST)) {
             # code...
-            // print_r($_POST);die;
+            print_r($_POST);die;
             $test_id = $this->input->post('test_id');
             $employer_id = $this->session->userdata('company_profile_id');
             $where_all = "oceanchamp_tests.status='1' AND oceanchamp_tests.company_id='$employer_id' AND test_id = '$test_id'";

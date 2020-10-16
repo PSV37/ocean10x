@@ -1036,7 +1036,14 @@ var ans_selected = [];
             }
           
             function showResults(){
-          
+            var timer = $('#timer'+currentSlide).val();
+            var currnt = $('#base-timer-label').text();
+            var res = currnt.split(":");
+            var time_taken = timer - res[1];
+            // console.log(timer);
+            // console.log(currnt);
+            // console.log(time_taken);
+            $('#time_taken'+currentSlide).val(time_taken);
               // gather answer containers from our quiz
               const answerContainers = quizContainer.querySelectorAll('.answers');
           
@@ -1179,6 +1186,14 @@ var ans_selected = [];
             }
           
             function showPreviousSlide() {
+                  var timer = $('#timer'+currentSlide).val();
+            var currnt = $('#base-timer-label').text();
+            var res = currnt.split(":");
+            var time_taken = timer - res[1];
+            // console.log(timer);
+            // console.log(currnt);
+            // console.log(time_taken);
+            $('#time_taken'+currentSlide).val(time_taken);
                <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['timer_on_each_que'] == 'Y') { ?>
           
           clearInterval(timerInterval);
