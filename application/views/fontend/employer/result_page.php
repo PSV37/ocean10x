@@ -50,7 +50,7 @@
                   <li class="right_q">:&emsp;<?php echo $total_questions; ?></li>
                </div>
                <div class="q1">
-                  <li class="left_q">Questions Attempt&nbsp;</li>
+                  <li class="left_q">Attempted&nbsp;</li>
                   <li class="right_q">:&emsp;<?php echo $attended_questions; ?></li>
                </div>
                <div class="q1">
