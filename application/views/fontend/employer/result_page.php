@@ -53,19 +53,25 @@
                   <li class="left_q">Attempted&nbsp;</li>
                   <li class="right_q">:&emsp;<?php echo $attended_questions; ?></li>
                </div>
-               <div class="q1">
-                  <li class="left_q">Questioned Skipped&nbsp;</li>
-                  <li class="right_q">:&emsp;<?php echo $skipped_questions; ?></li>
-               </div>
-               <div class="q1">
-                  <li class="left_q">Correct Answer&nbsp;</li>
+                <div class="q1">
+                  <li class="left_q">Right Answers&nbsp;</li>
                   <li class="right_q">:&emsp;<?php echo $correct_ans; ?></li>
                </div>
+               
                <div class="q1">
-                  <li class="left_q">Wrong Answer&nbsp;</li>
+                  <li class="left_q">Wrong Answers&nbsp;</li>
                   <li class="right_q">:&emsp;<?php echo $wrong_ans; ?></li>
                </div>
+               <div class="q1">
+                  <li class="left_q">Not Attempted&nbsp;</li>
+                  <li class="right_q">:&emsp;<?php echo $skipped_questions; ?></li>
+               </div>
 
+                <div class="q1">
+                  <li class="left_q">Av. Time / Question (min)&nbsp;</li>
+                  <li class="right_q">:&emsp;<?php echo $skipped_questions; ?></li>
+               </div>
+              
                <div class="q1">
                   <li class="left_q">Total Marks&nbsp;</li>
                   <li class="right_q">:&emsp;<?php echo $result; ?></li>

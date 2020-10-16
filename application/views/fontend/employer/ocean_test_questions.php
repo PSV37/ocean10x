@@ -1158,7 +1158,7 @@ var ans_selected = [];
             }
           
             function showNextSlide() {
-            
+            console.log(currentSlide);
                <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['timer_on_each_que'] == 'Y') { ?>
           
           clearInterval(timerInterval);
