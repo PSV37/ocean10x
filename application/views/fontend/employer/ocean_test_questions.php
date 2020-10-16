@@ -1257,8 +1257,7 @@ var ans_selected = [];
             {
                   var n = [];
             }
-            
-            n.push(option);
+                  n.push(option);
                $('#answers_selected'+n).val(n);
                 console.log(option);
 
