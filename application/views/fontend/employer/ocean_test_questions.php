@@ -1248,8 +1248,8 @@
         
           function get_checked(n,option)
           {
-            var array_name= 'ans_selected'+n;
-            if (Array.isArray() && array_name.length)
+            // var ans_selected+n;
+            if (Array.isArray(ans_selected+n) && ans_selected+n.length)
             {
 
             }
