@@ -1249,7 +1249,7 @@ var ans_selected = [];
         
           function get_checked(n,option)
           {
-            if (Array.isArray(n) && n.length)
+            if (Array.isArray(n) && n.length>0)
             {
 
             }

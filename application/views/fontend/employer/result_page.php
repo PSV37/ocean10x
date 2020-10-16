@@ -38,6 +38,14 @@
                   <li class="right_q">:&emsp;<?php echo $end_time; ?></li>
                </div>
                <div class="q1">
+                  <li class="left_q">Test - Max Duration (min) &nbsp;</li>
+                  <li class="right_q">:&emsp;<?php echo $test_duration; ?></li>
+               </div>
+               <div class="q1">
+                  <li class="left_q">Time Taken (min) &nbsp;</li>
+                  <li class="right_q">:&emsp;<?php  echo round(abs($end_time - $start_time) / 60,2). " min"; ?></li>
+               </div>
+               <div class="q1">
                   <li class="left_q">Total Questions&nbsp;</li>
                   <li class="right_q">:&emsp;<?php echo $total_questions; ?></li>
                </div>
