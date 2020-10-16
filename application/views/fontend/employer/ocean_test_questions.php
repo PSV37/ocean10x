@@ -921,7 +921,7 @@
           </div>
         </div>
 <script>
-
+var ans_selected = [];
           function removeTags(str) { 
           if ((str===null) || (str==='')) 
                   return false; 
@@ -1248,20 +1248,12 @@
         
           function get_checked(n,option)
           {
-            // var ans_selected+n;
-            var arrayname = 'ans_selected'+n;
-           if (arrayname && arrayname.length > 0) 
-            {
-
-            }
-           else{
-             var arrayname = [];
-            } 
-            arrayname.push(option);
-               $('#answers_selected'+n).val(arrayname);
+            var n = [];
+            n.push(option);
+               $('#answers_selected'+n).val(n);
                 console.log(option);
 
-                console.log(arrayname);
+                console.log(n);
                 
                 var j = n + 1;
                  <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['correct_ans_each_ques'] == 'Y') { ?>
