@@ -956,7 +956,7 @@
                     // ...add an HTML radio button
                     answers.push(
                       `<label>
-                        <input type="radio" onclick="get_checked(${questionNumber});" style="display:block;" name="question${questionNumber}" value="${letter}">
+                        <input type="radio" onclick="get_checked(${questionNumber});" style="display:block;" id="${letter}${questionNumber}" name="question${questionNumber}" value="${letter}">
                         ${letter} :${ans}
                       </label>
                       `
@@ -1147,7 +1147,7 @@
             }
           
             function showNextSlide() {
-                   var ans_selected = [];
+                   
                <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['timer_on_each_que'] == 'Y') { ?>
           
           clearInterval(timerInterval);
@@ -1243,7 +1243,8 @@
     var ans_selected = [];      
           function get_checked(n)
           {
-            var option = $('input[name = "question'+n+'"]').val();
+            var letter = $('input[name = "question'+n+'"]').val();
+            var option = $('#'+letter+n).val();
             ans_selected.push(option);
                $('#answers_selected'+n).val(ans_selected);
                 console.log(option);
