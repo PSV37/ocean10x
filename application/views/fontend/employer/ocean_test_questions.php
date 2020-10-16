@@ -1237,8 +1237,10 @@ var ans_selected = [];
 nextButton.addEventListener("click", function() {
    var ans_selected = [];
    showNextSlide();
-});
                 console.log('kkk'+ans_selected);
+
+});
+                
 
           
            // console.log(myQuestions);
