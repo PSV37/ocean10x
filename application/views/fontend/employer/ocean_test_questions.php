@@ -1012,7 +1012,7 @@ var ans_selected = [];
                       <div class="question" id="${questionNumber}"> ${currentQuestion.question} </div>
                       <div class="answers"> ${answers.join("")} </div>
                     <input type = "hidden" id="timer${questionNumber}" value="${currentQuestion.time_for_question}">
-                    <input type = "hidden" id="time_taken${questionNumber}" value="">
+                    <input type = "hidden" id="time_taken${questionNumber}" name="time_taken${questionNumber}" value="">
                       <input type="hidden" name="answers_selected[]" id="answers_selected${questionNumber}" value="">
                     </div>`
                   );
