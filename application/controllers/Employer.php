@@ -5971,9 +5971,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $data['correct_ans'] = $this->input->post('correct');
                 $data['wrong_ans'] = sizeof($questions) - $this->input->post('correct');
                 if (isset($oceanchamp_tests) && $oceanchamp_tests['final_result'] == 'Y') {
-                    $data['result'] = $data['correct_ans'] - $data['wrong_ans'];
+                    $data['result'] = ($data['correct_ans']*4) - $data['wrong_ans'];
                 } else {
-                    $data['result'] = $data['correct_ans'];
+                    $data['result'] = $data['correct_ans']*4;
                 }
                 $this->load->view('fontend/employer/result_page', $data);
             } else {
