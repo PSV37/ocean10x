@@ -1003,7 +1003,7 @@ var ans_selected = [];
                       <div class="question" id="${questionNumber}"> ${currentQuestion.question} </div>
                       <div class="answers"> ${answers.join("")} </div>
                     <input type = "hidden" id="timer${questionNumber}" value="${currentQuestion.time_for_question}">
-                      <input type="hidden" name="answers_selected" id="answers_selected${questionNumber}" value="">
+                      <input type="hidden" name="answers_selected[]" id="answers_selected${questionNumber}" value="">
                     </div>`
                   );
                
@@ -1249,10 +1249,9 @@ nextButton.addEventListener("click", function() {
         
           function get_checked(n,option)
           {
-            // var letter = $('input[name = "question'+n+'"]').val();
-            // var option = $('#'+letter+n).val();
+            
             ans_selected.push(option);
-               $('#answers_selected'+n).val(ans_selected);
+               $('#answers_selected'+n).val(n+'-'+ans_selected);
                 console.log(option);
 
                 console.log(ans_selected);
