@@ -1248,7 +1248,14 @@
         
           function get_checked(n,option)
           {
-            var ans_selected+n = [];
+           
+            if (Array.isArray(ans_selected+n) && ans_selected+n.length)
+            {
+
+            }
+           else{
+             var ans_selected+n = [];
+            } 
             ans_selected+n.push(option);
                $('#answers_selected'+n).val(ans_selected+n);
                 console.log(option);
