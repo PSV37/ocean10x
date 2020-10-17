@@ -1289,7 +1289,7 @@ var ans_selected = [];
 
             if(ans_array.length==0)
             {
-                 
+                 var lstn = nval.pop();
                   nval.push(n);
                   // var ans_selected =[];
             }
@@ -1297,10 +1297,7 @@ var ans_selected = [];
             {
               var lstn = nval.pop();
               nval.push(n);
-                   if (lstn != n) 
-                  {
-                    var ans_array =[];
-                  }
+                  
             }
                  console.log(lstn) ;    
                  console.log(n);
