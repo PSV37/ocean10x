@@ -1287,12 +1287,12 @@ var ans_selected = [];
             console.log(ans_array.length);
 
 
-           //  if(ans_array.length==0)
-           //  {
+            if(ans_array.length==0)
+            {
                  
-           //        nval.push(n);
-           //        // var ans_selected =[];
-           //  }
+                  nval.push(n);
+                  // var ans_selected =[];
+            }
            //  else
            //  {
            //        var lstn = nval.pop();
