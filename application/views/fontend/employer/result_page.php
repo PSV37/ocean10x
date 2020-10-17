@@ -10,7 +10,7 @@
    .left_q{float:left;}
    .q1{line-height:35px;}   
    li.left_q {
-    width: 185px;
+    width: 250px;
 }
 </style>
 <!---header-->
@@ -28,7 +28,7 @@
          <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
          <div class="col-md-6 report">
             <h5 style="text-align:center;font-size:25px;margin-bottom:30px;color:#18c5bd;font-weight:700;">Your Report Card !</h5>
-            <div class="a" style="margin-left:150px;">
+            <div class="a" style="margin-left:110px;">
               <div class="q1">
                   <li class="left_q">Test Start&nbsp;</li>
                   <li class="right_q">:&emsp;<?php echo $start_time; ?></li>
@@ -78,6 +78,36 @@
                    <li class="right_q">:&emsp;<?php  echo $unique_count;?></li>
                
                </div>
+                <div class="q1">
+                  <li class="left_q">Reviews - (led to Right Answer) &nbsp;</li>
+                   <li class="right_q">:&emsp;<?php  echo $unique_count;?></li>
+               
+               </div>
+                <div class="q1">
+                  <li class="left_q">Reviews - (led to Wrong Answer) &nbsp;</li>
+                   <li class="right_q">:&emsp;<?php  echo $unique_count;?></li>
+               
+               </div>
+                <div class="q1">
+                  <li class="left_q">Reviews - (led to Wrong Answer) &nbsp;</li>
+                   <li class="right_q">:&emsp;<?php  echo $unique_count;?></li>
+               
+               </div>
+                <div class="q1">
+                  <li class="left_q">Reviews - (led to Wrong Answer) &nbsp;</li>
+                   <li class="right_q">:&emsp;<?php  echo $unique_count;?></li>
+               
+               </div>
+                <div class="q1">
+                  <li class="left_q">Reviews - (led to Wrong Answer) &nbsp;</li>
+                   <li class="right_q">:&emsp;<?php  echo $unique_count;?></li>
+               
+               </div>
+                <div class="q1">
+                  <li class="left_q">Reviews - (led to Wrong Answer) &nbsp;</li>
+                   <li class="right_q">:&emsp;<?php  echo $unique_count;?></li>
+               
+               </div>
                <div class="q1">
                   <li class="left_q">Total Marks&nbsp;</li>
                   <li class="right_q">:&emsp;<?php echo $result; ?></li>
@@ -103,18 +133,25 @@
                            </g>
                         </g>
                      </svg>
-                   <?php if ($percent>=75) {
-                     echo "Excellent";
-                   }elseif ($percent >= 60)
-                   {
-                     echo "Good";
+                   <?php 
+                   if ($percent>=90) {
+                     echo " Wow !";
                    }
-                   elseif ($percent >= 40) {
-                      echo "Satisfactory";
+                   elseif ($percent>=80  && $percent < 90) {
+                     echo "Very Good";
+                   }
+                   elseif ($percent>=70  && $percent < 80) {
+                     echo "Good";
+                   }elseif ($percent >= 60 && $percent < 70)
+                   {
+                     echo " OK";
+                   }
+                   elseif ($percent >= 50 && $percent < 60) {
+                      echo "Average";
                    }
                    else
                    {
-                     echo "Poor";
+                     echo "Let's do Better !";
                    }
                     ?>
                   </li>
