@@ -5942,11 +5942,12 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                  echo $val;
                  $qid = $questions[$id];
                   echo 'q'.$qid;
-                   echo "<br>";
+                   // echo "<br>";
                  $where_all = "questionbank_answer.question_id='$qid' ";
                 $oceanchamp_tests1 = $this->Master_model->get_master_row('questionbank_answer', $select = FALSE, $where = $where_all, $join = FALSE);
                 //   # code...
-                
+                 echo 'a'.$oceanchamp_tests1['answer_id'];
+                   echo "<br>";
                  if($val == $oceanchamp_tests1['answer_id']) {
                   $res[$j]['id'] = $j;
                   $res[$j]['val'] = 'c';
