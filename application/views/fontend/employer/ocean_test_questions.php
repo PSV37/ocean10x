@@ -1282,19 +1282,38 @@ var ans_selected = [];
         
           function get_checked(n,option)
           {
-            // if (Array.isArray(n) && n.length>0)
-            // {
+            if(n==0)
+            {
+                  var nval =[];
+                  nval.push(n);
+                  var ans_selected =[];
+            }
+            else
+            {
+                  var lstn = nval.pop();
+                  nval.push(n);
+            }
+            
+           if (lstn != n) 
+           {
+                  var ans_selected =[];
+                   console.log(nval)
+                  ans_selected.push(option);
+               $('#answers_selected'+n).val(ans_selected);
+                console.log(option);
 
-            // }
-            //  else 
-            // {
-            //       var n = [];
-            // }
-            //       n.push(option);
-            //    $('#answers_selected'+n).val(n);
-            //     console.log(option);
+                console.log(ans_selected);
+           }
+           else
+           {
+            ans_selected.push(option);
+               $('#answers_selected'+n).val(ans_selected);
+                console.log(option);
 
-            //     console.log(n);
+                console.log(ans_selected);
+
+           }
+           
                 
                 var j = n + 1;
                  <?php if (isset($oceanchamp_tests) && $oceanchamp_tests['correct_ans_each_ques'] == 'Y') { ?>
