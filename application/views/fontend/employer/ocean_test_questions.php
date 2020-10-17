@@ -1283,17 +1283,8 @@ var ans_selected = [];
             var ans_array =[];
           function get_checked(n,option)
           {
-            console.log(ans_array);
-            // console.log(ans_array.length);
-            var lstn = nval.pop();
-            nval.push(n);
-            console.log(lstn) ;    
             console.log(n);
-           // if (lstn != n) 
-           // {
-           //      var ans_array =[];
-           //  }
-           //   console.log(ans_selected);
+            console.log(option);
             ans_array.push(n+'-'+option);
                $('#answers_selected'+n).val(ans_array);
            
