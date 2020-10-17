@@ -1280,27 +1280,30 @@ var ans_selected = [];
           // })();
          
             var nval =[];
-             ans_selected =[];
+            var ans_array =[];
           function get_checked(n,option)
           {
-            if(ans_selected.length==0)
-            {
+            console.log(ans_array);
+
+
+           //  if(ans_array.length==0)
+           //  {
                  
-                  nval.push(n);
-                  // var ans_selected =[];
-            }
-            else
-            {
-                  var lstn = nval.pop();
-                  nval.push(n);
-            }
-                 console.log(lstn) ;    
-                 console.log(n);
-           if (lstn != n) 
-           {
-                 var ans_selected =[];
-            }
-             console.log(ans_selected);
+           //        nval.push(n);
+           //        // var ans_selected =[];
+           //  }
+           //  else
+           //  {
+           //        var lstn = nval.pop();
+           //        nval.push(n);
+           //  }
+           //       console.log(lstn) ;    
+           //       console.log(n);
+           // if (lstn != n) 
+           // {
+           //       var ans_selected =[];
+           //  }
+           //   console.log(ans_selected);
             // ans_selected.push(option);
             //    $('#answers_selected'+n).val(ans_selected);
            
