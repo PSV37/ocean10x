@@ -1280,6 +1280,7 @@ var ans_selected = [];
           // })();
          
          var nval =[];
+          var ans_selected =[];
           function get_checked(n,option)
           {
             if(n==0)
@@ -1297,7 +1298,7 @@ var ans_selected = [];
                  console.log(n);
            if (lstn != n) 
            {
-                  var ans_selected =[];
+                 
               
                   ans_selected.push(option);
                $('#answers_selected'+n).val(ans_selected);
