@@ -5917,9 +5917,10 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $cenvertedTime = date('Y-m-d H:i:s', strtotime('+5 hour +30 minutes', strtotime($created_on)));
                 $avg_time = array();
              $answers_selected = $this->input->post('answers_selected');
+             $answers_selected = explode(',', $answers_selected)
              $ans=array();
              foreach ($answers_selected as $row) {
-               $answers = explode(',', $row);
+             
                $ans_option = explode('-', $answers);
                array_push($ans, $ans_option[1]);
              }
