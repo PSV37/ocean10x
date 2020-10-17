@@ -1298,21 +1298,15 @@ var ans_selected = [];
                  console.log(n);
            if (lstn != n) 
            {
-                 
-              
-                  ans_selected.push(option);
-               $('#answers_selected'+n).val(ans_selected);
-             
-           }
+                 var ans_selected =[];
+            }
            else
            {
-            ans_selected.push(option);
-               $('#answers_selected'+n).val(ans_selected);
-                console.log(option);
-
-                console.log(ans_selected);
+            
 
            }
+            ans_selected.push(option);
+               $('#answers_selected'+n).val(ans_selected);
            
                 
                 var j = n + 1;
