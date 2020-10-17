@@ -46,11 +46,7 @@
                    <li class="right_q">:&emsp;<?php  echo round($time_taken, 2);?></li>
                
                </div>
-               <div class="q1">
-                  <li class="left_q">Reviews Exercised (On Questions) &nbsp;</li>
-                   <li class="right_q">:&emsp;<?php  echo $unique_count;?></li>
-               
-               </div>
+              
                <div class="q1">
                   <li class="left_q">Total Questions&nbsp;</li>
                   <li class="right_q">:&emsp;<?php echo $total_questions; ?></li>
@@ -77,7 +73,11 @@
                   <li class="left_q">Av. Time / Question (min)&nbsp;</li>
                   <li class="right_q">:&emsp;<?php echo $avg_time; ?></li>
                </div>
-              
+               <div class="q1">
+                  <li class="left_q">Reviews Exercised (On Questions) &nbsp;</li>
+                   <li class="right_q">:&emsp;<?php  echo $unique_count;?></li>
+               
+               </div>
                <div class="q1">
                   <li class="left_q">Total Marks&nbsp;</li>
                   <li class="right_q">:&emsp;<?php echo $result; ?></li>
