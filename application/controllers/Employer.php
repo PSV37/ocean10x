@@ -5948,7 +5948,19 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 //   # code...
                  echo 'a'.$oceanchamp_tests1['answer_id'];
                    echo "<br>";
-                 if($val == $oceanchamp_tests1['answer_id']) {
+                   if ($oceanchamp_tests1['answer_id']==1) {
+                    $ans_id ='a';
+                   }
+                   else if ($oceanchamp_tests1['answer_id']==2) {
+                    $ans_id ='b';
+                   }
+                   else if ($oceanchamp_tests1['answer_id']==3) {
+                    $ans_id ='c';
+                   }
+                   else if ($oceanchamp_tests1['answer_id']==4) {
+                    $ans_id ='d';
+                   }
+                 if($val == $ans_id) {
                   $res[$j]['id'] = $j;
                   $res[$j]['val'] = 'c';
                  }
