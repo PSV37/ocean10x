@@ -5919,8 +5919,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
              $answers_selected = $this->input->post('answers_selected');
              $ans=array();
              foreach ($answers_selected as $row) {
-               $ans_option = explode('-', $row);
-               array_push($ans, $ans_option);
+               $answers = explode(',', $row);
+               $ans_option = explode('-', $answers);
+               array_push($ans, $ans_option[1]);
              }
              print_r($ans);die;
              $data['unique_count'] = count(array_count_values($ans)) ;
