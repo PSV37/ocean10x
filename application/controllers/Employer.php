@@ -5918,12 +5918,14 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $avg_time = array();
              $answers_selected = explode(',', $this->input->post('answers_selected'));
              $ans=array();
+              $new_array=array();
              foreach ($answers_selected as $row) {
                
                $ans_option = explode('-',$row);
                array_push($ans, $ans_option[0]);
-               $new_array['id'] = $ans_option[0];
-               $new_array['val'] = $ans_option[1];
+               array_push($new_array['id'], $ans_option[0]);
+               array_push( $new_array['val'], $ans_option[1]);
+              
              }
              print_r($new_array);die;
              $data['unique_count'] = count(array_count_values($ans)) ;
