@@ -5942,12 +5942,12 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                   # code...
                 
                  if($id == $i && $val == $_POST['question' . $i]) {
-                  $res[$j]['id'] = $j;
-                  $res[$j]['val'] = 'c';
+                  $res[$i]['id'] = $i;
+                  $res[$i]['val'] = 'c';
                  }
                  elseif ($id == $i && $val != $_POST['question' . $i]) {
-                   $res[$j]['id'] = $j;
-                   $res[$j]['val'] = 'w';
+                   $res[$i]['id'] = $i;
+                   $res[$i]['val'] = 'w';
                  }
                  $i++;
                   }
