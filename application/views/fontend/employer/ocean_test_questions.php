@@ -1280,10 +1280,10 @@ var ans_selected = [];
           // })();
          
             var nval =[];
-            var ans_selected = [];
+            // var ans_selected = [];
           function get_checked(n,option)
           {
-            if(n==0)
+            if(ans_selected.length=0)
             {
                  
                   nval.push(n);
@@ -1301,8 +1301,8 @@ var ans_selected = [];
                  var ans_selected =[];
             }
              console.log(ans_selected);
-            ans_selected.push(option);
-               $('#answers_selected'+n).val(ans_selected);
+            // ans_selected.push(option);
+            //    $('#answers_selected'+n).val(ans_selected);
            
                 
                 var j = n + 1;
