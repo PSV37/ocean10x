@@ -5933,6 +5933,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
              $data['unique_count'] = count(array_count_values($ans)) ;
              $i=0;
+              $j=0;
             foreach ($questions as $row) {
                 if ($_POST['question' . $i] == 'a') {
                     $option = '1';
@@ -5970,7 +5971,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                  'time_taken' => $_POST['time_taken' . $i], 
                  'date_time' => $cenvertedTime);
                 $last_id = $this->Master_model->master_insert($exam_array, 'emp_test_result');
-                $j=0;
+              
                 foreach ($new_array as $key) {
                  $id = $new_array[$j]['id'];
                  $val=  $new_array[$j]['val'];
