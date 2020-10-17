@@ -1280,7 +1280,7 @@ var ans_selected = [];
           // })();
          
             var nval =[];
-            var ans_selected =[];
+             ans_selected =[];
           function get_checked(n,option)
           {
             if(ans_selected.length==0)
