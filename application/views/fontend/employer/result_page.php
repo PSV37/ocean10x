@@ -122,7 +122,9 @@
                   <li class="left_q">Final Score &nbsp;</li>
                   <li class="right_q">:&emsp;<?php echo $result; ?></li>
                </div>
-               <?php $percent = ($result/$total_questions)*100; ?>
+               <?php
+               $total_marks = 4*$total_questions;
+                $percent = ($result/$total_marks)*100; ?>
                 <div class="q1">
                   <li class="left_q">Final Score - % Age  &nbsp;</li>
                   <li class="right_q">:&emsp;<?php echo $percent.'%'; ?></li>
