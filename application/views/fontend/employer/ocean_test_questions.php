@@ -1294,7 +1294,7 @@ var ans_selected = [];
            //      var ans_array =[];
            //  }
            //   console.log(ans_selected);
-            ans_array.push('n-'+option);
+            ans_array.push(n'-'+option);
                $('#answers_selected'+n).val(ans_array);
            
                 
