@@ -5952,7 +5952,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                  $j++;
                 }
                 echo "<br>";
-                  print_r($res);die;
+                print_r($res);die;
             foreach ($questions as $row) {
                 if ($_POST['question' . $i] == 'a') {
                     $option = '1';
