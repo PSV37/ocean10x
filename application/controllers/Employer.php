@@ -5938,16 +5938,16 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                  $id = $new_array[$j]['id'];
                  $val=  $new_array[$j]['val'];
 
-                 echo $id;
-                 echo $val;
+                 // echo $id;
+                 // echo $val;
                  $qid = $questions[$id];
-                  echo 'q'.$qid;
+                  // echo 'q'.$qid;
                    // echo "<br>";
                  $where_all = "questionbank_answer.question_id='$qid' ";
                 $oceanchamp_tests1 = $this->Master_model->get_master_row('questionbank_answer', $select = FALSE, $where = $where_all, $join = FALSE);
                 //   # code...
-                 echo 'a'.$oceanchamp_tests1['answer_id'];
-                   echo "<br>";
+                 // echo 'a'.$oceanchamp_tests1['answer_id'];
+                 //   echo "<br>";
                    if ($oceanchamp_tests1['answer_id']==1) {
                     $ans_id ='a';
                    }
@@ -5971,8 +5971,11 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 
                  $j++;
                 }
-                echo "<br>";
-              print_r($res); die;
+              //   echo "<br>";
+              print_r($res); 
+              print_r(sizeof($res)); 
+
+              die;
             foreach ($questions as $row) {
                 if ($_POST['question' . $i] == 'a') {
                     $option = '1';
