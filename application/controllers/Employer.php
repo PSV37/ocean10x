@@ -5937,7 +5937,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                foreach ($new_array as $key) {
                  $id = $new_array[$j]['id'];
                  $val=  $new_array[$j]['val'];
-                 for ($i=0; $i <sizeof($questions) ; $i++) { 
+
+                foreach ($questions as $row) {
                   # code...
                 
                  if($id == $i && $val == $_POST['question' . $i]) {
@@ -5948,6 +5949,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                    $res[$j]['id'] = $j;
                    $res[$j]['val'] = 'w';
                  }
+                 $i++;
                   }
                  $j++;
                 }
