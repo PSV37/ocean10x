@@ -5940,23 +5940,24 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
                  echo $id;
                  echo $val;
-                // foreach ($questions as $row) {
+                 $qid = $questions[$j];
+                 $where_all = "questionbank_answer.question_id='$qid' ";
+                $oceanchamp_tests1 = $this->Master_model->get_master_row('questionbank_answer', $select = FALSE, $where = $where_all, $join = FALSE);
                 //   # code...
                 
-                //  if($id == $i && $val == $_POST['question' . $i]) {
-                //   $res[$i]['id'] = $i;
-                //   $res[$i]['val'] = 'c';
-                //  }
-                //  elseif ($id == $i && $val != $_POST['question' . $i]) {
-                //    $res[$i]['id'] = $i;
-                //    $res[$i]['val'] = 'w';
-                //  }
-                //  $i++;
-                //   }
+                 if($val == $oceanchamp_tests1['answer_id']) {
+                  $res[$i]['id'] = $i;
+                  $res[$i]['val'] = 'c';
+                 }
+                 else {
+                   $res[$i]['id'] = $i;
+                   $res[$i]['val'] = 'w';
+                 }
+                
                  $j++;
                 }
                 echo "<br>";
-               die;
+              print_r($res); die;
             foreach ($questions as $row) {
                 if ($_POST['question' . $i] == 'a') {
                     $option = '1';
