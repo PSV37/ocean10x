@@ -5930,7 +5930,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                $i++;
              }
              print_r($new_array);
-
+              echo "<br>";
              $data['unique_count'] = count(array_count_values($ans)) ;
              $i=0;
               $j=0;
@@ -5938,23 +5938,25 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                  $id = $new_array[$j]['id'];
                  $val=  $new_array[$j]['val'];
 
-                foreach ($questions as $row) {
-                  # code...
+                 echo $id;
+                 echo $val;
+                // foreach ($questions as $row) {
+                //   # code...
                 
-                 if($id == $i && $val == $_POST['question' . $i]) {
-                  $res[$i]['id'] = $i;
-                  $res[$i]['val'] = 'c';
-                 }
-                 elseif ($id == $i && $val != $_POST['question' . $i]) {
-                   $res[$i]['id'] = $i;
-                   $res[$i]['val'] = 'w';
-                 }
-                 $i++;
-                  }
+                //  if($id == $i && $val == $_POST['question' . $i]) {
+                //   $res[$i]['id'] = $i;
+                //   $res[$i]['val'] = 'c';
+                //  }
+                //  elseif ($id == $i && $val != $_POST['question' . $i]) {
+                //    $res[$i]['id'] = $i;
+                //    $res[$i]['val'] = 'w';
+                //  }
+                //  $i++;
+                //   }
                  $j++;
                 }
                 echo "<br>";
-                print_r($res);die;
+               die;
             foreach ($questions as $row) {
                 if ($_POST['question' . $i] == 'a') {
                     $option = '1';
