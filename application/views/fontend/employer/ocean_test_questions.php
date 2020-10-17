@@ -895,7 +895,7 @@
                   <input type="hidden" name="test_id" value="<?php echo($test_id); ?>">
                   <input type="hidden" name="start_time" value="<?php echo date('d-m-Y H:i:s', strtotime('+5 hours +30 minutes')); ?>">
 
-                 <input type="hidden" name="answers_selected[]" id="answers_selected" value="">
+                 <input type="hidden" name="answers_selected" id="answers_selected" value="">
                   <div class="quiz-container">
                     <div id="quiz"></div>
                   </div>
