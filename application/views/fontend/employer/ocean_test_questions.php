@@ -1285,29 +1285,17 @@ var ans_selected = [];
           {
             // console.log(ans_array);
             // console.log(ans_array.length);
-
-
-            if(ans_array.length==0)
-            {
-                 var lstn = nval.pop();
-                  nval.push(n);
-                  // var ans_selected =[];
+            var lstn = nval.pop();
+            nval.push(n);
+            console.log(lstn) ;    
+            console.log(n);
+           if (lstn != n) 
+           {
+                var ans_array =[];
             }
-            else
-            {
-              var lstn = nval.pop();
-              nval.push(n);
-                  
-            }
-                 console.log(lstn) ;    
-                 console.log(n);
-           // if (lstn != n) 
-           // {
-           //       var ans_selected =[];
-           //  }
            //   console.log(ans_selected);
-            // ans_selected.push(option);
-            //    $('#answers_selected'+n).val(ans_selected);
+            ans_array.push(option);
+               $('#answers_selected'+n).val(ans_array);
            
                 
                 var j = n + 1;
