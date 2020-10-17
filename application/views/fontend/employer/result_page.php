@@ -10,7 +10,7 @@
    .left_q{float:left;}
    .q1{line-height:35px;}   
    li.left_q {
-    width: 250px;
+    width: 317px;
 }
 </style>
 <!---header-->
@@ -28,7 +28,7 @@
          <?php $this->load->view('fontend/layout/employer_menu.php'); ?>
          <div class="col-md-6 report">
             <h5 style="text-align:center;font-size:25px;margin-bottom:30px;color:#18c5bd;font-weight:700;">Your Report Card !</h5>
-            <div class="a" style="margin-left:110px;">
+            <div class="a" style="margin-left:90px;">
               <div class="q1">
                   <li class="left_q">Test Start&nbsp;</li>
                   <li class="right_q">:&emsp;<?php echo $start_time; ?></li>
@@ -122,7 +122,7 @@
                   <li class="left_q">Final Score &nbsp;</li>
                   <li class="right_q">:&emsp;<?php echo $result; ?></li>
                </div>
-               <?php $percent = ($correct_ans/$total_questions)*100; ?>
+               <?php $percent = ($result/$total_questions)*100; ?>
                 <div class="q1">
                   <li class="left_q">Final Score - % Age  &nbsp;</li>
                   <li class="right_q">:&emsp;<?php echo $percent.'%'; ?></li>
