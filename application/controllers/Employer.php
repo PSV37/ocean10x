@@ -5934,6 +5934,25 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
              $data['unique_count'] = count(array_count_values($ans)) ;
              $i=0;
               $j=0;
+               foreach ($new_array as $key) {
+                 $id = $new_array[$j]['id'];
+                 $val=  $new_array[$j]['val'];
+                 for ($i=0; $i <sizeof($questions) ; $i++) { 
+                  # code...
+                
+                 if($id == $i && $val == $_POST['question' . $i]) {
+                  $res[$j]['id'] = $j;
+                  $res[$j]['val'] = 'c';
+                 }
+                 elseif ($id == $i && $val != $_POST['question' . $i]) {
+                   $res[$j]['id'] = $j;
+                   $res[$j]['val'] = 'w';
+                 }
+                  }
+                 $j++;
+                }
+                echo "<br>";
+                  print_r($res);die;
             foreach ($questions as $row) {
                 if ($_POST['question' . $i] == 'a') {
                     $option = '1';
@@ -5972,21 +5991,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                  'date_time' => $cenvertedTime);
                 $last_id = $this->Master_model->master_insert($exam_array, 'emp_test_result');
               
-                foreach ($new_array as $key) {
-                 $id = $new_array[$j]['id'];
-                 $val=  $new_array[$j]['val'];
-                 if($id == $i && $val == $option) {
-                  $res[$j]['id'] = $j;
-                  $res[$j]['val'] = 'c';
-                 }
-                 elseif ($id == $i && $val != $option) {
-                   $res[$j]['id'] = $j;
-                   $res[$j]['val'] = 'w';
-                 }
-                 $j++;
-                }
+               
             }
-            print_r($res);die;
+          
             if (isset($oceanchamp_tests) && $oceanchamp_tests['final_result'] == 'Y') {
               $avg_time = array_filter($avg_time);
                $average = array_sum($avg_time)/count($avg_time);
