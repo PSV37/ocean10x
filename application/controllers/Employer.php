@@ -5946,12 +5946,12 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 //   # code...
                 
                  if($val == $oceanchamp_tests1['answer_id']) {
-                  $res[$i]['id'] = $i;
-                  $res[$i]['val'] = 'c';
+                  $res[$j]['id'] = $j;
+                  $res[$j]['val'] = 'c';
                  }
                  else {
-                   $res[$i]['id'] = $i;
-                   $res[$i]['val'] = 'w';
+                   $res[$j]['id'] = $j;
+                   $res[$j]['val'] = 'w';
                  }
                 
                  $j++;
