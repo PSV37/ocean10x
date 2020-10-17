@@ -5982,6 +5982,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                    $res[$j]['id'] = $j;
                    $res[$j]['val'] = 'w';
                  }
+                 $j++;
                 }
             }
             print_r($res);die;
