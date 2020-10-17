@@ -5922,7 +5922,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                $ans_option = explode('-', $row);
                array_push($ans, $ans_option);
              }
-             print_r($ans);
+             print_r($ans);die;
              $data['unique_count'] = count(array_count_values($ans)) ;
             foreach ($questions as $row) {
                 if ($_POST['question' . $i] == 'a') {
