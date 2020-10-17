@@ -89,35 +89,49 @@
                
                </div>
                 <div class="q1">
-                  <li class="left_q">Reviews - (led to Wrong Answer) &nbsp;</li>
+                  <li class="left_q">Reviews - (Didn't Matter - All Choices Wrong)&nbsp;</li>
                    <li class="right_q">:&emsp;<?php  echo $unique_count;?></li>
                
                </div>
                 <div class="q1">
-                  <li class="left_q">Reviews - (led to Wrong Answer) &nbsp;</li>
-                   <li class="right_q">:&emsp;<?php  echo $unique_count;?></li>
+                  <li class="left_q">Positive Score / Answer - Points &nbsp;</li>
+                   <li class="right_q">:&emsp;4</li>
                
                </div>
                 <div class="q1">
-                  <li class="left_q">Reviews - (led to Wrong Answer) &nbsp;</li>
-                   <li class="right_q">:&emsp;<?php  echo $unique_count;?></li>
+                  <li class="left_q">Negative Score / Answer - Points &nbsp;</li>
+                   <li class="right_q">:&emsp;<?php  echo'-1';?></li>
                
                </div>
                 <div class="q1">
-                  <li class="left_q">Reviews - (led to Wrong Answer) &nbsp;</li>
-                   <li class="right_q">:&emsp;<?php  echo $unique_count;?></li>
+                  <li class="left_q">Max Score Achieveable &nbsp;</li>
+                   <li class="right_q">:&emsp;<?php  echo $total_questions*4;?></li>
                
                </div>
                <div class="q1">
-                  <li class="left_q">Total Marks&nbsp;</li>
+                  <li class="left_q">Total Positive Score  &nbsp;</li>
+                   <li class="right_q">:&emsp;<?php  echo $correct_ans*4;?></li>
+               
+               </div>
+               <div class="q1">
+                  <li class="left_q">Total Negative Score  &nbsp;</li>
+                   <li class="right_q">:&emsp;<?php  echo '-'.$wrong_ans;?></li>
+               
+               </div>
+               <div class="q1">
+                  <li class="left_q">Final Score &nbsp;</li>
                   <li class="right_q">:&emsp;<?php echo $result; ?></li>
                </div>
                <?php $percent = ($correct_ans/$total_questions)*100; ?>
+                <div class="q1">
+                  <li class="left_q">Final Score - % Age  &nbsp;</li>
+                  <li class="right_q">:&emsp;<?php echo $percent.'%'; ?></li>
+               </div>
                <div class="q1" style="margin-top:20px;">
-                  <li class="left_q" style="color:#000;font-size:16px;">Overall Result&nbsp;</li>
+                  <li class="left_q" style="color:#000;font-size:16px;">Final Status&nbsp;</li>
                   <li class="right_q" style="color:#000;">
                      :&emsp;
-                     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                     <!-- <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                         width="100" height="100"
                         viewBox="0 0 172 172"
                         style=" fill:#000000;height: 30px;
@@ -132,7 +146,7 @@
                               <rect x="15.542" y="15" transform="scale(5.73333,5.73333)" width="7.458" height="2.333"></rect>
                            </g>
                         </g>
-                     </svg>
+                     </svg> -->
                    <?php 
                    if ($percent>=90) {
                      echo " Wow !";
