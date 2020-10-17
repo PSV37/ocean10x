@@ -1284,6 +1284,7 @@ var ans_selected = [];
           function get_checked(n,option)
           {
             console.log(ans_array);
+            console.log(ans_array.length);
 
 
            //  if(ans_array.length==0)
