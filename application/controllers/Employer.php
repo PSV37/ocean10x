@@ -5940,8 +5940,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
                  echo $id;
                  echo $val;
-                 $qid = $questions[$j];
-                  echo $qid;
+                 $qid = $questions[$id];
+                  echo 'q'.$qid;
                    echo "<br>";
                  $where_all = "questionbank_answer.question_id='$qid' ";
                 $oceanchamp_tests1 = $this->Master_model->get_master_row('questionbank_answer', $select = FALSE, $where = $where_all, $join = FALSE);
