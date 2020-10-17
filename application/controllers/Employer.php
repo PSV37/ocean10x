@@ -5916,6 +5916,12 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $created_on = date('Y-m-d H:i:s');
             $cenvertedTime = date('Y-m-d H:i:s', strtotime('+5 hour +30 minutes', strtotime($created_on)));
                 $avg_time = array();
+             $answers_selected = $this->input->post('answers_selected');
+             $ans=array();
+             foreach ($answers_selected as $row) {
+               $ans_option = explode('-', $row);
+               array_push($ans, $ans_option);
+             }
 
             foreach ($questions as $row) {
                 if ($_POST['question' . $i] == 'a') {

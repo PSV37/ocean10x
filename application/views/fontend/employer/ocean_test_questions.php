@@ -895,7 +895,7 @@
                   <input type="hidden" name="test_id" value="<?php echo($test_id); ?>">
                   <input type="hidden" name="start_time" value="<?php echo date('d-m-Y H:i:s', strtotime('+5 hours +30 minutes')); ?>">
 
-                 
+                 <input type="hidden" name="answers_selected[]" id="answers_selected" value="">
                   <div class="quiz-container">
                     <div id="quiz"></div>
                   </div>
@@ -1013,7 +1013,7 @@ var ans_selected = [];
                       <div class="answers"> ${answers.join("")} </div>
                     <input type = "hidden" id="timer${questionNumber}" value="${currentQuestion.time_for_question}">
                     <input type = "hidden" id="time_taken${questionNumber}" name="time_taken${questionNumber}" value="">
-                      <input type="hidden" name="answers_selected[]" id="answers_selected${questionNumber}" value="">
+                      
                     </div>`
                   );
                
@@ -1286,7 +1286,7 @@ var ans_selected = [];
             console.log(n);
             console.log(option);
             ans_array.push(n+'-'+option);
-               $('#answers_selected'+n).val(ans_array);
+               $('#answers_selected').val(ans_array);
            
                 
                 var j = n + 1;

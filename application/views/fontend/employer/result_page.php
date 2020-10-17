@@ -44,7 +44,12 @@
                <div class="q1">
                   <li class="left_q">Time Taken (min) &nbsp;</li>
                    <li class="right_q">:&emsp;<?php  echo round($time_taken, 2);?></li>
-                 <!--  <li class="right_q">:&emsp;<?php  echo round((strtotime($end_time) - strtotime($start_time)) /60); ?></li> -->
+               
+               </div>
+               <div class="q1">
+                  <li class="left_q">Reviews Exercised (On Questions) &nbsp;</li>
+                   <li class="right_q">:&emsp;<?php  echo $unique_count;?></li>
+               
                </div>
                <div class="q1">
                   <li class="left_q">Total Questions&nbsp;</li>
