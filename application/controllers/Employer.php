@@ -5976,16 +5976,16 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 
                  $j++;
                 }
-                echo "<br>";
+                echo "<br><pre>";
               var_dump($res); 
-                echo "<br>";
+                echo "</pre><br>";
                // print_r(array_unique($res));
                   echo "<br>";
               // print_r(sizeof($res)); die;
-              foreach ($res as $row) {
-                print_r($row);
-                 print_r(array_unique($res));
-              }
+              // foreach ($res as $row) {
+              //   print_r($row);
+              //    print_r(array_unique($res));
+              // }
               die();
 
               // die;
