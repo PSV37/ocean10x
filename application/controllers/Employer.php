@@ -5986,7 +5986,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                   
                 // }
               foreach ($res as $row) {
-               array_push($rarray, $row['val'])
+               array_push($rarray, $row['val']);
                 print_r($row);
                  
               }
