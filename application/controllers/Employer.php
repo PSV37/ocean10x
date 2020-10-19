@@ -6004,11 +6004,12 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                }
 
         $my_array1 = array_values($_data);
+         $revers =array_reverse($my_array1);
           echo "<br><pre>";
               print_r($my_array); 
                 echo "</pre><br>";
                   echo "<br><pre>";
-              print_r($my_array1); 
+              print_r($revers); 
                 echo "</pre><br>";
                 die;
     
