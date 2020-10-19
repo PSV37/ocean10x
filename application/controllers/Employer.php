@@ -5961,11 +5961,11 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     $ans_id ='d';
                    }
                  if($val == $ans_id) {
-                  $res[$j]['id'] = $j;
+                  $res[$j]['id'] = $id;
                   $res[$j]['val'] = 'c';
                  }
                  else {
-                   $res[$j]['id'] = $j;
+                   $res[$j]['id'] = $id;
                    $res[$j]['val'] = 'w';
                  }
                 
@@ -5973,9 +5973,13 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 }
                 echo "<br>";
               print_r($res); 
-              print_r(sizeof($res)); 
-              for ($k=0; $k < sizeof($res) ; $k++) { 
-                 if ($res[$k]['id']) {
+                echo "<br>";
+               print_r(array_unique($res));
+                  echo "<br>";
+              print_r(sizeof($res)); die;
+              for ($k=0; $k < sizeof($res) ; $k++) {
+              $first = $res[$k]['id']
+                 if () {
                   
                  }
               }
