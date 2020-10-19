@@ -5979,13 +5979,19 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 echo "<br><pre>";
               print_r($res); 
                 echo "</pre><br>";
-              //  // print_r(array_unique($res));
-              //     echo "<br>";
-              // print_r(sizeof($res)); die;
-                // for ($k=0; $k < sizeof($res) ; $k++) { 
-                  
-                // }
-      $my_array = remove_duplicateKeys("id",$res);
+                 $_data = array();
+                foreach ($res as $v) {
+                 if (isset($_data[$v['id']])) {
+                   // found duplicate
+                   continue;
+                 }
+                 // remember unique item
+                 $_data[$v['id']] = $v;
+               }
+        // if you need a zero-based array
+        // otherwise work with $_data
+        $my_array = array_values($_data);
+      // $my_array = remove_duplicateKeys("id",$res);
               
                 echo "<br><pre>";
               print_r($my_array); 
