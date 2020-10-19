@@ -5962,12 +5962,12 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     $ans_id ='d';
                    }
                  if($val == $ans_id) {
-                  array_push($rarray, 'c')
+                  array_push($rarray, 'c');
                   // $res[$j]['id'] = $id;
                   // $res[$j]['val'] = 'c';
                  }
                  else {
-                  array_push($rarray, 'c')
+                  array_push($rarray, 'c');
 
                    // $res[$j]['id'] = $id;
                    // $res[$j]['val'] = 'w';
