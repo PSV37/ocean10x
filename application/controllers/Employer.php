@@ -5977,12 +5977,12 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                print_r(array_unique($res));
                   echo "<br>";
               print_r(sizeof($res)); die;
-              for ($k=0; $k < sizeof($res) ; $k++) {
-              $first = $res[$k]['id'];
-                 if () {
+              // for ($k=0; $k < sizeof($res) ; $k++) {
+              // $first = $res[$k]['id'];
+              //    if () {
                   
-                 }
-              }
+              //    }
+              // }
 
               // die;
             foreach ($questions as $row) {
