@@ -6021,6 +6021,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                  {
                   print_r($keys);
                   print_r($values);
+                    echo "<br>";
                  // if($keys['val']=='w' && $values=='c')
                  // {
                  //  $led_right=+1;
