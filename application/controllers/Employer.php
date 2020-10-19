@@ -5991,7 +5991,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                }
        
         $my_array = array_values($_data);
-        $res_revers =array_reverse($res)
+        $res_revers =array_reverse($res);
         $_data = array();
                 foreach ($res_revers as $v) {
                  if (isset($_data[$v['id']])) {
