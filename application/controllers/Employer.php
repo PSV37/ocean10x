@@ -6010,6 +6010,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                   echo "<br><pre>";
               print_r($my_array1); 
                 echo "</pre><br>";
+                die;
     
             foreach ($questions as $row) {
                 if ($_POST['question' . $i] == 'a') {
