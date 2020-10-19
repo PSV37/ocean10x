@@ -5929,8 +5929,8 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                $new_array[$i]['val'] = $ans_option[1];
                $i++;
              }
-             print_r($new_array);
-              echo "<br>";die;
+             // print_r($new_array);
+             //  echo "<br>";die;
              $data['unique_count'] = count(array_count_values($ans)) ;
              $i=0;
               $j=0;
@@ -5971,9 +5971,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 
                  $j++;
                 }
-              //   echo "<br>";
-              // print_r($res); 
-              // print_r(sizeof($res)); 
+                echo "<br>";
+              print_r($res); 
+              print_r(sizeof($res)); 
               for ($k=0; $k < sizeof($res) ; $k++) { 
                  if ($res[$k]['id']) {
                   
