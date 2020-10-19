@@ -5962,17 +5962,17 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     $ans_id ='d';
                    }
                  if($val == $ans_id) {
-                  array_push($rarray, 'c');
-                  // $res[$j]['id'] = $id;
-                  // $res[$j]['val'] = 'c';
+                  // array_push($rarray, 'c');
+                  $res[$j]['id'] = $id;
+                  $res[$j]['val'] = 'c';
                  }
                  else {
-                  array_push($rarray, 'W');
+                  // array_push($rarray, 'W');
 
-                   // $res[$j]['id'] = $id;
-                   // $res[$j]['val'] = 'w';
+                   $res[$j]['id'] = $id;
+                   $res[$j]['val'] = 'w';
                  }
-                 $res[$id]['val']=$rarray;
+                 // $res[$id]['val']=$rarray;
                 
                  $j++;
                 }
