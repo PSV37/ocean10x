@@ -5985,13 +5985,10 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 // for ($k=0; $k < sizeof($res) ; $k++) { 
                   
                 // }
-              foreach ($res as $row) {
-               array_push($rarray, $row['val']);
-                print_r($row);
-                 
-              }
+      $my_array = remove_duplicateKeys("id",$res);
+              
                 echo "<br><pre>";
-              print_r($rarray); 
+              print_r($my_array); 
                 echo "</pre><br>";
                // print_r($rarray);
               die();
@@ -6065,6 +6062,24 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             }
         }
     }
+    function remove_duplicateKeys($key,$data){
+
+        $_data = array();
+
+        foreach ($data as $v) {
+          if (isset($_data[$v[$key]])) {
+            // found duplicate
+            continue;
+          }
+          // remember unique item
+          $_data[$v[$key]] = $v;
+        }
+        // if you need a zero-based array
+        // otherwise work with $_data
+        $data = array_values($_data);
+        return $data;
+        }
+
     function add_new_connection() {
         $js_id = $this->input->post('id');
         $name = $this->input->post('name');
