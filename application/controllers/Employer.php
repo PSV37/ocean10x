@@ -5978,7 +5978,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                   echo "<br>";
               print_r(sizeof($res)); die;
               for ($k=0; $k < sizeof($res) ; $k++) {
-              $first = $res[$k]['id']
+              $first = $res[$k]['id'];
                  if () {
                   
                  }
