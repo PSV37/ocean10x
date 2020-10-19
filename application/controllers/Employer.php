@@ -6011,8 +6011,32 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                   echo "<br><pre>";
               print_r($revers); 
                 echo "</pre><br>";
-                die;
-    
+                
+                $led_right = 0;
+                $led_wrong = 0;
+                $dosnt_matter = 0;
+                foreach ($my_array as $keys) 
+                {
+                 foreach ($revers as $values) 
+                 {
+                 if($keys['val']=='w' && $values=='c')
+                 {
+                  $led_right+=1;
+                 }
+                 elseif($keys['val']=='c' && $values=='W')
+                 {
+                  $led_wrong+=1;
+                 }
+                 else
+                 {
+                  $dosnt_matter+=1;
+                 }
+                 }
+                }
+                print_r($led_right);
+                print_r($led_wrong);
+                print_r($dosnt_matter);
+    die;
             foreach ($questions as $row) {
                 if ($_POST['question' . $i] == 'a') {
                     $option = '1';
