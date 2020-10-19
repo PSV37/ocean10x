@@ -5983,7 +5983,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 foreach ($res as $v) {
                  if (isset($_data[$v['id']])) {
                    // found duplicate
-                  array_push($rarray,$_data[$v['val']])
+                  // array_push($rarray,$_data[$v['val']])
                    continue;
                  }
                  // remember unique item
@@ -5996,7 +5996,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 foreach ($res_revers as $v) {
                  if (isset($_data[$v['id']])) {
                    // found duplicate
-                  array_push($rarray,$_data[$v['val']])
+                  // array_push($rarray,$_data[$v['val']]);
                    continue;
                  }
                  // remember unique item
