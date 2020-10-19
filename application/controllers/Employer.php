@@ -5934,6 +5934,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
              $data['unique_count'] = count(array_count_values($ans)) ;
              $i=0;
               $j=0;
+              $rarray =();
                foreach ($new_array as $key) {
                  $id = $new_array[$j]['id'];
                  $val=  $new_array[$j]['val'];
@@ -5961,13 +5962,17 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                     $ans_id ='d';
                    }
                  if($val == $ans_id) {
-                  $res[$j]['id'] = $id;
-                  $res[$j]['val'] = 'c';
+                  array_push($rarray, 'c')
+                  // $res[$j]['id'] = $id;
+                  // $res[$j]['val'] = 'c';
                  }
                  else {
-                   $res[$j]['id'] = $id;
-                   $res[$j]['val'] = 'w';
+                  array_push($rarray, 'c')
+
+                   // $res[$j]['id'] = $id;
+                   // $res[$j]['val'] = 'w';
                  }
+                 $res[$id]['val']=$rarray;
                 
                  $j++;
                 }
@@ -5979,6 +5984,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
               // print_r(sizeof($res)); die;
               foreach ($res as $row) {
                 print_r($row);
+                 print_r(array_unique($res));
               }
               die();
 
