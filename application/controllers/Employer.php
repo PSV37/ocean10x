@@ -6005,13 +6005,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
 
         $my_array1 = array_values($_data);
          $revers =array_reverse($my_array1);
-          echo "<br><pre>";
-              print_r($my_array); 
-                echo "</pre><br>";
-                  echo "<br><pre>";
-              print_r($revers); 
-                echo "</pre><br>";
-                
+         
                 $led_right = 0;
                 $led_wrong = 0;
                 $dosnt_matter = 0;
@@ -6029,17 +6023,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                   $dosnt_matter+=1;
                  }
                }
-                // foreach ($revers as $values) 
-                //  {
-                //   print_r($keys);
-                //   print_r($values);
-                //     echo "<br>";
-                 
-                //  }
-    //             print_r($led_right);
-    //             print_r($led_wrong);
-    //             print_r($dosnt_matter);
-    // die;
+             
             foreach ($questions as $row) {
                 if ($_POST['question' . $i] == 'a') {
                     $option = '1';
