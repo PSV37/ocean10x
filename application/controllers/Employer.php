@@ -5979,13 +5979,21 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 echo "<br><pre>";
               print_r($res); 
                 echo "</pre><br>";
-               // print_r(array_unique($res));
-                  echo "<br>";
+              //  // print_r(array_unique($res));
+              //     echo "<br>";
               // print_r(sizeof($res)); die;
-              // foreach ($res as $row) {
-              //   print_r($row);
-              //    print_r(array_unique($res));
-              // }
+                // for ($k=0; $k < sizeof($res) ; $k++) { 
+                  
+                // }
+              foreach ($res as $row) {
+               array_push($rarray, $row['val'])
+                print_r($row);
+                 
+              }
+                echo "<br><pre>";
+              print_r($rarray); 
+                echo "</pre><br>";
+               // print_r($rarray);
               die();
 
               // die;
