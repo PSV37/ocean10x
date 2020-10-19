@@ -5976,30 +5976,35 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 
                  $j++;
                 }
-                echo "<br><pre>";
-              print_r($res); 
-                echo "</pre><br>";
+              //   echo "<br><pre>";
+              // print_r($res); 
+              //   echo "</pre><br>";
                  $_data = array();
                 foreach ($res as $v) {
                  if (isset($_data[$v['id']])) {
                    // found duplicate
+                  array_push($rarray,$_data[$v['val']])
                    continue;
                  }
                  // remember unique item
                  $_data[$v['id']] = $v;
                }
-        // if you need a zero-based array
-        // otherwise work with $_data
+       
         $my_array = array_values($_data);
-      // $my_array = remove_duplicateKeys("id",$res);
-              
-                echo "<br><pre>";
-              print_r($my_array); 
-                echo "</pre><br>";
-               // print_r($rarray);
-              die();
-
-              // die;
+        $res_revers =array_reverse($res)
+        $_data = array();
+                foreach ($res_revers as $v) {
+                 if (isset($_data[$v['id']])) {
+                   // found duplicate
+                  array_push($rarray,$_data[$v['val']])
+                   continue;
+                 }
+                 // remember unique item
+                 $_data[$v['id']] = $v;
+               }
+       
+        $my_array1 = array_values($_data);
+    
             foreach ($questions as $row) {
                 if ($_POST['question' . $i] == 'a') {
                     $option = '1';
