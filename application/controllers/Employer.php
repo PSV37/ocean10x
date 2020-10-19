@@ -6015,27 +6015,27 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $led_right = 0;
                 $led_wrong = 0;
                 $dosnt_matter = 0;
-                foreach ($my_array as $keys) 
-                {
-                 foreach ($revers as $values) 
+               for ($k=0; $k <sizeof() ; $k++) { 
+                 if($my_array[$k]['val']=='w' && $revers[$k]['val']=='c')
                  {
-                  print_r($keys);
-                  print_r($values);
-                    echo "<br>";
-                 // if($keys['val']=='w' && $values=='c')
-                 // {
-                 //  $led_right=+1;
-                 // }
-                 // elseif($keys['val']=='c' && $values=='W')
-                 // {
-                 //  $led_wrong+=1;
-                 // }
-                 // else
-                 // {
-                 //  $dosnt_matter+=1;
-                 // }
+                  $led_right=+1;
                  }
-                }
+                 elseif($my_array[$k]['val']=='c' && $revers[$k]['val']=='W')
+                 {
+                  $led_wrong+=1;
+                 }
+                 else
+                 {
+                  $dosnt_matter+=1;
+                 }
+               }
+                // foreach ($revers as $values) 
+                //  {
+                //   print_r($keys);
+                //   print_r($values);
+                //     echo "<br>";
+                 
+                //  }
                 print_r($led_right);
                 print_r($led_wrong);
                 print_r($dosnt_matter);
