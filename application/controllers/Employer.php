@@ -6020,7 +6020,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                  {
                   $led_right=+1;
                  }
-                 elseif($my_array[$k]['val']=='c' && $revers[$k]['val']=='W')
+                 elseif($my_array[$k]['val']=='c' && $revers[$k]['val']=='w')
                  {
                   $led_wrong+=1;
                  }
