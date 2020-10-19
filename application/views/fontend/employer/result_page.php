@@ -80,17 +80,17 @@
                </div>
                 <div class="q1">
                   <li class="left_q">Reviews - (led to Right Answer) &nbsp;</li>
-                   <li class="right_q">:&emsp;<?php  echo $unique_count;?></li>
+                   <li class="right_q">:&emsp;<?php  echo $led_right;?></li>
                
                </div>
                 <div class="q1">
                   <li class="left_q">Reviews - (led to Wrong Answer) &nbsp;</li>
-                   <li class="right_q">:&emsp;<?php  echo $unique_count;?></li>
+                   <li class="right_q">:&emsp;<?php  echo $led_wrong;?></li>
                
                </div>
                 <div class="q1">
                   <li class="left_q">Reviews - (Didn't Matter - All Choices Wrong)&nbsp;</li>
-                   <li class="right_q">:&emsp;<?php  echo $unique_count;?></li>
+                   <li class="right_q">:&emsp;<?php  echo $dosnt_matter;?></li>
                
                </div>
                 <div class="q1">

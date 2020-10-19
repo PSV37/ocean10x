@@ -6036,10 +6036,10 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 //     echo "<br>";
                  
                 //  }
-                print_r($led_right);
-                print_r($led_wrong);
-                print_r($dosnt_matter);
-    die;
+    //             print_r($led_right);
+    //             print_r($led_wrong);
+    //             print_r($dosnt_matter);
+    // die;
             foreach ($questions as $row) {
                 if ($_POST['question' . $i] == 'a') {
                     $option = '1';
@@ -6084,7 +6084,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             if (isset($oceanchamp_tests) && $oceanchamp_tests['final_result'] == 'Y') {
               $avg_time = array_filter($avg_time);
                $average = array_sum($avg_time)/count($avg_time);
-
+                $data['led_right'] = $led_right;
+                $data['led_wrong'] = $led_wrong;
+                $data['dosnt_matter'] = $dosnt_matter;
                 $data['total_questions'] = sizeof($questions);
                 $data['end_time'] = date('d-m-Y H:i:s', strtotime('+5 hours +30 minutes'));
                 $data['start_time'] = $this->input->post('start_time');
@@ -6108,23 +6110,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             }
         }
     }
-    function remove_duplicateKeys($key,$data){
-
-        $_data = array();
-
-        foreach ($data as $v) {
-          if (isset($_data[$v[$key]])) {
-            // found duplicate
-            continue;
-          }
-          // remember unique item
-          $_data[$v[$key]] = $v;
-        }
-        // if you need a zero-based array
-        // otherwise work with $_data
-        $data = array_values($_data);
-        return $data;
-        }
+    
 
     function add_new_connection() {
         $js_id = $this->input->post('id');
