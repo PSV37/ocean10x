@@ -5977,7 +5977,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                  $j++;
                 }
                 echo "<br><pre>";
-              var_dump($res); 
+              print_r($res); 
                 echo "</pre><br>";
                // print_r(array_unique($res));
                   echo "<br>";
