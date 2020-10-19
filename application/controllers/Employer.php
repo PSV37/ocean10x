@@ -6015,7 +6015,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 $led_right = 0;
                 $led_wrong = 0;
                 $dosnt_matter = 0;
-               for ($k=0; $k <sizeof() ; $k++) { 
+               for ($k=0; $k <sizeof($my_array) ; $k++) { 
                  if($my_array[$k]['val']=='w' && $revers[$k]['val']=='c')
                  {
                   $led_right=+1;
