@@ -5934,7 +5934,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
              $data['unique_count'] = count(array_count_values($ans)) ;
              $i=0;
               $j=0;
-              $rarray =();
+              $rarray =array();
                foreach ($new_array as $key) {
                  $id = $new_array[$j]['id'];
                  $val=  $new_array[$j]['val'];
@@ -5977,7 +5977,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                  $j++;
                 }
                 echo "<br>";
-              print_r($res); 
+              var_dump($res); 
                 echo "<br>";
                // print_r(array_unique($res));
                   echo "<br>";
