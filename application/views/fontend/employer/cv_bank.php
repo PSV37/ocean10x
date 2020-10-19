@@ -1820,7 +1820,7 @@ Phone : <?php echo $this->session->userdata('phone'); ?>
 <div class="modal fade" id="bulkupload_folder" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
-      <form method="post" action="<?php echo base_url();?>employer/upload_folder" enctype="multipart/form-data">
+      <form method="post" action="<?php echo base_url();?>employer/bulk_upload_folder" enctype="multipart/form-data">
         <div class="modal-header">
           <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
           <h4 class="modal-title">Bulk Upload CV</h4>
