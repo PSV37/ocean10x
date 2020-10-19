@@ -6019,18 +6019,20 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 {
                  foreach ($revers as $values) 
                  {
-                 if($keys['val']=='w' && $values=='c')
-                 {
-                  $led_right+=1;
-                 }
-                 elseif($keys['val']=='c' && $values=='W')
-                 {
-                  $led_wrong+=1;
-                 }
-                 else
-                 {
-                  $dosnt_matter+=1;
-                 }
+                  print_r($keys);
+                  print_r($values);
+                 // if($keys['val']=='w' && $values=='c')
+                 // {
+                 //  $led_right=+1;
+                 // }
+                 // elseif($keys['val']=='c' && $values=='W')
+                 // {
+                 //  $led_wrong+=1;
+                 // }
+                 // else
+                 // {
+                 //  $dosnt_matter+=1;
+                 // }
                  }
                 }
                 print_r($led_right);
