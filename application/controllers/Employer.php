@@ -6804,6 +6804,7 @@ public  function upload_folder()
     $where = "oceanchamp_tests.company_id = '$employer_id' and js_test_report.test_id ='$test_id' and js_id = '$js_id'";
     $join =array("oceanchamp_tests"=>"oceanchamp_tests.test_id = js_test_report.test_id","js_info"=>"js_info.job_seeker_id=js_test_report.js_id");
     $data['all_test_details']= $this->Master_model->getMaster('js_test_report', $where , $join , $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
+    print_r($this->db->last_query());die;
  }
 
 }
