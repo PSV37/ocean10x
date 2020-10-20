@@ -1835,7 +1835,7 @@ public function user_profile()
             // $employer_id = $this->session->userdata('company_profile_id');
             $where_all = "oceanchamp_tests.status='1' AND  test_id = '$test_id'";
 
-            $oceanchamp_tests = $this->Master_model->get_master_row('oceanchamp_tests', $select = FALSE, $where = $where_all, $join = FALSE);
+            $oceanchamp_tests = $this->Master_model->get_master_row('oceanchamp_tests', $select = '*,questions as ques_id', $where = $where_all, $join = FALSE);
             if ($oceanchamp_tests['test_status'] !=1) 
             {
                $technical_id = $oceanchamp_tests['topics'];
@@ -1861,7 +1861,7 @@ public function user_profile()
                 
              // print_r($questions);
                 foreach ($questions as $row) {
-                 $ques_id = $row->ques_id;
+                 $ques_id = $row['ques_id'];
                   $where = "questionbank.ques_id='$ques_id'";
 
                    $Join_data      = array(
