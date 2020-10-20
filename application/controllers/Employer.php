@@ -6091,7 +6091,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             if (isset($oceanchamp_tests) && $oceanchamp_tests['final_result'] == 'Y') {
                     $data['final_score'] = ($data['correct_ans']*4) - $data['wrong_ans'];
                     $data['total_positive_score'] =$data['correct_ans']*4;
-                    $data['total_negative_score'] =$wrong_ans;
+                    $data['total_negative_score'] = $data['wrong_ans'];
                 } else {
                     $data['final_score'] = $data['correct_ans']*4;
                     $data['total_positive_score'] =$data['correct_ans']*4;
