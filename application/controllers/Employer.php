@@ -6069,7 +6069,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
             $avg_time = array_filter($avg_time);
             $average = array_sum($avg_time)/count($avg_time);
             $data['test_id'] = $test_id; 
-            $data['employee_id']= $employer_id;
+            $data['employer_id']= $employer_id;
             $data['total_questions'] = sizeof($questions); 
            
             $data['total_questions'] = sizeof($questions);
