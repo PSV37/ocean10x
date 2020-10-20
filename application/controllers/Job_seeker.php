@@ -1927,9 +1927,9 @@ public function user_profile()
          $created_on    = date('Y-m-d H:i:s');
         $cenvertedTime = date('Y-m-d H:i:s', strtotime('+5 hour +30 minutes', strtotime($created_on)));
          $answers_selected = explode(',', $this->input->post('answers_selected'));
-             $ans=array();
-              $new_array=array();
-              
+            $ans=array();
+            $new_array=array();
+            $avg_time = array();
              foreach ($answers_selected as $row) {
                
                $ans_option = explode('-',$row);
