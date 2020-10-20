@@ -1861,7 +1861,7 @@ public function user_profile()
                 
              // print_r($questions);
                 foreach ($questions as $row) {
-                 $ques_id = $row['ques_id'];
+                 $ques_id = $row->ques_id;
                   $where = "questionbank.ques_id='$ques_id'";
 
                    $Join_data      = array(
