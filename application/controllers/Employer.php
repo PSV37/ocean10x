@@ -6790,7 +6790,7 @@ public  function upload_folder()
  {
     $employer_id = $this->session->userdata('company_profile_id');
     $where = "oceanchamp_tests.company_id = '$employer_id'";
-    $join =array("oceanchamp_tests"=>"oceanchamp_tests.test_id = js_test_report.test_id","js_info"=>"js_info.job_seeker_id=js_test_report.js_id")
+    $join =array("oceanchamp_tests"=>"oceanchamp_tests.test_id = js_test_report.test_id","js_info"=>"js_info.job_seeker_id=js_test_report.js_id");
     $data['all_test_details']= $this->Master_model->getMaster('js_test_report', $where , $join , $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
 
     $this->load->view('fontend/employer/view_all_test_details',$data)
