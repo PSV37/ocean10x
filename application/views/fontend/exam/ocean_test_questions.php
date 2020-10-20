@@ -906,7 +906,7 @@ input[type="radio"] {
                 <p id="my-progress-completion" class="js-my-progress-completion sr-only" aria-live="polite">0% complete</p>
               </div>
               <div class="quizBox">
-                <form id="nextques" class="submit-form" action="<?php echo base_url();?>employer/insert_test_data" method="post">
+                <form id="nextques" class="submit-form" action="<?php echo base_url();?>job_seeker/insert_test_data" method="post">
                   <input type="hidden" name="test_id" value="<?php echo($test_id); ?>">
                   <input type="hidden" name="start_time" value="<?php echo date('d-m-Y H:i:s', strtotime('+5 hours +30 minutes')); ?>">
 
