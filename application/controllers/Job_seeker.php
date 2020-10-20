@@ -2072,6 +2072,7 @@ public function user_profile()
                     
 
                 }
+                  array_push($avg_time, $_POST['time_taken' . $i]);
 
             $exam_array = array(
             'test_id' => $test_id,
