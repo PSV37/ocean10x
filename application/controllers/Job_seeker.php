@@ -1926,6 +1926,114 @@ public function user_profile()
         $i=0;
          $created_on    = date('Y-m-d H:i:s');
         $cenvertedTime = date('Y-m-d H:i:s', strtotime('+5 hour +30 minutes', strtotime($created_on)));
+         $answers_selected = explode(',', $this->input->post('answers_selected'));
+             $ans=array();
+              $new_array=array();
+              
+             foreach ($answers_selected as $row) {
+               
+               $ans_option = explode('-',$row);
+               array_push($ans, $ans_option[0]);
+               // array_push($new_array['id'], var)
+               $new_array[$i]['id'] = $ans_option[0];
+               $new_array[$i]['val'] = $ans_option[1];
+               $i++;
+             }
+             // print_r($new_array);
+             //  echo "<br>";die;
+             $data['reviews_exercised'] = count(array_count_values($ans)) ;
+             $i=0;
+              $j=0;
+              $rarray =array();
+               foreach ($new_array as $key) {
+                 $id = $new_array[$j]['id'];
+                 $val=  $new_array[$j]['val'];
+
+                 // echo $id;
+                 // echo $val;
+                 $qid = $questions[$id];
+                  // echo 'q'.$qid;
+                   // echo "<br>";
+                 $where_all = "questionbank_answer.question_id='$qid' ";
+                $oceanchamp_tests1 = $this->Master_model->get_master_row('questionbank_answer', $select = FALSE, $where = $where_all, $join = FALSE);
+                //   # code...
+                 // echo 'a'.$oceanchamp_tests1['answer_id'];
+                 //   echo "<br>";
+                   if ($oceanchamp_tests1['answer_id']==1) {
+                    $ans_id ='a';
+                   }
+                   else if ($oceanchamp_tests1['answer_id']==2) {
+                    $ans_id ='b';
+                   }
+                   else if ($oceanchamp_tests1['answer_id']==3) {
+                    $ans_id ='c';
+                   }
+                   else if ($oceanchamp_tests1['answer_id']==4) {
+                    $ans_id ='d';
+                   }
+                 if($val == $ans_id) {
+                  // array_push($rarray, 'c');
+                  $res[$j]['id'] = $id;
+                  $res[$j]['val'] = 'c';
+                 }
+                 else {
+                  // array_push($rarray, 'W');
+
+                   $res[$j]['id'] = $id;
+                   $res[$j]['val'] = 'w';
+                 }
+                 // $res[$id]['val']=$rarray;
+                
+                 $j++;
+                }
+              //   echo "<br><pre>";
+              // print_r($res); 
+              //   echo "</pre><br>";
+                 $_data = array();
+                foreach ($res as $v) {
+                 if (isset($_data[$v['id']])) {
+                   // found duplicate
+                  // array_push($rarray,$_data[$v['val']])
+                   continue;
+                 }
+                 // remember unique item
+                 $_data[$v['id']] = $v;
+               }
+       
+        $my_array = array_values($_data);
+        $res_revers =array_reverse($res);
+        $_data = array();
+                foreach ($res_revers as $v) {
+                 if (isset($_data[$v['id']])) {
+                   // found duplicate
+                  // array_push($rarray,$_data[$v['val']]);
+                   continue;
+                 }
+                 // remember unique item
+                 $_data[$v['id']] = $v;
+               }
+
+        $my_array1 = array_values($_data);
+         $revers =array_reverse($my_array1);
+         
+                $led_right = 0;
+                $led_wrong = 0;
+                $dosnt_matter = 0;
+               for ($k=0; $k <sizeof($my_array) ; $k++) { 
+                 if($my_array[$k]['val']=='w' && $revers[$k]['val']=='c')
+                 {
+                  $led_right=+1;
+                 }
+                 elseif($my_array[$k]['val']=='c' && $revers[$k]['val']=='w')
+                 {
+                  $led_wrong+=1;
+                 }
+                 else
+                 {
+                  $dosnt_matter+=1;
+                 }
+               }
+             
         foreach ($questions as $row) {
             if ($_POST['question'.$i] == 'a') {
                 $option = '1';
@@ -1991,20 +2099,39 @@ public function user_profile()
             
           // if (isset($oceanchamp_tests) && $oceanchamp_tests['final_result'] == 'Y') 
           // { 
+           $avg_time = array_filter($avg_time);
+            $average = array_sum($avg_time)/count($avg_time);
+            $data['test_id'] = $test_id; 
+            $data['js_id']= $seeker_id;
+            $data['total_questions'] = sizeof($questions); 
+           
             $data['total_questions'] = sizeof($questions);
-            $data['attended_questions'] = $this->input->post('green');
-            $data['skipped_questions'] = $this->input->post('gray') +  $this->input->post('white') ;
+            $data['test_start_time'] = $this->input->post('start_time');
+            $data['test_end_time'] = date('d-m-Y H:i:s', strtotime('+5 hours +30 minutes'));
+            $data['max_test_duration'] = $oceanchamp_tests['test_duration']/60;
+            $data['time_taken'] =array_sum($avg_time)/60;
+            $data['avg_time_per_question'] = $average/60;
+            $data['total_attempted'] = $this->input->post('green');
+            $data['total_skipped'] = $this->input->post('gray') + $this->input->post('white');
             $data['correct_ans'] = $this->input->post('correct');
-            $data['wrong_ans'] = sizeof($questions)-$this->input->post('correct');
-            if (isset($oceanchamp_tests) && $oceanchamp_tests['final_result'] == 'Y') 
-            { 
-             $data['result'] =  $data['correct_ans']-$data['wrong_ans'];
-            }
-            else
-            {
-                $data['result'] =  $data['correct_ans'];
-
-            }
+            $data['wrong_ans'] = sizeof($questions) - $this->input->post('correct');
+            $data['review_led_right'] = $led_right;
+            $data['review_led_wrong'] = $led_wrong;
+            $data['review_didnt_matter'] =$dosnt_matter;
+            $data['max_achievable_score'] =sizeof($questions)*4;
+            
+           
+            if (isset($oceanchamp_tests) && $oceanchamp_tests['final_result'] == 'Y') {
+                    $data['final_score'] = ($data['correct_ans']*4) - $data['wrong_ans'];
+                    $data['total_positive_score'] =$data['correct_ans']*4;
+                    $data['total_negative_score'] = $data['wrong_ans'];
+                } else {
+                    $data['final_score'] = $data['correct_ans']*4;
+                    $data['total_positive_score'] =$data['correct_ans']*4;
+                     $data['total_negative_score'] ='0';
+                }
+                 $data['final_percentage'] = ($data['final_score']/$data['max_achievable_score'])*100;
+                $last_id = $this->Master_model->master_insert($data, 'js_test_report');
             if (isset($apply_id) && ! empty($apply_id)) {
             $test_array = array(
                         
