@@ -31,15 +31,15 @@
             <div class="a" style="margin-left:90px;">
               <div class="q1">
                   <li class="left_q">Test Start&nbsp;</li>
-                  <li class="right_q">:&emsp;<?php echo $start_time; ?></li>
+                  <li class="right_q">:&emsp;<?php echo $test_start_time; ?></li>
                </div>
                <div class="q1">
                   <li class="left_q">Test End &nbsp;</li>
-                  <li class="right_q">:&emsp;<?php echo $end_time; ?></li>
+                  <li class="right_q">:&emsp;<?php echo $test_end_time; ?></li>
                </div>
                <div class="q1">
                   <li class="left_q">Test - Max Duration (min) &nbsp;</li>
-                  <li class="right_q">:&emsp;<?php echo round($test_duration, 2); ?></li>
+                  <li class="right_q">:&emsp;<?php echo round($max_test_duration, 2); ?></li>
                </div>
                <div class="q1">
                   <li class="left_q">Time Taken (min) &nbsp;</li>
@@ -53,7 +53,7 @@
                </div>
                <div class="q1">
                   <li class="left_q">Attempted&nbsp;</li>
-                  <li class="right_q">:&emsp;<?php echo $attended_questions; ?></li>
+                  <li class="right_q">:&emsp;<?php echo $total_attempted; ?></li>
                </div>
                 <div class="q1">
                   <li class="left_q">Right Answers&nbsp;</li>
@@ -71,7 +71,7 @@
 
                 <div class="q1">
                   <li class="left_q">Av. Time / Question (min)&nbsp;</li>
-                  <li class="right_q">:&emsp;<?php echo $avg_time; ?></li>
+                  <li class="right_q">:&emsp;<?php echo $avg_time_per_question; ?></li>
                </div>
                <div class="q1">
                   <li class="left_q">Reviews Exercised (On Questions) &nbsp;</li>
@@ -80,17 +80,17 @@
                </div>
                 <div class="q1">
                   <li class="left_q">Reviews - (led to Right Answer) &nbsp;</li>
-                   <li class="right_q">:&emsp;<?php  echo $led_right;?></li>
+                   <li class="right_q">:&emsp;<?php  echo $review_led_right;?></li>
                
                </div>
                 <div class="q1">
                   <li class="left_q">Reviews - (led to Wrong Answer) &nbsp;</li>
-                   <li class="right_q">:&emsp;<?php  echo $led_wrong;?></li>
+                   <li class="right_q">:&emsp;<?php  echo $review_led_wrong;?></li>
                
                </div>
                 <div class="q1">
                   <li class="left_q">Reviews - (Didn't Matter - All Choices Wrong)&nbsp;</li>
-                   <li class="right_q">:&emsp;<?php  echo $dosnt_matter;?></li>
+                   <li class="right_q">:&emsp;<?php  echo $review_didnt_matter;?></li>
                
                </div>
                 <div class="q1">
@@ -110,24 +110,24 @@
                </div>
                <div class="q1">
                   <li class="left_q">Total Positive Score  &nbsp;</li>
-                   <li class="right_q">:&emsp;<?php  echo $correct_ans*4;?></li>
+                   <li class="right_q">:&emsp;<?php  echo $total_positive_score;?></li>
                
                </div>
                <div class="q1">
                   <li class="left_q">Total Negative Score  &nbsp;</li>
-                   <li class="right_q">:&emsp;<?php  echo '-'.$wrong_ans;?></li>
+                   <li class="right_q">:&emsp;<?php  echo $total_negative_score;?></li>
                
                </div>
                <div class="q1">
                   <li class="left_q">Final Score &nbsp;</li>
-                  <li class="right_q">:&emsp;<?php echo $result; ?></li>
+                  <li class="right_q">:&emsp;<?php echo $final_score; ?></li>
                </div>
                <?php
                $total_marks = 4*$total_questions;
-                $percent = ($result/$total_marks)*100; ?>
+                ?>
                 <div class="q1">
                   <li class="left_q">Final Score - % Age  &nbsp;</li>
-                  <li class="right_q">:&emsp;<?php echo $percent.'%'; ?></li>
+                  <li class="right_q">:&emsp;<?php echo $final_percentage.'%'; ?></li>
                </div>
                <div class="q1" style="margin-top:20px;">
                   <li class="left_q" style="color:#000;font-size:16px;">Final Status&nbsp;</li>

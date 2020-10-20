@@ -6065,29 +6065,41 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                
             }
           
+          
+            $avg_time = array_filter($avg_time);
+            $average = array_sum($avg_time)/count($avg_time);
+            $data['test_id'] => $test_id; 
+            $data['employee_id']=> $employer_id;
+            $data['total_questions'] = sizeof($questions); 
+           
+            $data['total_questions'] = sizeof($questions);
+            $data['test_start_time'] = $this->input->post('start_time');
+            $data['test_end_time'] = date('d-m-Y H:i:s', strtotime('+5 hours +30 minutes'));
+            $data['max_test_duration'] = $oceanchamp_tests['test_duration']/60;
+            $data['time_taken'] =array_sum($avg_time)/60;
+            $data['avg_time_per_question'] = $average/60;
+            $data['total_attempted'] = $this->input->post('green');
+            $data['total_skipped'] = $this->input->post('gray') + $this->input->post('white');
+            $data['correct_ans'] = $this->input->post('correct');
+            $data['wrong_ans'] = sizeof($questions) - $this->input->post('correct');
+            $data['review_led_right'] = $led_right;
+            $data['review_led_wrong'] = $led_wrong;
+            $data['review_didnt_matter'] =$dosnt_matter;
+            $data['max_achievable_score'] =sizeof($questions)*4;
+            
+           
             if (isset($oceanchamp_tests) && $oceanchamp_tests['final_result'] == 'Y') {
-              $avg_time = array_filter($avg_time);
-               $average = array_sum($avg_time)/count($avg_time);
-                $data['led_right'] = $led_right;
-                $data['led_wrong'] = $led_wrong;
-                $data['dosnt_matter'] = $dosnt_matter;
-                $data['total_questions'] = sizeof($questions);
-                $data['end_time'] = date('d-m-Y H:i:s', strtotime('+5 hours +30 minutes'));
-                $data['start_time'] = $this->input->post('start_time');
-                $data['time_taken'] =array_sum($avg_time)/60;
-                $data['test_duration'] = $oceanchamp_tests['test_duration']/60;
-               
-                // echo $average;
-                $data['avg_time'] = $average;
-                $data['attended_questions'] = $this->input->post('green');
-                $data['skipped_questions'] = $this->input->post('gray') + $this->input->post('white');
-                $data['correct_ans'] = $this->input->post('correct');
-                $data['wrong_ans'] = sizeof($questions) - $this->input->post('correct');
-                if (isset($oceanchamp_tests) && $oceanchamp_tests['final_result'] == 'Y') {
-                    $data['result'] = ($data['correct_ans']*4) - $data['wrong_ans'];
+                    $data['final_score'] = ($data['correct_ans']*4) - $data['wrong_ans'];
+                    $data['total_positive_score'] =$data['correct_ans']*4;
+                    $data['total_negative_score'] =$wrong_ans;
                 } else {
-                    $data['result'] = $data['correct_ans']*4;
+                    $data['final_score'] = $data['correct_ans']*4;
+                    $data['total_positive_score'] =$data['correct_ans']*4;
+                     $data['total_negative_score'] ='0';
                 }
+                 $data['final_percentage'] = ($data['final_score']/$data['max_achievable_score'])*100;
+                $last_id = $this->Master_model->master_insert($data, 'emp_test_report');
+                  if (isset($oceanchamp_tests) && $oceanchamp_tests['final_result'] == 'Y') {
                 $this->load->view('fontend/employer/result_page', $data);
             } else {
                 $this->load->view('fontend/exam/exam_success', $data);
