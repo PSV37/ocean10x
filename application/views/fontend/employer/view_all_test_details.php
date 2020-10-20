@@ -274,7 +274,7 @@ th {
           				<td><?php echo $key['full_name']; ?></td>   
           				<td><?php echo $key['email']; ?></td>
           				<td><?php echo $key['final_percentage']; ?></td>
-          				<td><a href="<?php echo base_url();?>employer/detail_reports?t=<?php echo $key['test_id']; ?>?j=<?php echo $key['js_id']; ?>">Detail Report</a></td>	
+          				<td><a href="<?php echo base_url();?>employer/detail_reports?t=<?php echo $key['test_id']; ?>&j=<?php echo $key['js_id']; ?>">Detail Report</a></td>	
                    
                 </tr>
   			         <?php } ?>

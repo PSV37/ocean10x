@@ -6803,8 +6803,33 @@ public  function upload_folder()
     $js_id  = $this->input->get('j');
     $where = "oceanchamp_tests.company_id = '$employer_id' and js_test_report.test_id ='$test_id' and js_id = '$js_id'";
     $join =array("oceanchamp_tests"=>"oceanchamp_tests.test_id = js_test_report.test_id","js_info"=>"js_info.job_seeker_id=js_test_report.js_id");
-    $data['all_test_details']= $this->Master_model->getMaster('js_test_report', $where , $join , $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
-    print_r($this->db->last_query());die;
+    $all_test_details= $this->Master_model->get_master_row('js_test_report', $select = FALSE, $where , $join );
+
+            $data['test_id'] = $test_id; 
+            $data['employer_id']= $employer_id;
+            $data['total_questions'] = $all_test_details['total_questions']; 
+           
+            
+            $data['test_start_time'] = $all_test_details['test_start_time'];
+            $data['test_end_time'] = $all_test_details['test_end_time'];
+            $data['max_test_duration'] = $all_test_details['max_test_duration'];
+            $data['time_taken'] =$all_test_details['time_taken'];
+            $data['avg_time_per_question'] = $all_test_details['avg_time_per_question'];
+            $data['total_attempted'] = $all_test_details['total_attempted'];
+            $data['total_skipped'] = $all_test_details['total_skipped'];
+            $data['correct_ans'] = $all_test_details['correct_ans'];
+            $data['wrong_ans'] = $all_test_details['wrong_ans'];
+            $data['review_led_right'] = $all_test_details['review_led_right'];
+            $data['review_led_wrong'] = $all_test_details['review_led_wrong'];
+            $data['review_didnt_matter'] =$all_test_details['review_didnt_matter'];
+            $data['max_achievable_score'] =$all_test_details['max_achievable_score'];
+            $data['final_score'] = $all_test_details['final_score'];
+            $data['total_positive_score'] =$all_test_details['total_positive_score'];
+            $data['total_negative_score'] = $all_test_details['total_negative_score'];
+                
+            $data['final_percentage'] = $all_test_details['final_percentage'];
+            $this->load->view('fontend/employer/result_page', $data);
+    // print_r($this->db->last_query());die;
  }
 
 }
