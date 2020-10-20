@@ -66,12 +66,12 @@
                </div>
                <div class="q1">
                   <li class="left_q">Not Attempted&nbsp;</li>
-                  <li class="right_q">:&emsp;<?php echo $skipped_questions; ?></li>
+                  <li class="right_q">:&emsp;<?php echo $total_skipped; ?></li>
                </div>
 
                 <div class="q1">
                   <li class="left_q">Av. Time / Question (min)&nbsp;</li>
-                  <li class="right_q">:&emsp;<?php echo $avg_time_per_question; ?></li>
+                  <li class="right_q">:&emsp;<?php echo round($avg_time_per_question, 2); ?></li>
                </div>
                <div class="q1">
                   <li class="left_q">Reviews Exercised (On Questions) &nbsp;</li>
