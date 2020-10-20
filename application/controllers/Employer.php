@@ -6796,11 +6796,12 @@ public  function upload_folder()
     $this->load->view('fontend/employer/view_all_test_details',$data);
  }
 
- public function detail_reports($test_id,$js_id)
+ public function detail_reports()
  {
     $employer_id = $this->session->userdata('company_profile_id');
-    // $this->input->get()
-    $where = "oceanchamp_tests.company_id = '$employer_id' and test_id ='$test_id'";
+    $test_id  = $this->input->get('t');
+    $js_id  = $this->input->get('j');
+    $where = "oceanchamp_tests.company_id = '$employer_id' and js_test_report.test_id ='$test_id' and js_id = '$js_id'";
     $join =array("oceanchamp_tests"=>"oceanchamp_tests.test_id = js_test_report.test_id","js_info"=>"js_info.job_seeker_id=js_test_report.js_id");
     $data['all_test_details']= $this->Master_model->getMaster('js_test_report', $where , $join , $order = false, $field = false, $select = false,$limit=false,$start=false, $search=false);
  }

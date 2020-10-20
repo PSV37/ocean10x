@@ -294,7 +294,7 @@ th {
            <!--  <div class="col-md-6" style="text-align: right;margin-left: 473px;float: none;"><button class="save_btn">Save</button></div> -->
           
 
-      <
+   
         </div>
       </div>
     </div>
