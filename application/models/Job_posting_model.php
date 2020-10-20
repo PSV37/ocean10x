@@ -364,6 +364,8 @@ order by created_date asc limit 10");
         $this->db->join('education_level','education_level.education_level_id=corporate_cv_bank.js_top_education','LEFT OUTER');
          $this->db->join('tracker_status_master','tracker_status_master.status_id=forwarded_jobs_cv.tracking_status','LEFT OUTER');
         $this->db->join('tracking_stages','tracking_stages.stage_id=forwarded_jobs_cv.tracking_stage','LEFT OUTER');
+        $this->db->join('js_info','js_info.email=corporate_cv_bank.cv_id','LEFT OUTER');
+        $this->db->join('js_test_report','js_test_report.js_id=js_info.job_seeker_id','LEFT OUTER');
         $this->db->order_by('forwarded_jobs_cv.id','desc');
         // $this->db->group_by('job_apply.job_seeker_id');
        
