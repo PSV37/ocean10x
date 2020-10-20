@@ -5931,7 +5931,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
              }
              // print_r($new_array);
              //  echo "<br>";die;
-             $data['unique_count'] = count(array_count_values($ans)) ;
+             $data['reviews_exercised'] = count(array_count_values($ans)) ;
              $i=0;
               $j=0;
               $rarray =array();

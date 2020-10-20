@@ -75,7 +75,7 @@
                </div>
                <div class="q1">
                   <li class="left_q">Reviews Exercised (On Questions) &nbsp;</li>
-                   <li class="right_q">:&emsp;<?php  echo $unique_count;?></li>
+                   <li class="right_q">:&emsp;<?php  echo $reviews_exercised;?></li>
                
                </div>
                 <div class="q1">
