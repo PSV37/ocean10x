@@ -6720,7 +6720,7 @@ public  function upload_folder()
                   array_push($folder_struct, $folders[$n]);
                 }
                  $names = implode('/', $folder_struct);
-                if (!file_exists('cv_folder/' . $names . '/' . $folder_name)) 
+                if(!file_exists('cv_folder/' . $names . '/' . $folder_name)) 
                 {
                  mkdir('cv_folder/' . $names . '/' . $folder_name, 0777, true);
                 }
