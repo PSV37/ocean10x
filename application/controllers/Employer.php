@@ -6786,7 +6786,7 @@ public  function upload_folder()
             //    var_dump($members);
             }
             $string = preg_replace('/[^A-Za-z0-9\-]/', '', $name);
-             echo $string;
+             // echo $string;
             $fileName = 'data-' . $today . '.xlsx';
             // load excel library
             
