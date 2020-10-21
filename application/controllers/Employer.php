@@ -6694,6 +6694,15 @@ public  function upload_folder()
       $paths = $this->input->post('paths');
       $folder_path = explode(',', $paths);
       $uploadDir = 'cv_folder/';
+      $this->load->library('excel');
+            $objPHPExcel = new PHPExcel();
+            $objPHPExcel->setActiveSheetIndex(0);
+            $alpha = 'A';
+            $objPHPExcel->getActiveSheet()->SetCellValue($alpha . '1', 'file name');
+            $alpha++;
+            $objPHPExcel->getActiveSheet()->SetCellValue($alpha . '1', 'Candidate name');
+            $alpha++;
+            $rowCount = 2;
        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
            foreach ($_FILES['files']['name'] as $i => $name) 
            {
@@ -6720,7 +6729,7 @@ public  function upload_folder()
                   array_push($folder_struct, $folders[$n]);
                 }
                  $names = implode('/', $folder_struct);
-                if (!file_exists('cv_folder/' . $names . '/' . $folder_name)) 
+                if(!file_exists('cv_folder/' . $names . '/' . $folder_name)) 
                 {
                  mkdir('cv_folder/' . $names . '/' . $folder_name, 0777, true);
                 }
