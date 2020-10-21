@@ -6694,15 +6694,6 @@ public  function upload_folder()
       $paths = $this->input->post('paths');
       $folder_path = explode(',', $paths);
       $uploadDir = 'cv_folder/';
-      $this->load->library('excel');
-            $objPHPExcel = new PHPExcel();
-            $objPHPExcel->setActiveSheetIndex(0);
-            $alpha = 'A';
-            $objPHPExcel->getActiveSheet()->SetCellValue($alpha . '1', 'file name');
-            $alpha++;
-            $objPHPExcel->getActiveSheet()->SetCellValue($alpha . '1', 'Candidate name');
-            $alpha++;
-            $rowCount = 2;
        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
            foreach ($_FILES['files']['name'] as $i => $name) 
            {
@@ -6729,11 +6720,9 @@ public  function upload_folder()
                   array_push($folder_struct, $folders[$n]);
                 }
                  $names = implode('/', $folder_struct);
-                 $path = 'cv_folder/'.$names;
-                 // print_r($path);
-                if(!file_exists($path)) 
+                if (!file_exists('cv_folder/' . $names . '/' . $folder_name)) 
                 {
-                 mkdir($path, 0777, true);
+                 mkdir('cv_folder/' . $names . '/' . $folder_name, 0777, true);
                 }
                 $folder_path_final = 'cv_folder/' . $names . '/' .$folder_name;
                 $where_curr_folder = "cv_folder.folder_name = '$folder_name' and company_id = '$employer_id'";
