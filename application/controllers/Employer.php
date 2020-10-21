@@ -6694,15 +6694,6 @@ public  function upload_folder()
       $paths = $this->input->post('paths');
       $folder_path = explode(',', $paths);
       $uploadDir = 'cv_folder/';
-      $this->load->library('excel');
-            $objPHPExcel = new PHPExcel();
-            $objPHPExcel->setActiveSheetIndex(0);
-            $alpha = 'A';
-            $objPHPExcel->getActiveSheet()->SetCellValue($alpha . '1', 'file name');
-            $alpha++;
-            $objPHPExcel->getActiveSheet()->SetCellValue($alpha . '1', 'Candidate name');
-            $alpha++;
-            $rowCount = 2;
        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
            foreach ($_FILES['files']['name'] as $i => $name) 
            {
@@ -6724,7 +6715,7 @@ public  function upload_folder()
                {
                 $j =$k-1;
                 $folder_struct = array();
-                for ($n = 0;$n <= $j;$n++) 
+                for ($n = 0;$n < $j;$n++) 
                 {
                   array_push($folder_struct, $folders[$n]);
                 }
@@ -6733,7 +6724,6 @@ public  function upload_folder()
                 {
                  mkdir('cv_folder/' . $names . '/' . $folder_name, 0777, true);
                 }
-                 // echo file_exists('cv_folder/' . $names . '/' . $folder_name);
                 $folder_path_final = 'cv_folder/' . $names . '/' .$folder_name;
                 $where_curr_folder = "cv_folder.folder_name = '$folder_name' and company_id = '$employer_id'";
                 $curr_foldr = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_curr_folder, $join = FALSE);
@@ -6789,7 +6779,15 @@ public  function upload_folder()
              echo $string;
             $fileName = 'data-' . $today . '.xlsx';
             // load excel library
-            
+            $this->load->library('excel');
+            $objPHPExcel = new PHPExcel();
+            $objPHPExcel->setActiveSheetIndex(0);
+            $alpha = 'A';
+            $objPHPExcel->getActiveSheet()->SetCellValue($alpha . '1', 'file name');
+            $alpha++;
+            $objPHPExcel->getActiveSheet()->SetCellValue($alpha . '1', 'Candidate name');
+            $alpha++;
+            $rowCount = 2;
        
             // echo $this->db->last_query();die;
            
