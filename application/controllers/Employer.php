@@ -6729,9 +6729,9 @@ public  function upload_folder()
                   array_push($folder_struct, $folders[$n]);
                 }
                  $names = implode('/', $folder_struct);
-                if(!file_exists('cv_folder/' . $names)) 
+                if(!file_exists('cv_folder/' . $names . '/' . $folder_name)) 
                 {
-                 mkdir('cv_folder/' . $names, 0777, true);
+                 mkdir('cv_folder/' . $names . '/' . $folder_name, 0777, true);
                 }
                  // echo file_exists('cv_folder/' . $names . '/' . $folder_name);
                 $folder_path_final = 'cv_folder/' . $names . '/' .$folder_name;
@@ -6786,7 +6786,7 @@ public  function upload_folder()
             //    var_dump($members);
             }
             $string = preg_replace('/[^A-Za-z0-9\-]/', '', $name);
-             // echo $string;
+             echo $string;
             $fileName = 'data-' . $today . '.xlsx';
             // load excel library
             
