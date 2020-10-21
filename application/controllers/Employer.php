@@ -6777,6 +6777,36 @@ public  function upload_folder()
             }
             $string = preg_replace('/[^A-Za-z0-9\-]/', '', $name);
              echo $string;
+            $fileName = 'data-' . $today . '.xlsx';
+            // load excel library
+            $this->load->library('excel');
+            $objPHPExcel = new PHPExcel();
+            $objPHPExcel->setActiveSheetIndex(0);
+            $alpha = 'A';
+            $objPHPExcel->getActiveSheet()->SetCellValue($alpha . '1', 'file name');
+            $alpha++;
+            $objPHPExcel->getActiveSheet()->SetCellValue($alpha . '1', 'Candidate name');
+            $alpha++;
+            $rowCount = 2;
+       
+            // echo $this->db->last_query();die;
+           
+                $alpha = 'A';
+                $objPHPExcel->getActiveSheet()->SetCellValue($alpha . $rowCount, $name);
+                $alpha++;
+                $objPHPExcel->getActiveSheet()->SetCellValue($alpha . $rowCount, $string);
+                $alpha++;
+               
+                
+               
+        // foreach ($skus as $element) {
+        $filename = "folder_data" . date("jS F Y") . ".csv";
+        //
+        header('Content-Type: application/vnd.ms-excel');
+        header('Content-Disposition: attachment;filename="' . $filename . '"');
+        header('Cache-Control: max-age=0');
+        $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'CSV');
+        $objWriter->save('php://output');
            }
           } 
           }   
