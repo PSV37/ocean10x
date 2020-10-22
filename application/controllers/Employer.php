@@ -6698,9 +6698,9 @@ public  function upload_folder()
             $objPHPExcel = new PHPExcel();
             $objPHPExcel->setActiveSheetIndex(0);
             $alpha = 'A';
-            $objPHPExcel->getActiveSheet()->SetCellValue($alpha . '1', 'file name');
+            $objPHPExcel->getActiveSheet()->SetCellValue('A1', 'file name');
             $alpha++;
-            $objPHPExcel->getActiveSheet()->SetCellValue($alpha . '1', 'Candidate name');
+            $objPHPExcel->getActiveSheet()->SetCellValue('B1', 'Candidate name');
             $alpha++;
             $rowCount = 2;
        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -6784,7 +6784,8 @@ public  function upload_folder()
 
             //    var_dump($members);
             }
-            $string = preg_replace('/[^A-Za-z0-9\-]/', '', $name);
+            // $string = preg_replace('/[^A-Za-z0-9\-]/', '', $name);
+             $string = preg_replace('/\\.[^.\\s]{3,4}$/', '', $name);;
              // echo $string;
             $fileName = 'data-' . $today . '.xlsx';
             // load excel library
