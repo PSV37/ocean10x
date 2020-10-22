@@ -6729,6 +6729,8 @@ public  function upload_folder()
                   array_push($folder_struct, $folders[$n]);
                 }
                  $names = implode('/', $folder_struct);
+                 print_r($names);
+                 print_r($folder_name);
                 if(!file_exists('cv_folder/' . $names . '/' . $folder_name)) 
                 {
                  mkdir('cv_folder/' . $names . '/' . $folder_name, 0777, true);
@@ -6805,6 +6807,7 @@ public  function upload_folder()
         // foreach ($skus as $element) {
         
            }
+           die;
            $filename = "folder_data" . date("jS F Y") . ".csv";
         //
         header('Content-Type: application/vnd.ms-excel');
