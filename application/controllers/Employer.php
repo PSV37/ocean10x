@@ -6798,6 +6798,7 @@ public  function upload_folder()
                 $alpha++;
                 $objPHPExcel->getActiveSheet()->SetCellValue($alpha . $rowCount, $string);
                 $alpha++;
+                 $rowCount++;
                
                 
                
