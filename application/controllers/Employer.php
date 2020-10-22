@@ -6803,14 +6803,15 @@ public  function upload_folder()
                 
                
         // foreach ($skus as $element) {
-        $filename = "folder_data" . date("jS F Y") . ".csv";
+        
+           }
+           $filename = "folder_data" . date("jS F Y") . ".csv";
         //
         header('Content-Type: application/vnd.ms-excel');
         header('Content-Disposition: attachment;filename="' . $filename . '"');
         header('Cache-Control: max-age=0');
         $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'CSV');
         $objWriter->save('php://output');
-           }
           } 
           }   
     }else
