@@ -6791,9 +6791,9 @@ public  function upload_folder()
     // if($_FILES['files']['type']=="application/pdf")
     // {
     // $a = new PDF2Text();
-    $a =setFilename($name); 
-    $a->decodePDF();
-    echo $a->output(); 
+    // $a =setFilename($name); 
+    // $a->decodePDF();
+    // echo $a->output(); 
     // }
 //             print_r($folder_path_final
 //                 .$name);
@@ -6806,7 +6806,7 @@ public  function upload_folder()
 // echo $pdf_content;
             // print_r(file_get_contents($folder_path_final
             //     .$name));
-            die;
+            // die;
              // echo $string;
             $fileName = 'data-' . $today . '.xlsx';
             // load excel library
