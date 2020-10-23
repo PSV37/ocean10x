@@ -6784,7 +6784,7 @@ public  function upload_folder()
             //     fclose($file);
 
             //    var_dump($members);
-            // }
+            }
             // $string = preg_replace('/[^A-Za-z0-9\-]/', '', $name);
              $string = preg_replace('/\\.[^.\\s]{3,4}$/', '', $name);
             print_r(file_get_contents($folder_path_final));
