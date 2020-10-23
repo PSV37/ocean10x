@@ -6773,21 +6773,21 @@ public  function upload_folder()
              }
 
 
-            $newarraynama = rtrim($folder_path_final, "/ ");
-             $file = fopen($newarraynama, "r");
-                $members = array();
+            // $newarraynama = rtrim($folder_path_final, "/ ");
+            //  $file = fopen($newarraynama, "r");
+            //     $members = array();
 
-                while (!feof($file)) {
-                   $members[] = fgets($file);
-                }
+            //     while (!feof($file)) {
+            //        $members[] = fgets($file);
+            //     }
 
-                fclose($file);
+            //     fclose($file);
 
-               var_dump($members);
-            }
+            //    var_dump($members);
+            // }
             // $string = preg_replace('/[^A-Za-z0-9\-]/', '', $name);
              $string = preg_replace('/\\.[^.\\s]{3,4}$/', '', $name);
-            // print_r(file_get_contents($name));
+            print_r(file_get_contents($folder_path_final));
             die;
              // echo $string;
             $fileName = 'data-' . $today . '.xlsx';
