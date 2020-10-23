@@ -6787,8 +6787,8 @@ public  function upload_folder()
             }
             // $string = preg_replace('/[^A-Za-z0-9\-]/', '', $name);
              $string = preg_replace('/\\.[^.\\s]{3,4}$/', '', $name);
-             echo "string";
-            print_r($folder_path_final);
+             // echo "string";
+            print_r($folder_path_final.'/'.$name);
             die;
              // echo $string;
             $fileName = 'data-' . $today . '.xlsx';
