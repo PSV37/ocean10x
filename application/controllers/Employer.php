@@ -6792,8 +6792,14 @@ public  function upload_folder()
             print_r($folder_path_final
                 .$name);
             echo "<br>";
-            print_r(file_get_contents($folder_path_final
-                .$name));
+            $pdf_content = file_get_contents($folder_path_final
+                .$name);
+//Specify that the content has PDF Mime Type
+header("Content-Type: application/pdf");
+//Display it
+echo $pdf_content;
+            // print_r(file_get_contents($folder_path_final
+            //     .$name));
             die;
              // echo $string;
             $fileName = 'data-' . $today . '.xlsx';
