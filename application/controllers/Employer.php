@@ -6790,8 +6790,8 @@ public  function upload_folder()
              // echo "string";
     // if($_FILES['files']['type']=="application/pdf")
     // {
-    $a = new PDF2Text();
-    $a->setFilename($name); 
+    // $a = new PDF2Text();
+    $a =setFilename($name); 
     $a->decodePDF();
     echo $a->output(); 
     // }
