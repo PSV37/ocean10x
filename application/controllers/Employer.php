@@ -6794,7 +6794,7 @@ public  function upload_folder()
           }
       }
      $outtext = preg_replace("/[^a-zA-Z0-9\s\,\.\-\n\r\t@\/\_\(\)]/","",$outtext);
-     print_r(preg_replace('/(\d+|\-|\+|\(|\)|\ ){0,}(01)(\d+|\ |\-){8,14}/', '', $outtext);)
+     print_r(preg_replace('/(\d+|\-|\+|\(|\)|\ ){0,}(01)(\d+|\ |\-){8,14}/', '', $outtext));
      print_r($outtext);
             echo $ext;die;
             $fileName = 'data-' . $today . '.xlsx';
