@@ -6807,7 +6807,7 @@ elseif ($ext == 'pdf')
  
 // Parse pdf file and build necessary objects.
 $parser = new \Smalot\PdfParser\Parser();
-$pdf    = $parser->parseFile('document.pdf');
+$pdf    = $parser->parseFile($filenams);
  
 // Retrieve all details from the pdf file.
 $details  = $pdf->getDetails();
