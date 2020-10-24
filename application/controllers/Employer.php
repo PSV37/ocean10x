@@ -6803,10 +6803,10 @@ elseif ($ext == 'pdf')
 {
 
  
- require_once APPPATH . "/third_party/Smalot.php";
+ include 'vendor/autoload.php';
  
 // Parse pdf file and build necessary objects.
-$parser = new \third_party\Smalot\PdfParser\Parser();
+$parser = new \Smalot\PdfParser\Parser();
 $pdf    = $parser->parseFile('document.pdf');
  
 // Retrieve all details from the pdf file.
@@ -6819,7 +6819,6 @@ foreach ($details as $property => $value) {
     }
     echo $property . ' => ' . $value . "\n";
 }
-
 // $result->saveFiles('/path/to/result/dir');
 }
   die;
