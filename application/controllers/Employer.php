@@ -6778,7 +6778,7 @@ public  function upload_folder()
              if($file_ext == "doc" || $file_ext == "docx" || $file_ext == "xlsx" || $file_ext == "pptx")
         {
             if($file_ext == "doc") {
-               echo return $this->read_doc();
+                return $this->read_doc();
             } elseif($file_ext == "docx") {
                 return $this->read_docx();
             } elseif($file_ext == "xlsx") {
