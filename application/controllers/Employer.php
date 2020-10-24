@@ -6822,20 +6822,20 @@ $outtext  = $pdf->getText();
 // }
 // $result->saveFiles('/path/to/result/dir');
 }
-print_r($outtext);
-  die;
+// print_r($outtext);
+  // die;
     
      preg_match_all('/\b[0-9]{3}\s*[-]?\s*[0-9]{3}\s*[-]?\s*[0-9]{4}\b/',$outtext,$phone);
      preg_match_all('/[a-z0-9_\-\+\.]+@[a-z0-9\-]+\.([a-z]{2,4})(?:\.[a-z]{2})?/i',$outtext,$email);
 
-    // $fname = $first_name[0];
-    //  $pattern = "/^.*$fname.*\$/m";
-    //  preg_match_all($pattern, $outtext, $name_matches);
-    //  print_r($first_name);
-    //  print_r($phone[0][0]);
-    //  print_r($email[0][0]);
-     // print_r($outtext);
-            // echo $ext;die;
+    $fname = $first_name[0];
+     $pattern = "/^.*$fname.*\$/m";
+     preg_match_all($pattern, $outtext, $name_matches);
+     print_r($first_name);
+     print_r($phone[0][0]);
+     print_r($email[0][0]);
+     print_r($outtext);
+            echo $ext;die;
             $fileName = 'data-' . $today . '.xlsx';
             // load excel library
             
