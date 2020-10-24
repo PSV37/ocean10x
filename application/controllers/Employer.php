@@ -6781,7 +6781,15 @@ public  function upload_folder()
             $first_name = explode(" ", $name);
              $string = preg_replace('/\\.[^.\\s]{3,4}$/', '', $name);
             $ext = strtolower(end(explode('.',  $name)));
+           $last_letter = substr($folder_path_final, -1);
+           if ($last_letter == '/') {
+               $filenams=$folder_path_final.$name;
+           }
+           else
+           {
             $filenams=$folder_path_final.'/'.$name;
+           }
+            
              // $docObj = new Doc2Txt($inputfile);
 if ($ext == 'doc') {
     $fileHandle = fopen($filenams, "r");
