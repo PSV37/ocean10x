@@ -6831,11 +6831,11 @@ $outtext  = $pdf->getText();
     $fname = $first_name[0];
      $pattern = "/^.*$fname.*\$/m";
      preg_match_all($pattern, $outtext, $name_matches);
-     print_r($first_name);
-     print_r($phone[0][0]);
-     print_r($email[0][0]);
-     print_r($outtext);
-            echo $ext;die;
+     // print_r($first_name);
+     // print_r($phone[0][0]);
+     // print_r($email[0][0]);
+     // // print_r($outtext);
+     //        echo $ext;die;
             $fileName = 'data-' . $today . '.xlsx';
             // load excel library
             
