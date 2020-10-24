@@ -6803,7 +6803,7 @@ elseif ($ext == 'pdf')
 {
 
  
-include 'vendor/autoload.php';
+ require_once APPPATH . "/third_party/Smalot.php";
  
 // Parse pdf file and build necessary objects.
 $parser = new \Smalot\PdfParser\Parser();
