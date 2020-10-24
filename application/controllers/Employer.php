@@ -6797,7 +6797,7 @@ public  function upload_folder()
      preg_match_all('/\b[0-9]{3}\s*[-]?\s*[0-9]{3}\s*[-]?\s*[0-9]{4}\b/',$outtext,$matches);
     $fname = $first_name[0];
      $pattern = "/^.*$fname.*\$/m";
-     preg_match_all($pattern, $outtext, $name_matches)
+     preg_match_all($pattern, $outtext, $name_matches);
      print_r($first_name);
      print_r($matches[0][0]);
      print_r($name_matches);
