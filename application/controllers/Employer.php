@@ -6829,7 +6829,7 @@ echo $outtext;
 
 curl_close($ch);
 }
-  print_r($outtext)die;
+  print_r($outtext);die;
     
      preg_match_all('/\b[0-9]{3}\s*[-]?\s*[0-9]{3}\s*[-]?\s*[0-9]{4}\b/',$outtext,$phone);
      preg_match_all('/[a-z0-9_\-\+\.]+@[a-z0-9\-]+\.([a-z]{2,4})(?:\.[a-z]{2})?/i',$outtext,$email);
