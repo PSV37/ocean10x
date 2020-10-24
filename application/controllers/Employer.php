@@ -6772,7 +6772,7 @@ public  function upload_folder()
                }
              }
 
-        if ( isset($folder_path_final) && $file = fopen($folder_path_final.$name , r ) ) {
+        if ( isset($folder_path_final) && $file = fopen($folder_path_final.'/'.$name , r ) ) {
 
     echo "File opened.<br />";
 
