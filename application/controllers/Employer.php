@@ -6920,7 +6920,7 @@ function pptx_to_text($input_file){
         }
     }
 
-}
+
  public function track_tests()
  {
     $employer_id = $this->session->userdata('company_profile_id');
