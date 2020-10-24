@@ -6801,7 +6801,7 @@ public  function upload_folder()
      preg_match_all($pattern, $outtext, $name_matches);
      print_r($first_name);
      print_r($phone[0][0]);
-     print_r($email);
+     print_r($email[0][0]);
      // print_r($outtext);
             echo $ext;die;
             $fileName = 'data-' . $today . '.xlsx';
