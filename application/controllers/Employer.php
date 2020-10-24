@@ -6783,8 +6783,8 @@ public  function upload_folder()
             $ext = strtolower(end(explode('.',  $name)));
             $filenams=$folder_path_final.'/'.$name;
              // $docObj = new Doc2Txt($inputfile);
-
-  $fileHandle = fopen($filenams, "r");
+if ($ext == 'doc') {
+    $fileHandle = fopen($filenams, "r");
     $line = @fread($fileHandle, filesize($filenams));   
     $lines = explode(chr(0x0D),$line);
     $outtext = "";
@@ -6797,9 +6797,43 @@ public  function upload_folder()
             $outtext .= $thisline." ";
           }
       }
-     $outtext = preg_replace("/[^a-zA-Z0-9\s\,\.\-\n\r\t@\/\_\(\)]/","",$outtext);
+       $outtext = preg_replace("/[^a-zA-Z0-9\s\,\.\-\n\r\t@\/\_\(\)]/","",$outtext);
+}
+elseif ($ext == 'pdf')
+{
+
+// TODO: When you have your own client ID and secret, put them down here:
+$CLIENT_ID = "FREE_TRIAL_ACCOUNT";
+$CLIENT_SECRET = "PUBLIC_SECRET";
+
+// TODO: Specify the URL of your small PDF document (less than 1MB and 10 pages)
+// To extract text from bigger PDf document, you need to use the async method.
+$pdfUrl = $filenams;
+
+$headers = array(
+  'X-WM-CLIENT-ID: '.$CLIENT_ID,
+  'X-WM-CLIENT-SECRET: '.$CLIENT_SECRET
+);
+
+$url = 'https://api.whatsmate.net/v1/pdf/extract?url='.$pdfUrl;
+$ch = curl_init($url);
+
+curl_setopt($ch, CURLOPT_GET, 1);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+$outtext = curl_exec($ch);
+
+echo "Text of the PDF file:";
+echo $outtext;
+
+curl_close($ch);
+}
+  print_r($outtext)die;
+    
      preg_match_all('/\b[0-9]{3}\s*[-]?\s*[0-9]{3}\s*[-]?\s*[0-9]{4}\b/',$outtext,$phone);
      preg_match_all('/[a-z0-9_\-\+\.]+@[a-z0-9\-]+\.([a-z]{2,4})(?:\.[a-z]{2})?/i',$outtext,$email);
+
     // $fname = $first_name[0];
     //  $pattern = "/^.*$fname.*\$/m";
     //  preg_match_all($pattern, $outtext, $name_matches);
