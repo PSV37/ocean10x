@@ -6817,8 +6817,8 @@ $headers = array(
 
 $url = 'https://api.whatsmate.net/v1/pdf/extract?url='.$pdfUrl;
 $ch = curl_init($url);
-
-curl_setopt($ch, CURLOPT_GET, 1);
+echo $url;
+// curl_setopt($ch, CURLOPT_GET, 1);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
