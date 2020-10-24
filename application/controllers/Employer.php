@@ -6794,13 +6794,14 @@ public  function upload_folder()
           }
       }
      $outtext = preg_replace("/[^a-zA-Z0-9\s\,\.\-\n\r\t@\/\_\(\)]/","",$outtext);
-     preg_match_all('/\b[0-9]{3}\s*[-]?\s*[0-9]{3}\s*[-]?\s*[0-9]{4}\b/',$outtext,$matches);
+     preg_match_all('/\b[0-9]{3}\s*[-]?\s*[0-9]{3}\s*[-]?\s*[0-9]{4}\b/',$outtext,$phone);
+     preg_match_all('/[a-z0-9_\-\+\.]+@[a-z0-9\-]+\.([a-z]{2,4})(?:\.[a-z]{2})?/i',$outtext,$email);
     $fname = $first_name[0];
      $pattern = "/^.*$fname.*\$/m";
      preg_match_all($pattern, $outtext, $name_matches);
      print_r($first_name);
-     print_r($matches[0][0]);
-     print_r($name_matches);
+     print_r($phone[0][0]);
+     print_r($email);
      // print_r($outtext);
             echo $ext;die;
             $fileName = 'data-' . $today . '.xlsx';
