@@ -6746,7 +6746,7 @@ public  function upload_folder()
                 $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join = FALSE);
                  // print_r($parent);
                  // print_r($folder_name); die;
-                if ($parent && empty($curr_foldr)) 
+                if ($parent) 
                 {
                   $insert_folder_data['folder_name'] = $folder_name;
                   $insert_folder_data['company_id'] = $employer_id;
