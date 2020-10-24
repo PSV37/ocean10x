@@ -6728,15 +6728,15 @@ public  function upload_folder()
                {
                 $j =$k-1;
                 $folder_struct = array();
-                for ($n = 0;$n <= $j;$n++) 
+                for ($n = 0;$n < $k;$n++) 
                 {
                   array_push($folder_struct, $folders[$n]);
                 }
                  $names = implode('/', $folder_struct);
-                 
-                if(!file_exists('cv_folder/' . $names . '/' . $folder_name) && !($n==$j) ) 
+                
+                if(!file_exists('cv_folder/'.$names.'/'.$folder_name) ) 
                 {
-                 mkdir('cv_folder/' . $names . '/' . $folder_name, 0777, true);
+                 mkdir('cv_folder/'.$names.'/'.$folder_name, 0777, true);
                 }
                 $folder_path_final = 'cv_folder/' . $names . '/' .$folder_name;
                 $where_curr_folder = "cv_folder.folder_name = '$folder_name' and company_id = '$employer_id'";
