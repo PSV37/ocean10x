@@ -6798,7 +6798,7 @@ if ($ext == 'doc') {
           }
       }
        $outtext = preg_replace("/[^a-zA-Z0-9\s\,\.\-\n\r\t@\/\_\(\)]/","",$outtext);
-       $tags = get_meta_tags($filenams);
+       // $tags = get_meta_tags($filenams);
 }
 elseif ($ext == 'pdf')
 {
@@ -6812,8 +6812,8 @@ $pdf    = $parser->parseFile($filenams);
 $outtext  = $pdf->getText();
 
 }
-print_r($tags);
-  die;
+// print_r($tags);
+//   die;
     
      preg_match_all('/\b[0-9]{3}\s*[-]?\s*[0-9]{3}\s*[-]?\s*[0-9]{4}\b/',$outtext,$phone);
      preg_match_all('/[a-z0-9_\-\+\.]+@[a-z0-9\-]+\.([a-z]{2,4})(?:\.[a-z]{2})?/i',$outtext,$email);
