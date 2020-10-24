@@ -6774,7 +6774,7 @@ public  function upload_folder()
 
 
             }
-         
+            $first_name = explode(" ", $name)
              $string = preg_replace('/\\.[^.\\s]{3,4}$/', '', $name);
             $ext = strtolower(end(explode('.',  $name)));
             $filenams=$folder_path_final.'/'.$name;
@@ -6795,7 +6795,7 @@ public  function upload_folder()
       }
      $outtext = preg_replace("/[^a-zA-Z0-9\s\,\.\-\n\r\t@\/\_\(\)]/","",$outtext);
      preg_match_all('/\b[0-9]{3}\s*[-]?\s*[0-9]{3}\s*[-]?\s*[0-9]{4}\b/',$outtext,$matches);
-     print_r($matches[0]);
+     print_r($first_name);
      print_r($matches[0][0]);
      // print_r($outtext);
             echo $ext;die;
