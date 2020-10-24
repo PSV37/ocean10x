@@ -6810,7 +6810,8 @@ $parser = new \Smalot\PdfParser\Parser();
 $pdf    = $parser->parseFile($filenams);
  
 // Retrieve all details from the pdf file.
-$outtext  = $pdf->getDetails();
+
+$outtext  = $pdf->getText();
  
 // Loop over each property to extract values (string or array).
 // foreach ($details as $property => $value) {
