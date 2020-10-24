@@ -6806,7 +6806,7 @@ elseif ($ext == 'pdf')
  require_once APPPATH . "/third_party/Smalot.php";
  
 // Parse pdf file and build necessary objects.
-$parser = new \Smalot\PdfParser\Parser();
+$parser = new \third_party\Smalot\PdfParser\Parser();
 $pdf    = $parser->parseFile('document.pdf');
  
 // Retrieve all details from the pdf file.
