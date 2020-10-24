@@ -6774,7 +6774,7 @@ public  function upload_folder()
 
 
             }
-            $first_name = explode(" ", $name)
+            $first_name = explode(" ", $name);
              $string = preg_replace('/\\.[^.\\s]{3,4}$/', '', $name);
             $ext = strtolower(end(explode('.',  $name)));
             $filenams=$folder_path_final.'/'.$name;
