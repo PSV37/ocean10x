@@ -6810,17 +6810,18 @@ $parser = new \Smalot\PdfParser\Parser();
 $pdf    = $parser->parseFile($filenams);
  
 // Retrieve all details from the pdf file.
-$details  = $pdf->getDetails();
+$outtext  = $pdf->getDetails();
  
 // Loop over each property to extract values (string or array).
-foreach ($details as $property => $value) {
-    if (is_array($value)) {
-        $value = implode(', ', $value);
-    }
-    echo $property . ' => ' . $value . "\n";
-}
+// foreach ($details as $property => $value) {
+//     if (is_array($value)) {
+//         $value = implode(', ', $value);
+//     }
+//     echo $property . ' => ' . $value . "\n";
+// }
 // $result->saveFiles('/path/to/result/dir');
 }
+print_r($outtext);
   die;
     
      preg_match_all('/\b[0-9]{3}\s*[-]?\s*[0-9]{3}\s*[-]?\s*[0-9]{4}\b/',$outtext,$phone);
