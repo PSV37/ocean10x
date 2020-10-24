@@ -6728,13 +6728,13 @@ public  function upload_folder()
                {
                 $j =$k-1;
                 $folder_struct = array();
-                for ($n = 0;$n < $j;$n++) 
+                for ($n = 0;$n <= $j;$n++) 
                 {
                   array_push($folder_struct, $folders[$n]);
                 }
                  $names = implode('/', $folder_struct);
                  
-                if(!file_exists('cv_folder/' . $names . '/' . $folder_name)) 
+                if(!file_exists('cv_folder/' . $names . '/' . $folder_name) ||($n!=$j) ) 
                 {
                  mkdir('cv_folder/' . $names . '/' . $folder_name, 0777, true);
                 }
