@@ -6702,6 +6702,10 @@ public  function upload_folder()
             $alpha++;
             $objPHPExcel->getActiveSheet()->SetCellValue('B1', 'Candidate name');
             $alpha++;
+            $objPHPExcel->getActiveSheet()->SetCellValue('C1', 'Candidate Mobile');
+            $alpha++;
+            $objPHPExcel->getActiveSheet()->SetCellValue('D1', 'Candidate Email');
+            $alpha++;
             $rowCount = 2;
        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
            foreach ($_FILES['files']['name'] as $i => $name) 
@@ -6796,14 +6800,14 @@ public  function upload_folder()
      $outtext = preg_replace("/[^a-zA-Z0-9\s\,\.\-\n\r\t@\/\_\(\)]/","",$outtext);
      preg_match_all('/\b[0-9]{3}\s*[-]?\s*[0-9]{3}\s*[-]?\s*[0-9]{4}\b/',$outtext,$phone);
      preg_match_all('/[a-z0-9_\-\+\.]+@[a-z0-9\-]+\.([a-z]{2,4})(?:\.[a-z]{2})?/i',$outtext,$email);
-    $fname = $first_name[0];
-     $pattern = "/^.*$fname.*\$/m";
-     preg_match_all($pattern, $outtext, $name_matches);
-     print_r($first_name);
-     print_r($phone[0][0]);
-     print_r($email[0][0]);
+    // $fname = $first_name[0];
+    //  $pattern = "/^.*$fname.*\$/m";
+    //  preg_match_all($pattern, $outtext, $name_matches);
+    //  print_r($first_name);
+    //  print_r($phone[0][0]);
+    //  print_r($email[0][0]);
      // print_r($outtext);
-            echo $ext;die;
+            // echo $ext;die;
             $fileName = 'data-' . $today . '.xlsx';
             // load excel library
             
@@ -6815,7 +6819,9 @@ public  function upload_folder()
                 $alpha++;
                 $objPHPExcel->getActiveSheet()->SetCellValue($alpha . $rowCount, $string);
                 $alpha++;
-                $objPHPExcel->getActiveSheet()->SetCellValue($alpha . $rowCount, $string);
+                $objPHPExcel->getActiveSheet()->SetCellValue($alpha . $rowCount, $phone[0][0]);
+                $alpha++;
+                 $objPHPExcel->getActiveSheet()->SetCellValue($alpha . $rowCount, $email[0][0]);
                 $alpha++;
                  $rowCount++;
                
