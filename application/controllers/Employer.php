@@ -6790,7 +6790,7 @@ public  function upload_folder()
             $pdf_content = file_get_contents($folder_path_final
                 .$name);
 //Specify that the content has PDF Mime Type
-header("Content-Type: text/html");
+header("Content-Type: application/pdf");
 // Display it
 echo $pdf_content;
             // print_r(file_get_contents($folder_path_final
