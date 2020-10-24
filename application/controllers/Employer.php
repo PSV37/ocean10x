@@ -6794,7 +6794,7 @@ public  function upload_folder()
           }
       }
      $outtext = preg_replace("/[^a-zA-Z0-9\s\,\.\-\n\r\t@\/\_\(\)]/","",$outtext);
-     preg_match_all('/\b[0-9]{3}\s*-\s*[0-9]{3}\s*-\s*[0-9]{4}\b/',$outtext,$matches);
+     preg_match_all('/\b[0-9]{3}\s*[-]?\s*[0-9]{3}\s*[-]?\s*[0-9]{4}\b/',$outtext,$matches);
      print_r($matches);
      // print_r($outtext);
             echo $ext;die;
