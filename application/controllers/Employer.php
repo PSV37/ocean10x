@@ -6798,32 +6798,22 @@ if ($ext == 'doc') {
           }
       }
        $outtext = preg_replace("/[^a-zA-Z0-9\s\,\.\-\n\r\t@\/\_\(\)]/","",$outtext);
+       $tags = get_meta_tags($filenams);
 }
 elseif ($ext == 'pdf')
 {
 
- 
  include 'system/vendor/autoload.php';
  
-// Parse pdf file and build necessary objects.
 $parser = new \Smalot\PdfParser\Parser();
 $pdf    = $parser->parseFile($filenams);
- 
-// Retrieve all details from the pdf file.
+
 
 $outtext  = $pdf->getText();
- 
-// Loop over each property to extract values (string or array).
-// foreach ($details as $property => $value) {
-//     if (is_array($value)) {
-//         $value = implode(', ', $value);
-//     }
-//     echo $property . ' => ' . $value . "\n";
-// }
-// $result->saveFiles('/path/to/result/dir');
+
 }
-// print_r($outtext);
-  // die;
+print_r($tags);
+  die;
     
      preg_match_all('/\b[0-9]{3}\s*[-]?\s*[0-9]{3}\s*[-]?\s*[0-9]{4}\b/',$outtext,$phone);
      preg_match_all('/[a-z0-9_\-\+\.]+@[a-z0-9\-]+\.([a-z]{2,4})(?:\.[a-z]{2})?/i',$outtext,$email);
