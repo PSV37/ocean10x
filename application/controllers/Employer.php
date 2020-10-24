@@ -6772,73 +6772,26 @@ public  function upload_folder()
                }
              }
 
-        if ( isset($folder_path_final) && $file = fopen($folder_path_final.'/'.$name , r ) ) {
-
-    echo "File opened.<br />";
-
-    $firstline = fgets ($file, 4096 );
-        //Gets the number of fields, in CSV-files the names of the fields are mostly given in the first line
-    $num = strlen($firstline) - strlen(str_replace(";", "", $firstline));
-
-        //save the different fields of the firstline in an array called fields
-    $fields = array();
-    $fields = explode( ";", $firstline, ($num+1) );
-
-    $line = array();
-    $i = 0;
-
-        //CSV: one line is one record and the cells/fields are seperated by ";"
-        //so $dsatz is an two dimensional array saving the records like this: $dsatz[number of record][number of cell]
-    while ( $line[$i] = fgets ($file, 4096) ) {
-
-        $dsatz[$i] = array();
-        $dsatz[$i] = explode( ";", $line[$i], ($num+1) );
-
-        $i++;
-    }
-
-        echo "<table>";
-        echo "<tr>";
-    for ( $k = 0; $k != ($num+1); $k++ ) {
-        echo "<td>" . $fields[$k] . "</td>";
-    }
-        echo "</tr>";
-
-    foreach ($dsatz as $key => $number) {
-                //new table row for every record
-        echo "<tr>";
-        foreach ($number as $k => $content) {
-                        //new table cell for every field of the record
-            echo "<td>" . $content . "</td>";
-        }
-    }
-
-    echo "</table>";
-}die();
+       
             }
+             $file_ext = strtolower(end(explode('.', $name)));
+             if($file_ext == "doc" || $file_ext == "docx" || $file_ext == "xlsx" || $file_ext == "pptx")
+        {
+            if($file_ext == "doc") {
+               echo return $this->read_doc();
+            } elseif($file_ext == "docx") {
+                return $this->read_docx();
+            } elseif($file_ext == "xlsx") {
+                return $this->xlsx_to_text();
+            }elseif($file_ext == "pptx") {
+                return $this->pptx_to_text();
+            }
+        } else {
+            return "Invalid File Type";
+        }
             // $string = preg_replace('/[^A-Za-z0-9\-]/', '', $name);
              $string = preg_replace('/\\.[^.\\s]{3,4}$/', '', $name);
-             // echo "string";
-    // if($_FILES['files']['type']=="application/pdf")
-    // {
-    // $a = new PDF2Text();
-    // $a =setFilename($name); 
-    // $a->decodePDF();
-    // echo $a->output(); 
-    // }
-//             print_r($folder_path_final
-//                 .$name);
-//             echo "<br>";
-//             $pdf_content = file_get_contents($folder_path_final
-//                 .$name);
-// //Specify that the content has PDF Mime Type
-// header("Content-Type: text/html");
-//Display it
-// echo $pdf_content;
-            // print_r(file_get_contents($folder_path_final
-            //     .$name));
-            // die;
-             // echo $string;
+ 
             $fileName = 'data-' . $today . '.xlsx';
             // load excel library
             
@@ -6871,7 +6824,103 @@ public  function upload_folder()
      redirect('employer/corporate_cv_bank');
     }
  }
+ private function read_docx(){
 
+        $striped_content = '';
+        $content = '';
+
+        $zip = zip_open($this->filename);
+
+        if (!$zip || is_numeric($zip)) return false;
+
+        while ($zip_entry = zip_read($zip)) {
+
+
+            if (zip_entry_name($zip_entry) != "word/document.xml") continue;
+
+            $content .= zip_entry_read($zip_entry, zip_entry_filesize($zip_entry));
+
+            zip_entry_close($zip_entry);
+        }// end while
+
+        zip_close($zip);
+
+        $content = str_replace('</w:r></w:p></w:tc><w:tc>', " ", $content);
+        $content = str_replace('</w:r></w:p>', "\r\n", $content);
+        $striped_content = strip_tags($content);
+
+        return $striped_content;
+    }
+
+ /************************excel sheet************************************/
+
+function xlsx_to_text($input_file){
+    $xml_filename = "xl/sharedStrings.xml"; //content file name
+    $zip_handle = new ZipArchive;
+    $output_text = "";
+    if(true === $zip_handle->open($input_file)){
+        if(($xml_index = $zip_handle->locateName($xml_filename)) !== false){
+            $xml_datas = $zip_handle->getFromIndex($xml_index);
+            $xml_handle = DOMDocument::loadXML($xml_datas, LIBXML_NOENT | LIBXML_XINCLUDE | LIBXML_NOERROR | LIBXML_NOWARNING);
+            $output_text = strip_tags($xml_handle->saveXML());
+        }else{
+            $output_text .="";
+        }
+        $zip_handle->close();
+    }else{
+    $output_text .="";
+    }
+    return $output_text;
+}
+
+/*************************power point files*****************************/
+function pptx_to_text($input_file){
+    $zip_handle = new ZipArchive;
+    $output_text = "";
+    if(true === $zip_handle->open($input_file)){
+        $slide_number = 1; //loop through slide files
+        while(($xml_index = $zip_handle->locateName("ppt/slides/slide".$slide_number.".xml")) !== false){
+            $xml_datas = $zip_handle->getFromIndex($xml_index);
+            $xml_handle = DOMDocument::loadXML($xml_datas, LIBXML_NOENT | LIBXML_XINCLUDE | LIBXML_NOERROR | LIBXML_NOWARNING);
+            $output_text .= strip_tags($xml_handle->saveXML());
+            $slide_number++;
+        }
+        if($slide_number == 1){
+            $output_text .="";
+        }
+        $zip_handle->close();
+    }else{
+    $output_text .="";
+    }
+    return $output_text;
+}
+
+
+    public function convertToText() {
+
+        if(isset($this->filename) && !file_exists($this->filename)) {
+            return "File Not exists";
+        }
+
+        $fileArray = pathinfo($this->filename);
+        $file_ext  = $fileArray['extension'];
+        if($file_ext == "doc" || $file_ext == "docx" || $file_ext == "xlsx" || $file_ext == "pptx")
+        {
+            if($file_ext == "doc") {
+                return $this->read_doc();
+            } elseif($file_ext == "docx") {
+                return $this->read_docx();
+            } elseif($file_ext == "xlsx") {
+                return $this->xlsx_to_text();
+            }elseif($file_ext == "pptx") {
+                return $this->pptx_to_text();
+            }
+        } else {
+            return "Invalid File Type";
+        }
+    }
+
+}
  public function track_tests()
  {
     $employer_id = $this->session->userdata('company_profile_id');
