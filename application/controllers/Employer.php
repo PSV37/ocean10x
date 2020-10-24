@@ -6738,10 +6738,23 @@ public  function upload_folder()
                 // {
                 //  mkdir('cv_folder/'.$names.'/'.$folder_name, 0777, true);
                 // }
-                 if(!file_exists('cv_folder/'.$folder_name.'/'.$names) ) 
-                {
-                 mkdir('cv_folder/'.$folder_name.'/'.$names, 0777, true);
-                }
+                 $filepath = 'cv_folder/'.$names.'/'.$folder_name;
+// is_dir is more appropriate than file_exists here
+if (!is_dir(dirname($filepath))) {
+    if (true !== @mkdir(dirname($filepath), 0777, TRUE)) {
+        if (is_dir(dirname($filepath))) {
+            // The directory was created by a concurrent process, so do nothing, keep calm and carry on
+        } else {
+            // There is another problem, we manage it (you could manage it with exceptions as well)
+            $error = error_get_last();
+            trigger_error($error['message'], E_USER_WARNING);
+        }
+    }
+}
+                //  if(!file_exists('cv_folder/'.$folder_name.'/'.$names) ) 
+                // {
+                //  mkdir('cv_folder/'.$folder_name.'/'.$names, 0777, true);
+                // }
                 $folder_path_final = 'cv_folder/' . $names . '/' .$folder_name;
                 $where_curr_folder = "cv_folder.folder_name = '$folder_name' and company_id = '$employer_id'";
                 $curr_foldr = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_curr_folder, $join = FALSE);
