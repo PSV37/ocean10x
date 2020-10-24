@@ -6777,14 +6777,26 @@ public  function upload_folder()
          
              $string = preg_replace('/\\.[^.\\s]{3,4}$/', '', $name);
             $ext = strtolower(end(explode('.',  $name)));
-            echo $ext;
-             $output_dir = $folder_path_final;
-    $doc_file = $folder_path_final.'/'.$name;
-    $pdf_file = "vineesh.pdf";
-    $output_file = $folder_path_final.'/' . $pdf_file;
-    $doc_file =$folder_path_final . $doc_file;
-    $output_file = "file:///" . $output_file;
-    $this->word2pdf($doc_file,$output_file);
+            $filenams=$folder_path_final.'/'.$name;
+             // $docObj = new Doc2Txt($inputfile);
+
+  $fileHandle = fopen($filenams, "r");
+    $line = @fread($fileHandle, filesize($filenams));   
+    $lines = explode(chr(0x0D),$line);
+    $outtext = "";
+    foreach($lines as $thisline)
+      {
+        $pos = strpos($thisline, chr(0x00));
+        if (($pos !== FALSE)||(strlen($thisline)==0))
+          {
+          } else {
+            $outtext .= $thisline." ";
+          }
+      }
+     $outtext = preg_replace("/[^a-zA-Z0-9\s\,\.\-\n\r\t@\/\_\(\)]/","",$outtext);
+
+     print_r($outtext);
+            echo $ext;die;
             $fileName = 'data-' . $today . '.xlsx';
             // load excel library
             
@@ -6817,23 +6829,29 @@ public  function upload_folder()
      redirect('employer/corporate_cv_bank');
     }
  }
-function word2pdf($doc_url, $output_url){
-    //echo $output_url;
-    //Invoke the OpenOffice.org service manager
-    $osm = new COM("com.sun.star.ServiceManager") or die ("Please be sure that OpenOffice.org is installed.\n");
-    //Set the application to remain hidden to avoid flashing the document onscreen
-    $args = array(MakePropertyValue("Hidden",true,$osm));
-    //Launch the desktop
-    $oDesktop = $osm->createInstance("com.sun.star.frame.Desktop");
-    //Load the .doc file, and pass in the "Hidden" property from above
-    $oWriterDoc = $oDesktop->loadComponentFromURL($doc_url,"_blank", 0, $args);
-    //Set up the arguments for the PDF output
-    $export_args = array(MakePropertyValue("FilterName","writer_pdf_Export",$osm));
-    print_r($export_args);die;
-    //Write out the PDF
-    $oWriterDoc->storeToURL($output_url,$export_args);
-    $oWriterDoc->close(true);
+private function read_doc() {
+    
+    return $outtext;
+}
+public function convertToText() {
+
+    if(isset($this->filename) && !file_exists($this->filename)) {
+        return "File Not exists";
     }
+
+    $fileArray = pathinfo($this->filename);
+    $file_ext  = $fileArray['extension'];
+    if($file_ext == "doc" || $file_ext == "docx")
+    {
+        if($file_ext == "doc") {
+            return $this->read_doc();
+        } else {
+            return $this->read_docx();
+        }
+    } else {
+        return "Invalid File Type";
+    }
+}
  public function track_tests()
  {
     $employer_id = $this->session->userdata('company_profile_id');
