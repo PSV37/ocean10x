@@ -6802,32 +6802,13 @@ if ($ext == 'doc') {
 elseif ($ext == 'pdf')
 {
 
-// TODO: When you have your own client ID and secret, put them down here:
-$CLIENT_ID = "FREE_TRIAL_ACCOUNT";
-$CLIENT_SECRET = "PUBLIC_SECRET";
-
-// TODO: Specify the URL of your small PDF document (less than 1MB and 10 pages)
-// To extract text from bigger PDf document, you need to use the async method.
-$pdfUrl = $filenams;
-
-$headers = array(
-  'X-WM-CLIENT-ID: '.$CLIENT_ID,
-  'X-WM-CLIENT-SECRET: '.$CLIENT_SECRET
+ 
+ConvertApi::setApiSecret('WHWffhbS5KVX87et');
+$outtext = ConvertApi::convert('txt', [
+        'File' => $filenams,
+    ], 'pdf'
 );
-
-$url = 'https://api.whatsmate.net/v1/pdf/extract?url='.$pdfUrl;
-$ch = curl_init($url);
-echo $url;
-// curl_setopt($ch, CURLOPT_GET, 1);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-
-$outtext = curl_exec($ch);
-
-echo "Text of the PDF file:";
-echo $outtext;
-
-curl_close($ch);
+// $result->saveFiles('/path/to/result/dir');
 }
   print_r($outtext);die;
     
