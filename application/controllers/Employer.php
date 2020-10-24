@@ -6776,27 +6776,8 @@ public  function upload_folder()
             }
          
              $string = preg_replace('/\\.[^.\\s]{3,4}$/', '', $name);
-             // echo "string";
-    // if($_FILES['files']['type']=="application/pdf")
-    // {
-    // $a = new PDF2Text();
-    // $a =setFilename($name); 
-    // $a->decodePDF();
-    // echo $a->output(); 
-    // }
-//             print_r($folder_path_final
-//                 .$name);
-//             echo "<br>";
-            $pdf_content = file_get_contents($folder_path_final
-                .$name);
-//Specify that the content has PDF Mime Type
-header("Content-Type: application/pdf");
-// Display it
-echo $pdf_content;
-            // print_r(file_get_contents($folder_path_final
-            //     .$name));
-            // die;
-             // echo $string;
+            $ext = strtolower(end(explode('.',  $name)));
+            echo $ext;die;
             $fileName = 'data-' . $today . '.xlsx';
             // load excel library
             
