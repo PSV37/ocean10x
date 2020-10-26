@@ -6734,7 +6734,10 @@ public  function upload_folder()
                 }
                  $names = implode('/', $folder_struct);
                  $path = 'cv_folder/'.$names.'/'. $folder_name;
+                 print_r($path);
                  print_r(file_exists($path));
+                 print_r(!file_exists($path));
+                 echo "<br>";
                 if(!file_exists($path)) 
                 {
                  mkdir($path, 0777, true);
