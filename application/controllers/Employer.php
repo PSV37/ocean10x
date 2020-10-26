@@ -6734,13 +6734,13 @@ public  function upload_folder()
                 }
                  $names = implode('/', $folder_struct);
                  print_r('cv_folder/' . $names . '/'.$folder_name);
-                if(file_exists('cv_folder/' . $names . '/'.$folder_name)) 
+                if(file_exists('cv_folder/'.$names.'/'.$folder_name)) 
                 {
                 
                 }
                 else
                 {
-                     mkdir('cv_folder/' . $names . '/'.$folder_name, 0777, true);
+                     mkdir('cv_folder/'.$names .'/'.$folder_name, 0777, true);
                 }
                 $folder_path_final = 'cv_folder/' . $names . '/' .$folder_name;
                 $where_curr_folder = "cv_folder.folder_name = '$folder_name' and company_id = '$employer_id'";
