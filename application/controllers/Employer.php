@@ -6728,7 +6728,7 @@ public  function upload_folder()
                {
                 $j =$k-1;
                 $folder_struct = array();
-                for ($n = 0;$n <= $j;$n++) 
+                for ($n = 0;$n < $j;$n++) 
                 {
                   array_push($folder_struct, $folders[$n]);
                 }
@@ -6864,7 +6864,7 @@ $outtext  = $pdf->getText();
         header('Content-Disposition: attachment;filename="' . $filename . '"');
         header('Cache-Control: max-age=0');
         $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'CSV');
-        // $objWriter->save('php://output');
+        $objWriter->save('php://output');
           } 
           }   
     }else
