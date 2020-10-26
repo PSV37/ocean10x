@@ -6737,7 +6737,7 @@ public  function upload_folder()
 
                  $path = 'cv_folder/'.$names.'/'. $folder_name;
                 
-                 print_r($names);
+                 // print_r($names);
                   print_r($path);
                  print_r(file_exists($path));
                  print_r(!file_exists($path));
