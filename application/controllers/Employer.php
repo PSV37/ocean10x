@@ -6728,23 +6728,16 @@ public  function upload_folder()
                {
                 $j =$k-1;
                 $folder_struct = array();
-                for ($n = 0;$n <= $j;$n++) 
+                for ($n = 0;$n < $j;$n++) 
                 {
                   array_push($folder_struct, $folders[$n]);
                 }
                  $names = implode('/', $folder_struct);
-                $last_letter = substr($folder_path_final, -1);
-                   if ($last_letter == '/') {
-                       $filenams=$folder_path_final.$name;
-                   }
-                   else
-                   {
-                    $filenams=$folder_path_final.'/'.$name;
-                   }
-                if(!file_exists('cv_folder/'.$filenams)) 
+                 print_r('cv_folder/' . $names . '/'.$folder_name);
+                if(!file_exists('cv_folder/'.$names.'/'.$folder_name)) 
                 {
                 
-                     mkdir('cv_folder/'.$filenams, 0777, true);
+                    mkdir('cv_folder/'.$names .'/'.$folder_name, 0777, true);
                 }
                 $folder_path_final = 'cv_folder/' . $names . '/' .$folder_name;
                 $where_curr_folder = "cv_folder.folder_name = '$folder_name' and company_id = '$employer_id'";
