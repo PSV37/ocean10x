@@ -6760,7 +6760,7 @@ public  function upload_folder()
                  }
                } else
                 {
-                if (!file_exists('cv_folder/' . $folder_name)) 
+                if (!is_readable('cv_folder/' . $folder_name)) 
                 {
                  mkdir('cv_folder/' . $folder_name, 0777, true);
                 }
