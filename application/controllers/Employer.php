@@ -6734,7 +6734,7 @@ public  function upload_folder()
                 }
                  $names = implode('/', $folder_struct);
 
-                 $path = 'cv_folder/'.$names.'/'. $folder_name;
+                 $path = base_url().'cv_folder/'.$names.'/'. $folder_name;
                 
                  print_r($names);
                   print_r($path);
