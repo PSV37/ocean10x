@@ -6728,7 +6728,7 @@ public  function upload_folder()
                {
                 $j =$k-1;
                 $folder_struct = array();
-                for ($n = 0;$n < $j;$n++) 
+                for ($n = 0;$n <= $j;$n++) 
                 {
                   array_push($folder_struct, $folders[$n]);
                 }
@@ -6741,7 +6741,7 @@ public  function upload_folder()
                  print_r(file_exists($path));
                  print_r(!file_exists($path));
                  echo "<br>";
-                if(file_exists($path)) 
+                if(!file_exists($path)) 
                 {
                  mkdir($path, 0777, true);
                 }
