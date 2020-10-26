@@ -6728,17 +6728,19 @@ public  function upload_folder()
                {
                 $j =$k-1;
                 $folder_struct = array();
-                for ($n = 0;$n < $k;$n++) 
+                for ($n = 0;$n <= $j;$n++) 
                 {
                   array_push($folder_struct, $folders[$n]);
                 }
                  $names = implode('/', $folder_struct);
                 
-
-                if(!is_readable('cv_folder/' . $names . '/' . $folder_name)) 
+                 if (!$n==$j) {
+                      if(!is_readable('cv_folder/' . $names . '/' . $folder_name)) 
                 {
                  mkdir('cv_folder/' . $names . '/' . $folder_name, 0777, true);
                 }
+                 }
+               
                 $folder_path_final = 'cv_folder/' . $names . '/' .$folder_name;
                 $where_curr_folder = "cv_folder.folder_name = '$folder_name' and company_id = '$employer_id'";
                 $curr_foldr = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_curr_folder, $join = FALSE);
