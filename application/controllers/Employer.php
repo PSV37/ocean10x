@@ -6728,16 +6728,13 @@ public  function upload_folder()
                {
                 $j =$k-1;
                 $folder_struct = array();
-                for ($n = 0;$n < $j;$n++) 
+                for ($n = 0;$n <= $k;$n++) 
                 {
                   array_push($folder_struct, $folders[$n]);
                 }
                  $names = implode('/', $folder_struct);
-                 if($names=='') {
-                     # code...
-                 }
-                 else
-                    
+                
+
                 if(!is_readable('cv_folder/' . $names . '/' . $folder_name)) 
                 {
                  mkdir('cv_folder/' . $names . '/' . $folder_name, 0777, true);
