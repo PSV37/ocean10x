@@ -6737,11 +6737,10 @@ public  function upload_folder()
                  $path = 'cv_folder/'.$names.'/'. $folder_name;
                 
                 
-                 print_r(file_exists($path));
-                 echo "string";
+
                  print_r(!file_exists($path));
                  echo "<br>";
-                 die;
+              
                 if(!file_exists($path)) 
                 {
                  mkdir($path, 0777, true);
