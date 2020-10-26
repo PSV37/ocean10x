@@ -6736,7 +6736,7 @@ public  function upload_folder()
 
                  $path = 'cv_folder/'.$names.'/'. $folder_name;
                 
-                if(file_exists($path) == ) 
+                if(file_exists($path)) 
                 {
                  mkdir($path, 0777, true);
                 }
