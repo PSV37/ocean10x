@@ -6733,10 +6733,11 @@ public  function upload_folder()
                   array_push($folder_struct, $folders[$n]);
                 }
                  $names = implode('/', $folder_struct);
-                 
-                if(!file_exists('cv_folder/' . $names . '/' . $folder_name)) 
+                 $path = 'cv_folder/'.$names.'/'. $folder_name;
+                 print_r(file_exists($path));
+                if(!file_exists($path)) 
                 {
-                 mkdir('cv_folder/' . $names . '/' . $folder_name, 0777, true);
+                 mkdir($path, 0777, true);
                 }
                 $folder_path_final = 'cv_folder/' . $names . '/' .$folder_name;
                 $where_curr_folder = "cv_folder.folder_name = '$folder_name' and company_id = '$employer_id'";
@@ -6789,8 +6790,8 @@ public  function upload_folder()
            {
             $filenams=$folder_path_final.'/'.$name;
            }
-if(file_exists($filenams))
-{       
+// if(file_exists($filenams))
+// {       
              // $docObj = new Doc2Txt($inputfile);
 if ($ext == 'doc') {
     $fileHandle = fopen($filenams, "r");
@@ -6821,7 +6822,7 @@ $pdf    = $parser->parseFile($filenams);
 $outtext  = $pdf->getText();
 
 }
-}
+// }
 // print_r($tags);
 //   die;
     
@@ -6858,6 +6859,7 @@ $outtext  = $pdf->getText();
         // foreach ($skus as $element) {
         
            }
+           die;
            $filename = "folder_data" . date("jS F Y") . ".csv";
         //
         header('Content-Type: application/vnd.ms-excel');
@@ -6866,7 +6868,7 @@ $outtext  = $pdf->getText();
         $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'CSV');
         // $objWriter->save('php://output');
      redirect('employer/corporate_cv_bank');
-        
+
           } 
           }   
     }else
