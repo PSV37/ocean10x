@@ -6741,7 +6741,7 @@ public  function upload_folder()
                  print_r(file_exists($path));
                  print_r(!file_exists($path));
                  echo "<br>";
-                if(file_exists($path)) 
+                if(!file_exists($path)) 
                 {
                  mkdir($path, 0777, true);
                 }
