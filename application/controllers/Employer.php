@@ -6737,9 +6737,10 @@ public  function upload_folder()
                  $path = base_url().'cv_folder/'.$names.'/'. $folder_name;
                 
                 
-                 print_r(file_exists($path));die;
-                 print_r(!file_exists($path));
+                 print_r(file_exists($path));
+                 print_r(!file_exists('n'.$path));
                  echo "<br>";
+                 die;
                 if(!file_exists($path)) 
                 {
                  mkdir($path, 0777, true);
@@ -6763,7 +6764,6 @@ public  function upload_folder()
                  }
                } else
                 {
-                print_r(file_exists('cv_folder/' . $folder_name));
                 if (!file_exists('cv_folder/' . $folder_name)) 
                 {
                  mkdir('cv_folder/' . $folder_name, 0777, true);
