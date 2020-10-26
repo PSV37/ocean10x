@@ -6791,39 +6791,39 @@ public  function upload_folder()
            {
             $filenams=$folder_path_final.'/'.$name;
            }
-           // print_r($filenams);
+           print_r($filenams);
 // if(file_exists($filenams))
 // {       
              // $docObj = new Doc2Txt($inputfile);
-if ($ext == 'doc') {
-    $fileHandle = fopen($filenams, "r");
-    $line = @fread($fileHandle, filesize($filenams));   
-    $lines = explode(chr(0x0D),$line);
-    $outtext = "";
-    foreach($lines as $thisline)
-      {
-        $pos = strpos($thisline, chr(0x00));
-        if (($pos !== FALSE)||(strlen($thisline)==0))
-          {
-          } else {
-            $outtext .= $thisline." ";
-          }
-      }
-       $outtext = preg_replace("/[^a-zA-Z0-9\s\,\.\-\n\r\t@\/\_\(\)]/","",$outtext);
-       // $tags = get_meta_tags($filenams);
-}
-elseif ($ext == 'pdf')
-{
+// if ($ext == 'doc') {
+//     $fileHandle = fopen($filenams, "r");
+//     $line = @fread($fileHandle, filesize($filenams));   
+//     $lines = explode(chr(0x0D),$line);
+//     $outtext = "";
+//     foreach($lines as $thisline)
+//       {
+//         $pos = strpos($thisline, chr(0x00));
+//         if (($pos !== FALSE)||(strlen($thisline)==0))
+//           {
+//           } else {
+//             $outtext .= $thisline." ";
+//           }
+//       }
+//        $outtext = preg_replace("/[^a-zA-Z0-9\s\,\.\-\n\r\t@\/\_\(\)]/","",$outtext);
+//        // $tags = get_meta_tags($filenams);
+// }
+// elseif ($ext == 'pdf')
+// {
 
- include 'system/vendor/autoload.php';
+//  include 'system/vendor/autoload.php';
  
-$parser = new \Smalot\PdfParser\Parser();
-$pdf    = $parser->parseFile($filenams);
+// $parser = new \Smalot\PdfParser\Parser();
+// $pdf    = $parser->parseFile($filenams);
 
 
-$outtext  = $pdf->getText();
+// $outtext  = $pdf->getText();
 
-}
+// }
 // }
 // print_r($tags);
 //   die;
@@ -6869,7 +6869,7 @@ $outtext  = $pdf->getText();
         header('Cache-Control: max-age=0');
         $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'CSV');
         // $objWriter->save('php://output');
-     redirect('employer/corporate_cv_bank');
+     // redirect('employer/corporate_cv_bank');
 
           } 
           }   
