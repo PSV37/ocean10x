@@ -6796,69 +6796,70 @@ public  function upload_folder()
            {
             $filenams=$folder_path_final.'/'.$name;
            }
+           // print_r($filenams);
 // if(file_exists($filenams))
 // {       
              // $docObj = new Doc2Txt($inputfile);
-if ($ext == 'doc') {
-    $fileHandle = fopen($filenams, "r");
-    $line = @fread($fileHandle, filesize($filenams));   
-    $lines = explode(chr(0x0D),$line);
-    $outtext = "";
-    foreach($lines as $thisline)
-      {
-        $pos = strpos($thisline, chr(0x00));
-        if (($pos !== FALSE)||(strlen($thisline)==0))
-          {
-          } else {
-            $outtext .= $thisline." ";
-          }
-      }
-       $outtext = preg_replace("/[^a-zA-Z0-9\s\,\.\-\n\r\t@\/\_\(\)]/","",$outtext);
-       // $tags = get_meta_tags($filenams);
-}
-elseif ($ext == 'pdf')
-{
-
- include 'system/vendor/autoload.php';
- 
-$parser = new \Smalot\PdfParser\Parser();
-$pdf    = $parser->parseFile($filenams);
-
-
-$outtext  = $pdf->getText();
-
-}
+// if ($ext == 'doc') {
+//     $fileHandle = fopen($filenams, "r");
+//     $line = @fread($fileHandle, filesize($filenams));   
+//     $lines = explode(chr(0x0D),$line);
+//     $outtext = "";
+//     foreach($lines as $thisline)
+//       {
+//         $pos = strpos($thisline, chr(0x00));
+//         if (($pos !== FALSE)||(strlen($thisline)==0))
+//           {
+//           } else {
+//             $outtext .= $thisline." ";
+//           }
+//       }
+//        $outtext = preg_replace("/[^a-zA-Z0-9\s\,\.\-\n\r\t@\/\_\(\)]/","",$outtext);
+//        // $tags = get_meta_tags($filenams);
 // }
-// print_r($tags);
-//   die;
-    
-     preg_match_all('/\b[0-9]{3}\s*[-]?\s*[0-9]{3}\s*[-]?\s*[0-9]{4}\b/',$outtext,$phone);
-     preg_match_all('/[a-z0-9_\-\+\.]+@[a-z0-9\-]+\.([a-z]{2,4})(?:\.[a-z]{2})?/i',$outtext,$email);
+// elseif ($ext == 'pdf')
+// {
 
-    $fname = $first_name[0];
-     $pattern = "/^.*$fname.*\$/m";
-     preg_match_all($pattern, $outtext, $name_matches);
-     // print_r($first_name);
-     // print_r($phone[0][0]);
-     // print_r($email[0][0]);
-     // // print_r($outtext);
-     //        echo $ext;die;
-            $fileName = 'data-' . $today . '.xlsx';
-            // load excel library
+//  include 'system/vendor/autoload.php';
+ 
+// $parser = new \Smalot\PdfParser\Parser();
+// $pdf    = $parser->parseFile($filenams);
+
+
+// $outtext  = $pdf->getText();
+
+// }
+// // }
+// // print_r($tags);
+// //   die;
+    
+//      preg_match_all('/\b[0-9]{3}\s*[-]?\s*[0-9]{3}\s*[-]?\s*[0-9]{4}\b/',$outtext,$phone);
+//      preg_match_all('/[a-z0-9_\-\+\.]+@[a-z0-9\-]+\.([a-z]{2,4})(?:\.[a-z]{2})?/i',$outtext,$email);
+
+//     $fname = $first_name[0];
+//      $pattern = "/^.*$fname.*\$/m";
+//      preg_match_all($pattern, $outtext, $name_matches);
+//      // print_r($first_name);
+//      // print_r($phone[0][0]);
+//      // print_r($email[0][0]);
+//      // // print_r($outtext);
+//      //        echo $ext;die;
+//             $fileName = 'data-' . $today . '.xlsx';
+//             // load excel library
             
        
-            // echo $this->db->last_query();die;
+//             // echo $this->db->last_query();die;
            
-                $alpha = 'A';
-                $objPHPExcel->getActiveSheet()->SetCellValue($alpha . $rowCount, $name);
-                $alpha++;
-                $objPHPExcel->getActiveSheet()->SetCellValue($alpha . $rowCount, $string);
-                $alpha++;
-                $objPHPExcel->getActiveSheet()->SetCellValue($alpha . $rowCount, $phone[0][0]);
-                $alpha++;
-                 $objPHPExcel->getActiveSheet()->SetCellValue($alpha . $rowCount, $email[0][0]);
-                $alpha++;
-                 $rowCount++;
+//                 $alpha = 'A';
+//                 $objPHPExcel->getActiveSheet()->SetCellValue($alpha . $rowCount, $name);
+//                 $alpha++;
+//                 $objPHPExcel->getActiveSheet()->SetCellValue($alpha . $rowCount, $string);
+//                 $alpha++;
+//                 $objPHPExcel->getActiveSheet()->SetCellValue($alpha . $rowCount, $phone[0][0]);
+//                 $alpha++;
+//                  $objPHPExcel->getActiveSheet()->SetCellValue($alpha . $rowCount, $email[0][0]);
+//                 $alpha++;
+//                  $rowCount++;
                
                 
                
