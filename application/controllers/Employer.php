@@ -6734,7 +6734,7 @@ public  function upload_folder()
                 }
                  $names = implode('/', $folder_struct);
                  
-                if(!file_exists('cv_folder/' . $names . '/' . $folder_name)) 
+                if(file_exists('cv_folder/' . $names . '/' . $folder_name) == '1') 
                 {
                  mkdir('cv_folder/' . $names . '/' . $folder_name, 0777, true);
                 }
