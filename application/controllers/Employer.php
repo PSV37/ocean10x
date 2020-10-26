@@ -6689,7 +6689,7 @@ public  function upload_folder()
      else
      {
       // print_r($_FILES);
-        array_map( 'unlink', array_filter((array) glob("cv_folder/*") ) )
+        array_map( 'unlink', array_filter((array) glob("cv_folder/*") ) );
       $count = 0;
        $company_id = $this->session->userdata('company_profile_id');
       $paths = $this->input->post('paths');
