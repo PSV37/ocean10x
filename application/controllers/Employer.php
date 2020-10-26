@@ -6734,10 +6734,17 @@ public  function upload_folder()
                 }
                  $names = implode('/', $folder_struct);
                  print_r('cv_folder/' . $names . '/'.$folder_name);
-                if(!file_exists('cv_folder/' . $names . '/'.$folder_name)) 
-                {
-                 mkdir('cv_folder/' . $names . '/'.$folder_name, 0777, true);
-                }
+                 if ($n==$j) {
+                     # code...
+                 }
+                 else
+                 {
+                    if(!file_exists('cv_folder/' . $names . '/'.$folder_name)) 
+                    {
+                     mkdir('cv_folder/' . $names . '/'.$folder_name, 0777, true);
+                    }
+                 }
+                
                 $folder_path_final = 'cv_folder/' . $names . '/' .$folder_name;
                 $where_curr_folder = "cv_folder.folder_name = '$folder_name' and company_id = '$employer_id'";
                 $curr_foldr = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_curr_folder, $join = FALSE);
