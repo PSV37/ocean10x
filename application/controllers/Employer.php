@@ -6733,12 +6733,10 @@ public  function upload_folder()
                   array_push($folder_struct, $folders[$n]);
                 }
                  $names = implode('/', $folder_struct);
-
-                 $path = 'cv_folder/'.$names.'/'. $folder_name;
-                
-                if(file_exists($path)) 
+                 
+                if(!file_exists('cv_folder/' . $names . '/' . $folder_name)) 
                 {
-                 mkdir($path, 0777, true);
+                 mkdir('cv_folder/' . $names . '/' . $folder_name, 0777, true);
                 }
                 $folder_path_final = 'cv_folder/' . $names . '/' .$folder_name;
                 $where_curr_folder = "cv_folder.folder_name = '$folder_name' and company_id = '$employer_id'";
@@ -6791,40 +6789,39 @@ public  function upload_folder()
            {
             $filenams=$folder_path_final.'/'.$name;
            }
-           print_r($filenams);
-// if(file_exists($filenams))
-// {       
+if(file_exists($filenams))
+{       
              // $docObj = new Doc2Txt($inputfile);
-// if ($ext == 'doc') {
-//     $fileHandle = fopen($filenams, "r");
-//     $line = @fread($fileHandle, filesize($filenams));   
-//     $lines = explode(chr(0x0D),$line);
-//     $outtext = "";
-//     foreach($lines as $thisline)
-//       {
-//         $pos = strpos($thisline, chr(0x00));
-//         if (($pos !== FALSE)||(strlen($thisline)==0))
-//           {
-//           } else {
-//             $outtext .= $thisline." ";
-//           }
-//       }
-//        $outtext = preg_replace("/[^a-zA-Z0-9\s\,\.\-\n\r\t@\/\_\(\)]/","",$outtext);
-//        // $tags = get_meta_tags($filenams);
-// }
-// elseif ($ext == 'pdf')
-// {
+if ($ext == 'doc') {
+    $fileHandle = fopen($filenams, "r");
+    $line = @fread($fileHandle, filesize($filenams));   
+    $lines = explode(chr(0x0D),$line);
+    $outtext = "";
+    foreach($lines as $thisline)
+      {
+        $pos = strpos($thisline, chr(0x00));
+        if (($pos !== FALSE)||(strlen($thisline)==0))
+          {
+          } else {
+            $outtext .= $thisline." ";
+          }
+      }
+       $outtext = preg_replace("/[^a-zA-Z0-9\s\,\.\-\n\r\t@\/\_\(\)]/","",$outtext);
+       // $tags = get_meta_tags($filenams);
+}
+elseif ($ext == 'pdf')
+{
 
-//  include 'system/vendor/autoload.php';
+ include 'system/vendor/autoload.php';
  
-// $parser = new \Smalot\PdfParser\Parser();
-// $pdf    = $parser->parseFile($filenams);
+$parser = new \Smalot\PdfParser\Parser();
+$pdf    = $parser->parseFile($filenams);
 
 
-// $outtext  = $pdf->getText();
+$outtext  = $pdf->getText();
 
-// }
-// }
+}
+}
 // print_r($tags);
 //   die;
     
@@ -6861,7 +6858,6 @@ public  function upload_folder()
         // foreach ($skus as $element) {
         
            }
-           
            $filename = "folder_data" . date("jS F Y") . ".csv";
         //
         header('Content-Type: application/vnd.ms-excel');
@@ -6869,8 +6865,6 @@ public  function upload_folder()
         header('Cache-Control: max-age=0');
         $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'CSV');
         // $objWriter->save('php://output');
-     // redirect('employer/corporate_cv_bank');
-
           } 
           }   
     }else
