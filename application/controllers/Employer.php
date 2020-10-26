@@ -6728,7 +6728,7 @@ public  function upload_folder()
                {
                 $j =$k-1;
                 $folder_struct = array();
-                for ($n = 0;$n <= $j;$n++) 
+                for ($n = 0;$n < $j;$n++) 
                 {
                   array_push($folder_struct, $folders[$n]);
                 }
