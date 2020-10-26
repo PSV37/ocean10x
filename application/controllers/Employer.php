@@ -6689,7 +6689,6 @@ public  function upload_folder()
      else
      {
       // print_r($_FILES);
-        // array_map( 'unlink', array_filter((array) glob("cv_folder/*") ) );
       $count = 0;
        $company_id = $this->session->userdata('company_profile_id');
       $paths = $this->input->post('paths');
@@ -6729,7 +6728,7 @@ public  function upload_folder()
                {
                 $j =$k-1;
                 $folder_struct = array();
-                for ($n = 0;$n <= $j;$n++) 
+                for ($n = 0;$n < $k;$n++) 
                 {
                   array_push($folder_struct, $folders[$n]);
                 }
@@ -6737,12 +6736,12 @@ public  function upload_folder()
 
                  $path = 'cv_folder/'.$names.'/'. $folder_name;
                 
-                 // print_r($names);
+                 print_r($names);
                   print_r($path);
                  print_r(file_exists($path));
                  print_r(!file_exists($path));
                  echo "<br>";
-                if(!file_exists($path)) 
+                if(file_exists($path)) 
                 {
                  mkdir($path, 0777, true);
                 }
