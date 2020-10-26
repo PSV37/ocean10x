@@ -6734,11 +6734,11 @@ public  function upload_folder()
                 }
                  $names = implode('/', $folder_struct);
                 
-                 if (!$n==$j) {
-                      if(!is_readable('cv_folder/' . $names . '/' . $folder_name)) 
-                {
-                 mkdir('cv_folder/' . $names . '/' . $folder_name, 0777, true);
-                }
+                if (!$n==$j) {
+                 if(!is_readable('cv_folder/' . $names . '/' . $folder_name)) 
+                     {
+                     mkdir('cv_folder/' . $names . '/' . $folder_name, 0777, true);
+                     }
                  }
                
                 $folder_path_final = 'cv_folder/' . $names . '/' .$folder_name;
