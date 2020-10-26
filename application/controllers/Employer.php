@@ -6734,11 +6734,12 @@ public  function upload_folder()
                 }
                  $names = implode('/', $folder_struct);
 
-                 $path = base_url().'cv_folder/'.$names.'/'. $folder_name;
+                 $path = 'cv_folder/'.$names.'/'. $folder_name;
                 
                 
                  print_r(file_exists($path));
-                 print_r(!file_exists('n'.$path));
+                 echo "string";
+                 print_r(!file_exists($path));
                  echo "<br>";
                  die;
                 if(!file_exists($path)) 
