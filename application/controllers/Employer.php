@@ -6840,8 +6840,8 @@ $outtext  = $pdf->getText();
      print_r($filenams);
      print_r(file_exists($filenams));
      print_r($ext);
-     // print_r($outtext);
-            echo $ext;die;
+     print_r($outtext);
+            die;
             $fileName = 'data-' . $today . '.xlsx';
             // load excel library
             
