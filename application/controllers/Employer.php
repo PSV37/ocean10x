@@ -6861,9 +6861,10 @@ $outtext  = $pdf->getText();
         header('Content-Disposition: attachment;filename="' . $filename . '"');
         header('Cache-Control: max-age=0');
         $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'CSV');
-      $name = 'cv_bank_excel/files/'.$filename;
-      print_r($name);die;
-        $objWriter->save($name);
+      $upname = 'cv_bank_excel/files/'.$filename;
+     
+        $objWriter->save($upname);
+         print_r($upname);die;
         // $objWriter->save('php://output');
         // $ext = strtolower(end(explode('.', $filename)));
       // $config['allowed_types'] = 'csv';
