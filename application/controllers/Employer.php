@@ -6835,7 +6835,8 @@ $outtext  = $pdf->getText();
     
      preg_match_all('/\b[0-9]{3}\s*[-]?\s*[0-9]{3}\s*[-]?\s*[0-9]{4}\b/',$outtext,$phone);
      preg_match_all('/[a-z0-9_\-\+\.]+@[a-z0-9\-]+\.([a-z]{2,4})(?:\.[a-z]{2})?/i',$outtext,$email);
-
+print_r($email[0][0]);
+print_r($phone[0][0]);
     $fname = $first_name[0];
      $pattern = "/^.*$fname.*\$/m";
      preg_match_all($pattern, $outtext, $name_matches);
