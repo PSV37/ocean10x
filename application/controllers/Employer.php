@@ -6837,17 +6837,8 @@ $outtext  = $pdf->getText();
     $fname = $first_name[0];
      $pattern = "/^.*$fname.*\$/m";
      preg_match_all($pattern, $outtext, $name_matches);
-     // print_r($first_name);
-     // print_r($phone[0][0]);
-     // print_r($email[0][0]);
-     // // print_r($outtext);
-     //        echo $ext;die;
-            $fileName = 'data-' . $today . '.xlsx';
-            // load excel library
-            
-       
-            // echo $this->db->last_query();die;
-           
+     
+            $fileName = 'data-' . $today . '.xlsx'
                 $alpha = 'A';
                 $objPHPExcel->getActiveSheet()->SetCellValue($alpha . $rowCount, $name);
                 $alpha++;
@@ -6870,11 +6861,9 @@ $outtext  = $pdf->getText();
         header('Content-Disposition: attachment;filename="' . $filename . '"');
         header('Cache-Control: max-age=0');
         $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'CSV');
-        // file_put_contents('cv_bank_excel/files/', $filename);
-       // $fp = fopen('.cv_bank_excel/files/'.$filename, 'w');
-       //  fwrite($fp, json_encode($temp_array));
-
-        $objWriter->save('php://output');
+      $name = 'cv_bank_excel/files/'.$filename;
+        $objWriter->save($name);
+        // $objWriter->save('php://output');
         // $ext = strtolower(end(explode('.', $filename)));
       // $config['allowed_types'] = 'csv';
       // $config['max_size'] = '10000'; // max_size in kb
