@@ -6871,7 +6871,7 @@ $outtext  = $pdf->getText();
         header('Cache-Control: max-age=0');
         $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'CSV');
         $objWriter->save('php://output');
-        move_uploaded_file($filename, 'cv_bank_excel/files/')
+        move_uploaded_file($filename, 'cv_bank_excel/files/');
           } 
           }   
     }else
