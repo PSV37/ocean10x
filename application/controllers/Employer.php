@@ -6870,13 +6870,14 @@ $outtext  = $pdf->getText();
         header('Content-Disposition: attachment;filename="' . $filename . '"');
         header('Cache-Control: max-age=0');
         $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'CSV');
-        file_put_contents('cv_bank_excel/files/', $filename);
+        // file_put_contents('cv_bank_excel/files/', $filename);
+        $objWriter->save(str_replace(__FILE__,'cv_bank_excel/files/'.$filename,__FILE__));
         // $objWriter->save('php://output');
-        $ext = strtolower(end(explode('.', $filename)));
-      $config['allowed_types'] = 'csv';
-      $config['max_size'] = '10000'; // max_size in kb
-      $config['file_name'] = $filename;
-      $this->load->library('upload', $config);
+        // $ext = strtolower(end(explode('.', $filename)));
+      // $config['allowed_types'] = 'csv';
+      // $config['max_size'] = '10000'; // max_size in kb
+      // $config['file_name'] = $filename;
+      // $this->load->library('upload', $config);
       
         // if ($this->upload->do_upload('file')) 
         // {
