@@ -6871,8 +6871,8 @@ $outtext  = $pdf->getText();
         header('Cache-Control: max-age=0');
         $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'CSV');
         $objWriter->save('php://output');
-        // $config['upload_path'] = 'cv_bank_excel/files/';
-         
+          } 
+          }   
     }else
     {
      redirect('employer/corporate_cv_bank');
