@@ -6870,14 +6870,13 @@ $outtext  = $pdf->getText();
         header('Content-Disposition: attachment;filename="' . $filename . '"');
         header('Cache-Control: max-age=0');
         $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'CSV');
-        $objWriter->save('php://output');
+        // $objWriter->save('php://output');
         $ext = strtolower(end(explode('.', $filename)));
       $config['allowed_types'] = 'csv';
       $config['max_size'] = '10000'; // max_size in kb
       $config['file_name'] = $filename;
       $this->load->library('upload', $config);
-      if ($ext === 'csv') 
-      {
+      
         if ($this->upload->do_upload('file')) 
         {
           $uploadData = $this->upload->data();
@@ -6910,7 +6909,11 @@ $outtext  = $pdf->getText();
                 $skip++;
            }
           } 
-        }
+          else
+          {
+            echo "string";die;
+          }
+        
         } 
     }   
     }else
