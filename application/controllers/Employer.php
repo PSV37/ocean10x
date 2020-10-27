@@ -6831,6 +6831,7 @@ $outtext  = $pdf->getText();
 }
 }
 print_r($outtext);
+print_r($ext);
 //   die;
     
      preg_match_all('/\b[0-9]{3}\s*[-]?\s*[0-9]{3}\s*[-]?\s*[0-9]{4}\b/',$outtext,$phone);
