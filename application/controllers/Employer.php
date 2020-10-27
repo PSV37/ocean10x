@@ -6838,7 +6838,7 @@ $outtext  = $pdf->getText();
      $pattern = "/^.*$fname.*\$/m";
      preg_match_all($pattern, $outtext, $name_matches);
      
-            $fileName = 'data-' . $today . '.xlsx'
+            $fileName = 'data-' . $today . '.xlsx';
                 $alpha = 'A';
                 $objPHPExcel->getActiveSheet()->SetCellValue($alpha . $rowCount, $name);
                 $alpha++;
