@@ -6872,7 +6872,7 @@ $outtext  = $pdf->getText();
         $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'CSV');
         // file_put_contents('cv_bank_excel/files/', $filename);
         chmod('cv_bank_excel/files/'.$filename, 0777);
-file_put_contents($file, $data)
+// file_put_contents($file, $data)
         // $objWriter->save(str_replace(__FILE__,'cv_bank_excel/files/'.$filename,__FILE__));
         $objWriter->save('php://output');
         // $ext = strtolower(end(explode('.', $filename)));
