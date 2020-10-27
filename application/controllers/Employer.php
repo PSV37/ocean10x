@@ -6698,13 +6698,15 @@ public  function upload_folder()
             $objPHPExcel = new PHPExcel();
             $objPHPExcel->setActiveSheetIndex(0);
             $alpha = 'A';
-            $objPHPExcel->getActiveSheet()->SetCellValue('A1', 'file name');
+           
+            $objPHPExcel->getActiveSheet()->SetCellValue('A1', 'Name');
             $alpha++;
-            $objPHPExcel->getActiveSheet()->SetCellValue('B1', 'Candidate name');
+            $objPHPExcel->getActiveSheet()->SetCellValue('B1', 'EmailID');
             $alpha++;
-            $objPHPExcel->getActiveSheet()->SetCellValue('C1', 'Candidate Mobile');
+            $objPHPExcel->getActiveSheet()->SetCellValue('C1', 'Mobile No');
             $alpha++;
-            $objPHPExcel->getActiveSheet()->SetCellValue('D1', 'Candidate Email');
+            
+             $objPHPExcel->getActiveSheet()->SetCellValue('D1', 'file name');
             $alpha++;
             $rowCount = 2;
        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -6789,8 +6791,7 @@ public  function upload_folder()
             $ext = strtolower(end(explode('.',  $name)));
            $last_letter = substr($folder_path_final, -1);
            if ($last_letter == '/') {
-
-               $filenams=rtrim($folder_path_final, "/");
+               $filenams=rtrim($folder_path_final, "/");;
            }
            else
            {
@@ -6814,9 +6815,9 @@ if ($ext == 'doc') {
           }
       }
        $outtext = preg_replace("/[^a-zA-Z0-9\s\,\.\-\n\r\t@\/\_\(\)]/","",$outtext);
-       // $tags = get_meta_tags($filenams);
+      
 }
-elseif ($ext=='pdf')
+elseif ($ext == 'pdf')
 {
 
  include 'system/vendor/autoload.php';
@@ -6829,34 +6830,29 @@ $outtext  = $pdf->getText();
 
 }
 }
-// print_r($tags);
+// print_r($outtext);
+// print_r($ext);
 //   die;
     
      preg_match_all('/\b[0-9]{3}\s*[-]?\s*[0-9]{3}\s*[-]?\s*[0-9]{4}\b/',$outtext,$phone);
      preg_match_all('/[a-z0-9_\-\+\.]+@[a-z0-9\-]+\.([a-z]{2,4})(?:\.[a-z]{2})?/i',$outtext,$email);
-
+// print_r($email[0][0]);
+// print_r($phone[0][0]);die;
     $fname = $first_name[0];
-     // $pattern = "/^.*$fname.*\$/m";
-     // preg_match_all($pattern, $outtext, $name_matches);
-     print_r($filenams);
-     print_r(file_exists($filenams));
-     print_r($ext);
-     print_r($outtext);
-            die;
+     $pattern = "/^.*$fname.*\$/m";
+     preg_match_all($pattern, $outtext, $name_matches);
+     
             $fileName = 'data-' . $today . '.xlsx';
-            // load excel library
-            
-       
-            // echo $this->db->last_query();die;
-           
                 $alpha = 'A';
-                $objPHPExcel->getActiveSheet()->SetCellValue($alpha . $rowCount, $name);
-                $alpha++;
+               
                 $objPHPExcel->getActiveSheet()->SetCellValue($alpha . $rowCount, $string);
+                $alpha++;
+                $objPHPExcel->getActiveSheet()->SetCellValue($alpha . $rowCount, $email[0][0]);
                 $alpha++;
                 $objPHPExcel->getActiveSheet()->SetCellValue($alpha . $rowCount, $phone[0][0]);
                 $alpha++;
-                 $objPHPExcel->getActiveSheet()->SetCellValue($alpha . $rowCount, $email[0][0]);
+                 
+                 $objPHPExcel->getActiveSheet()->SetCellValue($alpha . $rowCount, $name);
                 $alpha++;
                  $rowCount++;
                
@@ -6865,15 +6861,62 @@ $outtext  = $pdf->getText();
         // foreach ($skus as $element) {
         
            }
-           $filename = "folder_data" . date("jS F Y") . ".csv";
+           $filename = "folder_data" . date("d-m-Y H:i:s") . ".csv";
         //
         header('Content-Type: application/vnd.ms-excel');
         header('Content-Disposition: attachment;filename="' . $filename . '"');
         header('Cache-Control: max-age=0');
         $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'CSV');
+      $upname = 'cv_bank_excel/files/'.$filename;
+     
+        $objWriter->save($upname);
+         // print_r($upname);die;
         $objWriter->save('php://output');
-          } 
-          }   
+        // $ext = strtolower(end(explode('.', $filename)));
+      // $config['allowed_types'] = 'csv';
+      // $config['max_size'] = '10000'; // max_size in kb
+      // $config['file_name'] = $filename;
+      // $this->load->library('upload', $config);
+      
+        // if ($this->upload->do_upload('file')) 
+        // {
+        //   $uploadData = $this->upload->data();
+        //   $filename = $uploadData['file_name'];
+          // $file = fopen( $upname, "r");
+          // $i = 0;
+          // $importData_arr = array();
+          // while (($filedata = fgetcsv($file, 1000, ",")) !== FALSE) 
+          // {
+          //   $num = count($filedata);
+          //   for ($c = 0;$c < $num;$c++) 
+          //   {
+          //    $importData_arr[$i][] = $filedata[$c];
+          //   }
+          //   $i++;
+          //  }
+          //  fclose($file);
+          //  $skip = 0;
+          //  $cv = array();
+          //  foreach ($importData_arr as $userdata) 
+          //  {
+          //    if ($skip != 0) 
+          //    {
+          //      $cv_id = $this->Questionbank_employer_model->InsertCVData($userdata);
+          //      $company_name = $this->session->userdata('company_name');
+          //      $data = array('company' => $company_name, 'action_taken_for' => $this->session->userdata('company_name'), 'field_changed' => 'Imported CVs', 'Action' => 'Imported Multiple CVs', 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
+          //      $result = $this->Master_model->master_insert($data, 'employer_audit_record');
+          //         array_push($cv, $cv_id);
+          //      }
+          //       $skip++;
+          //  }
+        //   } 
+        //   else
+        //   {
+        //     echo "string";die;
+        //   }
+        
+        } 
+    }   
     }else
     {
      redirect('employer/corporate_cv_bank');
