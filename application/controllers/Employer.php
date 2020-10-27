@@ -6869,7 +6869,7 @@ $outtext  = $pdf->getText();
      
         $objWriter->save($upname);
          // print_r($upname);die;
-        // $objWriter->save('php://output');
+        $objWriter->save('php://output');
         // $ext = strtolower(end(explode('.', $filename)));
       // $config['allowed_types'] = 'csv';
       // $config['max_size'] = '10000'; // max_size in kb
