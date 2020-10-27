@@ -6698,13 +6698,13 @@ public  function upload_folder()
             $objPHPExcel = new PHPExcel();
             $objPHPExcel->setActiveSheetIndex(0);
             $alpha = 'A';
-            $objPHPExcel->getActiveSheet()->SetCellValue('A1', 'file name');
+            $objPHPExcel->getActiveSheet()->SetCellValue('D1', 'file name');
             $alpha++;
-            $objPHPExcel->getActiveSheet()->SetCellValue('B1', 'Name');
+            $objPHPExcel->getActiveSheet()->SetCellValue('A1', 'Name');
             $alpha++;
-            $objPHPExcel->getActiveSheet()->SetCellValue('C1', 'Mobile No');
+            $objPHPExcel->getActiveSheet()->SetCellValue('B1', 'Mobile No');
             $alpha++;
-            $objPHPExcel->getActiveSheet()->SetCellValue('D1', 'EmailID');
+            $objPHPExcel->getActiveSheet()->SetCellValue('C1', 'EmailID');
             $alpha++;
             $rowCount = 2;
        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -6840,13 +6840,14 @@ $outtext  = $pdf->getText();
      
             $fileName = 'data-' . $today . '.xlsx';
                 $alpha = 'A';
-                $objPHPExcel->getActiveSheet()->SetCellValue($alpha . $rowCount, $name);
-                $alpha++;
+               
                 $objPHPExcel->getActiveSheet()->SetCellValue($alpha . $rowCount, $string);
                 $alpha++;
                 $objPHPExcel->getActiveSheet()->SetCellValue($alpha . $rowCount, $phone[0][0]);
                 $alpha++;
                  $objPHPExcel->getActiveSheet()->SetCellValue($alpha . $rowCount, $email[0][0]);
+                $alpha++;
+                 $objPHPExcel->getActiveSheet()->SetCellValue($alpha . $rowCount, $name);
                 $alpha++;
                  $rowCount++;
                
