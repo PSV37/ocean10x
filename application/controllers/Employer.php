@@ -6734,12 +6734,12 @@ public  function upload_folder()
                 }
                  $names = implode('/', $folder_struct);
                 
-                // if (!$n==$j) {
+                if (!$n==$j) {
                  if(!is_readable('cv_folder/' . $names . '/' . $folder_name)) 
                      {
                      mkdir('cv_folder/' . $names . '/' . $folder_name, 0777, true);
                      }
-                 // }
+                 }
                
                 $folder_path_final = 'cv_folder/' . $names . '/' .$folder_name;
                 $where_curr_folder = "cv_folder.folder_name = '$folder_name' and company_id = '$employer_id'";
@@ -6835,11 +6835,11 @@ $outtext  = $pdf->getText();
      preg_match_all('/[a-z0-9_\-\+\.]+@[a-z0-9\-]+\.([a-z]{2,4})(?:\.[a-z]{2})?/i',$outtext,$email);
 
     $fname = $first_name[0];
-     $pattern = "/^.*$fname.*\$/m";
-     preg_match_all($pattern, $outtext, $name_matches);
-     print_r($first_name);
-     print_r($phone[0][0]);
-     print_r($email[0][0]);
+     // $pattern = "/^.*$fname.*\$/m";
+     // preg_match_all($pattern, $outtext, $name_matches);
+     print_r($filenams);
+     print_r(file_exists($filenams));
+     print_r($ext);
      // print_r($outtext);
             echo $ext;die;
             $fileName = 'data-' . $today . '.xlsx';
