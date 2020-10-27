@@ -6871,9 +6871,9 @@ $outtext  = $pdf->getText();
         header('Cache-Control: max-age=0');
         $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'CSV');
         // file_put_contents('cv_bank_excel/files/', $filename);
-        chmod('cv_bank_excel/files/'.$filename, 0777);
-// file_put_contents($file, $data)
-        // $objWriter->save(str_replace(__FILE__,'cv_bank_excel/files/'.$filename,__FILE__));
+       // $fp = fopen('.cv_bank_excel/files/'.$filename, 'w');
+       //  fwrite($fp, json_encode($temp_array));
+
         $objWriter->save('php://output');
         // $ext = strtolower(end(explode('.', $filename)));
       // $config['allowed_types'] = 'csv';
@@ -6885,33 +6885,33 @@ $outtext  = $pdf->getText();
         // {
         //   $uploadData = $this->upload->data();
         //   $filename = $uploadData['file_name'];
-        //   $file = fopen("cv_bank_excel/files/" . $filename, "r");
-        //   $i = 0;
-        //   $importData_arr = array();
-        //   while (($filedata = fgetcsv($file, 1000, ",")) !== FALSE) 
-        //   {
-        //     $num = count($filedata);
-        //     for ($c = 0;$c < $num;$c++) 
-        //     {
-        //      $importData_arr[$i][] = $filedata[$c];
-        //     }
-        //     $i++;
-        //    }
-        //    fclose($file);
-        //    $skip = 0;
-        //    $cv = array();
-        //    foreach ($importData_arr as $userdata) 
-        //    {
-        //      if ($skip != 0) 
-        //      {
-        //        $cv_id = $this->Questionbank_employer_model->InsertCVData($userdata);
-        //        $company_name = $this->session->userdata('company_name');
-        //        $data = array('company' => $company_name, 'action_taken_for' => $this->session->userdata('company_name'), 'field_changed' => 'Imported CVs', 'Action' => 'Imported Multiple CVs', 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
-        //        $result = $this->Master_model->master_insert($data, 'employer_audit_record');
-        //           array_push($cv, $cv_id);
-        //        }
+          $file = fopen($filename, "r");
+          $i = 0;
+          $importData_arr = array();
+          while (($filedata = fgetcsv($file, 1000, ",")) !== FALSE) 
+          {
+            $num = count($filedata);
+            for ($c = 0;$c < $num;$c++) 
+            {
+             $importData_arr[$i][] = $filedata[$c];
+            }
+            $i++;
+           }
+           fclose($file);
+           $skip = 0;
+           $cv = array();
+           foreach ($importData_arr as $userdata) 
+           {
+             if ($skip != 0) 
+             {
+               $cv_id = $this->Questionbank_employer_model->InsertCVData($userdata);
+               $company_name = $this->session->userdata('company_name');
+               $data = array('company' => $company_name, 'action_taken_for' => $this->session->userdata('company_name'), 'field_changed' => 'Imported CVs', 'Action' => 'Imported Multiple CVs', 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
+               $result = $this->Master_model->master_insert($data, 'employer_audit_record');
+                  array_push($cv, $cv_id);
+               }
         //         $skip++;
-        //    }
+           }
         //   } 
         //   else
         //   {
