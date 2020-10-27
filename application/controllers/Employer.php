@@ -6789,11 +6789,11 @@ public  function upload_folder()
             $ext = strtolower(end(explode('.',  $name)));
            $last_letter = substr($folder_path_final, -1);
            if ($last_letter == '/') {
-               $filenams=$folder_path_final.$name;
+               $filenams=$folder_path_final;
            }
            else
            {
-            $filenams=$folder_path_final.'/'.$name;
+            $filenams=$folder_path_final;
            }
 if(file_exists($filenams))
 {       
@@ -6815,7 +6815,7 @@ if ($ext == 'doc') {
        $outtext = preg_replace("/[^a-zA-Z0-9\s\,\.\-\n\r\t@\/\_\(\)]/","",$outtext);
        // $tags = get_meta_tags($filenams);
 }
-elseif ($ext == 'pdf')
+elseif ($ext=='pdf')
 {
 
  include 'system/vendor/autoload.php';
