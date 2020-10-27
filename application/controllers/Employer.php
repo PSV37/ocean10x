@@ -6797,8 +6797,8 @@ public  function upload_folder()
            {
             $filenams=$folder_path_final.'/'.$name;
            }
-if(file_exists($filenams))
-{       
+// if(file_exists($filenams))
+// {       
              // $docObj = new Doc2Txt($inputfile);
 if ($ext == 'doc') {
     $fileHandle = fopen($filenams, "r");
@@ -6829,7 +6829,7 @@ $pdf    = $parser->parseFile($filenams);
 $outtext  = $pdf->getText();
 
 }
-}
+// }
 print_r($outtext);
 print_r($ext);
 //   die;
