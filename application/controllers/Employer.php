@@ -6789,7 +6789,8 @@ public  function upload_folder()
             $ext = strtolower(end(explode('.',  $name)));
            $last_letter = substr($folder_path_final, -1);
            if ($last_letter == '/') {
-               $filenams=$folder_path_final;
+
+               $filenams=rtrim($folder_path_final, "/");
            }
            else
            {
