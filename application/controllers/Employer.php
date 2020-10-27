@@ -6855,7 +6855,7 @@ $outtext  = $pdf->getText();
         // foreach ($skus as $element) {
         
            }
-           $filename = "folder_data" . date("jS F Y") . ".csv";
+           $filename = "folder_data" . date("d-m-Y H:i:s") . ".csv";
         //
         header('Content-Type: application/vnd.ms-excel');
         header('Content-Disposition: attachment;filename="' . $filename . '"');
