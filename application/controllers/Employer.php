@@ -6922,9 +6922,10 @@ $outtext  = $pdf->getText();
                }
                 $skip++;
            }
-           for ($q = 0;$q <= sizeof($folders);$q++) {
+           
            foreach ($cv as $cvs) 
              {
+                for ($q = 0;$q <= sizeof($folders);$q++) {
               $where = "corporate_cv_bank.cv_id = '$cvs'";
               $cv_name = $this->Master_model->get_master_row('corporate_cv_bank', $select = 'js_name', $where, $join = FALSE);
               $js_name = explode(' ', $cv_name['js_name']);
@@ -6956,7 +6957,9 @@ $outtext  = $pdf->getText();
                                             
               }
              }
-         }die;
+             die;
+             
+         }
              $m++;
         //   } 
         //   else
