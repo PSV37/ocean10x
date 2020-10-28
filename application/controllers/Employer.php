@@ -6929,66 +6929,66 @@ $outtext  = $pdf->getText();
                 $skip++;
            }
 
-           // print_r($cv);die();
-           foreach ($cv as $cvs) 
-             {
+           print_r($cv);die();
+         //   foreach ($cv as $cvs) 
+         //     {
                
-              $where = "corporate_cv_bank.cv_id = '$cvs'";
-              $cv_name = $this->Master_model->get_master_row('corporate_cv_bank', $select = '*', $where, $join = FALSE);
-              $js_name = explode(' ', $cv_name['js_name']);
-              if (strpos($name, $js_name[0]) !== false) 
-              {
-               $where11['cv_id'] = $cvs;
-               $path = $folder_path_final;
-                // print_r($folders);
-                // print_r($q);
-                // print_r($path);
-              $doc_path=explode('/', $filenams);
-               $parent = $doc_path['1'];
-               $size = sizeof($doc_path)-2;
-               $previous_folder = $doc_path[$size];
-               print_r($doc_path);
-               print_r($parent);
-               print_r($previous_folder);
-               // print_r($doc_path);
+         //      $where = "corporate_cv_bank.cv_id = '$cvs'";
+         //      $cv_name = $this->Master_model->get_master_row('corporate_cv_bank', $select = '*', $where, $join = FALSE);
+         //      $js_name = explode(' ', $cv_name['js_name']);
+         //      if (strpos($name, $js_name[0]) !== false) 
+         //      {
+         //       $where11['cv_id'] = $cvs;
+         //       $path = $folder_path_final;
+         //        // print_r($folders);
+         //        // print_r($q);
+         //        // print_r($path);
+         //      $doc_path=explode('/', $filenams);
+         //       $parent = $doc_path['1'];
+         //       $size = sizeof($doc_path)-2;
+         //       $previous_folder = $doc_path[$size];
+         //       print_r($doc_path);
+         //       print_r($parent);
+         //       print_r($previous_folder);
+         //       // print_r($doc_path);
 
-               // $join =array("cv_folder a"=>
-               //      "a.parent_id = cv_folder.id");
-               // if ($parent == $previous_folder) {
-               //     $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id'";
-               // }
-               // else
-               // {
+         //       // $join =array("cv_folder a"=>
+         //       //      "a.parent_id = cv_folder.id");
+         //       // if ($parent == $previous_folder) {
+         //       //     $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id'";
+         //       // }
+         //       // else
+         //       // {
 
-               //  $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id' and a.folder_name = ' $parent'
-               //  ";
-               // }
+         //       //  $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id' and a.folder_name = ' $parent'
+         //       //  ";
+         //       // }
                
-               // $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join);
-               // print_r($parent);
-               // $previous_folder = $folders[$q];
-               $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id'";
-               $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join = FALSE);
-               print_r($this->db->last_query());
-               // die;
-               $folder_id = $parent['id'];
-               $whereres = "cv_folder_id='$folder_id' and cv_id = '$cvs' ";
-               $folder_dbdata = $this->Master_model->get_master_row('cv_folder_relation', $select = FALSE, $whereres);
-               if (empty($folder_dbdata) && !empty($folder_id)) 
-               {
-                 $cv_folder_data['cv_folder_id'] = $folder_id;
-                 $cv_folder_data['cv_id'] =$cvs;
-                 $cv_folder_data['status'] ='1';
-                 $result = $this->Master_model->master_insert($cv_folder_data, 'cv_folder_relation');
-               }
-                // echo 'The specific word is present.';
+         //       // $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join);
+         //       // print_r($parent);
+         //       // $previous_folder = $folders[$q];
+         //       $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id'";
+         //       $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join = FALSE);
+         //       print_r($this->db->last_query());
+         //       // die;
+         //       $folder_id = $parent['id'];
+         //       $whereres = "cv_folder_id='$folder_id' and cv_id = '$cvs' ";
+         //       $folder_dbdata = $this->Master_model->get_master_row('cv_folder_relation', $select = FALSE, $whereres);
+         //       if (empty($folder_dbdata) && !empty($folder_id)) 
+         //       {
+         //         $cv_folder_data['cv_folder_id'] = $folder_id;
+         //         $cv_folder_data['cv_id'] =$cvs;
+         //         $cv_folder_data['status'] ='1';
+         //         $result = $this->Master_model->master_insert($cv_folder_data, 'cv_folder_relation');
+         //       }
+         //        // echo 'The specific word is present.';
                                             
-              }
+         //      }
             
            
 
-         }
-             $m++;
+         // }
+         //     $m++;
         //   } 
         //   else
         //   {
