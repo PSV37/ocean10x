@@ -6914,11 +6914,30 @@ $outtext  = $pdf->getText();
            fclose($file);
            $skip = 0;
            $cv = array();
+
            foreach ($importData_arr as $userdata) 
            {
              if ($skip != 0) 
              {
-               $cv_id = $this->Questionbank_employer_model->InsertCVData($userdata);
+               $doc_path=explode('/', $filenams);
+               $parent = $doc_path['1'];
+               $size = sizeof($doc_path)-1;
+               $previous_folder = $doc_path[$size];
+               $join =array("cv_folder a"=>
+                    "a.parent_id = cv_folder.id");
+               if ($parent == $previous_folder) {
+                   $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id'";
+               }
+               else
+               {
+
+                $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id' and a.folder_name = ' $parent'
+                ";
+               }
+               
+               $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join);
+               print_r($this->db->last_query());die;
+               $cv_id = $this->Questionbank_employer_model->InsertCVDatapath($userdata);
                $company_name = $this->session->userdata('company_name');
                $data = array('company' => $company_name, 'action_taken_for' => $this->session->userdata('company_name'), 'field_changed' => 'Imported CVs', 'Action' => 'Imported Multiple CVs', 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
                $result = $this->Master_model->master_insert($data, 'employer_audit_record');
@@ -6927,7 +6946,7 @@ $outtext  = $pdf->getText();
                 $skip++;
            }
 
-           
+           print_r($cv);
          //   foreach ($cv as $cvs) 
          //     {
                
