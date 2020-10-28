@@ -6932,15 +6932,16 @@ $outtext  = $pdf->getText();
               {
                $where11['cv_id'] = $cvs;
                $path = $folder_path_final;
-                // print_r($folders);
-                // print_r($k);
+                print_r($folders);
+                print_r($q);
                 // print_r($path);
                $update_doc['js_document'] = $path;
                $this->Master_model->master_update($update_doc, 'corporate_cv_bank', $where11);
                $previous_folder = $folders[$q];
                $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id'";
                $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join = FALSE);
-               // print_r($this->db->last_query());die;
+               print_r($this->db->last_query());
+               // die;
                $folder_id = $parent['id'];
                $whereres = "cv_folder_id='$folder_id' and cv_id = '$cvs' ";
                $folder_dbdata = $this->Master_model->get_master_row('cv_folder_relation', $select = FALSE, $whereres);
@@ -6955,7 +6956,7 @@ $outtext  = $pdf->getText();
                                             
               }
              }
-         }
+         }die;
              $m++;
         //   } 
         //   else
