@@ -6922,24 +6922,9 @@ $outtext  = $pdf->getText();
                }
                 $skip++;
            }
+           for ($k = 0;$k <= sizeof($folders);$k++) {
            foreach ($cv as $cvs) 
              {
-                for ($p=0; $p <$k ; $p++) { 
-                $folder = $folders[$p];
-                $file_path = 'cv_folder/'.$folder.'/'.$name;
-                $previous_folder=$folder[$p];
-                if(!file_exists($file_path))
-                {
-                    $l = $p-1;
-                    $previous_folder=$folder[$l];
-                    $file_path = 'cv_folder/'.$previous_folder.'/'.$folder.'/'.$name;
-                    if (file_exists($file_path)) {
-                        $file_path = $file_path;
-                    }
-                }
-               print_r($file_path);
-            }
-            die;
               $where = "corporate_cv_bank.cv_id = '$cvs'";
               $cv_name = $this->Master_model->get_master_row('corporate_cv_bank', $select = 'js_name', $where, $join = FALSE);
               $js_name = explode(' ', $cv_name['js_name']);
@@ -6947,15 +6932,15 @@ $outtext  = $pdf->getText();
               {
                $where11['cv_id'] = $cvs;
                $path = $folder_path_final;
-                // print_r($folders);
-                // print_r($m);
+                print_r($folders);
+                print_r($k);
                 // print_r($path);
                $update_doc['js_document'] = $path;
                $this->Master_model->master_update($update_doc, 'corporate_cv_bank', $where11);
-               $previous_folder = $folders[$m];
+               $previous_folder = $folders[$k];
                $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id'";
                $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join = FALSE);
-               // print_r($this->db->last_query());die;
+               print_r($this->db->last_query());die;
                $folder_id = $parent['id'];
                $whereres = "cv_folder_id='$folder_id' and cv_id = '$cvs' ";
                $folder_dbdata = $this->Master_model->get_master_row('cv_folder_relation', $select = FALSE, $whereres);
@@ -6970,6 +6955,7 @@ $outtext  = $pdf->getText();
                                             
               }
              }
+         }
              $m++;
         //   } 
         //   else
