@@ -6805,6 +6805,7 @@ public  function upload_folder()
                 // echo 'No cars.';
                 $filenams = $filenams.'/'.$name;
             }
+            print_r($filenams);
 if(file_exists($filenams))
 {       
              // $docObj = new Doc2Txt($inputfile);
