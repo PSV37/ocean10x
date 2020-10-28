@@ -4644,7 +4644,7 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                $previous_folder = $folders[$k];
                $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id'";
                $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join = FALSE);
-               // print_r($this->db->last_query());die;
+               print_r($this->db->last_query());die;
                $folder_id = $parent['id'];
                $whereres = "cv_folder_id='$folder_id' and cv_id = '$cvs' ";
                $folder_dbdata = $this->Master_model->get_master_row('cv_folder_relation', $select = FALSE, $whereres);
