@@ -6965,7 +6965,7 @@ $outtext  = $pdf->getText();
                }
                
                $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join);
-               print_r($this->db->last_query());
+               print_r($parent);
                $previous_folder = $folders[$q];
                $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id'";
                $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join = FALSE);
