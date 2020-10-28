@@ -4638,6 +4638,9 @@ Team ConsultnHire!<br>Thank You for choosing us!<br>Goa a Question? Check out ho
                 // print_r($path);die;
                $update_doc['js_document'] = $path;
                $this->Master_model->master_update($update_doc, 'corporate_cv_bank', $where11);
+               print_r($k);
+               print_r($folders);
+               print_r($previous_folder);
                $previous_folder = $folders[$k];
                $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id'";
                $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join = FALSE);
