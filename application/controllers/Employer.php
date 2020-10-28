@@ -6937,9 +6937,9 @@ $outtext  = $pdf->getText();
                         $file_path = $file_path;
                     }
                 }
-               
+               print_r($file_path);
             }
-            print_r($file_path);die;
+            die;
               $where = "corporate_cv_bank.cv_id = '$cvs'";
               $cv_name = $this->Master_model->get_master_row('corporate_cv_bank', $select = 'js_name', $where, $join = FALSE);
               $js_name = explode(' ', $cv_name['js_name']);
