@@ -6952,24 +6952,24 @@ $outtext  = $pdf->getText();
                print_r($previous_folder);
                // print_r($doc_path);
 
-               $join =array("cv_folder a"=>
-                    "a.parent_id = cv_folder.id");
-               if ($parent == $previous_folder) {
-                   $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id'";
-               }
-               else
-               {
+               // $join =array("cv_folder a"=>
+               //      "a.parent_id = cv_folder.id");
+               // if ($parent == $previous_folder) {
+               //     $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id'";
+               // }
+               // else
+               // {
 
-                $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id' and a.folder_name = ' $parent'
-                ";
-               }
+               //  $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id' and a.folder_name = ' $parent'
+               //  ";
+               // }
                
-               $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join);
-               print_r($parent);
-               $previous_folder = $folders[$q];
+               // $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join);
+               // print_r($parent);
+               // $previous_folder = $folders[$q];
                $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id'";
                $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join = FALSE);
-               // print_r($this->db->last_query());
+               print_r($this->db->last_query());
                // die;
                $folder_id = $parent['id'];
                $whereres = "cv_folder_id='$folder_id' and cv_id = '$cvs' ";
