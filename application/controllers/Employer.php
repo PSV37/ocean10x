@@ -6936,7 +6936,7 @@ $outtext  = $pdf->getText();
                }
                
                $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join);
-               print_r($this->db->last_query());die;
+               print_r($this->db->last_query());
                $cv_id = $this->Questionbank_employer_model->InsertCVDatapath($userdata);
                $company_name = $this->session->userdata('company_name');
                $data = array('company' => $company_name, 'action_taken_for' => $this->session->userdata('company_name'), 'field_changed' => 'Imported CVs', 'Action' => 'Imported Multiple CVs', 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
@@ -6946,7 +6946,7 @@ $outtext  = $pdf->getText();
                 $skip++;
            }
 
-           print_r($cv);
+           print_r($cv);die();
          //   foreach ($cv as $cvs) 
          //     {
                
