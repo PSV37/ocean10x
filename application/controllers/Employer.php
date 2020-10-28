@@ -6945,27 +6945,27 @@ $outtext  = $pdf->getText();
                 // print_r($path);
               $doc_path=explode('/', $filenams);
                $parent = $doc_path['1'];
-               $size = sizeof($doc_path)-1;
+               $size = sizeof($doc_path)-2;
                $previous_folder = $doc_path[$size];
                print_r($doc_path);
                print_r($parent);
                print_r($previous_folder);
                // print_r($doc_path);
 
-               // $join =array("cv_folder a"=>
-               //      "a.parent_id = cv_folder.id");
-               // if ($parent == $previous_folder) {
-               //     $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id'";
-               // }
-               // else
-               // {
+               $join =array("cv_folder a"=>
+                    "a.parent_id = cv_folder.id");
+               if ($parent == $previous_folder) {
+                   $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id'";
+               }
+               else
+               {
 
-               //  $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id' and a.folder_name = ' $parent'
-               //  ";
-               // }
+                $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id' and a.folder_name = ' $parent'
+                ";
+               }
                
                $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join);
-               // print_r($this->db->last_query());die;
+               print_r($this->db->last_query());
                $previous_folder = $folders[$q];
                $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id'";
                $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join = FALSE);
