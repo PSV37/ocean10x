@@ -6919,10 +6919,39 @@ $outtext  = $pdf->getText();
            {
              if ($skip != 0) 
              {
-               $doc_path=explode('/', $filenams);
+               
+               $cv_id = $this->Questionbank_employer_model->InsertCVDatapath($userdata);
+               $company_name = $this->session->userdata('company_name');
+               $data = array('company' => $company_name, 'action_taken_for' => $this->session->userdata('company_name'), 'field_changed' => 'Imported CVs', 'Action' => 'Imported Multiple CVs', 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
+               $result = $this->Master_model->master_insert($data, 'employer_audit_record');
+                  array_push($cv, $cv_id);
+               }
+                $skip++;
+           }
+
+           // print_r($cv);die();
+           foreach ($cv as $cvs) 
+             {
+               
+              $where = "corporate_cv_bank.cv_id = '$cvs'";
+              $cv_name = $this->Master_model->get_master_row('corporate_cv_bank', $select = '*', $where, $join = FALSE);
+              $js_name = explode(' ', $cv_name['js_name']);
+              if (strpos($name, $js_name[0]) !== false) 
+              {
+               $where11['cv_id'] = $cvs;
+               $path = $folder_path_final;
+                // print_r($folders);
+                // print_r($q);
+                // print_r($path);
+              $doc_path=explode('/', $filenams);
                $parent = $doc_path['1'];
                $size = sizeof($doc_path)-1;
                $previous_folder = $doc_path[$size];
+               print_r($doc_path);
+               print_r($parent);
+               print_r($previous_folder);
+               // print_r($doc_path);
+
                $join =array("cv_folder a"=>
                     "a.parent_id = cv_folder.id");
                if ($parent == $previous_folder) {
@@ -6936,54 +6965,29 @@ $outtext  = $pdf->getText();
                }
                
                $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join);
-               print_r($this->db->last_query());
-               $cv_id = $this->Questionbank_employer_model->InsertCVDatapath($userdata);
-               $company_name = $this->session->userdata('company_name');
-               $data = array('company' => $company_name, 'action_taken_for' => $this->session->userdata('company_name'), 'field_changed' => 'Imported CVs', 'Action' => 'Imported Multiple CVs', 'datetime' => date('Y-m-d H:i:s'), 'updated_by' => $company_name);
-               $result = $this->Master_model->master_insert($data, 'employer_audit_record');
-                  array_push($cv, $cv_id);
+               print_r($this->db->last_query());die;
+               $previous_folder = $folders[$q];
+               $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id'";
+               $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join = FALSE);
+               // print_r($this->db->last_query());
+               // die;
+               $folder_id = $parent['id'];
+               $whereres = "cv_folder_id='$folder_id' and cv_id = '$cvs' ";
+               $folder_dbdata = $this->Master_model->get_master_row('cv_folder_relation', $select = FALSE, $whereres);
+               if (empty($folder_dbdata) && !empty($folder_id)) 
+               {
+                 $cv_folder_data['cv_folder_id'] = $folder_id;
+                 $cv_folder_data['cv_id'] =$cvs;
+                 $cv_folder_data['status'] ='1';
+                 $result = $this->Master_model->master_insert($cv_folder_data, 'cv_folder_relation');
                }
-                $skip++;
-           }
-
-           print_r($cv);die();
-         //   foreach ($cv as $cvs) 
-         //     {
-               
-         //      $where = "corporate_cv_bank.cv_id = '$cvs'";
-         //      $cv_name = $this->Master_model->get_master_row('corporate_cv_bank', $select = 'js_name', $where, $join = FALSE);
-         //      $js_name = explode(' ', $cv_name['js_name']);
-         //      if (strpos($name, $js_name[0]) !== false) 
-         //      {
-         //       $where11['cv_id'] = $cvs;
-         //       $path = $folder_path_final;
-         //        // print_r($folders);
-         //        // print_r($q);
-         //        // print_r($path);
-         //       $update_doc['js_document'] = $path;
-         //       $this->Master_model->master_update($update_doc, 'corporate_cv_bank', $where11);
-         //       $previous_folder = $folders[$q];
-         //       $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id'";
-         //       $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join = FALSE);
-         //       // print_r($this->db->last_query());
-         //       // die;
-         //       $folder_id = $parent['id'];
-         //       $whereres = "cv_folder_id='$folder_id' and cv_id = '$cvs' ";
-         //       $folder_dbdata = $this->Master_model->get_master_row('cv_folder_relation', $select = FALSE, $whereres);
-         //       if (empty($folder_dbdata) && !empty($folder_id)) 
-         //       {
-         //         $cv_folder_data['cv_folder_id'] = $folder_id;
-         //         $cv_folder_data['cv_id'] =$cvs;
-         //         $cv_folder_data['status'] ='1';
-         //         $result = $this->Master_model->master_insert($cv_folder_data, 'cv_folder_relation');
-         //       }
-         //        // echo 'The specific word is present.';
+                // echo 'The specific word is present.';
                                             
-         //      }
+              }
             
            
 
-         // }
+         }
              $m++;
         //   } 
         //   else
