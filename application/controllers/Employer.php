@@ -6922,7 +6922,7 @@ $outtext  = $pdf->getText();
                }
                 $skip++;
            }
-           for ($k = 0;$k <= sizeof($folders);$k++) {
+           for ($q = 0;$q <= sizeof($folders);$q++) {
            foreach ($cv as $cvs) 
              {
               $where = "corporate_cv_bank.cv_id = '$cvs'";
@@ -6937,7 +6937,7 @@ $outtext  = $pdf->getText();
                 // print_r($path);
                $update_doc['js_document'] = $path;
                $this->Master_model->master_update($update_doc, 'corporate_cv_bank', $where11);
-               $previous_folder = $folders[$k];
+               $previous_folder = $folders[$q];
                $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id'";
                $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join = FALSE);
                // print_r($this->db->last_query());die;
