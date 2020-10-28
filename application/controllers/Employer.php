@@ -6924,6 +6924,22 @@ $outtext  = $pdf->getText();
            }
            foreach ($cv as $cvs) 
              {
+                for ($p=0; $p <$k ; $p++) { 
+                $folder = $folders[$p];
+                $file_path = 'cv_folder/'.$folder.'/'.$name;
+                $previous_folder=$folder[$p];
+                if(!file_exists($file_path))
+                {
+                    $l = $p-1;
+                    $previous_folder=$folder[$l];
+                    $new_path = 'cv_folder/'.$previous_folder.'/'.$folder.'/'.$name;
+                    if (file_exists($new_path)) {
+                        $file_path = $new_path;
+                    }
+                }
+               
+            }
+            print_r($previous_folder);die;
               $where = "corporate_cv_bank.cv_id = '$cvs'";
               $cv_name = $this->Master_model->get_master_row('corporate_cv_bank', $select = 'js_name', $where, $join = FALSE);
               $js_name = explode(' ', $cv_name['js_name']);
