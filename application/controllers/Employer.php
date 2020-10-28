@@ -6711,6 +6711,8 @@ public  function upload_folder()
             
              $objPHPExcel->getActiveSheet()->SetCellValue('D1', 'file name');
             $alpha++;
+             $objPHPExcel->getActiveSheet()->SetCellValue('E1', 'file path');
+            $alpha++;
             $rowCount = 2;
             $m=0;
        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -6865,7 +6867,9 @@ $outtext  = $pdf->getText();
                 $objPHPExcel->getActiveSheet()->SetCellValue($alpha . $rowCount, $phone[0][0]);
                 $alpha++;
                  
-                 $objPHPExcel->getActiveSheet()->SetCellValue($alpha . $rowCount, $name);
+                $objPHPExcel->getActiveSheet()->SetCellValue($alpha . $rowCount, $name);
+                $alpha++;
+                $objPHPExcel->getActiveSheet()->SetCellValue($alpha . $rowCount, $filenams);
                 $alpha++;
                  $rowCount++;
                
@@ -6922,44 +6926,45 @@ $outtext  = $pdf->getText();
                }
                 $skip++;
            }
+
            
-           foreach ($cv as $cvs) 
-             {
-                for ($q = 0;$q <= sizeof($folders);$q++) {
-              $where = "corporate_cv_bank.cv_id = '$cvs'";
-              $cv_name = $this->Master_model->get_master_row('corporate_cv_bank', $select = 'js_name', $where, $join = FALSE);
-              $js_name = explode(' ', $cv_name['js_name']);
-              if (strpos($name, $js_name[0]) !== false) 
-              {
-               $where11['cv_id'] = $cvs;
-               $path = $folder_path_final;
-                print_r($folders);
-                print_r($q);
-                // print_r($path);
-               $update_doc['js_document'] = $path;
-               $this->Master_model->master_update($update_doc, 'corporate_cv_bank', $where11);
-               $previous_folder = $folders[$q];
-               $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id'";
-               $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join = FALSE);
-               print_r($this->db->last_query());
-               // die;
-               $folder_id = $parent['id'];
-               $whereres = "cv_folder_id='$folder_id' and cv_id = '$cvs' ";
-               $folder_dbdata = $this->Master_model->get_master_row('cv_folder_relation', $select = FALSE, $whereres);
-               if (empty($folder_dbdata) && !empty($folder_id)) 
-               {
-                 $cv_folder_data['cv_folder_id'] = $folder_id;
-                 $cv_folder_data['cv_id'] =$cvs;
-                 $cv_folder_data['status'] ='1';
-                 $result = $this->Master_model->master_insert($cv_folder_data, 'cv_folder_relation');
-               }
-                // echo 'The specific word is present.';
+         //   foreach ($cv as $cvs) 
+         //     {
+               
+         //      $where = "corporate_cv_bank.cv_id = '$cvs'";
+         //      $cv_name = $this->Master_model->get_master_row('corporate_cv_bank', $select = 'js_name', $where, $join = FALSE);
+         //      $js_name = explode(' ', $cv_name['js_name']);
+         //      if (strpos($name, $js_name[0]) !== false) 
+         //      {
+         //       $where11['cv_id'] = $cvs;
+         //       $path = $folder_path_final;
+         //        // print_r($folders);
+         //        // print_r($q);
+         //        // print_r($path);
+         //       $update_doc['js_document'] = $path;
+         //       $this->Master_model->master_update($update_doc, 'corporate_cv_bank', $where11);
+         //       $previous_folder = $folders[$q];
+         //       $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id'";
+         //       $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join = FALSE);
+         //       // print_r($this->db->last_query());
+         //       // die;
+         //       $folder_id = $parent['id'];
+         //       $whereres = "cv_folder_id='$folder_id' and cv_id = '$cvs' ";
+         //       $folder_dbdata = $this->Master_model->get_master_row('cv_folder_relation', $select = FALSE, $whereres);
+         //       if (empty($folder_dbdata) && !empty($folder_id)) 
+         //       {
+         //         $cv_folder_data['cv_folder_id'] = $folder_id;
+         //         $cv_folder_data['cv_id'] =$cvs;
+         //         $cv_folder_data['status'] ='1';
+         //         $result = $this->Master_model->master_insert($cv_folder_data, 'cv_folder_relation');
+         //       }
+         //        // echo 'The specific word is present.';
                                             
-              }
-             }
-             die;
-             
-         }
+         //      }
+            
+           
+
+         // }
              $m++;
         //   } 
         //   else
