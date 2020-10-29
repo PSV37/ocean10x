@@ -6950,13 +6950,13 @@ $outtext  = $pdf->getText();
               //   // print_r($folders);
               //   // print_r($q);
                  print_r($path);
-              // $doc_path=explode('/', $path);
-              //  $parent = $doc_path['1'];
-              //  $size = sizeof($doc_path)-2;
-              //  $previous_folder = $doc_path[$size];
-              //  print_r($doc_path);
-              //  print_r($parent);
-              //  print_r($previous_folder);
+              $doc_path=explode('/', $path);
+               $parent = $doc_path['1'];
+               $size = sizeof($doc_path)-2;
+               $previous_folder = $doc_path[$size];
+               print_r($doc_path);
+               print_r($parent);
+               print_r($previous_folder);
                // print_r($doc_path);
 
          //       // $join =array("cv_folder a"=>
