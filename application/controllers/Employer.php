@@ -6964,14 +6964,14 @@ $outtext  = $pdf->getText();
           
                if (!$parent==$previous_folder) {
                 echo "string";
-                    $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id' and parent_id = '$parent_id";
+                    // $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id' and parent_id = '$parent_id";
                }
                else{
                 echo "else";
-                 $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id' and parent_id = '0";
+                 // $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id' and parent_id = '0";
                }
               
-               $parent_folder = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join = FALSE);
+               // $parent_folder = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join = FALSE);
                // print_r($this->db->last_query());
                 print_r($parent_id);
          //       // die;
