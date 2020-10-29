@@ -6929,7 +6929,7 @@ $outtext  = $pdf->getText();
                 $skip++;
            }
 
-           print_r($cv);
+           // print_r($cv);
            // foreach ($cv as $cvs) {
            //     print_r($cvs);
            // }
