@@ -6969,8 +6969,8 @@ $outtext  = $pdf->getText();
                }
               
                $parent_folder = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join = FALSE);
-               print_r($this->db->last_query());
-                print_r($parent_folder);
+               // print_r($this->db->last_query());
+                // print_r($parent_folder);
          //       // die;
                $folder_id = $parent_folder['id'];
                $whereres = "cv_folder_id='$folder_id' and cv_id = '$cvs' ";
