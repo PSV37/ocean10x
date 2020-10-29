@@ -6990,7 +6990,7 @@ $outtext  = $pdf->getText();
         
         } 
     }   
-    redirect('employer/corporate_cv_bank');
+    // redirect('employer/corporate_cv_bank');
     }else
     {
      redirect('employer/corporate_cv_bank');
