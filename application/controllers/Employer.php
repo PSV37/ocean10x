@@ -6931,7 +6931,7 @@ $outtext  = $pdf->getText();
 
            print_r($cv);
            foreach ($cv as $cvs) {
-               print_r($cvs)
+               print_r($cvs);
            }
            die;
            // foreach ($cv as $cvs) 
