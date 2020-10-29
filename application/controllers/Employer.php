@@ -6929,27 +6929,31 @@ $outtext  = $pdf->getText();
                 $skip++;
            }
 
-           print_r($cv);die();
-           foreach ($cv as $cvs) 
-             {
+           print_r($cv);
+           foreach ($cv as $cvs) {
+               print_r($cvs)
+           }
+           die;
+           // foreach ($cv as $cvs) 
+           //   {
                
-              $where = "corporate_cv_bank.cv_id = '$cvs'";
-              $cv_name = $this->Master_model->get_master_row('corporate_cv_bank', $select = '*', $where, $join = FALSE);
-              $js_name = explode(' ', $cv_name['js_name']);
-              if (strpos($name, $js_name[0]) !== false) 
-              {
-               $where11['cv_id'] = $cvs;
-               $path = $cv_name['js_document'];
-                // print_r($folders);
-                // print_r($q);
-                // print_r($path);
-              $doc_path=explode('/', $path);
-               $parent = $doc_path['1'];
-               $size = sizeof($doc_path)-2;
-               $previous_folder = $doc_path[$size];
-               print_r($doc_path);
-               print_r($parent);
-               print_r($previous_folder);
+              // $where = "corporate_cv_bank.cv_id = '$cvs'";
+              // $cv_name = $this->Master_model->get_master_row('corporate_cv_bank', $select = '*', $where, $join = FALSE);
+              // $js_name = explode(' ', $cv_name['js_name']);
+              // if (strpos($name, $js_name[0]) !== false) 
+              // {
+              //  $where11['cv_id'] = $cvs;
+              //  $path = $cv_name['js_document'];
+              //   // print_r($folders);
+              //   // print_r($q);
+              //   // print_r($path);
+              // $doc_path=explode('/', $path);
+              //  $parent = $doc_path['1'];
+              //  $size = sizeof($doc_path)-2;
+              //  $previous_folder = $doc_path[$size];
+              //  print_r($doc_path);
+              //  print_r($parent);
+              //  print_r($previous_folder);
                // print_r($doc_path);
 
          //       // $join =array("cv_folder a"=>
@@ -6983,11 +6987,11 @@ $outtext  = $pdf->getText();
          //       }
          //        // echo 'The specific word is present.';
                                             
-              }
+         //      }
             
            
 
-         }
+         // }
          //     $m++;
         //   } 
         //   else
