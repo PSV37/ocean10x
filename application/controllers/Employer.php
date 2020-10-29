@@ -6936,30 +6936,24 @@ $outtext  = $pdf->getText();
            // die;
            foreach ($cv as $cvs) 
              {
-                  print_r($cvs);
+                  // print_r($cvs);
                
               $where = "corporate_cv_bank.cv_id = '$cvs'";
               $cv_name = $this->Master_model->get_master_row('corporate_cv_bank', $select = '*', $where, $join = FALSE);
               $js_name = explode(' ', $cv_name['js_name']);
-                // print_r($this->db->last_query());
-                // print_r($cv_name);
-              // if (strpos($name, $js_name[0]) !== false) 
-              // {
-              //  $where11['cv_id'] = $cvs;
+              
                $path = $cv_name['js_document'];
-              //   // print_r($folders);
-              //   // print_r($q);
-                 // print_r($path);
+             
               $doc_path=explode('/', $path);
                $parent = $doc_path['1'];
                $size = sizeof($doc_path)-2;
                $previous_folder = $doc_path[$size];
               
-                   $where_folder = "cv_folder.folder_name = '$parent' and company_id = '$employer_id' and parent_id = '0' ";
+                   $where_folder = "cv_folder.folder_name = '$parent' and company_id = '$employer_id' and parent_id = '0' order by id desc ";
               
                $parent_data = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join= false);
-               print_r($parent);
-                print_r($previous_folder);
+               // print_r($parent);
+               //  print_r($previous_folder);
                $parent_id = $parent_data['id']; 
           
                if (!$parent==$previous_folder) {
@@ -6972,8 +6966,8 @@ $outtext  = $pdf->getText();
                }
               
                $parent_fdata = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_pfolder, $join= false);
-               print_r($this->db->last_query());
-                print_r($parent_id);
+               // print_r($this->db->last_query());
+               //  print_r($parent_id);
          //       // die;
                $folder_id = $parent_fdata['id'];
                $whereres = "cv_folder_id='$folder_id' and cv_id = '$cvs' ";
@@ -6985,13 +6979,8 @@ $outtext  = $pdf->getText();
                  $cv_folder_data['status'] ='1';
                  $result = $this->Master_model->master_insert($cv_folder_data, 'cv_folder_relation');
                }
-         //        // echo 'The specific word is present.';
-                                            // 
-              // }
-            
-           
-
-         }die;
+         //        
+         }
          //     $m++;
         //   } 
         //   else
@@ -7001,6 +6990,7 @@ $outtext  = $pdf->getText();
         
         } 
     }   
+    redirect('employer/corporate_cv_bank');
     }else
     {
      redirect('employer/corporate_cv_bank');
