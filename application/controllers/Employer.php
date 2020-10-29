@@ -6949,46 +6949,43 @@ $outtext  = $pdf->getText();
                $path = $cv_name['js_document'];
               //   // print_r($folders);
               //   // print_r($q);
-                 print_r($path);
+                 // print_r($path);
               $doc_path=explode('/', $path);
                $parent = $doc_path['1'];
                $size = sizeof($doc_path)-2;
                $previous_folder = $doc_path[$size];
-               print_r($doc_path);
-               print_r($parent);
-               print_r($previous_folder);
                // print_r($doc_path);
-
-               // $join =array("cv_folder a"=>
-               //      "a.parent_id = cv_folder.id");
-               // if ($parent == $previous_folder) {
-                   $where_folder = "cv_folder.folder_name = '$parent' and company_id = '$employer_id'";
-               // }
-               // else
-               // {
-
-               //  $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id' and a.folder_name = ' $parent'
-               //  ";
-               // }
-               
-               $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join= false);
-                print_r($parent);
-               print_r($this->db->last_query());
+               // print_r($parent);
+               // print_r($previous_folder);
+              
+                   $where_folder = "cv_folder.folder_name = '$parent' and company_id = '$employer_id' and parent_id = '0' ";
+              
+               $parent_data = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join= false);
+               //  print_r($parent);
+               // print_r($this->db->last_query());
+               $parent_id = $parent_data['id']; 
          //       // $previous_folder = $folders[$q];
-         //       $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id'";
-         //       $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join = FALSE);
-         //       print_r($this->db->last_query());
+               if (!$parent==$previous_folder) {
+                    $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id' and parent_id = '$parent_id";
+               }
+               else{
+                 $where_folder = "cv_folder.folder_name = '$previous_folder' and company_id = '$employer_id' and parent_id = '0";
+               }
+              
+               $parent = $this->Master_model->get_master_row('cv_folder', $select = 'id', $where = $where_folder, $join = FALSE);
+               print_r($this->db->last_query());
+                print_r($parent);
          //       // die;
-         //       $folder_id = $parent['id'];
-         //       $whereres = "cv_folder_id='$folder_id' and cv_id = '$cvs' ";
-         //       $folder_dbdata = $this->Master_model->get_master_row('cv_folder_relation', $select = FALSE, $whereres);
-         //       if (empty($folder_dbdata) && !empty($folder_id)) 
-         //       {
-         //         $cv_folder_data['cv_folder_id'] = $folder_id;
-         //         $cv_folder_data['cv_id'] =$cvs;
-         //         $cv_folder_data['status'] ='1';
-         //         $result = $this->Master_model->master_insert($cv_folder_data, 'cv_folder_relation');
-         //       }
+               $folder_id = $parent['id'];
+               $whereres = "cv_folder_id='$folder_id' and cv_id = '$cvs' ";
+               $folder_dbdata = $this->Master_model->get_master_row('cv_folder_relation', $select = FALSE, $whereres);
+               if (empty($folder_dbdata) && !empty($folder_id)) 
+               {
+                 $cv_folder_data['cv_folder_id'] = $folder_id;
+                 $cv_folder_data['cv_id'] =$cvs;
+                 $cv_folder_data['status'] ='1';
+                 $result = $this->Master_model->master_insert($cv_folder_data, 'cv_folder_relation');
+               }
          //        // echo 'The specific word is present.';
                                             // 
               // }
