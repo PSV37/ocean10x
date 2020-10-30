@@ -6870,7 +6870,7 @@ elseif ($ext == 'docx') {
         }
         chmod("tempf.docx", 0777);  unlink(realpath("tempf.docx"));
         //save to file or echo content
-        file_put_contents($file_name,$outtext);
+        // file_put_contents($filenams,$outtext);
         echo $outtext;
 }
 }
