@@ -6846,37 +6846,34 @@ $outtext  = $pdf->getText();
 
 }
 elseif ($ext == 'docx') {
-    $docx = $this->get_url('$filenams');
-        file_put_contents("tempf.docx",$docx);
-        $xml_filename = "cv_folder/document.xml"; //content file name
-        $zip_handle = new ZipArchive;
-        $outtext = "";
-        if(true === $zip_handle->open($filenams)){
-            if(($xml_index = $zip_handle->locateName($xml_filename)) !== false){
-                $xml_datas = $zip_handle->getFromIndex($xml_index);
-                //file_put_contents($input_file.".xml",$xml_datas);
-                $replace_newlines = preg_replace('/<w:p w[0-9-Za-z]+:[a-zA-Z0-9]+="[a-zA-z"0-9 :="]+">/',"\n\r",$xml_datas);
-                $replace_tableRows = preg_replace('/<w:tr>/',"\n\r",$replace_newlines);
-                $replace_tab = preg_replace('/<w:tab\/>/',"\t",$replace_tableRows);
-                $replace_paragraphs = preg_replace('/<\/w:p>/',"\n\r",$replace_tab);
-                $replace_other_Tags = strip_tags($replace_paragraphs);          
-                $outtext = $replace_other_Tags;
-            }else{
-                $outtext .="";
-            }
-            $zip_handle->close();
-        }else{
-        $outtext .=" ";
-        }
-        chmod("tempf.docx", 0777);  unlink(realpath("tempf.docx"));
-        //save to file or echo content
-        // file_put_contents($filenams,$outtext);
-        echo $outtext;
+    $outtext = '';
+        $content = '';
+
+        $zip = zip_open($filenams);
+
+        if (!$zip || is_numeric($zip)) return false;
+
+        while ($zip_entry = zip_read($zip)) {
+
+            if (zip_entry_open($zip, $zip_entry) == FALSE) continue;
+
+            if (zip_entry_name($zip_entry) != "word/document.xml") continue;
+
+            $content .= zip_entry_read($zip_entry, zip_entry_filesize($zip_entry));
+
+            zip_entry_close($zip_entry);
+        }// end while
+
+        zip_close($zip);
+
+        $content = str_replace('</w:r></w:p></w:tc><w:tc>', " ", $content);
+        $content = str_replace('</w:r></w:p>', "\r\n", $content);
+        $outtext = strip_tags($content);
 }
 }
-// print_r($outtext);
+print_r($outtext);
 // print_r($ext);
-  // die;
+  die;
     
      preg_match_all('/\b[0-9]{3}\s*[-]?\s*[0-9]{3}\s*[-]?\s*[0-9]{4}\b/',$outtext,$phone);
      preg_match_all('/[a-z0-9_\-\+\.]+@[a-z0-9\-]+\.([a-z]{2,4})(?:\.[a-z]{2})?/i',$outtext,$email);
