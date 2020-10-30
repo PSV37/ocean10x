@@ -6851,7 +6851,7 @@ elseif ($ext == 'docx') {
         $xml_filename = "cv_folder/document.xml"; //content file name
         $zip_handle = new ZipArchive;
         $outtext = "";
-        if(true === $zip_handle->open("tempf.docx")){
+        if(true === $zip_handle->open($filenams)){
             if(($xml_index = $zip_handle->locateName($xml_filename)) !== false){
                 $xml_datas = $zip_handle->getFromIndex($xml_index);
                 //file_put_contents($input_file.".xml",$xml_datas);
