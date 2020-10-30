@@ -6869,7 +6869,7 @@ $outtext  = $pdf->getText();
 //         //Close the archive file
 //         $zip->close();
 //     }
-// }
+}
 print_r($outtext);
 // print_r($ext);
   die;
