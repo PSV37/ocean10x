@@ -6816,7 +6816,7 @@ public  function upload_folder()
 if(file_exists($filenams))
 {       
              // $docObj = new Doc2Txt($inputfile);
-if ($ext == 'doc' || $ext ='docx') {
+if ($ext == 'doc') {
     $fileHandle = fopen($filenams, "r");
     $line = @fread($fileHandle, filesize($filenams));   
     $lines = explode(chr(0x0D),$line);
@@ -6845,34 +6845,38 @@ $pdf    = $parser->parseFile($filenams);
 $outtext  = $pdf->getText();
 
 }
-// elseif ($ext == 'docx') {
-//    $dataFile = "cv_folder/document.xml";
-//     // //else it must be odt file
-//     // else
-//     // $dataFile = "content.xml";     
-
-//     //Create a new ZIP archive object
-//     $zip = new ZipArchive;
-
-//     // Open the archive file
-//     if (true === $zip->open($filenams)) {
-//         // If successful, search for the data file in the archive
-//         if (($index = $zip->locateName($dataFile)) !== false) {
-//             // Index found! Now read it to a string
-//             $text = $zip->getFromIndex($index);
-//             // Load XML from a string
-//             // Ignore errors and warnings
-//             $xml = DOMDocument::loadXML($text, LIBXML_NOENT | LIBXML_XINCLUDE | LIBXML_NOERROR | LIBXML_NOWARNING);
-//             // Remove XML formatting tags and return the text
-//             return strip_tags($xml->saveXML());
-//         }
-//         //Close the archive file
-//         $zip->close();
-//     }
+elseif ($ext == 'docx') {
+    $docx = $this->get_url('$filenams');
+        file_put_contents("tempf.docx",$docx);
+        $xml_filename = "cv_folder/document.xml"; //content file name
+        $zip_handle = new ZipArchive;
+        $outtext = "";
+        if(true === $zip_handle->open("tempf.docx")){
+            if(($xml_index = $zip_handle->locateName($xml_filename)) !== false){
+                $xml_datas = $zip_handle->getFromIndex($xml_index);
+                //file_put_contents($input_file.".xml",$xml_datas);
+                $replace_newlines = preg_replace('/<w:p w[0-9-Za-z]+:[a-zA-Z0-9]+="[a-zA-z"0-9 :="]+">/',"\n\r",$xml_datas);
+                $replace_tableRows = preg_replace('/<w:tr>/',"\n\r",$replace_newlines);
+                $replace_tab = preg_replace('/<w:tab\/>/',"\t",$replace_tableRows);
+                $replace_paragraphs = preg_replace('/<\/w:p>/',"\n\r",$replace_tab);
+                $replace_other_Tags = strip_tags($replace_paragraphs);          
+                $outtext = $replace_other_Tags;
+            }else{
+                $outtext .="";
+            }
+            $zip_handle->close();
+        }else{
+        $outtext .=" ";
+        }
+        chmod("tempf.docx", 0777);  unlink(realpath("tempf.docx"));
+        //save to file or echo content
+        file_put_contents($file_name,$outtext);
+        echo $outtext;
 }
-print_r($outtext);
+}
+// print_r($outtext);
 // print_r($ext);
-  die;
+//   die;
     
      preg_match_all('/\b[0-9]{3}\s*[-]?\s*[0-9]{3}\s*[-]?\s*[0-9]{4}\b/',$outtext,$phone);
      preg_match_all('/[a-z0-9_\-\+\.]+@[a-z0-9\-]+\.([a-z]{2,4})(?:\.[a-z]{2})?/i',$outtext,$email);
@@ -7021,6 +7025,25 @@ print_r($outtext);
      redirect('employer/corporate_cv_bank');
     }
  }
+ function get_url( $url,$timeout = 5 )
+    {
+        $url = str_replace( "&amp;", "&", urldecode(trim($url)) );
+        $ch = curl_init();
+        curl_setopt( $ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 5.1; rv:1.7.3) Gecko/20041001 Firefox/0.10.1" );
+        curl_setopt( $ch, CURLOPT_URL, $url );
+        curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, true );
+        curl_setopt( $ch, CURLOPT_ENCODING, "" );
+        curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
+        curl_setopt( $ch, CURLOPT_AUTOREFERER, true );
+        curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, false );    # required for https urls
+        curl_setopt( $ch, CURLOPT_CONNECTTIMEOUT, $timeout );
+        curl_setopt( $ch, CURLOPT_TIMEOUT, $timeout );
+        curl_setopt( $ch, CURLOPT_MAXREDIRS, 10 );
+        $content = curl_exec( $ch );
+        //$response = curl_getinfo( $ch ); 
+        curl_close ( $ch );
+        return $content;
+    }
 private function read_doc() {
     
     return $outtext;
