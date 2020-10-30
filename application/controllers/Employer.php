@@ -6794,6 +6794,7 @@ public  function upload_folder()
             }
             $first_name = explode(" ", $name);
              $string = preg_replace('/\\.[^.\\s]{3,4}$/', '', $name);
+             $string =  preg_replace('/[^a-z]/i', '', $string);
             $ext = strtolower(end(explode('.',  $name)));
            $last_letter = substr($folder_path_final, -1);
            if ($last_letter == '/') {
@@ -6843,6 +6844,34 @@ $pdf    = $parser->parseFile($filenams);
 
 $outtext  = $pdf->getText();
 
+}
+elseif ($ext == 'docx') {
+    $docx = get_url('$filenams');
+        file_put_contents("tempf.docx",$docx);
+        $xml_filename = "cv_folder/document.xml"; //content file name
+        $zip_handle = new ZipArchive;
+        $outtext = "";
+        if(true === $zip_handle->open("tempf.docx")){
+            if(($xml_index = $zip_handle->locateName($xml_filename)) !== false){
+                $xml_datas = $zip_handle->getFromIndex($xml_index);
+                //file_put_contents($input_file.".xml",$xml_datas);
+                $replace_newlines = preg_replace('/<w:p w[0-9-Za-z]+:[a-zA-Z0-9]+="[a-zA-z"0-9 :="]+">/',"\n\r",$xml_datas);
+                $replace_tableRows = preg_replace('/<w:tr>/',"\n\r",$replace_newlines);
+                $replace_tab = preg_replace('/<w:tab\/>/',"\t",$replace_tableRows);
+                $replace_paragraphs = preg_replace('/<\/w:p>/',"\n\r",$replace_tab);
+                $replace_other_Tags = strip_tags($replace_paragraphs);          
+                $outtext = $replace_other_Tags;
+            }else{
+                $outtext .="";
+            }
+            $zip_handle->close();
+        }else{
+        $outtext .=" ";
+        }
+        chmod("tempf.docx", 0777);  unlink(realpath("tempf.docx"));
+        //save to file or echo content
+        file_put_contents($file_name,$outtext);
+        echo $outtext;
 }
 }
 // print_r($outtext);
