@@ -1028,7 +1028,7 @@ span.right-side {
                  <li> <a href="#" id="frwd_btn" onclick="frwd_cv();" >Forward CVs</a></li>
                 <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="copy_cvs();">Copy CVs</a></li>
                 <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="download_cvs();">Download CVs</a></li>
-               <!--  <li> <a href="#" id="frwd_btn" data-toggle="modal" data-keyboard="true"  data-target="#bulkupload">Bulk Upload CVs</a></li> -->
+                <li> <a href="#" id="frwd_btn" data-toggle="modal" data-keyboard="true"  data-target="#bulkupload">Delete all</a></li>
                 <li> <a href="#" id="frwd_btn" data-toggle="modal" data-keyboard="true" data-target="#bulkupload_folder">Upload Folder & Contents</a></li>
                 <li> <a href="#" id="frwd_btn" data-keyboard="true" onclick="update_cvs();">Sync with Ocean</a></li>
                 
